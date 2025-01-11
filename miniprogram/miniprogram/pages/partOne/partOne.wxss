@@ -1,0 +1,317 @@
+page {
+  height: 100%;
+}
+.learning-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.today-text {
+  font-size: 16px;
+  color: #666;
+}
+
+.study-type-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  margin: 0 10px;
+  padding: 8px 20px;
+  background-color: #1989fa;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.topic-section {
+  margin-top: 20px;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.topic-list {
+  margin-left: 20px;
+}
+
+.topic-item {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.learning-summary {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.learning-summary-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.progress-bar {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.progress-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.action-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.start-button, .progress-button, .reminder-button {
+  padding: 10px 20px;
+  background-color: #1989fa;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reminder-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.page-title {
+  text-align: center; /* 水平居中 */
+  font-size: 20px; /* 调整字体大小 */
+  font-weight: bold; /* 加粗 */
+  color: #333; /* 标题颜色 */
+  margin: 20px 0; /* 与页面顶部和下方留空隙 */
+}
+/* 卡片效果 */
+.card {
+  background-color: #fff; /* 背景颜色 */
+  border-radius: 10px; /* 圆角 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  padding: 15px; /* 内边距 */
+  margin-bottom: 15px; /* 卡片之间的间距 */
+  transition: transform 0.2s, box-shadow 0.2s; /* 动效 */
+}
+.card:hover {
+  transform: translateY(-5px); /* 悬停时上移 */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* 悬停时阴影变深 */
+}
+.card-header {
+  font-size: 16px; /* 标题字体大小 */
+  font-weight: bold; /* 加粗 */
+  margin-bottom: 10px; /* 标题与内容的间距 */
+}
+.card-body {
+  font-size: 14px; /* 正文字体大小 */
+  color: #555; /* 字体颜色 */
+  display: flex;
+  justify-content: space-between;
+}
+.card-edit{
+  margin: 10px 0;
+  font-size: 14px; /* 正文字体大小 */
+  color: #555; /* 字体颜色 */
+}
+.card-footer {
+  margin-top: 15px; /* 上部内容与按钮的间距 */
+}
+.card-container {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-wrap: wrap; /* 自动换行 */
+  gap: 15px; /* 卡片之间的间距 */
+  justify-content: space-between; /* 等间距排列 */
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 10px; /* 小屏时缩小内边距 */
+    margin-bottom: 10px; /* 缩小间距 */
+  }
+
+  .card-header {
+    font-size: 14px; /* 缩小标题字体 */
+  }
+
+  .card-body {
+    font-size: 12px; /* 缩小正文字体 */
+  }
+}
+.card-button {
+  padding: 8px 12px; /* 按钮大小 */
+  background-color: #1989fa; /* 按钮背景色 */
+  color: #fff; /* 按钮文字颜色 */
+  border: none; /* 无边框 */
+  border-radius: 5px; /* 圆角按钮 */
+  cursor: pointer; /* 鼠标样式 */
+  transition: background-color 0.2s; /* 动效 */
+}
+.card-button:hover {
+  background-color: #0066cc; /* 悬停颜色 */
+}
+/* 分页容器 */
+.pagination-container {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  background-color: #fff; /* 背景色与页面一致 */
+  padding: 10px 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  z-index: 100;
+}
+
+/* 分页按钮 */
+.pagination-button {
+  color: #1989fa; /* 按钮颜色与页面风格一致 */
+  margin: 0 20px; /* 两侧留空，避免太过紧凑 */
+  cursor: pointer;
+}
+
+/* 分页文字 */
+.pagination-text {
+  font-size: 16px; /* 字体大小适中 */
+  font-weight: bold; /* 字体加粗 */
+  color: #333; /* 字体颜色 */
+}
+
+.memory-reminder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.memory-reminder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.reminder-label {
+  font-size: 14px;
+  margin: 0 5px;
+  color: #333;
+}
+
+.memory-box {
+  background-color: #1989fa;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 5px;
+}
+
+.reminder-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.reminder-info {
+  position: absolute; /* 绝对定位 */
+  right: 10px; /* 根据实际布局微调 */
+}
+
+.end-reminder-btn {
+  background-color: #f44336;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.end-reminder-btn:hover {
+  background-color: #d32f2f;
+}
+
+.completed-status {
+  margin-top: 10px;
+  text-align: center;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.completed-text {
+  font-size: 16px;
+  color: #00796b;
+  font-weight: bold;
+}
+
+.restarts-btn {
+  background-color: #00796b;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.restarts-btn:hover {
+  background-color: #004d40;
+}
+
+/* 报错按钮样式 */
+.error-report-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+}
+
+.error-report-btn {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-report-btn:hover {
+  background-color: #d32f2f;
+}
+
+.error-report-text {
+  display: none;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* Hover效果时显示文字 */
+.error-report-btn:hover .error-report-text {
+  display: inline;
+}

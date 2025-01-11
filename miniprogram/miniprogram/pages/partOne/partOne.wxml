@@ -1,0 +1,197 @@
+<!-- 上方sticky部分 start-->
+<van-sticky>
+  <view style="width: 100%; padding: 0 0 5px 0; background-color:#fff;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <!-- 点击切换左侧进度列表出现/隐藏 -->
+    <view style="padding: 0 5px 0 0 ; display: flex; justify-content: flex-end;">
+      <van-icon name="chart-trending-o" color="#1989fa" size="30px" bind:click="showLeftPanel"/>
+    </view>
+    <!-- 这里向左向右就是展示今天的问题和全新的问题列表 -->
+    <view style="text-align: center;display: flex;justify-content: space-around;"
+      class="page-title">
+      <van-icon name="arrow-left" bind:click="prevTag"/>
+      {{currentTag.tagName}}
+      <van-icon name="arrow" bind:click="nextTag"/>
+    </view>
+  </view>
+</van-sticky>
+<!-- 上方sticky部分 end-->
+
+<!-- 左侧列表 start 只显示进度信息，不进行点击查看详情操作-->
+<van-popup 
+  show="{{ showLeftPanel }}"
+  position="left"
+  custom-style="height: 100%; width: 95%;"
+  bind:close="closeLeftPanel">
+  <van-collapse
+    value="{{activeNames}}"
+    bind:change="onChangeCategories">
+    <van-collapse-item
+      wx:for="{{categories}}"
+      wx:key="index"
+      wx:for-item="category"
+      wx:if="{{category.subCategories.length > 0}}"
+      title="{{category.categoryNameInChinese}}" 
+      name="{{category.categoryNameInChinese}}">
+      <van-cell-group>
+        <!-- todo van-cell 按题目进度显示的ui -->
+        <!-- todo van-cell 点击进入题目 -->
+        <van-cell
+          wx:for="{{category.subCategories}}" 
+          wx:key="subIndex"
+          wx:key-index="subIndex"        
+          wx:for-item="subCategory"
+          title="{{subCategory.tagName}}"
+          value="{{ '01-21' }}"
+          label="{{ 3 }}" />
+      </van-cell-group>
+    </van-collapse-item>
+  </van-collapse>
+</van-popup>
+<!-- 左侧列表 end -->
+
+<!-- 选中的tag显示其tagName及questions start -->
+<view style="padding: 10px 0 120px 0;"> 
+  <!-- todo 处理无用的css -->
+  <!-- todo 处理表单的v-model的发送到后端的数据 -->
+  <view class="card-container">
+    <view
+    style="padding: 5px; margin-bottom: 10px;"
+    class="card"
+    wx:for="{{currentTag.questions}}"
+    wx:key="index"
+    wx:for-item="item"
+    wx:for-index="index">
+    <view style="margin-bottom: 10px;"
+      class="card-header">
+      Question {{index+1}} </view>
+    <view class="card-body">
+      <view>
+        {{item.questionText}}
+      </view>
+      <van-switch
+        size="20px"
+        inactive-color="rgb(220, 222, 224)"
+        checked="{{ aboutUser.specifiedPrompt[item.questionId] && aboutUser.specifiedPrompt[item.questionId].showPrompt }}" 
+        bind:change="showPrompt" 
+        data-id="{{item.questionId}}"/>
+    </view>
+    <!-- 问题定制区 -->
+    <view
+      class="card-edit"
+      hidden="{{!(aboutUser.specifiedPrompt[item.questionId] && aboutUser.specifiedPrompt[item.questionId].showPrompt)}}">
+      <!-- type===0时的单选 -->
+      <view 
+      style="padding-left: 16px; margin-bottom: 5px;"
+      hidden="{{item.type !== 0}}">
+        <van-radio-group
+          value="{{aboutUser.specifiedAnswer[item.questionId] ? aboutUser.specifiedAnswer[item.questionId] : item.choices[0]}}"
+          bind:change="onChangeChoices"
+          data-id="{{item.questionId}}"
+          direction="horizontal">
+          <van-radio
+            wx:for="{{item.choices}}"
+            wx:key="idx"
+            wx:for-item="choice"
+            wx:for-index="idx"
+            name="{{choice}}"
+            shape="square"
+            >{{choice}}
+          </van-radio>
+        </van-radio-group>
+      </view>
+      <!-- 这里填写prompt的回答&原因&解释 -->
+      <view>
+        <van-cell-group>
+          <van-field
+            value="{{ message }}"
+            label="回答及扩展"
+            type="textarea"
+            placeholder=""
+            maxlength="80"
+            autosize
+            border="{{ false }}"
+          />
+        </van-cell-group>
+        <van-cell-group>
+          <van-field
+            value="{{ message }}"
+            label="why"
+            type="textarea"
+            placeholder=""
+            autosize
+            border="{{ false }}"
+          />
+        </van-cell-group>
+        <van-cell-group>
+          <van-field
+            value="{{ message }}"
+            label="解释/举例"
+            type="textarea"
+            placeholder=""
+            autosize
+            border="{{ false }}"
+          />
+        </van-cell-group>
+        <view style="padding-right: 0px; margin: 10px 0; display: flex; justify-content: flex-end;">
+          <van-button type="primary"
+            round="true"
+            plain
+            bind:click="produceAnswer"
+            >生成</van-button>
+        </view>
+      </view>
+    </view>
+    <!-- 根据prompt产生内容区 -->
+    <view class="card-footer">
+      this palce shows our answer which needs to memorize
+    </view>
+  </view>
+</view>
+<!-- 选中的tag显示其tagName及questions end -->
+
+<!-- 选中的tag用户自主决定下次复习的时间 start -->
+<van-divider />
+  <!-- 记忆进度条 -->
+  <!-- 根据科学的记忆曲线（如艾宾浩斯遗忘曲线），复习的最佳时间点遵循 间隔复习法，旨在通过逐渐延长的复习间隔巩固记忆。以下是一个常见的记忆规划方案：
+  复习时间点设计
+  基本原则：
+  初次复习: 在学习后约 1天 内进行第一次复习。
+  短期强化: 第二次复习在 3天后。
+  巩固阶段: 第三次复习在 7天后。
+  长期记忆: 后续间隔依次为 15天、30天、90天。 -->
+  <!-- todo 无效css处理 -->
+  <!-- todo 点击记下tagState的状态及下次复习时间 -->
+  <view class="memory-reminder-container">
+  <!-- 记忆提醒区域 -->
+  <view 
+    hidden="{{!isReminderActive}}"
+    class="memory-reminder">
+    <text class="reminder-label">隔</text>
+    <view class="memory-box"
+      wx:for="{{memoryDays}}"
+      wx:key="index"
+      bindtap="setRemindDay"
+      data-day="{{item}}">
+      <text class="memory-text">{{item}}</text>
+    </view>
+    <text class="reminder-label">天提醒我复习</text>
+    <view class="reminder-info">
+      <van-icon name="info-o" size="18px" color="#1989fa" bind:click="showGuide" />
+    </view>
+  </view>
+  <!-- 提示信息和结束复习按钮合并 -->
+  <view hidden="{{!isReminderActive}}" class="reminder-footer">
+    <button class="end-reminder-btn" bindtap="endReminder">已掌握，结束复习</button>
+  </view>
+  <!-- 复习已完成状态 -->
+  <view hidden="{{isReminderActive}}" class="completed-status">
+    <text class="completed-text">复习已完成！</text>
+    <button class="restarts-btn" bindtap="restartReminder">重新开始</button>
+  </view>
+</view>
+</view>
+<!-- 选中的tag用户自主决定下次复习的时间 end -->
+
+<tab-bar active="0"></tab-bar>
+
+

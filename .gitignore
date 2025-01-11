@@ -1,0 +1,7 @@
+node_modules
+.env
+miniprogram/node_modules
+vue-admin/node_modules
+README.md 
+miniprogram/README.md
+vue-admin/README.md

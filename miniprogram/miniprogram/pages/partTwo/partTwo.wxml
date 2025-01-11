@@ -1,0 +1,4 @@
+<view>
+  part two
+  <tab-bar active="1"></tab-bar>
+</view>

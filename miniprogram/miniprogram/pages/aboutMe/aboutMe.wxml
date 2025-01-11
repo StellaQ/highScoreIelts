@@ -1,0 +1,14 @@
+<view>
+这里是aboutMe
+user 信息
+会员充值
+
+<tab-bar active="3"></tab-bar>
+<!-- 页面报错&反馈&提升建议  
+      todo 还需新增一个reportIssues页面去处理 start-->
+
+<view style="float: right; right: 20px; ">
+  <van-icon name="question"  color="#1989fa" size="30px" bind:click="reportIssues"/>
+</view>
+<!-- 页面报错处理 end-->
+</view>

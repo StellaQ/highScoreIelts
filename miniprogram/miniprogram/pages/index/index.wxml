@@ -1,0 +1,41 @@
+
+<view class="containerThreeparts">
+  <!-- 待添加未打卡状态判定 -->
+  <view  wx:for="{{[1, 2, 3]}}" wx:key="key" bindtap="gotoPage" data-part="{{item}}">
+    <canvas type="2d" id="progressCircle{{item}}" canvas-id="progressCircle{{item}}" style="width: 100px; height: 100px;"></canvas>
+  </view>
+</view>
+<view class="containerRecord">
+  <!-- 这里放一个月的打卡记录 -->
+  <view class="containerLeftRecord">
+    <canvas type="2d" id="heatmapCanvas" canvas-id="heatmapCanvas"></canvas>
+  </view>
+  <!--  -->
+  <!-- <view class="containerNotebook">
+    <image src="../../assets/notebook2.svg"/>
+  </view> -->
+  <!--  -->
+</view>
+<van-button type="primary">按钮</van-button>
+<!-- 进入小程序判断有没有登陆 -->
+<view class="containerPromote">
+  <!-- 登陆但一直没有充值的 -->
+  <view>点这里帮推广，获得一天免费试用</view>
+  <view> 我选择氪金 </view>
+  <!-- 登陆&通过活动推广而免费使用的 -->
+  <view>
+    今天您是推广知识的慈善大使！
+  </view>
+  <!-- 登陆&充值的 -->
+  <view>
+    尊贵的vip，今天也要加油哦！
+  </view>
+</view>
+<!-- 其他页面分析：
+跳转到part 1的列表页面==》具体问题页面：每个内容会的就过，不会的多练
+跳转到part 2的列表页面
+跳转到part 3的列表页面
+帮忙推广宣传功能
+氪金页面
+最下端：【首页】【我的】
+ -->

@@ -1,0 +1,37 @@
+/**app.wxss**/
+/* @import './miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss'; */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/*** 注意类名要对应 ***/
+/* <text class="iconfont icon_back"></text> */
+@font-face {
+  font-family: 'iconfont';  /* Project id 4571972 */
+  src: url('//at.alicdn.com/t/c/font_4571972_s000uzwjedd.woff2?t=1717398518573') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4571972_s000uzwjedd.woff?t=1717398518573') format('woff'),
+       url('//at.alicdn.com/t/c/font_4571972_s000uzwjedd.ttf?t=1717398518573') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Notebook:before {
+  content: "\e606";
+}
+
+.icon-notebook:before {
+  content: "\e710";
+}
+
+
