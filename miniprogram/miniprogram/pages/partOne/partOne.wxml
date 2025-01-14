@@ -34,15 +34,13 @@
       name="{{category.categoryNameInChinese}}">
       <van-cell-group>
         <!-- todo van-cell 按题目进度显示的ui -->
-        <!-- todo van-cell 点击进入题目 -->
         <van-cell
           wx:for="{{category.subCategories}}" 
           wx:key="subIndex"
           wx:key-index="subIndex"        
           wx:for-item="subCategory"
-          title="{{subCategory.tagName}}"
-          value="{{ '01-21' }}"
-          label="{{ 3 }}" />
+          title="{{ subCategory.tagName }}"
+          label="{{ subCategory.stage }}" />
       </van-cell-group>
     </van-collapse-item>
   </van-collapse>

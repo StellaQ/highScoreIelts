@@ -1,22 +1,17 @@
 const staticQuestions = require('../../assets/staticQuestions.js');
 
-type Question = {
-  questionId: string;
-  questionText: string;
-};
+import { Category, SubCategory, TagProcess } from '../../utils/types'; // 导入定义的类型 
 
-type SubCategory = {
-  tagName: string;
-  tagId: string,
-  questions: Question[];
-};
-
-type Category = {
-  categoryName: string;
-  categoryNameInChinese: string;
-  description: string;
-  subCategories: SubCategory[];
-};
+const tagProcess: TagProcess[] = [
+  { tagId: 't3', stage: 0 },
+  { tagId: 't4', stage: 1 },
+  { tagId: 't5', stage: 2 },
+  { tagId: 't6', stage: 3 },
+  { tagId: 't7', stage: 4 },
+  { tagId: 't8', stage: 0 },
+  { tagId: 't9', stage: 1 },
+  { tagId: 't10', stage: 2 }
+];
 
 Page({
   data: {
@@ -177,11 +172,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    // 页面加载数据 todo
-    this.setData({
-      categories: staticQuestions
+    const result = staticQuestions.map((category: Category) => {
+      return {
+        categoryNameInChinese: category.categoryNameInChinese,
+        subCategories: category.subCategories.map((subCategory: SubCategory) => {
+          const tagInfo = tagProcess.find(tag => tag.tagId === subCategory.tagId);
+          const stage = tagInfo ? tagInfo.stage : 0; // 如果找不到stage，默认值为-1
+          
+          return {
+            tagName: subCategory.tagName,
+            tagId: subCategory.tagId,
+            stage // 混合进阶段信息
+          };
+        })
+      };
     });
-    // 先把数据split 在加上用户其的状态 todo
+
+    this.setData({
+      categories: result
+    });
+
+    console.log(result);
     let a = {tagName: "Sweet things", questions: [{questionId: "q13", questionText: "Did you enjoy sweet things when you were a child?", type: 0, choices: ['yes', 'no']},
     {questionId: "q14", questionText: "Have you ever made a cake yourself?", type: 0, choices: ['yes', 'no']},
     {questionId: "q15", questionText: "How often do you eat something sweet after a meal?", type: 1}]};
