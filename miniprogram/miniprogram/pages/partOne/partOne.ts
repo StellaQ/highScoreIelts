@@ -8,7 +8,7 @@ const tagProcess: TagProcess[] = [
   { tagId: 't5', stage: 2 },
   { tagId: 't6', stage: 3 },
   { tagId: 't7', stage: 4 },
-  { tagId: 't8', stage: 0 },
+  { tagId: 't8', stage: 5 },
   { tagId: 't9', stage: 1 },
   { tagId: 't10', stage: 2 }
 ];
@@ -177,21 +177,21 @@ Page({
         categoryNameInChinese: category.categoryNameInChinese,
         subCategories: category.subCategories.map((subCategory: SubCategory) => {
           const tagInfo = tagProcess.find(tag => tag.tagId === subCategory.tagId);
-          const stage = tagInfo ? tagInfo.stage : 0; // 如果找不到stage，默认值为-1
-          
+          const stage = tagInfo ? tagInfo.stage : 0;
+    
           return {
             tagName: subCategory.tagName,
             tagId: subCategory.tagId,
-            stage // 混合进阶段信息
+            stage // 混合进阶段信息,
+            // progressStyle: `--progress: ${stage * 20}%;`
           };
-        })
+        }),
       };
     });
-
+    
     this.setData({
-      categories: result
-    });
-
+      categories: result,
+    });    
     console.log(result);
     let a = {tagName: "Sweet things", questions: [{questionId: "q13", questionText: "Did you enjoy sweet things when you were a child?", type: 0, choices: ['yes', 'no']},
     {questionId: "q14", questionText: "Have you ever made a cake yourself?", type: 0, choices: ['yes', 'no']},

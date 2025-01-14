@@ -32,16 +32,33 @@
       wx:if="{{category.subCategories.length > 0}}"
       title="{{category.categoryNameInChinese}}" 
       name="{{category.categoryNameInChinese}}">
-      <van-cell-group>
-        <!-- todo van-cell 按题目进度显示的ui -->
+      <!-- <van-cell-group>
         <van-cell
           wx:for="{{category.subCategories}}" 
           wx:key="subIndex"
-          wx:key-index="subIndex"        
+          title-class="cell-title"       
           wx:for-item="subCategory"
           title="{{ subCategory.tagName }}"
-          label="{{ subCategory.stage }}" />
-      </van-cell-group>
+        >
+        </van-cell>
+      </van-cell-group> -->
+      <view
+        wx:for="{{category.subCategories}}" 
+        wx:key="subIndex"    
+        wx:for-item="subCategory"
+        class="subCategoryHolder">
+        <view>
+          {{ subCategory.tagName }}
+        </view>
+        <view class="cell-content">
+          <view class="progress-bar">
+            <view 
+              class="progress-bar-inner" 
+              style="--progress: {{ subCategory.stage * 20 }}%;">
+            </view>
+          </view>
+        </view>
+      </view>
     </van-collapse-item>
   </van-collapse>
 </van-popup>
