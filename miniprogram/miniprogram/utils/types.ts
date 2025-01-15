@@ -2,6 +2,14 @@
 export type TagProcess = {
   tagId: string;
   stage: number;
+  reviewDate: string;
+};
+
+export type TagList = {
+  tagId: string;
+  tagName: string;
+  stage: number;
+  questions: Question[];
 };
 
 export type Question = {

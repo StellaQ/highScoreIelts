@@ -1,21 +1,22 @@
 const staticQuestions = require('../../assets/staticQuestions.js');
 
-import { Category, SubCategory, TagProcess } from '../../utils/types'; // 导入定义的类型 
+import { Category, SubCategory, TagProcess, TagList } from '../../utils/types'; // 导入定义的类型 
 
+// 根据userId获取对应的tag进度
 const tagProcess: TagProcess[] = [
-  { tagId: 't3', stage: 0 },
-  { tagId: 't4', stage: 1 },
-  { tagId: 't5', stage: 2 },
-  { tagId: 't6', stage: 3 },
-  { tagId: 't7', stage: 4 },
-  { tagId: 't8', stage: 5 },
-  { tagId: 't9', stage: 1 },
-  { tagId: 't10', stage: 2 }
+  { tagId: 't3', stage: 1, reviewDate: '2025-01-15' },
+  { tagId: 't4', stage: 1, reviewDate: '2025-01-16' },
+  { tagId: 't5', stage: 2, reviewDate: '2025-01-16' },
+  { tagId: 't6', stage: 3, reviewDate: '2025-01-16' },
+  { tagId: 't7', stage: 4, reviewDate: '2025-01-16' },
+  { tagId: 't8', stage: 5, reviewDate: '' },
+  { tagId: 't9', stage: 1, reviewDate: '2025-01-16' },
+  { tagId: 't10', stage: 2, reviewDate: '2025-01-16' }
 ];
-
 Page({
   data: {
     categories: [] as Category[], // 通过类型断言，确保类型匹配 ???onload处理
+    tagList: [] as TagList[],
     showLeftPanel: true, // 左侧列表弹出/消失
     // todo onload处理activeNames
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
@@ -168,6 +169,55 @@ Page({
   },
   // 选中的tag下的questions end
 
+  generateTagList () {
+    const today = new Date().toISOString().split('T')[0]; // 获取今天日期
+    const tagList: any[] = []; // 最终结果
+
+    // 筛选符合条件的 tagId
+    const filteredTagIds = tagProcess
+      .filter(
+        (tag) =>
+          // tag.reviewDate !== '' && // 确保 reviewDate 不为空
+          tag.reviewDate <= today && // 日期小于等于今天
+          [1, 2, 3, 4].includes(tag.stage) // stage 是 1/2/3/4
+      )
+      .map((tag) => tag.tagId);
+
+    console.log(filteredTagIds);
+
+    // 查找符合条件的 tagId 对应的数据
+    staticQuestions.forEach((category: any) => {
+      category.subCategories.forEach((subCategory: any) => {
+        if (filteredTagIds.includes(subCategory.tagId)) {
+          const tagInfo = tagProcess.find((tag) => tag.tagId === subCategory.tagId);
+          tagList.push({
+            tagId: subCategory.tagId,
+            tagName: subCategory.tagName,
+            stage: tagInfo ? tagInfo.stage : 0, // 确保包含 stage 信息
+            questions: subCategory.questions,
+          });
+        }
+      });
+    });
+
+    // 查找不在 tagProcess 中的 tagId，并追加到 tagList
+    staticQuestions.forEach((category: any) => {
+      category.subCategories.forEach((subCategory: any) => {
+        const isInTagProcess = tagProcess.some((tag) => tag.tagId === subCategory.tagId);
+        if (!isInTagProcess) {
+          tagList.push({
+            tagId: subCategory.tagId,
+            tagName: subCategory.tagName,
+            stage: 0, // 没有对应的 stage，默认为 0
+            questions: subCategory.questions,
+          });
+        }
+      });
+    });
+
+    return tagList;
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -193,6 +243,13 @@ Page({
       categories: result,
     });    
     console.log(result);
+
+    // 调用函数生成 tagList
+    const result2 = this.generateTagList();
+    this.setData({
+      tagList: result2,
+    });    
+    console.log(result2);
     let a = {tagName: "Sweet things", questions: [{questionId: "q13", questionText: "Did you enjoy sweet things when you were a child?", type: 0, choices: ['yes', 'no']},
     {questionId: "q14", questionText: "Have you ever made a cake yourself?", type: 0, choices: ['yes', 'no']},
     {questionId: "q15", questionText: "How often do you eat something sweet after a meal?", type: 1}]};
