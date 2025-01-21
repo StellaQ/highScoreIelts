@@ -27,3 +27,5 @@ export type Category = {
   categoryNameInChinese: string;
   subCategories: SubCategory[];
 };
+
+export type FilteredTagIdsToday = Array;

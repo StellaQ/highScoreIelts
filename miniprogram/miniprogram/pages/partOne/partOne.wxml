@@ -5,7 +5,7 @@
     <view style="padding: 0 5px 0 0 ; display: flex; justify-content: flex-end;">
       <van-icon name="chart-trending-o" color="#1989fa" size="30px" bind:click="showLeftPanel"/>
     </view>
-    <!-- 这里向左向右就是展示今天的问题和全新的问题列表 -->
+    <!-- 这里向左/tagName/向右：展示今天复习的问题和全新的问题列表 -->
     <view style="text-align: center;display: flex;justify-content: space-around;"
       class="page-title">
       <van-icon name="arrow-left" bind:click="prevTag"/>
@@ -178,6 +178,7 @@
   <!-- todo 点击记下tagState的状态及下次复习时间 -->
   <view class="memory-reminder-container">
   <!-- 记忆提醒区域 -->
+  <!-- todo 用户必须设置提醒进度选择 -->
   <view 
     hidden="{{!isReminderActive}}"
     class="memory-reminder">

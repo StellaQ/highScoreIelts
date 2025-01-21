@@ -1,22 +1,32 @@
 const staticQuestions = require('../../assets/staticQuestions.js');
 
-import { Category, SubCategory, TagProcess, TagList } from '../../utils/types'; // 导入定义的类型 
+import { Category, SubCategory, TagProcess, TagList, FilteredTagIdsToday } from '../../utils/types'; // 导入定义的类型 
 
 // 根据userId获取对应的tag进度
 const tagProcess: TagProcess[] = [
-  { tagId: 't3', stage: 1, reviewDate: '2025-01-15' },
-  { tagId: 't4', stage: 1, reviewDate: '2025-01-16' },
-  { tagId: 't5', stage: 2, reviewDate: '2025-01-16' },
-  { tagId: 't6', stage: 3, reviewDate: '2025-01-16' },
-  { tagId: 't7', stage: 4, reviewDate: '2025-01-16' },
+  { tagId: 't3', stage: 1, reviewDate: '2025-01-21' },
+  { tagId: 't4', stage: 1, reviewDate: '2025-02-24' },
+  { tagId: 't5', stage: 2, reviewDate: '2025-02-14' },
+  { tagId: 't6', stage: 3, reviewDate: '2025-02-16' },
+  { tagId: 't7', stage: 4, reviewDate: '2025-02-16' },
   { tagId: 't8', stage: 5, reviewDate: '' },
-  { tagId: 't9', stage: 1, reviewDate: '2025-01-16' },
-  { tagId: 't10', stage: 2, reviewDate: '2025-01-16' }
+  { tagId: 't9', stage: 1, reviewDate: '2025-02-16' },
+  { tagId: 't10', stage: 2, reviewDate: '2025-02-16' }
+];
+// todo 这里的questionProcess应该是筛选的符合今天的tagId下的qId
+// 比如说今天选定要复习的是t3,t3下的问题是q8，q9，
+// 那么数据库下选定的就是用userId下的q8，q9的定制化答案
+// { qId: "q8", qText: "How easy is it to get this kind of work in your country?", type: 1 },
+// { qId: "q9", qText: "How important is it to you to have work that you enjoy doing?", type: 1 }
+const questionProcess = [
+  { qId: 'q8', AIanswer: '这里是AI返回的答案答案大的快点快点快点', step1: '', step2: 'not easy', step3: 'small palce'},
+  { qId: 'q9', AIanswer: '这里是AI返回的答案答案大的快点快点快点', step1: '', step2: 'very important', step3: '兴趣很重要'}
 ];
 Page({
   data: {
     categories: [] as Category[], // 通过类型断言，确保类型匹配 ???onload处理
     tagList: [] as TagList[],
+    filteredTagIdsToday: [] as FilteredTagIdsToday,
     showLeftPanel: true, // 左侧列表弹出/消失
     // todo onload处理activeNames
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
@@ -182,9 +192,12 @@ Page({
           [1, 2, 3, 4].includes(tag.stage) // stage 是 1/2/3/4
       )
       .map((tag) => tag.tagId);
-
+    
+    console.log('today to review Ids=======');
     console.log(filteredTagIds);
-
+    this.setData({
+      filteredTagIdsToday: filteredTagIds,
+    });  
     // 查找符合条件的 tagId 对应的数据
     staticQuestions.forEach((category: any) => {
       category.subCategories.forEach((subCategory: any) => {
@@ -217,7 +230,10 @@ Page({
 
     return tagList;
   },
-
+  updatedTagList (tagList: any) {
+    
+    return tagList;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -249,7 +265,40 @@ Page({
     this.setData({
       tagList: result2,
     });    
-    console.log(result2);
+    console.log('Initial tagList (result2):', result2);
+    const filteredTagIdsToday = this.data.filteredTagIdsToday;
+    console.log('Filtered Tag IDs:', filteredTagIdsToday);
+    console.log('Question Process:', questionProcess);
+
+    // 1. 构建 questionProcess 的 Map
+    const questionProcessMap = new Map(
+      questionProcess.map((process) => [process.qId, process])
+    );
+
+    // 2. 遍历 tagList，处理 filteredTagIdsToday 内的 tags
+    const updatedTagList = result2.map((tag: any) => {
+      if (filteredTagIdsToday.includes(tag.tagId)) {
+        // 如果当前 tagId 在 filteredTagIdsToday 中，更新其 questions
+        const updatedQuestions = tag.questions.map((question: any) => {
+          const matchingProcess = questionProcessMap.get(question.qId);
+          return matchingProcess
+            ? { ...question, ...matchingProcess } // 合并 questionProcess 数据
+            : question; // 保持原始 question
+        });
+        return {
+          ...tag,
+          questions: updatedQuestions, // 更新 questions
+        };
+      }
+      // 不在 filteredTagIdsToday 中的 tags 保持不变
+      return tag;
+    });
+
+    console.log('Updated tagList:', updatedTagList);
+
+    this.setData({
+      tagList: updatedTagList, // 更新完整的 tagList
+    });
     let a = {tagName: "Sweet things", questions: [{questionId: "q13", questionText: "Did you enjoy sweet things when you were a child?", type: 0, choices: ['yes', 'no']},
     {questionId: "q14", questionText: "Have you ever made a cake yourself?", type: 0, choices: ['yes', 'no']},
     {questionId: "q15", questionText: "How often do you eat something sweet after a meal?", type: 1}]};
