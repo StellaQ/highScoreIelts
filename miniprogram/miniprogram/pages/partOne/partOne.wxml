@@ -9,7 +9,8 @@
     <view style="text-align: center;display: flex;justify-content: space-around;"
       class="page-title">
       <van-icon name="arrow-left" bind:click="prevTag"/>
-      {{currentTag.tagName}}
+      <!-- todo [复习/new]判断 -->
+      {{chosenTag.tagName}}  [复习/new（done）]
       <van-icon name="arrow" bind:click="nextTag"/>
     </view>
   </view>
@@ -32,16 +33,6 @@
       wx:if="{{category.subCategories.length > 0}}"
       title="{{category.categoryNameInChinese}}" 
       name="{{category.categoryNameInChinese}}">
-      <!-- <van-cell-group>
-        <van-cell
-          wx:for="{{category.subCategories}}" 
-          wx:key="subIndex"
-          title-class="cell-title"       
-          wx:for-item="subCategory"
-          title="{{ subCategory.tagName }}"
-        >
-        </van-cell>
-      </van-cell-group> -->
       <view
         wx:for="{{category.subCategories}}" 
         wx:key="subIndex"    
@@ -69,13 +60,10 @@
   <!-- todo 处理无用的css -->
   <!-- todo 处理表单的v-model的发送到后端的数据 -->
   <view class="card-container">
-    <view>
-      {{ chosenTag.tagName }}
-    </view>
     <view
     style="padding: 5px; margin-bottom: 10px;"
     class="card"
-    wx:for="{{currentTag.questions}}"
+    wx:for="{{chosenTag.questions}}"
     wx:key="index"
     wx:for-item="item"
     wx:for-index="index">
@@ -200,12 +188,7 @@
   </view>
   <!-- 提示信息和结束复习按钮合并 -->
   <view hidden="{{!isReminderActive}}" class="reminder-footer">
-    <button class="end-reminder-btn" bindtap="endReminder">已掌握，结束复习</button>
-  </view>
-  <!-- 复习已完成状态 -->
-  <view hidden="{{isReminderActive}}" class="completed-status">
-    <text class="completed-text">复习已完成！</text>
-    <button class="restarts-btn" bindtap="restartReminder">重新开始</button>
+    <!-- <button class="end-reminder-btn" bindtap="endReminder">已掌握，结束复习</button> -->
   </view>
 </view>
 </view>

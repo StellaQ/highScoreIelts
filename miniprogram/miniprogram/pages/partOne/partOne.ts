@@ -45,7 +45,7 @@ Page({
       ]
     },
     today: new Date().toISOString().split('T')[0], // 当前日期
-    memoryDays: [1, 3, 7, 15],  // 提醒间隔 todo 引用自settings文件
+    memoryDays: [1, 3, 7, 15, 'complete'],  // 提醒间隔 todo 引用自settings文件
     reminders: [],               // 保存用户选择的提醒周期
     isReminderActive: true,      // 用来控制提醒是否激活 ??todo 放到上方单个里面吧
   },
@@ -73,14 +73,6 @@ Page({
     this.setData({
       activeNames: e.detail,
     });
-  },
-  // 选中某个问题后的逻辑
-  goToSubcategoryQuestions (a: any) {
-    this.setData({ currentTag: a });
-    this.setData({
-      'user.chosenTag': a
-    });
-    this.setData({ show: false });
   },
   // 左侧列表 end
 
@@ -140,36 +132,7 @@ Page({
     this.setData({
       isReminderActive: false,  // 停止提醒
     });
-
-    wx.showModal({
-      title: '提醒结束',
-      content: '你已完成本周期的复习，是否需要重新开始？',
-      showCancel: true,
-      confirmText: '重新开始',
-      cancelText: '不再复习',
-      success: (res) => {
-        if (res.confirm) {
-          // 用户选择重新开始
-          this.setData({
-            reminders: [],
-            isReminderActive: true,
-          });
-        } else {
-          // 用户选择不再复习
-          // 可以在此处执行清理操作，如移除存储中的提醒设置等
-        }
-      },
-    });
   },
-
-  // 重新开始复习
-  restartReminder() {
-    this.setData({
-      isReminderActive: true,
-      reminders: [],  // 清空提醒周期并重新开始
-    });
-  },
-
   showGuide() {
     wx.showModal({
       title: '使用提示',
@@ -303,57 +266,40 @@ Page({
     this.setData({
       chosenTag: updatedTagList[0],
     });
-    let a = {tagName: "Sweet things", questions: [{questionId: "q13", questionText: "Did you enjoy sweet things when you were a child?", type: 0, choices: ['yes', 'no']},
-    {questionId: "q14", questionText: "Have you ever made a cake yourself?", type: 0, choices: ['yes', 'no']},
-    {questionId: "q15", questionText: "How often do you eat something sweet after a meal?", type: 1}]};
-    this.goToSubcategoryQuestions(a);
-    this.generateReminders();
-
-    // todo 每天默认练习10题加上复习的 引用自settings
-    // todo 每天练习的完成就要弹出提示，同时再练的话左右切换题目要消失
   },
   
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
     // console.log('onHide');
   },
-
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
     // console.log('onUnload');
   },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    
   },
-
   /**
    * 用户点击右上角分享
    */
