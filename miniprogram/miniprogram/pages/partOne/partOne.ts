@@ -31,6 +31,7 @@ Page({
     // todo onload处理activeNames
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
     currentTag: {}, // todo 当前选中的话题下的3-4个小问题???
+    chosenTag: {},
     user: {
       uId: 'djdkdldlflf',
       tags: [
@@ -298,6 +299,9 @@ Page({
 
     this.setData({
       tagList: updatedTagList, // 更新完整的 tagList
+    });
+    this.setData({
+      chosenTag: updatedTagList[0],
     });
     let a = {tagName: "Sweet things", questions: [{questionId: "q13", questionText: "Did you enjoy sweet things when you were a child?", type: 0, choices: ['yes', 'no']},
     {questionId: "q14", questionText: "Have you ever made a cake yourself?", type: 0, choices: ['yes', 'no']},

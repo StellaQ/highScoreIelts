@@ -69,6 +69,9 @@
   <!-- todo 处理无用的css -->
   <!-- todo 处理表单的v-model的发送到后端的数据 -->
   <view class="card-container">
+    <view>
+      {{ chosenTag.tagName }}
+    </view>
     <view
     style="padding: 5px; margin-bottom: 10px;"
     class="card"
