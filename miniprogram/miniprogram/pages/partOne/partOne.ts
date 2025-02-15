@@ -26,7 +26,7 @@ Page({
   data: {
     categories: [] as Category[], // 通过类型断言，确保类型匹配 ???onload处理
     tagList: [] as TagList[],
-    filteredTagIdsToday: [] as FilteredTagIdsToday,
+    filteredTagIdsToday: [] as FilteredTagIdsToday,  
     showLeftPanel: true, // 左侧列表弹出/消失
     // todo onload处理activeNames
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
@@ -141,13 +141,34 @@ Page({
       confirmText: '知道了',
     });
   },
-  // 选中的tag下的questions end
 
+  getLeftList() {
+    return staticQuestions.map((category: Category) => {
+      return {
+        categoryNameInChinese: category.categoryNameInChinese,
+        subCategories: category.subCategories.map((subCategory: SubCategory) => {
+          const tagInfo = tagProcess.find(tag => tag.tagId === subCategory.tagId);
+          const stage = tagInfo ? tagInfo.stage : 0;
+  
+          return {
+            tagName: subCategory.tagName,
+            tagId: subCategory.tagId,
+            stage // 混合进阶段信息
+            // progressStyle: `--progress: ${stage * 20}%;`
+          };
+        }),
+      };
+    });
+  },
+  // categoryNameInChinese: "个人信息"
+  // subCategories: Array(2)
+  // 0: {tagName: "Hometown", tagId: "t1", stage: 0}
+  // 1: {tagName: "Where you live", tagId: "t2", stage: 0}
   generateTagList () {
     const today = new Date().toISOString().split('T')[0]; // 获取今天日期
     const tagList: any[] = []; // 最终结果
 
-    // 筛选符合条件的 tagId
+    // 查找出要今天复习的tagId
     const filteredTagIds = tagProcess
       .filter(
         (tag) =>
@@ -156,13 +177,13 @@ Page({
           [1, 2, 3, 4].includes(tag.stage) // stage 是 1/2/3/4
       )
       .map((tag) => tag.tagId);
-    
-    console.log('today to review Ids=======');
-    console.log(filteredTagIds);
+    // console.log('today to review Ids=======');
+    // Filtered Tag IDs: (2) ["t3", "t5"]
+    // console.log(filteredTagIds);
     this.setData({
       filteredTagIdsToday: filteredTagIds,
     });  
-    // 查找符合条件的 tagId 对应的数据
+    // 把今天要复习的tagId从staticQuestions找到并push到tagList
     staticQuestions.forEach((category: any) => {
       category.subCategories.forEach((subCategory: any) => {
         if (filteredTagIds.includes(subCategory.tagId)) {
@@ -176,8 +197,7 @@ Page({
         }
       });
     });
-
-    // 查找不在 tagProcess 中的 tagId，并追加到 tagList
+    // 查找不在tagProcess中的tagId,也就是全新的题目，并追加到 tagList
     staticQuestions.forEach((category: any) => {
       category.subCategories.forEach((subCategory: any) => {
         const isInTagProcess = tagProcess.some((tag) => tag.tagId === subCategory.tagId);
@@ -191,57 +211,28 @@ Page({
         }
       });
     });
-
     return tagList;
   },
-  updatedTagList (tagList: any) {
-    
-    return tagList;
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad() {
-    const result = staticQuestions.map((category: Category) => {
-      return {
-        categoryNameInChinese: category.categoryNameInChinese,
-        subCategories: category.subCategories.map((subCategory: SubCategory) => {
-          const tagInfo = tagProcess.find(tag => tag.tagId === subCategory.tagId);
-          const stage = tagInfo ? tagInfo.stage : 0;
-    
-          return {
-            tagName: subCategory.tagName,
-            tagId: subCategory.tagId,
-            stage // 混合进阶段信息,
-            // progressStyle: `--progress: ${stage * 20}%;`
-          };
-        }),
-      };
-    });
-    
-    this.setData({
-      categories: result,
-    });    
-    console.log(result);
-
-    // 调用函数生成 tagList
-    const result2 = this.generateTagList();
-    this.setData({
-      tagList: result2,
-    });    
-    console.log('Initial tagList (result2):', result2);
-    const filteredTagIdsToday = this.data.filteredTagIdsToday;
-    console.log('Filtered Tag IDs:', filteredTagIdsToday);
-    console.log('Question Process:', questionProcess);
+  getUpdatedTagList() {
+    // 先将 filteredTagIdsToday 转换为 Set 提高性能
+    const filteredTagIdsTodaySet = new Set(this.data.filteredTagIdsToday);
+    // ["t3", "t5"]
+    // console.log('Filtered Tag IDs:', filteredTagIdsToday);
 
     // 1. 构建 questionProcess 的 Map
     const questionProcessMap = new Map(
       questionProcess.map((process) => [process.qId, process])
     );
+    // 0: {"q8" => Object}
+    // key: "q8"
+    // value: {qId: "q8", AIanswer: "这里是AI返回的答案答案大的快点快点快点", step1: "", step2: "not easy", step3: "small palce"}
+    // 1: {"q9" => Object}
+    // console.log(questionProcessMap);
 
-    // 2. 遍历 tagList，处理 filteredTagIdsToday 内的 tags
-    const updatedTagList = result2.map((tag: any) => {
-      if (filteredTagIdsToday.includes(tag.tagId)) {
+    // 2. 遍历 tagList，更新 filteredTagIdsToday 内的 tags
+    const result2 = this.data.tagList;
+    return result2.map((tag: any) => {
+      if (filteredTagIdsTodaySet.has(tag.tagId)) {
         // 如果当前 tagId 在 filteredTagIdsToday 中，更新其 questions
         const updatedQuestions = tag.questions.map((question: any) => {
           const matchingProcess = questionProcessMap.get(question.qId);
@@ -257,14 +248,30 @@ Page({
       // 不在 filteredTagIdsToday 中的 tags 保持不变
       return tag;
     });
-
-    console.log('Updated tagList:', updatedTagList);
-
+  },
+  
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad() {
+    // 后端api 获取tagProcess & questionProcess再返回
+    // step 1 处理左端列表
+    const result = this.getLeftList();
     this.setData({
-      tagList: updatedTagList, // 更新完整的 tagList
+      categories: result,
+    });    
+    // step 2 处理正文中的 tagList, 得到综合了tagProcess的初步tagList
+    const result2 = this.generateTagList();
+    this.setData({
+      tagList: result2,
+    });    
+    // step 3 处理正文中的 tagList, 对于复习了的题目，得到综合了questionProcess的tagList
+    const result3 = this.getUpdatedTagList(); // 调用抽取的函数
+    this.setData({
+      tagList: result3,
     });
     this.setData({
-      chosenTag: updatedTagList[0],
+      chosenTag: result3[0],
     });
   },
   
