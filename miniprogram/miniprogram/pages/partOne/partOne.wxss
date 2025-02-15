@@ -37,9 +37,18 @@ page {
 }
 .disabled {
   opacity: 0.5;
+  color: grey;
   pointer-events: none;
 }
+.new-tag {
+  color: #506b51; /* 设置新标签颜色，例如绿色 */
+  font-weight: bold; /* 设置字体加粗 */
+}
 
+.review-tag {
+  color: #f44336; /* 设置复习标签颜色，例如红色 */
+  font-weight: bold; 
+}
 .topic-section {
   margin-top: 20px;
 }

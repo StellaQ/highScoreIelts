@@ -308,6 +308,8 @@ Page({
       tagList: result3,
       chosenTag: result3[0] || null, // 初始显示第一个标签
     });
+    console.log('===');
+    console.log(result3[0]);
   },
   
   /**

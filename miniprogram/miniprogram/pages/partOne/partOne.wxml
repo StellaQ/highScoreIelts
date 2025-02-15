@@ -9,7 +9,16 @@
     <view style="text-align: center;display: flex;justify-content: space-around;" class="page-title">
       <van-icon name="arrow-left" bind:click="prevTag" :class="{ 'disabled': isPrevDisabled }" />
       <!-- todo [复习/new]判断 -->
-      {{chosenTag ? chosenTag.tagName : ''}}  [复习/new（done）]
+      <view style="text-align: center;display: flex;justify-content: space-around;">
+        <view>{{chosenTag ? chosenTag.tagName : ''}}</view>
+        <!-- 根据 chosenTag.stage 显示不同的元素 -->
+        <view wx:if="{{chosenTag && chosenTag.stage === 0}}" class="new-tag">
+          {{chosenTag ? '[new]' : ''}}
+        </view>
+        <view wx:if="{{chosenTag && chosenTag.stage !== 0}}" class="review-tag">
+          {{chosenTag ? '[review]' : ''}}
+        </view>
+      </view>
       <van-icon name="arrow" bind:click="nextTag" :class="{ 'disabled': isNextDisabled }" />
     </view>
   </view>
