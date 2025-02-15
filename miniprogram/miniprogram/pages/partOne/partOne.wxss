@@ -41,7 +41,7 @@ page {
   pointer-events: none;
 }
 .new-tag {
-  color: #506b51; /* 设置新标签颜色，例如绿色 */
+  color: #4caf50; /* 设置新标签颜色，例如绿色 */
   font-weight: bold; /* 设置字体加粗 */
 }
 
