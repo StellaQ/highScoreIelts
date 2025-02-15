@@ -1,7 +1,10 @@
 const staticQuestions = require('../../assets/staticQuestions.js');
 
 import { Category, SubCategory, TagProcess, TagList, FilteredTagIdsToday } from '../../utils/types'; // 导入定义的类型 
-
+interface Tag {
+  tagName: string;
+  tagId: string;
+}
 // 根据userId获取对应的tag进度
 const tagProcess: TagProcess[] = [
   { tagId: 't3', stage: 1, reviewDate: '2025-01-21' },
@@ -24,14 +27,18 @@ const questionProcess = [
 ];
 Page({
   data: {
-    categories: [] as Category[], // 通过类型断言，确保类型匹配 ???onload处理
-    tagList: [] as TagList[],
-    filteredTagIdsToday: [] as FilteredTagIdsToday,  
-    showLeftPanel: true, // 左侧列表弹出/消失
-    // todo onload处理activeNames
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
+    categories: [] as Category[], //
+    showLeftPanel: true, // 左侧列表弹出/消失
+
+    filteredTagIdsToday: [] as FilteredTagIdsToday,  //今天要复习的tagIds
+    tagList: [] as TagList[],
+    chosenTag: null as Tag | null,
+    currentIndex: 0, // 当前标签索引
+    isPrevDisabled: true, // 上一页按钮是否禁用
+    isNextDisabled: false, // 下一页按钮是否禁用
+
     currentTag: {}, // todo 当前选中的话题下的3-4个小问题???
-    chosenTag: {},
     user: {
       uId: 'djdkdldlflf',
       tags: [
@@ -56,10 +63,40 @@ Page({
     this.setData({ showLeftPanel: true });
   },
   prevTag () {
-    console.log('去上一个tag');
+    let { currentIndex, tagList } = this.data;
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      this.setData({
+        currentIndex,
+        chosenTag: tagList[currentIndex] || null, // 更新 chosenTag
+        isNextDisabled: false, // 确保下一页按钮可用
+      });
+
+      // 如果已经是第一个标签，禁用上一页按钮
+      if (currentIndex === 0) {
+        this.setData({
+          isPrevDisabled: true,
+        });
+      }
+    }
   },
   nextTag () {
-    console.log('去下一个tag');
+    let { currentIndex, tagList } = this.data;
+    if (currentIndex < tagList.length - 1) {
+      currentIndex += 1;
+      this.setData({
+        currentIndex,
+        chosenTag: tagList[currentIndex] || null, // 更新 chosenTag
+        isPrevDisabled: false, // 确保上一页按钮可用
+      });
+
+      // 如果已经是最后一个标签，禁用下一页按钮
+      if (currentIndex === tagList.length - 1) {
+        this.setData({
+          isNextDisabled: true,
+        });
+      }
+    }
   },
   // sticky部分 end
 
@@ -269,9 +306,7 @@ Page({
     const result3 = this.getUpdatedTagList(); // 调用抽取的函数
     this.setData({
       tagList: result3,
-    });
-    this.setData({
-      chosenTag: result3[0],
+      chosenTag: result3[0] || null, // 初始显示第一个标签
     });
   },
   

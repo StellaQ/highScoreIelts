@@ -35,6 +35,10 @@ page {
   border-radius: 4px;
   cursor: pointer;
 }
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 .topic-section {
   margin-top: 20px;
