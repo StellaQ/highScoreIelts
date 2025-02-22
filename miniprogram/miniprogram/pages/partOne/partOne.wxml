@@ -65,11 +65,9 @@
 
 <!-- 选中的tag显示其tagName及questions start -->
 <view style="padding: 10px 0 120px 0;"> 
-  <!-- todo 处理无用的css -->
-  <!-- todo 处理表单的v-model的发送到后端的数据 -->
   <view class="card-container">
     <view
-    style="padding: 5px; margin-bottom: 10px;"
+    style="padding: 10px; margin-bottom: 10px; width: 100%;"
     class="card"
     wx:for="{{chosenTag.questions}}"
     wx:key="index"
@@ -80,27 +78,27 @@
       Question {{index+1}} </view>
     <view class="card-body">
       <view>
-        {{item.questionText}}
+        {{item.qText}}
       </view>
       <van-switch
         size="20px"
         inactive-color="rgb(220, 222, 224)"
-        checked="{{ aboutUser.specifiedPrompt[item.questionId] && aboutUser.specifiedPrompt[item.questionId].showPrompt }}" 
-        bind:change="showPrompt" 
-        data-id="{{item.questionId}}"/>
+        checked="{{ item.isSwitchChecked }}"
+        bind:change="onChangeSwitch"
+        data-id="{{item.qId}}"/>
     </view>
     <!-- 问题定制区 -->
     <view
       class="card-edit"
-      hidden="{{!(aboutUser.specifiedPrompt[item.questionId] && aboutUser.specifiedPrompt[item.questionId].showPrompt)}}">
+      hidden="{{ !item.isSwitchChecked }}">
       <!-- type===0时的单选 -->
       <view 
       style="padding-left: 16px; margin-bottom: 5px;"
       hidden="{{item.type !== 0}}">
         <van-radio-group
-          value="{{aboutUser.specifiedAnswer[item.questionId] ? aboutUser.specifiedAnswer[item.questionId] : item.choices[0]}}"
+          value="{{item.step0}}"
+          data-id="{{item.qId}}"
           bind:change="onChangeChoices"
-          data-id="{{item.questionId}}"
           direction="horizontal">
           <van-radio
             wx:for="{{item.choices}}"
@@ -117,8 +115,10 @@
       <view>
         <van-cell-group>
           <van-field
-            value="{{ message }}"
-            label="回答及扩展"
+            value="{{ item.step1 }}"
+            data-id="{{item.qId}}"
+            bind:change="onInputStep1"
+            label="回答[中文]"
             type="textarea"
             placeholder=""
             maxlength="80"
@@ -128,7 +128,9 @@
         </van-cell-group>
         <van-cell-group>
           <van-field
-            value="{{ message }}"
+            value="{{ item.step2 }}"
+            data-id="{{item.qId}}"
+            bind:change="onInputStep2"
             label="why"
             type="textarea"
             placeholder=""
@@ -138,7 +140,9 @@
         </van-cell-group>
         <van-cell-group>
           <van-field
-            value="{{ message }}"
+            value="{{ item.step3 }}"
+            data-id="{{item.qId}}"
+            bind:change="onInputStep3"
             label="解释/举例"
             type="textarea"
             placeholder=""
@@ -150,6 +154,7 @@
           <van-button type="primary"
             round="true"
             plain
+            data-id="{{item.qId}}"
             bind:click="produceAnswer"
             >生成</van-button>
         </view>
@@ -157,7 +162,7 @@
     </view>
     <!-- 根据prompt产生内容区 -->
     <view class="card-footer">
-      this palce shows our answer which needs to memorize
+      {{ item. AIanswer}}
     </view>
   </view>
 </view>

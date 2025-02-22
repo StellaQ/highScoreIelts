@@ -8,53 +8,38 @@ interface Tag {
 // 根据userId获取对应的tag进度
 const tagProcess: TagProcess[] = [
   { tagId: 't3', stage: 1, reviewDate: '2025-01-21' },
-  { tagId: 't4', stage: 1, reviewDate: '2025-02-24' },
-  { tagId: 't5', stage: 2, reviewDate: '2025-02-14' },
-  { tagId: 't6', stage: 3, reviewDate: '2025-02-16' },
-  { tagId: 't7', stage: 4, reviewDate: '2025-02-16' },
+  { tagId: 't4', stage: 1, reviewDate: '2025-03-24' },
+  { tagId: 't5', stage: 2, reviewDate: '2025-03-14' },
+  { tagId: 't6', stage: 3, reviewDate: '2025-03-16' },
+  { tagId: 't7', stage: 4, reviewDate: '2025-03-16' },
   { tagId: 't8', stage: 5, reviewDate: '' },
-  { tagId: 't9', stage: 1, reviewDate: '2025-02-16' },
-  { tagId: 't10', stage: 2, reviewDate: '2025-02-16' }
+  { tagId: 't9', stage: 1, reviewDate: '2025-03-16' },
+  { tagId: 't10', stage: 2, reviewDate: '2025-03-16' }
 ];
-// todo 这里的questionProcess应该是筛选的符合今天的tagId下的qId
-// 比如说今天选定要复习的是t3,t3下的问题是q8，q9，
-// 那么数据库下选定的就是用userId下的q8，q9的定制化答案
-// { qId: "q8", qText: "How easy is it to get this kind of work in your country?", type: 1 },
-// { qId: "q9", qText: "How important is it to you to have work that you enjoy doing?", type: 1 }
 const questionProcess = [
-  { qId: 'q8', AIanswer: '这里是AI返回的答案答案大的快点快点快点', step1: '', step2: 'not easy', step3: 'small palce'},
-  { qId: 'q9', AIanswer: '这里是AI返回的答案答案大的快点快点快点', step1: '', step2: 'very important', step3: '兴趣很重要'}
+  { qId: 'q8', 
+    AIanswer: '这里是AI返回的答案答案大的快点快点快点1111'},
+  { qId: 'q9', 
+    AIanswer: '这里是AI返回的答案答案大的快点快点快点2222'}
 ];
 Page({
   data: {
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
     categories: [] as Category[], //
-    showLeftPanel: true, // 左侧列表弹出/消失
+    showLeftPanel: false, // 左侧列表弹出/消失
 
     filteredTagIdsToday: [] as FilteredTagIdsToday,  //今天要复习的tagIds
     tagList: [] as TagList[],
-    chosenTag: null as Tag | null,
     currentIndex: 0, // 当前标签索引
     isPrevDisabled: true, // 上一页按钮是否禁用
     isNextDisabled: false, // 下一页按钮是否禁用
 
-    currentTag: {}, // todo 当前选中的话题下的3-4个小问题???
+    chosenTag: null as Tag | null,
     user: {
       uId: 'djdkdldlflf',
-      tags: [
-        {tagId: 't1', tagState: 0, nextDate: '2025-102'},
-        {tagId: 't2', tagState: 1},
-      ],
-      questions: [
-        // AIanswer为空则判断showPrompt取反 todo
-        {qId: 'q1', AIanswer: '库斯库斯溜达溜达', choice: 'city', step1: 'djddk', step2: '', step3: '' },
-        {qId: 'q2', step1: '和谐的氛围', step2: '从小住这里，邻居都很熟悉', step3: '非常熟悉周围的环境，给我一种innerpeace' }
-      ]
-    },
-    today: new Date().toISOString().split('T')[0], // 当前日期
-    memoryDays: [1, 3, 7, 15, 'complete'],  // 提醒间隔 todo 引用自settings文件
-    reminders: [],               // 保存用户选择的提醒周期
-    isReminderActive: true,      // 用来控制提醒是否激活 ??todo 放到上方单个里面吧
+      isVip: false, // 决定review的时候能不能点开定制开关
+      createCount: 10
+    }
   },
 
   // sticky部分 start
@@ -89,7 +74,8 @@ Page({
         chosenTag: tagList[currentIndex] || null, // 更新 chosenTag
         isPrevDisabled: false, // 确保上一页按钮可用
       });
-
+      console.log('next-----------');
+      console.log(tagList[currentIndex]);
       // 如果已经是最后一个标签，禁用下一页按钮
       if (currentIndex === tagList.length - 1) {
         this.setData({
@@ -114,38 +100,108 @@ Page({
   // 左侧列表 end
 
   // 选中的tag下的questions start
-  onChangeChoices(e: any) {
-    const questionId = e.currentTarget.dataset.id; // 获取 questionId
-    const value = e.detail; // 获取选中的值
-
-     // 获取当前 questionId 的现有数据
-    const currentData = this.data.user.specifiedPrompt[questionId] || {};
-    // 合并新数据
-    this.setData({
-        [`user.specifiedPrompt.${questionId}`]: {
-            ...currentData, // 保留现有字段
-            choice: value // 更新或新增字段
-            // answer: "dddd",
-            // reason: "djdjkdd"
-        }
-    });
-
-    console.log(this.data.user);
-  },
-  // 点击每个问题右侧开关切换prompt的显示
-  showPrompt(e: any) {
-    const questionId = e.currentTarget.dataset.id; // 获取点击的问题 ID
-    const currentData = {}; // 获取当前数据
-    const newShowPrompt = !currentData.showPrompt; // 切换显示状态
+  // 点击question的开关
+  onChangeSwitch(event: { currentTarget: { dataset: { id: any; }; }; detail: any; }) {
+    let { chosenTag } = this.data;
   
-    // 更新指定问题的 showPrompt 状态
+    if (chosenTag.stage !== 0 && !this.data.user.isVip) {
+      // 如果是 review 阶段并且用户不是 vip，那么返回
+      return;
+    }
+  
+    // 获取绑定的 data-id（即 item.questionId）
+    const questionId = event.currentTarget.dataset.id;
+    const newCheckedValue = event.detail;
+  
+    // 使用 find 找到第一个匹配的 item 并更新其 isSwitchChecked
+    const question = chosenTag.questions.find((item: { qId: any; }) => item.qId === questionId);
+    
+    if (question) {
+      question.isSwitchChecked = newCheckedValue;  // 更新 isSwitchChecked
+    }
+  
+    // 更新 questions 数组
     this.setData({
-      [`user.specifiedPrompt.${questionId}.showPrompt`]: newShowPrompt,
+      'chosenTag.questions': [...chosenTag.questions]  // 触发视图更新
+    });
+  
+    // console.log('Updated item:', questionId, 'isSwitchChecked:', newCheckedValue);
+  },  
+  onChangeChoices(event: { detail: any; currentTarget: { dataset: { id: any; }; }; }) {
+    const inputStr = event.detail;  // 获取选中的值
+    const qId = event.currentTarget.dataset.id;  // 获取对应的 qId
+  
+    // console.log('Selected value:', inputStr);  // 打印选中的值
+    // console.log('Question ID:', qId);  
+  
+    // 获取 chosenTag
+    let { chosenTag } = this.data;
+  
+    // 遍历 chosenTag 中的 questions
+    for (let i = 0; i < chosenTag.questions.length; i++) {
+      const question = chosenTag.questions[i];  // 获取当前问题对象
+  
+      // 打印当前 question 信息
+      // console.log('Question:', question);
+  
+      // 如果找到对应的 question，更新 step0
+      if (question.qId === qId) {
+        question.step0 = inputStr;  // 更新 step0 为选中的值
+        break;  // 找到之后就不用再继续查找
+      }
+    }
+  
+    // 更新 chosenTag 和 questions
+    this.setData({
+      'chosenTag': { 
+        ...this.data.chosenTag, 
+        questions: [...chosenTag.questions]  // 确保数据更新
+      }
+    });
+  },    
+  onInput(event, field) {
+    const inputStr = event.detail;  // 获取输入的值
+    const qId = event.currentTarget.dataset.id;  // 获取对应的 qId
+  
+    // 使用 find 找到第一个匹配的 question
+    const question = this.data.chosenTag.questions.find((question: { qId: any; }) => question.qId === qId);
+    
+    if (question) {
+      question[field] = inputStr;  // 根据传入的字段名更新对应的问题属性
+    }
+    
+    // 这里通过修改 questions 数组中的特定问题对象，而不完全重建数组
+    this.setData({
+      'chosenTag.questions': [...this.data.chosenTag.questions]
     });
   },
-  produceAnswer () {
-    console.log('这里把用户对问题的定制，问题的题目等传到后端');
+  // 对应 step1
+  onInputStep1(event) {
+    this.onInput(event, 'step1');
   },
+  // 对应 step2
+  onInputStep2(event) {
+    this.onInput(event, 'step2');
+  },
+  // 对应 step3
+  onInputStep3(event) {
+    this.onInput(event, 'step3');
+  },  
+  produceAnswer(event: { currentTarget: { dataset: { id: any; }; }; }) {
+    const qId = event.currentTarget.dataset.id; // 获取点击按钮的 question ID
+    
+    // 根据 qId 查找对应的问题
+    const question = this.data.tagList
+      .flatMap(tag => tag.questions) // 展开所有tag下的问题
+      .find(q => q.qId === qId); // 找到匹配的 question
+    
+    if (question) {
+      // 打印问题的信息
+      console.log('用户定制的题目:', question);
+    } else {
+      console.log('没有找到对应的题目');
+    }
+  },  
   setRemindDay(e: any) {
     const day = e.currentTarget.dataset.day;
     this.setData({
@@ -201,91 +257,113 @@ Page({
   // subCategories: Array(2)
   // 0: {tagName: "Hometown", tagId: "t1", stage: 0}
   // 1: {tagName: "Where you live", tagId: "t2", stage: 0}
-  generateTagList () {
-    const today = new Date().toISOString().split('T')[0]; // 获取今天日期
-    const tagList: any[] = []; // 最终结果
 
-    // 查找出要今天复习的tagId
+  // 结合tagProcess去staticQuestions里去找
+  generateTagList() {
+    const tagList: any[] = []; // 最终结果
+  
+    const today = new Date().toISOString().split('T')[0]; // 获取今天日期
     const filteredTagIds = tagProcess
-      .filter(
-        (tag) =>
-          // tag.reviewDate !== '' && // 确保 reviewDate 不为空
-          tag.reviewDate <= today && // 日期小于等于今天
-          [1, 2, 3, 4].includes(tag.stage) // stage 是 1/2/3/4
+      .filter((tag) =>
+        tag.reviewDate <= today && [1, 2, 3, 4].includes(tag.stage)
       )
       .map((tag) => tag.tagId);
-    // console.log('today to review Ids=======');
-    // Filtered Tag IDs: (2) ["t3", "t5"]
-    // console.log(filteredTagIds);
     this.setData({
       filteredTagIdsToday: filteredTagIds,
-    });  
-    // 把今天要复习的tagId从staticQuestions找到并push到tagList
+    });
+    // 第二步：把今天要复习的tagId从staticQuestions找到并push到tagList
+    const filteredTagIdsSet = new Set(this.data.filteredTagIdsToday);
+    const addedTagIds = new Set();
     staticQuestions.forEach((category: any) => {
       category.subCategories.forEach((subCategory: any) => {
-        if (filteredTagIds.includes(subCategory.tagId)) {
-          const tagInfo = tagProcess.find((tag) => tag.tagId === subCategory.tagId);
+        if (
+          filteredTagIdsSet.has(subCategory.tagId) &&
+          !addedTagIds.has(subCategory.tagId)
+        ) {
+          const tagInfo = tagProcess.find(
+            (tag) => tag.tagId === subCategory.tagId
+          );
+          // 给每个问题加上 step0, step1, step2, step3
+          const updatedQuestions = subCategory.questions.map((question: any) => ({
+            ...question,
+            isSwitchChecked: false,
+            step0: '',
+            step1: '',
+            step2: '',
+            step3: '',
+          }));
           tagList.push({
             tagId: subCategory.tagId,
             tagName: subCategory.tagName,
-            stage: tagInfo ? tagInfo.stage : 0, // 确保包含 stage 信息
-            questions: subCategory.questions,
+            stage: tagInfo ? tagInfo.stage : 0,
+            questions: updatedQuestions,
+          });
+          addedTagIds.add(subCategory.tagId);
+  
+          // 提前结束循环
+          if (addedTagIds.size === filteredTagIdsSet.size) {
+            return;
+          }
+        }
+      });
+    });
+  
+    // 第三步：查找不在tagProcess中的tagId,也就是全新的题目
+    const tagIdsInProcess = new Set(tagProcess.map((tag) => tag.tagId));
+    staticQuestions.forEach((category: any) => {
+      category.subCategories.forEach((subCategory: any) => {
+        if (!tagIdsInProcess.has(subCategory.tagId)) {
+          const updatedQuestions = subCategory.questions.map((question: any) => ({
+            ...question,
+            isSwitchChecked: true,
+            step0: '',
+            step1: '',
+            step2: '',
+            step3: '',
+            AIanswer: ''
+          }));
+          tagList.push({
+            tagId: subCategory.tagId,
+            tagName: subCategory.tagName,
+            stage: 0, // 默认 stage 为 0
+            questions: updatedQuestions,
           });
         }
       });
     });
-    // 查找不在tagProcess中的tagId,也就是全新的题目，并追加到 tagList
-    staticQuestions.forEach((category: any) => {
-      category.subCategories.forEach((subCategory: any) => {
-        const isInTagProcess = tagProcess.some((tag) => tag.tagId === subCategory.tagId);
-        if (!isInTagProcess) {
-          tagList.push({
-            tagId: subCategory.tagId,
-            tagName: subCategory.tagName,
-            stage: 0, // 没有对应的 stage，默认为 0
-            questions: subCategory.questions,
-          });
-        }
-      });
-    });
+  
     return tagList;
   },
+  // 结合this.data.filteredTagIdsToday和questionProcess来update tagList.questions内的字段
   getUpdatedTagList() {
-    // 先将 filteredTagIdsToday 转换为 Set 提高性能
     const filteredTagIdsTodaySet = new Set(this.data.filteredTagIdsToday);
-    // ["t3", "t5"]
-    // console.log('Filtered Tag IDs:', filteredTagIdsToday);
-
-    // 1. 构建 questionProcess 的 Map
+  
+    // 构建 questionProcess 的 Map
     const questionProcessMap = new Map(
       questionProcess.map((process) => [process.qId, process])
     );
-    // 0: {"q8" => Object}
-    // key: "q8"
-    // value: {qId: "q8", AIanswer: "这里是AI返回的答案答案大的快点快点快点", step1: "", step2: "not easy", step3: "small palce"}
-    // 1: {"q9" => Object}
-    // console.log(questionProcessMap);
-
-    // 2. 遍历 tagList，更新 filteredTagIdsToday 内的 tags
+  
+    // 遍历 tagList，更新 filteredTagIdsToday 内的 tags
     const result2 = this.data.tagList;
     return result2.map((tag: any) => {
       if (filteredTagIdsTodaySet.has(tag.tagId)) {
         // 如果当前 tagId 在 filteredTagIdsToday 中，更新其 questions
         const updatedQuestions = tag.questions.map((question: any) => {
           const matchingProcess = questionProcessMap.get(question.qId);
-          return matchingProcess
-            ? { ...question, ...matchingProcess } // 合并 questionProcess 数据
-            : question; // 保持原始 question
+          // 合并 AIanswer 到 question 中
+          return {
+            ...question, 
+            AIanswer: matchingProcess ? matchingProcess.AIanswer : null, // 只添加 AIanswer 字段
+          };
         });
         return {
           ...tag,
           questions: updatedQuestions, // 更新 questions
         };
       }
-      // 不在 filteredTagIdsToday 中的 tags 保持不变
-      return tag;
+      return tag; // 不在 filteredTagIdsToday 中的 tags 保持不变
     });
-  },
+  },  
   
   /**
    * 生命周期函数--监听页面加载
