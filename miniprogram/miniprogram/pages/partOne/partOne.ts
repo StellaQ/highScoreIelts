@@ -37,7 +37,7 @@ Page({
     chosenTag: null as Tag | null,
     user: {
       uId: 'djdkdldlflf',
-      isVip: false, // 决定review的时候能不能点开定制开关
+      isVip: true, // 决定review的时候能不能点开定制开关
       createCount: 10
     }
   },
