@@ -191,8 +191,7 @@ Page({
     const qId = event.currentTarget.dataset.id; // 获取点击按钮的 question ID
     
     // 根据 qId 查找对应的问题
-    const question = this.data.tagList
-      .flatMap(tag => tag.questions) // 展开所有tag下的问题
+    const question = this.data.chosenTag.questions
       .find(q => q.qId === qId); // 找到匹配的 question
     
     if (question) {
@@ -201,6 +200,22 @@ Page({
     } else {
       console.log('没有找到对应的题目');
     }
+
+    wx.request({
+      url: 'http://localhost:3001/api/miniprogram/askAI',  // 你的后端接口地址
+      method: 'POST',
+      data: {
+        question: question,
+        userData: this.data.user
+      },
+      success(res) {
+        // 成功时返回AI的答案
+        console.log('AI回答:', res.data.answer);
+      },
+      fail(err) {
+        console.error('请求失败:', err);
+      }
+    });
   },  
   setRemindDay(e: any) {
     const day = e.currentTarget.dataset.day;
