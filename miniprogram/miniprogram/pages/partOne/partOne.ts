@@ -200,20 +200,34 @@ Page({
     } else {
       console.log('没有找到对应的题目');
     }
-
     wx.request({
-      url: 'http://localhost:3001/api/miniprogram/askAI',  // 你的后端接口地址
+      url: 'http://localhost:3001/api/miniprogram/askAI',
       method: 'POST',
+      header: {
+        'Content-Type': 'application/json'
+      },
       data: {
         question: question,
         userData: this.data.user
       },
-      success(res) {
-        // 成功时返回AI的答案
-        console.log('AI回答:', res.data.answer);
+      success: (res) => {  // 使用箭头函数，确保 `this` 指向正确
+        console.log('Response from AI:', res.data);
+
+        // 执行更新操作
+        for (let i = 0; i < this.data.chosenTag.questions.length; i++) {
+          if (this.data.chosenTag.questions[i].qId === qId) {
+            // 更新该问题的 AIanswer
+            this.data.chosenTag.questions[i].AIanswer = res.data.answer;
+            break;  // 找到并更新后，结束循环
+          }
+        }
+        // 更新数据，通知小程序 UI 刷新
+        this.setData({
+          'chosenTag.questions': this.data.chosenTag.questions  // 更新 questions 数组
+        });
       },
-      fail(err) {
-        console.error('请求失败:', err);
+      fail: (err) => {
+        console.error('Request failed:', err);
       }
     });
   },  

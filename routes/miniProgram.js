@@ -2,21 +2,24 @@
 const express = require('express');
 const router = express.Router();
 
-// 假设你已经有一个 AI 请求函数
+const system_prompt = require('./../config/prompts/forPartOne.js')
 const { getAIAnswer } = require('./aiService');  // aiService.js 处理与 AI 的交互
 
 router.post('/askAI', async (req, res) => {
-  const { question, userData } = req.body;
-
-  try {
-    // 调用 AI 接口
-    const aiResponse = await getAIAnswer(question, userData);
-
-    // 返回 AI 的回答
-    res.json({ answer: aiResponse });
-  } catch (error) {
-    res.status(500).json({ error: 'AI请求失败', message: error.message });
-  }
+    try {
+        // Question: "Do you know how to play any musical instruments?"
+        // Answer: "Yes, I know a bit of piano. I started learning it recently and can play some simple tunes. I’m still a beginner, but I’m practicing regularly to improve my skills, and I enjoy it a lot."
+        let question = req.body.question.qText;
+        let answer = req.body.question.step0 + req.body.question.step1 + req.body.question.step2 + req.body.question.step3;
+        let user_prompt = "Question: " + question + "Answer: " + answer;
+        console.log(user_prompt);
+        const result = await getAIAnswer(system_prompt, user_prompt);
+        console.log('Parsed AI Answer:', result);
+        res.json(result);
+      } catch (error) {
+        console.error('Error handling AI request:', error);
+        res.status(500).json({ message: 'error', error });
+      };
 });
 
 module.exports = router;

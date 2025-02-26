@@ -118,9 +118,9 @@
             value="{{ item.step1 }}"
             data-id="{{item.qId}}"
             bind:change="onInputStep1"
-            label="回答[中文]"
+            label="回答"
             type="textarea"
-            placeholder=""
+            placeholder="中英皆可，答案可为空，下同"
             maxlength="80"
             autosize
             border="{{ false }}"

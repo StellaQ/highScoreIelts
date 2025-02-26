@@ -1,19 +1,31 @@
-const axios = require('axios');
+const OpenAI = require('openai');
 
-async function getAIAnswer(question, userData) {
+const openai = new OpenAI({
+  baseURL: 'https://api.deepseek.com/v1',
+  apiKey: 'sk-1da737a934514aada285d8ed5502abcd'
+});
+
+async function getAIAnswer(system_prompt, user_prompt) {
+  const messages = [
+    { "role": "system", "content": system_prompt },
+    { "role": "user", "content": user_prompt }
+  ];
   try {
-    const response = await axios.post('https://api.openai.com/v1/completions', {
-      model: 'gpt-3.5-turbo',  // 你可以根据需要选择模型
-      prompt: question,
-      max_tokens: 100
-    }, {
-      headers: {
-        'Authorization': `Bearer YOUR_OPENAI_API_KEY`
+    const completion = await openai.chat.completions.create({
+      messages: messages,
+      model: "deepseek-chat",
+      response_format: {
+        'type': 'json_object'
       }
     });
 
-    return response.data.choices[0].text.trim();  // 获取 OpenAI 返回的答案
+    // 直接返回解析后的 JSON 对象，而不是仅仅打印
+    return JSON.parse(completion.choices[0].message.content);  // 返回解析后的结果
   } catch (error) {
-    throw new Error('AI请求失败');
+    console.error('Error fetching AI response:', error);
+    throw error;  // 如果有错误，抛出错误以便调用者处理
   }
 }
+
+// 确保导出 getAIAnswer 函数
+module.exports = { getAIAnswer };
