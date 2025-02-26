@@ -1,6 +1,7 @@
 const staticQuestions = require('../../assets/staticQuestions.js');
 
 import { Category, SubCategory, TagProcess, TagList, FilteredTagIdsToday } from '../../utils/types'; // 导入定义的类型 
+import Toast from '@vant/weapp/toast/toast'; 
 interface Tag {
   tagName: string;
   tagId: string;
@@ -197,6 +198,13 @@ Page({
     if (question) {
       // 打印问题的信息
       console.log('用户定制的题目:', question);
+      // 将按钮禁用，防止重复请求
+      question.isButtonDisabled = true;
+      question.isButtonLoading = true;
+      // 更新数据，通知小程序 UI 刷新
+      this.setData({
+        'chosenTag.questions': this.data.chosenTag.questions
+      });
     } else {
       console.log('没有找到对应的题目');
     }
@@ -213,11 +221,13 @@ Page({
       success: (res) => {  // 使用箭头函数，确保 `this` 指向正确
         console.log('Response from AI:', res.data);
 
-        // 执行更新操作
+         // 执行更新操作
         for (let i = 0; i < this.data.chosenTag.questions.length; i++) {
           if (this.data.chosenTag.questions[i].qId === qId) {
             // 更新该问题的 AIanswer
             this.data.chosenTag.questions[i].AIanswer = res.data.answer;
+            this.data.chosenTag.questions[i].isButtonDisabled = false;  // 成功后恢复按钮
+            this.data.chosenTag.questions[i].isButtonLoading = false;
             break;  // 找到并更新后，结束循环
           }
         }
@@ -228,6 +238,19 @@ Page({
       },
       fail: (err) => {
         console.error('Request failed:', err);
+        // 请求失败后恢复按钮状态
+        for (let i = 0; i < this.data.chosenTag.questions.length; i++) {
+          if (this.data.chosenTag.questions[i].qId === qId) {
+            this.data.chosenTag.questions[i].isButtonDisabled = false;
+            this.data.chosenTag.questions[i].isButtonLoading = false;
+            break;
+          }
+        }
+        // 更新数据，通知小程序 UI 刷新
+        this.setData({
+          'chosenTag.questions': this.data.chosenTag.questions
+        });
+        Toast.fail('稍后再试...');
       }
     });
   },  
@@ -316,6 +339,8 @@ Page({
           const updatedQuestions = subCategory.questions.map((question: any) => ({
             ...question,
             isSwitchChecked: false,
+            isButtonDisabled: false,
+            isButtonLoading: false,
             step0: '',
             step1: '',
             step2: '',
@@ -345,6 +370,8 @@ Page({
           const updatedQuestions = subCategory.questions.map((question: any) => ({
             ...question,
             isSwitchChecked: true,
+            isButtonDisabled: false,
+            isButtonLoading: false,
             step0: '',
             step1: '',
             step2: '',

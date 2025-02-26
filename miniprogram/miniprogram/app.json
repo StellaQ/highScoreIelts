@@ -24,7 +24,8 @@
     "van-col": "@vant/weapp/col/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
-    "van-switch": "@vant/weapp/switch/index"
+    "van-switch": "@vant/weapp/switch/index",
+    "van-toast": "@vant/weapp/toast/index"
   },
   "window": {
     "navigationBarTextStyle": "black",

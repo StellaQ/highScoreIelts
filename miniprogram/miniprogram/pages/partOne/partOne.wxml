@@ -155,6 +155,8 @@
             round="true"
             plain
             data-id="{{item.qId}}"
+            disabled="{{ item.isButtonDisabled }}"
+            loading="{{item.isButtonLoading}}"
             bind:click="produceAnswer"
             >生成</van-button>
         </view>
@@ -206,7 +208,7 @@
 </view>
 </view>
 <!-- 选中的tag用户自主决定下次复习的时间 end -->
-
+<van-toast id="van-toast" type="fail" />
 <tab-bar active="0"></tab-bar>
 
 
