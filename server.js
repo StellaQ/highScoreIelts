@@ -44,8 +44,8 @@ app.use('/api/tag', tagRoutes);
 const categoriesOneRoutes = require('./routes/categoriesOneRoutes');
 app.use('/api/categories1', categoriesOneRoutes);
 
-const miniProgramRoutes = require('./routes/miniProgram');
-app.use('/api/miniprogram', miniProgramRoutes);
+const miniProgramOneRoutes = require('./routes/miniProgramOne');
+app.use('/api/miniprogramOne', miniProgramOneRoutes);
 
 // 提供静态文件服务
 app.use(express.static(path.join(__dirname, 'miniprogram')));

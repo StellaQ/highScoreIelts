@@ -19,9 +19,9 @@ const tagProcess: TagProcess[] = [
 ];
 const questionProcess = [
   { qId: 'q8', 
-    AIanswer: '这里是AI返回的答案答案大的快点快点快点1111'},
+    AIanswer: `Securing this type of work in my country can be quite challenging, primarily due to the high level of competition and the specific skill set required. However, for those who are highly skilled and have relevant experience, there are ample opportunities, especially in urban areas where the demand is higher. Networking and continuous professional development play crucial roles in enhancing one's chances of landing such positions.`},
   { qId: 'q9', 
-    AIanswer: '这里是AI返回的答案答案大的快点快点快点2222'}
+    AIanswer: `Having work that I genuinely enjoy is extremely important to me because it brings numerous benefits, such as continuous personal and professional growth. Engaging in a job that aligns with my interests and passions not only motivates me to keep improving and learning new skills but also enhances my overall job satisfaction and well-being. This alignment between my work and personal interests ensures that I remain committed and enthusiastic about my career path, making every day at work a rewarding experience.`}
 ];
 Page({
   data: {
@@ -209,14 +209,14 @@ Page({
       console.log('没有找到对应的题目');
     }
     wx.request({
-      url: 'http://localhost:3001/api/miniprogram/askAI',
+      url: 'http://localhost:3001/api/miniprogramOne/askAI',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
       },
       data: {
         question: question,
-        userData: this.data.user
+        user: this.data.user
       },
       success: (res) => {  // 使用箭头函数，确保 `this` 指向正确
         console.log('Response from AI:', res.data);
