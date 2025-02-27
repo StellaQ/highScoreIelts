@@ -1,22 +1,12 @@
 const staticQuestions = require('../../assets/staticQuestions.js');
 
-import { Category, SubCategory, TagProcess, TagList, FilteredTagIdsToday } from '../../utils/types'; // 导入定义的类型 
+import { Category, SubCategory, TagList, FilteredTagIdsToday } from '../../utils/types'; // 导入定义的类型 
 import Toast from '@vant/weapp/toast/toast'; 
+const API = require('../../utils/api.js');
 interface Tag {
   tagName: string;
   tagId: string;
 }
-// 根据userId获取对应的tag进度
-const tagProcess: TagProcess[] = [
-  { tagId: 't3', stage: 1, reviewDate: '2025-01-21' },
-  { tagId: 't4', stage: 1, reviewDate: '2025-03-24' },
-  { tagId: 't5', stage: 2, reviewDate: '2025-03-14' },
-  { tagId: 't6', stage: 3, reviewDate: '2025-03-16' },
-  { tagId: 't7', stage: 4, reviewDate: '2025-03-16' },
-  { tagId: 't8', stage: 5, reviewDate: '' },
-  { tagId: 't9', stage: 1, reviewDate: '2025-03-16' },
-  { tagId: 't10', stage: 2, reviewDate: '2025-03-16' }
-];
 const questionProcess = [
   { qId: 'q8', 
     AIanswer: `Securing this type of work in my country can be quite challenging, primarily due to the high level of competition and the specific skill set required. However, for those who are highly skilled and have relevant experience, there are ample opportunities, especially in urban areas where the demand is higher. Networking and continuous professional development play crucial roles in enhancing one's chances of landing such positions.`},
@@ -35,6 +25,7 @@ Page({
     isPrevDisabled: true, // 上一页按钮是否禁用
     isNextDisabled: false, // 下一页按钮是否禁用
 
+    tagProcess: [],
     chosenTag: null as Tag | null,
     user: {
       uId: 'djdkdldlflf',
@@ -287,7 +278,7 @@ Page({
     });
   },
 
-  getLeftList() {
+  getLeftList(tagProcess: any[] | undefined) {
     return staticQuestions.map((category: Category) => {
       return {
         categoryNameInChinese: category.categoryNameInChinese,
@@ -311,7 +302,7 @@ Page({
   // 1: {tagName: "Where you live", tagId: "t2", stage: 0}
 
   // 结合tagProcess去staticQuestions里去找
-  generateTagList() {
+  generateTagList(tagProcess: any[] | undefined) {
     const tagList: any[] = []; // 最终结果
   
     const today = new Date().toISOString().split('T')[0]; // 获取今天日期
@@ -424,28 +415,35 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-    // 后端api 获取tagProcess & questionProcess再返回
-    // step 1 处理左端列表
-    const result = this.getLeftList();
-    this.setData({
-      categories: result,
-    });    
-    // step 2 处理正文中的 tagList, 得到综合了tagProcess的初步tagList
-    const result2 = this.generateTagList();
-    this.setData({
-      tagList: result2,
-    });    
-    // step 3 处理正文中的 tagList, 对于复习了的题目，得到综合了questionProcess的tagList
-    const result3 = this.getUpdatedTagList(); // 调用抽取的函数
-    this.setData({
-      tagList: result3,
-      chosenTag: result3[0] || null, // 初始显示第一个标签
-    });
-    console.log('===');
-    console.log(result3[0]);
+  async onLoad() {
+    const userId = this.data.user.uId;
+    try {
+      const tagProcess = await API.getTagProcessByUserId(userId);
+      this.setData({
+        tagProcess: tagProcess
+      });
+      // step 1 处理左端列表数九
+      const result = this.getLeftList(tagProcess);
+      this.setData({
+        categories: result,
+      }); 
+      // step 2 处理正文中的 tagList, 得到综合了tagProcess的初步tagList
+      const result2 = this.generateTagList(tagProcess);
+      this.setData({
+        tagList: result2,
+      });    
+      // step 3 处理正文中的 tagList, 对于复习了的题目，得到综合了questionProcess的tagList
+      const result3 = this.getUpdatedTagList(); // 调用抽取的函数
+      this.setData({
+        tagList: result3,
+        chosenTag: result3[0] || null, // 初始显示第一个标签
+      });
+      // console.log('===');
+      // console.log(result3[0]);
+    } catch (err) {
+      console.error('获取tagProcess数据失败:', err);
+    }
   },
-  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

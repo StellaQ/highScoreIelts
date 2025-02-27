@@ -3,6 +3,7 @@ const router = express.Router();
 const system_prompt = require('../config/prompts/forPartOne.js');
 const { getAIAnswerOne } = require('./aiService.js');  // aiService.js 处理与 AI 的交互
 const PartOneAnswer = require('../models/PartOneAnswer'); // 引入 PartOneAnswer 模型
+const PartOneTagProcess = require('../models/PartOneTagProcess.js');  // 引入 PartOneTag 模型
 
 // 1. 处理问答并更新 AI 答案
 router.post('/askAI', async (req, res) => {
@@ -57,6 +58,53 @@ router.get('/getAIAnswers', async (req, res) => {
   } catch (error) {
     console.error('Error fetching AI answers:', error);
     res.status(500).json({ message: 'Error fetching AI answers', error });
+  }
+});
+
+// 接口1: 获取用户的 tagProcess 数据
+router.get('/getTagProcessByUserId', async (req, res) => {
+  try {
+    const userId = req.query.userId;  // 从查询参数中获取 userId
+
+    // 查找该用户的 tag 数据
+    const tags = await PartOneTagProcess.find({ userId });
+
+    // 如果没有找到任何 tag 数据，返回空数组
+    if (!tags || tags.length === 0) {
+      return res.json([]);  // 返回空数组表示没有找到任何状态改变的 tags
+    }
+
+    // 格式化返回数据，提取每个 tag 的 tagId, stage, reviewDate
+    const formattedTags = tags.map(tag => ({
+      tagId: tag.tagId,
+      stage: tag.stage,
+      reviewDate: tag.reviewDate
+    }));
+
+    // 返回该用户的所有 tag 数据（格式化后的数据）
+    res.json(formattedTags);
+  } catch (error) {
+    console.error('Error fetching user tags:', error);
+    res.status(500).json({ message: 'Error fetching user tags', error });
+  }
+});
+// 接口2: 根据 userId 和 tagId 更新或者创建 tag
+router.post('/updateTagProcess', async (req, res) => {
+  try {
+    const { userId, tagId, stage, reviewDate } = req.body;
+
+    // 使用 findOneAndUpdate 来查找并更新现有记录，如果没有找到，则创建新记录
+    const updatedTag = await PartOneTagProcess.findOneAndUpdate(
+      { userId, tagId },  // 查找根据 userId 和 tagId
+      { stage, reviewDate },  // 更新的内容
+      { new: true, upsert: true }  // 如果没有找到记录则创建新记录
+    );
+
+    // 返回更新后的 tag 数据
+    res.json({ message: 'Tag updated or created successfully', tag: updatedTag });
+  } catch (error) {
+    console.error('Error updating or creating tag:', error);
+    res.status(500).json({ message: 'Error updating or creating tag', error });
   }
 });
 
