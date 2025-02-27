@@ -20,6 +20,31 @@ function getTagProcessByUserId(userId) {
     });
   });
 }
+function getAIanswer(question, userId) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: 'http://localhost:3001/api/miniprogramOne/askAI',  // 请求更新接口
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        question: question,
+        userId: userId
+      },
+      success: (res) => {
+        if (res.statusCode === 200) {
+          resolve(res.data);  // 返回成功数据
+        } else {
+          reject(new Error('AI request failed'));  // 请求失败
+        }
+      },
+      fail: (err) => {
+        reject(err);  // 请求失败
+      }
+    });
+  });
+}
 function updateTagProcess(userId, tagId, stage, reviewDate) {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -45,5 +70,6 @@ function updateTagProcess(userId, tagId, stage, reviewDate) {
 }
 module.exports = {
   getTagProcessByUserId,
+  getAIanswer,
   updateTagProcess
 };

@@ -5,7 +5,6 @@ const { getAIAnswerOne } = require('./aiService.js');  // aiService.js 处理与
 const PartOneAnswer = require('../models/PartOneAnswer'); // 引入 PartOneAnswer 模型
 const PartOneTagProcess = require('../models/PartOneTagProcess.js');  // 引入 PartOneTag 模型
 
-// 1. 处理问答并更新 AI 答案
 router.post('/askAI', async (req, res) => {
   try {
     // 从请求中获取问题文本和答案文本
@@ -13,17 +12,19 @@ router.post('/askAI', async (req, res) => {
     const answer = `${req.body.question.step0},${req.body.question.step1},${req.body.question.step2},${req.body.question.step3}`;
     const user_prompt = `Question: ${question} Answer: ${answer}`;
     
+    // 获取用户 ID 和问题 ID
+    const userId = req.body.userId;
+    const qId = req.body.question.qId;
+    
     // 获取 AI 的答案
     const result = await getAIAnswerOne(system_prompt, user_prompt);
     console.log('Parsed AI Answer:', result);
-    // 返回 AI 答案
-    res.json(result);
 
-    // 获取用户 ID 和问题 ID
-    const userId = req.body.user.uId;
-    const qId = req.body.question.qId;
     // 调用 updateAIAnswer 更新用户答案
     await updateAIAnswer(userId, qId, result.answer);
+
+    // 返回 AI 答案
+    res.json(result);
 
   } catch (error) {
     console.error('Error handling AI request:', error);

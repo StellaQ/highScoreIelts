@@ -194,35 +194,25 @@ Page({
     } else {
       console.log('没有找到对应的题目');
     }
-    wx.request({
-      url: 'http://localhost:3001/api/miniprogramOne/askAI',
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/json'
-      },
-      data: {
-        question: question,
-        user: this.data.user
-      },
-      success: (res) => {  // 使用箭头函数，确保 `this` 指向正确
-        console.log('Response from AI:', res.data);
-
-         // 执行更新操作
+    const userId = this.data.user.uId;
+    API.getAIanswer(question, userId)
+      .then((res: { answer: any; }) => {
+        // 更新问题的 AIanswer
         for (let i = 0; i < this.data.chosenTag.questions.length; i++) {
           if (this.data.chosenTag.questions[i].qId === qId) {
-            // 更新该问题的 AIanswer
-            this.data.chosenTag.questions[i].AIanswer = res.data.answer;
-            this.data.chosenTag.questions[i].isButtonDisabled = false;  // 成功后恢复按钮
+            this.data.chosenTag.questions[i].AIanswer = res.answer;  // 更新 AIanswer
+            this.data.chosenTag.questions[i].isButtonDisabled = false;  // 恢复按钮
             this.data.chosenTag.questions[i].isButtonLoading = false;
-            break;  // 找到并更新后，结束循环
+            break;
           }
         }
         // 更新数据，通知小程序 UI 刷新
         this.setData({
           'chosenTag.questions': this.data.chosenTag.questions  // 更新 questions 数组
         });
-      },
-      fail: (err) => {
+        console.log('Response from AI:', res);
+      })
+      .catch((err: any) => {
         console.error('Request failed:', err);
         // 请求失败后恢复按钮状态
         for (let i = 0; i < this.data.chosenTag.questions.length; i++) {
@@ -236,9 +226,9 @@ Page({
         this.setData({
           'chosenTag.questions': this.data.chosenTag.questions
         });
+        // 显示失败提示
         Toast.fail('稍后再试...');
-      }
-    });
+      });
   },  
   setRemindDay(e: any) {
     const day = e.currentTarget.dataset.day;
