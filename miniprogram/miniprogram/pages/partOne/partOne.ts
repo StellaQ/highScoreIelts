@@ -1,23 +1,16 @@
-import { Category, TagList, FilteredTagIdsToday } from '../../utils/types'; // 导入定义的类型 
+import { Category, TagList } from '../../utils/types'; // 导入定义的类型 
 import Toast from '@vant/weapp/toast/toast'; 
 import { getLeftList, getFilteredTagIdsToday, getTagList} from '../../utils/onloadDataOne.js'; 
 
 const staticQuestions = require('../../assets/staticQuestions.js');
 const API = require('../../utils/api.js');
 
-const questionProcess = [
-  { qId: 'q8', 
-    AIanswer: `Securing this type of work in my country can be quite challenging, primarily due to the high level of competition and the specific skill set required. However, for those who are highly skilled and have relevant experience, there are ample opportunities, especially in urban areas where the demand is higher. Networking and continuous professional development play crucial roles in enhancing one's chances of landing such positions.`},
-  { qId: 'q9', 
-    AIanswer: `Having work that I genuinely enjoy is extremely important to me because it brings numerous benefits, such as continuous personal and professional growth. Engaging in a job that aligns with my interests and passions not only motivates me to keep improving and learning new skills but also enhances my overall job satisfaction and well-being. This alignment between my work and personal interests ensures that I remain committed and enthusiastic about my career path, making every day at work a rewarding experience.`}
-];
 Page({
   data: {
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
     categories: [] as Category[], //
     showLeftPanel: false, // 左侧列表弹出/消失
 
-    filteredTagIdsToday: [] as FilteredTagIdsToday,  //今天要复习的tagIds
     tagList: [] as TagList[],
     currentIndex: 0, // 当前标签索引
     isPrevDisabled: true, // 上一页按钮是否禁用
@@ -262,6 +255,23 @@ Page({
       confirmText: '知道了',
     });
   },
+  getQIdsByTagIds(tagIds: any) {
+    // 存储所有符合条件的 qId
+    const qIds: any[] = [];
+  
+    // 遍历 staticQuestions 获取匹配的 tagId
+    staticQuestions.forEach((category: { subCategories: any[]; }) => {
+      category.subCategories.forEach(subCategory => {
+        if (tagIds.includes(subCategory.tagId)) {
+          // 如果当前 subCategory 的 tagId 匹配，就把所有问题的 qId 添加到 qIds 数组
+          subCategory.questions.forEach((question: { qId: any; }) => {
+            qIds.push(question.qId);
+          });
+        }
+      });
+    });
+    return qIds;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -269,9 +279,6 @@ Page({
     const userId = this.data.user.uId;
     try {
       const tagProcess = await API.getTagProcessByUserId(userId);
-      this.setData({
-        tagProcess: tagProcess
-      });
       // 处理左端列表数据
       const leftList = getLeftList(tagProcess, staticQuestions);
       this.setData({
@@ -281,15 +288,20 @@ Page({
       // 从记录tag状态改变的tagProcess筛选出今天要复习的tagIds
       const filteredTagIdsToday = getFilteredTagIdsToday(tagProcess);
       // console.log(filteredTagIdsToday); // ["t3"]
-      this.setData({
-        filteredTagIdsToday: filteredTagIdsToday,
-      }); 
+     
+      const ArrQIds = this.getQIdsByTagIds(filteredTagIdsToday);
+      console.log(ArrQIds);  // ['q8', 'q9', 'q10', 'q11', 'q12']
+      
+      // **等待 API 获取问题数据**
+      const questionProcess = await API.getQuestionsFortoday(ArrQIds, userId); 
 
-      const tagList = getTagList(tagProcess, questionProcess,staticQuestions, filteredTagIdsToday);
+      // 处理标签列表
+      const tagList = getTagList(tagProcess, questionProcess, staticQuestions, filteredTagIdsToday);
       this.setData({
         tagList: tagList,
         chosenTag: tagList[0] || null, // 初始显示第一个标签
       });
+
       console.log('===');
       console.log(tagList[0]);
     } catch (err) {

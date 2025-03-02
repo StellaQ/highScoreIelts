@@ -20,6 +20,31 @@ function getTagProcessByUserId(userId) {
     });
   });
 }
+function getQuestionsFortoday (ArrQIds, userId) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: 'http://localhost:3001/api/miniprogramOne/getAIAnswers',  // 请求更新接口
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      data: {
+        ArrQIds: ArrQIds,
+        userId: userId
+      },
+      success: (res) => {
+        if (res.statusCode === 200) {
+          resolve(res.data);  // 返回成功数据
+        } else {
+          reject(new Error('getQuestionsFortoday failed'));  // 请求失败
+        }
+      },
+      fail: (err) => {
+        reject(err);  // 请求失败
+      }
+    });
+  });
+}
 function getAIanswer(question, userId) {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -71,5 +96,6 @@ function updateTagProcess(userId, tagId, stage, reviewDate) {
 module.exports = {
   getTagProcessByUserId,
   getAIanswer,
+  getQuestionsFortoday,
   updateTagProcess
 };

@@ -42,20 +42,30 @@ const updateAIAnswer = async (userId, qId, AIanswer) => {
   return updatedAnswer;
 };
 
-// 3. 获取用户所有问题的 AI 答案，作为接口
 router.get('/getAIAnswers', async (req, res) => {
   try {
-    const userId = req.query.userId;  // 从查询参数中获取 userId
-    
-    // 查询该用户的 PartOne 答案
-    const partOneAnswer = await PartOneAnswer.find({ userId });
+    const { userId, ArrQIds } = req.query; // 从查询参数中获取 userId 和 ArrQIds（假设前端传入的是 JSON 字符串）
 
-    if (!partOneAnswer || partOneAnswer.length === 0) {
-      return res.status(404).json({ message: 'User answers not found' });
+    if (!userId || !ArrQIds) {
+      return res.status(400).json({ message: 'Missing userId or ArrQIds' });
     }
 
-    // 返回该用户的所有问题的 AI 答案
-    res.json(partOneAnswer);
+    const qIdsArray = JSON.parse(ArrQIds); // 解析传入的 JSON 字符串
+
+    // 查询数据库，查找 userId 匹配，并且 qId 在 ArrQIds 里的数据
+    const answers = await PartOneAnswer.find({
+      userId,
+      qId: { $in: qIdsArray }
+    });
+
+    if (!answers || answers.length === 0) {
+      return res.status(404).json({ message: 'No AI answers found for the provided questions' });
+    }
+
+    // 只返回 qId 和 AIanswer
+    const formattedAnswers = answers.map(({ qId, AIanswer }) => ({ qId, AIanswer }));
+
+    res.json(formattedAnswers);
   } catch (error) {
     console.error('Error fetching AI answers:', error);
     res.status(500).json({ message: 'Error fetching AI answers', error });
