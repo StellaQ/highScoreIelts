@@ -1,12 +1,13 @@
 App<IAppOption>({
   globalData: {
-    userInfo: null, 
+    userInfo: null,
   },
+
   onLaunch() {
     console.log("小程序启动，检查用户信息");
 
     const userInfo = wx.getStorageSync('userInfo');
-    if (userInfo && userInfo.openid) {
+    if (userInfo && userInfo.userId) {
       console.log("本地已有用户信息:", userInfo);
       this.globalData.userInfo = userInfo;
     } else {
@@ -14,22 +15,26 @@ App<IAppOption>({
       this.loginAndFetchUserData();
     }
   },
+
   loginAndFetchUserData() {
-    const that = this;
     wx.login({
-      success(res) {
+      success: (res) => {
         if (res.code) {
           wx.request({
             url: 'http://localhost:3001/api/user/getOpenId',
             method: 'POST',
             data: { code: res.code },
-            success(response) {
-              const { openid, session_key } = response.data;
-              const userInfo = { openid }; 
-
+            success: (response) => {
+              const userInfo = response.data.userInfo;
               wx.setStorageSync('userInfo', userInfo);
-              console.log("获取并存储用户数据:", openid, userInfo);
-              that.globalData.userInfo = userInfo;
+              this.globalData.userInfo = userInfo;
+
+              console.log("获取并存储用户数据:", userInfo);
+
+              // **触发回调，通知 Page 页面数据已更新**
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(userInfo);
+              }
             }
           });
         }

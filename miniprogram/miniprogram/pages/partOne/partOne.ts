@@ -18,10 +18,11 @@ Page({
 
     chosenTag: {},
     user: {
-      uId: 'djdkdldlflf',
-      isVip: true, // 决定review的时候能不能点开定制开关
-      createCount: 10
+      uId: '',
+      isVip: false // 决定review的时候能不能点开定制开关
+      // createCount: 10
     },
+    isDataLoaded: false, // 标记数据是否加载完成
 
     memoryGapDays: [1,3,7,15,'done']
   },
@@ -321,10 +322,18 @@ Page({
     });
     return qIds;
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  async onLoad() {
+  async setUserInfo(userInfo: { userId: any; isVip: any; createCount: any; }) {
+    this.setData({
+      user: {
+        uId: userInfo.userId,
+        isVip: userInfo.isVip
+        // createCount: userInfo.createCount || 0
+      },
+      isDataLoaded: true // 标记数据已加载
+    });
+
+    // **现在 userId 有了，调用 API 获取页面数据**
+    console.log('33333333');
     const userId = this.data.user.uId;
     try {
       const tagProcess = await API.getTagProcessByUserId(userId);
@@ -358,6 +367,23 @@ Page({
       console.log(tagList[0]);
     } catch (err) {
       console.error('获取tagProcess数据失败:', err);
+    }
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  async onLoad() {
+    const app = getApp();
+    if (app.globalData.userInfo) {
+      // **已有全局用户信息，直接使用**
+      console.log('111111111');
+      this.setUserInfo(app.globalData.userInfo);
+    } else {
+      // **全局 userInfo 还未获取，监听回调**
+      app.userInfoReadyCallback = (userInfo) => {
+        console.log('222222222');
+        this.setUserInfo(userInfo);
+      };
     }
   },
   /**
