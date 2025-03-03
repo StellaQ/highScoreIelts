@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+
 const system_prompt = require('../config/prompts/forPartOne.js');
 const { getAIAnswerOne } = require('./aiService.js');  // aiService.js 处理与 AI 的交互
+
 const PartOneAnswer = require('../models/PartOneAnswer'); // 引入 PartOneAnswer 模型
 const PartOneTagProcess = require('../models/PartOneTagProcess.js');  // 引入 PartOneTag 模型
 

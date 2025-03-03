@@ -26,26 +26,11 @@ console.error('Database connection error:', error);
 });
 
 // 引用路由
-const testRoutes = require('./routes/testRoutes');
-const userRoutes = require('./routes/userRoutes');
-// 使用 /api/test 作为 testRoutes 的基础路径
-app.use('/api/test', testRoutes);
-// 使用 /api/users 作为 userRoutes 的基础路径
-app.use('/api/users', userRoutes);
-// 你在 testRoutes.js 中定义的 /data 路由，将会被挂载到 /api/test/data 路径，
-// 而 userRoutes.js 中定义的 /users 路由，将会被挂载到 /api/users/ 路径。
-
-const part1Routes = require('./routes/partOne');
-app.use('/api/partone', part1Routes);
-
-const tagRoutes = require('./routes/tagRoutes');
-app.use('/api/tag', tagRoutes);
-
-const categoriesOneRoutes = require('./routes/categoriesOneRoutes');
-app.use('/api/categories1', categoriesOneRoutes);
-
 const miniProgramOneRoutes = require('./routes/miniProgramOne');
 app.use('/api/miniprogramOne', miniProgramOneRoutes);
+
+const userRoutes = require('./routes/user');
+app.use('/api/user', userRoutes);
 
 // 提供静态文件服务
 app.use(express.static(path.join(__dirname, 'miniprogram')));
