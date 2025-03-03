@@ -9,14 +9,17 @@
     <view style="text-align: center;display: flex;justify-content: space-around;" class="page-title">
       <van-icon name="arrow-left" bind:click="prevTag" :class="{ 'disabled': isPrevDisabled }" />
       <!-- todo [复习/new]判断 -->
-      <view style="text-align: center;display: flex;justify-content: space-around;">
+      <view style="text-align: center;display: flex;justify-content: space-around; align-items: center;position: relative;">
         <view>{{chosenTag ? chosenTag.tagName : ''}}</view>
         <!-- 根据 chosenTag.stage 显示不同的元素 -->
-        <view wx:if="{{chosenTag && chosenTag.stage === 0}}" class="new-tag">
-          {{chosenTag ? '[new]' : ''}}
+        <view wx:if="{{chosenTag && chosenTag.stage === 0}}" style="display: flex;align-items: center;">
+          <image src="./../../assets/new5.png" class="img-icon"></image>
         </view>
-        <view wx:if="{{chosenTag && chosenTag.stage !== 0}}" class="review-tag">
-          {{chosenTag ? '[review]' : ''}}
+        <view wx:if="{{chosenTag && chosenTag.stage !== 0}}" style="display: flex;align-items: center;">
+          <image src="./../../assets/renewable1.png" class="img-icon3"></image>
+        </view>
+        <view wx:if="{{chosenTag && chosenTag.isTodayReviewed}}" class="complete-tag">
+          <image src="./../../assets/done2.png" class="img-icon2"></image>
         </view>
       </view>
       <van-icon name="arrow" bind:click="nextTag" :class="{ 'disabled': isNextDisabled }" />
@@ -185,27 +188,20 @@
   <view class="memory-reminder-container">
   <!-- 记忆提醒区域 -->
   <!-- todo 用户必须设置提醒进度选择 -->
-  <view 
-    hidden="{{!isReminderActive}}"
-    class="memory-reminder">
-    <text class="reminder-label">隔</text>
-    <view class="memory-box"
-      wx:for="{{memoryDays}}"
-      wx:key="index"
-      bindtap="setRemindDay"
-      data-day="{{item}}">
-      <text class="memory-text">{{item}}</text>
-    </view>
-    <text class="reminder-label">天提醒我复习</text>
-    <view class="reminder-info">
-      <van-icon name="info-o" size="18px" color="#1989fa" bind:click="showGuide" />
+    <view class="memory-reminder">
+      <view 
+        class="memory-box {{index === chosenTag.stage - 1 ? 'selected' : ''}}"
+        wx:for="{{memoryGapDays}}"
+        wx:key="index"
+        data-gap="{{item}}"
+        bind:tap="setRemindDay">
+        <text class="memory-text">{{item}}</text>
+      </view>
+      <view class="reminder-info">
+        <van-icon name="info-o" size="18px" color="#1989fa" bind:click="showGuide" />
+      </view>
     </view>
   </view>
-  <!-- 提示信息和结束复习按钮合并 -->
-  <view hidden="{{!isReminderActive}}" class="reminder-footer">
-    <!-- <button class="end-reminder-btn" bindtap="endReminder">已掌握，结束复习</button> -->
-  </view>
-</view>
 </view>
 <!-- 选中的tag用户自主决定下次复习的时间 end -->
 <van-toast id="van-toast" type="fail" />

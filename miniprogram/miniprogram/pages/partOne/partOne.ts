@@ -21,7 +21,9 @@ Page({
       uId: 'djdkdldlflf',
       isVip: true, // 决定review的时候能不能点开定制开关
       createCount: 10
-    }
+    },
+
+    memoryGapDays: [1,3,7,15,'done']
   },
 
   // sticky部分 start
@@ -223,39 +225,86 @@ Page({
         Toast.fail('稍后再试...');
       });
   },  
+  checkIfCanSubmitTagProcess() {
+    const { chosenTag } = this.data;
+    if (!chosenTag || !chosenTag.questions) {
+      return false; // 选中的 tag 或 questions 为空时，直接返回 false
+    }
+    // 检查所有 questions 的 AIanswer 是否都不为空
+    return chosenTag.questions.every(q => q.AIanswer && q.AIanswer.trim() !== '');
+  },
+  updateTagStateInCategories (tagIdToUpdate, newStage) {
+    const category = this.data.categories.find(category =>
+      category.subCategories.some(tag => tag.tagId === tagIdToUpdate)
+    );
+    if (category) {
+      const tag = category.subCategories.find(tag => tag.tagId === tagIdToUpdate);
+      if (tag) tag.stage = newStage;
+    }
+    this.setData({ categories: [...this.data.categories] });
+  },
   setRemindDay(e: any) {
-    const day = e.currentTarget.dataset.day;
-    this.setData({
-      reminders: [...this.data.reminders, day],
-    });
-  },
-  generateReminders() {
-    const { memoryDays, today } = this.data;
-    const reminders = memoryDays.map((day) => {
-      const reminderDate = new Date(new Date(today).getTime() + day * 24 * 60 * 60 * 1000);
-      return {
-        day,
-        date: reminderDate.toISOString().split('T')[0], // 格式化日期
-      };
-    });
-    console.log(reminders);
-    this.setData({ reminders });
-  },
-  // 结束复习提醒
-  endReminder() {
-    this.setData({
-      isReminderActive: false,  // 停止提醒
-    });
-  },
+
+    const tagId = this.data.chosenTag.tagId;
+    let ifCanSubmit = this.checkIfCanSubmitTagProcess(tagId);
+    if (!ifCanSubmit) return;
+
+    const gapDays = e.currentTarget.dataset.gap;
+
+    const userId = this.data.user.uId;
+    
+    let stage = this.data.chosenTag.stage;
+    const stageMap = { 1: 1, 3: 2, 7: 3, 15: 4, done: 5 };
+    stage = stageMap[gapDays] ?? stage;
+
+    if (gapDays === 'done') {
+      // 处理完成状态
+      wx.showModal({
+        title: '',
+        content: '100%掌握，\n这个季度再也不用复习～\n',
+        success: ({ confirm }) => {
+          if (!confirm) return;
+          // console.log(`TagId: ${tagId} 已完成`);
+          API.updateTagProcess(userId, tagId, 5, '2125-01-01')
+            .then(() => {
+              this.setData({ 
+                'chosenTag.stage': 5,
+                'chosenTag.isTodayReviewed': true });
+              this.updateTagStateInCategories(tagId, 5);
+            })
+            .catch(console.error);
+        }
+      });
+    } else {
+      // 计算新的复习日期
+      const today = new Date();
+      today.setDate(today.getDate() + parseInt(gapDays)); // 增加天数
+      const reviewDate = today.toISOString().split('T')[0]; // 格式化为 YYYY-MM-DD
+
+      API.updateTagProcess(userId, tagId, stage, reviewDate).then(() => {
+        // console.log('API 请求成功:', res);
+        this.setData({
+          'chosenTag.stage': stage,
+          'chosenTag.isTodayReviewed': true
+        });
+        this.updateTagStateInCategories(tagId, stage);
+      }).catch((err: any) => {
+        console.error('API 请求失败:', err);
+      });      
+    }
+  },  
   showGuide() {
     wx.showModal({
       title: '使用提示',
-      content: '选择复习的天数，系统会按设定的间隔提醒你复习。点击结束复习即可停止提醒。',
+      content: '1 => 1天后再复习\n3 => 3天后再复习\n7 => 7天后再复习\ndone => 不用再复习，因为已经完全掌握。',
       showCancel: false,
       confirmText: '知道了',
-    });
+    });    
   },
   getQIdsByTagIds(tagIds: any) {
+
+    if(tagIds.length === 0) { return [] };
+
     // 存储所有符合条件的 qId
     const qIds: any[] = [];
   
@@ -292,8 +341,11 @@ Page({
       const ArrQIds = this.getQIdsByTagIds(filteredTagIdsToday);
       console.log(ArrQIds);  // ['q8', 'q9', 'q10', 'q11', 'q12']
       
+      let questionProcess = [];
       // **等待 API 获取问题数据**
-      const questionProcess = await API.getQuestionsFortoday(ArrQIds, userId); 
+      if(ArrQIds.length > 0) {
+        questionProcess = await API.getQuestionsFortoday(ArrQIds, userId); 
+      }
 
       // 处理标签列表
       const tagList = getTagList(tagProcess, questionProcess, staticQuestions, filteredTagIdsToday);

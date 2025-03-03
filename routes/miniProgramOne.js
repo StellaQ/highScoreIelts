@@ -112,7 +112,7 @@ router.post('/updateTagProcess', async (req, res) => {
     );
 
     // 返回更新后的 tag 数据
-    res.json({ message: 'Tag updated or created successfully', tag: updatedTag });
+    res.json({ message: 'updated or created successfully' });
   } catch (error) {
     console.error('Error updating or creating tag:', error);
     res.status(500).json({ message: 'Error updating or creating tag', error });

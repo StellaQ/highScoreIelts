@@ -40,15 +40,26 @@ page {
   color: grey;
   pointer-events: none;
 }
-.new-tag {
-  color: #4caf50; /* 设置新标签颜色，例如绿色 */
-  font-weight: bold; /* 设置字体加粗 */
+.complete-tag {
+  position: absolute;
+  left: 30%;
+  top: -20px;
+  z-index: 1;
+  display: flex;
+}
+.img-icon {
+  width: 40px;
+  height: 40px;
+}
+.img-icon2 {
+  width: 70px;
+  height: 70px;
+}
+.img-icon3 {
+  width: 34px;
+  height: 34px;
 }
 
-.review-tag {
-  color: #f44336; /* 设置复习标签颜色，例如红色 */
-  font-weight: bold; 
-}
 .topic-section {
   margin-top: 20px;
 }
@@ -249,13 +260,30 @@ page {
 }
 
 .memory-box {
-  background-color: #1989fa;
   padding: 8px 15px;
   border-radius: 5px;
-  color: #fff;
   font-size: 14px;
   margin: 0 5px;
+  background-color: #fff; /* 默认浅色背景 */
+  color: #333; /* 默认字体颜色 */
+  border: 1px solid #ddd; /* 增加边框，增强层次感 */
+  transition: all 0.2s ease-in-out; /* 增加过渡效果 */
 }
+
+.memory-box.selected {
+  background-color: #1989fa;
+  color: #fff;
+  border: none;
+}
+
+.memory-box:hover {
+  background-color: #e0f2ff; /* 鼠标悬停时有轻微颜色变化 */
+}
+
+.reminder-info {
+  margin-left: 10px;
+}
+
 
 .reminder-footer {
   display: flex;

@@ -73,22 +73,24 @@ function getAIanswer(question, userId) {
 function updateTagProcess(userId, tagId, stage, reviewDate) {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: 'http://localhost:3001/api/miniprogramOne/updateTagProcess',  // 请求更新接口
+      url: 'http://localhost:3001/api/miniprogramOne/updateTagProcess',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
       },
       data: {
-        userId: userId, 
-        tagId: tagId,
-        stage: stage,
-        reviewDate: reviewDate
+        userId,
+        tagId,
+        stage,
+        reviewDate
       },
       success: (res) => {
-        console.log('成功:', res.data);  // 返回更新后的 tag 数据
+        // console.log('成功:', res.data);
+        resolve(res.data); // **必须调用 resolve，否则 .then() 不会执行**
       },
       fail: (err) => {
-        console.error('失败:', err);
+        // console.error('失败:', err);
+        reject(err); // **必须调用 reject，否则 catch() 不会执行**
       }
     });
   });

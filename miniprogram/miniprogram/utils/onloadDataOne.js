@@ -54,7 +54,8 @@ export function getTagList(tagProcess, questionProcess, staticQuestions, filtere
           tagId: subCategory.tagId,
           tagName: subCategory.tagName,
           stage: tagInfo ? tagInfo.stage : 0,
-          questions: updatedQuestions,
+          isTodayReviewed: false,
+          questions: updatedQuestions
         });
         addedTagIds.add(subCategory.tagId);
       }
@@ -84,7 +85,8 @@ export function getTagList(tagProcess, questionProcess, staticQuestions, filtere
           tagId: subCategory.tagId,
           tagName: subCategory.tagName,
           stage: 0, // 默认 stage 为 0
-          questions: updatedQuestions,
+          isTodayReviewed: false,
+          questions: updatedQuestions
         });
       }
     });
