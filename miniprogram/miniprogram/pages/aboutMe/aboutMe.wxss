@@ -1,0 +1,42 @@
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid #f0f0f0;
+  margin-right: 20rpx;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+.avatar-container{
+  display: flex;
+  position: relative;
+  padding-top: 15px;
+  /* width: 60px;
+  height: 60px; */
+}
+.avatar{
+  width: 60px;
+  height: 60px;
+}
+.img-icon{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 17px;
+  top: 0;
+}

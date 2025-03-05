@@ -17,12 +17,11 @@ Page({
     isNextDisabled: false, // 下一页按钮是否禁用
 
     chosenTag: {},
-    user: {
-      uId: '',
+    userInfo: {
+      userId: '',
       isVip: false // 决定review的时候能不能点开定制开关
       // createCount: 10
     },
-    isDataLoaded: false, // 标记数据是否加载完成
 
     memoryGapDays: [1,3,7,15,'done']
   },
@@ -87,7 +86,7 @@ Page({
   onChangeSwitch(event: { currentTarget: { dataset: { id: any; }; }; detail: any; }) {
     let { chosenTag } = this.data;
   
-    if (chosenTag.stage !== 0 && !this.data.user.isVip) {
+    if (chosenTag.stage !== 0 && !this.data.userInfo.isVip) {
       // 如果是 review 阶段并且用户不是 vip，那么返回
       return;
     }
@@ -190,7 +189,7 @@ Page({
     } else {
       console.log('没有找到对应的题目');
     }
-    const userId = this.data.user.uId;
+    const userId = this.data.userIndo.userId;
     API.getAIanswer(question, userId)
       .then((res: { answer: any; }) => {
         // 更新问题的 AIanswer
@@ -252,7 +251,7 @@ Page({
 
     const gapDays = e.currentTarget.dataset.gap;
 
-    const userId = this.data.user.uId;
+    const userId = this.data.userInfo.userId;
     
     let stage = this.data.chosenTag.stage;
     const stageMap = { 1: 1, 3: 2, 7: 3, 15: 4, done: 5 };
@@ -322,69 +321,50 @@ Page({
     });
     return qIds;
   },
-  async setUserInfo(userInfo: { userId: any; isVip: any; createCount: any; }) {
-    this.setData({
-      user: {
-        uId: userInfo.userId,
-        isVip: userInfo.isVip
-        // createCount: userInfo.createCount || 0
-      },
-      isDataLoaded: true // 标记数据已加载
-    });
-
-    // **现在 userId 有了，调用 API 获取页面数据**
-    console.log('33333333');
-    const userId = this.data.user.uId;
+  async fetchPageData(userId) {
     try {
       const tagProcess = await API.getTagProcessByUserId(userId);
-      // 处理左端列表数据
       const leftList = getLeftList(tagProcess, staticQuestions);
-      this.setData({
-        categories: leftList
-      });
+      this.setData({ categories: leftList });
 
-      // 从记录tag状态改变的tagProcess筛选出今天要复习的tagIds
-      const filteredTagIdsToday = getFilteredTagIdsToday(tagProcess);
-      // console.log(filteredTagIdsToday); // ["t3"]
-     
-      const ArrQIds = this.getQIdsByTagIds(filteredTagIdsToday);
-      console.log(ArrQIds);  // ['q8', 'q9', 'q10', 'q11', 'q12']
-      
+      const filteredTagIdsToday = getFilteredTagIdsToday(tagProcess);// ["t3"]
+      const ArrQIds = this.getQIdsByTagIds(filteredTagIdsToday);// ['q8', 'q9']
+
       let questionProcess = [];
-      // **等待 API 获取问题数据**
-      if(ArrQIds.length > 0) {
-        questionProcess = await API.getQuestionsFortoday(ArrQIds, userId); 
+      if (ArrQIds.length > 0) {
+        questionProcess = await API.getQuestionsFortoday(ArrQIds, userId);
       }
 
-      // 处理标签列表
       const tagList = getTagList(tagProcess, questionProcess, staticQuestions, filteredTagIdsToday);
       this.setData({
         tagList: tagList,
-        chosenTag: tagList[0] || null, // 初始显示第一个标签
+        chosenTag: tagList[0] || null,
       });
 
-      console.log('===');
-      console.log(tagList[0]);
     } catch (err) {
-      console.error('获取tagProcess数据失败:', err);
+      console.error('获取数据失败:', err);
     }
+  },
+  setUserInfo(userInfo) {
+    this.setData({
+      userInfo: {
+        userId: userInfo.userId,
+        isVip: userInfo.isVip
+      }
+    });
+    // **这里就可以正常发请求了**
+    this.fetchPageData(userInfo.userId);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
     const app = getApp();
-    if (app.globalData.userInfo) {
-      // **已有全局用户信息，直接使用**
-      console.log('111111111');
-      this.setUserInfo(app.globalData.userInfo);
-    } else {
-      // **全局 userInfo 还未获取，监听回调**
-      app.userInfoReadyCallback = (userInfo) => {
-        console.log('222222222');
-        this.setUserInfo(userInfo);
-      };
-    }
+    
+    app.getUserInfo((userInfo) => {
+      console.log("part one页面获取用户信息:", userInfo);
+      this.setUserInfo(userInfo);
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

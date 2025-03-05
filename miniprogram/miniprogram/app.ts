@@ -29,9 +29,9 @@ App<IAppOption>({
               wx.setStorageSync('userInfo', userInfo);
               this.globalData.userInfo = userInfo;
 
-              console.log("获取并存储用户数据:", userInfo);
+              console.log("app.ts接口api/user/getOpenId获取并存储用户数据:", userInfo);
 
-              // **触发回调，通知 Page 页面数据已更新**
+              // **触发回调，通知所有等待的页面**
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(userInfo);
               }
@@ -40,5 +40,14 @@ App<IAppOption>({
         }
       }
     });
+  },
+
+  // **💡 封装全局方法，页面调用这个方法即可**
+  getUserInfo(callback: (userInfo: any) => void) {
+    if (this.globalData.userInfo) {
+      callback(this.globalData.userInfo);
+    } else {
+      this.userInfoReadyCallback = callback;
+    }
   }
 });
