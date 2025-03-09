@@ -2,8 +2,13 @@
 <van-sticky>
   <view style="width: 100%; padding: 0 0 5px 0; background-color:#fff;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
     <!-- 点击切换左侧进度列表出现/隐藏 -->
-    <view style="padding: 0 5px 0 0 ; display: flex; justify-content: flex-end;">
-      <van-icon name="chart-trending-o" color="#1989fa" size="30px" bind:click="showLeftPanel"/>
+    <view style="padding: 5px 5px 0 0 ; display: flex; justify-content: flex-end;">
+      <!-- <van-icon name="chart-trending-o" color="#1989fa" size="30px" bind:click="showLeftPanel"/> -->
+      <view style="display: flex; width: 30px; height: 30px;"
+      bind:tap="showLeftPanel">
+       <image style="width: 30px; height:30px;"
+        src="../../assets/pics/checked3.png" mode=""/>
+      </view>
     </view>
     <!-- 这里向左/tagName/向右：展示今天复习的问题和全新的问题列表 -->
     <view style="text-align: center;display: flex;justify-content: space-around;" class="page-title">
@@ -13,13 +18,13 @@
         <view>{{chosenTag ? chosenTag.tagName : ''}}</view>
         <!-- 根据 chosenTag.stage 显示不同的元素 -->
         <view wx:if="{{chosenTag && chosenTag.stage === 0}}" style="display: flex;align-items: center;">
-          <image src="./../../assets/new5.png" class="img-icon"></image>
+          <image src="./../../assets/pics/new5.png" class="img-icon"></image>
         </view>
         <view wx:if="{{chosenTag && chosenTag.stage !== 0}}" style="display: flex;align-items: center;">
-          <image src="./../../assets/renewable1.png" class="img-icon3"></image>
+          <image src="./../../assets/pics/renewable1.png" class="img-icon3"></image>
         </view>
         <view wx:if="{{chosenTag && chosenTag.isTodayReviewed}}" class="complete-tag">
-          <image src="./../../assets/done2.png" class="img-icon2"></image>
+          <image src="./../../assets/pics/done2.png" class="img-icon2"></image>
         </view>
       </view>
       <van-icon name="arrow" bind:click="nextTag" :class="{ 'disabled': isNextDisabled }" />
@@ -205,6 +210,6 @@
 </view>
 <!-- 选中的tag用户自主决定下次复习的时间 end -->
 <van-toast id="van-toast" type="fail" />
-<tab-bar active="0"></tab-bar>
+<tab-bar active="1"></tab-bar>
 
 

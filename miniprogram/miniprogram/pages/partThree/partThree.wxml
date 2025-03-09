@@ -1,4 +1,4 @@
 <view>
   part 333
-  <tab-bar active="2"></tab-bar>
+  <tab-bar active="3"></tab-bar>
 </view>

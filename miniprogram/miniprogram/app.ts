@@ -15,7 +15,6 @@ App<IAppOption>({
       this.loginAndFetchUserData();
     }
   },
-
   loginAndFetchUserData() {
     wx.login({
       success: (res) => {

@@ -1,208 +1,135 @@
-// index.ts
-// 获取应用实例
-// const app = getApp<IAppOption>()
 Page({
   data: {
-    // 假设这是从服务器获取的打卡数据
-    checkinData: [
-      { date: '2023-06-01', count: 1 },
-      { date: '2023-06-02', count: 2 },
-      { date: '2023-06-03', count: 0 },
-      { date: '2023-06-04', count: 2 },
-      { date: '2023-06-05', count: 1 },
-      { date: '2023-06-06', count: 0 },
-      { date: '2023-06-07', count: 1 },
-      { date: '2023-06-08', count: 2 },
-      { date: '2023-06-09', count: 1 },
-      { date: '2023-06-10', count: 2 },
-      { date: '2023-06-11', count: 1 },
-      { date: '2023-06-12', count: 2 },
-      { date: '2023-06-13', count: 1 },
-      { date: '2023-06-14', count: 2 },
-      { date: '2023-06-15', count: 1 },
-      { date: '2023-06-16', count: 2 },
-      { date: '2023-06-17', count: 1 },
-      { date: '2023-06-18', count: 2 },
-      { date: '2023-06-19', count: 1 },
-      { date: '2023-06-20', count: 2 },
-      { date: '2023-06-21', count: 1 },
-      { date: '2023-06-22', count: 2 },
-      { date: '2023-06-23', count: 2 },
-      { date: '2023-06-24', count: 3 },
-      { date: '2023-06-25', count: 2 },
-      { date: '2023-06-26', count: 2 },
-      { date: '2023-06-27', count: 2 },
-      { date: '2023-06-28', count: 2 },
-      { date: '2023-06-29', count: 2 },
-      { date: '2023-06-30', count: 2 }
-    ]
+    userInfo: {
+      userId: '',
+      nickname: '',
+      avatarUrl: '',
+      isVip: false
+    },
+    active: 3
   },
-  onLoad() {
-    this.drawProgressCircle(20, '#progressCircle1', 'part1 20%', 100, 100);
-    this.drawProgressCircle(30, '#progressCircle2', 'part2 30%', 100, 100);
-    this.drawProgressCircle(40, '#progressCircle3', 'part3 40%', 100, 100);
-    this.drawHeatmap();
+  async updateUserProfile() {
+    try {
+      let storedUserInfo = wx.getStorageSync('userInfo');
+  
+      // **⚡ 这里判断是否真的有完整的用户信息**
+      if (storedUserInfo && storedUserInfo.nickname && storedUserInfo.avatarUrl) {
+        console.log('用户已授权，使用本地存储信息:', storedUserInfo);
+        return; // 直接返回，不再重复 `setData`
+      }
+  
+      // **如果本地信息不完整，调用 wx.getUserProfile**
+      const res = await wx.getUserProfile({
+        desc: '用于完善个人资料'
+      });
+  
+      console.log('从 wx.getUserProfile 获取的用户信息:', res);
+      const { avatarUrl, nickName } = res.userInfo;
+  
+      // **更新数据库**
+      await wx.request({
+        url: 'http://localhost:3001/api/user/updateProfile',
+        method: 'POST',
+        data: {
+          userId: this.data.userInfo.userId,
+          nickname: nickName,
+          avatarUrl: avatarUrl
+        },
+        success: () => {
+          console.log('用户信息更新成功');
+  
+          // **更新本地存储**
+          const updatedUserInfo = {
+            userId: this.data.userInfo.userId,
+            nickname: nickName,
+            avatarUrl: avatarUrl
+          };
+          wx.setStorageSync('userInfo', updatedUserInfo);
+  
+          // **更新页面显示**
+          this.setData({ userInfo: updatedUserInfo });
+        }
+      });
+    } catch (err) {
+      console.warn('用户取消授权或获取失败', err);
+    }
+  },  
+  // generateRandomNickname() {
+  //   const nicknames = ['冒险家', '小小探索者', '智慧达人'];
+  //   return nicknames[Math.floor(Math.random() * nicknames.length)];
+  // },
+  setUserInfo(userInfo: { userId: any; isVip: any; nickname: any; avatarUrl: any; }) {
+    this.setData({
+      userInfo: {
+        ...this.data.userInfo, // 保留原有字段（如 inviteCount）
+        userId: userInfo.userId,
+        isVip: userInfo.isVip,
+        nickname: userInfo.nickname,
+        // nickname: userInfo.nickname || this.generateRandomNickname(),
+        avatarUrl: userInfo.avatarUrl || '../../assets/pics/user2.png'
+      }
+    });
+    console.log(this.data.userInfo);
   },
-  onReady: function() {
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  async onLoad() {
+    const app = getApp();
+
+    app.getUserInfo((userInfo: { userId: any; isVip: any; nickname: any; avatar: any; }) => {
+      console.log("index页面获取用户信息:", userInfo);
+      this.setUserInfo(userInfo);
+    });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
     
   },
-  gotoPage: function (e: any) {
-    let part =  e.currentTarget.dataset.part;
-    // console.log(part);
-    switch (part) {
-      case 1:
-        // console.log('====');
-        wx.navigateTo({ url: '/pages/partOne/partOne'});
-        break;
-      case 2:
-        wx.navigateTo({ url: '/pages/partTwo/partTwo'});
-        break;
-      case 3:
-        wx.navigateTo({ url: '/pages/partThree/partThree'});
-        break;
-      default:
-        break;
-    }
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+    
   },
-  drawHeatmap: function() {
-    const query = wx.createSelectorQuery();
-    query.select('#heatmapCanvas')
-      .fields({ node: true, size: true })
-      .exec((res) => {
-        const canvas = res[0].node;
-        const ctx = canvas.getContext('2d');
-        const dpr = wx.getSystemInfoSync().pixelRatio;
 
-        canvas.width = res[0].width * dpr;
-        canvas.height = res[0].height * dpr;
-        ctx.scale(dpr, dpr);
-
-        const data = this.data.checkinData;
-        const colors = ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127'];
-        const cellSize = 15;
-        const margin = 5;
-
-        // 假设每行显示7天的数据
-        const daysInWeek = 7;
-        // const weeks = Math.ceil(data.length / daysInWeek);
-
-        data.forEach((item, index) => {
-          const week = Math.floor(index / daysInWeek);
-          const day = index % daysInWeek;
-          const y = week * (cellSize + margin);
-          const x = day * (cellSize + margin);
-          const color = colors[item.count] || colors[0];
-
-          // console.log('=========='+'x:'+ x + ';y:' + y);
-          ctx.fillStyle = color;
-          ctx.fillRect(x, y, cellSize, cellSize);
-        });
-      });
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+    
   },
-  drawProgressCircle(percent: number, idName: string, percentageTip: string, width: number, height: number) {
-    const query = wx.createSelectorQuery();
-    // query.select('#progressCircle')
-    query.select(idName)
-      .fields({ node: true, size: true })
-      .exec((res) => {
-        const canvas = res[0].node;
-        const context = canvas.getContext('2d');
 
-        // context.clearRect(0, 0, width, height);
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+    
+  },
 
-        const dpr = wx.getSystemInfoSync().pixelRatio;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+    
+  },
 
-        context.scale(dpr, dpr);
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+    
+  },
 
-        const centerX = width / 2;
-        const centerY = height / 2;
-        const radius = 48;
-        // const radius = Math.min(width, height) / 2;
-        // const radius = Math.min(canvas.width, canvas.height) / 2;
-        // console.log('idName' + idName);
-        // console.log(canvas);
-        const startAngle = -0.5 * Math.PI; // 起始角度 -90度
-        // const startAngle = Math.PI * 1.5;
-        const endAngle = startAngle + (percent / 100) * 2 * Math.PI; // 结束角度
-        
-
-        // 绘制背景圆环
-        context.lineWidth = 4;
-        context.strokeStyle = 'red';
-        context.beginPath();
-        context.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-        context.stroke();
-
-        // 绘制进度圆环
-        context.lineWidth = 4;
-        context.strokeStyle = '#3b5998';
-        context.beginPath();
-        context.arc(centerX, centerY, radius, startAngle, endAngle);
-
-        context.stroke();
-
-        // 绘制文字
-        context.font = '10px sans-serif';
-        context.fillStyle = 'black';
-        context.textAlign = 'center';
-        context.textBaseline = 'middle';
-        // context.fillText(`${percent}%`, centerX, centerY);
-        context.fillText(percentageTip, centerX, centerY);
-      });
-  }
-});
-
-
-
-
-// Component({
-//   data: {
-//     motto: 'Hello World',
-//     userInfo: {
-//       avatarUrl: defaultAvatarUrl,
-//       nickName: '',
-//     },
-//     hasUserInfo: false,
-//     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
-//     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
-//   },
-//   methods: {
-//     // 事件处理函数
-//     bindViewTap() {
-//       wx.navigateTo({
-//         url: '../logs/logs',
-//       })
-//     },
-//     onChooseAvatar(e: any) {
-//       const { avatarUrl } = e.detail
-//       const { nickName } = this.data.userInfo
-//       this.setData({
-//         "userInfo.avatarUrl": avatarUrl,
-//         hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-//       })
-//     },
-//     onInputChange(e: any) {
-//       const nickName = e.detail.value
-//       const { avatarUrl } = this.data.userInfo
-//       this.setData({
-//         "userInfo.nickName": nickName,
-//         hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-//       })
-//     },
-//     getUserProfile() {
-//       // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-//       wx.getUserProfile({
-//         desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-//         success: (res) => {
-//           console.log(res)
-//           this.setData({
-//             userInfo: res.userInfo,
-//             hasUserInfo: true
-//           })
-//         }
-//       })
-//     },
-//   },
-// })
+  /**
+   * 用户点击右上角分享
+   */
+  // onShareAppMessage(opts): WechatMiniprogram.Page.ICustomShareContent {
+  //   console.log(opts.target)
+  //   return {}
+  // }
+})

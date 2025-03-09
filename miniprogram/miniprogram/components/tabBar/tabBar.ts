@@ -8,25 +8,25 @@ Component({
   data: {
     tabBarList: [
       {
+        text: '首页',
+        icon: '/assets/pics/home2.png',
+        url: '/pages/index/index',
+      },
+      {
         text: 'Part One',
-        icon: '/assets/number1.png',
+        icon: '/assets/pics/number1.png',
         url: '/pages/partOne/partOne',
       },
       {
         text: 'Part Two',
-        icon: '/assets/number2.png',
+        icon: '/assets/pics/number2.png',
         url: '/pages/partTwo/partTwo',
       },
       {
         text: 'Part Three',
-        icon: '/assets/number3.png',
+        icon: '/assets/pics/number3.png',
         url: '/pages/partThree/partThree',
-      },
-      {
-        text: '我的',
-        icon: '/assets/user-info.png',
-        url: '/pages/aboutMe/aboutMe',
-      },
+      }
     ],
   },
   methods: {

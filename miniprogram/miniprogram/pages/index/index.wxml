@@ -1,41 +1,43 @@
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-card">
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="updateUserProfile"></image>
+      <view class="user-details">
+        <text class="nickname" bindtap="updateUserProfile">{{userInfo.nickname}}</text>
+        <view class="vip-badge" wx:if="{{userInfo.isVip}}">
+          <image src="./../../assets/vip5.png" class="vip-icon"></image>
+        </view>
+      </view>
+    </view>
+    <view class="question-count">
+      <text>今日可刷题次数：</text>
+      <text class="count">{{userInfo.remainingQuestions}} / 30</text>
+    </view>
+  </view>
 
-<view class="containerThreeparts">
-  <!-- 待添加未打卡状态判定 -->
-  <view  wx:for="{{[1, 2, 3]}}" wx:key="key" bindtap="gotoPage" data-part="{{item}}">
-    <canvas type="2d" id="progressCircle{{item}}" canvas-id="progressCircle{{item}}" style="width: 100px; height: 100px;"></canvas>
+  <!-- 分享小程序 -->
+  <view class="share-section">
+    <text class="share-title">🎉 邀请好友得更多刷题机会 🎉</text>
+    <view class="share-buttons">
+      <button open-type="share" class="share-btn">分享到好友</button>
+      <button open-type="share" class="share-btn">分享到微信群</button>
+      <button open-type="share" class="share-btn">分享到朋友圈</button>
+    </view>
+    <view class="progress-container">
+      <text>已邀请：{{userInfo.inviteCount}} 人</text>
+      <progress percent="{{userInfo.inviteCount * 10}}" show-info="true"/>
+    </view>
+  </view>
+
+  <!-- 其他功能 -->
+  <view class="footer-links">
+    <view class="feedback" bindtap="reportIssues">
+      <van-icon name="question" color="#1989fa" size="30px"/> 建议及意见
+    </view>
+    <view class="about-us">
+      <text>关于我们</text>
+    </view>
   </view>
 </view>
-<view class="containerRecord">
-  <!-- 这里放一个月的打卡记录 -->
-  <view class="containerLeftRecord">
-    <canvas type="2d" id="heatmapCanvas" canvas-id="heatmapCanvas"></canvas>
-  </view>
-  <!--  -->
-  <!-- <view class="containerNotebook">
-    <image src="../../assets/notebook2.svg"/>
-  </view> -->
-  <!--  -->
-</view>
-<van-button type="primary">按钮</van-button>
-<!-- 进入小程序判断有没有登陆 -->
-<view class="containerPromote">
-  <!-- 登陆但一直没有充值的 -->
-  <view>点这里帮推广，获得一天免费试用</view>
-  <view> 我选择氪金 </view>
-  <!-- 登陆&通过活动推广而免费使用的 -->
-  <view>
-    今天您是推广知识的慈善大使！
-  </view>
-  <!-- 登陆&充值的 -->
-  <view>
-    尊贵的vip，今天也要加油哦！
-  </view>
-</view>
-<!-- 其他页面分析：
-跳转到part 1的列表页面==》具体问题页面：每个内容会的就过，不会的多练
-跳转到part 2的列表页面
-跳转到part 3的列表页面
-帮忙推广宣传功能
-氪金页面
-最下端：【首页】【我的】
- -->
+<tab-bar active="0"></tab-bar>

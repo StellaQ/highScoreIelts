@@ -7,8 +7,9 @@
   </view>
   <text class="nickname" bindtap="updateUserProfile">{{userInfo.nickname}}</text>
 </view>
-vip充值
-非vip 推广看广告
+放首页
+建议及意见
+关于我们
 <tab-bar active="3"></tab-bar>
 <!-- 页面报错&反馈&提升建议  
       todo 还需新增一个reportIssues页面去处理 start-->
