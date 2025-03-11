@@ -1,11 +1,15 @@
+const app = getApp();
+
 Page({
   data: {
     userInfo: {
       userId: '',
       nickname: '',
       avatarUrl: '',
-      isVip: false
+      isVip: false,
+      inviteCount: 22
     },
+    numberOfUses: 0,
     active: 3
   },
   async updateUserProfile() {
@@ -58,7 +62,7 @@ Page({
   //   const nicknames = ['冒险家', '小小探索者', '智慧达人'];
   //   return nicknames[Math.floor(Math.random() * nicknames.length)];
   // },
-  setUserInfo(userInfo: { userId: any; isVip: any; nickname: any; avatarUrl: any; }) {
+  setUserInfo(userInfo: { userId: any; isVip: any; nickname: any; avatar?: any; avatarUrl?: any; }) {
     this.setData({
       userInfo: {
         ...this.data.userInfo, // 保留原有字段（如 inviteCount）
@@ -69,16 +73,14 @@ Page({
         avatarUrl: userInfo.avatarUrl || '../../assets/pics/user2.png'
       }
     });
-    console.log(this.data.userInfo);
+    console.log("index页面的userInfo:", this.data.userInfo);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
-    const app = getApp();
-
     app.getUserInfo((userInfo: { userId: any; isVip: any; nickname: any; avatar: any; }) => {
-      console.log("index页面获取用户信息:", userInfo);
+      console.log("index页面从app.ts获取用户信息:", userInfo);
       this.setUserInfo(userInfo);
     });
   },
@@ -94,7 +96,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    
+    this.setData({
+      numberOfUses: app.globalData.numberOfUses
+    });
   },
 
   /**
@@ -132,4 +136,11 @@ Page({
   //   console.log(opts.target)
   //   return {}
   // }
+  onShareAppMessage() {
+    return {
+      title: '🎉 快来一起刷题！',
+      path: `/pages/index/index?inviteId=${this.data.userInfo.userId}`, // 分享链接带邀请码
+      imageUrl: '/assets/pics/share-img.png', // 分享图片
+    };
+  }
 })

@@ -5,6 +5,8 @@ import { getLeftList, getFilteredTagIdsToday, getTagList} from '../../utils/onlo
 const staticQuestions = require('../../assets/data/staticQuestions.js');
 const API = require('../../utils/api.js');
 
+const app = getApp();
+
 Page({
   data: {
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
@@ -22,6 +24,7 @@ Page({
       isVip: false // 决定review的时候能不能点开定制开关
       // createCount: 10
     },
+    numberOfUses: 0,
 
     memoryGapDays: [1,3,7,15,'done']
   },
@@ -168,8 +171,31 @@ Page({
   // 对应 step3
   onInputStep3(event) {
     this.onInput(event, 'step3');
+  },
+  useNumber() {
+    const isVip = this.data.userInfo.isVip;
+    if(!isVip) {
+      app.decreaseNumberOfUses();
+      this.setData({
+        numberOfUses: app.globalData.numberOfUses
+      });
+    }
   },  
   produceAnswer(event: { currentTarget: { dataset: { id: any; }; }; }) {
+    console.log('需要检查：vip用户或者非VIP用户的numberOfUses>0');
+    // **✅ 判断 VIP 或 非 VIP 但 numberOfUses > 0**
+    const isVip = this.data.userInfo.isVip;
+    const numberOfUses = this.data.numberOfUses
+    if (!(isVip || (!isVip && numberOfUses > 0))) {
+      // wx.showToast({
+      //   title: '可用次数不足',
+      //   icon: 'none'
+      // });
+      return;
+    }
+    // **✅ 通过条件，执行后续逻辑**
+    console.log('条件满足，继续执行代码...');
+
     const qId = event.currentTarget.dataset.id; // 获取点击按钮的 question ID
     
     // 根据 qId 查找对应的问题
@@ -189,7 +215,7 @@ Page({
     } else {
       console.log('没有找到对应的题目');
     }
-    const userId = this.data.userIndo.userId;
+    const userId = this.data.userInfo.userId;
     API.getAIanswer(question, userId)
       .then((res: { answer: any; }) => {
         // 更新问题的 AIanswer
@@ -206,6 +232,8 @@ Page({
           'chosenTag.questions': this.data.chosenTag.questions  // 更新 questions 数组
         });
         console.log('Response from AI:', res);
+        // 申请调用AI的api成功返回，非vip用户的numberOfUses使用次数-1
+        this.useNumber();
       })
       .catch((err: any) => {
         console.error('Request failed:', err);
@@ -296,7 +324,7 @@ Page({
   showGuide() {
     wx.showModal({
       title: '使用提示',
-      content: '1 => 1天后再复习\n3 => 3天后再复习\n7 => 7天后再复习\ndone => 不用再复习，因为已经完全掌握。',
+      content: '全新的题下Question1/2/3/4要都做了才能选1/3/7/15/done哦～\n1=> 【难，需要高频复习】1天后再复习\n3 => 【有点难】3天后再复习\n7 => 【已经掌握】7天后再复习\ndone => 【完全掌握】这个季度不用再复习',
       showCancel: false,
       confirmText: '知道了',
     });    
@@ -362,8 +390,12 @@ Page({
     const app = getApp();
     
     app.getUserInfo((userInfo) => {
-      console.log("part one页面获取用户信息:", userInfo);
+      console.log("part one页面从app.ts获取用户信息:", userInfo);
       this.setUserInfo(userInfo);
+    });
+
+    this.setData({
+      numberOfUses: app.globalData.numberOfUses
     });
   },
   /**

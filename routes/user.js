@@ -76,4 +76,57 @@ router.post('/updateProfile', async (req, res) => {
   }
 });
 
+router.route('/updateNumOfUsesLeftByNew')
+  // 获取 numOfUsesLeftByNew
+  .get(async (req, res) => {
+    try {
+      const { userId } = req.query;
+
+      if (!userId) {
+        return res.status(400).json({ error: '缺少 userId 参数' });
+      }
+
+      const user = await User.findOne({ userId });
+
+      if (!user) {
+        return res.status(404).json({ error: '用户未找到' });
+      }
+
+      res.json({
+        message: '获取成功',
+        numOfUsesLeftByNew: user.numOfUsesLeftByNew
+      });
+    } catch (error) {
+      console.error('获取 numOfUsesLeftByNew 失败:', error);
+      res.status(500).json({ error: '服务器错误' });
+    }
+  })
+  // 更新 numOfUsesLeftByNew
+  .post(async (req, res) => {
+    try {
+      const { userId, newCount } = req.body;
+
+      if (!userId || newCount === undefined) {
+        return res.status(400).json({ error: '参数错误' });
+      }
+
+      const user = await User.findOne({ userId });
+
+      if (!user) {
+        return res.status(404).json({ error: '用户未找到' });
+      }
+
+      user.numOfUsesLeftByNew = newCount;
+      await user.save();
+
+      res.json({
+        message: '更新成功',
+        numOfUsesLeftByNew: user.numOfUsesLeftByNew
+      });
+    } catch (error) {
+      console.error('更新 numOfUsesLeftByNew 失败:', error);
+      res.status(500).json({ error: '服务器错误' });
+    }
+  });
+
 module.exports = router;

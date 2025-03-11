@@ -5,14 +5,14 @@
       <image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="updateUserProfile"></image>
       <view class="user-details">
         <text class="nickname" bindtap="updateUserProfile">{{userInfo.nickname}}</text>
-        <view class="vip-badge" wx:if="{{userInfo.isVip}}">
-          <image src="./../../assets/vip5.png" class="vip-icon"></image>
-        </view>
+      </view>
+      <view class="vip-badge" wx:if="{{userInfo.isVip}}">
+        <image src="./../../assets/pics/vip5.png" class="vip-icon"></image>
       </view>
     </view>
     <view class="question-count">
       <text>今日可刷题次数：</text>
-      <text class="count">{{userInfo.remainingQuestions}} / 30</text>
+      <text class="count">{{numberOfUses}}</text>
     </view>
   </view>
 
@@ -29,14 +29,17 @@
       <progress percent="{{userInfo.inviteCount * 10}}" show-info="true"/>
     </view>
   </view>
-
+  <!-- 
+  分享出去后，新用户点进来，后端去检测是否是新用户（第一次使用）
+  有20个？新用户即可获取终身vip 是否要用两端通知的那种
+  宣传图片 -->
   <!-- 其他功能 -->
   <view class="footer-links">
     <view class="feedback" bindtap="reportIssues">
       <van-icon name="question" color="#1989fa" size="30px"/> 建议及意见
     </view>
     <view class="about-us">
-      <text>关于我们</text>
+      <text>高分雅思</text>
     </view>
   </view>
 </view>

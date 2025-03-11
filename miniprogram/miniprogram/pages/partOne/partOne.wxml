@@ -165,6 +165,7 @@
             data-id="{{item.qId}}"
             disabled="{{ item.isButtonDisabled }}"
             loading="{{item.isButtonLoading}}"
+            loading-text="{{userInfo.isVip ?  '' : numberOfUses}}"
             bind:click="produceAnswer"
             >生成</van-button>
         </view>
