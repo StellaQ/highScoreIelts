@@ -43,9 +43,12 @@
   font-weight: bold;
 }
 
+.vip-container{
+  position: relative;
+}
 .vip-badge {
   position: absolute;
-  left: 30rpx;
+  left: 5rpx;
   top: -10px;
 }
 
@@ -120,4 +123,53 @@
 .about-us {
   color: #999;
   font-size: 22rpx;
+}
+
+/* VIP用户界面样式 */
+.vip-container {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  padding: 20rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  color: #fff;
+  margin-top: 30rpx;
+}
+
+.vip-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.vip-badge {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10rpx;
+}
+
+.vip-benefits {
+  margin-top: 20rpx;
+}
+
+.vip-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vip-benefits li {
+  display: flex;
+  align-items: center;
+  margin: 10rpx 0;
+}
+
+.vip-benefits img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.vip-animation {
+  margin-top: 20rpx;
+  /* 添加动画效果 */
 }
