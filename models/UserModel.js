@@ -27,6 +27,10 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0 // 默认没有刷题次数
   },
+  inviteCount: { // 记录邀请人数
+    type: Number,
+    default: 0
+  },
   gender: {
     type: Number, // 0: 未知, 1: 男, 2: 女
     default: 0

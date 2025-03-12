@@ -25,8 +25,8 @@
       <button open-type="share" class="share-btn">分享到朋友圈</button>
     </view>
     <view class="progress-container">
-      <text>已邀请：{{userInfo.inviteCount}} 人</text>
-      <progress percent="{{userInfo.inviteCount * 10}}" show-info="true"/>
+      <text>已邀请：{{inviteInfo.inviteCount}} 人</text>
+      <progress percent="{{ inviteInfo.invitePercent }}" show-info="true"/>
     </view>
   </view>
   <!-- 

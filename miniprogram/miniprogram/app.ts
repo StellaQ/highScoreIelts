@@ -1,20 +1,69 @@
 import userConfig from './assets/data/userConfig.js'; // 引入 userConfig.js
+import { simpleSecureStorage } from './utils/simpleSecureStorage';
+
+interface UserInfo {
+  userId: string;
+  nickname: string;
+  avatarUrl: string;
+  isVip: boolean;
+  inviteCount: number;
+}
+
+interface IAppOption {
+  globalData: {
+    userInfo?: UserInfo;
+    numberOfUses: number;
+    [key: string]: any;
+  };
+  userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
+  loginAndFetchUserData: () => void;
+  fetchNumberOfUses: (userInfo: UserInfo) => void;
+  decreaseNumberOfUses: () => void;
+  getUserInfo: (callback: (userInfo: UserInfo) => void) => void;
+  onNumberOfUsesChange: (callback: (value: number) => void) => void;
+  updateNumberOfUses: (value: number) => void;
+}
+
+// 创建一个简单的事件总线
+const eventBus = {
+  listeners: {} as Record<string, Function[]>,
+  on(event: string, callback: Function) {
+    if (!this.listeners[event]) {
+      this.listeners[event] = [];
+    }
+    this.listeners[event].push(callback);
+  },
+  emit(event: string, data: any) {
+    if (this.listeners[event]) {
+      this.listeners[event].forEach(callback => callback(data));
+    }
+  }
+};
 
 App<IAppOption>({
   globalData: {
-    userInfo: null,
+    userInfo: undefined,
     numberOfUses: 0
   },
 
-  onLaunch() {
+  // 注册观察者
+  onNumberOfUsesChange(callback: (value: number) => void) {
+    eventBus.on('numberOfUsesChange', callback);
+  },
+
+  // 更新numberOfUses的方法
+  updateNumberOfUses(value: number) {
+    this.globalData.numberOfUses = value;
+    eventBus.emit('numberOfUsesChange', value);
+  },
+
+  async onLaunch() {
     console.log("小程序启动，检查用户信息");
 
-    const userInfo = wx.getStorageSync('userInfo');
+    const userInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
     if (userInfo && userInfo.userId) {
-      console.log("本地已有用户信息:", userInfo);
+      console.log("本地缓存已有用户信息:", userInfo);
       this.globalData.userInfo = userInfo;
-
-      // **✅ 获取 numOfUsesLeftByNew**
       this.fetchNumberOfUses(userInfo);
     } else {
       console.log("无本地用户信息，执行登录流程");
@@ -22,7 +71,7 @@ App<IAppOption>({
     }
   },
   // **✅ 在小程序关闭时，保存最新的 numberOfUses**
-  onHide() {
+  async onHide() {
     if (this.globalData.userInfo && this.globalData.userInfo.userId) {
       const isVip = this.globalData.userInfo.isVip;
       if (isVip) {
@@ -32,7 +81,10 @@ App<IAppOption>({
       const newCount = Math.max(this.globalData.numberOfUses - userConfig.basicNumberOfUsesEachDay, 0);
       
       // **🔹 先存入本地缓存，防止后端请求失败数据丢失**
-      wx.setStorageSync('numOfUsesLeftByNew', newCount);
+      if (newCount > 0) {
+        console.log('每次非vip调用-1次操作时，如果newCount > 0，就缓存numOfUsesLeftByNew：newCount')
+        await simpleSecureStorage.setStorage('numOfUsesLeftByNew', newCount);
+      }
 
       wx.request({
         url: 'http://localhost:3001/api/user/updateNumOfUsesLeftByNew',
@@ -41,7 +93,7 @@ App<IAppOption>({
           userId: this.globalData.userInfo.userId,
           newCount: newCount
         },
-        success: (res) => {
+        success: (res: any) => {
           console.log("用户离开时保存 numOfUsesLeftByNew:", res.data.numOfUsesLeftByNew);
         }
       });
@@ -55,9 +107,9 @@ App<IAppOption>({
             url: 'http://localhost:3001/api/user/getOpenId',
             method: 'POST',
             data: { code: res.code },
-            success: (response) => {
+            success: async (response: any) => {
               const userInfo = response.data.userInfo;
-              wx.setStorageSync('userInfo', userInfo);
+              await simpleSecureStorage.setStorage('userInfo', userInfo);
               this.globalData.userInfo = userInfo;
 
               console.log("app.ts接口api/user/getOpenId获取并存储用户数据:", userInfo);
@@ -77,7 +129,7 @@ App<IAppOption>({
   },
 
   // **💡 封装全局方法，页面调用这个方法即可**
-  getUserInfo(callback: (userInfo: any) => void) {
+  getUserInfo(callback: (userInfo: UserInfo) => void) {
     if (this.globalData.userInfo) {
       callback(this.globalData.userInfo);
     } else {
@@ -86,20 +138,22 @@ App<IAppOption>({
   },
 
   // **✅ 获取 numOfUsesLeftByNew**
-  fetchNumberOfUses(userInfo) {
-    console.log("去后端按userId查询numberOfUses")
+  async fetchNumberOfUses(userInfo: UserInfo) {
+    console.log("去后端按userId查询numberOfUses:")
     const isVip = userInfo.isVip;
     const userId = userInfo.userId;
     if(isVip){
       console.log("如果是vip,则不用查询，直接返回");
       return
     }
-    console.log("如果不是vip,去调api查询");
+    console.log("如果不是vip,去后端按userId查询numberOfUses");
     // **🔹 先从缓存获取 numberOfUses**
-    const cachedNumberOfUses = wx.getStorageSync('numOfUsesLeftByNew');
+    const cachedNumberOfUses = await simpleSecureStorage.getStorage('numOfUsesLeftByNew') as number | null;
 
-    if (cachedNumberOfUses !== "" && cachedNumberOfUses !== null) {
-      this.globalData.numberOfUses = cachedNumberOfUses + userConfig.basicNumberOfUsesEachDay;;
+    if (cachedNumberOfUses !== null) {
+      this.updateNumberOfUses(cachedNumberOfUses + userConfig.basicNumberOfUsesEachDay);
+      // console.log(cachedNumberOfUses);
+      // console.log(this.globalData.numberOfUses);
       console.log("从缓存获取 numberOfUses:", this.globalData.numberOfUses);
     } else {
       console.log("如果不是 VIP，且缓存里没有，去调 API 查询");
@@ -107,13 +161,14 @@ App<IAppOption>({
         url: 'http://localhost:3001/api/user/updateNumOfUsesLeftByNew',
         method: 'GET',
         data: { userId },
-        success: (res) => {
+        success: async (res: any) => {
           if (res.data.numOfUsesLeftByNew !== undefined) {
-            this.globalData.numberOfUses = res.data.numOfUsesLeftByNew + userConfig.basicNumberOfUsesEachDay;
+            const newValue = res.data.numOfUsesLeftByNew + userConfig.basicNumberOfUsesEachDay;
+            this.updateNumberOfUses(newValue); // 使用新方法更新值
             console.log("通过userId调用get api接口获取numberOfUses + userConfig.basicNumberOfUsesEachDay:", this.globalData.numberOfUses);
 
             // **🔹 把数据存到本地缓存**
-            wx.setStorageSync('numOfUsesLeftByNew', res.data.numOfUsesLeftByNew);
+            await simpleSecureStorage.setStorage('numOfUsesLeftByNew', res.data.numOfUsesLeftByNew);
           }
         }
       });
@@ -133,7 +188,7 @@ App<IAppOption>({
       // **🔹 先存入本地缓存，防止后端请求失败数据丢失**
       if (newCount > 0) {
         console.log('每次非vip调用-1次操作时，如果newCount > 0，就缓存numOfUsesLeftByNew：newCount')
-        wx.setStorageSync('numOfUsesLeftByNew', newCount);
+        simpleSecureStorage.setStorage('numOfUsesLeftByNew', newCount);
       }
     } else {
       wx.showToast({

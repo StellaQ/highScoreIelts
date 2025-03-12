@@ -4,13 +4,13 @@ const router = express.Router();
 const axios = require('axios');
 
 const User = require('../models/UserModel'); // 引入用户模型
+const InviteUser = require('../models/InviteUser'); // 引入邀请记录模型
 
 const APP_ID = 'wx64644819be1ec93a';
 const APP_SECRET = 'aeb6c176666f38a2d8b2ebccd0281504';
 
 router.post('/getOpenId', async (req, res) => {
-
-  const { code } = req.body;
+  const { code, inviterId } = req.body;
 
   try {
     const wxRes = await axios.get(`https://api.weixin.qq.com/sns/jscode2session`, {
@@ -24,26 +24,50 @@ router.post('/getOpenId', async (req, res) => {
 
     const { openid, session_key } = wxRes.data;
     let user = await User.findOne({ openid });
+    let isNewUser = false;
 
     if (!user) {
+      // 这是新用户
+      isNewUser = true;
       user = new User({ openid });
       await user.save();
+
+      // 如果有邀请人ID，处理邀请关系
+      if (inviterId && inviterId !== user.userId) {
+        // 检查是否已被邀请
+        const existingInvite = await InviteUser.findOne({ inviteeId: user.userId });
+        if (!existingInvite) {
+          // 创建邀请记录
+          await InviteUser.create({
+            inviterId,
+            inviteeId: user.userId,
+            createdAt: new Date()
+          });
+
+          // 更新邀请人的邀请计数
+          await User.updateOne(
+            { userId: inviterId },
+            { $inc: { inviteCount: 1 } }
+          );
+        }
+      }
     } else {
-      user.lastLogin = new Date(); // 更新上次登录时间
+      user.lastLogin = new Date();
       await user.save();
     }
 
-    // ✅ 只返回前端需要的字段
     res.json({
       userInfo: {
-        userId: user.userId, 
+        userId: user.userId,
         isVip: user.isVip,
         nickname: user.nickname,
-        avatarUrl: user.avatarUrl
-        // vipExpireDate: user.vipExpireDate
-      }
+        avatarUrl: user.avatarUrl,
+        inviteCount: user.inviteCount
+      },
+      isNewUser
     });
   } catch (error) {
+    console.error('获取 openid 失败:', error);
     res.status(500).json({ error: '获取 openid 失败' });
   }
 });
@@ -128,5 +152,80 @@ router.route('/updateNumOfUsesLeftByNew')
       res.status(500).json({ error: '服务器错误' });
     }
   });
+
+// 处理邀请关系
+router.post('/checkAndRecordInvite', async (req, res) => {
+  try {
+    const { inviterId, inviteeId } = req.body;
+
+    if (!inviterId || !inviteeId) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '邀请人ID和被邀请人ID不能为空' 
+      });
+    }
+
+    // 1. 检查是否已被邀请过
+    const existingInvite = await InviteUser.findOne({ inviteeId });
+    if (existingInvite) {
+      return res.json({ 
+        success: false, 
+        message: '该用户已被其他人邀请过' 
+      });
+    }
+
+    // 2. 创建邀请记录
+    await InviteUser.create({ 
+      inviterId, 
+      inviteeId,
+      createdAt: new Date()
+    });
+
+    // 3. 更新邀请人的 inviteCount
+    await User.updateOne(
+      { userId: inviterId },
+      { $inc: { inviteCount: 1 } }
+    );
+
+    // 4. 获取更新后的邀请人信息
+    const updatedUser = await User.findOne({ userId: inviterId });
+
+    res.json({
+      success: true,
+      message: '邀请记录创建成功',
+      inviteCount: updatedUser.inviteCount
+    });
+
+  } catch (error) {
+    console.error('处理邀请关系失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
+    });
+  }
+});
+
+// 获取邀请数量
+router.get('/updateInviteCount', async (req, res) => {
+  try {
+    const { userId } = req.query;
+
+    if (!userId) {
+      return res.status(400).json({ error: '用户ID不能为空' });
+    }
+
+    const user = await User.findOne({ userId });
+    if (!user) {
+      return res.status(404).json({ error: '用户不存在' });
+    }
+
+    res.json({
+      inviteCount: user.inviteCount
+    });
+  } catch (error) {
+    console.error('获取邀请数量失败:', error);
+    res.status(500).json({ error: '服务器错误' });
+  }
+});
 
 module.exports = router;
