@@ -1,0 +1,25 @@
+<view class="feedback-container">
+  <view class="feedback-header">
+    <!-- <text class="feedback-title">建议及意见</text> -->
+  </view>
+  <textarea class="feedback-input" placeholder="请在此输入您的反馈..." bindinput="onFeedbackInput" value="{{feedbackText}}"></textarea>
+  
+  <!-- 图片上传区域 -->
+  <view class="image-uploader">
+    <view class="image-list">
+      <block wx:for="{{images}}" wx:key="*this">
+        <view class="image-item">
+          <image src="{{item}}" mode="aspectFill" bindtap="previewImage" data-src="{{item}}"></image>
+          <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</view>
+        </view>
+      </block>
+      <view class="upload-btn" bindtap="chooseImage" wx:if="{{images.length < 3}}">
+        <text class="plus">+</text>
+        <text class="upload-text">上传图片</text>
+      </view>
+    </view>
+    <text class="tip-text">最多上传3张图片</text>
+  </view>
+
+  <button class="submit-btn" bindtap="submitFeedback">提交反馈</button>
+</view> 

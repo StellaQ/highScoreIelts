@@ -2,6 +2,8 @@ import { Category, TagList } from '../../utils/types'; // 导入定义的类型
 import Toast from '@vant/weapp/toast/toast'; 
 import { getLeftList, getFilteredTagIdsToday, getTagList} from '../../utils/onloadDataOne.js'; 
 
+import { getShareAppMessage } from '../../utils/shareUtil';
+
 const staticQuestions = require('../../assets/data/staticQuestions.js');
 const API = require('../../utils/api.js');
 
@@ -432,8 +434,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage(opts:any): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
-    return {}
+  onShareAppMessage: function () {
+    const userId = this.data.userInfo.userId; // 假设 userId 存储在 userInfo 中
+    return getShareAppMessage(userId);
   }
 })

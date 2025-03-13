@@ -215,7 +215,7 @@ Page<PageData, WechatMiniprogram.Page.CustomOption>({
     return {
       title: '🎉 快来一起刷题！',
       path: `/pages/index/index?inviterId=${this.data.userInfo.userId}`,
-      imageUrl: '/assets/pics/share-img.png',
+      imageUrl: '/assets/pics/share5.jpg',
     };
   },
 
@@ -251,5 +251,11 @@ Page<PageData, WechatMiniprogram.Page.CustomOption>({
     } catch (err) {
       console.error('处理邀请关系失败:', err);
     }
+  },
+
+  navigateToFeedback() {
+    wx.navigateTo({
+      url: '/pages/feedback/feedback'
+    });
   },
 });

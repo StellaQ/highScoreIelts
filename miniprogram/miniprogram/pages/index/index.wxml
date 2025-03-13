@@ -1,64 +1,66 @@
-<view class="container">
-  <!-- 用户信息区域 -->
-  <view class="user-card">
-    <view class="user-info">
-      <image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="updateUserProfile"></image>
-      <view class="user-details">
-        <text class="nickname" bindtap="updateUserProfile">{{userInfo.nickname}}</text>
+<view class="outer-container">
+  <view class="container">
+    <!-- 用户信息区域 -->
+    <view style="margin-top: 40rpx;" class="user-card {{userInfo.isVip ? 'vip' : ''}}">
+      <view class="user-info">
+        <view class="avatar-container">
+          <image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="updateUserProfile"></image>
+          <view class="vip-badge1" wx:if="{{userInfo.isVip}}">
+            <image src="./../../assets/pics/vip5.png" class="vip-icon"></image>
+          </view>
+        </view>
+        <view class="user-details">
+          <text class="nickname" bindtap="updateUserProfile">{{userInfo.nickname}}</text>
+        </view>
       </view>
-      <view class="vip-badge" wx:if="{{userInfo.isVip}}">
-        <image src="./../../assets/pics/vip5.png" class="vip-icon"></image>
+      <view class="question-count">
+        <text class="desc">今日可刷题次数：</text>
+        <text class="count">{{userInfo.isVip ? '无限次' : numberOfUses}}</text>
       </view>
     </view>
-    <view class="question-count">
-      <text>今日可刷题次数：</text>
-      <text class="count">{{userInfo.isVip ? '无限次' : numberOfUses}}</text>
+    <!-- 分享小程序 -->
+    <view style="margin-top: 50rpx;" class="share-section" wx:if="{{!userInfo.isVip}}">
+      <text class="share-title">🎉 邀请好友得更多刷题机会 🎉</text>
+      <view class="share-buttons">
+        <button open-type="share" class="share-btn">
+          <view style="color: bisque;">点击分享</view>
+          <image src="../../assets/pics/share4.png" style="width: 50rpx; height: 50rpx; margin-left: 10rpx; vertical-align: middle;" />
+        </button>
+      </view>
+      <view class="progress-container">
+        <text>已邀请：{{inviteInfo.inviteCount}} 人</text>
+        <progress percent="{{ inviteInfo.invitePercent }}" show-info="true"/>
+      </view>
+    </view>
+    <view class="vip-section" wx:if="{{userInfo.isVip}}">
+      <view class="vip-container">
+        <view class="vip-header">
+          <image src="../../assets/pics/vip-badge.png" class="vip-badge"></image>
+          <text>欢迎，尊贵的VIP用户！</text>
+        </view>
+        <view class="vip-benefits">
+          <text>VIP特权</text>
+          <ul>
+            <li><image src="../../assets/pics/icon-unlimited1.png" class="vip-icon"></image> 无限刷题</li>
+            <!-- <li><image src="../../assets/pics/icon-exclusive1.png" class="vip-icon"></image> 专属题库</li> -->
+            <!-- <li><image src="../../assets/pics/icon-support1.png" class="vip-icon"></image> 优先客服支持</li> -->
+            <li><image src="../../assets/pics/icon-events1.png" class="vip-icon"></image> 定期的VIP专属活动或优惠</li>
+          </ul>
+        </view>
+        <view class="vip-animation">
+          <!-- 动态动画 -->
+        </view>
+      </view>
     </view>
   </view>
-
-  <!-- 分享小程序 -->
-  <view class="share-section" wx:if="{{!userInfo.isVip}}">
-    <text class="share-title">🎉 邀请好友得更多刷题机会 🎉</text>
-    <view class="share-buttons">
-      <button open-type="share" class="share-btn">分享到好友</button>
-      <button open-type="share" class="share-btn">分享到微信群</button>
-      <button open-type="share" class="share-btn">分享到朋友圈</button>
-    </view>
-    <view class="progress-container">
-      <text>已邀请：{{inviteInfo.inviteCount}} 人</text>
-      <progress percent="{{ inviteInfo.invitePercent }}" show-info="true"/>
-    </view>
-  </view>
-  <view class="vip-section" wx:if="{{userInfo.isVip}}">
-    <view class="vip-container">
-      <view class="vip-header">
-        <image src="../../assets/pics/vip-badge.png" class="vip-badge"></image>
-        <text>欢迎，尊贵的VIP用户！</text>
-      </view>
-      <view class="vip-benefits">
-        <text>VIP特权</text>
-        <ul>
-          <li><image src="../../assets/pics/icon-unlimited1.png" class="vip-icon"></image> 无限刷题</li>
-          <!-- <li><image src="../../assets/pics/icon-exclusive1.png" class="vip-icon"></image> 专属题库</li> -->
-          <!-- <li><image src="../../assets/pics/icon-support1.png" class="vip-icon"></image> 优先客服支持</li> -->
-          <li><image src="../../assets/pics/icon-events1.png" class="vip-icon"></image> 定期的VIP专属活动或优惠</li>
-        </ul>
-      </view>
-      <view class="vip-animation">
-        <!-- 动态动画 -->
-      </view>
-    </view>
-  </view>
-  <!-- 
-  有20个？新用户即可获取终身vip 是否要用两端通知的那种
-  宣传图片 -->
+  
   <!-- 其他功能 -->
   <view class="footer-links">
-    <view class="feedback" bindtap="reportIssues">
-      <van-icon name="question" color="#1989fa" size="30px"/> 建议及意见
-    </view>
     <view class="about-us">
       <text>高分雅思</text>
+    </view>
+    <view class="feedback" bindtap="navigateToFeedback">
+      <van-icon name="question" color="#1989fa" size="30px"/> 建议及意见
     </view>
   </view>
 </view>

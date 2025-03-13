@@ -1,4 +1,11 @@
 {
+  "navigationBarTitleText": "首页",
   "usingComponents": {
-  }
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "usingComponents": {},
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {}
 }

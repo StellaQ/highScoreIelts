@@ -1,23 +1,36 @@
-.container {
+.outer-container {
   width: 100vw; /* 宽度填满屏幕 */
   height: calc(100vh - 100rpx); /* 减去底部 TabBar 高度 */
   display: flex;
   flex-direction: column;
-  justify-content: space-around; /* 内容上下分布 */
+  justify-content: center;
+}
+/* 如果不同机型的 TabBar 高度不同，可以用 safe-area-inset-bottom 兼容 iPhoneX： */
+.outer-container {
+  height: calc(100vh - 100rpx - env(safe-area-inset-bottom));
+}
+.container {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start; /* 内容上下分布 */
   align-items: center; /* 水平居中 */
   padding: 20rpx;
   box-sizing: border-box; /* 确保 padding 不影响宽高计算 */
 }
-/* 如果不同机型的 TabBar 高度不同，可以用 safe-area-inset-bottom 兼容 iPhoneX： */
-.container {
-  height: calc(100vh - 100rpx - env(safe-area-inset-bottom));
-}
-/* 用户信息卡片 */
+
+/* 用户信息卡片优化样式 */
 .user-card {
-  background: #fff;
-  padding: 30rpx;
-  border-radius: 20rpx;
-  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  padding: 40rpx; /* 增加内边距 */
+  border-radius: 25rpx; /* 调整圆角 */
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.15); /* 增加阴影 */
+  margin-bottom: 30rpx; /* 增加底部外边距 */
+}
+
+/* VIP用户信息卡片样式 */
+.user-card.vip {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
 }
 
 .user-info {
@@ -25,31 +38,34 @@
   align-items: center;
   position: relative;
 }
-
+.avatar-container{
+  position: relative;
+}
 .avatar {
-  width: 100rpx;
-  height: 100rpx;
+  width: 120rpx; /* 增加头像大小 */
+  height: 120rpx;
   border-radius: 50%;
-  margin-right: 20rpx;
+  margin-right: 25rpx; /* 调整头像右边距 */
+  border: 3rpx solid #f6d365; /* 增加边框厚度 */
+}
+.vip-badge1 {
+  position: absolute;
+  left: 42rpx;
+  top: -20rpx;
+  width: 20rpx;
+  height: 20rpx;
 }
 
 .user-details {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .nickname {
-  font-size: 32rpx;
+  font-size: 36rpx; /* 增加字体大小 */
   font-weight: bold;
-}
-
-.vip-container{
-  position: relative;
-}
-.vip-badge {
-  position: absolute;
-  left: 5rpx;
-  top: -10px;
+  color: #444; /* 调整字体颜色 */
 }
 
 .vip-icon {
@@ -59,70 +75,102 @@
 
 /* 刷题次数 */
 .question-count {
-  margin-top: 20rpx;
-  font-size: 28rpx;
+  margin-top: 25rpx; /* 增加顶部外边距 */
+  font-size: 30rpx; /* 调整字体大小 */
   font-weight: bold;
-  color: #ff5722;
-}
-
-.count {
-  font-size: 32rpx;
-  color: #f56c6c;
-}
-
-/* 分享区 */
-.share-section {
-  background: #f9f9f9;
-  margin-top: 30rpx;
-  padding: 20rpx;
-  border-radius: 20rpx;
+  /* color: #ff5722; */
   text-align: center;
 }
 
+.count {
+  font-size: 34rpx; /* 调整字体大小 */
+  /* color: #f56c6c; */
+}
+
+/* 分享区优化样式 */
+.share-section {
+  background: #f9f9f9;
+  /* margin-top: 35rpx; 增加顶部外边距 */
+  padding: 30rpx; /* 增加内边距 */
+  border-radius: 30rpx; /* 调整圆角 */
+  text-align: center;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
+}
+
 .share-title {
-  font-size: 28rpx;
+  font-size: 32rpx; /* 增加字体大小 */
   color: #333;
   font-weight: bold;
+  margin-bottom: 20rpx; /* 增加底部外边距 */
 }
 
 .share-buttons {
   display: flex;
   justify-content: space-around;
-  margin-top: 20rpx;
+  margin-top: 30rpx; /* 增加顶部外边距 */
 }
 
 .share-btn {
-  background: #1989fa;
+  width: 80%; /* 调整按钮宽度为80% */
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* 更新背景颜色为渐变色 */
   color: #fff;
-  border-radius: 10rpx;
-  padding: 10rpx 20rpx;
-  font-size: 28rpx;
+  border-radius: 15rpx; /* 调整圆角 */
+  padding: 15rpx 25rpx; /* 增加内边距 */
+  font-size: 30rpx; /* 增加字体大小 */
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1); /* 增加按钮阴影 */
 }
 
 /* 进度条 */
 .progress-container {
-  margin-top: 20rpx;
+  margin-top: 25rpx;
   text-align: center;
 }
 
 /* 底部功能 */
 .footer-links {
-  margin-top: 30rpx;
   display: flex;
-  justify-content: space-between;
-  font-size: 24rpx;
-  color: #666;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 35rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+}
+
+.footer-section {
+  width: 100%;
+  margin-bottom: 20rpx;
+  text-align: center;
 }
 
 .feedback {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-bottom: 20rpx;
+  color: #999;
+  font-size: 24rpx;
 }
 
 .about-us {
   color: #999;
-  font-size: 22rpx;
+  font-size: 24rpx; /* 增加字体大小 */
+  margin-bottom: 20rpx;
+}
+
+.share-info {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.share-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.share-info li {
+  margin: 10rpx 0;
 }
 
 /* VIP用户界面样式 */
@@ -172,4 +220,33 @@
 .vip-animation {
   margin-top: 20rpx;
   /* 添加动画效果 */
+}
+
+/* 非VIP用户字体颜色 */
+.user-card .nickname {
+  color: #444; /* 非VIP用户昵称颜色 */
+}
+
+/* VIP用户字体颜色 */
+.user-card.vip .nickname {
+  color: #fff; /* VIP用户昵称颜色 */
+}
+
+/* 非VIP刷题次数颜色 */
+.question-count .count {
+  color: #444; /* 非VIP刷题次数颜色 */
+}
+
+/* VIP刷题次数颜色 */
+.user-card.vip .question-count .count {
+  color: #fff; /* VIP刷题次数颜色 */
+}
+/* 非VIP刷题次数颜色 */
+.question-count .desc {
+  color: #444; /* 非VIP刷题次数颜色 */
+}
+
+/* VIP刷题次数颜色 */
+.user-card.vip .question-count .desc {
+  color: #fff; /* VIP刷题次数颜色 */
 }
