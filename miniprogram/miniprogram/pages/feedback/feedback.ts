@@ -1,8 +1,16 @@
 import { validateFeedback, sanitizeText } from '../../utils/contentValidator';
+import { getShareAppMessage } from '../../utils/shareUtil';
+import { simpleSecureStorage } from '../../utils/simpleSecureStorage';
 
 interface PageData {
   feedbackText: string;
   images: string[];
+  userInfo: {
+    userId: string;
+    nickname: string;
+    avatarUrl: string;
+    isVip: boolean;
+  };
 }
 
 interface PageInstance {
@@ -24,7 +32,20 @@ interface UploadResult {
 Page<PageData, PageInstance & PageMethods>({
   data: {
     feedbackText: '',
-    images: []
+    images: [],
+    userInfo: {
+      userId: '',
+      nickname: '',
+      avatarUrl: '',
+      isVip: false
+    }
+  },
+
+  async onLoad() {
+    const userInfo = await simpleSecureStorage.getStorage('userInfo');
+    if (userInfo) {
+      this.setData({ userInfo });
+    }
   },
 
   onFeedbackInput(event: WechatMiniprogram.Input) {
@@ -145,19 +166,7 @@ Page<PageData, PageInstance & PageMethods>({
     }
   },
 
-  onShareAppMessage(res: any) {
-    return {
-      title: '高分雅思 - 提升你的雅思成绩',
-      path: '/pages/index/index', // 分享的路径
-      imageUrl: '../../assets/pics/share-image.png', // 自定义分享图片
-      success: function (res: any) {
-        // 分享成功后的回调
-        console.log('分享成功', res);
-      },
-      fail: function (res: any) {
-        // 分享失败后的回调
-        console.log('分享失败', res);
-      }
-    }
+  onShareAppMessage() {
+    return getShareAppMessage(this.data.userInfo.userId);
   }
 }); 
