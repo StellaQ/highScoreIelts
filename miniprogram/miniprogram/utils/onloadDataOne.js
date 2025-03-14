@@ -45,6 +45,7 @@ export function getTagList(tagProcess, questionProcess, staticQuestions, filtere
           isSwitchChecked: false,
           isButtonDisabled: false,
           isButtonLoading: false,
+          isFlipped: false,
           step0: '',
           step1: '',
           step2: '',
@@ -75,11 +76,12 @@ export function getTagList(tagProcess, questionProcess, staticQuestions, filtere
           isSwitchChecked: true,
           isButtonDisabled: false,
           isButtonLoading: false,
+          isFlipped: false,
           step0: '',
           step1: '',
           step2: '',
           step3: '',
-          AIanswer: '',
+          AIanswer: ''
         }));
         tagList.push({
           tagId: subCategory.tagId,

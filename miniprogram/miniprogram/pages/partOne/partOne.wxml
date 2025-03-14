@@ -81,99 +81,129 @@
     wx:key="index"
     wx:for-item="item"
     wx:for-index="index">
-    <view style="margin-bottom: 10px;"
+    <view
+      wx:if="{{chosenTag.stage === 0}}">
+      <view 
+      style="margin-bottom: 10px;"
       class="card-header">
       Question {{index+1}} </view>
-    <view class="card-body">
-      <view>
-        {{item.qText}}
+      <view
+        class="card-body">
+        <view>
+          {{item.qText}}
+        </view>
+        <van-switch
+          size="20px"
+          inactive-color="rgb(220, 222, 224)"
+          checked="{{ item.isSwitchChecked }}"
+          bind:change="onChangeSwitch"
+          data-id="{{item.qId}}"/>
       </view>
-      <van-switch
-        size="20px"
-        inactive-color="rgb(220, 222, 224)"
-        checked="{{ item.isSwitchChecked }}"
-        bind:change="onChangeSwitch"
-        data-id="{{item.qId}}"/>
-    </view>
-    <!-- 问题定制区 -->
-    <view
-      class="card-edit"
-      hidden="{{ !item.isSwitchChecked }}">
-      <!-- type===0时的单选 -->
-      <view 
-      style="padding-left: 16px; margin-bottom: 5px;"
-      hidden="{{item.type !== 0}}">
-        <van-radio-group
-          value="{{item.step0}}"
-          data-id="{{item.qId}}"
-          bind:change="onChangeChoices"
-          direction="horizontal">
-          <van-radio
-            wx:for="{{item.choices}}"
-            wx:key="idx"
-            wx:for-item="choice"
-            wx:for-index="idx"
-            name="{{choice}}"
-            shape="square"
-            >{{choice}}
-          </van-radio>
-        </van-radio-group>
-      </view>
-      <!-- 这里填写prompt的回答&原因&解释 -->
-      <view>
-        <van-cell-group>
-          <van-field
-            value="{{ item.step1 }}"
+      <!-- 问题定制区 -->
+      <view
+        class="card-edit"
+        hidden="{{ !item.isSwitchChecked }}">
+        <!-- type===0时的单选 -->
+        <view 
+        style="padding-left: 16px; margin-bottom: 5px;"
+        hidden="{{item.type !== 0}}">
+          <van-radio-group
+            value="{{item.step0}}"
             data-id="{{item.qId}}"
-            bind:change="onInputStep1"
-            label="回答"
-            type="textarea"
-            placeholder="中英皆可，答案可为空，下同"
-            maxlength="80"
-            autosize
-            border="{{ false }}"
-          />
-        </van-cell-group>
-        <van-cell-group>
-          <van-field
-            value="{{ item.step2 }}"
-            data-id="{{item.qId}}"
-            bind:change="onInputStep2"
-            label="why"
-            type="textarea"
-            placeholder=""
-            autosize
-            border="{{ false }}"
-          />
-        </van-cell-group>
-        <van-cell-group>
-          <van-field
-            value="{{ item.step3 }}"
-            data-id="{{item.qId}}"
-            bind:change="onInputStep3"
-            label="解释/举例"
-            type="textarea"
-            placeholder=""
-            autosize
-            border="{{ false }}"
-          />
-        </van-cell-group>
-        <view style="padding-right: 0px; margin: 10px 0; display: flex; justify-content: flex-end;">
-          <van-button type="primary"
-            round="true"
-            plain
-            data-id="{{item.qId}}"
-            disabled="{{ item.isButtonDisabled }}"
-            loading="{{item.isButtonLoading}}"
-            loading-text="{{userInfo.isVip ?  '' : numberOfUses}}"
-            bind:click="produceAnswer"
-            >生成</van-button>
+            bind:change="onChangeChoices"
+            direction="horizontal">
+            <van-radio
+              wx:for="{{item.choices}}"
+              wx:key="idx"
+              wx:for-item="choice"
+              wx:for-index="idx"
+              name="{{choice}}"
+              shape="square"
+              >{{choice}}
+            </van-radio>
+          </van-radio-group>
+        </view>
+        <!-- 这里填写prompt的回答&原因&解释 -->
+        <view>
+          <van-cell-group>
+            <van-field
+              value="{{ item.step1 }}"
+              data-id="{{item.qId}}"
+              bind:change="onInputStep1"
+              label="回答"
+              type="textarea"
+              placeholder="中英皆可，答案可为空，下同"
+              maxlength="80"
+              autosize
+              border="{{ false }}"
+            />
+          </van-cell-group>
+          <van-cell-group>
+            <van-field
+              value="{{ item.step2 }}"
+              data-id="{{item.qId}}"
+              bind:change="onInputStep2"
+              label="why"
+              type="textarea"
+              placeholder=""
+              autosize
+              border="{{ false }}"
+            />
+          </van-cell-group>
+          <van-cell-group>
+            <van-field
+              value="{{ item.step3 }}"
+              data-id="{{item.qId}}"
+              bind:change="onInputStep3"
+              label="解释/举例"
+              type="textarea"
+              placeholder=""
+              autosize
+              border="{{ false }}"
+            />
+          </van-cell-group>
+          <view style="padding-right: 0px; margin: 10px 0; display: flex; justify-content: flex-end;">
+            <van-button type="primary"
+              round="true"
+              plain
+              data-id="{{item.qId}}"
+              disabled="{{ item.isButtonDisabled }}"
+              loading="{{item.isButtonLoading}}"
+              loading-text="{{userInfo.isVip ?  '' : numberOfUses}}"
+              bind:click="produceAnswer"
+              >生成</van-button>
+          </view>
         </view>
       </view>
+      <!-- 根据prompt产生内容区 -->
+      <view
+        class="card-footer">
+        {{ item. AIanswer}}
+      </view>
     </view>
-    <!-- 根据prompt产生内容区 -->
-    <view class="card-footer">
-      {{ item. AIanswer}}
+    <!-- 卡片翻转区 -->
+    <view
+      wx:if="{{chosenTag.stage !== 0}}"
+      class="flip-card {{item.isFlipped ? 'flipped' : ''}}"
+      bind:tap="flipCard"
+      data-id="{{item.qId}}">
+      <view class="flip-card-inner">
+        <view class="flip-card-front">
+          <view class="card-header">Question {{index+1}}</view>
+          <view class="card-header-note">30seconds / fluent / no repetition </view>
+          <view class="card-body-flip">
+            <view>{{item.qText}}</view>
+          </view>
+          <view class="flip-hint">点击查看答案</view> 
+        </view>
+        <view class="flip-card-back">
+          <!-- <view class="card-header">答案</view> -->
+          <view class="card-body-flip">
+            {{ item.AIanswer }}
+          </view>
+          <view class="flip-hint">点击返回问题</view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

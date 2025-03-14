@@ -331,6 +331,24 @@ Page({
       confirmText: '知道了',
     });    
   },
+  // 处理卡片翻转
+  flipCard(event: WechatMiniprogram.CustomEvent) {
+    const qId = event.currentTarget.dataset.id;
+    const questions = this.data.chosenTag.questions;
+    
+    // 找到对应问题并切换其翻转状态
+    const updatedQuestions = questions.map(q => {
+      if (q.qId === qId) {
+        return { ...q, isFlipped: !q.isFlipped };
+      }
+      return q;
+    });
+   
+    // 更新数据
+    this.setData({
+      'chosenTag.questions': updatedQuestions
+    });
+  },
   getQIdsByTagIds(tagIds: any) {
 
     if(tagIds.length === 0) { return [] };
