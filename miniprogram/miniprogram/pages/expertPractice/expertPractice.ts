@@ -1,6 +1,6 @@
 import { Category, TagList } from '../../utils/types'; // 导入定义的类型 
 import Toast from '@vant/weapp/toast/toast'; 
-import { getLeftList, getFilteredTagIdsToday, getTagList} from '../../utils/onloadDataOne.js'; 
+import { getLeftList, getFilteredTagIdsToday, getTagList} from '../../utils/onloadDataExpert.js'; 
 
 import { getShareAppMessage } from '../../utils/shareUtil';
 
@@ -24,9 +24,7 @@ Page({
     userInfo: {
       userId: '',
       isVip: false // 决定review的时候能不能点开定制开关
-      // createCount: 10
     },
-    numberOfUses: 0,
 
     memoryGapDays: [1,3,7,15,'done']
   },
@@ -62,8 +60,6 @@ Page({
         chosenTag: tagList[currentIndex] || null, // 更新 chosenTag
         isPrevDisabled: false, // 确保上一页按钮可用
       });
-      console.log('next-----------');
-      console.log(tagList[currentIndex]);
       // 如果已经是最后一个标签，禁用下一页按钮
       if (currentIndex === tagList.length - 1) {
         this.setData({
@@ -111,15 +107,10 @@ Page({
     this.setData({
       'chosenTag.questions': [...chosenTag.questions]  // 触发视图更新
     });
-  
-    // console.log('Updated item:', questionId, 'isSwitchChecked:', newCheckedValue);
   },  
   onChangeChoices(event: { detail: any; currentTarget: { dataset: { id: any; }; }; }) {
     const inputStr = event.detail;  // 获取选中的值
     const qId = event.currentTarget.dataset.id;  // 获取对应的 qId
-  
-    // console.log('Selected value:', inputStr);  // 打印选中的值
-    // console.log('Question ID:', qId);  
   
     // 获取 chosenTag
     let { chosenTag } = this.data;
@@ -127,9 +118,6 @@ Page({
     // 遍历 chosenTag 中的 questions
     for (let i = 0; i < chosenTag.questions.length; i++) {
       const question = chosenTag.questions[i];  // 获取当前问题对象
-  
-      // 打印当前 question 信息
-      // console.log('Question:', question);
   
       // 如果找到对应的 question，更新 step0
       if (question.qId === qId) {
@@ -175,29 +163,11 @@ Page({
     this.onInput(event, 'step3');
   },
   useNumber() {
-    const isVip = this.data.userInfo.isVip;
-    if(!isVip) {
-      app.decreaseNumberOfUses();
-      this.setData({
-        numberOfUses: app.globalData.numberOfUses
-      });
-    }
+    // 移除此方法的内容，保留空方法以避免引用错误
   },  
   produceAnswer(event: { currentTarget: { dataset: { id: any; }; }; }) {
-    console.log('需要检查：vip用户或者非VIP用户的numberOfUses>0');
-    // **✅ 判断 VIP 或 非 VIP 但 numberOfUses > 0**
     const isVip = this.data.userInfo.isVip;
-    const numberOfUses = this.data.numberOfUses
-    if (!(isVip || (!isVip && numberOfUses > 0))) {
-      // wx.showToast({
-      //   title: '可用次数不足',
-      //   icon: 'none'
-      // });
-      return;
-    }
-    // **✅ 通过条件，执行后续逻辑**
-    console.log('条件满足，继续执行代码...');
-
+    
     const qId = event.currentTarget.dataset.id; // 获取点击按钮的 question ID
     
     // 根据 qId 查找对应的问题
@@ -234,8 +204,6 @@ Page({
           'chosenTag.questions': this.data.chosenTag.questions  // 更新 questions 数组
         });
         console.log('Response from AI:', res);
-        // 申请调用AI的api成功返回，非vip用户的numberOfUses使用次数-1
-        this.useNumber();
       })
       .catch((err: any) => {
         console.error('Request failed:', err);
@@ -267,193 +235,5 @@ Page({
     const category = this.data.categories.find(category =>
       category.subCategories.some(tag => tag.tagId === tagIdToUpdate)
     );
-    if (category) {
-      const tag = category.subCategories.find(tag => tag.tagId === tagIdToUpdate);
-      if (tag) tag.stage = newStage;
-    }
-    this.setData({ categories: [...this.data.categories] });
-  },
-  setRemindDay(e: any) {
-
-    const tagId = this.data.chosenTag.tagId;
-    let ifCanSubmit = this.checkIfCanSubmitTagProcess(tagId);
-    if (!ifCanSubmit) return;
-
-    const gapDays = e.currentTarget.dataset.gap;
-
-    const userId = this.data.userInfo.userId;
-    
-    let stage = this.data.chosenTag.stage;
-    const stageMap = { 1: 1, 3: 2, 7: 3, 15: 4, done: 5 };
-    stage = stageMap[gapDays] ?? stage;
-
-    if (gapDays === 'done') {
-      // 处理完成状态
-      wx.showModal({
-        title: '',
-        content: '100%掌握，\n这个季度再也不用复习～\n',
-        success: ({ confirm }) => {
-          if (!confirm) return;
-          // console.log(`TagId: ${tagId} 已完成`);
-          API.updateTagProcess(userId, tagId, 5, '2125-01-01')
-            .then(() => {
-              this.setData({ 
-                'chosenTag.stage': 5,
-                'chosenTag.isTodayReviewed': true });
-              this.updateTagStateInCategories(tagId, 5);
-            })
-            .catch(console.error);
-        }
-      });
-    } else {
-      // 计算新的复习日期
-      const today = new Date();
-      today.setDate(today.getDate() + parseInt(gapDays)); // 增加天数
-      const reviewDate = today.toISOString().split('T')[0]; // 格式化为 YYYY-MM-DD
-
-      API.updateTagProcess(userId, tagId, stage, reviewDate).then(() => {
-        // console.log('API 请求成功:', res);
-        this.setData({
-          'chosenTag.stage': stage,
-          'chosenTag.isTodayReviewed': true
-        });
-        this.updateTagStateInCategories(tagId, stage);
-      }).catch((err: any) => {
-        console.error('API 请求失败:', err);
-      });      
-    }
-  },  
-  showGuide() {
-    wx.showModal({
-      title: '使用提示',
-      content: '全新的题下Question1/2/3/4要都做了才能选1/3/7/15/done哦～\n1=> 【难，需要高频复习】1天后再复习\n3 => 【有点难】3天后再复习\n7 => 【已经掌握】7天后再复习\ndone => 【完全掌握】这个季度不用再复习',
-      showCancel: false,
-      confirmText: '知道了',
-    });    
-  },
-  // 处理卡片翻转
-  flipCard(event: WechatMiniprogram.CustomEvent) {
-    const qId = event.currentTarget.dataset.id;
-    const questions = this.data.chosenTag.questions;
-    
-    // 找到对应问题并切换其翻转状态
-    const updatedQuestions = questions.map(q => {
-      if (q.qId === qId) {
-        return { ...q, isFlipped: !q.isFlipped };
-      }
-      return q;
-    });
-   
-    // 更新数据
-    this.setData({
-      'chosenTag.questions': updatedQuestions
-    });
-  },
-  getQIdsByTagIds(tagIds: any) {
-
-    if(tagIds.length === 0) { return [] };
-
-    // 存储所有符合条件的 qId
-    const qIds: any[] = [];
-  
-    // 遍历 staticQuestions 获取匹配的 tagId
-    staticQuestions.forEach((category: { subCategories: any[]; }) => {
-      category.subCategories.forEach(subCategory => {
-        if (tagIds.includes(subCategory.tagId)) {
-          // 如果当前 subCategory 的 tagId 匹配，就把所有问题的 qId 添加到 qIds 数组
-          subCategory.questions.forEach((question: { qId: any; }) => {
-            qIds.push(question.qId);
-          });
-        }
-      });
-    });
-    return qIds;
-  },
-  async fetchPageData(userId) {
-    try {
-      const tagProcess = await API.getTagProcessByUserId(userId);
-      const leftList = getLeftList(tagProcess, staticQuestions);
-      this.setData({ categories: leftList });
-
-      const filteredTagIdsToday = getFilteredTagIdsToday(tagProcess);// ["t3"]
-      const ArrQIds = this.getQIdsByTagIds(filteredTagIdsToday);// ['q8', 'q9']
-
-      let questionProcess = [];
-      if (ArrQIds.length > 0) {
-        questionProcess = await API.getQuestionsFortoday(ArrQIds, userId);
-      }
-
-      const tagList = getTagList(tagProcess, questionProcess, staticQuestions, filteredTagIdsToday);
-      this.setData({
-        tagList: tagList,
-        chosenTag: tagList[0] || null,
-      });
-
-    } catch (err) {
-      console.error('获取数据失败:', err);
-    }
-  },
-  setUserInfo(userInfo) {
-    this.setData({
-      userInfo: {
-        userId: userInfo.userId,
-        isVip: userInfo.isVip
-      }
-    });
-    // **这里就可以正常发请求了**
-    this.fetchPageData(userInfo.userId);
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  async onLoad() {
-    const app = getApp();
-    
-    app.getUserInfo((userInfo) => {
-      console.log("part one页面从app.ts获取用户信息:", userInfo);
-      this.setUserInfo(userInfo);
-    });
-
-    this.setData({
-      numberOfUses: app.globalData.numberOfUses
-    });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-  },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-    // console.log('onUnload');
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-  },
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    const userId = this.data.userInfo.userId; // 假设 userId 存储在 userInfo 中
-    return getShareAppMessage(userId);
   }
-})
+});

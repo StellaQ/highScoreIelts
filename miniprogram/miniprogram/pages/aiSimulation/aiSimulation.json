@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "AI 模拟考试",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  }
+} 

@@ -169,7 +169,6 @@
               data-id="{{item.qId}}"
               disabled="{{ item.isButtonDisabled }}"
               loading="{{item.isButtonLoading}}"
-              loading-text="{{userInfo.isVip ?  '' : numberOfUses}}"
               bind:click="produceAnswer"
               >生成</van-button>
           </view>
@@ -241,6 +240,6 @@
 </view>
 <!-- 选中的tag用户自主决定下次复习的时间 end -->
 <van-toast id="van-toast" type="fail" />
-<tab-bar active="1"></tab-bar>
+<!-- <tab-bar active="1"></tab-bar> -->
 
 

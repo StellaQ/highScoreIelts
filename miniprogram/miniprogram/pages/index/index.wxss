@@ -29,7 +29,7 @@
 /* 顶部横幅 */
 .banner {
   width: 690rpx;
-  flex: 0.2;
+  flex: 0.25;
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   padding: 30rpx;
   border-radius: 24rpx;
@@ -81,7 +81,7 @@
 /* AI 特色介绍 */
 .feature-intro {
   width: 690rpx;
-  flex: 0.25;
+  flex: 0.2;
   display: flex;
   justify-content: space-between;
   gap: 20rpx;
@@ -195,14 +195,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 24rpx;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(99, 102, 241, 0.1) 100%);
   border-radius: 16rpx;
   transition: all 0.3s ease;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4rpx 12rpx rgba(99, 102, 241, 0.08);
 }
 
 .topic-item:active {
   transform: scale(0.98);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.15) 100%);
 }
 
 .topic-info {
@@ -222,18 +225,19 @@
 }
 
 .topic-action {
-  background: #6366f1;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: #ffffff;
   padding: 12rpx 32rpx;
   border-radius: 100rpx;
   font-size: 26rpx;
   font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 2rpx 8rpx rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4rpx 12rpx rgba(99, 102, 241, 0.2);
 }
 
 .topic-action:active {
   transform: scale(0.95);
+  box-shadow: 0 2rpx 8rpx rgba(99, 102, 241, 0.15);
 }
 
 /* 学习进度 */

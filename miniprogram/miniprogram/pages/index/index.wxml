@@ -2,7 +2,7 @@
   <view class="container">
     <!-- 热门话题推荐 -->
     <view class="hot-topics">
-      <view class="section-title">热门话题推荐</view>
+      <view class="section-title">🎯 热门话题推荐</view>
       <view class="topic-list">
         <view class="topic-item" bindtap="navigateToBasic">
           <view class="topic-info">
@@ -31,12 +31,12 @@
     <!-- AI 特色介绍 -->
     <view class="feature-intro">
       <view class="feature-item">
-        <image class="feature-icon" src="/images/ai-custom.png" mode="aspectFit"></image>
+        <image class="feature-icon" src="../../assets/pics/ai-custom2.png" mode="aspectFit"></image>
         <text class="feature-title">AI智能助练</text>
         <text class="feature-desc">个性化口语建议</text>
       </view>
       <view class="feature-item">
-        <image class="feature-icon" src="/images/voice-eval.png" mode="aspectFit"></image>
+        <image class="feature-icon" src="../../assets/pics/growth3.png" mode="aspectFit"></image>
         <text class="feature-title">科学记忆曲线</text>
         <text class="feature-desc">定期复习提醒</text>
       </view>

@@ -170,25 +170,25 @@ Page({
 
   startAIPractice() {
     wx.navigateTo({
-      url: '/pages/aiPractice/aiPractice'
+      url: '/pages/aiSimulation/aiSimulation'
     });
   },
 
   navigateToBasic() {
     wx.navigateTo({
-      url: '/pages/practice/basic/basic'
+      url: '/pages/basicPractice/basicPractice'
     });
   },
 
   navigateToIntermediate() {
     wx.navigateTo({
-      url: '/pages/practice/intermediate/intermediate'
+      url: '/pages/advancedPractice/advancedPractice'
     });
   },
 
   navigateToAdvanced() {
     wx.navigateTo({
-      url: '/pages/practice/advanced/advanced'
+      url: '/pages/expertPractice/expertPractice'
     });
   },
 

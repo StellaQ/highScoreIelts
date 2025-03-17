@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/partOne/partOne",
-    "pages/partTwo/partTwo",
-    "pages/partThree/partThree",
+    "pages/basicPractice/basicPractice",
+    "pages/advancedPractice/advancedPractice",
+    "pages/expertPractice/expertPractice",
+    "pages/aiSimulation/aiSimulation",
+    "pages/aboutMe/aboutMe",
     "pages/feedback/feedback",
     "pages/logs/logs"
   ],
