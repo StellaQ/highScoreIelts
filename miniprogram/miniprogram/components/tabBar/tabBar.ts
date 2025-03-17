@@ -13,19 +13,9 @@ Component({
         url: '/pages/index/index',
       },
       {
-        text: 'Part One',
-        icon: '/assets/pics/number1.png',
-        url: '/pages/partOne/partOne',
-      },
-      {
-        text: 'Part Two',
-        icon: '/assets/pics/number2.png',
-        url: '/pages/partTwo/partTwo',
-      },
-      {
-        text: 'Part Three',
-        icon: '/assets/pics/number3.png',
-        url: '/pages/partThree/partThree',
+        text: '我的',
+        icon: '/assets/pics/info4.png',
+        url: '/pages/aboutMe/aboutMe',
       }
     ],
   },
@@ -50,6 +40,6 @@ Component({
         },
       });
     },
-  },
+  }
   
 });

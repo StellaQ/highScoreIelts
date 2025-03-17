@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "进阶练习",
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index"
+  }
+} 
