@@ -8,6 +8,7 @@ interface UserInfo {
   nickname: string;
   avatarUrl: string;
   isVip: boolean;
+  inviteCount: number;
 }
 
 interface InviteInfo {
@@ -18,9 +19,11 @@ interface InviteInfo {
 interface PageData {
   userInfo: UserInfo;
   inviteInfo: InviteInfo;
-  numberOfUses: number;
-  active: number;
   inviterId: string;
+  hasProgress: boolean;
+  continuousDays: number;
+  aiScore: number;
+  progressRate: number;
 }
 
 interface ApiResponse {
@@ -29,79 +32,25 @@ interface ApiResponse {
   inviteCount?: number;
 }
 
-Page<PageData, WechatMiniprogram.Page.CustomOption>({
+Page({
   data: {
     userInfo: {
       userId: '',
       nickname: '',
       avatarUrl: '',
-      isVip: false
+      isVip: false,
+      inviteCount: 0
     },
     inviteInfo: {
       inviteCount: 0,
       invitePercent: 0
     },
-    numberOfUses: 0,
-    active: 3,
-    inviterId: ''
-  },
-
-  // 添加定时器变量
-  _pollingTimer: null as any,
-
-  // 添加轮询方法
-  async pollUserInfo() {
-    if (!this.data.userInfo.userId) return;
-
-    try {
-      const res = await new Promise<ApiResponse>((resolve, reject) => {
-        wx.request({
-          url: 'http://localhost:3001/api/user/updateInviteCount',
-          method: 'GET',
-          data: {
-            userId: this.data.userInfo.userId
-          },
-          success: (res: any) => resolve(res.data),
-          fail: reject
-        });
-      });
-
-      if (res?.inviteCount !== undefined) {
-        // 只在邀请数变化时更新
-        if (res.inviteCount !== this.data.inviteInfo.inviteCount) {
-          console.log('检测到邀请数变化，更新UI');
-          this.updateInviteInfo(res.inviteCount);
-        }
-      }
-    } catch (err) {
-      console.error('轮询用户信息失败:', err);
-    }
-  },
-
-  // 启动轮询
-  startPolling() {
-    // 清除可能存在的旧定时器
-    if (this._pollingTimer) {
-      clearInterval(this._pollingTimer);
-    }
-    
-    // 设置2分钟轮询间隔
-    const POLLING_INTERVAL = 2 * 60 * 1000; // 2分钟
-    this._pollingTimer = setInterval(() => {
-      this.pollUserInfo();
-    }, POLLING_INTERVAL);
-
-    // 立即执行一次
-    this.pollUserInfo();
-  },
-
-  // 停止轮询
-  stopPolling() {
-    if (this._pollingTimer) {
-      clearInterval(this._pollingTimer);
-      this._pollingTimer = null;
-    }
-  },
+    inviterId: '',
+    hasProgress: false,
+    continuousDays: 0,
+    aiScore: 0,
+    progressRate: 0
+  } as PageData,
 
   async updateUserProfile() {
     try {
@@ -134,7 +83,8 @@ Page<PageData, WechatMiniprogram.Page.CustomOption>({
             userId: this.data.userInfo.userId,
             nickname: nickName,
             avatarUrl: avatarUrl,
-            isVip: this.data.userInfo.isVip
+            isVip: this.data.userInfo.isVip,
+            inviteCount: this.data.userInfo.inviteCount
           };
           
           await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
@@ -146,48 +96,43 @@ Page<PageData, WechatMiniprogram.Page.CustomOption>({
     }
   },
 
-  // 更新邀请信息
   updateInviteInfo(inviteCount: number) {
-    const inviteTarget = userConfig.inviteNumberToBeVip || 50;
-    const percent = Math.min((inviteCount / inviteTarget) * 100, 100);
+    const targetInvites = 10;
+    const percent = Math.min(Math.round((inviteCount / targetInvites) * 100), 100);
     
-    const inviteInfo = {
-      inviteCount,
-      invitePercent: percent
-    };
-
-    this.setData({ inviteInfo });
-    simpleSecureStorage.setStorage('inviteInfo', inviteInfo);
+    this.setData({
+      inviteInfo: {
+        inviteCount,
+        invitePercent: percent
+      }
+    });
   },
 
   setUserInfo(userInfo: UserInfo & { inviteCount?: number }) {
-    const { inviteCount, ...basicUserInfo } = userInfo;
-    
+    const inviteCount = userInfo.inviteCount || 0;
     this.setData({
       userInfo: {
-        ...this.data.userInfo,
-        ...basicUserInfo
+        userId: userInfo.userId,
+        nickname: userInfo.nickname,
+        avatarUrl: userInfo.avatarUrl,
+        isVip: userInfo.isVip,
+        inviteCount
       }
     });
-
-    if (typeof inviteCount === 'number') {
-      this.updateInviteInfo(inviteCount);
-    }
+    this.updateInviteInfo(inviteCount);
   },
 
-  async onLoad(options) {
+  onLoad(options) {
     if (options.inviterId) {
       this.setData({ inviterId: options.inviterId });
       console.log('url参数，邀请人ID:', options.inviterId);
     }
 
-    // 监听numberOfUses的变化
-    app.onNumberOfUsesChange((value: number) => {
-      console.log('numberOfUses changed:', value);
-      this.setData({ numberOfUses: value });
+    app.onUserInfoUpdate((userInfo: UserInfo) => {
+      console.log('用户信息已更新:', userInfo);
+      this.setUserInfo(userInfo);
     });
 
-    // 获取用户信息
     app.getUserInfo((userInfo: UserInfo & { inviteCount?: number }) => {
       console.log("index页面从app.ts获取用户信息:", userInfo);
       this.setUserInfo(userInfo);
@@ -195,27 +140,63 @@ Page<PageData, WechatMiniprogram.Page.CustomOption>({
       if (this.data.inviterId) {
         this.handleInvite();
       }
-
-      this.startPolling();
     });
   },
 
   onShow() {
-    // 页面显示时同步一次当前值
-    this.setData({
-      numberOfUses: app.globalData.numberOfUses
+    // 页面显示时更新数据
+    this.loadUserProgress();
+  },
+
+  loadUserProgress() {
+    // 这里可以从本地存储或服务器获取用户进度
+    const progress = wx.getStorageSync('userProgress');
+    if (progress) {
+      this.setData({
+        hasProgress: true,
+        continuousDays: progress.continuousDays || 3,
+        aiScore: progress.aiScore || 7.5,
+        progressRate: progress.progressRate || 15
+      });
+    }
+  },
+
+  startPractice() {
+    // 跳转到练习模式选择页面
+    wx.navigateTo({
+      url: '/pages/practiceMode/practiceMode'
     });
   },
 
-  onUnload() {
-    this.stopPolling();
+  startAIPractice() {
+    wx.navigateTo({
+      url: '/pages/aiPractice/aiPractice'
+    });
+  },
+
+  navigateToBasic() {
+    wx.navigateTo({
+      url: '/pages/practice/basic/basic'
+    });
+  },
+
+  navigateToIntermediate() {
+    wx.navigateTo({
+      url: '/pages/practice/intermediate/intermediate'
+    });
+  },
+
+  navigateToAdvanced() {
+    wx.navigateTo({
+      url: '/pages/practice/advanced/advanced'
+    });
   },
 
   onShareAppMessage() {
     return {
-      title: '🎉 快来一起刷题！',
-      path: `/pages/index/index?inviterId=${this.data.userInfo.userId}`,
-      imageUrl: '/assets/pics/share5.jpg',
+      title: 'AI口语助手 - 让你的英语口语更流利',
+      path: '/pages/index/index',
+      imageUrl: '/images/share-image.png'
     };
   },
 

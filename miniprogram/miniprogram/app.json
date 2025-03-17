@@ -5,7 +5,6 @@
     "pages/partTwo/partTwo",
     "pages/partThree/partThree",
     "pages/feedback/feedback",
-    "pages/aboutMe/aboutMe",
     "pages/logs/logs"
   ],
   "usingComponents": {
