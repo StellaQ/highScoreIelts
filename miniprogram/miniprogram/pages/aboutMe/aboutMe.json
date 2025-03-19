@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "关于我的",
+  "navigationBarTitleText": "我的",
   "usingComponents": {
     "van-toast": "@vant/weapp/toast/index"
   },

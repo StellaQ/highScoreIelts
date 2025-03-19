@@ -2,16 +2,16 @@
   <view class="container">
     <!-- 用户信息区域 -->
     <view class="user-section">
-      <view class="user-info">
-        <image class="avatar" src="{{userInfo.avatarUrl || '../../assets/pics/default-avatar.png'}}" mode="aspectFill"></image>
+      <view class="user-info" bindtap="updateUserProfile">
+        <image class="avatar" src="{{userInfo.avatarUrl || '../../assets/pics/user8.jpeg'}}" mode="aspectFill"></image>
         <view class="user-detail">
-          <text class="nickname">{{userInfo.nickName || '未登录'}}</text>
+          <text class="nickname">{{userInfo.nickname}}</text>
         </view>
       </view>
       <view class="points-section">
         <view class="points-header">
           <text class="points-title">我的积分</text>
-          <text class="points-value">{{points}}</text>
+          <text class="points-value">{{userInfo.points}}</text>
         </view>
         <view class="points-actions">
           <view class="action-item {{hasCheckedIn ? 'checked' : ''}}" bindtap="handleCheckIn">
@@ -26,7 +26,7 @@
           </view>
         </view>
         <view class="invite-code-entry" bindtap="showInviteCodeInput" wx:if="{{!hasUsedInviteCode && !inviterId}}">
-          <text class="entry-text">填写邀请码</text>
+          <text class="entry-text">填写您收到的邀请码</text>
           <text class="entry-arrow">></text>
         </view>
       </view>

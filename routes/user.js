@@ -24,47 +24,58 @@ router.post('/getOpenId', async (req, res) => {
 
     const { openid, session_key } = wxRes.data;
     let user = await User.findOne({ openid });
-    let isNewUser = false;
+    // let isNewUser = false;
 
     if (!user) {
       // 这是新用户
-      isNewUser = true;
-      user = new User({ openid });
+      // isNewUser = true;
+
+      // 生成随机昵称
+      const nicknames = [
+        '发音大师', 'Chat小达人', '口语小超人', 'Talk闪闪', '口语精灵', '语感高手'
+      ];
+      const randomNickname = nicknames[Math.floor(Math.random() * nicknames.length)];
+
+      user = new User({ 
+        openid,
+        nickname: randomNickname,
+        avatarUrl: '', // 默认头像可以在这里设置
+        points: 0 // 初始积分为0
+      });
       await user.save();
 
       // 如果有邀请人ID，处理邀请关系
-      if (inviterId && inviterId !== user.userId) {
-        // 检查是否已被邀请
-        const existingInvite = await InviteUser.findOne({ inviteeId: user.userId });
-        if (!existingInvite) {
-          // 创建邀请记录
-          await InviteUser.create({
-            inviterId,
-            inviteeId: user.userId,
-            createdAt: new Date()
-          });
+      // if (inviterId && inviterId !== user.userId) {
+      //   // 检查是否已被邀请
+      //   const existingInvite = await InviteUser.findOne({ inviteeId: user.userId });
+      //   if (!existingInvite) {
+      //     // 创建邀请记录
+      //     await InviteUser.create({
+      //       inviterId,
+      //       inviteeId: user.userId,
+      //       createdAt: new Date()
+      //     });
 
-          // 更新邀请人的邀请计数
-          await User.updateOne(
-            { userId: inviterId },
-            { $inc: { inviteCount: 1 } }
-          );
-        }
-      }
+      //     // 更新邀请人的邀请计数
+      //     await User.updateOne(
+      //       { userId: inviterId },
+      //       { $inc: { inviteCount: 1 } }
+      //     );
+      //   }
+      // }
     } else {
-      user.lastLogin = new Date();
-      await user.save();
+      // user.lastLogin = new Date();
+      // await user.save();
     }
 
     res.json({
       userInfo: {
         userId: user.userId,
-        isVip: user.isVip,
         nickname: user.nickname,
         avatarUrl: user.avatarUrl,
-        inviteCount: user.inviteCount
-      },
-      isNewUser
+        points: user.points || 0
+      }
+      // isNewUser
     });
   } catch (error) {
     console.error('获取 openid 失败:', error);

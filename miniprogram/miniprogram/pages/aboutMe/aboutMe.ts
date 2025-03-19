@@ -1,23 +1,15 @@
-import userConfig = require('../../assets/data/userConfig');
 import { simpleSecureStorage } from '../../utils/simpleSecureStorage';
 import Toast from '@vant/weapp/toast/toast';
 
 interface UserInfo {
+  userId: string;
   avatarUrl: string;
-  nickName: string;
-}
-
-interface InviteInfo {
-  inviteCount: number;x
-  invitePercent: number;
+  nickname: string;
+  points: number;
 }
 
 interface PageData {
-  userInfo: {
-    avatarUrl: string;
-    nickName: string;
-  };
-  points: number;
+  userInfo: UserInfo;
   hasCheckedIn: boolean;
   showInvitePopup: boolean;
   inviteCode: string;
@@ -30,12 +22,6 @@ interface PageData {
   inputInviteCode: string;
   hasUsedInviteCode: boolean;
   inviterId?: string;
-}
-
-interface ApiResponse {
-  code: number;
-  data: any;
-  message: string;
 }
 
 interface IAppOption {
@@ -51,10 +37,11 @@ interface IAppOption {
 Page({
   data: {
     userInfo: {
+      userId: '',
       avatarUrl: '',
-      nickName: ''
+      nickname: '',
+      points: 0
     },
-    points: 0,
     hasCheckedIn: false,
     showInvitePopup: false,
     inviteCode: '',
@@ -78,11 +65,13 @@ Page({
   },
 
   getUserInfo() {
-    const userInfo = wx.getStorageSync('userInfo');
-    if (userInfo) {
+    const app = getApp<IAppOption>();
+    if (app.globalData.userInfo) {
+      console.log('aboutMe.ts 获取 app.globalData.userInfo');
       this.setData({
-        userInfo
+        userInfo: app.globalData.userInfo
       });
+      // console.log(this.data.userInfo);
     }
   },
 
@@ -111,12 +100,12 @@ Page({
     const today = new Date().toDateString();
     wx.setStorageSync('lastSignIn', today);
     
-    const newPoints = this.data.points + 5;
+    const newPoints = this.data.userInfo.points + 5;
     wx.setStorageSync('points', newPoints);
     
     this.setData({
       hasCheckedIn: true,
-      points: newPoints
+      'userInfo.points': newPoints
     });
 
     wx.showToast({
@@ -232,7 +221,7 @@ Page({
     try {
       // 这里应该调用后端API验证邀请码
       // 暂时模拟验证成功
-      const newPoints = this.data.points + 20;
+      const newPoints = this.data.userInfo.points + 20;
       wx.setStorageSync('points', newPoints);
       
       // 标记已使用邀请码
@@ -240,7 +229,7 @@ Page({
       await simpleSecureStorage.setStorage('hasUsedInviteCode', true);
       
       this.setData({
-        points: newPoints,
+        'userInfo.points': newPoints,
         showInviteCodeInputPopup: false,
         inputInviteCode: ''
       });
@@ -264,14 +253,20 @@ Page({
   },
 
   updateUserProfile() {
+    if (this.data.userInfo.avatarUrl) {
+      // console.log('aboutMe.ts userInfo.avatarUrl有值说明已经更新头像过');
+      return;
+    };
     wx.getUserProfile({
       desc: '用于完善会员资料',
       success: (res) => {
+        // console.log(res);
         const userInfo: UserInfo = {
+          userId: this.data.userInfo.userId,
           avatarUrl: res.userInfo.avatarUrl,
-          nickName: res.userInfo.nickName,
+          nickname: res.userInfo.nickName,
+          points: this.data.userInfo.points
         };
-        this.setUserInfo(userInfo);
         
         // 保存到本地存储
         simpleSecureStorage.setStorage('userInfo', userInfo);
@@ -279,55 +274,48 @@ Page({
         // 更新全局数据
         const app = getApp<IAppOption>();
         if (app.globalData) {
-          app.globalData.userInfo = userInfo as any;
+          app.globalData.userInfo = userInfo;
         }
-      },
-      fail: (err) => {
-        console.error('获取用户信息失败', err);
-        wx.showToast({
-          title: '获取用户信息失败',
-          icon: 'none',
+
+        // 更新页面数据
+        this.setData({ userInfo });
+
+        // 后端更新用户信息
+        wx.request({
+          url: 'http://localhost:3001/api/user/updateProfile',
+          method: 'POST',
+          data: {
+            userId: this.data.userInfo.userId,
+            nickname: res.userInfo.nickName,
+            avatarUrl: res.userInfo.avatarUrl
+          },
+          success: () => {
+            console.log('api/user/updateProfile 用户信息更新成功');
+          },
+          fail: () => {  
+            console.error('api/user/updateProfile 用户信息更新失败');
+          }
         });
       }
     });
   },
 
-  async updateInviteInfo() {
-    try {
-      const inviteCount = await simpleSecureStorage.getStorage('inviteCount') || 0;
-      const invitePercent = Math.min(100, (Number(inviteCount) / userConfig.inviteNumberToBeVip) * 100);
-      
-      this.setData({
-        inviteInfo: {
-          inviteCount: Number(inviteCount),
-          invitePercent,
-        }
-      });
-    } catch (error) {
-      console.error('获取邀请信息失败', error);
-    }
-  },
-
-  setUserInfo(userInfo: UserInfo) {
-    this.setData({
-      userInfo
-    });
-  },
-
   async onShow() {
-    // 每次显示页面时更新邀请信息
-    await this.updateInviteInfo();
-    
     // 从全局数据获取最新的用户信息
     const app = getApp<IAppOption>();
     if (app.globalData && app.globalData.userInfo) {
-      this.setUserInfo(app.globalData.userInfo as unknown as UserInfo);
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
     }
   },
 
   onShareAppMessage() {
     const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig();
+    const shareConfig = app.getShareConfig({
+      title: '高分英语 - 助你轻松备考！',
+      path: '/pages/index/index'
+    });
     
     return {
       title: shareConfig.title,
@@ -338,7 +326,10 @@ Page({
 
   onShareTimeline() {
     const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig();
+    const shareConfig = app.getShareConfig({
+      title: '高分英语 - 助你轻松备考！',
+      query: 'page=about'
+    });
     
     return {
       title: shareConfig.title,

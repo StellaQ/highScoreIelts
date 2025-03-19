@@ -11,10 +11,6 @@ const userSchema = new mongoose.Schema({
     unique: true,
     default: () => new mongoose.Types.ObjectId().toString() // 生成唯一用户 ID
   },
-  isVip: {
-    type: Boolean,
-    default: false // 默认不是 VIP
-  },
   nickname: {
     type: String,
     default: ''
@@ -23,9 +19,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
-  numOfUsesLeftByNew: {
+  points: {
     type: Number,
-    default: 0 // 默认没有刷题次数
+    default: 0
+  },
+  isVip: {
+    type: Boolean,
+    default: false // 默认不是 VIP
   },
   inviteCount: { // 记录邀请人数
     type: Number,
