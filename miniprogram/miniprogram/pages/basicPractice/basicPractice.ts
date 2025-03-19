@@ -9,6 +9,27 @@ const API = require('../../utils/api.js');
 
 const app = getApp();
 
+interface IAppOption {
+  globalData: {
+    userInfo?: UserInfo;
+    _pollingTimer: any;
+    inviterId?: string;
+    hasUsedInviteCode?: boolean;
+    [key: string]: any;
+  };
+  getShareConfig: (options?: { 
+    title?: string; 
+    path?: string; 
+    query?: string;
+    imageUrl?: string;
+  }) => {
+    title: string;
+    path: string;
+    query: string;
+    imageUrl: string;
+  };
+}
+
 Page({
   data: {
     activeNames: ['个人信息','日常生活','兴趣爱好', '习惯与常规', '居住环境', '未来计划', '文化与社会', '技术与媒体'], // 左侧列表默认全部展开
@@ -429,8 +450,30 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    const userId = this.data.userInfo.userId; // 假设 userId 存储在 userInfo 中
-    return getShareAppMessage(userId);
+  onShareAppMessage() {
+    const app = getApp<IAppOption>();
+    const shareConfig = app.getShareConfig({
+      title: '基础练习 - 高分英语',
+      path: '/pages/basicPractice/basicPractice'
+    });
+    
+    return {
+      title: shareConfig.title,
+      path: shareConfig.path,
+      imageUrl: shareConfig.imageUrl
+    };
+  },
+  onShareTimeline() {
+    const app = getApp<IAppOption>();
+    const shareConfig = app.getShareConfig({
+      title: '基础练习 - 高分英语',
+      query: 'practice=basic'
+    });
+    
+    return {
+      title: shareConfig.title,
+      query: shareConfig.query,
+      imageUrl: shareConfig.imageUrl
+    };
   }
 })

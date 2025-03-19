@@ -2,7 +2,7 @@
   <view class="feedback-header">
     <!-- <text class="feedback-title">建议及意见</text> -->
   </view>
-  <textarea class="feedback-input" placeholder="请在此输入您的反馈..." bindinput="onFeedbackInput" value="{{feedbackText}}"></textarea>
+  <textarea class="feedback-input" placeholder="请在此输入您的反馈与建议..." bindinput="onFeedbackInput" value="{{feedbackText}}"></textarea>
   
   <!-- 图片上传区域 -->
   <view class="image-uploader">
@@ -21,5 +21,5 @@
     <text class="tip-text">最多上传3张图片</text>
   </view>
 
-  <button class="submit-btn" bindtap="submitFeedback">提交反馈</button>
+  <button class="submit-btn" bindtap="submitFeedback">提交</button>
 </view> 

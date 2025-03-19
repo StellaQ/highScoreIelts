@@ -8,6 +8,27 @@ interface Question {
   audioPath?: string;
 }
 
+interface IAppOption {
+  globalData: {
+    userInfo?: UserInfo;
+    _pollingTimer: any;
+    inviterId?: string;
+    hasUsedInviteCode?: boolean;
+    [key: string]: any;
+  };
+  getShareConfig: (options?: { 
+    title?: string; 
+    path?: string; 
+    query?: string;
+    imageUrl?: string;
+  }) => {
+    title: string;
+    path: string;
+    query: string;
+    imageUrl: string;
+  };
+}
+
 Page({
   data: {
     questions: [] as Question[],
@@ -124,5 +145,33 @@ Page({
 
   onUnload() {
     this.stopTimer();
-  }
+  },
+
+  onShareAppMessage() {
+    const app = getApp<IAppOption>();
+    const shareConfig = app.getShareConfig({
+      title: 'AI模拟考试 - 高分英语',
+      path: '/pages/aiSimulation/aiSimulation'
+    });
+    
+    return {
+      title: shareConfig.title,
+      path: shareConfig.path,
+      imageUrl: shareConfig.imageUrl
+    };
+  },
+
+  onShareTimeline() {
+    const app = getApp<IAppOption>();
+    const shareConfig = app.getShareConfig({
+      title: 'AI模拟考试 - 高分英语',
+      query: 'practice=ai'
+    });
+    
+    return {
+      title: shareConfig.title,
+      query: shareConfig.query,
+      imageUrl: shareConfig.imageUrl
+    };
+  },
 }); 

@@ -1,18 +1,189 @@
-<view class="user-info">
-  <view class="avatar-container">
-    <image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="updateUserProfile"></image>
-    <view wx:if="{{userInfo.isVip}}" style="display: flex;align-items: center;">
-    <image src="./../../assets/vip5.png" class="img-icon"></image>
+<view class="outer-container">
+  <view class="container">
+    <!-- 用户信息区域 -->
+    <view class="user-section">
+      <view class="user-info">
+        <image class="avatar" src="{{userInfo.avatarUrl || '../../assets/pics/default-avatar.png'}}" mode="aspectFill"></image>
+        <view class="user-detail">
+          <text class="nickname">{{userInfo.nickName || '未登录'}}</text>
+        </view>
+      </view>
+      <view class="points-section">
+        <view class="points-header">
+          <text class="points-title">我的积分</text>
+          <text class="points-value">{{points}}</text>
+        </view>
+        <view class="points-actions">
+          <view class="action-item {{hasCheckedIn ? 'checked' : ''}}" bindtap="handleCheckIn">
+            <text class="action-icon">📅</text>
+            <text class="action-text">{{hasCheckedIn ? '今日已签到' : '每日签到'}}</text>
+            <text class="action-points">+5</text>
+          </view>
+          <view class="action-item" bindtap="handleInvite">
+            <text class="action-icon">👥</text>
+            <text class="action-text">邀请好友</text>
+            <text class="action-points">+20</text>
+          </view>
+        </view>
+        <view class="invite-code-entry" bindtap="showInviteCodeInput" wx:if="{{!hasUsedInviteCode && !inviterId}}">
+          <text class="entry-text">填写邀请码</text>
+          <text class="entry-arrow">></text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 训练统计区域 -->
+    <view class="stats-section">
+      <view class="section-title">📊 训练统计</view>
+      <view class="stats-grid">
+        <view class="stat-card">
+          <text class="stat-icon">🔥</text>
+          <text class="stat-label">连续训练</text>
+          <text class="stat-value">{{streakDays}} 天</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-icon">🎤</text>
+          <text class="stat-label">练习话题</text>
+          <text class="stat-value">{{totalTopics}} 个</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-icon">🎯</text>
+          <text class="stat-label">AI模拟考</text>
+          <text class="stat-value">{{aiScore}} 分</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-icon">📅</text>
+          <text class="stat-label">最近练习</text>
+          <text class="stat-value">{{lastPractice}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 功能列表区域 -->
+    <view class="function-section">
+      <view class="function-list">
+        <view class="function-item" bindtap="navigateToFeedback">
+          <text class="function-icon">✉️</text>
+          <text class="function-text">反馈与建议</text>
+          <text class="arrow">></text>
+        </view>
+        <view class="function-item" bindtap="showPrivacyPolicy">
+          <text class="function-icon">🔒</text>
+          <text class="function-text">隐私政策</text>
+          <text class="arrow">></text>
+        </view>
+      </view>
+    </view>
   </view>
+  <tab-bar active="1"></tab-bar>
+</view>
+
+<!-- 邀请码弹窗 -->
+<van-popup
+  show="{{ showInvitePopup }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closeInvitePopup"
+>
+  <view class="invite-popup">
+    <view class="invite-title">邀请好友</view>
+    <view class="invite-content">
+      <view class="invite-code">
+        <text class="code-label">你的邀请码</text>
+        <text class="code-value">{{inviteCode}}</text>
+        <view class="copy-btn" bindtap="copyInviteCode">复制邀请码</view>
+      </view>
+      <view class="invite-tips">
+        <text class="tip-item">• 好友注册时填写邀请码</text>
+        <text class="tip-item">• 双方各获得20积分奖励</text>
+        <text class="tip-item">• 积分可用于解锁更多功能</text>
+      </view>
+      <view class="share-tips">
+        <text class="tip-item">• 你也可以选择分享小程序给好友</text>
+        <text class="tip-item">• 好友通过分享链接注册即可</text>
+      </view>
+    </view>
   </view>
-  <text class="nickname" bindtap="updateUserProfile">{{userInfo.nickname}}</text>
-</view>
-放首页
-建议及意见
-关于我们
-<tab-bar active="3"></tab-bar>
-<!-- 页面报错&反馈&提升建议  
-      todo 还需新增一个reportIssues页面去处理 start-->
-<view style="float: right; right: 20px; ">
-  <van-icon name="question"  color="#1989fa" size="30px" bind:click="reportIssues"/>
-</view>
+</van-popup>
+
+<!-- 隐私政策弹窗 -->
+<van-popup
+  show="{{ showPrivacyPopup }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closePrivacyPopup"
+>
+  <view class="privacy-popup">
+    <view class="privacy-title">隐私政策</view>
+    <scroll-view scroll-y class="privacy-content">
+      <view class="privacy-section">
+        <view class="section-title">1. 信息收集</view>
+        <view class="section-text">我们收集的信息包括但不限于：</view>
+        <view class="section-list">
+          <view class="list-item">• 用户基本信息（昵称、头像等）</view>
+          <view class="list-item">• 练习记录和成绩数据</view>
+          <view class="list-item">• 设备信息和使用日志</view>
+        </view>
+      </view>
+      
+      <view class="privacy-section">
+        <view class="section-title">2. 信息使用</view>
+        <view class="section-text">我们使用收集的信息用于：</view>
+        <view class="section-list">
+          <view class="list-item">• 提供和改进服务</view>
+          <view class="list-item">• 个性化学习体验</view>
+          <view class="list-item">• 发送服务通知</view>
+        </view>
+      </view>
+      
+      <view class="privacy-section">
+        <view class="section-title">3. 信息保护</view>
+        <view class="section-text">我们采取多种安全措施保护您的信息：</view>
+        <view class="section-list">
+          <view class="list-item">• 数据加密存储</view>
+          <view class="list-item">• 访问权限控制</view>
+          <view class="list-item">• 定期安全审计</view>
+        </view>
+      </view>
+      
+      <view class="privacy-section">
+        <view class="section-title">4. 信息共享</view>
+        <view class="section-text">我们不会将您的信息用于商业目的或与第三方共享，除非：</view>
+        <view class="section-list">
+          <view class="list-item">• 获得您的明确同意</view>
+          <view class="list-item">• 法律法规要求</view>
+          <view class="list-item">• 保护我们的合法权益</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</van-popup>
+
+<!-- 邀请码输入弹窗 -->
+<van-popup
+  show="{{ showInviteCodeInputPopup }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closeInviteCodeInputPopup"
+>
+  <view class="invite-code-input-popup">
+    <view class="popup-title">填写邀请码</view>
+    <view class="input-section">
+      <input 
+        class="invite-code-input" 
+        placeholder="请输入6位邀请码" 
+        maxlength="6"
+        value="{{inputInviteCode}}"
+        bindinput="onInviteCodeInput"
+      />
+    </view>
+    <view class="popup-tips">
+      <text class="tip-item">• 填写好友的邀请码</text>
+      <text class="tip-item">• 双方各获得20积分奖励</text>
+    </view>
+    <view class="popup-buttons">
+      <button class="cancel-btn" bindtap="closeInviteCodeInputPopup">取消</button>
+      <button class="confirm-btn" bindtap="submitInviteCode">确认</button>
+    </view>
+  </view>
+</van-popup>

@@ -1,4 +1,3 @@
-import userConfig from './assets/data/userConfig.js'; // 引入 userConfig.js
 import { simpleSecureStorage } from './utils/simpleSecureStorage';
 
 interface UserInfo {
@@ -7,21 +6,39 @@ interface UserInfo {
   avatarUrl: string;
   isVip: boolean;
   inviteCount: number;
+  city?: string;
+  country?: string;
+  gender?: number;
+  language?: string;
+  province?: string;
 }
 
 interface IAppOption {
   globalData: {
     userInfo?: UserInfo;
-    numberOfUses: number;
+    _pollingTimer: any;
+    inviterId?: string;
+    hasUsedInviteCode?: boolean;
     [key: string]: any;
   };
-  userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
+  userInfoReadyCallback?: (userInfo: UserInfo) => void;
   loginAndFetchUserData: () => void;
-  fetchNumberOfUses: (userInfo: UserInfo) => void;
-  decreaseNumberOfUses: () => void;
   getUserInfo: (callback: (userInfo: UserInfo) => void) => void;
-  onNumberOfUsesChange: (callback: (value: number) => void) => void;
-  updateNumberOfUses: (value: number) => void;
+  startPollingUserInfo: () => void;
+  stopPollingUserInfo: () => void;
+  onUserInfoUpdate: (callback: (userInfo: UserInfo) => void) => void;
+  pollUserInfo: () => Promise<void>;
+  getShareConfig: (options?: { 
+    title?: string; 
+    path?: string; 
+    query?: string;
+    imageUrl?: string;
+  }) => {
+    title: string;
+    path: string;
+    query: string;
+    imageUrl: string;
+  };
 }
 
 // 创建一个简单的事件总线
@@ -43,62 +60,58 @@ const eventBus = {
 App<IAppOption>({
   globalData: {
     userInfo: undefined,
-    numberOfUses: 0
+    _pollingTimer: null,
+    inviterId: undefined,
+    hasUsedInviteCode: false
   },
 
-  // 注册观察者
-  onNumberOfUsesChange(callback: (value: number) => void) {
-    eventBus.on('numberOfUsesChange', callback);
+  // 注册用户信息更新观察者
+  onUserInfoUpdate(callback: (userInfo: UserInfo) => void) {
+    eventBus.on('userInfoUpdate', callback);
   },
 
-  // 更新numberOfUses的方法
-  updateNumberOfUses(value: number) {
-    this.globalData.numberOfUses = value;
-    eventBus.emit('numberOfUsesChange', value);
-  },
-
-  async onLaunch() {
+  async onLaunch(options) {
     console.log("小程序启动，检查用户信息");
+
+    // 检查是否已经使用过邀请码
+    const hasUsedInviteCode = await simpleSecureStorage.getStorage('hasUsedInviteCode');
+    this.globalData.hasUsedInviteCode = hasUsedInviteCode || false;
+
+    if (options.query && options.query.inviter) {
+      console.log("检测到邀请人ID:", options.query.inviter);
+      this.globalData.inviterId = options.query.inviter;
+      
+      const userInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
+      if (!userInfo || !userInfo.userId) {
+        await simpleSecureStorage.setStorage('inviterId', options.query.inviter);
+      }
+    }
 
     const userInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
     if (userInfo && userInfo.userId) {
       console.log("本地缓存已有用户信息:", userInfo);
       this.globalData.userInfo = userInfo;
-      this.fetchNumberOfUses(userInfo);
+      // 启动轮询
+      this.startPollingUserInfo();
     } else {
       console.log("无本地用户信息，执行登录流程");
       this.loginAndFetchUserData();
     }
   },
-  // **✅ 在小程序关闭时，保存最新的 numberOfUses**
-  async onHide() {
-    if (this.globalData.userInfo && this.globalData.userInfo.userId) {
-      const isVip = this.globalData.userInfo.isVip;
-      if (isVip) {
-        console.log('检测到是vip，不需要缓存和调接口存numOfUsesLeftByNew');
-        return
-      }
-      const newCount = Math.max(this.globalData.numberOfUses - userConfig.basicNumberOfUsesEachDay, 0);
-      
-      // **🔹 先存入本地缓存，防止后端请求失败数据丢失**
-      if (newCount > 0) {
-        console.log('每次非vip调用-1次操作时，如果newCount > 0，就缓存numOfUsesLeftByNew：newCount')
-        await simpleSecureStorage.setStorage('numOfUsesLeftByNew', newCount);
-      }
 
-      wx.request({
-        url: 'http://localhost:3001/api/user/updateNumOfUsesLeftByNew',
-        method: 'POST',
-        data: {
-          userId: this.globalData.userInfo.userId,
-          newCount: newCount
-        },
-        success: (res: any) => {
-          console.log("用户离开时保存 numOfUsesLeftByNew:", res.data.numOfUsesLeftByNew);
-        }
-      });
+  // 在小程序关闭时停止轮询
+  async onHide() {
+    // 停止轮询
+    this.stopPollingUserInfo();
+  },
+
+  // 在小程序重新显示时，重新启动轮询
+  onShow() {
+    if (this.globalData.userInfo && this.globalData.userInfo.userId) {
+      this.startPollingUserInfo();
     }
   },
+
   loginAndFetchUserData() {
     wx.login({
       success: (res) => {
@@ -114,10 +127,10 @@ App<IAppOption>({
 
               console.log("app.ts接口api/user/getOpenId获取并存储用户数据:", userInfo);
 
-              // **✅ 确保登录后获取 numOfUsesLeftByNew**
-              this.fetchNumberOfUses(userInfo);
+              // 启动轮询
+              this.startPollingUserInfo();
 
-              // **触发回调，通知所有等待的页面**
+              // 触发回调，通知所有等待的页面
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(userInfo);
               }
@@ -128,7 +141,7 @@ App<IAppOption>({
     });
   },
 
-  // **💡 封装全局方法，页面调用这个方法即可**
+  // 封装全局方法，页面调用这个方法即可
   getUserInfo(callback: (userInfo: UserInfo) => void) {
     if (this.globalData.userInfo) {
       callback(this.globalData.userInfo);
@@ -137,64 +150,81 @@ App<IAppOption>({
     }
   },
 
-  // **✅ 获取 numOfUsesLeftByNew**
-  async fetchNumberOfUses(userInfo: UserInfo) {
-    console.log("去后端按userId查询numberOfUses:")
-    const isVip = userInfo.isVip;
-    const userId = userInfo.userId;
-    if(isVip){
-      console.log("如果是vip,则不用查询，直接返回");
-      return
-    }
-    console.log("如果不是vip,去后端按userId查询numberOfUses");
-    // **🔹 先从缓存获取 numberOfUses**
-    const cachedNumberOfUses = await simpleSecureStorage.getStorage('numOfUsesLeftByNew') as number | null;
+  // 启动轮询用户信息
+  startPollingUserInfo() {
+    // 清除可能存在的旧定时器
+    this.stopPollingUserInfo();
+    
+    // 设置2分钟轮询间隔
+    const POLLING_INTERVAL = 2 * 60 * 1000; // 2分钟
+    this.globalData._pollingTimer = setInterval(() => {
+      this.pollUserInfo();
+    }, POLLING_INTERVAL);
 
-    if (cachedNumberOfUses !== null) {
-      this.updateNumberOfUses(cachedNumberOfUses + userConfig.basicNumberOfUsesEachDay);
-      // console.log(cachedNumberOfUses);
-      // console.log(this.globalData.numberOfUses);
-      console.log("从缓存获取 numberOfUses:", this.globalData.numberOfUses);
-    } else {
-      console.log("如果不是 VIP，且缓存里没有，去调 API 查询");
-      wx.request({
-        url: 'http://localhost:3001/api/user/updateNumOfUsesLeftByNew',
-        method: 'GET',
-        data: { userId },
-        success: async (res: any) => {
-          if (res.data.numOfUsesLeftByNew !== undefined) {
-            const newValue = res.data.numOfUsesLeftByNew + userConfig.basicNumberOfUsesEachDay;
-            this.updateNumberOfUses(newValue); // 使用新方法更新值
-            console.log("通过userId调用get api接口获取numberOfUses + userConfig.basicNumberOfUsesEachDay:", this.globalData.numberOfUses);
+    // 立即执行一次
+    this.pollUserInfo();
+    console.log("启动全局用户信息轮询");
+  },
 
-            // **🔹 把数据存到本地缓存**
-            await simpleSecureStorage.setStorage('numOfUsesLeftByNew', res.data.numOfUsesLeftByNew);
-          }
-        }
-      });
+  // 停止轮询
+  stopPollingUserInfo() {
+    if (this.globalData._pollingTimer) {
+      clearInterval(this.globalData._pollingTimer);
+      this.globalData._pollingTimer = null;
+      console.log("停止全局用户信息轮询");
     }
   },
 
-  // **✅ 公用方法：减少 numberOfUses**
-  decreaseNumberOfUses() {
-    if (this.globalData.userInfo?.isVip) {
-      return; // **VIP 用户不减少次数**
-    }
+  // 轮询用户信息
+  async pollUserInfo() {
+    if (!this.globalData.userInfo || !this.globalData.userInfo.userId) return;
 
-    if (this.globalData.numberOfUses > 0) {
-      this.globalData.numberOfUses -= 1;
-
-      const newCount = Math.max(this.globalData.numberOfUses - userConfig.basicNumberOfUsesEachDay, 0);
-      // **🔹 先存入本地缓存，防止后端请求失败数据丢失**
-      if (newCount > 0) {
-        console.log('每次非vip调用-1次操作时，如果newCount > 0，就缓存numOfUsesLeftByNew：newCount')
-        simpleSecureStorage.setStorage('numOfUsesLeftByNew', newCount);
-      }
-    } else {
-      wx.showToast({
-        title: '可用次数不足',
-        icon: 'none'
+    try {
+      const userId = this.globalData.userInfo.userId;
+      console.log("轮询用户信息:", userId);
+      
+      const res = await new Promise<any>((resolve, reject) => {
+        wx.request({
+          url: 'http://localhost:3001/api/user/updateInviteCount',
+          method: 'GET',
+          data: { userId },
+          success: (res: any) => resolve(res.data),
+          fail: reject
+        });
       });
+
+      if (res?.inviteCount !== undefined) {
+        // 只在邀请数变化时更新
+        if (res.inviteCount !== this.globalData.userInfo.inviteCount) {
+          console.log('检测到邀请数变化，从', this.globalData.userInfo.inviteCount, '更新为', res.inviteCount);
+          
+          // 更新全局用户信息
+          this.globalData.userInfo.inviteCount = res.inviteCount;
+          
+          // 更新本地存储
+          await simpleSecureStorage.setStorage('userInfo', this.globalData.userInfo);
+          
+          // 通知所有监听者
+          eventBus.emit('userInfoUpdate', this.globalData.userInfo);
+        }
+      }
+    } catch (err) {
+      console.error('轮询用户信息失败:', err);
     }
+  },
+
+  getShareConfig(options = {}) {
+    const openid = this.globalData.openid || '';
+    const defaultTitle = '高分英语 - 助你轻松备考！';
+    const defaultPath = '/pages/index/index';
+    const defaultQuery = `inviter=${openid}`;
+    const defaultImageUrl = '../../assets/pics/share-image.png';
+
+    return {
+      title: options.title || defaultTitle,
+      path: options.path || defaultPath,
+      query: options.query || defaultQuery,
+      imageUrl: options.imageUrl || defaultImageUrl
+    };
   }
 });
