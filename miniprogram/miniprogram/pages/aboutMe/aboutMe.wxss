@@ -68,38 +68,48 @@
 
 .points-actions {
   display: flex;
-  gap: 20rpx;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  margin-top: 20rpx;
 }
 
 .action-item {
-  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10rpx;
-  padding: 16rpx;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 100rpx;
-  transition: all 0.3s;
+  width: 200rpx;
+  height: 160rpx;
+  background: #f8f8f8;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.action-item:active {
+  background: #f0f0f0;
 }
 
 .action-item.checked {
-  background: rgba(76, 175, 80, 0.2);
+  background: #e8f5e9;
   color: #4caf50;
 }
 
 .action-icon {
-  font-size: 28rpx;
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
 }
 
 .action-text {
-  font-size: 24rpx;
-  color: #ffffff;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 8rpx;
 }
 
 .action-points {
-  font-size: 22rpx;
-  color: #FFD700;
+  font-size: 24rpx;
+  color: #4caf50;
   font-weight: bold;
 }
 
@@ -542,7 +552,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
   padding: 0 10rpx;
 }
 
@@ -557,33 +567,58 @@
   color: #FFD700;
 }
 
-.points-actions {
+/* 操作卡片通用样式 */
+.action-card {
   display: flex;
-  gap: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12rpx;
+  padding: 16rpx 20rpx;
+  margin-bottom: 12rpx;
+  transition: all 0.3s ease;
 }
 
-.action-item {
-  flex: 1;
+.action-card:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.action-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10rpx;
-  padding: 16rpx;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 100rpx;
-  transition: all 0.3s;
-}
-
-.action-item.checked {
-  background: rgba(76, 175, 80, 0.2);
-  color: #4caf50;
+  gap: 12rpx;
 }
 
 .action-icon {
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 
-.action-text {
+.action-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rpx;
+}
+
+.action-title {
+  font-size: 26rpx;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.action-desc {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.action-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rpx;
+}
+
+.action-status {
   font-size: 24rpx;
   color: #ffffff;
 }
@@ -594,117 +629,26 @@
   font-weight: bold;
 }
 
-/* 积分兑换区域样式 */
-.rewards-section {
-  width: 690rpx;
-  background: #fff;
-  border-radius: 20rpx;
-  padding: 30rpx;
-  margin-bottom: 20rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+/* 签到卡片特殊样式 */
+.sign-in-card.checked {
+  background: rgba(76, 175, 80, 0.2);
 }
 
-.rewards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20rpx;
-  margin-top: 20rpx;
+.sign-in-card.checked .action-status {
+  color: #4caf50;
 }
 
-.reward-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20rpx;
-  background: #f8f8f8;
-  border-radius: 12rpx;
-  transition: all 0.3s;
+/* 邀请卡片特殊样式 */
+.invite-card {
+  background: rgba(99, 102, 241, 0.2);
 }
 
-.reward-card:active {
-  transform: scale(0.98);
+/* 刷新卡片特殊样式 */
+.refresh-card {
+  background: rgba(139, 92, 246, 0.2);
 }
 
-.reward-icon {
-  font-size: 40rpx;
-  margin-bottom: 10rpx;
-}
-
-.reward-name {
-  font-size: 24rpx;
-  color: #333;
-  margin-bottom: 6rpx;
-}
-
-.reward-points {
-  font-size: 22rpx;
-  color: #FF6B6B;
-}
-
-/* 邀请码弹窗样式 */
-.invite-popup {
-  padding: 40rpx;
-  box-sizing: border-box;
-}
-
-.invite-title {
-  font-size: 36rpx;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 40rpx;
-  color: #333;
-}
-
-.invite-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30rpx;
-}
-
-.invite-code {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10rpx;
-}
-
-.code-label {
-  font-size: 28rpx;
-  color: #666;
-}
-
-.code-value {
-  font-size: 48rpx;
-  font-weight: bold;
-  color: #FF6B6B;
-  letter-spacing: 4rpx;
-}
-
-.invite-tips {
-  margin-top: 30rpx;
-  padding: 20rpx 0;
-  border-top: 2rpx solid #f5f5f5;
-  border-bottom: 2rpx solid #f5f5f5;
-}
-
-.share-tips {
-  margin-top: 30rpx;
-  padding: 20rpx 0;
-}
-
-.tip-item {
-  font-size: 26rpx;
-  color: #666;
-  line-height: 1.8;
-  display: block;
-  margin-bottom: 16rpx;
-}
-
-.tip-item:last-child {
-  margin-bottom: 0;
-}
-
+/* 邀请码输入入口样式 */
 .invite-code-entry {
   margin-top: 20rpx;
   padding: 20rpx;
@@ -783,4 +727,76 @@
 .confirm-btn {
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: #ffffff;
+}
+
+/* 邀请码弹窗样式 */
+.invite-popup {
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.invite-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+  color: #333;
+}
+
+.invite-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30rpx;
+}
+
+.invite-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.code-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.code-value {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #FF6B6B;
+  letter-spacing: 4rpx;
+}
+
+.copy-btn {
+  margin-top: 20rpx;
+  padding: 12rpx 40rpx;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff;
+  border-radius: 100rpx;
+  font-size: 28rpx;
+}
+
+.invite-tips {
+  margin-top: 30rpx;
+  padding: 20rpx 0;
+  border-top: 2rpx solid #f5f5f5;
+}
+
+.share-tips {
+  margin-top: 30rpx;
+  padding: 20rpx 0;
+}
+
+.tip-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.8;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.tip-item:last-child {
+  margin-bottom: 0;
 }

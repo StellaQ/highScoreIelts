@@ -90,7 +90,14 @@ export const simpleSecureStorage: SimpleSecureStorage = {
       };
       
       // 保存数据
-      wx.setStorageSync(key, JSON.stringify(finalData));
+      return new Promise((resolve, reject) => {
+        wx.setStorage({
+          key,
+          data: JSON.stringify(finalData),
+          success: () => resolve(),
+          fail: (error) => reject(error)
+        });
+      });
     } catch (error) {
       console.error('存储失败:', error);
       throw error;
@@ -100,33 +107,55 @@ export const simpleSecureStorage: SimpleSecureStorage = {
   async getStorage(key: string): Promise<any> {
     try {
       // 获取数据
-      const storedData = wx.getStorageSync(key);
-      
-      if (!storedData) {
-        return null;
-      }
+      return new Promise((resolve, reject) => {
+        wx.getStorage({
+          key,
+          success: (res) => {
+            try {
+              const storedData = res.data;
+              
+              if (!storedData) {
+                resolve(null);
+                return;
+              }
 
-      // 解析存储的数据
-      const parsedData = JSON.parse(storedData);
-      
-      // 验证数据格式
-      if (!parsedData || !parsedData.data || parsedData.checksum === undefined) {
-        console.warn('存储的数据格式不正确');
-        return null;
-      }
+              // 解析存储的数据
+              const parsedData = JSON.parse(storedData);
+              
+              // 验证数据格式
+              if (!parsedData || !parsedData.data || parsedData.checksum === undefined) {
+                console.warn('存储的数据格式不正确');
+                resolve(null);
+                return;
+              }
 
-      // 验证校验和
-      const currentChecksum = calculateChecksum(parsedData.data);
-      if (currentChecksum !== parsedData.checksum) {
-        console.warn('数据校验失败，可能被篡改');
-        return null;
-      }
-      
-      // 解密数据
-      const decrypted = xorEncrypt(parsedData.data, SECRET_KEY);
-      
-      // 解析JSON
-      return JSON.parse(decrypted);
+              // 验证校验和
+              const currentChecksum = calculateChecksum(parsedData.data);
+              if (currentChecksum !== parsedData.checksum) {
+                console.warn('数据校验失败，可能被篡改');
+                resolve(null);
+                return;
+              }
+              
+              // 解密数据
+              const decrypted = xorEncrypt(parsedData.data, SECRET_KEY);
+              
+              // 解析JSON
+              resolve(JSON.parse(decrypted));
+            } catch (error) {
+              console.error('读取失败:', error);
+              resolve(null);
+            }
+          },
+          fail: (error) => {
+            if (error.errMsg.includes('data not found')) {
+              resolve(null);
+            } else {
+              reject(error);
+            }
+          }
+        });
+      });
     } catch (error) {
       console.error('读取失败:', error);
       return null;
@@ -135,7 +164,13 @@ export const simpleSecureStorage: SimpleSecureStorage = {
 
   async removeStorage(key: string): Promise<void> {
     try {
-      wx.removeStorageSync(key);
+      return new Promise((resolve, reject) => {
+        wx.removeStorage({
+          key,
+          success: () => resolve(),
+          fail: (error) => reject(error)
+        });
+      });
     } catch (error) {
       console.error('删除失败:', error);
       throw error;

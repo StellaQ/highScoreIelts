@@ -1,38 +1,6 @@
 import { simpleSecureStorage } from '../../utils/simpleSecureStorage';
 import Toast from '@vant/weapp/toast/toast';
-
-interface UserInfo {
-  userId: string;
-  avatarUrl: string;
-  nickname: string;
-  points: number;
-}
-
-interface PageData {
-  userInfo: UserInfo;
-  hasCheckedIn: boolean;
-  showInvitePopup: boolean;
-  inviteCode: string;
-  showPrivacyPopup: boolean;
-  streakDays: number;
-  totalTopics: number;
-  aiScore: number;
-  lastPractice: string;
-  showInviteCodeInputPopup: boolean;
-  inputInviteCode: string;
-  hasUsedInviteCode: boolean;
-  inviterId?: string;
-}
-
-interface IAppOption {
-  globalData: {
-    userInfo?: UserInfo;
-    _pollingTimer: any;
-    inviterId?: string;
-    hasUsedInviteCode?: boolean;
-    [key: string]: any;
-  };
-}
+import API from '../../utils/API';
 
 Page({
   data: {
@@ -40,78 +8,104 @@ Page({
       userId: '',
       avatarUrl: '',
       nickname: '',
-      points: 0
+      points: 0,
+      hasUsedInviteCode: false
     },
     hasCheckedIn: false,
     showInvitePopup: false,
-    inviteCode: '',
     showPrivacyPopup: false,
+    showInviteCodeInputPopup: false,
+    inviteCode: '',
+    inputInviteCode: '',
+    inviterId: '',
     streakDays: 0,
     totalTopics: 0,
     aiScore: 0,
-    lastPractice: '暂无',
-    showInviteCodeInputPopup: false,
-    inputInviteCode: '',
-    hasUsedInviteCode: false,
-    inviterId: undefined
-  } as PageData,
-
+    lastPractice: '暂无'
+  },
   onLoad() {
-    this.getUserInfo();
-    this.getPointsInfo();
+    this.getUserInfoFromAppTs();
     this.checkTodaySignIn();
     this.generateInviteCode();
     this.checkInviteStatus();
   },
-
-  getUserInfo() {
+  onShow() {
+    this.getUserInfoFromAppTs();
+  },
+  getUserInfoFromAppTs() {
     const app = getApp<IAppOption>();
     if (app.globalData.userInfo) {
       console.log('aboutMe.ts 获取 app.globalData.userInfo');
       this.setData({
         userInfo: app.globalData.userInfo
       });
-      // console.log(this.data.userInfo);
     }
   },
-
-  getPointsInfo() {
-    const points = wx.getStorageSync('points') || 0;
-    this.setData({ points });
-  },
-
-  checkTodaySignIn() {
-    const today = new Date().toDateString();
-    const lastSignIn = wx.getStorageSync('lastSignIn');
-    this.setData({
-      hasCheckedIn: lastSignIn === today
-    });
-  },
-
-  handleCheckIn() {
-    if (this.data.hasCheckedIn) {
-      wx.showToast({
-        title: '今日已签到',
-        icon: 'none'
+  async checkTodaySignIn() {
+    try {
+      const today = new Date().toDateString();
+      const lastSignIn = await simpleSecureStorage.getStorage('lastSignIn');
+      // console.log('获取到的签到数据:', lastSignIn);
+      this.setData({
+        hasCheckedIn: lastSignIn === today
       });
-      return;
+    } catch (error) {
+      // console.error('检查签到状态失败:', error);
+      // 如果读取失败，清除可能损坏的数据
+      try {
+        await simpleSecureStorage.removeStorage('lastSignIn');
+      } catch (e) {
+        // console.error('清除签到数据失败:', e);
+      }
     }
+  },
+  async handleCheckIn() {
+    try {
+      if (this.data.hasCheckedIn) {
+        wx.showToast({
+          title: '今日已签到',
+          icon: 'none'
+        });
+        return;
+      }
 
-    const today = new Date().toDateString();
-    wx.setStorageSync('lastSignIn', today);
-    
-    const newPoints = this.data.userInfo.points + 5;
-    wx.setStorageSync('points', newPoints);
-    
-    this.setData({
-      hasCheckedIn: true,
-      'userInfo.points': newPoints
-    });
+      const today = new Date().toDateString();
+      await simpleSecureStorage.setStorage('lastSignIn', today);
+      console.log('保存签到数据成功');
+      
+      const newPoints = this.data.userInfo.points + 5;
+      
+      // 调用API更新积分
+      await API.updateUserPoints(this.data.userInfo.userId, newPoints);
 
-    wx.showToast({
-      title: '签到成功 +5积分',
-      icon: 'success'
-    });
+      // 更新页面数据
+      this.setData({
+        hasCheckedIn: true,
+        'userInfo.points': newPoints
+      }); 
+      // 更新全局数据
+      const app = getApp<IAppOption>();
+      if (app.globalData.userInfo) {
+        app.globalData.userInfo.points = newPoints;
+      }
+      // 更新缓存
+      const updatedUserInfo = {
+        ...this.data.userInfo,
+        points: newPoints
+      };
+      await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
+
+      wx.showToast({
+        title: '签到成功 +5积分',
+        icon: 'success'
+      });
+    } catch (error) {
+      console.error('签到失败:', error);
+      wx.showToast({
+        title: '签到失败，请重试',
+        icon: 'error'
+      });
+    }
   },
 
   generateInviteCode() {
@@ -222,12 +216,24 @@ Page({
       // 这里应该调用后端API验证邀请码
       // 暂时模拟验证成功
       const newPoints = this.data.userInfo.points + 20;
-      wx.setStorageSync('points', newPoints);
+      
+      // 更新全局数据
+      if (app.globalData.userInfo) {
+        app.globalData.userInfo.points = newPoints;
+      }
+      
+      // 更新缓存
+      const updatedUserInfo = {
+        ...this.data.userInfo,
+        points: newPoints
+      };
+      await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
       
       // 标记已使用邀请码
       app.globalData.hasUsedInviteCode = true;
       await simpleSecureStorage.setStorage('hasUsedInviteCode', true);
       
+      // 更新页面数据
       this.setData({
         'userInfo.points': newPoints,
         showInviteCodeInputPopup: false,
@@ -379,5 +385,54 @@ Page({
       hasUsedInviteCode: app.globalData.hasUsedInviteCode || false,
       inviterId: app.globalData.inviterId
     });
+  },
+
+  // 处理刷新邀请
+  async handleRefreshInvite() {
+    try {
+      const userId = this.data.userInfo.userId;
+      const res = await API.getUserInviteCount(userId);
+      
+      if (res && res.inviteCount > 0) {
+        // 计算新增的邀请数
+        const newInvites = res.inviteCount;
+        const pointsToAdd = newInvites * 20;
+        
+        // 更新用户积分
+        const newPoints = this.data.userInfo.points + pointsToAdd;
+        
+        // 更新全局数据
+        const app = getApp<IAppOption>();
+        app.globalData.userInfo.points = newPoints;
+        
+        // 更新本地缓存
+        const updatedUserInfo = {
+          ...this.data.userInfo,
+          points: newPoints
+        };
+        await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
+        
+        // 更新页面数据
+        this.setData({
+          'userInfo.points': newPoints
+        });
+
+        wx.showToast({
+          title: `获得${pointsToAdd}积分`,
+          icon: 'success'
+        });
+      } else {
+        wx.showToast({
+          title: '暂无新的邀请',
+          icon: 'none'
+        });
+      }
+    } catch (error) {
+      console.error('刷新邀请失败:', error);
+      wx.showToast({
+        title: '刷新失败',
+        icon: 'error'
+      });
+    }
   },
 }); 

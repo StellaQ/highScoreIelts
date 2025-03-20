@@ -111,58 +111,49 @@ router.post('/updateProfile', async (req, res) => {
   }
 });
 
-router.route('/updateNumOfUsesLeftByNew')
-  // 获取 numOfUsesLeftByNew
-  .get(async (req, res) => {
-    try {
-      const { userId } = req.query;
-
-      if (!userId) {
-        return res.status(400).json({ error: '缺少 userId 参数' });
-      }
-
-      const user = await User.findOne({ userId });
-
-      if (!user) {
-        return res.status(404).json({ error: '用户未找到' });
-      }
-
-      res.json({
-        message: '获取成功',
-        numOfUsesLeftByNew: user.numOfUsesLeftByNew
+// 更新用户积分
+router.post('/updatePoints', async (req, res) => {
+  try {
+    // console.log('收到更新积分请求：', req.body);
+    const { userId, points } = req.body;
+    
+    if (!userId || points === undefined) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '缺少必要参数' 
       });
-    } catch (error) {
-      console.error('获取 numOfUsesLeftByNew 失败:', error);
-      res.status(500).json({ error: '服务器错误' });
     }
-  })
-  // 更新 numOfUsesLeftByNew
-  .post(async (req, res) => {
-    try {
-      const { userId, newCount } = req.body;
 
-      if (!userId || newCount === undefined) {
-        return res.status(400).json({ error: '参数错误' });
-      }
+    // 更新用户积分
+    const result = await User.findOneAndUpdate(
+      { userId: userId },
+      { points: points },
+      { new: true } // 返回更新后的文档
+    );
 
-      const user = await User.findOne({ userId });
-
-      if (!user) {
-        return res.status(404).json({ error: '用户未找到' });
-      }
-
-      user.numOfUsesLeftByNew = newCount;
-      await user.save();
-
-      res.json({
-        message: '更新成功',
-        numOfUsesLeftByNew: user.numOfUsesLeftByNew
+    if (!result) {
+      return res.status(404).json({ 
+        success: false, 
+        message: '用户不存在' 
       });
-    } catch (error) {
-      console.error('更新 numOfUsesLeftByNew 失败:', error);
-      res.status(500).json({ error: '服务器错误' });
     }
-  });
+
+    res.json({
+      success: true,
+      message: '积分更新成功'
+      // data: {
+      //   points: result.points
+      // }
+    });
+
+  } catch (error) {
+    console.error('更新积分失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
+    });
+  }
+});
 
 // 处理邀请关系
 router.post('/checkAndRecordInvite', async (req, res) => {

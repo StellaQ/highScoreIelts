@@ -425,6 +425,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    // 从全局数据获取最新的用户信息
+    const app = getApp<IAppOption>();
+    if (app.globalData && app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面隐藏
