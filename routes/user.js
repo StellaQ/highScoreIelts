@@ -4,7 +4,7 @@ const router = express.Router();
 const axios = require('axios');
 
 const User = require('../models/UserModel'); // 引入用户模型
-const InviteUser = require('../models/InviteUser'); // 引入邀请记录模型
+const Invite = require('../models/InviteModel'); // 引入邀请记录模型
 
 const config = require('../config/configForMiniProgram');
 
@@ -166,82 +166,6 @@ router.post('/updatePoints', async (req, res) => {
     });
   }
 });
-
-// 处理邀请关系
-router.post('/checkAndRecordInvite', async (req, res) => {
-  try {
-    const { inviterId, inviteeId } = req.body;
-
-    if (!inviterId || !inviteeId) {
-      return res.status(400).json({ 
-        success: false, 
-        message: '邀请人ID和被邀请人ID不能为空' 
-      });
-    }
-
-    // 1. 检查是否已被邀请过
-    const existingInvite = await InviteUser.findOne({ inviteeId });
-    if (existingInvite) {
-      return res.json({ 
-        success: false, 
-        message: '该用户已被其他人邀请过' 
-      });
-    }
-
-    // 2. 创建邀请记录
-    await InviteUser.create({ 
-      inviterId, 
-      inviteeId,
-      createdAt: new Date()
-    });
-
-    // 3. 更新邀请人的 inviteCount
-    await User.updateOne(
-      { userId: inviterId },
-      { $inc: { inviteCount: 1 } }
-    );
-
-    // 4. 获取更新后的邀请人信息
-    const updatedUser = await User.findOne({ userId: inviterId });
-
-    res.json({
-      success: true,
-      message: '邀请记录创建成功',
-      inviteCount: updatedUser.inviteCount
-    });
-
-  } catch (error) {
-    console.error('处理邀请关系失败:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: '服务器错误' 
-    });
-  }
-});
-
-// 获取邀请数量
-router.get('/updateInviteCount', async (req, res) => {
-  try {
-    const { userId } = req.query;
-
-    if (!userId) {
-      return res.status(400).json({ error: '用户ID不能为空' });
-    }
-
-    const user = await User.findOne({ userId });
-    if (!user) {
-      return res.status(404).json({ error: '用户不存在' });
-    }
-
-    res.json({
-      inviteCount: user.inviteCount
-    });
-  } catch (error) {
-    console.error('获取邀请数量失败:', error);
-    res.status(500).json({ error: '服务器错误' });
-  }
-});
-
 // 检查今日最新数据
 router.get('/getLatestStatus/:userId', async (req, res) => {
   try {
@@ -267,7 +191,6 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
     res.status(500).json({ message: '服务器错误' });
   }
 });
-
 // 执行签到
 router.post('/signIn/:userId', async (req, res) => {
   try {
@@ -315,5 +238,28 @@ router.post('/signIn/:userId', async (req, res) => {
     res.status(500).json({ message: '服务器错误' });
   }
 });
+// 检查总的邀请人数和最近三天的邀请人数
+router.get('/checkInvites/:userId', async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const user = await User.findOne({ userId });
 
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const recentInvites = await Invite.countDocuments({
+      inviterId: userId,
+      createdAt: { $gt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000) } // 最近三天
+    });
+
+    const totalInvites = await Invite.countDocuments({
+      inviterId: userId
+    });
+
+    res.json({ recentInvites, totalInvites });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to check invites' });
+  }
+});
 module.exports = router;

@@ -35,26 +35,16 @@
             <text class="action-icon">👥</text>
             <view class="action-info">
               <text class="action-title">邀请好友</text>
-              <text class="action-desc">邀请好友注册，双方各得{{configInviteNum}}积分</text>
+              <text class="action-desc">邀请好友登录，双方各得{{configInviteNum}}积分</text>
+              <text class="action-desc"
+              wx:if="{{totalInvites>0}}">已得<text class="highlight">{{totalInvites * configInviteNum}}</text>积分</text>
+              <text class="action-desc"
+              wx:if="{{recentInvites>0}}">+<text class="highlight">{{recentInvites}}</text>人最近三天</text>
             </view>
           </view>
           <view class="action-right">
             <text class="action-status">去邀请</text>
             <text class="action-points">+{{configInviteNum}}</text>
-          </view>
-        </view>
-
-        <!-- 刷新邀请区域 -->
-        <view class="action-card refresh-card" bindtap="handleRefreshInvite">
-          <view class="action-left">
-            <text class="action-icon">🔄</text>
-            <view class="action-info">
-              <text class="action-title">刷新邀请</text>
-              <text class="action-desc">查询是否有好友通过邀请注册</text>
-            </view>
-          </view>
-          <view class="action-right">
-            <text class="action-status">去刷新</text>
           </view>
         </view>
 

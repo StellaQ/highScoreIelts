@@ -799,4 +799,7 @@
 
 .tip-item:last-child {
   margin-bottom: 0;
+.highlight {
+  color: #FFD700;
+  font-weight: bold;
 }

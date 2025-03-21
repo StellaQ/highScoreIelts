@@ -1,5 +1,4 @@
 import { simpleSecureStorage } from '../../utils/simpleSecureStorage';
-import Toast from '@vant/weapp/toast/toast';
 import API from '../../utils/API';
 
 Page({
@@ -16,6 +15,8 @@ Page({
     points: 0,    // aboutMe.ts 积分数
     hasCheckedIn: false,    // 判断今日是否已签到
     inviteCode: '',     // 邀请好友的邀请码
+    recentInvites: 0,   // 最近3天邀请到的新用户数
+    totalInvites: 0,    // 总的邀请到的新用户数
 
     streakDays: 0,          // 连续训练 天数
     totalTopics: 0,         // 练习话题 个数
@@ -34,8 +35,9 @@ Page({
     console.log('aboutMe 页面 onLoad');
     this.getUserInfoFromAppTs();
     this.getLatestStatus();
-    this.checkInviteStatus();
+    this.checkInvites();
   },
+  // 从app.ts获取userInfo
   getUserInfoFromAppTs() {
     const app = getApp<IAppOption>();
     if (app.globalData.userInfo) {
@@ -45,6 +47,7 @@ Page({
       });
     }
   },
+  // points inviteCode hasCheckedIn streakDays
   async getLatestStatus() {
     // 先从缓存获取用户信息
     const cachedTodayStatus = await simpleSecureStorage.getStorage('todayStatus');
@@ -75,9 +78,30 @@ Page({
       }
       await simpleSecureStorage.setStorage('todayStatus', todayStatus);
     } catch (error) {
-      // console.error('检查签到状态失败:', error);
+      // console.error('getLatestStatus失败:', error);
     }
   },
+  // [邀请好友]下的邀请好友总数&最近3天邀请好友总数
+  async checkInvites() {
+    try {
+      const res = await API.checkInvites(this.data.userInfo.userId);
+      this.setData({
+        recentInvites: res.recentInvites,
+        totalInvites: res.totalInvites
+      });
+      // 显示鼓励信息
+      if (res.newInvites > 0) {
+        wx.showToast({
+          title: `您有 ${res.newInvites} 位新朋友通过您的邀请加入！`,
+          icon: 'success',
+          duration: 2000
+        });
+      }
+    } catch (error) {
+      console.error('Failed to check new invites:', error);
+    }
+  },
+  // [每日签到]
   async handleCheckIn() {
     try {
       if (this.data.hasCheckedIn) {
@@ -117,11 +141,10 @@ Page({
       });
     }
   },
-
+  // [邀请好友]
   handleInvite() {
     this.setData({ showInvitePopup: true });
   },
-
   copyInviteCode() {
     wx.setClipboardData({
       data: this.data.inviteCode,
@@ -133,19 +156,17 @@ Page({
       }
     });
   },
-
   closeInvitePopup() {
     this.setData({ showInvitePopup: false });
   },
-
+  // [隐私政策]
   showPrivacyPolicy() {
     this.setData({ showPrivacyPopup: true });
   },
-
   closePrivacyPopup() {
     this.setData({ showPrivacyPopup: false });
   },
-
+  // [填写您收到的邀请码]
   showInviteCodeInput() {
     const app = getApp<IAppOption>();
     
@@ -171,20 +192,17 @@ Page({
 
     this.setData({ showInviteCodeInputPopup: true });
   },
-
   closeInviteCodeInputPopup() {
     this.setData({ 
       showInviteCodeInputPopup: false,
       inputInviteCode: ''
     });
   },
-
   onInviteCodeInput(e: any) {
     this.setData({
       inputInviteCode: e.detail.value.toUpperCase()
     });
   },
-
   async submitInviteCode() {
     const app = getApp<IAppOption>();
     
@@ -256,13 +274,13 @@ Page({
       });
     }
   },
-
+  // [反馈与建议]
   navigateToFeedback() {
     wx.navigateTo({
       url: '/pages/feedback/feedback'
     });
   },
-
+  // 更新头像
   updateUserProfile() {
     if (this.data.userInfo.avatarUrl) {
       // console.log('aboutMe.ts userInfo.avatarUrl有值说明已经更新头像过');
@@ -309,17 +327,7 @@ Page({
       }
     });
   },
-
-  async onShow() {
-    // 从全局数据获取最新的用户信息
-    const app = getApp<IAppOption>();
-    if (app.globalData && app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      });
-    }
-  },
-
+  // 分享
   onShareAppMessage() {
     const app = getApp<IAppOption>();
     const shareConfig = app.getShareConfig({
@@ -333,7 +341,6 @@ Page({
       imageUrl: shareConfig.imageUrl
     };
   },
-
   onShareTimeline() {
     const app = getApp<IAppOption>();
     const shareConfig = app.getShareConfig({
@@ -346,97 +353,5 @@ Page({
       query: shareConfig.query,
       imageUrl: shareConfig.imageUrl
     };
-  },
-
-  async getTrainingStats() {
-    try {
-      // 这里应该从服务器获取数据，暂时使用模拟数据
-      this.setData({
-        streakDays: 5,
-        aiScore: 7.2,
-        totalTopics: 120,
-        voiceScore: 7.2,
-        topTopics: '旅游、美食',
-        lastPractice: '3小时前'
-      });
-    } catch (error) {
-      console.error('获取训练统计失败:', error);
-      Toast.fail('获取训练统计失败');
-    }
-  },
-
-  startPractice() {
-    wx.navigateTo({
-      url: '/pages/basicPractice/basicPractice'
-    });
-  },
-
-  navigateToSettings() {
-    wx.navigateTo({
-      url: '/pages/settings/settings'
-    });
-  },
-
-  navigateToPrivacy() {
-    wx.navigateTo({
-      url: '/pages/privacy/privacy'
-    });
-  },
-
-  checkInviteStatus() {
-    const app = getApp<IAppOption>();
-    this.setData({
-      hasUsedInviteCode: app.globalData.hasUsedInviteCode || false,
-      inviterId: app.globalData.inviterId
-    });
-  },
-
-  // 处理刷新邀请
-  async handleRefreshInvite() {
-    try {
-      const userId = this.data.userInfo.userId;
-      const res = await API.getUserInviteCount(userId);
-      
-      if (res && res.inviteCount > 0) {
-        // 计算新增的邀请数
-        const newInvites = res.inviteCount;
-        const pointsToAdd = newInvites * this.data.configInviteNum;
-        
-        // 更新用户积分
-        const newPoints = this.data.userInfo.points + pointsToAdd;
-        
-        // 更新全局数据
-        const app = getApp<IAppOption>();
-        app.globalData.userInfo.points = newPoints;
-        
-        // 更新本地缓存
-        const updatedUserInfo = {
-          ...this.data.userInfo,
-          points: newPoints
-        };
-        await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
-        
-        // 更新页面数据
-        this.setData({
-          'userInfo.points': newPoints
-        });
-
-        wx.showToast({
-          title: `获得${pointsToAdd}积分`,
-          icon: 'success'
-        });
-      } else {
-        wx.showToast({
-          title: '暂无新的邀请',
-          icon: 'none'
-        });
-      }
-    } catch (error) {
-      console.error('刷新邀请失败:', error);
-      wx.showToast({
-        title: '刷新失败',
-        icon: 'error'
-      });
-    }
-  },
+  }
 }); 
