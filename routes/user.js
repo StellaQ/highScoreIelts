@@ -6,6 +6,8 @@ const axios = require('axios');
 const User = require('../models/UserModel'); // 引入用户模型
 const InviteUser = require('../models/InviteUser'); // 引入邀请记录模型
 
+const config = require('../config/configForMiniProgram');
+
 const APP_ID = 'wx64644819be1ec93a';
 const APP_SECRET = 'aeb6c176666f38a2d8b2ebccd0281504';
 
@@ -36,11 +38,23 @@ router.post('/getOpenId', async (req, res) => {
       ];
       const randomNickname = nicknames[Math.floor(Math.random() * nicknames.length)];
 
+      // 生成唯一的邀请码
+      let code;
+      let isUnique = false;
+
+      while (!isUnique) {
+        code = Math.random().toString(36).substring(2, 8).toUpperCase();
+        const existingUser = await User.findOne({ inviteCode: code });
+        if (!existingUser) {
+          isUnique = true;
+        }
+      }
+
       user = new User({ 
         openid,
         nickname: randomNickname,
-        avatarUrl: '', // 默认头像可以在这里设置
-        points: 0 // 初始积分为0
+        avatarUrl: '',
+        inviteCode: code // 保存邀请码
       });
       await user.save();
 
@@ -72,10 +86,8 @@ router.post('/getOpenId', async (req, res) => {
       userInfo: {
         userId: user.userId,
         nickname: user.nickname,
-        avatarUrl: user.avatarUrl,
-        points: user.points || 0
+        avatarUrl: user.avatarUrl
       }
-      // isNewUser
     });
   } catch (error) {
     console.error('获取 openid 失败:', error);
@@ -227,6 +239,80 @@ router.get('/updateInviteCount', async (req, res) => {
   } catch (error) {
     console.error('获取邀请数量失败:', error);
     res.status(500).json({ error: '服务器错误' });
+  }
+});
+
+// 检查今日最新数据
+router.get('/getLatestStatus/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const today = new Date().toISOString().split('T')[0];
+    
+    const user = await User.findOne({ userId });
+    if (!user) {
+      return res.status(404).json({ message: '用户不存在' });
+    }
+
+    const hasCheckedIn = user.signInDates.includes(today);
+    const streakDays = user.signInDates.length;
+
+    res.json({
+      points: user.points,
+      hasCheckedIn,
+      streakDays,
+      inviteCode: user.inviteCode
+    });
+  } catch (error) {
+    console.error('检查签到状态失败:', error);
+    res.status(500).json({ message: '服务器错误' });
+  }
+});
+
+// 执行签到
+router.post('/signIn/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const today = new Date().toISOString().split('T')[0];
+    
+    const user = await User.findOne({ userId });
+    if (!user) {
+      return res.status(404).json({ message: '用户不存在' });
+    }
+
+    // 检查是否已签到
+    if (user.signInDates.includes(today)) {
+      return res.status(400).json({ message: '今日已签到' });
+    }
+
+    // 检查是否连续签到
+    const lastSignIn = user.signInDates[0];
+    if (lastSignIn) {
+      const lastDate = new Date(lastSignIn);
+      const todayDate = new Date(today);
+      const diffDays = Math.floor((todayDate - lastDate) / (1000 * 60 * 60 * 24));
+      
+      // 如果不是连续签到，清空之前的签到记录
+      if (diffDays > 1) {
+        user.signInDates = [];
+      }
+    }
+
+    // 添加今日签到记录
+    user.signInDates.unshift(today);
+    
+    // 更新积分
+    user.points += config.SIGN_IN_POINTS;
+
+    await user.save();
+
+    res.json({
+      success: true,
+      points: user.points,
+      streakDays: user.signInDates.length
+    });
+  } catch (error) {
+    console.error('签到失败:', error);
+    res.status(500).json({ message: '服务器错误' });
   }
 });
 

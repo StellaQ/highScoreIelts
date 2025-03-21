@@ -28,7 +28,7 @@ Component({
       const currentPage = `/${pages[pages.length - 1].route}`;
   
       if (currentPage === targetUrl) {
-        console.log('已经在当前页面，无需跳转');
+        // console.log('已经在当前页面，无需跳转');
         return;
       }
   

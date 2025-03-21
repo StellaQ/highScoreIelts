@@ -23,6 +23,11 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  signInDates: { type: [String], default: [] }, // 存储签到日期数组
+  inviteCode: {
+    type: String,
+    unique: true, // 确保唯一性
+  },
   isVip: {
     type: Boolean,
     default: false // 默认不是 VIP

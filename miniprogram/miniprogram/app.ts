@@ -4,29 +4,24 @@ interface UserInfo {
   userId: string;
   nickname: string;
   avatarUrl: string;
-  points: number;
 }
 
 interface IAppOption {
   globalData: {
-    userInfo?: UserInfo;
-    inviterId?: string;
-    hasUsedInviteCode?: boolean;
-    [key: string]: any;
+    userInfo?: {
+      userId: string;
+      avatarUrl: string;
+      nickname: string;
+    }
   };
   userInfoReadyCallback?: (userInfo: UserInfo) => void;
   loginAndFetchUserData: () => void;
   getUserInfo: (callback: (userInfo: UserInfo) => void) => void;
-  getShareConfig: (options?: { 
-    title?: string; 
-    path?: string; 
+  getShareConfig: (config: { title: string; path?: string; query?: string; imageUrl?: string }) => {
+    title: string;
+    path?: string;
     query?: string;
     imageUrl?: string;
-  }) => {
-    title: string;
-    path: string;
-    query: string;
-    imageUrl: string;
   };
 }
 
@@ -48,27 +43,21 @@ const eventBus = {
 
 App<IAppOption>({
   globalData: {
-    userInfo: undefined,
-    inviterId: undefined,
-    hasUsedInviteCode: false
+    userInfo: undefined
   },
 
   async onLaunch(options) {
     console.log("app.ts 小程序启动，检查用户信息");
 
-    // 检查是否已经使用过邀请码
-    const hasUsedInviteCode = await simpleSecureStorage.getStorage('hasUsedInviteCode');
-    this.globalData.hasUsedInviteCode = hasUsedInviteCode || false;
-
-    if (options.query && options.query.inviter) {
-      console.log("app.ts 检测到邀请人ID:", options.query.inviter);
-      this.globalData.inviterId = options.query.inviter;
+    // if (options.query && options.query.inviter) {
+    //   console.log("app.ts 检测到邀请人ID:", options.query.inviter);
+    //   this.globalData.inviterId = options.query.inviter;
       
-      const userInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
-      if (!userInfo || !userInfo.userId) {
-        await simpleSecureStorage.setStorage('inviterId', options.query.inviter);
-      }
-    }
+    //   const userInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
+    //   if (!userInfo || !userInfo.userId) {
+    //     await simpleSecureStorage.setStorage('inviterId', options.query.inviter);
+    //   }
+    // }
 
     // 先尝试从缓存获取用户信息
     const cachedUserInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
@@ -96,8 +85,7 @@ App<IAppOption>({
               const completeUserInfo: UserInfo = {
                 userId: userInfo.userId || '',
                 nickname: userInfo.nickname || '',
-                avatarUrl: userInfo.avatarUrl || '',
-                points: userInfo.points || 0
+                avatarUrl: userInfo.avatarUrl || ''
               };
 
               // 保存到本地存储
@@ -134,10 +122,10 @@ App<IAppOption>({
   },
 
   getShareConfig(options = {}) {
-    const openid = this.globalData.openid || '';
+    const inviterId = this.globalData.userId || '';
     const defaultTitle = '高分英语 - 助你轻松备考！';
     const defaultPath = '/pages/index/index';
-    const defaultQuery = `inviter=${openid}`;
+    const defaultQuery = `inviter=${inviterId}`;
     const defaultImageUrl = '../../assets/pics/share-image.png';
 
     return {

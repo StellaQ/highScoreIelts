@@ -7,30 +7,34 @@ Page({
     userInfo: {
       userId: '',
       avatarUrl: '',
-      nickname: '',
-      points: 0,
-      hasUsedInviteCode: false
-    },
-    hasCheckedIn: false,
-    showInvitePopup: false,
-    showPrivacyPopup: false,
-    showInviteCodeInputPopup: false,
-    inviteCode: '',
+      nickname: ''
+    },            // 和app.ts的userInfo同步
+    
+    configCheckedInNum: 20, // 每天签到+积分数
+    configInviteNum: 50,    // 邀请一个好友得到的积分数
+
+    points: 0,    // aboutMe.ts 积分数
+    hasCheckedIn: false,    // 判断今日是否已签到
+    inviteCode: '',     // 邀请好友的邀请码
+
+    streakDays: 0,          // 连续训练 天数
+    totalTopics: 0,         // 练习话题 个数
+    aiScore: 0,             // AI模拟考分数
+    lastPractice: '暂无',    // 最近练习
+
+    showInvitePopup: false,   // 弹窗：邀请好友
+    showInviteCodeInputPopup: false,  // 弹窗：填写收到的邀请码
+    showPrivacyPopup: false,  // 弹窗：隐私政策
+
+    hasUsedInviteCode: false,
     inputInviteCode: '',
-    inviterId: '',
-    streakDays: 0,
-    totalTopics: 0,
-    aiScore: 0,
-    lastPractice: '暂无'
+    inviterId: ''
   },
   onLoad() {
+    console.log('aboutMe 页面 onLoad');
     this.getUserInfoFromAppTs();
-    this.checkTodaySignIn();
-    this.generateInviteCode();
+    this.getLatestStatus();
     this.checkInviteStatus();
-  },
-  onShow() {
-    this.getUserInfoFromAppTs();
   },
   getUserInfoFromAppTs() {
     const app = getApp<IAppOption>();
@@ -41,22 +45,37 @@ Page({
       });
     }
   },
-  async checkTodaySignIn() {
-    try {
-      const today = new Date().toDateString();
-      const lastSignIn = await simpleSecureStorage.getStorage('lastSignIn');
-      // console.log('获取到的签到数据:', lastSignIn);
+  async getLatestStatus() {
+    // 先从缓存获取用户信息
+    const cachedTodayStatus = await simpleSecureStorage.getStorage('todayStatus');
+    // console.log(cachedTodayStatus);
+    if (cachedTodayStatus) {
+      // console.log('每次aboutMe页面onLoad,若缓存存在，先赋值缓存cachedTodayStatus')
       this.setData({
-        hasCheckedIn: lastSignIn === today
+        points: cachedTodayStatus.points,
+        inviteCode: cachedTodayStatus.points,
+        hasCheckedIn: cachedTodayStatus.hasCheckedIn,
+        streakDays: cachedTodayStatus.streakDays
       });
+    };
+    try {
+      // console.log('每次aboutMe页面onLoad,再请求后端api')
+      const res = await API.getLatestStatus(this.data.userInfo.userId);
+      this.setData({
+        points: res.points,
+        inviteCode: res.inviteCode,
+        hasCheckedIn: res.hasCheckedIn,
+        streakDays: res.streakDays
+      });
+      const todayStatus = {
+        points: res.points,
+        inviteCode: res.inviteCode,
+        hasCheckedIn: res.hasCheckedIn,
+        streakDays: res.streakDays
+      }
+      await simpleSecureStorage.setStorage('todayStatus', todayStatus);
     } catch (error) {
       // console.error('检查签到状态失败:', error);
-      // 如果读取失败，清除可能损坏的数据
-      try {
-        await simpleSecureStorage.removeStorage('lastSignIn');
-      } catch (e) {
-        // console.error('清除签到数据失败:', e);
-      }
     }
   },
   async handleCheckIn() {
@@ -69,34 +88,25 @@ Page({
         return;
       }
 
-      const today = new Date().toDateString();
-      await simpleSecureStorage.setStorage('lastSignIn', today);
-      console.log('保存签到数据成功');
+      const res = await API.signIn(this.data.userInfo.userId);
       
-      const newPoints = this.data.userInfo.points + 5;
-      
-      // 调用API更新积分
-      await API.updateUserPoints(this.data.userInfo.userId, newPoints);
-
       // 更新页面数据
       this.setData({
+        points: res.points,
         hasCheckedIn: true,
-        'userInfo.points': newPoints
+        streakDays: res.streakDays
       }); 
-      // 更新全局数据
-      const app = getApp<IAppOption>();
-      if (app.globalData.userInfo) {
-        app.globalData.userInfo.points = newPoints;
-      }
       // 更新缓存
-      const updatedUserInfo = {
-        ...this.data.userInfo,
-        points: newPoints
-      };
-      await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
+      const cachedTodayStatus = await simpleSecureStorage.getStorage('todayStatus');
+      if(cachedTodayStatus) {
+        cachedTodayStatus.points = res.points,
+        cachedTodayStatus.hasCheckedIn = true,
+        cachedTodayStatus.streakDays = res.streakDays
+      }
+      await simpleSecureStorage.setStorage('todayStatus', cachedTodayStatus);
 
       wx.showToast({
-        title: '签到成功 +5积分',
+        title: '签到成功 +' + this.data.configCheckedInNum + '积分',
         icon: 'success'
       });
     } catch (error) {
@@ -106,11 +116,6 @@ Page({
         icon: 'error'
       });
     }
-  },
-
-  generateInviteCode() {
-    const code = Math.random().toString(36).substr(2, 6).toUpperCase();
-    this.setData({ inviteCode: code });
   },
 
   handleInvite() {
@@ -215,7 +220,7 @@ Page({
     try {
       // 这里应该调用后端API验证邀请码
       // 暂时模拟验证成功
-      const newPoints = this.data.userInfo.points + 20;
+      const newPoints = this.data.userInfo.points + this.data.configInviteNum;
       
       // 更新全局数据
       if (app.globalData.userInfo) {
@@ -241,7 +246,7 @@ Page({
       });
 
       wx.showToast({
-        title: '邀请码验证成功 +20积分',
+        title: '邀请码验证成功 +' + this.data.configInviteNum +'积分',
         icon: 'success'
       });
     } catch (error) {
@@ -267,11 +272,10 @@ Page({
       desc: '用于完善会员资料',
       success: (res) => {
         // console.log(res);
-        const userInfo: UserInfo = {
+        const userInfo = {
           userId: this.data.userInfo.userId,
           avatarUrl: res.userInfo.avatarUrl,
-          nickname: res.userInfo.nickName,
-          points: this.data.userInfo.points
+          nickname: res.userInfo.nickName
         };
         
         // 保存到本地存储
@@ -396,7 +400,7 @@ Page({
       if (res && res.inviteCount > 0) {
         // 计算新增的邀请数
         const newInvites = res.inviteCount;
-        const pointsToAdd = newInvites * 20;
+        const pointsToAdd = newInvites * this.data.configInviteNum;
         
         // 更新用户积分
         const newPoints = this.data.userInfo.points + pointsToAdd;
