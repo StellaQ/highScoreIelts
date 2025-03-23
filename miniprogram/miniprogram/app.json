@@ -35,5 +35,6 @@
     "navigationBarTitleText": "HighScoreIELTS",
     "navigationBarBackgroundColor": "#ffffff"
   },
-  "componentFramework": "glass-easel"
+  "componentFramework": "glass-easel",
+  "enableShareTimeline": true
 }

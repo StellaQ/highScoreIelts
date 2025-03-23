@@ -16,17 +16,7 @@ interface IAppOption {
     hasUsedInviteCode?: boolean;
     [key: string]: any;
   };
-  getShareConfig: (options?: { 
-    title?: string; 
-    path?: string; 
-    query?: string;
-    imageUrl?: string;
-  }) => {
-    title: string;
-    path: string;
-    query: string;
-    imageUrl: string;
-  };
+  
 }
 
 Page({
@@ -147,31 +137,12 @@ Page({
     this.stopTimer();
   },
 
+  // 普通分享
   onShareAppMessage() {
-    const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig({
-      title: 'AI模拟考试 - 高分英语',
-      path: '/pages/aiSimulation/aiSimulation'
-    });
-    
-    return {
-      title: shareConfig.title,
-      path: shareConfig.path,
-      imageUrl: shareConfig.imageUrl
-    };
+    return getApp().getShareInfo();
   },
-
+  // 朋友圈分享
   onShareTimeline() {
-    const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig({
-      title: 'AI模拟考试 - 高分英语',
-      query: 'practice=ai'
-    });
-    
-    return {
-      title: shareConfig.title,
-      query: shareConfig.query,
-      imageUrl: shareConfig.imageUrl
-    };
-  },
+    return getApp().getTimelineInfo();
+  }
 }); 

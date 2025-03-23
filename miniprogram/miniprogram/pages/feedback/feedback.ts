@@ -166,7 +166,12 @@ Page<PageData, PageInstance & PageMethods>({
     }
   },
 
+  // 普通分享
   onShareAppMessage() {
-    return getShareAppMessage(this.data.userInfo.userId);
+    return getApp().getShareInfo();
+  },
+  // 朋友圈分享
+  onShareTimeline() {
+    return getApp().getTimelineInfo();
   }
 }); 

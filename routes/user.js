@@ -12,7 +12,7 @@ const APP_ID = 'wx64644819be1ec93a';
 const APP_SECRET = 'aeb6c176666f38a2d8b2ebccd0281504';
 
 router.post('/getOpenId', async (req, res) => {
-  const { code, inviterId } = req.body;
+  const { code, codeFromInviter } = req.body;
 
   try {
     const wxRes = await axios.get(`https://api.weixin.qq.com/sns/jscode2session`, {
@@ -54,29 +54,41 @@ router.post('/getOpenId', async (req, res) => {
         openid,
         nickname: randomNickname,
         avatarUrl: '',
-        inviteCode: code // 保存邀请码
+        inviteCode: code, // 保存邀请码
+        points: 0,
+        hasUsedInviteCode: false
       });
       await user.save();
 
-      // 如果有邀请人ID，处理邀请关系
-      // if (inviterId && inviterId !== user.userId) {
-      //   // 检查是否已被邀请
-      //   const existingInvite = await InviteUser.findOne({ inviteeId: user.userId });
-      //   if (!existingInvite) {
-      //     // 创建邀请记录
-      //     await InviteUser.create({
-      //       inviterId,
-      //       inviteeId: user.userId,
-      //       createdAt: new Date()
-      //     });
+      // 处理邀请关系
+      if (codeFromInviter) {
+        const inviter = await User.findOne({ inviteCode: codeFromInviter });
+        if (inviter && !user.hasUsedInviteCode) {
+          // 创建邀请记录
+          await Invite.create({
+            inviterId: inviter.userId,
+            inviteeId: user.userId,
+            inviteCode: codeFromInviter,
+            status: 'accepted',
+            acceptedAt: new Date(),
+            createdAt: new Date()
+          });
 
-      //     // 更新邀请人的邀请计数
-      //     await User.updateOne(
-      //       { userId: inviterId },
-      //       { $inc: { inviteCount: 1 } }
-      //     );
-      //   }
-      // }
+          // 更新双方积分
+          await User.updateOne(
+            { userId: inviter.userId },
+            { $inc: { points: config.INVITE_POINTS } }
+          );
+          
+          await User.updateOne(
+            { userId: user.userId },
+            { 
+              $inc: { points: config.INVITE_POINTS },
+              hasUsedInviteCode: true 
+            }
+          );
+        }
+      }
     } else {
       // user.lastLogin = new Date();
       // await user.save();
@@ -86,7 +98,8 @@ router.post('/getOpenId', async (req, res) => {
       userInfo: {
         userId: user.userId,
         nickname: user.nickname,
-        avatarUrl: user.avatarUrl
+        avatarUrl: user.avatarUrl,
+        inviteCode: user.inviteCode
       }
     });
   } catch (error) {
@@ -94,7 +107,7 @@ router.post('/getOpenId', async (req, res) => {
     res.status(500).json({ error: '获取 openid 失败' });
   }
 });
-
+// 更新用户信息 done
 router.post('/updateProfile', async (req, res) => {
   try {
     const { userId, nickname, avatarUrl } = req.body;
@@ -123,7 +136,7 @@ router.post('/updateProfile', async (req, res) => {
   }
 });
 
-// 更新用户积分
+// 更新用户积分 done
 router.post('/updatePoints', async (req, res) => {
   try {
     // console.log('收到更新积分请求：', req.body);
@@ -184,14 +197,15 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
       points: user.points,
       hasCheckedIn,
       streakDays,
-      inviteCode: user.inviteCode
+      inviteCode: user.inviteCode,
+      hasUsedInviteCode: user.hasUsedInviteCode
     });
   } catch (error) {
     console.error('检查签到状态失败:', error);
     res.status(500).json({ message: '服务器错误' });
   }
 });
-// 执行签到
+// 执行签到 done
 router.post('/signIn/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
@@ -238,7 +252,7 @@ router.post('/signIn/:userId', async (req, res) => {
     res.status(500).json({ message: '服务器错误' });
   }
 });
-// 检查总的邀请人数和最近三天的邀请人数
+// 检查总的邀请人数和最近三天的邀请人数 done
 router.get('/checkInvites/:userId', async (req, res) => {
   try {
     const userId = req.params.userId;

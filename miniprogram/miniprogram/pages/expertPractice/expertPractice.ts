@@ -257,30 +257,12 @@ Page({
       category.subCategories.some(tag => tag.tagId === tagIdToUpdate)
     );
   },
+  // 普通分享
   onShareAppMessage() {
-    const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig({
-      title: '专家练习 - 高分英语',
-      path: '/pages/expertPractice/expertPractice'
-    });
-    
-    return {
-      title: shareConfig.title,
-      path: shareConfig.path,
-      imageUrl: shareConfig.imageUrl
-    };
+    return getApp().getShareInfo();
   },
+  // 朋友圈分享
   onShareTimeline() {
-    const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig({
-      title: '专家练习 - 高分英语',
-      query: 'practice=expert'
-    });
-    
-    return {
-      title: shareConfig.title,
-      query: shareConfig.query,
-      imageUrl: shareConfig.imageUrl
-    };
-  },
+    return getApp().getTimelineInfo();
+  }
 });

@@ -12,6 +12,7 @@
   padding-bottom: calc(30rpx + 120rpx); /* 增加底部 padding，避免被 tabBar 遮挡 */
   box-sizing: border-box;
   overflow-y: auto;
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -799,6 +800,7 @@
 
 .tip-item:last-child {
   margin-bottom: 0;
+}
 .highlight {
   color: #FFD700;
   font-weight: bold;

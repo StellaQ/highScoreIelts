@@ -14,9 +14,12 @@ Page({
 
     points: 0,    // aboutMe.ts 积分数
     hasCheckedIn: false,    // 判断今日是否已签到
+
     inviteCode: '',     // 邀请好友的邀请码
     recentInvites: 0,   // 最近3天邀请到的新用户数
     totalInvites: 0,    // 总的邀请到的新用户数
+
+    hasUsedInviteCode: false,   // 用户已经使用了邀请码
 
     streakDays: 0,          // 连续训练 天数
     totalTopics: 0,         // 练习话题 个数
@@ -27,9 +30,8 @@ Page({
     showInviteCodeInputPopup: false,  // 弹窗：填写收到的邀请码
     showPrivacyPopup: false,  // 弹窗：隐私政策
 
-    hasUsedInviteCode: false,
-    inputInviteCode: '',
-    inviterId: ''
+    inviterId: '',              // 
+    inputInviteCode: ''
   },
   onLoad() {
     console.log('aboutMe 页面 onLoad');
@@ -56,9 +58,10 @@ Page({
       // console.log('每次aboutMe页面onLoad,若缓存存在，先赋值缓存cachedTodayStatus')
       this.setData({
         points: cachedTodayStatus.points,
-        inviteCode: cachedTodayStatus.points,
+        inviteCode: cachedTodayStatus.inviteCode,
         hasCheckedIn: cachedTodayStatus.hasCheckedIn,
-        streakDays: cachedTodayStatus.streakDays
+        streakDays: cachedTodayStatus.streakDays,
+        hasUsedInviteCode: cachedTodayStatus.hasUsedInviteCode
       });
     };
     try {
@@ -68,13 +71,15 @@ Page({
         points: res.points,
         inviteCode: res.inviteCode,
         hasCheckedIn: res.hasCheckedIn,
-        streakDays: res.streakDays
+        streakDays: res.streakDays,
+        hasUsedInviteCode: res.hasUsedInviteCode
       });
       const todayStatus = {
         points: res.points,
         inviteCode: res.inviteCode,
         hasCheckedIn: res.hasCheckedIn,
-        streakDays: res.streakDays
+        streakDays: res.streakDays,
+        hasUsedInviteCode: res.hasUsedInviteCode
       }
       await simpleSecureStorage.setStorage('todayStatus', todayStatus);
     } catch (error) {
@@ -168,28 +173,6 @@ Page({
   },
   // [填写您收到的邀请码]
   showInviteCodeInput() {
-    const app = getApp<IAppOption>();
-    
-    // 如果已经使用过邀请码，显示提示
-    if (app.globalData.hasUsedInviteCode) {
-      wx.showToast({
-        title: '您已使用过邀请码',
-        icon: 'none'
-      });
-      return;
-    }
-
-    // 如果是从分享链接进入的，显示更友好的提示
-    if (app.globalData.inviterId) {
-      wx.showModal({
-        title: '提示',
-        content: '您已通过分享链接获得邀请奖励，无需再次输入邀请码',
-        showCancel: false,
-        confirmText: '我知道了'
-      });
-      return;
-    }
-
     this.setData({ showInviteCodeInputPopup: true });
   },
   closeInviteCodeInputPopup() {
@@ -204,28 +187,6 @@ Page({
     });
   },
   async submitInviteCode() {
-    const app = getApp<IAppOption>();
-    
-    // 如果已经使用过邀请码，直接返回
-    if (app.globalData.hasUsedInviteCode) {
-      wx.showToast({
-        title: '您已使用过邀请码',
-        icon: 'none'
-      });
-      return;
-    }
-
-    // 如果是从分享链接进入的，显示更友好的提示
-    if (app.globalData.inviterId) {
-      wx.showModal({
-        title: '提示',
-        content: '您已通过分享链接获得邀请奖励，无需再次输入邀请码',
-        showCancel: false,
-        confirmText: '我知道了'
-      });
-      return;
-    }
-
     const code = this.data.inputInviteCode.trim();
     if (!code || code.length !== 6) {
       wx.showToast({
@@ -327,31 +288,12 @@ Page({
       }
     });
   },
-  // 分享
+  // 普通分享
   onShareAppMessage() {
-    const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig({
-      title: '高分英语 - 助你轻松备考！',
-      path: '/pages/index/index'
-    });
-    
-    return {
-      title: shareConfig.title,
-      path: shareConfig.path,
-      imageUrl: shareConfig.imageUrl
-    };
+    return getApp().getShareInfo();
   },
+  // 朋友圈分享
   onShareTimeline() {
-    const app = getApp<IAppOption>();
-    const shareConfig = app.getShareConfig({
-      title: '高分英语 - 助你轻松备考！',
-      query: 'page=about'
-    });
-    
-    return {
-      title: shareConfig.title,
-      query: shareConfig.query,
-      imageUrl: shareConfig.imageUrl
-    };
+    return getApp().getTimelineInfo();
   }
 }); 

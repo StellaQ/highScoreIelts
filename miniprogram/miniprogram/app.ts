@@ -4,6 +4,7 @@ interface UserInfo {
   userId: string;
   nickname: string;
   avatarUrl: string;
+  inviteCode: string
 }
 
 interface IAppOption {
@@ -12,52 +13,34 @@ interface IAppOption {
       userId: string;
       avatarUrl: string;
       nickname: string;
-    }
+      inviteCode: string
+    },
+    codeFromInviter?: string
   };
   userInfoReadyCallback?: (userInfo: UserInfo) => void;
   loginAndFetchUserData: () => void;
   getUserInfo: (callback: (userInfo: UserInfo) => void) => void;
-  getShareConfig: (config: { title: string; path?: string; query?: string; imageUrl?: string }) => {
-    title: string;
-    path?: string;
-    query?: string;
-    imageUrl?: string;
-  };
+  getShareInfo(): WechatMiniprogram.Page.ICustomShareContent;
+  getTimelineInfo(): WechatMiniprogram.Page.ICustomTimelineContent;
 }
-
-// 创建一个简单的事件总线
-const eventBus = {
-  listeners: {} as Record<string, Function[]>,
-  on(event: string, callback: Function) {
-    if (!this.listeners[event]) {
-      this.listeners[event] = [];
-    }
-    this.listeners[event].push(callback);
-  },
-  emit(event: string, data: any) {
-    if (this.listeners[event]) {
-      this.listeners[event].forEach(callback => callback(data));
-    }
-  }
-};
 
 App<IAppOption>({
   globalData: {
-    userInfo: undefined
+    userInfo: undefined,
+    codeFromInviter: undefined
   },
 
   async onLaunch(options) {
     console.log("app.ts 小程序启动，检查用户信息");
 
-    // if (options.query && options.query.inviter) {
-    //   console.log("app.ts 检测到邀请人ID:", options.query.inviter);
-    //   this.globalData.inviterId = options.query.inviter;
-      
-    //   const userInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
-    //   if (!userInfo || !userInfo.userId) {
-    //     await simpleSecureStorage.setStorage('inviterId', options.query.inviter);
-    //   }
-    // }
+    // path?inviter=ABCD12  // inviter参数使用inviteCode而不是userId
+    if (options.query && options.query.inviter) {
+      console.log("检测到邀请码:", options.query.inviter);
+      // 验证邀请码格式
+      if (/^[A-Z0-9]{6}$/.test(options.query.inviter)) {
+        this.globalData.codeFromInviter = options.query.inviter;
+      }
+    }
 
     // 先尝试从缓存获取用户信息
     const cachedUserInfo = await simpleSecureStorage.getStorage('userInfo') as UserInfo | null;
@@ -77,7 +60,10 @@ App<IAppOption>({
           wx.request({
             url: 'http://localhost:3001/api/user/getOpenId',
             method: 'POST',
-            data: { code: res.code },
+            data: { 
+              code: res.code,
+              codeFromInviter: this.globalData.codeFromInviter
+            },
             success: async (response: any) => {
               const userInfo = response.data.userInfo;
               
@@ -85,7 +71,8 @@ App<IAppOption>({
               const completeUserInfo: UserInfo = {
                 userId: userInfo.userId || '',
                 nickname: userInfo.nickname || '',
-                avatarUrl: userInfo.avatarUrl || ''
+                avatarUrl: userInfo.avatarUrl || '',
+                inviteCode: userInfo.inviteCode
               };
 
               // 保存到本地存储
@@ -120,19 +107,23 @@ App<IAppOption>({
       this.userInfoReadyCallback = callback;
     }
   },
-
-  getShareConfig(options = {}) {
-    const inviterId = this.globalData.userId || '';
-    const defaultTitle = '高分英语 - 助你轻松备考！';
-    const defaultPath = '/pages/index/index';
-    const defaultQuery = `inviter=${inviterId}`;
-    const defaultImageUrl = '../../assets/pics/share-image.png';
-
+  
+  // 普通分享
+  getShareInfo() {
+    const code = this.globalData.userInfo?.inviteCode;
     return {
-      title: options.title || defaultTitle,
-      path: options.path || defaultPath,
-      query: options.query || defaultQuery,
-      imageUrl: options.imageUrl || defaultImageUrl
-    };
+      title: 'AI助您练口语',
+      path: `/pages/index/index?inviter=${code}`,
+      imageUrl: '/assets/share-image.png'
+    }
+  },
+  // 朋友圈分享
+  getTimelineInfo() {
+    const code = this.globalData.userInfo?.inviteCode
+    return {
+      title: 'AI助您练口语',  // 朋友圈标题
+      query: `inviter=${code}`,  // 注意这里用 query 而不是 path
+      imageUrl: '/assets/timeline-share-image.png'  // 朋友圈分享的图片尺寸要求可能与普通分享不同，建议使用 1:1 的图片
+    }
   }
 });

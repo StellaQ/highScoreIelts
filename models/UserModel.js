@@ -28,13 +28,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true, // 确保唯一性
   },
+  hasUsedInviteCode: {
+    type: Boolean,
+    default: false
+  },
   isVip: {
     type: Boolean,
     default: false // 默认不是 VIP
-  },
-  inviteCount: { // 记录邀请人数
-    type: Number,
-    default: 0
   },
   gender: {
     type: Number, // 0: 未知, 1: 男, 2: 女
