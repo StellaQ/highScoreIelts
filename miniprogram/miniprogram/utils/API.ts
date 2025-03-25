@@ -51,6 +51,24 @@ const API = {
         fail: reject
       });
     });
+  },
+  // 验证邀请码
+  verifyInviteCode: (userId: string, inviteCode: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/user/verifyInviteCode`,
+        method: 'POST',
+        data: { userId, inviteCode },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(new Error(res.data.error || '验证邀请码失败'));
+          }
+        },
+        fail: reject
+      });
+    });
   }
 };
 

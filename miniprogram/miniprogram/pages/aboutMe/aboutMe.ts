@@ -30,7 +30,6 @@ Page({
     showInviteCodeInputPopup: false,  // 弹窗：填写收到的邀请码
     showPrivacyPopup: false,  // 弹窗：隐私政策
 
-    inviterId: '',              // 
     inputInviteCode: ''
   },
   onLoad() {
@@ -197,40 +196,31 @@ Page({
     }
 
     try {
-      // 这里应该调用后端API验证邀请码
-      // 暂时模拟验证成功
-      const newPoints = this.data.userInfo.points + this.data.configInviteNum;
-      
-      // 更新全局数据
-      if (app.globalData.userInfo) {
-        app.globalData.userInfo.points = newPoints;
-      }
-      
-      // 更新缓存
-      const updatedUserInfo = {
-        ...this.data.userInfo,
-        points: newPoints
-      };
-      await simpleSecureStorage.setStorage('userInfo', updatedUserInfo);
-      
-      // 标记已使用邀请码
-      app.globalData.hasUsedInviteCode = true;
-      await simpleSecureStorage.setStorage('hasUsedInviteCode', true);
+      const res = await API.verifyInviteCode(this.data.userInfo.userId, code);
       
       // 更新页面数据
       this.setData({
-        'userInfo.points': newPoints,
+        points: res.points,
+        hasUsedInviteCode: true,
         showInviteCodeInputPopup: false,
         inputInviteCode: ''
       });
 
+      // 更新缓存中的状态
+      const todayStatus = await simpleSecureStorage.getStorage('todayStatus') || {};
+      await simpleSecureStorage.setStorage('todayStatus', {
+        ...todayStatus,
+        points: res.points,
+        hasUsedInviteCode: true
+      });
+
       wx.showToast({
-        title: '邀请码验证成功 +' + this.data.configInviteNum +'积分',
+        title: '邀请码验证成功 +' + this.data.configInviteNum + '积分',
         icon: 'success'
       });
-    } catch (error) {
+    } catch (error: any) {
       wx.showToast({
-        title: '邀请码无效',
+        title: error.message || '邀请码验证失败',
         icon: 'none'
       });
     }

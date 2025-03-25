@@ -276,4 +276,70 @@ router.get('/checkInvites/:userId', async (req, res) => {
     res.status(500).json({ error: 'Failed to check invites' });
   }
 });
+
+// 验证邀请码
+router.post('/verifyInviteCode', async (req, res) => {
+  try {
+    const { userId, inviteCode } = req.body;
+
+    // 查找当前用户
+    const currentUser = await User.findOne({ userId });
+    if (!currentUser) {
+      return res.status(404).json({ error: '用户不存在' });
+    }
+
+    // 检查用户是否已经使用过邀请码
+    if (currentUser.hasUsedInviteCode) {
+      return res.status(400).json({ error: '您已经使用过邀请码' });
+    }
+
+    // 查找邀请者
+    const inviter = await User.findOne({ inviteCode });
+    if (!inviter) {
+      return res.status(404).json({ error: '无效的邀请码' });
+    }
+
+    // 检查是否是自己的邀请码
+    if (inviter.userId === currentUser.userId) {
+      return res.status(400).json({ error: '不能使用自己的邀请码' });
+    }
+
+    // 创建邀请记录
+    await Invite.create({
+      inviterId: inviter.userId,
+      inviteeId: currentUser.userId,
+      inviteCode: inviteCode,
+      status: 'accepted',
+      acceptedAt: new Date(),
+      createdAt: new Date()
+    });
+
+    // 更新双方积分
+    await User.updateOne(
+      { userId: inviter.userId },
+      { $inc: { points: config.INVITE_POINTS } }
+    );
+    
+    await User.updateOne(
+      { userId: currentUser.userId },
+      { 
+        $inc: { points: config.INVITE_POINTS },
+        hasUsedInviteCode: true 
+      }
+    );
+
+    // 获取更新后的用户信息
+    const updatedUser = await User.findOne({ userId: currentUser.userId });
+
+    res.json({ 
+      success: true,
+      points: updatedUser.points,
+      message: '邀请码验证成功'
+    });
+  } catch (error) {
+    console.error('验证邀请码失败:', error);
+    res.status(500).json({ error: '验证邀请码失败' });
+  }
+});
+
 module.exports = router;
