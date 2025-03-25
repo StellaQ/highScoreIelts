@@ -114,7 +114,7 @@ App<IAppOption>({
     return {
       title: 'AI助您练口语',
       path: `/pages/index/index?inviter=${code}`,
-      imageUrl: '/assets/share-image.png'
+      imageUrl: '/assets/pics/share-info1.png'
     }
   },
   // 朋友圈分享
@@ -123,7 +123,7 @@ App<IAppOption>({
     return {
       title: 'AI助您练口语',  // 朋友圈标题
       query: `inviter=${code}`,  // 注意这里用 query 而不是 path
-      imageUrl: '/assets/timeline-share-image.png'  // 朋友圈分享的图片尺寸要求可能与普通分享不同，建议使用 1:1 的图片
+      imageUrl: '/assets/pics/share-timeline1.png'  // 朋友圈分享的图片尺寸要求可能与普通分享不同，建议使用 1:1 的图片
     }
   }
 });
