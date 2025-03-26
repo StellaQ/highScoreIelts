@@ -34,7 +34,7 @@
           <view class="action-left">
             <text class="action-icon">👥</text>
             <view class="action-info">
-              <text class="action-title">邀请好友</text>
+              <text class="action-title">邀请新用户</text>
               <text class="action-desc">邀请好友登录，双方各得{{configInviteNum}}积分</text>
               <text class="action-desc"
               wx:if="{{totalInvites>0}}">已得<text class="highlight">{{totalInvites * configInviteNum}}</text>积分</text>
@@ -61,14 +61,14 @@
       <view class="section-title">📊 训练统计</view>
       <view class="stats-grid">
         <view class="stat-card">
-          <text class="stat-icon">🔥</text>
-          <text class="stat-label">连续训练</text>
-          <text class="stat-value">{{streakDays}} 天</text>
-        </view>
-        <view class="stat-card">
           <text class="stat-icon">🎤</text>
           <text class="stat-label">练习话题</text>
           <text class="stat-value">{{totalTopics}} 个</text>
+        </view>
+        <view class="stat-card">
+          <text class="stat-icon">📅</text>
+          <text class="stat-label">最近练习</text>
+          <text class="stat-value">{{lastPractice}}</text>
         </view>
         <view class="stat-card">
           <text class="stat-icon">🎯</text>
@@ -76,9 +76,9 @@
           <text class="stat-value">{{aiScore}} 分</text>
         </view>
         <view class="stat-card">
-          <text class="stat-icon">📅</text>
-          <text class="stat-label">最近练习</text>
-          <text class="stat-value">{{lastPractice}}</text>
+          <text class="stat-icon">🔥</text>
+          <text class="stat-label">连续签到</text>
+          <text class="stat-value">{{streakDays}} 天</text>
         </view>
       </view>
     </view>
@@ -110,7 +110,7 @@
   bind:close="closeInvitePopup"
 >
   <view class="invite-popup">
-    <view class="invite-title">邀请好友</view>
+    <view class="invite-title">邀请新用户</view>
     <view class="invite-content">
       <view class="invite-code">
         <text class="code-label">你的邀请码</text>
@@ -120,16 +120,43 @@
       <view class="invite-tips">
         <text class="tip-item">• 好友填写您给的邀请码</text>
         <text class="tip-item">• 双方各获得{{configInviteNum}}积分奖励</text>
-        <text class="tip-item">• 积分可用于解锁更多功能</text>
+        <!-- <text class="tip-item">• 积分可用于解锁更多功能</text> -->
       </view>
       <view class="share-tips">
         <text class="tip-item">• 您也可以选择分享小程序给好友</text>
-        <text class="tip-item">• 好友通过分享链接进入即可</text>
+        <text class="tip-item">• 好友通过分享链接进入，双方也可获得{{configInviteNum}}积分奖励</text>
       </view>
     </view>
   </view>
 </van-popup>
-
+<!-- 邀请码输入弹窗 -->
+<van-popup
+  show="{{ showInviteCodeInputPopup }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closeInviteCodeInputPopup"
+>
+  <view class="invite-code-input-popup">
+    <view class="popup-title">填写邀请码</view>
+    <view class="input-section">
+      <input 
+        class="invite-code-input" 
+        placeholder="请输入6位邀请码" 
+        maxlength="6"
+        value="{{inputInviteCode}}"
+        bindinput="onInviteCodeInput"
+      />
+    </view>
+    <view class="popup-tips">
+      <text class="tip-item">• 填写好友给您的邀请码</text>
+      <text class="tip-item">• 双方各获得{{configInviteNum}}积分奖励</text>
+    </view>
+    <view class="popup-buttons">
+      <button class="cancel-btn" bindtap="closeInviteCodeInputPopup">取消</button>
+      <button class="confirm-btn" bindtap="submitInviteCode">确认</button>
+    </view>
+  </view>
+</van-popup>
 <!-- 隐私政策弹窗 -->
 <van-popup
   show="{{ showPrivacyPopup }}"
@@ -180,34 +207,5 @@
         </view>
       </view>
     </scroll-view>
-  </view>
-</van-popup>
-
-<!-- 邀请码输入弹窗 -->
-<van-popup
-  show="{{ showInviteCodeInputPopup }}"
-  position="center"
-  custom-style="width: 80%; max-height: 80vh;"
-  bind:close="closeInviteCodeInputPopup"
->
-  <view class="invite-code-input-popup">
-    <view class="popup-title">填写邀请码</view>
-    <view class="input-section">
-      <input 
-        class="invite-code-input" 
-        placeholder="请输入6位邀请码" 
-        maxlength="6"
-        value="{{inputInviteCode}}"
-        bindinput="onInviteCodeInput"
-      />
-    </view>
-    <view class="popup-tips">
-      <text class="tip-item">• 填写好友的邀请码</text>
-      <text class="tip-item">• 双方各获得{{configInviteNum}}积分奖励</text>
-    </view>
-    <view class="popup-buttons">
-      <button class="cancel-btn" bindtap="closeInviteCodeInputPopup">取消</button>
-      <button class="confirm-btn" bindtap="submitInviteCode">确认</button>
-    </view>
   </view>
 </van-popup>

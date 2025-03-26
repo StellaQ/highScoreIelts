@@ -230,6 +230,12 @@ Page({
     wx.navigateTo({
       url: '/pages/feedback/feedback'
     });
+    // wx.openEmbeddedMiniProgram({
+    //   appId: 'wx8abaf00ee8c3202e',  // 微信官方反馈收集小程序的 appId
+    //   extraData: {
+    //     id: '740829'  // 这里填写你的小程序的 sourceId
+    //   }
+    // });
   },
   // 更新头像
   updateUserProfile() {
