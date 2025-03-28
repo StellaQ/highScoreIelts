@@ -1,4 +1,4 @@
-const system_prompt = 
+const prompt_basic_user = 
 
 `You are an IELTS speaking examiner with expertise in helping students achieve Band 7 or higher in the IELTS Speaking test. 
 
@@ -30,4 +30,4 @@ Example Output (in JSON format):
 Your Task:
 Based on the user's original answer (example input), rewrite it into a higher-quality response that aligns with Band 7+ standards. Ensure the response is more detailed, uses richer vocabulary, and includes complex sentence structures. The output should be provided in JSON format, as shown in the example above.`;
 
-module.exports = system_prompt;  // 导出 system_prompt
+module.exports = prompt_basic_user;  // 导出 prompt_basic_user

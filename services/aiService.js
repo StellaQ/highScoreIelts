@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: 'sk-1da737a934514aada285d8ed5502abcd'
 });
 
-async function getAIAnswerOne(system_prompt, user_prompt) {
+async function getAIService(system_prompt, user_prompt) {
   const messages = [
     { "role": "system", "content": system_prompt },
     { "role": "user", "content": user_prompt }
@@ -27,5 +27,5 @@ async function getAIAnswerOne(system_prompt, user_prompt) {
   }
 }
 
-// 确保导出 getAIAnswer 函数
-module.exports = { getAIAnswerOne };
+// 确保导出 getAIService 函数
+module.exports = { getAIService };

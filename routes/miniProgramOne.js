@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const system_prompt = require('../config/prompts/forPartOne.js');
-const { getAIAnswerOne } = require('./aiService.js');  // aiService.js 处理与 AI 的交互
+const prompt_basic_user = require('../prompts/prompt_basic_user.js');
+const { getAIService } = require('../services/aiService.js');  // aiService.js 处理与 AI 的交互
 
 const PartOneAnswer = require('../models/PartOneAnswer'); // 引入 PartOneAnswer 模型
 const PartOneTagProcess = require('../models/PartOneTagProcess.js');  // 引入 PartOneTag 模型
@@ -19,7 +19,7 @@ router.post('/askAI', async (req, res) => {
     const qId = req.body.question.qId;
     
     // 获取 AI 的答案
-    const result = await getAIAnswerOne(system_prompt, user_prompt);
+    const result = await getAIService(prompt_basic_user, user_prompt);
     console.log('Parsed AI Answer:', result);
 
     // 调用 updateAIAnswer 更新用户答案
