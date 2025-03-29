@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 // 提供静态文件服务
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'miniprogram')));
-app.use('/admin', express.static(path.join(__dirname, 'vue-admin/dist')));
+// app.use('/admin', express.static(path.join(__dirname, 'vue-admin/dist')));
 
 // 连接 MongoDB 数据库
 mongoose.connect(uri)
@@ -37,6 +37,8 @@ app.use('/api/miniprogramOne', miniProgramOneRoutes);
 
 const userRoutes = require('./routes/user');
 app.use('/api/user', userRoutes);
+const basicRoutes = require('./routes/basic');
+app.use('/api/basic', basicRoutes);
 
 const feedbackRoutes = require('./routes/feedback');
 app.use('/api/feedback', feedbackRoutes);

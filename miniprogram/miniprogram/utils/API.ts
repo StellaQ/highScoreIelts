@@ -1,6 +1,23 @@
 const BASE_URL = 'http://localhost:3001'; // 替换为实际的 API 地址
 
 const API = {
+  // basic 获取分类数据
+  getCategories: (): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/basic/getCategories`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
   // 执行签到 done
   signIn: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
@@ -11,7 +28,7 @@ const API = {
           if (res.statusCode === 200) {
             resolve(res.data);
           } else {
-            reject(new Error('签到失败'));
+            reject(res);
           }
         },
         fail: reject
