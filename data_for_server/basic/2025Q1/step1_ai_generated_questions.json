@@ -1,0 +1,608 @@
+{
+  "ai_questions": [
+    {
+      "topicName_real": "Where you live（New）",
+      "topicName_rewrite": "Current Residence",
+      "questions_original": [
+        {"qTitle": "How long have you lived in the house or apartment you're living in now?"},
+        {"qTitle": "What do you like about this house or apartment?"},
+        {"qTitle": "What kind of home would you like to live in in the future?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "What's the duration of your stay at your current residence?"},
+        {"qTitle": "Which aspects of your current home appeal to you most?"},
+        {"qTitle": "Describe your ideal future living space."}
+      ],
+      "questions_new": [
+        {"qTitle": "How does your current neighborhood influence your daily life?"},
+        {"qTitle": "What would make you consider moving to a different home?"}
+      ]
+    },
+    {
+      "topicName_real": "Work and Study（New）",
+      "topicName_rewrite": "Professional Life",
+      "questions_original": [
+        {"qTitle": "What work do you do?"},
+        {"qTitle": "How easy is it to get this kind of work in your country?"},
+        {"qTitle": "How important is it to you to have work that you enjoy doing?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Could you describe your current profession?"},
+        {"qTitle": "What's the employment situation like for your profession locally?"},
+        {"qTitle": "To what extent does job satisfaction matter in your career choice?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What skills are most valued in your line of work?"},
+        {"qTitle": "How has technology changed your profession in recent years?"}
+      ]
+    },
+    {
+      "topicName_real": "Hometown",
+      "topicName_rewrite": "Native Place",
+      "questions_original": [
+        {"qTitle": "Do you come from a city, town or village?"},
+        {"qTitle": "What do you like about your home city/town/village?"},
+        {"qTitle": "Is your home city/town/village a good place for young people?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "What type of settlement did you grow up in?"},
+        {"qTitle": "Which features of your birthplace do you particularly appreciate?"},
+        {"qTitle": "How suitable is your hometown for the younger generation?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What traditions make your hometown unique?"},
+        {"qTitle": "How has your hometown changed since your childhood?"}
+      ]
+    },
+    {
+      "topicName_real": "Work and Study",
+      "topicName_rewrite": "Occupation",
+      "questions_original": [
+        {"qTitle": "Where do you work?"},
+        {"qTitle": "How do you usually travel to work?"},
+        {"qTitle": "How do you feel after you finish a day at work?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Could you tell me about your workplace?"},
+        {"qTitle": "What's your regular commute method?"},
+        {"qTitle": "What emotions typically follow your workday?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What's the most challenging part of your work routine?"},
+        {"qTitle": "How does your work schedule affect your personal life?"}
+      ]
+    },
+    {
+      "topicName_real": "Advertisement",
+      "topicName_rewrite": "Marketing Communications",
+      "questions_original": [
+        {"qTitle": "Do you like to watch adverts on the internet or TV?"},
+        {"qTitle": "Do you notice advertising in public places?"},
+        {"qTitle": "Is there an advert that you remember well from in childhood?"},
+        {"qTitle": "Would you like to work in advertising industry?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How do you feel about digital versus television commercials?"},
+        {"qTitle": "How aware are you of outdoor advertisements?"},
+        {"qTitle": "Which childhood advertisement left the strongest impression?"},
+        {"qTitle": "Have you ever considered a career in marketing?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How do ads influence your purchasing decisions?"},
+        {"qTitle": "What makes an advertisement truly effective in your opinion?"}
+      ]
+    },
+    {
+      "topicName_real": "Crowded places（New）",
+      "topicName_rewrite": "High-density Areas",
+      "questions_original": [
+        {"qTitle": "When was the last time you went to a crowded place?"},
+        {"qTitle": "Are there many crowded places where you live?"},
+        {"qTitle": "Would you prefer to have a holiday in a crowded place, or a quiet place?"},
+        {"qTitle": "Do people in your country often celebrate together?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Recall your most recent visit to a packed location."},
+        {"qTitle": "How common are high-traffic areas in your vicinity?"},
+        {"qTitle": "When vacationing, do you favor bustling or serene destinations?"},
+        {"qTitle": "Are group celebrations frequent in your culture?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How do you cope with large crowds?"},
+        {"qTitle": "What safety measures should crowded venues implement?"}
+      ]
+    },
+    {
+      "topicName_real": "Memory（New）",
+      "topicName_rewrite": "Recollection",
+      "questions_original": [
+        {"qTitle": "What do you need to remember to do every day?"},
+        {"qTitle": "Have you ever forgotten to do something important?"},
+        {"qTitle": "Is it easy to remember to do things?"},
+        {"qTitle": "What do you do to help you remember to do things?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Which daily tasks require your constant remembrance?"},
+        {"qTitle": "Can you recall a significant thing you've overlooked?"},
+        {"qTitle": "How would you rate your task-recall ability?"},
+        {"qTitle": "Which memory aids do you typically employ?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How does stress affect your memory?"},
+        {"qTitle": "What's your earliest childhood memory?"}
+      ]
+    },
+    {
+      "topicName_real": "Colour（New）",
+      "topicName_rewrite": "Color Preferences",
+      "questions_original": [
+        {"qTitle": "What colours do you like most?"},
+        {"qTitle": "What colour of a car you would like to buy?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Which hues appeal to you particularly?"},
+        {"qTitle": "Which automobile shade would you prefer?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How do different colors affect your mood?"},
+        {"qTitle": "Have your color preferences changed over time?"}
+      ]
+    },
+    {
+      "topicName_real": "Famous people（New）",
+      "topicName_rewrite": "Celebrity Culture",
+      "questions_original": [
+        {"qTitle": "Do you enjoy receiving news about famous people?"},
+        {"qTitle": "Would you like to be famous in the news?"},
+        {"qTitle": "Do you believe the things you read about famous people?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How interested are you in celebrity updates?"},
+        {"qTitle": "Do you desire media prominence?"},
+        {"qTitle": "How credible do you find celebrity reports?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What are the advantages and disadvantages of fame?"},
+        {"qTitle": "Which celebrity would you most like to meet and why?"}
+      ]
+    },
+    {
+      "topicName_real": "Video games（New）",
+      "topicName_rewrite": "Gaming",
+      "questions_original": [
+        {"qTitle": "Have you ever played a video game in your childhood?"},
+        {"qTitle": "Are you interested in watching other people play video games?"},
+        {"qTitle": "Would you prefer to play a video game on your own?"},
+        {"qTitle": "Do you think some people spend too much time playing video games?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Did you engage with digital games during your early years?"},
+        {"qTitle": "Do you enjoy spectating gameplay sessions?"},
+        {"qTitle": "Do you favor solo gaming experiences?"},
+        {"qTitle": "How concerning is excessive gaming in your view?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What benefits can video games provide?"},
+        {"qTitle": "How has gaming technology evolved during your lifetime?"}
+      ]
+    },
+    {
+      "topicName_real": "Social media（New）",
+      "topicName_rewrite": "Digital Networking",
+      "questions_original": [
+        {"qTitle": "Do your friends and family use social media?"},
+        {"qTitle": "Do you think people in your country find social media useful?"},
+        {"qTitle": "Do you spend too much time on social media?"},
+        {"qTitle": "When did you start using social media?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How prevalent is social platform usage among your circle?"},
+        {"qTitle": "How valuable are networking platforms nationally?"},
+        {"qTitle": "Would you consider your digital engagement excessive?"},
+        {"qTitle": "At what age did you begin digital networking?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has social media changed communication?"},
+        {"qTitle": "What's your strategy for managing screen time?"}
+      ]
+    },
+    {
+      "topicName_real": "Sweet things（New）",
+      "topicName_rewrite": "Desserts",
+      "questions_original": [
+        {"qTitle": "Did you enjoy sweet things when you were a child?"},
+        {"qTitle": "Have you ever made a cake yourself?"},
+        {"qTitle": "How often do you eat something sweet after a meal?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Were you fond of sugary treats in your youth?"},
+        {"qTitle": "Have you attempted baking independently?"},
+        {"qTitle": "What's your post-dinner dessert frequency?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What cultural significance do sweets hold in your country?"},
+        {"qTitle": "How have your taste preferences changed regarding sweets?"}
+      ]
+    },
+    {
+      "topicName_real": "Singing（New）",
+      "topicName_rewrite": "Vocal Performance",
+      "questions_original": [
+        {"qTitle": "Do you love singing songs?"},
+        {"qTitle": "Have you learned to sing any songs when you were a child?"},
+        {"qTitle": "Which singers do you like most?"},
+        {"qTitle": "Do people in your country often sing songs?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How passionate are you about vocal music?"},
+        {"qTitle": "Did you acquire any musical repertoire in childhood?"},
+        {"qTitle": "Who are your favorite vocal artists?"},
+        {"qTitle": "Is singing culturally common in your nation?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What emotions does singing evoke for you?"},
+        {"qTitle": "How does singing differ from other musical expressions?"}
+      ]
+    },
+    {
+      "topicName_real": "Feeling bored（New）",
+      "topicName_rewrite": "Boredom",
+      "questions_original": [
+        {"qTitle": "Do you often feel bored?"},
+        {"qTitle": "What sort of things do you find most boring?"},
+        {"qTitle": "What do you do to keep yourself from getting bored?"},
+        {"qTitle": "Are you bored more easily now than when you were younger?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How frequently do you experience ennui?"},
+        {"qTitle": "Which activities bore you intensely?"},
+        {"qTitle": "How do you combat monotony?"},
+        {"qTitle": "Has your boredom threshold changed with age?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What's the relationship between boredom and creativity?"},
+        {"qTitle": "How does technology affect modern boredom?"}
+      ]
+    },
+    {
+      "topicName_real": "Sunglasses（New）",
+      "topicName_rewrite": "Eye Protection",
+      "questions_original": [
+        {"qTitle": "How often do you wear sunglasses?"},
+        {"qTitle": "Would you buy sunglasses for your friends or family?"},
+        {"qTitle": "Would you spend lots of money on sunglasses?"},
+        {"qTitle": "Have you ever lost any sunglasses?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "What's your frequency of sunglass usage?"},
+        {"qTitle": "Do you consider shades as potential gifts?"},
+        {"qTitle": "How much would you invest in quality eyewear?"},
+        {"qTitle": "Can you recall misplacing your shades?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How important is UV protection in eyewear?"},
+        {"qTitle": "What factors influence your sunglass purchases?"}
+      ]
+    },
+    {
+      "topicName_real": "Stages in life（New）",
+      "topicName_rewrite": "Life Phases",
+      "questions_original": [
+        {"qTitle": "What did you enjoy most about your childhood?"},
+        {"qTitle": "What's the best thing about being the age you are now?"},
+        {"qTitle": "What do you want to do five years later?"},
+        {"qTitle": "How can people remember all the different stages in their lives?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Which childhood aspects were most delightful?"},
+        {"qTitle": "What advantages does your current life stage offer?"},
+        {"qTitle": "What are your medium-term life goals?"},
+        {"qTitle": "What methods help preserve life-stage memories?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How have societal expectations of life stages changed?"},
+        {"qTitle": "Which life transition was most challenging for you?"}
+      ]
+    },
+    {
+      "topicName_real": "Money（New）",
+      "topicName_rewrite": "Finance",
+      "questions_original": [
+        {"qTitle": "Do you usually like to spend or save money?"},
+        {"qTitle": "How often do you use a credit card to pay for things?"},
+        {"qTitle": "Will you use cash more often in the future?"},
+        {"qTitle": "What do you think about using apps to pay for things?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Are you more inclined toward expenditure or thrift?"},
+        {"qTitle": "What's your credit card usage frequency?"},
+        {"qTitle": "Do you anticipate increased cash transactions ahead?"},
+        {"qTitle": "How do you view digital payment applications?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has the pandemic affected payment preferences?"},
+        {"qTitle": "What financial advice would you give your younger self?"}
+      ]
+    },
+    {
+      "topicName_real": "Music（New）",
+      "topicName_rewrite": "Musical Interests",
+      "questions_original": [
+        {"qTitle": "Do you like music?"},
+        {"qTitle": "What kinds of music do you listen to?"},
+        {"qTitle": "Is it easy to learn music?"},
+        {"qTitle": "Do you learn music lessons at school?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How much do you appreciate musical art?"},
+        {"qTitle": "Which musical genres appeal to you?"},
+        {"qTitle": "How challenging is musical acquisition?"},
+        {"qTitle": "Did you receive formal musical education?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How does music affect your productivity?"},
+        {"qTitle": "What role does music play in cultural identity?"}
+      ]
+    },
+    {
+      "topicName_real": "Geography",
+      "topicName_rewrite": "Geographical Studies",
+      "questions_original": [
+        {"qTitle": "Did you like to study geography at school?"},
+        {"qTitle": "Is what you learned in geography very useful to you now?"},
+        {"qTitle": "Would you like to be a geography teacher?"},
+        {"qTitle": "Are you interested in finding out more about the geography of other countries?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How interested were you in geographical education?"},
+        {"qTitle": "How applicable is your geographical knowledge currently?"},
+        {"qTitle": "Have you considered geographical instruction as a career?"},
+        {"qTitle": "How curious are you about foreign terrains?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has digital technology changed geography education?"},
+        {"qTitle": "What geographical phenomenon fascinates you most?"}
+      ]
+    },
+    {
+      "topicName_real": "Fishing",
+      "topicName_rewrite": "Angling",
+      "questions_original": [
+        {"qTitle": "Is fishing popular in your country?"},
+        {"qTitle": "How do you feel about eating fish?"},
+        {"qTitle": "Have you ever visited a place where you saw lots of fish?"},
+        {"qTitle": "Would you ever watch a TV programme or film about fish?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How widespread is angling nationally?"},
+        {"qTitle": "What's your perspective on piscine cuisine?"},
+        {"qTitle": "Can you recall a fish-abundant location you've seen?"},
+        {"qTitle": "How interested are you in ichthyological media?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What are the environmental impacts of commercial fishing?"},
+        {"qTitle": "How does recreational fishing differ from subsistence fishing?"}
+      ]
+    },
+    {
+      "topicName_real": "Helping others",
+      "topicName_rewrite": "Altruism",
+      "questions_original": [
+        {"qTitle": "What kind of help do you give to other people?"},
+        {"qTitle": "Did your family encourage you to be helpful when you were a child?"},
+        {"qTitle": "Do you like to help people?"},
+        {"qTitle": "When was the last time someone helped you?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Which forms of assistance do you typically provide?"},
+        {"qTitle": "Was altruism promoted in your upbringing?"},
+        {"qTitle": "How willing are you to assist others?"},
+        {"qTitle": "Recall your most recent experience receiving aid."}
+      ],
+      "questions_new": [
+        {"qTitle": "How does helping others benefit the helper?"},
+        {"qTitle": "What cultural differences exist in helping behaviors?"}
+      ]
+    },
+    {
+      "topicName_real": "Gifts",
+      "topicName_rewrite": "Present-giving",
+      "questions_original": [
+        {"qTitle": "Have you ever received a really good present?"},
+        {"qTitle": "Are you good at choosing presents for others?"},
+        {"qTitle": "What kind of present would you buy for your friends?"},
+        {"qTitle": "Have you ever given someone a present that you made yourself?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Can you recall an exceptionally thoughtful gift?"},
+        {"qTitle": "How skilled are you at gift selection?"},
+        {"qTitle": "Which gift categories do you consider for peers?"},
+        {"qTitle": "Have you crafted handmade gifts before?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How do gift-giving traditions vary across cultures?"},
+        {"qTitle": "What makes a gift truly meaningful?"}
+      ]
+    },
+    {
+      "topicName_real": "Tea or coffee",
+      "topicName_rewrite": "Beverage Preferences",
+      "questions_original": [
+        {"qTitle": "Do people like to drink tea and coffee in your country?"},
+        {"qTitle": "Do you ever go out to drink tea or coffee?"},
+        {"qTitle": "Would you offer a visitor to your home tea or coffee?"},
+        {"qTitle": "When was the last time you drank tea or coffee?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How popular are these hot beverages nationally?"},
+        {"qTitle": "How often do you visit cafes?"},
+        {"qTitle": "Is beverage hospitality customary for guests?"},
+        {"qTitle": "How recently did you consume these drinks?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How do tea and coffee cultures differ?"},
+        {"qTitle": "What health considerations affect your beverage choices?"}
+      ]
+    },
+    {
+      "topicName_real": "Running",
+      "topicName_rewrite": "Jogging",
+      "questions_original": [
+        {"qTitle": "Did you do much running when you were a child?"},
+        {"qTitle": "What do you think of running as a form of exercise?"},
+        {"qTitle": "When was the last time you ran?"},
+        {"qTitle": "Are there any good places for running near where you live?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How active were you in juvenile athletics?"},
+        {"qTitle": "How effective do you consider jogging for fitness?"},
+        {"qTitle": "How recently did you engage in running?"},
+        {"qTitle": "How suitable is your vicinity for jogging?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What psychological benefits does running provide?"},
+        {"qTitle": "How should beginners approach running safely?"}
+      ]
+    },
+    {
+      "topicName_real": "Robots",
+      "topicName_rewrite": "Automation",
+      "questions_original": [
+        {"qTitle": "How interested are you in robots?"},
+        {"qTitle": "When you were a child, did you enjoy robot films?"},
+        {"qTitle": "Would you like to have a robot to help you at home?"},
+        {"qTitle": "Would you feel happy travelling in car with automatic driving?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "What level of fascination do robots hold for you?"},
+        {"qTitle": "Were you fond of robotic cinema in your youth?"},
+        {"qTitle": "How desirable is domestic robotic assistance?"},
+        {"qTitle": "How comfortable would you be in a self-driving vehicle?"}
+      ],
+      "questions_new": [
+        {"qTitle": "What ethical issues arise from advanced robotics?"},
+        {"qTitle": "How might robots change future employment landscapes?"}
+      ]
+    },
+    {
+      "topicName_real": "Music",
+      "topicName_rewrite": "Musical Arts",
+      "questions_original": [
+        {"qTitle": "Do you know how to play any musical instruments?"},
+        {"qTitle": "Have you learned about music at school?"},
+        {"qTitle": "Do you think all children should have music lessons at school?"},
+        {"qTitle": "Do you think it is easy to learn to play a musical instrument?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Have you acquired instrumental proficiency?"},
+        {"qTitle": "Did you receive formal musical training?"},
+        {"qTitle": "Should musical education be universally mandatory?"},
+        {"qTitle": "How challenging is instrumental acquisition in your view?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How does musical training affect cognitive development?"},
+        {"qTitle": "What role does music play in cultural preservation?"}
+      ]
+    },
+    {
+      "topicName_real": "Clothes",
+      "topicName_rewrite": "Apparel",
+      "questions_original": [
+        {"qTitle": "Do you spend a lot of time deciding what to wear every day?"},
+        {"qTitle": "Do you prefer comfortable clothes or smart clothes?"},
+        {"qTitle": "Were you allowed to choose your own clothes when you were a child?"},
+        {"qTitle": "What do you do with your clothes when you no longer use them?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How lengthy is your daily outfit selection process?"},
+        {"qTitle": "Which matters more: comfort or formality in attire?"},
+        {"qTitle": "Did you have sartorial autonomy in childhood?"},
+        {"qTitle": "How do you handle wardrobe retirement?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has fast fashion changed clothing consumption?"},
+        {"qTitle": "What cultural significance do traditional garments hold?"}
+      ]
+    },
+    {
+      "topicName_real": "Films",
+      "topicName_rewrite": "Cinema",
+      "questions_original": [
+        {"qTitle": "What's your favourite kind of film?"},
+        {"qTitle": "Did you often go to the cinema when you were young?"},
+        {"qTitle": "Would you like to make a film yourself one day?"},
+        {"qTitle": "Do you think watching films is a good way to spend time with friends?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Which cinematic genres appeal to you most?"},
+        {"qTitle": "How frequent were your childhood theater visits?"},
+        {"qTitle": "Do you aspire to filmmaking?"},
+        {"qTitle": "How effective is cinema for social bonding?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has streaming changed film consumption?"},
+        {"qTitle": "What makes a film truly memorable?"}
+      ]
+    },
+    {
+      "topicName_real": "Maps",
+      "topicName_rewrite": "Cartography",
+      "questions_original": [
+        {"qTitle": "Do you often use a map on your phone? How often?"},
+        {"qTitle": "Have you ever used a paper map?"},
+        {"qTitle": "Would you ever put a map on the wall in your home when you were a child?"},
+        {"qTitle": "Do you find it easy to read maps?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "What's your frequency of digital map usage?"},
+        {"qTitle": "Do you have experience with physical cartography?"},
+        {"qTitle": "Did you display cartographic decor in your youth?"},
+        {"qTitle": "How skilled are you at map interpretation?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has GPS technology changed navigation?"},
+        {"qTitle": "What's the educational value of map reading?"}
+      ]
+    },
+    {
+      "topicName_real": "Noise",
+      "topicName_rewrite": "Sound Environment",
+      "questions_original": [
+        {"qTitle": "What loud noise can you hear where you live?"},
+        {"qTitle": "Would you like to live in a less noisy place?"},
+        {"qTitle": "Do you think it's okay for people to make noise in public places?"},
+        {"qTitle": "Do you enjoy listening to loud music?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "Which disruptive sounds occur in your vicinity?"},
+        {"qTitle": "How desirable is quieter accommodation?"},
+        {"qTitle": "How acceptable is public disturbance in your view?"},
+        {"qTitle": "How appealing is high-volume audio to you?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How does noise pollution affect quality of life?"},
+        {"qTitle": "What solutions exist for urban noise reduction?"}
+      ]
+    },
+    {
+      "topicName_real": "Chatting",
+      "topicName_rewrite": "Conversation",
+      "questions_original": [
+        {"qTitle": "Do you often chat with your friends?"},
+        {"qTitle": "Do you like chatting with your friends face-to-face or on social media?"},
+        {"qTitle": "Do you like chatting with a group of friends or chatting with just one friend?"},
+        {"qTitle": "Do you ever have disagreements with your friend when you are chatting?"}
+      ],
+      "questions_rewrite": [
+        {"qTitle": "How frequent are your social conversations?"},
+        {"qTitle": "Which communication mode do you prefer: in-person or digital?"},
+        {"qTitle": "Which do you favor: group discussions or one-on-one talks?"},
+        {"qTitle": "How common are conversational conflicts in your friendships?"}
+      ],
+      "questions_new": [
+        {"qTitle": "How has digital communication changed conversation dynamics?"},
+        {"qTitle": "What makes for truly meaningful dialogue?"}
+      ]
+    }
+  ]
+}

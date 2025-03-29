@@ -252,6 +252,70 @@
         .mastered .topic-stats {
             color: rgba(255, 255, 255, 0.9);
         }
+
+        /* 骨架屏动画 */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* 骨架屏基础样式 */
+        .skeleton {
+            background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+            background-size: 400% 100%;
+            animation: shimmer 1.4s ease infinite;
+        }
+
+        .skeleton-text {
+            color: transparent !important;
+            border-radius: 4px;
+        }
+
+        .skeleton-card {
+            background: white !important;
+            border: 1px solid #f0f0f0 !important;
+        }
+
+        .skeleton-circle {
+            width: 48px !important;
+            height: 48px !important;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%) !important;
+            background-size: 400% 100% !important;
+            animation: shimmer 1.4s ease infinite;
+        }
+
+        .skeleton-title {
+            width: 120px;
+            height: 32px;
+        }
+
+        .skeleton-progress {
+            width: 40px;
+            height: 32px;
+        }
+
+        .skeleton-name {
+            width: 80%;
+            height: 20px;
+            margin-bottom: 8px;
+        }
+
+        .skeleton-stats {
+            width: 60%;
+            height: 16px;
+            margin-bottom: 8px;
+        }
+
+        .skeleton-tag {
+            width: 80px;
+            height: 24px;
+            border-radius: 100px;
+        }
     </style>
 </head>
 <body>
@@ -268,91 +332,156 @@
     </div>
 
     <div class="main-content">
-        <!-- 状态图例 -->
-        <div class="status-legend">
-            <div class="legend-item">
-                <div class="legend-dot dot-new"></div>
-                <span>全新话题</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot dot-today"></div>
-                <span>今日复习</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot dot-completed"></div>
-                <span>今日已完成</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot dot-future"></div>
-                <span>待复习</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: var(--mastered-text);"></div>
-                <span>完全掌握</span>
+        <!-- 骨架屏版本 -->
+        <div id="skeleton-content" style="display: block;">
+            <div class="category-section">
+                <div class="category-header">
+                    <div class="skeleton skeleton-text skeleton-title"></div>
+                    <div class="skeleton skeleton-text skeleton-progress"></div>
+                </div>
+
+                <div class="topics-grid">
+                    <!-- 重复5次骨架卡片 -->
+                    <div class="topic-card skeleton-card" style="opacity: 0.8;">
+                        <div class="skeleton skeleton-circle"></div>
+                        <div class="topic-info">
+                            <div class="skeleton skeleton-text skeleton-name"></div>
+                            <div class="skeleton skeleton-text skeleton-stats"></div>
+                            <div class="skeleton skeleton-text skeleton-tag"></div>
+                        </div>
+                    </div>
+                    <div class="topic-card skeleton-card" style="opacity: 0.8;">
+                        <div class="skeleton skeleton-circle"></div>
+                        <div class="topic-info">
+                            <div class="skeleton skeleton-text skeleton-name"></div>
+                            <div class="skeleton skeleton-text skeleton-stats"></div>
+                            <div class="skeleton skeleton-text skeleton-tag"></div>
+                        </div>
+                    </div>
+                    <div class="topic-card skeleton-card" style="opacity: 0.8;">
+                        <div class="skeleton skeleton-circle"></div>
+                        <div class="topic-info">
+                            <div class="skeleton skeleton-text skeleton-name"></div>
+                            <div class="skeleton skeleton-text skeleton-stats"></div>
+                            <div class="skeleton skeleton-text skeleton-tag"></div>
+                        </div>
+                    </div>
+                    <div class="topic-card skeleton-card" style="opacity: 0.8;">
+                        <div class="skeleton skeleton-circle"></div>
+                        <div class="topic-info">
+                            <div class="skeleton skeleton-text skeleton-name"></div>
+                            <div class="skeleton skeleton-text skeleton-stats"></div>
+                            <div class="skeleton skeleton-text skeleton-tag"></div>
+                        </div>
+                    </div>
+                    <div class="topic-card skeleton-card" style="opacity: 0.8;">
+                        <div class="skeleton skeleton-circle"></div>
+                        <div class="topic-info">
+                            <div class="skeleton skeleton-text skeleton-name"></div>
+                            <div class="skeleton skeleton-text skeleton-stats"></div>
+                            <div class="skeleton skeleton-text skeleton-tag"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- 个人信息分类 -->
-        <div class="category-section">
-            <div class="category-header">
-                <div class="category-title">
-                    <span>个人信息</span>
+        <!-- 实际内容 -->
+        <div id="real-content" style="display: none;">
+            <!-- 状态图例 -->
+            <div class="status-legend">
+                <div class="legend-item">
+                    <div class="legend-dot dot-new"></div>
+                    <span>全新话题</span>
                 </div>
-                <span>5/6</span>
+                <div class="legend-item">
+                    <div class="legend-dot dot-today"></div>
+                    <span>今日复习</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot dot-completed"></div>
+                    <span>今日已完成</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot dot-future"></div>
+                    <span>待复习</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: var(--mastered-text);"></div>
+                    <span>完全掌握</span>
+                </div>
             </div>
 
-            <div class="topics-grid">
-                <!-- 全新话题 -->
-                <div class="topic-card new">
-                    <div class="progress-circle">0%</div>
-                    <div class="topic-info">
-                        <div class="topic-name">Hometown</div>
-                        <div class="topic-stats">未开始练习</div>
-                        <span class="status-tag tag-new">NEW</span>
+            <!-- 个人信息分类 -->
+            <div class="category-section">
+                <div class="category-header">
+                    <div class="category-title">
+                        <span>个人信息</span>
                     </div>
+                    <span>5/6</span>
                 </div>
 
-                <!-- 今日待复习话题 -->
-                <div class="topic-card today">
-                    <div class="progress-circle">60%</div>
-                    <div class="topic-info">
-                        <div class="topic-name">Work</div>
-                        <div class="topic-stats">已练习3次</div>
-                        <span class="status-tag tag-today">今日复习</span>
+                <div class="topics-grid">
+                    <!-- 全新话题 -->
+                    <div class="topic-card new">
+                        <div class="progress-circle">0%</div>
+                        <div class="topic-info">
+                            <div class="topic-name">Hometown</div>
+                            <div class="topic-stats">未开始练习</div>
+                            <span class="status-tag tag-new">NEW</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- 今日已完成话题 -->
-                <div class="topic-card completed">
-                    <div class="progress-circle">85%</div>
-                    <div class="topic-info">
-                        <div class="topic-name">Family</div>
-                        <div class="topic-stats">已练习5次</div>
-                        <span class="status-tag tag-completed">今日已完成</span>
+                    <!-- 今日待复习话题 -->
+                    <div class="topic-card today">
+                        <div class="progress-circle">60%</div>
+                        <div class="topic-info">
+                            <div class="topic-name">Work</div>
+                            <div class="topic-stats">已练习3次</div>
+                            <span class="status-tag tag-today">今日复习</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- 未来待复习话题 -->
-                <div class="topic-card future">
-                    <div class="progress-circle">40%</div>
-                    <div class="topic-info">
-                        <div class="topic-name">Study</div>
-                        <div class="topic-stats">3天后复习</div>
-                        <span class="status-tag tag-future">待复习</span>
+                    <!-- 今日已完成话题 -->
+                    <div class="topic-card completed">
+                        <div class="progress-circle">85%</div>
+                        <div class="topic-info">
+                            <div class="topic-name">Family</div>
+                            <div class="topic-stats">已练习5次</div>
+                            <span class="status-tag tag-completed">今日已完成</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- 完全掌握话题 -->
-                <div class="topic-card mastered">
-                    <div class="progress-circle">100%</div>
-                    <div class="topic-info">
-                        <div class="topic-name">Hobby</div>
-                        <div class="topic-stats">已练习8次</div>
-                        <span class="status-tag tag-mastered">完全掌握</span>
+                    <!-- 未来待复习话题 -->
+                    <div class="topic-card future">
+                        <div class="progress-circle">40%</div>
+                        <div class="topic-info">
+                            <div class="topic-name">Study</div>
+                            <div class="topic-stats">3天后复习</div>
+                            <span class="status-tag tag-future">待复习</span>
+                        </div>
+                    </div>
+
+                    <!-- 完全掌握话题 -->
+                    <div class="topic-card mastered">
+                        <div class="progress-circle">100%</div>
+                        <div class="topic-info">
+                            <div class="topic-name">Hobby</div>
+                            <div class="topic-stats">已练习8次</div>
+                            <span class="status-tag tag-mastered">完全掌握</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // 模拟数据加载
+        setTimeout(() => {
+            document.getElementById('skeleton-content').style.display = 'none';
+            document.getElementById('real-content').style.display = 'block';
+        }, 1500);
+    </script>
 </body>
 </html> 
