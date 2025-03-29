@@ -20,6 +20,7 @@ const prompt_question_selector = `
         {
           "qTitle": "英文问题文本",
           "qTitle_cn": "准确的中文翻译", 
+          "type": 0,
           "from": "rewrite/new"
         }
       ]
@@ -96,16 +97,19 @@ const prompt_question_selector = `
         {
           "qTitle": "What do you like about city living?",
           "qTitle_cn": "你喜欢城市生活的哪些方面？",
+          "type": 0,
           "from": "rewrite"
         },
         {
           "qTitle": "How can cities become more livable?",
           "qTitle_cn": "城市如何才能变得更宜居？",
+          "type": 0,
           "from": "new" 
         },
         {
           "qTitle": "How is urban life different from rural life?",
           "qTitle_cn": "城市生活和乡村生活有什么不同？",
+          "type": 0,
           "from": "rewrite"
         }
       ]
