@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>话题详情</title>
+    <style>
+        :root {
+            --primary-color: #4080FF;
+            --secondary-color: #F5F7FA;
+            --text-gray: #86909C;
+            --border-color: #E5E6EB;
+            --success-color: #00B42A;
+            --warning-color: #FF7D00;
+            --danger-color: #F53F3F;
+        }
+        body {
+            background-color: var(--secondary-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #1D2129;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 1000;
+        }
+        .status-bar {
+            height: 44px;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+            font-size: 17px;
+        }
+        .nav-bar {
+            height: 44px;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .back-btn {
+            border: none;
+            background: none;
+            padding: 8px;
+            cursor: pointer;
+        }
+        .page-title {
+            font-size: 17px;
+            font-weight: 500;
+            color: #1D2129;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .topic-tag {
+            padding: 2px 8px;
+            border-radius: 100px;
+            font-size: 12px;
+        }
+        .tag-review {
+            background: #E8F3FF;
+            color: var(--primary-color);
+        }
+        .main-content {
+            margin-top: 88px;
+            padding: 16px;
+        }
+        .topic-info-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .progress-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .progress-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .progress-label {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+        .question-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .question-number {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .question-text {
+            font-size: 15px;
+            color: #1D2129;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .answer-section {
+            background: #F7F8FA;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        .answer-header {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+        .answer-content {
+            font-size: 14px;
+            color: #1D2129;
+            line-height: 1.6;
+        }
+        .review-section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+        .review-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #1D2129;
+            margin-bottom: 16px;
+        }
+        .review-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .review-btn {
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .review-btn.active {
+            background: #E8F3FF;
+            color: var(--primary-color);
+        }
+        .review-btn:not(.active) {
+            background: #F5F7FA;
+            color: #4E5969;
+        }
+        .nav-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .prev-btn {
+            background: #F5F7FA;
+            color: #4E5969;
+        }
+        .next-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+        .info-text {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: var(--text-gray);
+            font-size: 12px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 状态栏 -->
+    <div class="header">
+        <div class="status-bar">
+            <span>17:38</span>
+            <span>100%</span>
+        </div>
+        <div class="nav-bar">
+            <button class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="#1D2129" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="page-title">
+                Work <span class="topic-tag tag-review">复习</span>
+            </div>
+            <div style="width: 24px;"></div>
+        </div>
+    </div>
+
+    <!-- 主要内容区 -->
+    <div class="main-content">
+        <!-- 话题信息卡片 -->
+        <div class="topic-info-card">
+            <div class="progress-info">
+                <div class="progress-text">60%</div>
+                <div class="progress-label">掌握度</div>
+            </div>
+            <div class="progress-info">
+                <div class="progress-text">3</div>
+                <div class="progress-label">练习次数</div>
+            </div>
+            <div class="progress-info">
+                <div class="progress-text">5</div>
+                <div class="progress-label">问题数量</div>
+            </div>
+        </div>
+
+        <!-- 问题列表 -->
+        <div class="question-card">
+            <div class="question-header">
+                <span class="question-number">Question 1</span>
+            </div>
+            <div class="question-text">
+                What kind of work do you do?
+            </div>
+            <div class="answer-section">
+                <div class="answer-header">我的回答</div>
+                <div class="answer-content">
+                    I work as a software engineer in a tech company. My main responsibility is developing web applications and ensuring they run smoothly.
+                </div>
+            </div>
+            <div class="answer-section">
+                <div class="answer-header">AI优化建议</div>
+                <div class="answer-content">
+                    I'm a software engineer at a technology company. I specialize in web development, where I'm responsible for creating and maintaining various web applications. My role involves not only coding but also ensuring the applications perform efficiently and meet user needs.
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-header">
+                <span class="question-number">Question 2</span>
+            </div>
+            <div class="question-text">
+                Do you like your job? Why or why not?
+            </div>
+            <div class="answer-section">
+                <div class="answer-header">我的回答</div>
+                <div class="answer-content">
+                    Yes, I really enjoy my job because it's challenging and creative. I can solve different problems every day.
+                </div>
+            </div>
+            <div class="answer-section">
+                <div class="answer-header">AI优化建议</div>
+                <div class="answer-content">
+                    Yes, I genuinely enjoy my job for several reasons. Firstly, it constantly challenges me intellectually, as I need to solve different technical problems each day. Additionally, it allows me to be creative in finding solutions. The dynamic nature of technology also means I'm always learning something new.
+                </div>
+            </div>
+        </div>
+
+        <!-- 复习时间选择 -->
+        <div class="review-section">
+            <div class="review-title">选择下次复习时间</div>
+            <div class="review-buttons">
+                <button class="review-btn">1天</button>
+                <button class="review-btn active">3天</button>
+                <button class="review-btn">7天</button>
+                <button class="review-btn">15天</button>
+                <button class="review-btn">done</button>
+            </div>
+            <div class="info-text">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor"/>
+                </svg>
+                <span>根据艾宾浩斯遗忘曲线推荐复习时间</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航按钮 -->
+    <div class="nav-buttons">
+        <button class="nav-btn prev-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            上一话题
+        </button>
+        <button class="nav-btn next-btn">
+            下一话题
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</body>
+</html>

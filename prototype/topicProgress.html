@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>话题进度</title>
+    <style>
+        :root {
+            --primary-color: #4080FF;
+            --secondary-color: #F5F7FA;
+            --text-gray: #86909C;
+            --border-color: #E5E6EB;
+            
+            /* 全新话题 - 清新的绿色 */
+            --new-color: #E8F7E6;
+            --new-text: #18A058;
+            
+            /* 今日待复习 - 浅青色 */
+            --today-color: #E8FFFB;
+            --today-text: #13C2C2;
+            
+            /* 今日已完成 - 活力橙色 */
+            --completed-color: #FFE4BA;
+            --completed-text: #FF8F1F;
+            
+            /* 未来待复习 - 淡灰色 */
+            --future-color: #F2F3F5;
+            --future-text: #909399;
+            
+            /* 完全掌握 - 深金色 */
+            --mastered-color: #F7B500;
+            --mastered-text: #874D00;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 24rpx 16rpx;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 100;
+        }
+
+        .status-bar {
+            height: 44px;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar {
+            height: 44px;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .main-content {
+            margin-top: 88px;
+            padding: 16px;
+        }
+
+        .status-legend {
+            display: flex;
+            gap: 16px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .dot-new { background: var(--new-text); }
+        .dot-today { background: var(--today-text); }
+        .dot-completed { background: var(--completed-text); }
+        .dot-future { background: var(--future-text); }
+
+        .category-section {
+            margin-bottom: 24px;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* 全新话题样式 */
+        .topic-card.new {
+            background: var(--new-color);
+            border: 1px solid rgba(255, 143, 31, 0.2);
+        }
+
+        /* 今日待复习话题样式 */
+        .topic-card.today {
+            background: var(--today-color);
+            border: 1px solid rgba(64, 128, 255, 0.2);
+        }
+
+        /* 今日已完成话题样式 */
+        .topic-card.completed {
+            background: var(--completed-color);
+            border: 1px solid rgba(0, 180, 42, 0.2);
+        }
+
+        /* 未来待复习话题样式 */
+        .topic-card.future {
+            background: var(--future-color);
+            border: 1px solid var(--border-color);
+        }
+
+        /* 完全掌握话题样式 */
+        .topic-card.mastered {
+            background: var(--mastered-color);
+            border: 1px solid rgba(135, 77, 0, 0.2);
+            color: white;
+        }
+
+        .status-tag {
+            padding: 2px 8px;
+            border-radius: 100px;
+            font-size: 12px;
+        }
+
+        .tag-new {
+            background: white;
+            color: var(--new-text);
+        }
+
+        .tag-today {
+            background: white;
+            color: var(--today-text);
+        }
+
+        .tag-completed {
+            background: white;
+            color: var(--completed-text);
+        }
+
+        .tag-future {
+            background: white;
+            color: var(--future-text);
+        }
+
+        .tag-mastered {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--mastered-text);
+        }
+
+        .topic-info {
+            flex: 1;
+        }
+
+        .topic-name {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .topic-stats {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .progress-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .new .progress-circle {
+            background: white;
+            color: var(--new-text);
+        }
+
+        .today .progress-circle {
+            background: white;
+            color: var(--today-text);
+        }
+
+        .completed .progress-circle {
+            background: white;
+            color: var(--completed-text);
+        }
+
+        .future .progress-circle {
+            background: white;
+            color: var(--future-text);
+        }
+
+        .mastered .progress-circle {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--mastered-text);
+        }
+
+        .mastered .topic-name {
+            color: white;
+        }
+
+        .mastered .topic-stats {
+            color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="status-bar">
+            <span>17:38</span>
+            <span>100%</span>
+        </div>
+        <div class="nav-bar">
+            <button class="back-btn">返回</button>
+            <span>话题进度</span>
+            <div style="width: 24px;"></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- 状态图例 -->
+        <div class="status-legend">
+            <div class="legend-item">
+                <div class="legend-dot dot-new"></div>
+                <span>全新话题</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot dot-today"></div>
+                <span>今日复习</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot dot-completed"></div>
+                <span>今日已完成</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot dot-future"></div>
+                <span>待复习</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: var(--mastered-text);"></div>
+                <span>完全掌握</span>
+            </div>
+        </div>
+
+        <!-- 个人信息分类 -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-title">
+                    <span>个人信息</span>
+                </div>
+                <span>5/6</span>
+            </div>
+
+            <div class="topics-grid">
+                <!-- 全新话题 -->
+                <div class="topic-card new">
+                    <div class="progress-circle">0%</div>
+                    <div class="topic-info">
+                        <div class="topic-name">Hometown</div>
+                        <div class="topic-stats">未开始练习</div>
+                        <span class="status-tag tag-new">NEW</span>
+                    </div>
+                </div>
+
+                <!-- 今日待复习话题 -->
+                <div class="topic-card today">
+                    <div class="progress-circle">60%</div>
+                    <div class="topic-info">
+                        <div class="topic-name">Work</div>
+                        <div class="topic-stats">已练习3次</div>
+                        <span class="status-tag tag-today">今日复习</span>
+                    </div>
+                </div>
+
+                <!-- 今日已完成话题 -->
+                <div class="topic-card completed">
+                    <div class="progress-circle">85%</div>
+                    <div class="topic-info">
+                        <div class="topic-name">Family</div>
+                        <div class="topic-stats">已练习5次</div>
+                        <span class="status-tag tag-completed">今日已完成</span>
+                    </div>
+                </div>
+
+                <!-- 未来待复习话题 -->
+                <div class="topic-card future">
+                    <div class="progress-circle">40%</div>
+                    <div class="topic-info">
+                        <div class="topic-name">Study</div>
+                        <div class="topic-stats">3天后复习</div>
+                        <span class="status-tag tag-future">待复习</span>
+                    </div>
+                </div>
+
+                <!-- 完全掌握话题 -->
+                <div class="topic-card mastered">
+                    <div class="progress-circle">100%</div>
+                    <div class="topic-info">
+                        <div class="topic-name">Hobby</div>
+                        <div class="topic-stats">已练习8次</div>
+                        <span class="status-tag tag-mastered">完全掌握</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
