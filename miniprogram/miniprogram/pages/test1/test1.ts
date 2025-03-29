@@ -1,47 +1,14 @@
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-    isShowPopup: false
+    isLoaded: false, // 控制骨架屏显示
   },
 
-  /**
-   * 显示弹窗
-   */
-  showPopup() {
-    this.setData({
-      isShowPopup: true
-    });
-  },
-
-  /**
-   * 隐藏弹窗
-   */
-  hidePopup() {
-    this.setData({
-      isShowPopup: false
-    });
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onLoad: function() {
+    // 模拟数据加载
+    setTimeout(() => {
+      this.setData({
+        isLoaded: true
+      });
+    }, 1500); // 1.5秒后显示实际内容
   }
 }) 

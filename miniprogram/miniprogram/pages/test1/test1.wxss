@@ -4,6 +4,71 @@
   background-color: #F5F7FA;
 }
 
+/* 骨架屏动画 */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* 骨架屏基础样式 */
+.skeleton {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeleton-text {
+  color: transparent !important;
+  border-radius: 4rpx;
+}
+
+.skeleton-card {
+  background: white !important;
+  border: 1rpx solid #f0f0f0 !important;
+  opacity: 0.8;
+}
+
+.skeleton-circle {
+  width: 96rpx !important;
+  height: 96rpx !important;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%) !important;
+  background-size: 400% 100% !important;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeleton-title {
+  width: 240rpx;
+  height: 64rpx;
+}
+
+.skeleton-progress {
+  width: 80rpx;
+  height: 64rpx;
+}
+
+.skeleton-name {
+  width: 80%;
+  height: 40rpx;
+  margin-bottom: 16rpx;
+}
+
+.skeleton-stats {
+  width: 60%;
+  height: 32rpx;
+  margin-bottom: 16rpx;
+}
+
+.skeleton-tag {
+  width: 160rpx;
+  height: 48rpx;
+  border-radius: 100rpx;
+}
+
 /* 标题栏样式 */
 .header {
   width: 100%;
@@ -14,13 +79,13 @@
 }
 
 .title {
-  font-size: 32rpx;
+  font-size: 34rpx;
   font-weight: 600;
   color: #1D2129;
 }
 
 .progress {
-  font-size: 38rpx;
+  font-size: 40rpx;
   font-weight: 600;
   color: #1D2129;
 }
