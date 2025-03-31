@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/basicPractice/basicPractice",
+    "pages/detailBasic/detailBasic",
     "pages/advancedPractice/advancedPractice",
     "pages/expertPractice/expertPractice",
     "pages/aiSimulation/aiSimulation",

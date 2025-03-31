@@ -5,12 +5,58 @@ const path = require('path');
 
 // 获取分类数据的API
 router.get('/getCategories', async (req, res) => {
-  console.log('getCategories');
+  // console.log('getCategories');
   try {
     // 读取categories.json文件
     const categoriesPath = path.join(__dirname, '../data_for_server/archive/basic/categories.json');
     const categoriesData = await fs.readFile(categoriesPath, 'utf8');
     const categories = JSON.parse(categoriesData);
+
+    // 按userId去Basic表里查询
+    const mockData = [
+      {
+        topicId: "Basic_2025Q1_t2",
+        status: {
+          progress: 10,
+          practiceCount: 1,
+          state: 1
+        }
+      },
+      {
+        topicId: "Basic_2025Q1_t4",
+        status: {
+          progress: 20,
+          practiceCount: 2,
+          state: 2
+        }
+      },
+      {
+        topicId: "Basic_2025Q1_t16",
+        status: {
+          progress: 30,
+          practiceCount: 3,
+          state: 3,
+          gapDate: '明天'
+          // gapDays: 0：‘明天’
+          // gapDays: 1：‘后天’
+          // gapDays: 2：‘2天后'
+          // gapDays: 3：‘3天后’
+        }
+      },
+      {
+        topicId: "Basic_2025Q1_t7",
+        status: {
+          progress: 40,
+          practiceCount: 4,
+          state: 4
+        }
+      }
+    ]
+    // 0:new 
+    // 1:today-review
+    // 2:today-done
+    // 3:the-other-day-review : gapDays
+    // 4:completed
 
     // 处理数据，添加额外的状态信息
     const processedCategories = categories.mixed_categories.map(category => {
@@ -18,24 +64,22 @@ router.get('/getCategories', async (req, res) => {
         categoryId: category.categoryId,
         categoryName: category.categoryName,
         categoryNameInChinese: category.categoryNameInChinese,
-        topics: category.topicCollection.map(topic => ({
-          topicId: topic.topicId,
-          topicName: topic.topicName,
-          topicName_cn: topic.topicName_cn,
-          // 添加默认的学习状态
-          status: {
-            progress: 30,
-            practiceCount: 4,
-            // lastReviewTime: null,
-            // nextReviewTime: null,
-            state: 0,
-            // 0 new
-            // 1 today-review
-            // 2 today-done
-            // 3 the-other-day-review
-            // 4 completed
-          }
-        }))
+        topics: category.topicCollection.map(topic => {
+          // 查找是否在mockData中存在匹配的topicId
+          const matchedTopic = mockData.find(mockTopic => mockTopic.topicId === topic.topicId);
+          
+          return {
+            topicId: topic.topicId,
+            topicName: topic.topicName,
+            topicName_cn: topic.topicName_cn,
+            // 如果找到匹配的topic，使用其status，否则使用默认status
+            status: matchedTopic ? matchedTopic.status : {
+              progress: 0,
+              practiceCount: 0,
+              state: 0
+            }
+          };
+        })
       };
     });
 
