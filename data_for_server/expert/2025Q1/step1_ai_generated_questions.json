@@ -1,0 +1,1024 @@
+{
+    "ai_questions": [
+      {
+        "topicName_real": "Communication skills and talkative personalities",
+        "topicName_rewrite": "The art of effective communication and verbal expression",
+        "questions_original": [
+          {"qTitle": "How should parents encourage their children?"},
+          {"qTitle": "Why do some children talk more than other children?"},
+          {"qTitle": "Under what circumstances do children need to learn not to speak?"},
+          {"qTitle": "What kinds of jobs involve talking to groups of people?"},
+          {"qTitle": "What skills do people need to give a good speech?"},
+          {"qTitle": "What are the benefits of being a good communicator in today's society?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What approaches can parents use to foster their children's communication abilities?"},
+          {"qTitle": "What factors contribute to differences in children's verbal expressiveness?"},
+          {"qTitle": "When should children be taught the importance of silence and listening?"},
+          {"qTitle": "Which professions primarily require public speaking and audience engagement?"},
+          {"qTitle": "What essential competencies make someone an effective public speaker?"},
+          {"qTitle": "How does strong communication ability provide advantages in modern social and professional contexts?"}
+        ]
+      },
+      {
+        "topicName_real": "Teamwork dynamics and collaboration",
+        "topicName_rewrite": "Effective collaboration and team synergy",
+        "questions_original": [
+          {"qTitle": "What qualities should a leader have?"},
+          {"qTitle": "What will happen if a team doesn't have a good leader?"},
+          {"qTitle": "Why do some people dislike teamwork?"},
+          {"qTitle": "Do you think young people are good team players?"},
+          {"qTitle": "What are the advantages of being in a team?"},
+          {"qTitle": "Do children learn better if they work in a team at school?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What essential characteristics define an effective team leader?"},
+          {"qTitle": "What are the potential consequences of poor leadership within a group?"},
+          {"qTitle": "What factors might make individuals prefer working alone rather than in teams?"},
+          {"qTitle": "How would you assess the collaborative abilities of younger generations?"},
+          {"qTitle": "What benefits can team participation offer individuals?"},
+          {"qTitle": "Is collaborative learning more effective for children's educational development?"}
+        ]
+      },
+      {
+        "topicName_real": "Hospitality and welcoming guests",
+        "topicName_rewrite": "The art of hospitality and guest reception",
+        "questions_original": [
+          {"qTitle": "Do people in your country often invite others to their homes?"},
+          {"qTitle": "What kind of people are more likely to invite others to their homes?"},
+          {"qTitle": "Why do people offer food when visitors come to their home?"},
+          {"qTitle": "Is it important to make visitors feel welcome in your country?"},
+          {"qTitle": "Are tourist attractions in the countryside more welcome than those in the cities?"},
+          {"qTitle": "How can cities be more welcoming to tourists?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "How common is home hospitality as a social practice in your culture?"},
+          {"qTitle": "Which personality traits make individuals more inclined to host guests?"},
+          {"qTitle": "What cultural significance does offering food to guests hold?"},
+          {"qTitle": "How valued is the tradition of hospitality in your society?"},
+          {"qTitle": "Do rural destinations generally provide more authentic hospitality experiences than urban ones?"},
+          {"qTitle": "What improvements could urban areas make to enhance visitor experiences?"}
+        ]
+      },
+      {
+        "topicName_real": "Intergenerational communication",
+        "topicName_rewrite": "Bridging generational gaps through dialogue",
+        "questions_original": [
+          {"qTitle": "What can younger people learn from older people?"},
+          {"qTitle": "What are the advantages of living with people of different ages?"},
+          {"qTitle": "When can older people do better than younger people?"},
+          {"qTitle": "What is the best age for people to stop working and retire?"},
+          {"qTitle": "Do you think old age should stop people from being active and adventurous or not?"},
+          {"qTitle": "What is the attitude towards the elderly in today's society?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What valuable life lessons can the youth gain from senior generations?"},
+          {"qTitle": "How does multigenerational cohabitation benefit family members?"},
+          {"qTitle": "In what aspects do older individuals typically outperform younger ones?"},
+          {"qTitle": "At what stage of life is retirement most appropriate and beneficial?"},
+          {"qTitle": "Should advanced age necessarily limit one's capacity for active living and exploration?"},
+          {"qTitle": "How does contemporary society generally perceive and treat its elderly population?"}
+        ]
+      },
+      {
+        "topicName_real": "Human connections and personality",
+        "topicName_rewrite": "Understanding human relationships and individual traits",
+        "questions_original": [
+          {"qTitle": "How can people get to know new people?"},
+          {"qTitle": "Can clothing tell and reveal a person's personality?"},
+          {"qTitle": "Do people feel lonely in crowded cities?"},
+          {"qTitle": "Why do some people find it easier to be friends with people than others?"},
+          {"qTitle": "Why do individuals from the same family have different personalities?"},
+          {"qTitle": "Is someone's personality fully developed in childhood?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What effective methods exist for initiating new social connections?"},
+          {"qTitle": "To what extent does fashion choices reflect one's character traits?"},
+          {"qTitle": "Does urban density necessarily correlate with increased feelings of isolation?"},
+          {"qTitle": "What factors contribute to varying levels of social adaptability among individuals?"},
+          {"qTitle": "How can siblings raised in the same environment develop distinct personalities?"},
+          {"qTitle": "Does personality formation complete during early developmental stages?"}
+        ]
+      },
+      {
+        "topicName_real": "Creativity and original thinking",
+        "topicName_rewrite": "The nature of innovative thought and perspective",
+        "questions_original": [
+          {"qTitle": "When do children start to have their own opinions?"},
+          {"qTitle": "Are children's opinions influenced by their parents?"},
+          {"qTitle": "How can teachers help children to develop their own ideas?"},
+          {"qTitle": "How do inventors or philosophers come up with new ideas?"},
+          {"qTitle": "Who have lots of widely respected ideas in your country?"},
+          {"qTitle": "Why are some people unwilling to change their way of thinking?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "At what developmental stage do children begin forming independent views?"},
+          {"qTitle": "How significant is parental influence in shaping children's perspectives?"},
+          {"qTitle": "What educational approaches foster independent thinking in students?"},
+          {"qTitle": "What cognitive processes underlie groundbreaking innovations and theories?"},
+          {"qTitle": "Which public figures in your nation are renowned for their influential concepts?"},
+          {"qTitle": "What psychological factors contribute to resistance against changing one's mindset?"}
+        ]
+      },
+      {
+        "topicName_real": "Academic and life success",
+        "topicName_rewrite": "Achieving excellence in education and beyond",
+        "questions_original": [
+          {"qTitle": "What do students need to do to succeed in school?"},
+          {"qTitle": "Is it easy for students to succeed in school these days?"},
+          {"qTitle": "Why do some people think money is the best way to measure success?"},
+          {"qTitle": "Is success in school the most important thing for young people?"},
+          {"qTitle": "What sacrifices may people need to make in order to achieve success?"},
+          {"qTitle": "Is it harder for people to succeed today than in the past?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What key strategies should students employ to excel academically?"},
+          {"qTitle": "How has the difficulty level of academic achievement changed in modern education systems?"},
+          {"qTitle": "What makes financial wealth a predominant indicator of success for many?"},
+          {"qTitle": "Should academic achievement be prioritized above other aspects of youth development?"},
+          {"qTitle": "What personal compromises are often necessary when pursuing ambitious goals?"},
+          {"qTitle": "Has the path to professional achievement become more challenging in contemporary society?"}
+        ]
+      },
+      {
+        "topicName_real": "Business success and entrepreneurship",
+        "topicName_rewrite": "Navigating the path to commercial achievement",
+        "questions_original": [
+          {"qTitle": "What types of family businesses often run in your country?"},
+          {"qTitle": "What are the advantages and disadvantages of working in a family business?"},
+          {"qTitle": "What factors lead to success?"},
+          {"qTitle": "What do people need to sacrifice for success?"},
+          {"qTitle": "Is it easy for people to succeed in the national testing your country?"},
+          {"qTitle": "Is it easy for a business to be successful without affecting the environment?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which family-operated business models are most prevalent in your nation?"},
+          {"qTitle": "How does nepotism in business affect both operations and family dynamics?"},
+          {"qTitle": "Which critical elements typically determine entrepreneurial triumph?"},
+          {"qTitle": "What personal costs are frequently associated with building a prosperous enterprise?"},
+          {"qTitle": "How achievable is examination success within your country's standardized testing framework?"},
+          {"qTitle": "Can commercial viability be maintained while prioritizing ecological sustainability?"}
+        ]
+      },
+      {
+        "topicName_real": "Culinary arts and food culture",
+        "topicName_rewrite": "The social significance of cooking and cuisine",
+        "questions_original": [
+          {"qTitle": "What do we need to prepare when we need to cook?"},
+          {"qTitle": "Should students learn to cook at school?"},
+          {"qTitle": "Are there any differences between cooking today and in the past?"},
+          {"qTitle": "Is food the most important part of Chinese festivals and ceremonies?"},
+          {"qTitle": "Which dishes are a must at festivals?"},
+          {"qTitle": "Should cooking be a required or optional course? Why?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What essential preparations are involved in meal creation?"},
+          {"qTitle": "Would incorporating culinary education benefit school curricula?"},
+          {"qTitle": "How has culinary practice evolved compared to previous generations?"},
+          {"qTitle": "Does cuisine play a central role in Chinese traditional celebrations?"},
+          {"qTitle": "What traditional foods are indispensable during festive occasions?"},
+          {"qTitle": "What are the arguments for making cooking classes compulsory versus elective?"}
+        ]
+      },
+      {
+        "topicName_real": "Language acquisition and cultural exchange",
+        "topicName_rewrite": "Mastering foreign languages in a globalized world",
+        "questions_original": [
+          {"qTitle": "What foreign languages do Chinese children learn?"},
+          {"qTitle": "Why do Chinese children learn English?"},
+          {"qTitle": "Why are so many people learning English?"},
+          {"qTitle": "Do you think the way people learn English today is the same as in the past?"},
+          {"qTitle": "Is it easier for children to learn languages than adults?"},
+          {"qTitle": "How can teachers make language learning more fun for children?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which non-native languages are commonly taught to Chinese youth?"},
+          {"qTitle": "What practical benefits drive English education in Chinese schools?"},
+          {"qTitle": "What global factors contribute to the widespread study of English?"},
+          {"qTitle": "How has English language pedagogy evolved over recent decades?"},
+          {"qTitle": "Does childhood offer cognitive advantages for second language acquisition?"},
+          {"qTitle": "What engaging teaching methods can enhance children's language learning experience?"}
+        ]
+      },
+      {
+        "topicName_real": "Sports and athletic achievement",
+        "topicName_rewrite": "The world of competitive sports and athletic excellence",
+        "questions_original": [
+          {"qTitle": "What are the most popular sports in your country?"},
+          {"qTitle": "What qualities make a top athlete?"},
+          {"qTitle": "Which is more important, winning in a team sport or winning as individual?"},
+          {"qTitle": "Should students have physical education and do sports at school?"},
+          {"qTitle": "Is it important to identify children's talents?"},
+          {"qTitle": "Should adults force children to become sports champions?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which sporting activities enjoy the greatest popularity among your compatriots?"},
+          {"qTitle": "What essential characteristics distinguish elite sports professionals?"},
+          {"qTitle": "Does collective victory hold greater significance than individual athletic triumph?"},
+          {"qTitle": "Why is physical education crucial in school curricula?"},
+          {"qTitle": "How vital is early talent recognition in child development?"},
+          {"qTitle": "Is parental pressure justified in pursuing children's athletic success?"}
+        ]
+      },
+      {
+        "topicName_real": "Adventure and new experiences",
+        "topicName_rewrite": "The thrill of adventure and embracing novel experiences",
+        "questions_original": [
+          {"qTitle": "What kinds of exciting activities that young people like to do in your country?"},
+          {"qTitle": "Why do people choose to do exciting activities, such as extreme sports?"},
+          {"qTitle": "How do people benefit from trying new things?"},
+          {"qTitle": "Why are some people reluctant to try new things?"},
+          {"qTitle": "Are people less willing to try new things as they get older?"},
+          {"qTitle": "Should people engage in dangerous stimulating activities?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which adrenaline-fueled pursuits appeal most to youth in your nation?"},
+          {"qTitle": "What psychological motivations drive individuals toward extreme physical challenges?"},
+          {"qTitle": "What personal growth opportunities emerge from novel experiences?"},
+          {"qTitle": "What factors contribute to resistance against unfamiliar activities?"},
+          {"qTitle": "Does age correlate with diminished openness to new experiences?"},
+          {"qTitle": "Where should society draw the line regarding high-risk recreational activities?"}
+        ]
+      },
+      {
+        "topicName_real": "Social gatherings and celebrations",
+        "topicName_rewrite": "The dynamics of social events and human interaction",
+        "questions_original": [
+          {"qTitle": "Why do people in your country host parties?"},
+          {"qTitle": "Why do some people not like going to parties?"},
+          {"qTitle": "What would you do if you were disturbed by neighbor's party?"},
+          {"qTitle": "What are the differences between holding a party at home and in a public place?"},
+          {"qTitle": "Do you think music and dancing are a must at a party?"},
+          {"qTitle": "How do people's attitudes vary when it comes to parties?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What cultural purposes do social gatherings serve in your society?"},
+          {"qTitle": "What causes certain individuals to avoid social celebrations?"},
+          {"qTitle": "How should one appropriately address noise disturbances from neighboring festivities?"},
+          {"qTitle": "How does venue selection impact the nature of social events?"},
+          {"qTitle": "Are musical elements fundamental to successful party atmospheres?"},
+          {"qTitle": "What spectrum of perspectives exist regarding social event participation?"}
+        ]
+      },
+      {
+        "topicName_real": "Travel experiences and transportation",
+        "topicName_rewrite": "Navigating journeys and modern transportation challenges",
+        "questions_original": [
+          {"qTitle": "What are the main means of transport in your country?"},
+          {"qTitle": "What can the government do to improve transport in your country?"},
+          {"qTitle": "Is travelling better in the past than it is now?"},
+          {"qTitle": "Do you think that tourist attractions help people learn about new cultures?"},
+          {"qTitle": "What difficulties do people often face when travelling?"},
+          {"qTitle": "What are the environmental problems caused by the modern way of travel？"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which transportation modes dominate in your nation's infrastructure?"},
+          {"qTitle": "What policy measures could enhance national transportation systems?"},
+          {"qTitle": "Has contemporary travel lost certain advantages that historical journeys offered?"},
+          {"qTitle": "How effectively do popular destinations facilitate cultural understanding?"},
+          {"qTitle": "What common challenges confront modern travelers?"},
+          {"qTitle": "What ecological impacts result from current transportation methods?"}
+        ]
+      },
+      {
+        "topicName_real": "Unconventional travel experiences",
+        "topicName_rewrite": "Unique vacation experiences and holiday culture",
+        "questions_original": [
+          {"qTitle": "Do people in your country have long enough holidays?"},
+          {"qTitle": "Which holidays are popular in your country?"},
+          {"qTitle": "Are there any popular places for holidays in your country?"},
+          {"qTitle": "How important is tourism to your country?"},
+          {"qTitle": "What are the differences between old and young people when spending their holidays?"},
+          {"qTitle": "Is it a good way to know more about another culture through going abroad?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Do workers in your nation receive sufficient vacation time annually?"},
+          {"qTitle": "What traditional celebrations are most widely observed nationally?"},
+          {"qTitle": "Which domestic destinations attract the most holidaymakers?"},
+          {"qTitle": "What economic role does the tourism sector play nationally?"},
+          {"qTitle": "How do generational preferences differ in vacation planning?"},
+          {"qTitle": "How effective is international travel for cultural immersion?"}
+        ]
+      },
+      {
+        "topicName_real": "Childhood activities and education",
+        "topicName_rewrite": "Primary school experiences and childhood development",
+        "questions_original": [
+          {"qTitle": "What activities do children like to do in your country?"},
+          {"qTitle": "What do parents in your country encourage their children to do?"},
+          {"qTitle": "What are the differences between activities at home and at school?"},
+          {"qTitle": "Do you think technology has changed the kinds of activities that children enjoy?"},
+          {"qTitle": "Why do people enjoy spending time with others?"},
+          {"qTitle": "How can happiness affect people's health?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What recreational pursuits are most popular among children nationally?"},
+          {"qTitle": "Which extracurricular activities do parents typically promote?"},
+          {"qTitle": "How do educational and domestic environments shape different activity patterns?"},
+          {"qTitle": "Has digital innovation transformed childhood recreation fundamentally?"},
+          {"qTitle": "What psychological benefits stem from social interaction?"},
+          {"qTitle": "What physiological impacts result from positive emotional states?"}
+        ]
+      },
+      {
+        "topicName_real": "Market culture and shopping trends",
+        "topicName_rewrite": "Traditional markets and evolving consumer behavior",
+        "questions_original": [
+          {"qTitle": "What kinds of markets are there in China?"},
+          {"qTitle": "Will small markets disappear in the future?"},
+          {"qTitle": "Have people's shopping habits changed in recent years?"},
+          {"qTitle": "What are the differences between shopping in street markets and big shopping malls?"},
+          {"qTitle": "Are the goods sold at discount stores good values or qualities?"},
+          {"qTitle": "Why do some people like to buy expensive goods?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What varieties of traditional marketplaces exist in Chinese commerce?"},
+          {"qTitle": "Are local bazaars facing extinction due to modernization?"},
+          {"qTitle": "How has consumer behavior evolved with technological advancement?"},
+          {"qTitle": "How do open-air market experiences contrast with mall shopping?"},
+          {"qTitle": "Does budget retail compromise on product standards?"},
+          {"qTitle": "What motivations drive luxury consumption patterns?"}
+        ]
+      },
+      {
+        "topicName_real": "Skill acquisition in adolescence",
+        "topicName_rewrite": "Teenage skill development and lifelong learning",
+        "questions_original": [
+          {"qTitle": "Where do children learn skills in your country?"},
+          {"qTitle": "What are the differences between learning skills on your own and from others?"},
+          {"qTitle": "What should children learn to do at an early age?"},
+          {"qTitle": "Can children and old people learn from each other?"},
+          {"qTitle": "What's the best way to learn practical skills?"},
+          {"qTitle": "What are the differences between children learning skills and adults learning skills?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are the primary skill-development environments for youth?"},
+          {"qTitle": "How does autonomous learning compare with guided instruction?"},
+          {"qTitle": "Which fundamental competencies should be cultivated early?"},
+          {"qTitle": "How can intergenerational learning benefit both age groups?"},
+          {"qTitle": "What methodologies optimize hands-on skill acquisition?"},
+          {"qTitle": "How does neuroplasticity affect learning across different life stages?"}
+        ]
+      },
+      {
+        "topicName_real": "Uniform culture and dress codes",
+        "topicName_rewrite": "The significance and impact of uniform policies",
+        "questions_original": [
+          {"qTitle": "Why should students wear uniforms at school?"},
+          {"qTitle": "Why should people in some jobs have to wear uniforms?"},
+          {"qTitle": "What are the advantages and disadvantages of wearing a school uniform?"},
+          {"qTitle": "What are disadvantages of wearing a uniform at work?"},
+          {"qTitle": "Do you think clothes can reflect people's character?"},
+          {"qTitle": "Why many young people wear the same clothes as their peers?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What educational benefits does school uniform implementation provide?"},
+          {"qTitle": "How do professional uniforms contribute to workplace functionality?"},
+          {"qTitle": "How do school uniforms both benefit and limit student expression?"},
+          {"qTitle": "What negative aspects accompany mandatory work uniforms?"},
+          {"qTitle": "To what extent does fashion choice reveal personality traits?"},
+          {"qTitle": "What social factors drive youth fashion conformity?"}
+        ]
+      },
+      {
+        "topicName_real": "Life-changing experiences",
+        "topicName_rewrite": "Transformative moments and personal growth",
+        "questions_original": [
+          {"qTitle": "Do children enjoy the variety in their daily lives?"},
+          {"qTitle": "What difficulties may children face when changing schools?"},
+          {"qTitle": "Why do some people quit and change jobs?"},
+          {"qTitle": "At what age do children really become adults?"},
+          {"qTitle": "How do people adapt to changes in life?"},
+          {"qTitle": "In general, does change help people develop in new ways?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "How do children typically respond to routine variations?"},
+          {"qTitle": "What challenges accompany school transitions for young students?"},
+          {"qTitle": "What motivates professionals to pursue career changes?"},
+          {"qTitle": "When does genuine psychological maturity typically emerge?"},
+          {"qTitle": "What strategies help individuals cope with life transitions?"},
+          {"qTitle": "Does personal transformation usually result from major life changes?"}
+        ]
+      },
+      {
+        "topicName_real": "Fatigue and work-life balance",
+        "topicName_rewrite": "Understanding exhaustion and modern lifestyle pressures",
+        "questions_original": [
+          {"qTitle": "What are things that often make people tired?"},
+          {"qTitle": "Do people today feel more tired than people in the past?"},
+          {"qTitle": "What are the differences between feeling tired after studying and after exercising?"},
+          {"qTitle": "How do people balance their work responsibilities with the need for free time?"},
+          {"qTitle": "Do people have enough free time now?"},
+          {"qTitle": "Do people have fewer holidays now than in the past?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What common factors contribute to physical and mental exhaustion?"},
+          {"qTitle": "Has modern lifestyle increased fatigue levels compared to previous generations?"},
+          {"qTitle": "How does cognitive fatigue differ from physical exhaustion?"},
+          {"qTitle": "What approaches help maintain equilibrium between professional and personal life?"},
+          {"qTitle": "Is leisure time adequately prioritized in contemporary society?"},
+          {"qTitle": "Has vacation time decreased historically for working professionals?"}
+        ]
+      },
+      {
+        "topicName_real": "Overcoming challenges",
+        "topicName_rewrite": "Achievement through adversity and personal accomplishment",
+        "questions_original": [
+          {"qTitle": "What are the things that make people feel proud of?"},
+          {"qTitle": "Do people often feel proud of themselves when they complete a difficult task?"},
+          {"qTitle": "What personal qualities help a person deal with difficulties at work?"},
+          {"qTitle": "What will be the impact of more people freelancing in the future?"},
+          {"qTitle": "Is work the biggest source of stress for most people?"},
+          {"qTitle": "Would a future in which people do not have to work be an ideal goal for society?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What types of accomplishments typically generate personal pride?"},
+          {"qTitle": "How does overcoming challenges affect self-perception?"},
+          {"qTitle": "Which character traits enable professional problem-solving?"},
+          {"qTitle": "How might the gig economy reshape future employment structures?"},
+          {"qTitle": "Does occupational pressure constitute the primary stress factor for adults?"},
+          {"qTitle": "Could a work-free society represent utopian or dystopian outcomes?"}
+        ]
+      },
+      {
+        "topicName_real": "Time pressure and quick actions",
+        "topicName_rewrite": "Managing urgent situations and time-sensitive tasks",
+        "questions_original": [
+          {"qTitle": "On what occasions do people have to do things in a hurry?"},
+          {"qTitle": "Why do people sometimes need to make decisions quickly?"},
+          {"qTitle": "What are the advantages of making decisions quickly?"},
+          {"qTitle": "Why do some people spend a long time on having a meal?"},
+          {"qTitle": "Would people feel more satisfied if they finished doing something quickly?"},
+          {"qTitle": "Why do some people choose to make a long journey by bus or train than by plane?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What common situations require immediate action or rapid response?"},
+          {"qTitle": "What circumstances necessitate swift decision-making?"},
+          {"qTitle": "How can rapid decision-making be beneficial in certain scenarios?"},
+          {"qTitle": "What cultural or personal factors influence lengthy dining experiences?"},
+          {"qTitle": "Does task completion speed affect personal satisfaction levels?"},
+          {"qTitle": "What considerations lead people to prefer ground transportation over air travel for long distances?"}
+        ]
+      },
+      {
+        "topicName_real": "Busy lifestyles and time management",
+        "topicName_rewrite": "Modern busy schedules and productivity challenges",
+        "questions_original": [
+          {"qTitle": "On what occasions do people have to do things in a hurry?"},
+          {"qTitle": "Why do some people spend a long time on having a meal?"},
+          {"qTitle": "Would people feel more satisfied if they finished doing something quickly?"},
+          {"qTitle": "What are the things that make people lives busy now?"},
+          {"qTitle": "Why do some people feel their lives are busier now than in the past?"},
+          {"qTitle": "What can people do to organize their time well?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What typical situations create time pressure in daily life?"},
+          {"qTitle": "Why might individuals choose to prolong their mealtime experiences?"},
+          {"qTitle": "How does efficiency impact personal fulfillment?"},
+          {"qTitle": "What modern factors contribute to increasingly packed schedules?"},
+          {"qTitle": "How has lifestyle pace changed compared to previous generations?"},
+          {"qTitle": "What effective strategies exist for better time management?"}
+        ]
+      },
+      {
+        "topicName_real": "Patience and anticipation",
+        "topicName_rewrite": "The psychology of waiting and delayed gratification",
+        "questions_original": [
+          {"qTitle": "On what everyday occasions do people have to wait for a long time?"},
+          {"qTitle": "What do people usually do while waiting?"},
+          {"qTitle": "Are most people happy to wait for things in everyday life?"},
+          {"qTitle": "Why do most children have difficulties waiting for a long time?"},
+          {"qTitle": "Do people appreciate things more when they have to wait?"},
+          {"qTitle": "Do people queue consciously while waiting for the subway train?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What routine situations often involve prolonged waiting periods?"},
+          {"qTitle": "How do individuals typically occupy themselves during waiting times?"},
+          {"qTitle": "What is the general attitude toward unavoidable waiting in daily routines?"},
+          {"qTitle": "What developmental factors explain children's impatience?"},
+          {"qTitle": "Does anticipation enhance the value of eventual outcomes?"},
+          {"qTitle": "How orderly are public transportation boarding queues in practice?"}
+        ]
+      },
+      {
+        "topicName_real": "Park visits and urban green spaces",
+        "topicName_rewrite": "The social and environmental value of public parks",
+        "questions_original": [
+          {"qTitle": "Do young people like to go to parks?"},
+          {"qTitle": "What do old people like to do in parks?"},
+          {"qTitle": "What are the benefits of going to the park for young people and old people?"},
+          {"qTitle": "Why do some people like planting flowers?"},
+          {"qTitle": "What benefits can parks bring to a city?"},
+          {"qTitle": "Should people who live in cities help to keep parks tidy?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "How popular are parks among younger demographics?"},
+          {"qTitle": "What activities do senior citizens typically enjoy in park settings?"},
+          {"qTitle": "How do different age groups benefit from park visits?"},
+          {"qTitle": "What motivates individuals to engage in horticultural activities?"},
+          {"qTitle": "What positive impacts do green spaces have on urban environments?"},
+          {"qTitle": "What civic responsibilities should urban residents have regarding park maintenance?"}
+        ]
+      },
+      {
+        "topicName_real": "Map usage and navigation",
+        "topicName_rewrite": "The role of maps in modern navigation",
+        "questions_original": [
+          {"qTitle": "What do people usually do when they get lost?"},
+          {"qTitle": "What are the differences between paper and digital maps?"},
+          {"qTitle": "Should everyone learn to read a map?"},
+          {"qTitle": "Do most people prefer to use paper maps, or do they use maps on their phones?"},
+          {"qTitle": "Is a car navigation system always a good thing?"},
+          {"qTitle": "Why are some places or cities easier for people to get lost than other places or cities?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What common strategies do people employ when they lose their way?"},
+          {"qTitle": "How do traditional and digital mapping technologies differ in functionality?"},
+          {"qTitle": "Is map-reading an essential skill everyone should acquire?"},
+          {"qTitle": "What are current trends in map usage preferences among the general public?"},
+          {"qTitle": "Are there potential drawbacks to relying on car navigation systems?"},
+          {"qTitle": "What urban design factors contribute to navigation difficulties in certain areas?"}
+        ]
+      },
+      {
+        "topicName_real": "Technology troubleshooting",
+        "topicName_rewrite": "Challenges in digital device usage",
+        "questions_original": [
+          {"qTitle": "How do people learn how to use a new device?"},
+          {"qTitle": "Are the latest smartphones usually no better than previous models?"},
+          {"qTitle": "Why do people often have trouble learning how to use new devices?"},
+          {"qTitle": "Should parents limit their children's screen time?"},
+          {"qTitle": "Why do many young people spend so much time looking at screens?"},
+          {"qTitle": "Does relying on technology prevent children from learning skills?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What methods do individuals typically use to familiarize themselves with new technology?"},
+          {"qTitle": "Is the improvement between smartphone generations always significant?"},
+          {"qTitle": "What factors create barriers to adopting new technological devices?"},
+          {"qTitle": "Is parental regulation of digital device usage beneficial for children?"},
+          {"qTitle": "What drives the extensive screen time observed in younger generations?"},
+          {"qTitle": "Can excessive technology use hinder the development of fundamental skills in children?"}
+        ]
+      },
+      {
+        "topicName_real": "Giving and receiving advice",
+        "topicName_rewrite": "The dynamics of advice exchange",
+        "questions_original": [
+          {"qTitle": "What kinds of advice do parents often give their young children?"},
+          {"qTitle": "Should parents give their children advice?"},
+          {"qTitle": "Is it necessary for people to listen to friends' advice?"},
+          {"qTitle": "How do people give young people and old people advice?"},
+          {"qTitle": "Are teachers the best people to give students advice about jobs?"},
+          {"qTitle": "Why do some people refuse to accept good advice?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are common parental guidance topics for young children?"},
+          {"qTitle": "What role should parental advice play in child development?"},
+          {"qTitle": "How valuable is peer advice in personal decision-making?"},
+          {"qTitle": "How should advice-giving approaches differ based on the recipient's age?"},
+          {"qTitle": "How qualified are educators to provide career guidance to students?"},
+          {"qTitle": "What psychological factors lead people to reject helpful suggestions?"}
+        ]
+      },
+      {
+        "topicName_real": "Noise pollution and public etiquette",
+        "topicName_rewrite": "Managing noise in public spaces",
+        "questions_original": [
+          {"qTitle": "What kinds of public places should have no noise?"},
+          {"qTitle": "Should small children be allowed into places where people need to be quiet?"},
+          {"qTitle": "Is it important for people to behave well in public places?"},
+          {"qTitle": "Why do some people behave better than others in public places?"},
+          {"qTitle": "Why do crowds often get very noisy in public places?"},
+          {"qTitle": "What public morals should people follow in your country?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which public spaces require strict noise control measures?"},
+          {"qTitle": "Is it appropriate to bring young children to quiet public spaces?"},
+          {"qTitle": "How crucial is proper public conduct for social harmony?"},
+          {"qTitle": "What accounts for differences in people's public behavior standards?"},
+          {"qTitle": "What causes noise levels to escalate in crowded public areas?"},
+          {"qTitle": "What are considered fundamental public etiquette rules in your culture?"}
+        ]
+      },
+      {
+        "topicName_real": "Public complaints and customer service",
+        "topicName_rewrite": "Handling public complaints and service recovery",
+        "questions_original": [
+          {"qTitle": "How do companies train their staff to deal with complaints?"},
+          {"qTitle": "What do people usually complain about?"},
+          {"qTitle": "How do most people complain, in writing or by other methods?"},
+          {"qTitle": "Why do some people complain more than others?"},
+          {"qTitle": "Should company offer compensation to dissatisfied customers?"},
+          {"qTitle": "Is complaining a positive experience for the person who complains?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What customer service training methods help employees handle complaints effectively?"},
+          {"qTitle": "What are the most common subjects of customer complaints?"},
+          {"qTitle": "What are the preferred channels for customers to voice complaints?"},
+          {"qTitle": "What personality or situational factors make some individuals more prone to complaining?"},
+          {"qTitle": "Is financial compensation always the appropriate response to customer dissatisfaction?"},
+          {"qTitle": "Can the act of complaining provide psychological benefits to the complainer?"}
+        ]
+      },
+      {
+        "topicName_real": "Service failures and recovery",
+        "topicName_rewrite": "Addressing service failures and quality improvement",
+        "questions_original": [
+          {"qTitle": "What kinds of bad service do people often receive?"},
+          {"qTitle": "What should people do if they get bad service?"},
+          {"qTitle": "Why don't some people complain about bad service?"},
+          {"qTitle": "What can employers do to ensure the quality of service?"},
+          {"qTitle": "Does providing good employee training always lead to good customer service?"},
+          {"qTitle": "Why are some people often dissatisfied with customer service?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are typical examples of poor service experiences customers encounter?"},
+          {"qTitle": "What are appropriate actions when receiving substandard service?"},
+          {"qTitle": "What barriers prevent customers from reporting service failures?"},
+          {"qTitle": "What management strategies can maintain consistent service quality?"},
+          {"qTitle": "Is employee training alone sufficient to guarantee excellent service delivery?"},
+          {"qTitle": "What underlying factors contribute to frequent customer dissatisfaction?"}
+        ]
+      },
+      {
+        "topicName_real": "Helping behavior and kindness",
+        "topicName_rewrite": "The psychology of helping others and altruism",
+        "questions_original": [
+          {"qTitle": "Should children be taught to be kind to others?"},
+          {"qTitle": "What kinds of housework can children help their parents do?"},
+          {"qTitle": "Should parents avoid helping their children with homework?"},
+          {"qTitle": "Is it easier to help a friend than a stranger?"},
+          {"qTitle": "Do parents need to teach their children to be kind and helpful to others?"},
+          {"qTitle": "Is it possible for people to be too kind?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Is kindness an essential value that should be intentionally taught to children?"},
+          {"qTitle": "What domestic responsibilities are age-appropriate for children to assist with?"},
+          {"qTitle": "Does parental assistance with schoolwork hinder children's independent learning?"},
+          {"qTitle": "Does the helper's relationship with the recipient affect willingness to assist?"},
+          {"qTitle": "How important is parental guidance in developing children's prosocial behavior?"},
+          {"qTitle": "Can excessive kindness become detrimental to an individual's wellbeing?"}
+        ]
+      },
+      {
+        "topicName_real": "Lost property and honesty",
+        "topicName_rewrite": "Ethical considerations around lost items",
+        "questions_original": [
+          {"qTitle": "What kinds of things do people often find?"},
+          {"qTitle": "What kind of things do people often lose?"},
+          {"qTitle": "What kind of people tend to lose things more often than others?"},
+          {"qTitle": "Why do some people find lost things easier than others?"},
+          {"qTitle": "What should parents teach children to do when they find things?"},
+          {"qTitle": "Why do some people pick lost things and don't give back?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What types of items are commonly discovered as lost property?"},
+          {"qTitle": "Which personal belongings are most frequently misplaced?"},
+          {"qTitle": "What personal characteristics correlate with frequent loss of possessions?"},
+          {"qTitle": "Why are some individuals more observant at spotting lost items?"},
+          {"qTitle": "What ethical principles should children learn regarding found property?"},
+          {"qTitle": "What motivates people to keep lost items instead of returning them?"}
+        ]
+      },
+      {
+        "topicName_real": "Daily routines and productivity",
+        "topicName_rewrite": "The impact of daily habits on work and study efficiency",
+        "questions_original": [
+          {"qTitle": "What do people do every day as part of their personal routine?"},
+          {"qTitle": "Do children need to have a daily routine?"},
+          {"qTitle": "Why are routines essential in people's jobs?"},
+          {"qTitle": "How do people organize their routines after getting up in the morning and after work?"},
+          {"qTitle": "Is it necessary at work to take regular breaks in people's daily life?"},
+          {"qTitle": "Are routine important for companies?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What common activities constitute people's daily personal rituals?"},
+          {"qTitle": "How crucial are structured schedules for children's development?"},
+          {"qTitle": "What benefits do established routines provide in professional settings?"},
+          {"qTitle": "What are typical morning and evening routine patterns among working adults?"},
+          {"qTitle": "How significant are scheduled pauses for maintaining workplace productivity?"},
+          {"qTitle": "What value do organizational routines bring to corporate operations?"}
+        ]
+      },
+      {
+        "topicName_real": "Rules and regulations",
+        "topicName_rewrite": "The role and impact of rules in institutions",
+        "questions_original": [
+          {"qTitle": "What rules should children follow at home in your country?"},
+          {"qTitle": "On what occasions can children be forgiven if they don't follow some rules?"},
+          {"qTitle": "What rules should people follow when using public transport?"},
+          {"qTitle": "Is it normal for children to want to break the rules at home?"},
+          {"qTitle": "Should children join in deciding what the rules are at home?"},
+          {"qTitle": "Are there too many notices with rules displayed in public places?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are common household rules for children in your culture?"},
+          {"qTitle": "When is it appropriate to excuse children for rule violations?"},
+          {"qTitle": "What constitutes proper etiquette on public transportation systems?"},
+          {"qTitle": "Is rule-testing behavior a natural part of childhood development?"},
+          {"qTitle": "How beneficial is child participation in establishing family rules?"},
+          {"qTitle": "Has excessive rule signage become a problem in public spaces?"}
+        ]
+      },
+      {
+        "topicName_real": "Goal setting and achievement",
+        "topicName_rewrite": "Pursuing long-term objectives and life planning",
+        "questions_original": [
+          {"qTitle": "What goals do young people usually have?"},
+          {"qTitle": "What can people do to prepare for their life in the future?"},
+          {"qTitle": "How can school help you people to achieve their goals?"},
+          {"qTitle": "Is it necessary to give advice to children?"},
+          {"qTitle": "What should people do to achieve their goals?"},
+          {"qTitle": "How easy is it to achieve a balance between preparing for the future and enjoying life?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are typical aspirations among today's youth?"},
+          {"qTitle": "What practical steps can individuals take for future readiness?"},
+          {"qTitle": "What educational support systems exist for student goal attainment?"},
+          {"qTitle": "How valuable is adult guidance in children's decision-making processes?"},
+          {"qTitle": "What strategies effectively contribute to goal realization?"},
+          {"qTitle": "What challenges exist in maintaining present enjoyment while planning for the future?"}
+        ]
+      },
+      {
+        "topicName_real": "Outdoor recreation",
+        "topicName_rewrite": "The benefits and trends of outdoor activities",
+        "questions_original": [
+          {"qTitle": "Do people go outdoors more or less now?"},
+          {"qTitle": "What can people do outdoors besides exercising?"},
+          {"qTitle": "When do people usually go outdoors to get close to nature?"},
+          {"qTitle": "What can people do to get close to nature?"},
+          {"qTitle": "Will people spend more time doing outdoor activities in the future?"},
+          {"qTitle": "How important is it for people to spend time in nature?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Has modern lifestyle increased or decreased outdoor activity participation?"},
+          {"qTitle": "What non-exercise recreational options exist in outdoor settings?"},
+          {"qTitle": "What are peak times for nature engagement among urban populations?"},
+          {"qTitle": "What activities facilitate meaningful connections with the natural environment?"},
+          {"qTitle": "What factors might influence future trends in outdoor recreation?"},
+          {"qTitle": "What psychological and physical benefits does nature exposure provide?"}
+        ]
+      },
+      {
+        "topicName_real": "Personal aspirations and financial priorities",
+        "topicName_rewrite": "Desired possessions and financial attitudes",
+        "questions_original": [
+          {"qTitle": "What do you think young people spend most of their money on?"},
+          {"qTitle": "Do you think it is important to save money? Why?"},
+          {"qTitle": "Do people buy things they don't need?"},
+          {"qTitle": "Is it important to teach children about giving money to support people in need?"},
+          {"qTitle": "Should rich people give some of their money to help other people?"},
+          {"qTitle": "What can people do to support others in mind, apart from giving money to them?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are the primary expenditure categories for today's youth?"},
+          {"qTitle": "What are the key benefits of developing savings habits early?"},
+          {"qTitle": "How common is impulse buying and unnecessary consumption?"},
+          {"qTitle": "How crucial is financial philanthropy education for children?"},
+          {"qTitle": "What responsibilities do wealthy individuals have towards societal welfare?"},
+          {"qTitle": "What non-monetary forms of support can people provide to those in need?"}
+        ]
+      },
+      {
+        "topicName_real": "Scientific interests and education",
+        "topicName_rewrite": "Passion for scientific disciplines and public understanding",
+        "questions_original": [
+          {"qTitle": "Is it important to study Science at school?"},
+          {"qTitle": "Which science subject is the most important for children to learn?"},
+          {"qTitle": "Should people continue to study Science after graduating from school?"},
+          {"qTitle": "Should scientists explain the research process to the public?"},
+          {"qTitle": "Why do some children not like learning science at school?"},
+          {"qTitle": "What are the skills or qualities that a good scientist needs to have?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Why is science education fundamental in school curricula?"},
+          {"qTitle": "Which scientific discipline provides the most essential foundation for students?"},
+          {"qTitle": "How valuable is lifelong learning in scientific fields?"},
+          {"qTitle": "What are the benefits of scientists communicating their methods to laypeople?"},
+          {"qTitle": "What factors contribute to student disengagement with science subjects?"},
+          {"qTitle": "What combination of attributes makes an exceptional scientific researcher?"}
+        ]
+      },
+      {
+        "topicName_real": "Career preferences and workplace evolution",
+        "topicName_rewrite": "Undesirable occupations and changing job markets",
+        "questions_original": [
+          {"qTitle": "What kind of jobs do Chinese young people like to do?"},
+          {"qTitle": "Do young Chinese people prefer to choose an interesting job or a job with a high salary?"},
+          {"qTitle": "Do you think it is easier to get a job now than in the past?"},
+          {"qTitle": "Is it important to be successful in a job?"},
+          {"qTitle": "How can robots and technology change people's jobs?"},
+          {"qTitle": "How usual is it for young people to move to another city to find a job?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What career paths are currently most attractive to Chinese youth?"},
+          {"qTitle": "Do young professionals prioritize passion or financial reward in career choices?"},
+          {"qTitle": "Has job accessibility improved or worsened in recent decades?"},
+          {"qTitle": "How do we define and measure professional success?"},
+          {"qTitle": "What workplace transformations are being driven by automation and AI?"},
+          {"qTitle": "How common is intercity relocation for employment opportunities among graduates?"}
+        ]
+      },
+      {
+        "topicName_real": "Photography and memory preservation",
+        "topicName_rewrite": "Meaningful photographs and visual culture",
+        "questions_original": [
+          {"qTitle": "What kinds of things do people like to take photos of?"},
+          {"qTitle": "Do people take more photos now than in the past?"},
+          {"qTitle": "Is equipment important for photography?"},
+          {"qTitle": "Are professional photographers more important now than in the past?"},
+          {"qTitle": "Why do people often share their photos on social media?"},
+          {"qTitle": "Is it easier to trust a visual image or the written word?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What subjects are most commonly captured in personal photography?"},
+          {"qTitle": "How has smartphone technology affected photography frequency?"},
+          {"qTitle": "How significantly does camera quality impact photographic results?"},
+          {"qTitle": "What value do professional photographers add in the age of digital self-sufficiency?"},
+          {"qTitle": "What psychological needs does photo-sharing on platforms satisfy?"},
+          {"qTitle": "Which medium carries more credibility - photographic evidence or textual accounts?"}
+        ]
+      },
+      {
+        "topicName_real": "Art appreciation and visual culture",
+        "topicName_rewrite": "The impact and value of visual arts in society",
+        "questions_original": [
+          {"qTitle": "What kinds of painting and drawing do children often enjoy?"},
+          {"qTitle": "Should children learn to draw and paint at school?"},
+          {"qTitle": "What can young people learn from looking at works of art?"},
+          {"qTitle": "How does architectural style affect people's lives?"},
+          {"qTitle": "Is it important for people to choose the art and decorations in their home?"},
+          {"qTitle": "Do you think the objects we use in our daily lives should be beautifully designed?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which artistic styles and subjects typically appeal to children's sensibilities?"},
+          {"qTitle": "What benefits does art education provide for students' development?"},
+          {"qTitle": "How can art observation contribute to youth education and personal growth?"},
+          {"qTitle": "In what ways do building designs influence human behavior and wellbeing?"},
+          {"qTitle": "How significant is personal aesthetic choice in home environment design?"},
+          {"qTitle": "Should functional objects prioritize aesthetic qualities alongside practicality?"}
+        ]
+      },
+      {
+        "topicName_real": "Leisure and relaxation spaces",
+        "topicName_rewrite": "The importance and characteristics of relaxation environments",
+        "questions_original": [
+          {"qTitle": "Are there enough places for people to relax in your country?"},
+          {"qTitle": "What do people usually do after school or work?"},
+          {"qTitle": "Is physical activity the best way to relax?"},
+          {"qTitle": "Do you think that spending time in front of a screen helps people relax?"},
+          {"qTitle": "Can people get enough relaxation without a lot of money?"},
+          {"qTitle": "Why are some places better than other places for relaxing?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "How adequate are public and private relaxation facilities nationally?"},
+          {"qTitle": "What are common leisure activities people engage in during their free time?"},
+          {"qTitle": "How effective is exercise compared to other relaxation methods?"},
+          {"qTitle": "Does digital media consumption provide genuine relaxation benefits?"},
+          {"qTitle": "How accessible is quality relaxation for people with limited budgets?"},
+          {"qTitle": "What environmental factors create optimal conditions for relaxation?"}
+        ]
+      },
+      {
+        "topicName_real": "Regional characteristics and travel",
+        "topicName_rewrite": "Exploring geographical diversity and its significance",
+        "questions_original": [
+          {"qTitle": "How can people access travel information?"},
+          {"qTitle": "What makes a place interesting for people to live in?"},
+          {"qTitle": "Is a great tourist destination also a good place to live?"},
+          {"qTitle": "Do youngsters like to try new things, or do people of your parents' age also like to try new things?"},
+          {"qTitle": "Do people have different personalities in different regions of your country?"},
+          {"qTitle": "What causes the differences between different regions of your country?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What are the most reliable sources for travel planning information?"},
+          {"qTitle": "Which factors contribute to a location's livability and appeal?"},
+          {"qTitle": "How do tourist hotspots compare as permanent residential locations?"},
+          {"qTitle": "How does openness to new experiences vary across generations?"},
+          {"qTitle": "Are there noticeable personality trends associated with specific geographical areas?"},
+          {"qTitle": "What historical and environmental factors create regional distinctions?"}
+        ]
+      },
+      {
+        "topicName_real": "Urban beauty and preservation",
+        "topicName_rewrite": "The aesthetics and conservation of urban environments",
+        "questions_original": [
+          {"qTitle": "Why do some people like to visit historical sites?"},
+          {"qTitle": "Why can it be difficult to look after historic towns and cities?"},
+          {"qTitle": "Should governments protect historic towns and cities?"},
+          {"qTitle": "How can governments preserve historical buildings?"},
+          {"qTitle": "How may towns and cities change in the future?"},
+          {"qTitle": "What are the reasons why so many modern towns and cities have tall buildings?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What psychological and educational values do heritage sites provide visitors?"},
+          {"qTitle": "What challenges complicate the maintenance of historical urban areas?"},
+          {"qTitle": "What responsibilities do authorities have in safeguarding architectural heritage?"},
+          {"qTitle": "What preservation strategies effectively protect historical structures?"},
+          {"qTitle": "What urban development trends are likely to shape future cities?"},
+          {"qTitle": "What economic and practical factors drive vertical urban expansion?"}
+        ]
+      },
+      {
+        "topicName_real": "Film viewing experiences and cinema culture",
+        "topicName_rewrite": "The impact of cinema and movie-watching habits",
+        "questions_original": [
+          {"qTitle": "Do most people prefer to watch movies at home or in a cinema? Why?"},
+          {"qTitle": "What are the advantages of going to the cinema with friends?"},
+          {"qTitle": "Is going to the cinema still popular?"},
+          {"qTitle": "What kind of movies need to be seen in the cinema to be fully appreciated?"},
+          {"qTitle": "What can cinemas do to attract more audiences?"},
+          {"qTitle": "Can people learn new cultures through movies?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What factors influence people's preference for home viewing versus theatrical experiences?"},
+          {"qTitle": "How does the social aspect enhance the cinema-going experience?"},
+          {"qTitle": "Has streaming technology affected the popularity of traditional movie theaters?"},
+          {"qTitle": "Which film genres benefit most from the big screen format?"},
+          {"qTitle": "What innovations could revitalize cinema attendance rates?"},
+          {"qTitle": "How effective are films as tools for cultural education and exposure?"}
+        ]
+      },
+      {
+        "topicName_real": "Historical interest and preservation",
+        "topicName_rewrite": "Fascination with historical periods and their legacy",
+        "questions_original": [
+          {"qTitle": "Are there any interesting historical places worth visiting in your country?"},
+          {"qTitle": "What are the reasons why people are interested in watching historical films?"},
+          {"qTitle": "Do children spend too much time studying history?"},
+          {"qTitle": "What is the value of museums as a way to study history?"},
+          {"qTitle": "Why is it important for people to remember personal events from the past?"},
+          {"qTitle": "Why do some people think it's wrong to let the past influence their decisions?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which historical sites in your nation offer particularly valuable insights?"},
+          {"qTitle": "What psychological needs do historical dramas fulfill for audiences?"},
+          {"qTitle": "Is the current emphasis on historical education appropriate for young learners?"},
+          {"qTitle": "How do museums contribute to historical understanding beyond textbooks?"},
+          {"qTitle": "What role does personal history play in identity formation?"},
+          {"qTitle": "What are the arguments against being overly influenced by past experiences?"}
+        ]
+      },
+      {
+        "topicName_real": "Essential household items",
+        "topicName_rewrite": "The role of indispensable objects in domestic life",
+        "questions_original": [
+          {"qTitle": "What are the benefits of using technology in the workplace?"},
+          {"qTitle": "What home equipment do people use most often?"},
+          {"qTitle": "Do people have too much equipment in their homes?"},
+          {"qTitle": "Why do some people in the workplace dislike technology?"},
+          {"qTitle": "Is cheap equipment likely to work better than expensive equipment?"},
+          {"qTitle": "Why do people buy a lot of household appliances?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "How has workplace technology improved productivity and efficiency?"},
+          {"qTitle": "Which domestic devices have become daily necessities for most households?"},
+          {"qTitle": "Has consumerism led to excessive accumulation of home gadgets?"},
+          {"qTitle": "What concerns do employees have about workplace technological integration?"},
+          {"qTitle": "Does price always correlate with product quality and performance?"},
+          {"qTitle": "What drives the consumer demand for multiple home appliances?"}
+        ]
+      },
+      {
+        "topicName_real": "Public infrastructure development",
+        "topicName_rewrite": "The evolution and impact of community facilities",
+        "questions_original": [
+          {"qTitle": "What kinds of public facilities do people often use now?"},
+          {"qTitle": "What are the benefits of public facilities?"},
+          {"qTitle": "Are new public facilities always better than old ones?"},
+          {"qTitle": "Why are some public facilities not used much by people?"},
+          {"qTitle": "What kind of transport do young people and old people prefer?"},
+          {"qTitle": "What do you think are the differences between Chinese square dancing now and in the future?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which types of community infrastructure see the highest public utilization?"},
+          {"qTitle": "How do shared public resources enhance quality of life?"},
+          {"qTitle": "Do modern facilities invariably outperform their predecessors in functionality?"},
+          {"qTitle": "What factors contribute to underutilization of certain public amenities?"},
+          {"qTitle": "How do transportation preferences vary across different age demographics?"},
+          {"qTitle": "How might China's square dancing tradition evolve in coming years?"}
+        ]
+      },
+      {
+        "topicName_real": "Advertising effectiveness and ethics",
+        "topicName_rewrite": "The art and impact of persuasive marketing",
+        "questions_original": [
+          {"qTitle": "What kinds of things people like to buy?"},
+          {"qTitle": "Why do some people enjoy buying new things?"},
+          {"qTitle": "Why do many people dislike online ads?"},
+          {"qTitle": "Should people only buy what they really need?"},
+          {"qTitle": "Should online advertising aimed at children be banned?"},
+          {"qTitle": "How much exaggeration is necessary for an advertisement to be successful?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which product categories typically attract the most consumer interest?"},
+          {"qTitle": "What psychological factors drive the pleasure of acquiring new possessions?"},
+          {"qTitle": "What aspects of digital advertising create user frustration?"},
+          {"qTitle": "Is minimalist consumption preferable to frequent purchasing?"},
+          {"qTitle": "What are the ethical considerations regarding child-targeted marketing?"},
+          {"qTitle": "Where should advertisers draw the line between persuasion and deception?"}
+        ]
+      }
+    ]
+  }
