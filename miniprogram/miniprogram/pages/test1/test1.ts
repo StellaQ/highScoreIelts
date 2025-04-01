@@ -34,13 +34,19 @@ Page({
   data: {
     isLoaded: false, // 控制骨架屏显示
     categories: [] as ProcessedCategory[], // 存储分类数据
+    type: '' // basic / advanced / expert
   },
 
-  onLoad: function() {
+  onLoad: function(options) {
     const app = getApp<IAppOption>();
     const userId = app.globalData.userInfo?.userId;
+
+    // 从页面参数获取类型
+    const type = options.type || '';
+    this.setData({ type: type });
+
     if (userId) {
-      this.fetchCategories(userId);
+      this.fetchCategories(userId, type);
     } else {
       console.error('未获取到userId');
       wx.showToast({
@@ -56,9 +62,9 @@ Page({
   },
 
   // 获取分类数据
-  async fetchCategories(userId: string) {
+  async fetchCategories(userId: string, type: string) {
     try {
-      const res = await API.getCategories(userId);
+      const res = await API.getCategories(userId, type);
       // console.log('分类数据:', res.data);
       
       // 处理数据，计算每个分类的已掌握题目数量
@@ -94,7 +100,7 @@ Page({
     // 只有state为0、1、2的话题可以跳转
     if (topic.status.state <= 2) {
       wx.navigateTo({
-        url: `/pages/detailBasic/detailBasic?topicId=${topic.topicId}&topicName=${encodeURIComponent(topic.topicName)}&topicName_cn=${encodeURIComponent(topic.topicName_cn)}&&state=${topic.status.state}`,
+        url: `/pages/detailBasic/detailBasic?type=${type}&topicId=${topic.topicId}&topicName=${encodeURIComponent(topic.topicName)}&topicName_cn=${encodeURIComponent(topic.topicName_cn)}&&state=${topic.status.state}`,
         fail: (err) => {
           // console.error('导航失败:', err);
           // wx.showToast({

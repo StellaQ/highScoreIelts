@@ -2,10 +2,10 @@ const BASE_URL = 'http://localhost:3001'; // 替换为实际的 API 地址
 
 const API = {
   // basic 获取分类数据
-  getCategories: (userId: string): Promise<any> => {
+  getCategories: (userId: string, type: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
-        url: `${BASE_URL}/api/basic/getCategories?userId=${userId}`,
+        url: `${BASE_URL}/api/basic/getCategories?userId=${userId}&type=${type}`,
         method: 'GET',
         success: (res: any) => {
           if (res.statusCode === 200) {

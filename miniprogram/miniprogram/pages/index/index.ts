@@ -8,12 +8,13 @@ Page({
   },
   navigateToIntermediate() {
     wx.navigateTo({
-      url: '/pages/advancedPractice/advancedPractice'
+      url: '/pages/test1/test1?type=basic'
+      // url: '/pages/advancedPractice/advancedPractice'
     });
   },
   navigateToAdvanced() {
     wx.navigateTo({
-      url: '/pages/expertPractice/expertPractice'
+      url: '/pages/test1/test1?type=expert'
     });
   },
   startAIPractice() {
