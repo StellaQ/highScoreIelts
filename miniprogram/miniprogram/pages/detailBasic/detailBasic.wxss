@@ -1,0 +1,321 @@
+/* 容器 */
+.containerBasic {
+    padding: 10px;
+    background-color: #F5F7FA;
+    min-height: 100vh;
+  }
+  
+  /* 头部样式 */
+  .header {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: calc(100% - 48px);
+  }
+  
+  .topic-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .topic-name {
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+  }
+  
+  .topic-name-cn {
+    font-size: 16px;
+    color: #86909C;
+    margin-top: 4px;
+    display: block;
+  }
+  
+  .topic-status {
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .status-new {
+    background: #E8F7E6;
+    color: #18A058;
+  }
+  
+  .status-review {
+    background: #E8FFFB;
+    color: #13C2C2;
+  }
+  
+  .status-done {
+    background: #FFE4BA;
+    color: #FF8F1F;
+  }
+  
+  /* 问题卡片样式 */
+  .question-section {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: calc(100% - 48px);
+  }
+  /* state=0 的卡片样式 */
+  .state0 .question-card {
+    width: 100%;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    min-height: 300px;
+  }
+  
+  /* state=1和state=2的卡片样式 */
+  .state1 .question-card,
+  .state2 .question-card {
+    width: 100%;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    min-height: 200px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    text-align: justify;
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding: 24px; */
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    background: #fff;
+  }
+  
+  .question-card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .question-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  .question-tip {
+    font-size: 14px;
+    color: #86909C;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .question-title-cn {
+    font-size: 16px;
+    color: #86909C;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  
+  .answer-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1D2129;
+  }
+  
+  .answer-input {
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #E5E6EB;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 80px;
+    font-size: 16px;
+  }
+  
+  .submit-btn {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: #18A058;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  .state1 .submit-btn {
+    background: #13C2C2;
+  }
+  
+  .state2 .submit-btn {
+    background: #FF8F1F;
+  }
+  
+  /* AI 反馈区域 */
+  .ai-feedback {
+    margin-top: 24px;
+    background: #F8F9FC;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .ai-feedback-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1D2129;
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  .ai-feedback-content {
+    color: #4E5969;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .feedback-list {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  /* 复习时间选择区域 */
+  .review-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: calc(100% - 48px);
+  }
+  
+  .review-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: block;
+  }
+  
+  .review-options {
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+    /* gap: 12px; */
+    margin-bottom: 16px;
+  }
+  
+  .review-option {
+    flex: 0 0 auto;
+    padding: 8px 8px;
+    border-radius: 100px;
+    font-size: 14px;
+    background: #F2F7FF;
+    color: #86909C;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* state=0 的选项样式 */
+  .state0 .review-option.selected {
+    background: #F2F7FF;
+    color: #18A058;
+  }
+  
+  /* state=1 的选项样式 */
+  .state1 .review-option.selected {
+    background: #F2F7FF;
+    color: #13C2C2;
+  }
+  
+  /* state=2 的选项样式 */
+  .state2 .review-option.selected {
+    background: #F2F7FF;
+    color: #FF8F1F;
+  }
+  
+  .review-status {
+    font-size: 12px;
+    color: #86909C;
+    margin-left: 8px;
+  }
+  
+  .next-review-time {
+    font-size: 12px;
+    color: #86909C;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .next-review-time::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2386909C' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  
+  .confirm-btn {
+    width: 50%;
+    margin-top: 16px;
+    background: #18A058;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  
+  .state1 .confirm-btn {
+    background: #13C2C2;
+  }
+  
+  .state2 .confirm-btn {
+    background: #FF8F1F;
+  }
+  
+  .confirm-btn[disabled] {
+    background: #C9CDD4 !important;
+    color: #fff !important;
+  }

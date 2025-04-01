@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #F5F7FA;
+            color: #1D2129;
+            line-height: 1.5;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .state-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .state-btn {
+            padding: 8px 16px;
+            border: 1px solid #E5E6EB;
+            border-radius: 6px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .state-btn:hover {
+            border-color: #165DFF;
+            color: #165DFF;
+        }
+
+        .state-btn.active {
+            background: #165DFF;
+            color: #fff;
+            border-color: #165DFF;
+        }
+
+        .prototype-section {
+            margin-top: 60px;
+            display: none;
+        }
+
+        .prototype-section.active {
+            display: block;
+        }
+
+        /* 头部样式 */
+        .header {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .topic-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .topic-name {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .topic-name-cn {
+            font-size: 16px;
+            color: #86909C;
+            margin-top: 4px;
+        }
+
+        .topic-status {
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .status-new {
+            background: #E8F7E6;
+            color: #18A058;
+        }
+
+        .status-review {
+            background: #E8FFFB;
+            color: #13C2C2;
+        }
+
+        .status-done {
+            background: #FFE4BA;
+            color: #FF8F1F;
+        }
+
+        /* 状态相关的颜色 */
+        .state-2-color {
+            background: #13C2C2 !important;
+            border-color: #13C2C2 !important;
+            color: #fff !important;
+        }
+
+        .state-2-hover:hover {
+            border-color: #13C2C2 !important;
+            color: #13C2C2 !important;
+        }
+
+        .state-3-color {
+            background: #FF8F1F !important;
+            border-color: #FF8F1F !important;
+            color: #fff !important;
+        }
+
+        .state-3-hover:hover {
+            border-color: #FF8F1F !important;
+            color: #FF8F1F !important;
+        }
+
+        /* 问题卡片样式 */
+        .question-section {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .question-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+            perspective: 1000px;
+            min-height: 200px;
+        }
+
+        /* state=1 的卡片样式 */
+        #state1 .question-card {
+            padding: 24px;
+            position: relative;
+            min-height: 300px;
+        }
+
+        #state1 .submit-btn {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+        }
+
+        #state1 .answer-input {
+            margin-bottom: 80px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            padding: 24px;
+            background: #fff;
+            border-radius: 16px;
+        }
+
+        .card-front .question-title, 
+        .card-back .answer-content {
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .question-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .question-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .question-title-cn {
+            font-size: 16px;
+            color: #86909C;
+            margin-top: 4px;
+            margin-bottom: 16px;
+        }
+
+        .tips {
+            background: #F2F3F5;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #4E5969;
+        }
+
+        .tips ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        /* 用户输入区域样式 */
+        .answer-input {
+            width: 100%;
+            min-height: 120px;
+            border: 1px solid #E5E6EB;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 60px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #18A058;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #0C7A43;
+        }
+
+        .submit-btn:disabled {
+            background: #C9CDD4;
+            cursor: not-allowed;
+        }
+
+        /* AI 反馈区域 */
+        .ai-feedback {
+            margin-top: 24px;
+            background: #F8F9FC;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .ai-feedback-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1D2129;
+            margin-bottom: 12px;
+        }
+
+        .ai-feedback-content {
+            color: #4E5969;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* 复习时间选择区域 */
+        .review-section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .review-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .review-status {
+            font-size: 14px;
+            color: #86909C;
+        }
+
+        .review-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .review-option {
+            padding: 12px;
+            border: 1px solid #E5E6EB;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fff;
+        }
+
+        /* state=1 的选项样式 */
+        #state1 .review-option:hover {
+            border-color: #18A058;
+            color: #18A058;
+        }
+
+        #state1 .review-option.selected {
+            background: #18A058;
+            color: #fff;
+            border-color: #18A058;
+        }
+
+        /* state=2 的选项样式 */
+        #state2 .review-option:hover {
+            border-color: #13C2C2;
+            color: #13C2C2;
+        }
+
+        #state2 .review-option.selected {
+            background: #13C2C2;
+            color: #fff;
+            border-color: #13C2C2;
+        }
+
+        /* state=3 的选项样式 */
+        #state3 .review-option:hover {
+            border-color: #FF8F1F;
+            color: #FF8F1F;
+        }
+
+        #state3 .review-option.selected {
+            background: #FF8F1F;
+            color: #fff;
+            border-color: #FF8F1F;
+        }
+
+        .next-review-time {
+            font-size: 14px;
+            color: #86909C;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        /* 遮罩层 */
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .mask.active {
+            display: flex;
+        }
+
+        .mask-content {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .mask-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .mask-text {
+            color: #4E5969;
+            margin-bottom: 24px;
+        }
+
+        /* state=2和state=3的卡片样式 */
+        #state2 .card-front,
+        #state2 .card-back,
+        #state3 .card-front,
+        #state3 .card-back {
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        #state2 .question-title,
+        #state2 .answer-content,
+        #state3 .question-title,
+        #state3 .answer-content {
+            padding: 24px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 状态切换导航 -->
+    <div class="state-nav">
+        <button class="state-btn active" onclick="switchState(1)">新题目 (state=1)</button>
+        <button class="state-btn" onclick="switchState(2)">待复习 (state=2)</button>
+        <button class="state-btn" onclick="switchState(3)">已复习 (state=3)</button>
+    </div>
+
+    <!-- 新题目状态 (state=1) -->
+    <div class="container prototype-section active" id="state1">
+        <div class="header">
+            <div class="topic-title">
+                <div>
+                    <div class="topic-name">Accommodation</div>
+                    <div class="topic-name-cn">住宿</div>
+                </div>
+                <div class="topic-status status-new">新题目</div>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <!-- 问题1 -->
+            <div class="question-card">
+                <h2 class="question-title">What's the duration of your stay at your current residence?</h2>
+                <h3 class="question-title-cn">您在当前住所居住了多长时间？</h3>
+                <textarea class="answer-input" placeholder="请输入你的答案..."></textarea>
+                <button class="submit-btn" onclick="showAIFeedback(this)">提交答案</button>
+                <div class="ai-feedback" style="display: none;">
+                    <div class="ai-feedback-title">AI 反馈</div>
+                    <div class="ai-feedback-content">
+                        你的回答整体不错，表达流畅。以下是一些改进建议：
+                        <ul>
+                            <li>可以添加更多细节描述</li>
+                            <li>建议使用更多时间相关的表达</li>
+                            <li>可以谈谈这段时间的感受</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 问题2 -->
+            <div class="question-card">
+                <h2 class="question-title">How does your current neighborhood influence your daily life?</h2>
+                <h3 class="question-title-cn">您当前的社区环境如何影响您的日常生活？</h3>
+                <textarea class="answer-input" placeholder="请输入你的答案..."></textarea>
+                <button class="submit-btn" onclick="showAIFeedback(this)">提交答案</button>
+                <div class="ai-feedback" style="display: none;">
+                    <div class="ai-feedback-title">AI 反馈</div>
+                    <div class="ai-feedback-content">
+                        你的回答整体不错，表达流畅。以下是一些改进建议：
+                        <ul>
+                            <li>可以添加更多具体例子</li>
+                            <li>建议使用更多环境描述词汇</li>
+                            <li>可以谈谈社区设施的使用</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 更多问题卡片... -->
+        </div>
+
+        <div class="review-section">
+            <h2 class="review-title">选择下次复习时间</h2>
+            <div class="review-options">
+                <div class="review-option">1天后</div>
+                <div class="review-option">3天后</div>
+                <div class="review-option">7天后</div>
+                <div class="review-option">15天后</div>
+                <div class="review-option">已掌握，无需复习</div>
+            </div>
+            <div class="next-review-time">请先完成答题并获取AI反馈</div>
+            <button class="submit-btn confirm-btn" disabled>确认复习时间</button>
+        </div>
+    </div>
+
+    <!-- 待复习状态 (state=2) -->
+    <div class="container prototype-section" id="state2">
+        <div class="header">
+            <div class="topic-title">
+                <div>
+                    <div class="topic-name">Accommodation</div>
+                    <div class="topic-name-cn">住宿</div>
+                </div>
+                <div class="topic-status status-review">今日待复习</div>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <!-- 问题1 -->
+            <div class="question-card">
+                <div class="card-inner" onclick="flipCard(this)">
+                    <div class="card-front">
+                        <div class="question-title">What's the duration of your stay at your current residence?</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer-content">参考答案：
+
+I have been living in my current apartment for about two years now. It's a comfortable place that I moved into shortly after starting my new job in this city. The location has proven to be very convenient for my daily commute and lifestyle needs.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 问题2 -->
+            <div class="question-card">
+                <div class="card-inner" onclick="flipCard(this)">
+                    <div class="card-front">
+                        <div class="question-title">How does your current neighborhood influence your daily life?</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer-content">参考答案：
+
+My neighborhood has a significant positive impact on my daily life. The area is quite peaceful and well-maintained, with plenty of green spaces where I can exercise or relax. There are several convenience stores and restaurants within walking distance, which makes running errands very easy.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h2 class="review-title">
+                选择下次复习时间
+                <span class="review-status">必选</span>
+            </h2>
+            <div class="review-options">
+                <div class="review-option">1天后</div>
+                <div class="review-option">3天后</div>
+                <div class="review-option">7天后</div>
+                <div class="review-option">15天后</div>
+                <div class="review-option">已掌握，无需复习</div>
+            </div>
+            <div class="next-review-time">请选择下次复习时间</div>
+            <button class="submit-btn state-2-color confirm-btn" disabled>确认复习时间</button>
+        </div>
+    </div>
+
+    <!-- 已复习状态 (state=3) -->
+    <div class="container prototype-section" id="state3">
+        <div class="header">
+            <div class="topic-title">
+                <div>
+                    <div class="topic-name">Accommodation</div>
+                    <div class="topic-name-cn">住宿</div>
+                </div>
+                <div class="topic-status status-done">今日已完成</div>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <div class="question-card">
+                <div class="card-inner" onclick="flipCard(this)">
+                    <div class="card-front">
+                        <div class="question-title">What's the duration of your stay at your current residence?</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer-content">参考答案：
+
+I have been living in my current apartment for about two years now. It's a comfortable place that I moved into shortly after starting my new job in this city. The location has proven to be very convenient for my daily commute and lifestyle needs.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 问题2 -->
+            <div class="question-card">
+                <div class="card-inner" onclick="flipCard(this)">
+                    <div class="card-front">
+                        <div class="question-title">How does your current neighborhood influence your daily life?</div>
+                    </div>
+                    <div class="card-back">
+                        <div class="answer-content">参考答案：
+
+My neighborhood has a significant positive impact on my daily life. The area is quite peaceful and well-maintained, with plenty of green spaces where I can exercise or relax. There are several convenience stores and restaurants within walking distance, which makes running errands very easy.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h2 class="review-title">
+                下次复习时间
+                <span class="review-status">可修改</span>
+            </h2>
+            <div class="review-options">
+                <div class="review-option">1天后</div>
+                <div class="review-option">3天后</div>
+                <div class="review-option">7天后</div>
+                <div class="review-option">15天后</div>
+                <div class="review-option">已掌握，无需复习</div>
+            </div>
+            <div class="next-review-time">下次复习时间：2024年3月18日</div>
+            <button class="submit-btn state-3-color confirm-btn">修改复习时间</button>
+        </div>
+    </div>
+
+    <!-- 提示遮罩 -->
+    <div class="mask" id="tipMask">
+        <div class="mask-content">
+            <h3 class="mask-title">请选择复习时间</h3>
+            <p class="mask-text">完成复习后需要选择下次复习时间</p>
+            <button class="submit-btn" onclick="document.getElementById('tipMask').classList.remove('active')">
+                知道了
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 切换状态展示
+        function switchState(state) {
+            document.querySelectorAll('.state-btn').forEach(btn => 
+                btn.classList.remove('active'));
+            document.querySelectorAll('.prototype-section').forEach(section => 
+                section.classList.remove('active'));
+            
+            document.querySelector(`.state-btn:nth-child(${state})`).classList.add('active');
+            document.getElementById(`state${state}`).classList.add('active');
+        }
+
+        // 显示AI反馈
+        function showAIFeedback(btn) {
+            const card = btn.closest('.question-card');
+            card.querySelector('.ai-feedback').style.display = 'block';
+            
+            // 检查是否所有问题都已获得反馈
+            const allCards = document.querySelectorAll('#state1 .question-card');
+            const allFeedbacks = document.querySelectorAll('#state1 .ai-feedback[style="display: block"]');
+            
+            if (allCards.length === allFeedbacks.length) {
+                document.querySelector('#state1 .review-section .next-review-time').textContent = 
+                    '请选择下次复习时间';
+                document.querySelector('#state1 .review-section .confirm-btn').disabled = false;
+            }
+        }
+
+        // 卡片翻转
+        function flipCard(element) {
+            const card = element.closest('.question-card');
+            if (card) {
+                card.classList.toggle('flipped');
+            }
+        }
+
+        // 复习选项点击处理
+        document.querySelectorAll('.review-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const section = this.closest('.prototype-section');
+                section.querySelectorAll('.review-option').forEach(opt => 
+                    opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                // 更新下次复习时间显示
+                const text = this.textContent;
+                if (text === '已掌握，无需复习') {
+                    section.querySelector('.next-review-time').textContent = 
+                        '该主题已掌握，无需再复习';
+                } else {
+                    const days = text.replace('天后', '');
+                    const nextDate = new Date();
+                    nextDate.setDate(nextDate.getDate() + parseInt(days));
+                    const dateStr = nextDate.toLocaleDateString('zh-CN', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    section.querySelector('.next-review-time').textContent = 
+                        `下次复习时间：${dateStr}`;
+                }
+
+                // 启用确认按钮
+                section.querySelector('.confirm-btn').disabled = false;
+            });
+        });
+
+        // 确认按钮点击处理
+        document.querySelectorAll('.confirm-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.closest('.prototype-section');
+                const selected = section.querySelector('.review-option.selected');
+                if (!selected && section.id === 'state2') {
+                    document.getElementById('tipMask').classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

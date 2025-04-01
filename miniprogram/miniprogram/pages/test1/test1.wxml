@@ -39,7 +39,7 @@
           3:future the-other-day-review
           4:mastered completed -->
           <view class="topic-card {{topic.status.state === 0 ? 'new' : topic.status.state === 1 ? 'today' : topic.status.state === 2 ? 'completed' : topic.status.state === 3 ? 'future' : 'mastered'}}"
-                bindtap="{{topic.status.state <= 2 ? 'handleTopicTap' : ''}}"
+                bindtap="onTopicTap"
                 data-topic="{{topic}}">
             <view class="progress-circle">
               <text>{{topic.status.progress}}%</text>

@@ -88,13 +88,13 @@ Page({
   },
 
   // 处理话题卡片点击
-  handleTopicTap(e: WechatMiniprogram.CustomEvent) {
+  onTopicTap(e: WechatMiniprogram.CustomEvent) {
     const topic: Topic = e.currentTarget.dataset.topic;
     
     // 只有state为0、1、2的话题可以跳转
     if (topic.status.state <= 2) {
       wx.navigateTo({
-        url: `/pages/detailBasic/detailBasic?topicId=${topic.topicId}&state=${topic.status.state}`,
+        url: `/pages/detailBasic/detailBasic?topicId=${topic.topicId}&topicName=${encodeURIComponent(topic.topicName)}&topicName_cn=${encodeURIComponent(topic.topicName_cn)}&&state=${topic.status.state}`,
         fail: (err) => {
           // console.error('导航失败:', err);
           // wx.showToast({

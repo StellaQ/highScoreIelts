@@ -1,2 +1,72 @@
-<view>
-dkdkdkdk</view>
+<view class="containerBasic {{state === 0 ? 'state0' : state === 1 ? 'state1' : state === 2 ? 'state2' : ''}}">
+  <!-- 头部信息 -->
+  <view class="header">
+    <view class="topic-title">
+      <view>
+        <text class="topic-name">{{topicName}}</text>
+        <text class="topic-name-cn">{{topicName_cn}}</text>
+      </view>
+      <view class="topic-status {{state === 0 ? 'status-new' : state === 1 ? 'status-review' : state === 2 ? 'status-done' : ''}}">
+        {{state === 0 ? '新题目' : state === 1 ? '待复习' : state === 2 ? '已复习' : ''}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 问题列表 -->
+  <view class="question-section">
+    <block wx:if="{{state === 0}}">
+      <view wx:for="{{questions}}" wx:key="index" class="question-card">
+        <text class="question-title">{{item.qTitle}}</text>
+        <text class="question-title-cn">{{item.qTitle_cn}}</text>
+        <textarea class="answer-input" placeholder="请输入你的答案..." />
+        <button class="submit-btn" bindtap="onSubmitAnswer" data-index="{{index}}">提交答案</button>
+        <view class="ai-feedback" wx:if="{{feedbacks[index]}}">
+          <text class="ai-feedback-title">AI 反馈</text>
+          <view class="ai-feedback-content">
+            你的回答整体不错，表达流畅。以下是一些改进建议：
+            <view class="feedback-list">
+              <text>• 可以添加更多细节描述</text>
+              <text>• 建议使用更多时间相关的表达</text>
+              <text>• 可以谈谈这段时间的感受</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{state === 1|| state === 2}}">
+      <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
+        <view class="card-inner">
+          <view class="card-front">
+            <text class="question-title">{{item.qTitle}}</text>
+            <text class="question-tip">fluent & no repetition</text>
+          </view>
+          <view class="card-back">
+            <view class="answer-content">
+              {{item.answer || '暂无参考答案'}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 复习时间选择 -->
+  <view class="review-section">
+    <text class="review-title">选择下次复习时间
+      <!-- <text wx:if="{{state === 1}}" class="review-status">必选</text> -->
+      <text wx:if="{{state === 2}}" class="review-status">可修改</text>
+    </text>
+    <view class="review-options">
+      <view class="review-option {{selectedTime === '1' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="1">1天</view>
+      <view class="review-option {{selectedTime === '3' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="3">3天</view>
+      <view class="review-option {{selectedTime === '7' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="7">7天</view>
+      <view class="review-option {{selectedTime === '15' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="15">15天</view>
+      <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
+    </view>
+    <text class="next-review-time">{{nextReviewText || state === 0 ? '请先完成答题并获取AI反馈' : state === 1 ? '打卡完再确认复习时间' : state === 2 ? '复习时间可以修改' : ''}}</text>
+    <button class="confirm-btn" disabled="{{!canConfirm}}" bindtap="onConfirmTime">
+      {{state === 2 ? '修改复习时间' : '确认复习时间'}}
+    </button>
+  </view>
+</view>
