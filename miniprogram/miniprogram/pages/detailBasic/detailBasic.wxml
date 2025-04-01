@@ -55,7 +55,7 @@
   <view class="review-section">
     <text class="review-title">选择下次复习时间
       <!-- <text wx:if="{{state === 1}}" class="review-status">必选</text> -->
-      <text wx:if="{{state === 2}}" class="review-status">可修改</text>
+      <!-- <text wx:if="{{state === 2}}" class="review-status">可修改</text> -->
     </text>
     <view class="review-options">
       <view class="review-option {{selectedTime === '1' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="1">1天</view>
