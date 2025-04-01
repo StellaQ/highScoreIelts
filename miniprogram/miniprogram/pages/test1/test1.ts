@@ -34,19 +34,13 @@ Page({
   data: {
     isLoaded: false, // 控制骨架屏显示
     categories: [] as ProcessedCategory[], // 存储分类数据
-    type: '' // basic / advanced / expert
   },
 
-  onLoad: function(options) {
+  onLoad: function() {
     const app = getApp<IAppOption>();
     const userId = app.globalData.userInfo?.userId;
-
-    // 从页面参数获取类型
-    const type = options.type || '';
-    this.setData({ type: type });
-
     if (userId) {
-      this.fetchCategories(userId, type);
+      this.fetchCategories(userId);
     } else {
       console.error('未获取到userId');
       wx.showToast({

@@ -1,0 +1,59 @@
+<view class="container">
+  <!-- 骨架屏 -->
+  <block wx:if="{{!isLoaded}}">
+    <!-- 标题栏骨架屏 -->
+    <view class="header">
+      <view class="skeleton skeleton-text skeleton-title"></view>
+      <view class="skeleton skeleton-text skeleton-progress"></view>
+    </view>
+
+    <!-- 话题卡片网格骨架屏 -->
+    <view class="topics-grid">
+      <view wx:for="{{7}}" wx:key="index" class="skeleton-card">
+        <view class="skeleton-circle"></view>
+        <view class="skeleton-info">
+          <view class="skeleton skeleton-name"></view>
+          <view class="skeleton skeleton-stats"></view>
+          <view class="skeleton skeleton-tag"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 实际内容 -->
+  <block wx:else>
+    <block wx:for="{{categories}}" wx:key="categoryId">
+      <!-- 标题栏 -->
+      <view wx:if="{{item.topics.length > 0}}" class="header">
+        <view class="title">{{item.categoryNameInChinese}}</view>
+        <view class="progress">{{item.masteredCount}}/{{item.topics.length}}</view>
+      </view>
+
+      <!-- 话题卡片网格 -->
+      <view wx:if="{{item.topics.length > 0}}" class="topics-grid">
+        <block wx:for="{{item.topics}}" wx:for-item="topic" wx:key="topicId">
+          <!-- 根据topic.status判断显示哪种状态的卡片 -->
+          <!-- 0:new 
+          1:today today-review
+          2:completed today-done
+          3:future the-other-day-review
+          4:mastered completed -->
+          <view class="topic-card {{topic.status.state === 0 ? 'new' : topic.status.state === 1 ? 'today' : topic.status.state === 2 ? 'completed' : topic.status.state === 3 ? 'future' : 'mastered'}}"
+                bindtap="onTopicTap"
+                data-topic="{{topic}}">
+            <view class="progress-circle">
+              <text>{{topic.status.progress}}%</text>
+            </view>
+            <view class="topic-info">
+              <text class="topic-name">{{topic.topicName_cn}}</text>
+              <text class="topic-stats">{{topic.status.state === 0 ? '未开始练习' : 
+                                        (topic.status.state === 1 || topic.status.state === 2 || topic.status.state === 3) ? '已练习' + topic.status.practiceCount + '次' : 
+                                        '练习了' + topic.status.practiceCount + '次'}}</text>
+              <text class="status-tag">{{topic.status.state === 0 ? 'NEW' : topic.status.state === 1 ? '今日待复习' : topic.status.state === 2 ? '今日已完成' : topic.status.state === 3 ? topic.status.gapDate + '复习' : '已掌握'}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+</view>

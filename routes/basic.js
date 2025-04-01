@@ -6,13 +6,9 @@ const path = require('path');
 // 获取分类数据的API
 router.get('/getCategories', async (req, res) => {
   // console.log('getCategories');
-  const type = req.query.type;
-  console.log('type', type);
-  if (type === 'basic') {
-    try {
-      console.log('basic  ====   list');
-      // 读取categories.json文件
-      const categoriesPath = path.join(__dirname, '../data_for_server/archive/basic/categories.json');
+  try {
+    // 读取categories.json文件
+    const categoriesPath = path.join(__dirname, '../data_for_server/archive/basic/categories.json');
     const categoriesData = await fs.readFile(categoriesPath, 'utf8');
     const categories = JSON.parse(categoriesData);
 
@@ -50,17 +46,17 @@ router.get('/getCategories', async (req, res) => {
       {
         topicId: "Basic_2025Q1_t7",
         status: {
-          progress: 100,
+          progress: 40,
           practiceCount: 4,
           state: 4
         }
       }
     ]
-    // 0:new progress: 0
+    // 0:new 
     // 1:today-review
     // 2:today-done
     // 3:the-other-day-review : gapDays
-    // 4:completed progress: 100
+    // 4:completed
 
     // 处理数据，添加额外的状态信息
     const processedCategories = categories.mixed_categories.map(category => {
@@ -101,7 +97,6 @@ router.get('/getCategories', async (req, res) => {
       message: 'Failed to get categories',
       error: error.message
     });
-    }
   }
 });
 
