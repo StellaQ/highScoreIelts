@@ -46,17 +46,17 @@ router.get('/getCategories', async (req, res) => {
       {
         topicId: "Basic_2025Q1_t7",
         status: {
-          progress: 40,
+          progress: 100,
           practiceCount: 4,
           state: 4
         }
       }
     ]
-    // 0:new 
+    // 0:new   progress: 0
     // 1:today-review
     // 2:today-done
     // 3:the-other-day-review : gapDays
-    // 4:completed
+    // 4:completed  progress: 100
 
     // 处理数据，添加额外的状态信息
     const processedCategories = categories.mixed_categories.map(category => {

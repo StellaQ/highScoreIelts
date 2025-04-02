@@ -1,16 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/basicPractice/basicPractice",
     "pages/test1/test1",
-    "pages/listExpert/listExpert",
     "pages/detailBasic/detailBasic",
+    "pages/listExpert/listExpert",
+    "pages/detailExpert/detailExpert",
     "pages/advancedPractice/advancedPractice",
-    "pages/expertPractice/expertPractice",
     "pages/aiSimulation/aiSimulation",
     "pages/aboutMe/aboutMe",
-    "pages/feedback/feedback",
-    "pages/logs/logs"
+    "pages/feedback/feedback"
   ],
   "usingComponents": {
     "tab-bar": "/components/tabBar/tabBar",
