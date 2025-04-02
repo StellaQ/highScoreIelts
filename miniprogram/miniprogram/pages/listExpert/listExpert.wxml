@@ -9,7 +9,7 @@
 
     <!-- 话题卡片网格骨架屏 -->
     <view class="topics-grid">
-      <view wx:for="{{7}}" wx:key="index" class="skeleton-card">
+      <view wx:for="{{4}}" wx:key="index" class="skeleton-card">
         <view class="skeleton-circle"></view>
         <view class="skeleton-info">
           <view class="skeleton skeleton-name"></view>

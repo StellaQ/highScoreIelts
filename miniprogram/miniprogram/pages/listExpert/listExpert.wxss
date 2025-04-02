@@ -35,12 +35,13 @@
   border: 1rpx solid #f0f0f0 !important;
   opacity: 0.8;
   height: 160rpx;
-  padding: 20rpx;
-  border-radius: 16rpx;
+  padding: 24rpx 30rpx;
+  border-radius: 24rpx;
   display: flex;
   align-items: center;
-  gap: 20rpx;
+  gap: 24rpx;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .skeleton-circle {
@@ -55,10 +56,11 @@
 
 .skeleton-info {
   flex: 1;
-  min-width: 0; /* 防止子元素溢出 */
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 12rpx;
+  align-items: flex-end;
+  gap: 8rpx;
 }
 
 .skeleton-title {
@@ -73,22 +75,21 @@
 
 .skeleton-name {
   width: 100%;
-  max-width: 160rpx;
+  max-width: 300rpx;
   height: 32rpx;
-  margin-bottom: 12rpx;
 }
 
 .skeleton-stats {
   width: 100%;
-  max-width: 120rpx;
+  max-width: 200rpx;
   height: 28rpx;
-  margin-bottom: 12rpx;
+  margin: 4rpx 0;
 }
 
 .skeleton-tag {
   width: 100%;
-  max-width: 100rpx;
-  height: 40rpx;
+  max-width: 120rpx;
+  height: 32rpx;
   border-radius: 100rpx;
 }
 
