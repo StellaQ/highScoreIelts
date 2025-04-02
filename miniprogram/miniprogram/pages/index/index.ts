@@ -3,12 +3,12 @@ Page({
   },
   navigateToBasic() {
     wx.navigateTo({
-      url: '/pages/basicPractice/basicPractice'
+      url: '/pages/listBasic/listBasic'
     });
   },
   navigateToIntermediate() {
     wx.navigateTo({
-      url: '/pages/advancedPractice/advancedPractice'
+      url: '/pages/listAdvanced/listAdvanced'
     });
   },
   navigateToAdvanced() {

@@ -43,11 +43,11 @@
     </view>
 
     <!-- 底部 Banner -->
-    <view class="banner" bindtap="startAIPractice">
+    <!-- <view class="banner" bindtap="startAIPractice">
       <view class="banner-title">🤖 AI 模拟考试</view>
       <view class="banner-subtitle">智能抽题，模拟真实考试场景</view>
       <view class="start-button">开始模拟考</view>
-    </view>
+    </view> -->
   </view>
   <tab-bar active="0"></tab-bar>
 </view>
