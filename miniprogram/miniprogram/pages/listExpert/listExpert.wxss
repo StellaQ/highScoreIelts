@@ -116,8 +116,9 @@
 /* 话题卡片网格 */
 .topics-grid {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 24rpx;
   margin-bottom: 30rpx;
 }
@@ -125,10 +126,12 @@
 /* 话题卡片基础样式 */
 .topic-card {
   border-radius: 24rpx;
-  padding: 18rpx;
+  padding: 15rpx 30rpx;
   display: flex;
   align-items: center;
   gap: 24rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* 进度圆圈 */
@@ -153,7 +156,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8rpx;
+  align-items: flex-end;
+  gap: 12rpx;
 }
 
 .topic-name {

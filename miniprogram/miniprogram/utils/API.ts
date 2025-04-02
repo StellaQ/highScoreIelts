@@ -18,6 +18,23 @@ const API = {
       });
     });
   },
+  // expert 获取分类数据
+  getExpertCategories: (userId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/expert/getCategories?userId=${userId}`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
   // 执行签到 done
   signIn: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
