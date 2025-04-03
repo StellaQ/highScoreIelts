@@ -58,7 +58,7 @@ Page({
   // 获取分类数据
   async fetchCategories(userId: string) {
     try {
-      const res = await API.getCategories(userId);
+      const res = await API.getAdvancedCategories(userId);
       // console.log('分类数据:', res.data);
       
       // 处理数据，计算每个分类的已掌握题目数量

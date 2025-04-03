@@ -41,6 +41,8 @@ const basicRoutes = require('./routes/basic');
 app.use('/api/basic', basicRoutes);
 const expertRoutes = require('./routes/expert');
 app.use('/api/expert', expertRoutes);
+const advancedRoutes = require('./routes/advanced');
+app.use('/api/advanced', advancedRoutes);
 
 const feedbackRoutes = require('./routes/feedback');
 app.use('/api/feedback', feedbackRoutes);
