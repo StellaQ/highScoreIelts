@@ -20,34 +20,31 @@
 .user-section {
   width: 100%;
   background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  padding: 40rpx 30rpx;
-  color: #ffffff;
+  padding: 32rpx;
+  color: #fff;
   border-radius: 24rpx;
-  margin-bottom: 30rpx;
+  margin: 24rpx;
   box-sizing: border-box;
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 30rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 32rpx;
 }
 
 .avatar {
   width: 120rpx;
   height: 120rpx;
   border-radius: 60rpx;
+  margin-right: 24rpx;
   border: 4rpx solid rgba(255, 255, 255, 0.3);
-}
-
-.user-detail {
-  flex: 1;
 }
 
 .nickname {
   font-size: 36rpx;
-  font-weight: bold;
+  font-weight: 500;
+  color: #fff;
 }
 
 .points-info {
@@ -62,9 +59,8 @@
 }
 
 .points-value {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #FFD700;
+  font-size: 48rpx;
+  font-weight: 600;
 }
 
 .points-actions {
@@ -289,22 +285,6 @@
 /* VIP用户信息卡片样式 */
 .user-card.vip {
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.avatar-container{
-  position: relative;
-}
-.vip-badge1 {
-  position: absolute;
-  left: 42rpx;
-  top: -20rpx;
-  width: 20rpx;
-  height: 20rpx;
 }
 
 .user-details {
@@ -546,69 +526,69 @@
 .points-section {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16rpx;
-  padding: 20rpx;
+  padding: 24rpx;
 }
 
 .points-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30rpx;
-  padding: 0 10rpx;
+  margin-bottom: 24rpx;
 }
 
 .points-title {
-  font-size: 28rpx;
-  opacity: 0.9;
+  font-size: 32rpx;
+  font-weight: 500;
 }
 
 .points-value {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #FFD700;
+  font-size: 48rpx;
+  font-weight: 600;
 }
 
 /* 操作卡片通用样式 */
 .action-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12rpx;
-  padding: 16rpx 20rpx;
-  margin-bottom: 12rpx;
   transition: all 0.3s ease;
 }
 
 .action-card:active {
-  transform: scale(0.98);
   background: rgba(255, 255, 255, 0.2);
+}
+
+.action-card.checked {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .action-left {
   display: flex;
   align-items: center;
-  gap: 12rpx;
+  gap: 16rpx;
 }
 
 .action-icon {
-  font-size: 32rpx;
+  font-size: 40rpx;
 }
 
 .action-info {
   display: flex;
   flex-direction: column;
-  gap: 2rpx;
 }
 
 .action-title {
-  font-size: 26rpx;
-  color: #ffffff;
+  font-size: 28rpx;
   font-weight: 500;
+  margin-bottom: 4rpx;
 }
 
 .action-desc {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -616,18 +596,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2rpx;
 }
 
 .action-status {
-  font-size: 24rpx;
-  color: #ffffff;
+  font-size: 28rpx;
+  margin-bottom: 4rpx;
 }
 
 .action-points {
-  font-size: 22rpx;
-  color: #FFD700;
-  font-weight: bold;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* 签到卡片特殊样式 */
@@ -651,23 +629,23 @@
 
 /* 邀请码输入入口样式 */
 .invite-code-entry {
-  margin-top: 20rpx;
-  padding: 20rpx;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24rpx;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16rpx;
+  margin-top: 16rpx;
 }
 
 .entry-text {
-  font-size: 26rpx;
-  color: #ffffff;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .entry-arrow {
-  color: #ffffff;
-  opacity: 0.8;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* 邀请码输入弹窗样式 */
@@ -819,5 +797,5 @@
 }
 .highlight {
   color: #FFD700;
-  font-weight: bold;
+  margin: 0 4rpx;
 }
