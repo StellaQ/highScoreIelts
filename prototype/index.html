@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鼠SPEAKING</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #F5F7FA;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 16px 0;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #1D2129;
+            margin-bottom: 8px;
+        }
+
+        .hot-topics {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .hot-topics img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hot-topics span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1D2129;
+        }
+
+        .level-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .level-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .level-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .level-card.basic {
+            border-left: 4px solid #18A058;
+        }
+
+        .level-card.advanced {
+            border-left: 4px solid #13C2C2;
+        }
+
+        .level-card.expert {
+            border-left: 4px solid #FF8F1F;
+        }
+
+        .level-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .basic .level-icon {
+            background: rgba(24, 160, 88, 0.1);
+        }
+
+        .advanced .level-icon {
+            background: rgba(19, 194, 194, 0.1);
+        }
+
+        .expert .level-icon {
+            background: rgba(255, 143, 31, 0.1);
+        }
+
+        .level-info {
+            flex: 1;
+        }
+
+        .level-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1D2129;
+            margin-bottom: 8px;
+        }
+
+        .level-desc {
+            font-size: 14px;
+            color: #86909C;
+        }
+
+        .practice-btn {
+            padding: 8px 24px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            color: #FFFFFF;
+        }
+
+        .basic .practice-btn {
+            background: #18A058;
+        }
+
+        .advanced .practice-btn {
+            background: #13C2C2;
+        }
+
+        .expert .practice-btn {
+            background: #FF8F1F;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1D2129;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: #86909C;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>小鼠SPEAKING</h1>
+    </div>
+
+    <div class="hot-topics">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF4D4F' d='M12 23a7.5 7.5 0 0 1-5.138-12.963C8.204 8.774 11.5 6.5 11 1.5c6 4 9 8 3 14 1 0 2.5 0 5-2.47.27.773.5 1.604.5 2.47A7.5 7.5 0 0 1 12 23z'/%3E%3C/svg%3E" alt="热门">
+        <span>热门话题推荐</span>
+    </div>
+
+    <div class="level-cards">
+        <div class="level-card basic">
+            <div class="level-icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2318A058' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E" width="32" height="32">
+            </div>
+            <div class="level-info">
+                <div class="level-title">基础口语练习</div>
+                <div class="level-desc">适合初学者的日常对话练习，包含生活、学习、工作等常见话题</div>
+            </div>
+            <button class="practice-btn">练习</button>
+        </div>
+
+        <div class="level-card advanced">
+            <div class="level-icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2313C2C2' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h2V7h-4v2h2z'/%3E%3C/svg%3E" width="32" height="32">
+            </div>
+            <div class="level-info">
+                <div class="level-title">进阶口语训练</div>
+                <div class="level-desc">提升表达能力和流畅度，包含更复杂的话题和场景模拟</div>
+            </div>
+            <button class="practice-btn">练习</button>
+        </div>
+
+        <div class="level-card expert">
+            <div class="level-icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF8F1F' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E" width="32" height="32">
+            </div>
+            <div class="level-info">
+                <div class="level-title">高级口语挑战</div>
+                <div class="level-desc">深入探讨复杂话题，提供专业场景下的口语训练</div>
+            </div>
+            <button class="practice-btn">练习</button>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <img class="feature-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234080FF' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E" alt="AI助手">
+            <div class="feature-title">AI智能助练</div>
+            <div class="feature-desc">个性化口语建议</div>
+        </div>
+
+        <div class="feature-card">
+            <img class="feature-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234080FF' d='M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z'/%3E%3C/svg%3E" alt="记忆曲线">
+            <div class="feature-title">科学记忆曲线</div>
+            <div class="feature-desc">定期复习提醒</div>
+        </div>
+    </div>
+</body>
+</html> 

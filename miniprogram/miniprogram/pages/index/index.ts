@@ -6,21 +6,21 @@ Page({
       url: '/pages/listBasic/listBasic'
     });
   },
-  navigateToIntermediate() {
-    wx.navigateTo({
-      url: '/pages/listAdvanced/listAdvanced'
-    });
-  },
-  navigateToAdvanced() {
+  navigateToExpert() {
     wx.navigateTo({
       url: '/pages/listExpert/listExpert'
     });
   },
-  startAIPractice() {
+  navigateToAdvanced() {
     wx.navigateTo({
-      url: '/pages/aiSimulation/aiSimulation'
+      url: '/pages/listAdvanced/listAdvanced'
     });
   },
+  // startAIPractice() {
+  //   wx.navigateTo({
+  //     url: '/pages/aiSimulation/aiSimulation'
+  //   });
+  // },
   // 普通分享
   onShareAppMessage() {
     return getApp().getShareInfo();

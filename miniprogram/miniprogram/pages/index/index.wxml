@@ -1,53 +1,65 @@
 <view class="outer-container">
-  <view class="container">
-    <!-- 热门话题推荐 -->
+  <view class="inner-container">
+    <!-- 热门话题 -->
     <view class="hot-topics">
-      <view class="section-title">🎯 热门话题推荐</view>
-      <view class="topic-list">
-        <view class="topic-item" bindtap="navigateToBasic">
-          <view class="topic-info">
-            <view class="topic-title">基础口语练习</view>
-            <view class="topic-desc">适合初学者的日常对话练习</view>
-          </view>
-          <view class="topic-action">练习</view>
+      <image class="hot-icon" src="/assets/pics/index_hot.svg" />
+      <text class="section-title">热门话题推荐</text>
+    </view>
+
+    <!-- 级别卡片 -->
+    <view class="level-cards">
+      <!-- 基础级 -->
+      <view class="level-card basic" bindtap="navigateToBasic">
+        <view class="level-icon">
+          <image src="/assets/pics/index_basic.svg" />
         </view>
-        <view class="topic-item" bindtap="navigateToIntermediate">
-          <view class="topic-info">
-            <view class="topic-title">进阶口语训练</view>
-            <view class="topic-desc">提升表达能力和流畅度</view>
-          </view>
-          <view class="topic-action">练习</view>
+        <view class="level-info">
+          <view class="level-title">基础口语练习</view>
+          <view class="level-desc">适合初学者的日常对话练习，包含生活、学习、工作等常见话题</view>
         </view>
-        <view class="topic-item" bindtap="navigateToAdvanced">
-          <view class="topic-info">
-            <view class="topic-title">高级口语挑战</view>
-            <view class="topic-desc">深入探讨复杂话题</view>
-          </view>
-          <view class="topic-action">练习</view>
+        <button class="practice-btn">练习</button>
+      </view>
+
+      <!-- 进阶级 -->
+      <view class="level-card advanced" bindtap="navigateToAdvanced">
+        <view class="level-icon">
+          <image src="/assets/pics/index_advanced.svg" />
         </view>
+        <view class="level-info">
+          <view class="level-title">进阶口语训练</view>
+          <view class="level-desc">提升表达能力和流畅度，包含更复杂的话题和场景模拟</view>
+        </view>
+        <button class="practice-btn">练习</button>
+      </view>
+
+      <!-- 专家级 -->
+      <view class="level-card expert" bindtap="navigateToExpert">
+        <view class="level-icon">
+          <image src="/assets/pics/index_expert.svg" />
+        </view>
+        <view class="level-info">
+          <view class="level-title">高级口语挑战</view>
+          <view class="level-desc">深入探讨复杂话题，提供专业场景下的口语训练</view>
+        </view>
+        <button class="practice-btn">练习</button>
       </view>
     </view>
 
-    <!-- AI 特色介绍 -->
-    <view class="feature-intro">
-      <view class="feature-item">
-        <image class="feature-icon" src="../../assets/pics/ai-custom2.png" mode="aspectFit"></image>
-        <text class="feature-title">AI智能助练</text>
-        <text class="feature-desc">个性化口语建议</text>
+    <view class="features">
+      <!-- AI助手 -->
+      <view class="feature-card">
+        <image class="feature-icon" src="/assets/pics/index_ai.svg" />
+        <view class="feature-title">AI智能助练</view>
+        <view class="feature-desc">个性化口语建议</view>
       </view>
-      <view class="feature-item">
-        <image class="feature-icon" src="../../assets/pics/growth3.png" mode="aspectFit"></image>
-        <text class="feature-title">科学记忆曲线</text>
-        <text class="feature-desc">定期复习提醒</text>
+
+      <!-- 科学记忆曲线 -->
+      <view class="feature-card">
+        <image class="feature-icon" src="/assets/pics/index_curve.svg" />
+        <view class="feature-title">科学记忆曲线</view>
+        <view class="feature-desc">定期复习提醒</view>
       </view>
     </view>
-
-    <!-- 底部 Banner -->
-    <!-- <view class="banner" bindtap="startAIPractice">
-      <view class="banner-title">🤖 AI 模拟考试</view>
-      <view class="banner-subtitle">智能抽题，模拟真实考试场景</view>
-      <view class="start-button">开始模拟考</view>
-    </view> -->
   </view>
   <tab-bar active="0"></tab-bar>
 </view>
