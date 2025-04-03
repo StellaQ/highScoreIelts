@@ -11,7 +11,7 @@ const prompt_question_selector = `
 ## 输出规范
 \`\`\`json
 {
-  "questions": [
+  "mixed_questions": [
     {
       "topicName": "改写后英文话题名称",
       "topicName_cn": "准确的中文翻译",
@@ -88,7 +88,7 @@ const prompt_question_selector = `
 标准输出(2025年Q1季度)：
 \`\`\`json
 {
-  "questions": [
+  "mixed_questions": [
     {
       "topicName": "Urban Life",
       "topicName_cn": "城市生活",

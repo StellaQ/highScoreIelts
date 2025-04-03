@@ -1,0 +1,58 @@
+{
+    "categories": [
+      {
+        "categoryName": "People",
+        "categoryId": "p2_c1",
+        "categoryNameInChinese": "人物类",
+        "description": "话题涉及描述对你影响深刻的人、家庭成员、朋友、名人等。"
+      },
+      {
+        "categoryName": "Objects",
+        "categoryId": "p2_c2",
+        "categoryNameInChinese": "物品类",
+        "description": "话题涉及描述重要的物品、礼物、科技产品、书籍等。"
+      },
+      {
+        "categoryName": "Places",
+        "categoryId": "p2_c3",
+        "categoryNameInChinese": "地点类",
+        "description": "话题涉及描述城市、旅游景点、家乡、历史建筑等。"
+      },
+      {
+        "categoryName": "Events & Experiences",
+        "categoryId": "p2_c4",
+        "categoryNameInChinese": "事件与经历类",
+        "description": "话题涉及描述难忘的经历、节日、旅行、学习经历等。"
+      },
+      {
+        "categoryName": "Activities",
+        "categoryId": "p2_c5",
+        "categoryNameInChinese": "活动类",
+        "description": "话题涉及描述兴趣爱好、运动、技能学习、日常活动等。"
+      },
+      {
+        "categoryName": "Media & Entertainment",
+        "categoryId": "p2_c6",
+        "categoryNameInChinese": "媒体与娱乐类",
+        "description": "话题涉及描述电影、音乐、电视节目、广告、社交媒体等。"
+      },
+      {
+        "categoryName": "Education & Work",
+        "categoryId": "p2_c7",
+        "categoryNameInChinese": "教育与工作类",
+        "description": "话题涉及描述学校、课程、职业规划、工作经历等。"
+      },
+      {
+        "categoryName": "Society & Culture",
+        "categoryId": "p2_c8",
+        "categoryNameInChinese": "社会与文化类",
+        "description": "话题涉及描述传统、习俗、社会问题、环保等。"
+      },
+      {
+        "categoryName": "Other",
+        "categoryId": "p2_c9",
+        "categoryNameInChinese": "其它",
+        "description": "不符合以上任何类别的话题"
+      }
+    ]
+}

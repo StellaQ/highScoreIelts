@@ -13,14 +13,14 @@ The output should be a JSON object with the following format:
     "topicName_real": "Original topic name in natural language",
     "topicName_rewrite": "Rewritten version of the topic",
     "points_original": [
-      {"Original point 1"},
-      {"Original point 2"},
-      {"Original point 3"}
+      "Original point 1",
+      "Original point 2",
+      "Original point 3"
     ],
     "points_rewrite": [
-      {"Rewritten version of point 1"},
-      {"Rewritten version of point 2"},
-      {"Rewritten version of point 3"}
+      "Rewritten version of point 1",
+      "Rewritten version of point 2",
+      "Rewritten version of point 3"
     ]
   }]
 }
@@ -45,16 +45,16 @@ and explain how you felt about him/her
     "topicName_real": "a person you know who likes to talk a lot",
     "topicName_rewrite": "someone in your life who is particularly talkative",
     "points_original": [
-      {"who this person is"},
-      {"how you know this person"},
-      {"what this person usually talks about"},
-      {"and explain how you felt about him/her"}
+      "who this person is",
+      "how you know this person",
+      "what this person usually talks about",
+      "and explain how you felt about him/her"
     ],
     "points_rewrite": [
-      {"identify this individual"},
-      {"describe your relationship with them"},
-      {"explain the typical subjects of their conversations"},
-      {"share your personal impressions of this person"}
+      "identify this individual",
+      "describe your relationship with them",
+      "explain the typical subjects of their conversations",
+      "share your personal impressions of this person"
     ]
   }]
 }
