@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const BasicUser = require('../models/basicUser');
+const BasicRecord = require('../models/basicRecord');
 const BasicCategories = require('../models/basicCategories');
 const BasicQuestions = require('../models/basicQuestions');
 
@@ -10,7 +10,7 @@ router.get('/getBasicCategories', async (req, res) => {
   try {
     const categories = await BasicCategories.find({});
 
-    // 按userId去BasicUser表里查询
+    // 按userId去BasicRecord表里查询
     const mockData = [
       {
         topicId: "Basic_2025Q1_t2",
@@ -112,7 +112,7 @@ router.get('/getBasicDetail', async (req, res) => {
     }
 
     // 查找用户学习记录
-    const record = await BasicUser.findOne({ userId, topicId });
+    const record = await BasicRecord.findOne({ userId, topicId });
     const today = new Date().setHours(0, 0, 0, 0);
 
     // 如果记录不存在

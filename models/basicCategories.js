@@ -13,7 +13,7 @@ const categorySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  topics: [{
+  topicCollection: [{
     topicId: {
       type: String,
       required: true

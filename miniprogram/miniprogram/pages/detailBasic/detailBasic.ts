@@ -5,7 +5,7 @@ Page({
         topicId: '',
         topicName: '',
         topicName_cn: '',
-        state: -1, // 0: 新题目, 1: 待复习, 2: 已完成
+        state: -1, // 0: 新题目, 1: 今天待复习, 2: 今天已完成
         userId: '',
         questions: [] as Array<{
           qTitle: string;
@@ -39,31 +39,45 @@ Page({
       const userId = app.globalData.userInfo?.userId;
       
       if (userId) {
-        this.setData({ userId });
-        try {
-          const result = await API.getDetailBasic(userId, options.topicId);
-          if (result && result.data) {
-            const questions = result.data.questions.map((q: any) => ({
-              ...q,
-              isFlipped: false
-            }));
-            this.setData({
-              questions,
-              feedbacks: new Array(questions.length).fill(false),
-              loading: false
-            });
-          }
-        } catch (error) {
-          console.error('Failed to fetch detail:', error);
-          wx.showToast({
-            title: '获取数据失败',
-            icon: 'error'
-          });
-          this.setData({ loading: false });
-        }
+        this.setData({
+          userId: userId
+        });
+        this.fetchBasicDetail(userId, options.topicId);
       }
     },
-
+    async fetchBasicDetail(userId: string, topicId: string) {
+      try {
+        const result = await API.getBasicDetail(userId, topicId);
+        console.log(result);
+        if (result && result.state===1 || result && result.state===2) {
+          // console.log('111');
+          const questions = result.questions.map((q: any) => ({
+            ...q,
+            isFlipped: false
+          }));
+          this.setData({
+            questions: questions,
+            feedbacks: new Array(result.questions.length).fill(false),
+            loading: false
+          });
+        } else {
+          // console.log('222');
+          this.setData({
+            questions: result.questions,
+            feedbacks: new Array(result.questions.length).fill(false),
+            loading: false
+          });
+          console.log(this.data.questions);
+        }
+      } catch (error) {
+        console.error('Failed to fetch detail:', error);
+        wx.showToast({
+          title: '获取数据失败',
+          icon: 'error'
+        });
+        // this.setData({ loading: false });
+      }
+    },
     // 提交答案
     onSubmitAnswer(e: { currentTarget: { dataset: { index: number; }; }; }) {
       const index = e.currentTarget.dataset.index;

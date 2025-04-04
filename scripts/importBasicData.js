@@ -12,14 +12,14 @@ async function importBasicData() {
     // 1:导入分类数据
     const categoriesPath = path.join(__dirname, '../data_for_server/archive/basic/categories.json');
     const categoriesData = await fs.readFile(categoriesPath, 'utf8');
-    const categories = JSON.parse(categoriesData);
+    const { mixed_categories } = JSON.parse(categoriesData);
 
     // 先清空集合
     await BasicCategories.deleteMany({});
     console.log('已清空BasicCategories集合');
 
     // 批量插入分类数据
-    const categoryResult = await BasicCategories.insertMany(categories);
+    const categoryResult = await BasicCategories.insertMany(mixed_categories);
     console.log(`分类数据导入成功，共导入 ${categoryResult.length} 条记录`);
 
     // 2:导入题目数据

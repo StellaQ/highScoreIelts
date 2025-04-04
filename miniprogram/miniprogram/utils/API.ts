@@ -2,10 +2,10 @@ const BASE_URL = 'http://localhost:3001'; // 替换为实际的 API 地址
 
 const API = {
   // basic 获取分类数据
-  getCategories: (userId: string): Promise<any> => {
+  getBasicCategories: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
-        url: `${BASE_URL}/api/basic/getCategories?userId=${userId}`,
+        url: `${BASE_URL}/api/basic/getBasicCategories?userId=${userId}`,
         method: 'GET',
         success: (res: any) => {
           if (res.statusCode === 200) {
@@ -53,21 +53,23 @@ const API = {
     });
   },
   // detailBasic 获取详情
-  getDetailBasic: (userId: string, topicId: string): Promise<any> => {
+  getBasicDetail: (userId: string, topicId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
-        url: `${BASE_URL}/api/basic/getDetailBasic/${userId}/${topicId}`,
+        url: `${BASE_URL}/api/basic/getBasicDetail`,
         method: 'GET',
+        data: {
+          userId,
+          topicId
+        },
         success: (res: any) => {
           if (res.statusCode === 200) {
             resolve(res.data);
           } else {
-            reject(new Error(`Request failed with status ${res.statusCode}`));
+            reject(res);
           }
         },
-        fail: (err) => {
-          reject(new Error(`Request failed: ${err.errMsg}`));
-        }
+        fail: reject
       });
     });
   },

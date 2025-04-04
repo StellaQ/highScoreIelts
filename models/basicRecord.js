@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const basicUserSchema = new mongoose.Schema({
+const basicRecordSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true,
@@ -21,6 +21,10 @@ const basicUserSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  practiceCount: {
+    type: Number,
+    default: 0,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -32,6 +36,6 @@ const basicUserSchema = new mongoose.Schema({
 });
 
 // 创建复合索引，确保每个用户每个主题只有一条记录
-basicUserSchema.index({ userId: 1, topicId: 1 }, { unique: true });
+basicRecordSchema.index({ userId: 1, topicId: 1 }, { unique: true });
 
-module.exports = mongoose.model('BasicUser', basicUserSchema);
+module.exports = mongoose.model('BasicRecord', basicRecordSchema);
