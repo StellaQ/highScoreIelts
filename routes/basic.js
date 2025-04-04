@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs').promises;
 const path = require('path');
+const BasicUser = require('../models/basicUser');
+const BasicQuestions = require('../models/basicQuestions');
 
-// 获取分类数据的API
+// 获取basic分类数据的API
 router.get('/getCategories', async (req, res) => {
   // console.log('getCategories');
   try {
@@ -12,7 +14,7 @@ router.get('/getCategories', async (req, res) => {
     const categoriesData = await fs.readFile(categoriesPath, 'utf8');
     const categories = JSON.parse(categoriesData);
 
-    // 按userId去Basic表里查询
+    // 按userId去BasicUser表里查询
     const mockData = [
       {
         topicId: "Basic_2025Q1_t2",
@@ -37,10 +39,10 @@ router.get('/getCategories', async (req, res) => {
           practiceCount: 3,
           state: 3,
           gapDate: '明天'
-          // gapDays: 0：‘明天’
-          // gapDays: 1：‘后天’
-          // gapDays: 2：‘2天后'
-          // gapDays: 3：‘3天后’
+          // gapDays: 0：'明天'
+          // gapDays: 1：'后天'
+          // gapDays: 2：'2天后'
+          // gapDays: 3：'3天后'
         }
       },
       {
@@ -96,6 +98,69 @@ router.get('/getCategories', async (req, res) => {
       code: 500,
       message: 'Failed to get categories',
       error: error.message
+    });
+  }
+});
+
+// 按userId和topicId获取basic的某个topic detail
+router.get('/getBasicDetail', async (req, res) => {
+  try {
+    const { userId, topicId } = req.query;
+    // console.log(userId, topicId);
+
+    // 从数据库查询题目
+    const topic = await BasicQuestions.findOne({ topicId });
+    if (!topic) {
+      return res.status(404).json({
+        message: '未找到对应的题目数据'
+      });
+    }
+
+    // 查找用户学习记录
+    const record = await BasicUser.findOne({ userId, topicId });
+    const today = new Date().setHours(0, 0, 0, 0);
+
+    // 如果记录不存在
+    if (!record) {
+      return res.json({
+        state: 0,
+        topicId,
+        questions: topic.questions
+      });
+    }
+
+    // 判断是否今天复习过
+    const lastReviewDate = record.lastReviewDate ? new Date(record.lastReviewDate).setHours(0, 0, 0, 0) : null;
+    if (lastReviewDate === today) {
+      return res.json({
+        state: 2,
+        topicId,
+        questions: topic.questions,
+        answers: record.answers,
+        nextReviewDate: record.nextReviewDate
+      });
+    }
+
+    // 判断今天是否需要复习
+    const nextReviewDate = record.nextReviewDate ? new Date(record.nextReviewDate).setHours(0, 0, 0, 0) : null;
+    if (nextReviewDate && nextReviewDate <= today) {
+      return res.json({
+        state: 1,
+        topicId,
+        questions: topic.questions,
+        answers: record.answers
+      });
+    }
+
+    // 其他情况
+    return res.status(400).json({
+      message: '当前不需要复习'
+    });
+
+  } catch (error) {
+    console.error('获取基础详情失败:', error);
+    return res.status(500).json({
+      message: '服务器错误'
     });
   }
 });

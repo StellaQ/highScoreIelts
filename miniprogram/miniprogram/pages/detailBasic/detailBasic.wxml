@@ -4,7 +4,7 @@
     <view class="topic-title">
       <view>
         <text class="topic-name">{{topicName}}</text>
-        <text class="topic-name-cn">{{topicName_cn}}</text>
+        <!-- <text class="topic-name-cn">{{topicName_cn}}</text> -->
       </view>
       <view class="topic-status {{state === 0 ? 'status-new' : state === 1 ? 'status-review' : state === 2 ? 'status-done' : ''}}">
         {{state === 0 ? '新题目' : state === 1 ? '待复习' : state === 2 ? '已复习' : ''}}

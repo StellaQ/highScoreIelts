@@ -52,6 +52,25 @@ const API = {
       });
     });
   },
+  // detailBasic 获取详情
+  getDetailBasic: (userId: string, topicId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/basic/getDetailBasic/${userId}/${topicId}`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(new Error(`Request failed with status ${res.statusCode}`));
+          }
+        },
+        fail: (err) => {
+          reject(new Error(`Request failed: ${err.errMsg}`));
+        }
+      });
+    });
+  },
   // 执行签到 done
   signIn: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {

@@ -6,37 +6,66 @@ Page({
         topicName: '',
         topicName_cn: '',
         state: -1, // 0: 新题目, 1: 待复习, 2: 已完成
-        questions: [
-          {
-            qTitle: "What's the duration of your stay at your current residence?",
-            qTitle_cn: "您在当前住所居住了多长时间？",
-            answer: "I have been living in my current apartment for about three years now. It's a comfortable place located in a convenient neighborhood with easy access to public transportation and various amenities.",
-            isFlipped: false
-          },
-          {
-            qTitle: "How does your current neighborhood influence your daily life?",
-            qTitle_cn: "您当前的社区环境如何影响您的日常生活？",
-            answer: "My neighborhood has a significant positive impact on my daily life. The area is quite safe and peaceful, with plenty of green spaces for outdoor activities. There are numerous shops and restaurants within walking distance, which makes running errands very convenient.",
-            isFlipped: false
-          }
-        ],
-        feedbacks: [false, false], // 控制每个问题的反馈显示
+        userId: '',
+        questions: [] as Array<{
+          qTitle: string;
+          qTitle_cn: string;
+          answer: string;
+          isFlipped: boolean;
+        }>,
+        feedbacks: [] as boolean[], // 控制每个问题的反馈显示
         selectedTime: '', // 选中的复习时间
         nextReviewText: '', // 下次复习时间文本
         canConfirm: false, // 是否可以确认复习时间
+        loading: true, // 加载状态
     },
-    onLoad(options: { topicId: any; topicName: string; topicName_cn: string; state: any; }) {
-        if (options) {
+
+    async onLoad(options: { topicId: string; topicName: string; topicName_cn: string; state: string; }) {
+      if (options) {
+        this.setData({
+          topicId: options.topicId,
+          topicName: decodeURIComponent(options.topicName),
+          topicName_cn: decodeURIComponent(options.topicName_cn),
+          state: parseInt(options.state)
+        });
+      }
+
+      // 设置导航栏标题
+      wx.setNavigationBarTitle({
+        title: decodeURIComponent(options.topicName_cn)
+      });
+
+      const app = getApp<IAppOption>();
+      const userId = app.globalData.userInfo?.userId;
+      
+      if (userId) {
+        this.setData({ userId });
+        try {
+          const result = await API.getDetailBasic(userId, options.topicId);
+          if (result && result.data) {
+            const questions = result.data.questions.map((q: any) => ({
+              ...q,
+              isFlipped: false
+            }));
             this.setData({
-            topicId: options.topicId,
-            topicName: decodeURIComponent(options.topicName),
-            topicName_cn: decodeURIComponent(options.topicName_cn),
-            state: options.state
+              questions,
+              feedbacks: new Array(questions.length).fill(false),
+              loading: false
             });
+          }
+        } catch (error) {
+          console.error('Failed to fetch detail:', error);
+          wx.showToast({
+            title: '获取数据失败',
+            icon: 'error'
+          });
+          this.setData({ loading: false });
         }
+      }
     },
+
     // 提交答案
-    onSubmitAnswer(e: { currentTarget: { dataset: { index: any; }; }; }) {
+    onSubmitAnswer(e: { currentTarget: { dataset: { index: number; }; }; }) {
       const index = e.currentTarget.dataset.index;
       const feedbacks = [...this.data.feedbacks];
       feedbacks[index] = true;
@@ -52,7 +81,7 @@ Page({
     },
   
     // 选择复习时间
-    onSelectTime(e: { currentTarget: { dataset: { time: any; }; }; }) {
+    onSelectTime(e: { currentTarget: { dataset: { time: string; }; }; }) {
       const time = e.currentTarget.dataset.time;
       this.setData({ selectedTime: time });
   
@@ -73,15 +102,17 @@ Page({
         });
       }
     },
-    onCardTap(e) {
-        const index = e.currentTarget.dataset.index;
-        const questions = this.data.questions.map((q, i) => ({
-          ...q,
-          isFlipped: i === index ? !q.isFlipped : q.isFlipped
-        }));
-        
-        this.setData({ questions });
-      },
+
+    onCardTap(e: { currentTarget: { dataset: { index: number; }; }; }) {
+      const index = e.currentTarget.dataset.index;
+      const questions = this.data.questions.map((q, i) => ({
+        ...q,
+        isFlipped: i === index ? !q.isFlipped : q.isFlipped
+      }));
+      
+      this.setData({ questions });
+    },
+
     // 确认复习时间
     onConfirmTime() {
       if (!this.data.canConfirm) return;
@@ -92,4 +123,4 @@ Page({
         icon: 'success'
       });
     }
-  }); 
+}); 
