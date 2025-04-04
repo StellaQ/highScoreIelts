@@ -3,7 +3,7 @@
       {
         "categoryName": "Personal Development",
         "categoryId": "p3_c1",
-        "categoryNameInChinese": "个人成长",
+        "categoryName_cn": "个人成长",
         "topicCollection": [
           {
             "topicName": "Transformative moments and personal growth",
@@ -25,7 +25,7 @@
       {
         "categoryName": "People & Relationships",
         "categoryId": "p3_c2",
-        "categoryNameInChinese": "人与人际关系",
+        "categoryName_cn": "人与人际关系",
         "topicCollection": [
           {
             "topicName": "The art of effective communication and verbal expression",
@@ -67,7 +67,7 @@
       {
         "categoryName": "Daily Life & Activities",
         "categoryId": "p3_c3",
-        "categoryNameInChinese": "日常生活与活动",
+        "categoryName_cn": "日常生活与活动",
         "topicCollection": [
           {
             "topicName": "The social significance of cooking and cuisine",
@@ -94,7 +94,7 @@
       {
         "categoryName": "Objects & Technology",
         "categoryId": "p3_c4",
-        "categoryNameInChinese": "物品与科技",
+        "categoryName_cn": "物品与科技",
         "topicCollection": [
           {
             "topicName": "The role of maps in modern navigation",
@@ -121,7 +121,7 @@
       {
         "categoryName": "Leisure & Recreation",
         "categoryId": "p3_c5",
-        "categoryNameInChinese": "休闲与娱乐",
+        "categoryName_cn": "休闲与娱乐",
         "topicCollection": [
           {
             "topicName": "The world of competitive sports and athletic excellence",
@@ -153,7 +153,7 @@
       {
         "categoryName": "Education & Learning",
         "categoryId": "p3_c6",
-        "categoryNameInChinese": "教育与学习",
+        "categoryName_cn": "教育与学习",
         "topicCollection": [
           {
             "topicName": "The nature of innovative thought and perspective",
@@ -185,7 +185,7 @@
       {
         "categoryName": "Work & Career",
         "categoryId": "p3_c7",
-        "categoryNameInChinese": "工作与职业",
+        "categoryName_cn": "工作与职业",
         "topicCollection": [
           {
             "topicName": "Navigating the path to commercial achievement",
@@ -212,7 +212,7 @@
       {
         "categoryName": "Places & Environment",
         "categoryId": "p3_c8",
-        "categoryNameInChinese": "场所与环境",
+        "categoryName_cn": "场所与环境",
         "topicCollection": [
           {
             "topicName": "Navigating journeys and modern transportation challenges",
@@ -244,7 +244,7 @@
       {
         "categoryName": "Society & Politics",
         "categoryId": "p3_c9",
-        "categoryNameInChinese": "社会与政治",
+        "categoryName_cn": "社会与政治",
         "topicCollection": [
           {
             "topicName": "Traditional markets and evolving consumer behavior",
@@ -271,7 +271,7 @@
       {
         "categoryName": "Hypotheticals & Future",
         "categoryId": "p3_c10",
-        "categoryNameInChinese": "假设与未来",
+        "categoryName_cn": "假设与未来",
         "topicCollection": [
           {
             "topicName": "Pursuing long-term objectives and life planning",
@@ -283,7 +283,7 @@
       {
         "categoryName": "Other",
         "categoryId": "p3_c11",
-        "categoryNameInChinese": "其它",
+        "categoryName_cn": "其它",
         "topicCollection": [
           {
             "topicName": "The psychology of waiting and delayed gratification",

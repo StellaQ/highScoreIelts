@@ -1,18 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs').promises;
-const path = require('path');
 const BasicUser = require('../models/basicUser');
+const BasicCategories = require('../models/basicCategories');
 const BasicQuestions = require('../models/basicQuestions');
 
 // 获取basic分类数据的API
-router.get('/getCategories', async (req, res) => {
+router.get('/getBasicCategories', async (req, res) => {
   // console.log('getCategories');
   try {
-    // 读取categories.json文件
-    const categoriesPath = path.join(__dirname, '../data_for_server/archive/basic/categories.json');
-    const categoriesData = await fs.readFile(categoriesPath, 'utf8');
-    const categories = JSON.parse(categoriesData);
+    const categories = await BasicCategories.find({});
 
     // 按userId去BasicUser表里查询
     const mockData = [
@@ -61,15 +57,14 @@ router.get('/getCategories', async (req, res) => {
     // 4:completed  progress: 100
 
     // 处理数据，添加额外的状态信息
-    const processedCategories = categories.mixed_categories.map(category => {
+    const processedCategories = categories.map(category => {
       return {
         categoryId: category.categoryId,
         categoryName: category.categoryName,
-        categoryNameInChinese: category.categoryNameInChinese,
+        categoryName_cn: category.categoryName_cn,
         topics: category.topicCollection.map(topic => {
           // 查找是否在mockData中存在匹配的topicId
           const matchedTopic = mockData.find(mockTopic => mockTopic.topicId === topic.topicId);
-          
           return {
             topicId: topic.topicId,
             topicName: topic.topicName,

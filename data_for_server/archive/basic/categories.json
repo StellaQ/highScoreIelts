@@ -3,7 +3,7 @@
       {
         "categoryName": "Personal Information",
         "categoryId": "c1",
-        "categoryNameInChinese": "个人信息",
+        "categoryName_cn": "个人信息",
         "topicCollection": [
           {
             "topicName": "Professional Life",
@@ -25,7 +25,7 @@
       {
         "categoryName": "Daily",
         "categoryId": "c2",
-        "categoryNameInChinese": "日常生活",
+        "categoryName_cn": "日常生活",
         "topicCollection": [
           {
             "topicName": "Recollection",
@@ -42,7 +42,7 @@
       {
         "categoryName": "Hobby",
         "categoryId": "c3",
-        "categoryNameInChinese": "兴趣爱好",
+        "categoryName_cn": "兴趣爱好",
         "topicCollection": [
           {
             "topicName": "Color Preferences",
@@ -89,7 +89,7 @@
       {
         "categoryName": "Habit",
         "categoryId": "c4",
-        "categoryNameInChinese": "习惯与常规",
+        "categoryName_cn": "习惯与常规",
         "topicCollection": [
           {
             "topicName": "Boredom",
@@ -111,7 +111,7 @@
       {
         "categoryName": "Surroundings",
         "categoryId": "c5",
-        "categoryNameInChinese": "居住环境",
+        "categoryName_cn": "居住环境",
         "topicCollection": [
           {
             "topicName": "Current Residence",
@@ -138,13 +138,13 @@
       {
         "categoryName": "future plan",
         "categoryId": "c6",
-        "categoryNameInChinese": "未来计划",
+        "categoryName_cn": "未来计划",
         "topicCollection": []
       },
       {
         "categoryName": "celeberate",
         "categoryId": "c7",
-        "categoryNameInChinese": "节日与庆祝",
+        "categoryName_cn": "节日与庆祝",
         "topicCollection": [
           {
             "topicName": "Present-giving",
@@ -156,7 +156,7 @@
       {
         "categoryName": "Culture",
         "categoryId": "c8",
-        "categoryNameInChinese": "文化与社会",
+        "categoryName_cn": "文化与社会",
         "topicCollection": [
           {
             "topicName": "Celebrity Culture",
@@ -178,7 +178,7 @@
       {
         "categoryName": "Technology",
         "categoryId": "c9",
-        "categoryNameInChinese": "技术与媒体",
+        "categoryName_cn": "技术与媒体",
         "topicCollection": [
           {
             "topicName": "Marketing Communications",
@@ -205,13 +205,13 @@
       {
         "categoryName": "Travel",
         "categoryId": "c10",
-        "categoryNameInChinese": "旅游与出行",
+        "categoryName_cn": "旅游与出行",
         "topicCollection": []
       },
       {
         "categoryName": "Other",
         "categoryId": "c11",
-        "categoryNameInChinese": "其它",
+        "categoryName_cn": "其它",
         "topicCollection": [
           {
             "topicName": "Eye Protection",

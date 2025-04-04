@@ -3,7 +3,7 @@
       {
         "categoryName": "People",
         "categoryId": "p2_c1",
-        "categoryNameInChinese": "人物类",
+        "categoryName_cn": "人物类",
         "topicCollection": [
           {
             "topicName": "someone in your life who is particularly talkative",
@@ -65,7 +65,7 @@
       {
         "categoryName": "Objects",
         "categoryId": "p2_c2",
-        "categoryNameInChinese": "物品类",
+        "categoryName_cn": "物品类",
         "topicCollection": [
           {
             "topicName": "a fascinating possession you desire to own",
@@ -92,7 +92,7 @@
       {
         "categoryName": "Places",
         "categoryId": "p2_c3",
-        "categoryNameInChinese": "地点类",
+        "categoryName_cn": "地点类",
         "topicCollection": [
           {
             "topicName": "a memorable visit to an open-air market",
@@ -129,7 +129,7 @@
       {
         "categoryName": "Events & Experiences",
         "categoryId": "p2_c4",
-        "categoryNameInChinese": "事件与经历类",
+        "categoryName_cn": "事件与经历类",
         "topicCollection": [
           {
             "topicName": "a significant trip that experienced unexpected postponement",
@@ -196,7 +196,7 @@
       {
         "categoryName": "Activities",
         "categoryId": "p2_c5",
-        "categoryNameInChinese": "活动类",
+        "categoryName_cn": "活动类",
         "topicCollection": [
           {
             "topicName": "an exhilarating group activity you participated in",
@@ -228,7 +228,7 @@
       {
         "categoryName": "Media & Entertainment",
         "categoryId": "p2_c6",
-        "categoryNameInChinese": "媒体与娱乐类",
+        "categoryName_cn": "媒体与娱乐类",
         "topicCollection": [
           {
             "topicName": "a memorable party experience",
@@ -250,7 +250,7 @@
       {
         "categoryName": "Education & Work",
         "categoryId": "p2_c7",
-        "categoryNameInChinese": "教育与工作类",
+        "categoryName_cn": "教育与工作类",
         "topicCollection": [
           {
             "topicName": "a period of intense activity and limited free time",
@@ -272,7 +272,7 @@
       {
         "categoryName": "Society & Culture",
         "categoryId": "p2_c8",
-        "categoryNameInChinese": "社会与文化类",
+        "categoryName_cn": "社会与文化类",
         "topicCollection": [
           {
             "topicName": "an experience of mandatory uniform wearing",
@@ -294,7 +294,7 @@
       {
         "categoryName": "Other",
         "categoryId": "p2_c9",
-        "categoryNameInChinese": "其它",
+        "categoryName_cn": "其它",
         "topicCollection": [
           {
             "topicName": "an occasion when you offered guidance to another person",
