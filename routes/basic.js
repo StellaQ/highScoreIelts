@@ -110,6 +110,7 @@ router.get('/getBasicDetail', async (req, res) => {
 
     // 从数据库查询题目
     const topic = await BasicQuestions.findOne({ topicId });
+    // console.log('topic', topic);
     if (!topic) {
       return res.status(404).json({
         message: '未找到对应的题目数据'
@@ -117,9 +118,15 @@ router.get('/getBasicDetail', async (req, res) => {
     }
 
     // 查找用户学习记录
-    const record = await BasicRecord.findOne({ userId, topicId });
+    const record = await BasicRecord.findOne(
+      { userId, topicId }
+    ).lean();  // 使用lean()返回普通JavaScript对象
+    
+    // console.log('record', record);
+    // console.log('record.answers', record?.answers);
+    // console.log('record.answers type', typeof record?.answers);
+    
     const today = new Date().setHours(0, 0, 0, 0);
-
     // 如果记录不存在 done
     if (!record) {
       return res.json({
@@ -135,12 +142,20 @@ router.get('/getBasicDetail', async (req, res) => {
     }
 
     // 处理问题数据，添加用户答案
-    const questionsWithAnswers = topic.questions.map((question, index) => ({
-      ...question.toObject(),
-      answerUser: '',
-      choice: '',
-      answerAI: record?.answers?.[index] || ''
-    }));
+    const questionsWithAnswers = topic.questions.map((question, index) => {
+      // 将Mongoose文档转换为普通对象，并排除_id字段
+      const questionObj = question.toObject();
+      delete questionObj._id;
+      
+      return {
+        ...questionObj,
+        answerUser: '',
+        choice: '',
+        answerAI: record?.answers?.[index] || ''  // 从record.answers中获取对应的AI答案
+      };
+    });
+    // console.log('questionsWithAnswers', questionsWithAnswers);
+
     // 如果有记录但没有设置复习时间（草稿状态）
     if (!record.lastReviewDate && !record.nextReviewDate) {
       return res.json({
@@ -174,7 +189,7 @@ router.get('/getBasicDetail', async (req, res) => {
 
     // 其他情况
     return res.status(400).json({
-      message: '当前不需要复习'
+      message: '当前的topic不在今日学习范围内'
     });
 
   } catch (error) {
@@ -185,7 +200,7 @@ router.get('/getBasicDetail', async (req, res) => {
   }
 });
 
-// AI定制化答案
+// AI定制化答案 done
 router.post('/getBasicAI', async (req, res) => {
   try {
     const { question, answer } = req.body;
@@ -204,16 +219,16 @@ router.post('/getBasicAI', async (req, res) => {
     res.json(result);
 
   } catch (error) {
-    console.error('AI评分失败:', error);
+    console.error('AI定制答案失败:', error);
     res.status(500).json({
       code: 500,
-      message: 'AI评分失败',
+      message: 'AI定制答案失败',
       error: error.message
     });
   }
 });
 
-// 更新单个答案
+// 更新单个答案 done
 router.post('/updateBasicAnswer', async (req, res) => {
   try {
     const { userId, topicId, index, answer } = req.body;

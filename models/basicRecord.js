@@ -18,8 +18,8 @@ const basicRecordSchema = new mongoose.Schema({
     default: null,
   },
   answers: {
-    type: [String],
-    default: [],
+    type: Object,
+    default: {},
   },
   practiceCount: {
     type: Number,
