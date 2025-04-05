@@ -99,6 +99,7 @@ router.get('/getBasicCategories', async (req, res) => {
 
 // 按userId和topicId获取basic的某个topic detail
 router.get('/getBasicDetail', async (req, res) => {
+  // console.log('getBasicDetail');
   try {
     const { userId, topicId } = req.query;
     // console.log(userId, topicId);
@@ -120,7 +121,12 @@ router.get('/getBasicDetail', async (req, res) => {
       return res.json({
         state: 0,
         topicId,
-        questions: topic.questions
+        questions: topic.questions.map((question, index) => ({
+          ...question.toObject(),  // 将 Mongoose 文档转换为普通对象
+          answerUser: '',
+          choice: '',
+          answerAI: '' 
+        }))
       });
     }
 

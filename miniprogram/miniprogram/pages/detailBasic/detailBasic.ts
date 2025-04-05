@@ -7,13 +7,8 @@ Page({
         topicName_cn: '',
         state: -1, // 0: 新题目, 1: 今天待复习, 2: 今天已完成
         userId: '',
-        questions: [] as Array<{
-          qTitle: string;
-          qTitle_cn: string;
-          answer: string;
-          isFlipped: boolean;
-        }>,
-        feedbacks: [] as boolean[], // 控制每个问题的反馈显示
+        questions: [],
+        answersFromAI: [] as boolean[], // 控制每个问题的反馈显示
         selectedTime: '', // 选中的复习时间
         nextReviewText: '', // 下次复习时间文本
         canConfirm: false, // 是否可以确认复习时间
@@ -48,7 +43,7 @@ Page({
     async fetchBasicDetail(userId: string, topicId: string) {
       try {
         const result = await API.getBasicDetail(userId, topicId);
-        console.log(result);
+        // console.log(result);
         if (result && result.state===1 || result && result.state===2) {
           // console.log('111');
           const questions = result.questions.map((q: any) => ({
@@ -57,17 +52,17 @@ Page({
           }));
           this.setData({
             questions: questions,
-            feedbacks: new Array(result.questions.length).fill(false),
+            answersFromAI: new Array(result.questions.length).fill(false),
             loading: false
           });
         } else {
           // console.log('222');
           this.setData({
             questions: result.questions,
-            feedbacks: new Array(result.questions.length).fill(false),
+            answersFromAI: new Array(result.questions.length).fill(false),
             loading: false
           });
-          console.log(this.data.questions);
+          // console.log(this.data.questions);
         }
       } catch (error) {
         console.error('Failed to fetch detail:', error);
@@ -78,20 +73,52 @@ Page({
         // this.setData({ loading: false });
       }
     },
-    // 提交答案
-    onSubmitAnswer(e: { currentTarget: { dataset: { index: number; }; }; }) {
-      const index = e.currentTarget.dataset.index;
-      const feedbacks = [...this.data.feedbacks];
-      feedbacks[index] = true;
+    onChangeChoice(event: WechatMiniprogram.CustomEvent) {
+      const value = event.detail;  // 获取选中的选项值
+      const { index } = event.currentTarget.dataset;  // 从data-index获取当前问题的索引
+      // 获取当前questions数组
+      const questions = this.data.questions;
+      // 更新对应问题的choice
+      questions[index].choice = value;
+      // 更新数据
+      this.setData({
+        questions
+      });
+    },
+    onInputTextarea(event: WechatMiniprogram.CustomEvent) {
+      const { value } = event.detail;
+      const { index } = event.currentTarget.dataset;  // 从data-index获取当前问题的索引
       
-      this.setData({ feedbacks });
+      // 获取当前questions数组
+      const questions = this.data.questions;
+      // 更新对应问题的answerUser
+      questions[index].answerUser = value;
+      // console.log(questions[index].answerUser);
+      // 更新数据
+      this.setData({
+        questions
+      });
+    },
+    // 提交答案
+    onSubmitAnswer(e: any) {
+      const index = e.currentTarget.dataset.index;
+      const qTitle = e.currentTarget.dataset.qtitle;
+      const answerUser = this.data.questions[index].answerUser;
+      const choice = e.currentTarget.dataset.choice;
+      console.log(qTitle);
+      console.log(choice);
+      console.log(answerUser);
+      // const answersFromAI = [...this.data.answersFromAI];
+      // answersFromAI[index] = true;
+      
+      // this.setData({ answersFromAI });
   
-      // 检查是否所有问题都已获得反馈
-      if (feedbacks.every(f => f)) {
-        this.setData({
-          nextReviewText: '请选择下次复习时间'
-        });
-      }
+      // // 检查是否所有问题都已获得反馈
+      // if (answersFromAI.every(f => f)) {
+      //   this.setData({
+      //     nextReviewText: '请选择下次复习时间'
+      //   });
+      // }
     },
   
     // 选择复习时间
