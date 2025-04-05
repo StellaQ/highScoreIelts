@@ -49,7 +49,7 @@
             data-choice="{{item.choice}}"
             bindtap="onSubmitAnswer">AI定制答案</button>
         </view>
-        <view class="ai-feedback">
+        <view class="ai-feedback" wx:if="{{item.answerAI}}">
           <!-- <text class="ai-feedback-title">AI 反馈</text> -->
           <view class="ai-feedback-content">
             {{item.answerAI}}

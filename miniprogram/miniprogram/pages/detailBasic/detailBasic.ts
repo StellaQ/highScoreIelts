@@ -15,7 +15,7 @@ Page({
         loading: true, // 加载状态
     },
 
-    async onLoad(options: { topicId: string; topicName: string; topicName_cn: string; state: string; }) {
+    onLoad(options: { topicId: string; topicName: string; topicName_cn: string; state: string; }) {
       if (options) {
         this.setData({
           topicId: options.topicId,
@@ -100,14 +100,66 @@ Page({
       });
     },
     // 提交答案
-    onSubmitAnswer(e: any) {
+    async onSubmitAnswer(e: any) {
       const index = e.currentTarget.dataset.index;
-      const qTitle = e.currentTarget.dataset.qtitle;
-      const answerUser = this.data.questions[index].answerUser;
-      const choice = e.currentTarget.dataset.choice;
-      console.log(qTitle);
-      console.log(choice);
-      console.log(answerUser);
+      const question = e.currentTarget.dataset.qtitle;
+      const answer = e.currentTarget.dataset.choice + this.data.questions[index].answerUser;
+
+      // console.log(question);
+      // console.log(answer);
+      // 显示loading
+      wx.showLoading({
+        title: 'AI定制答案中...',
+        mask: true  // 防止用户点击其他区域
+      });
+      try {
+        const resultAI = await API.getBasicAI(question, answer);
+        // console.log(result.answer);
+
+        const { questions } = this.data;
+        // 更新对应问题的answerAI
+        questions[index].answerAI = resultAI.answer;
+        // 更新数据
+        this.setData({
+          questions
+        });
+        
+        // 隐藏loading
+        wx.hideLoading();
+        // 可以添加一个提示
+        wx.showToast({
+          title: 'AI定制答案完成',
+          icon: 'success',
+          duration: 1500
+        });
+        // 尝试保存AI定制答案到数据库
+        try {
+          const { userId, topicId } = this.data;
+          // 调用API更新答案
+          const result = await API.updateBasicAnswer(userId, topicId, index,  resultAI.answer);
+          // console.log(result);
+          if (result.code !== 0) {
+            wx.showToast({
+              title: '答案保存失败',
+              icon: 'none'
+            });
+          }
+        } catch (error) {
+          console.error('答案保存失败:', error);
+          wx.showToast({
+            title: '答案保存失败',
+            icon: 'none'
+          });
+        }
+      } catch (error) {
+        console.error('getBasicAI', error);
+        // 隐藏loading
+        wx.hideLoading();
+        wx.showToast({
+          title: '获取AI定制答案失败',
+          icon: 'none'
+        });
+      }
       // const answersFromAI = [...this.data.answersFromAI];
       // answersFromAI[index] = true;
       
@@ -120,7 +172,6 @@ Page({
       //   });
       // }
     },
-  
     // 选择复习时间
     onSelectTime(e: { currentTarget: { dataset: { time: string; }; }; }) {
       const time = e.currentTarget.dataset.time;

@@ -73,6 +73,50 @@ const API = {
       });
     });
   },
+  // basic 调用AI来定制化口语答案
+  getBasicAI: (question: string, answer: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/basic/getBasicAI`,
+        method: 'POST',
+        data: {
+          question,
+          answer
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // basic 更新单个答案
+  updateBasicAnswer: (userId: string, topicId: string, index: number, answer: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/basic/updateBasicAnswer`,
+        method: 'POST',
+        data: {
+          userId,
+          topicId,
+          index,
+          answer
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
   // 执行签到 done
   signIn: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {

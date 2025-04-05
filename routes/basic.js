@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const BasicRecord = require('../models/basicRecord');
+
 const BasicCategories = require('../models/basicCategories');
 const BasicQuestions = require('../models/basicQuestions');
+const BasicRecord = require('../models/basicRecord');
+
+const basic_system_prompt = require('../prompts/basic_system_prompt.js');
+const { getAIService } = require('../services/aiService.js'); 
 
 // 获取basic分类数据的API
 router.get('/getBasicCategories', async (req, res) => {
@@ -97,7 +101,7 @@ router.get('/getBasicCategories', async (req, res) => {
   }
 });
 
-// 按userId和topicId获取basic的某个topic detail
+// 按userId和topicId获取basic detail
 router.get('/getBasicDetail', async (req, res) => {
   // console.log('getBasicDetail');
   try {
@@ -116,7 +120,7 @@ router.get('/getBasicDetail', async (req, res) => {
     const record = await BasicRecord.findOne({ userId, topicId });
     const today = new Date().setHours(0, 0, 0, 0);
 
-    // 如果记录不存在
+    // 如果记录不存在 done
     if (!record) {
       return res.json({
         state: 0,
@@ -130,14 +134,30 @@ router.get('/getBasicDetail', async (req, res) => {
       });
     }
 
+    // 处理问题数据，添加用户答案
+    const questionsWithAnswers = topic.questions.map((question, index) => ({
+      ...question.toObject(),
+      answerUser: '',
+      choice: '',
+      answerAI: record?.answers?.[index] || ''
+    }));
+    // 如果有记录但没有设置复习时间（草稿状态）
+    if (!record.lastReviewDate && !record.nextReviewDate) {
+      return res.json({
+        state: 0,
+        topicId,
+        questions: questionsWithAnswers,
+        isDraft: true  // 添加一个标记，表示这是草稿状态
+      });
+    }
+
     // 判断是否今天复习过
     const lastReviewDate = record.lastReviewDate ? new Date(record.lastReviewDate).setHours(0, 0, 0, 0) : null;
     if (lastReviewDate === today) {
       return res.json({
         state: 2,
         topicId,
-        questions: topic.questions,
-        answers: record.answers,
+        questions: questionsWithAnswers,
         nextReviewDate: record.nextReviewDate
       });
     }
@@ -148,8 +168,7 @@ router.get('/getBasicDetail', async (req, res) => {
       return res.json({
         state: 1,
         topicId,
-        questions: topic.questions,
-        answers: record.answers
+        questions: questionsWithAnswers
       });
     }
 
@@ -162,6 +181,76 @@ router.get('/getBasicDetail', async (req, res) => {
     console.error('获取基础详情失败:', error);
     return res.status(500).json({
       message: '服务器错误'
+    });
+  }
+});
+
+// AI定制化答案
+router.post('/getBasicAI', async (req, res) => {
+  try {
+    const { question, answer } = req.body;
+    
+    if (!question) {
+      return res.status(400).json({
+        code: 400,
+        message: '缺少必要参数'
+      });
+    }
+    const user_prompt = `Question: ${question} Answer: ${answer}`;
+    const result = await getAIService(basic_system_prompt, user_prompt);
+    
+    // console.log('Parsed AI Answer:', result);
+    // 返回 AI 答案
+    res.json(result);
+
+  } catch (error) {
+    console.error('AI评分失败:', error);
+    res.status(500).json({
+      code: 500,
+      message: 'AI评分失败',
+      error: error.message
+    });
+  }
+});
+
+// 更新单个答案
+router.post('/updateBasicAnswer', async (req, res) => {
+  try {
+    const { userId, topicId, index, answer } = req.body;
+    
+    if (!userId || !topicId || index === undefined || !answer) {
+      return res.status(400).json({
+        code: 400,
+        message: '缺少必要参数'
+      });
+    }
+    
+    // 更新单个答案
+    const result = await BasicRecord.findOneAndUpdate(
+      { userId, topicId },
+      { 
+        $set: { 
+          [`answers.${index}`]: answer
+        }
+      },
+      { 
+        upsert: true,
+        new: true
+      }
+    );
+    
+    res.json({
+      code: 0,
+      message: 'success'
+      // data: result
+    });
+    
+  } catch (error) {
+    console.error('更新答案失败:', error);
+    res.status(500).json({
+      code: 500,
+      message: '更新答案失败',
+      error: error.message
     });
   }
 });
