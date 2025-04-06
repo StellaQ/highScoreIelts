@@ -7,12 +7,13 @@ Page({
         topicName_cn: '',
         state: -1, // 0: 新题目, 1: 今天待复习, 2: 今天已完成
         userId: '',
+
         questions: [],
-        answersFromAI: [] as boolean[], // 控制每个问题的反馈显示
+
         selectedTime: '', // 选中的复习时间
         nextReviewText: '', // 下次复习时间文本
         canConfirm: false, // 是否可以确认复习时间
-        loading: true, // 加载状态
+        nextReviewDate: '' // 下次复习时间
     },
 
     onLoad(options: { topicId: string; topicName: string; topicName_cn: string; state: string; }) {
@@ -51,16 +52,14 @@ Page({
             isFlipped: false
           }));
           this.setData({
-            questions: questions,
-            answersFromAI: new Array(result.questions.length).fill(false),
-            loading: false
+            state: result.state,
+            questions: questions
           });
         } else {
           // console.log('222');
           this.setData({
-            questions: result.questions,
-            answersFromAI: new Array(result.questions.length).fill(false),
-            loading: false
+            state: result.state,
+            questions: result.questions
           });
           // console.log(this.data.questions);
         }
@@ -70,7 +69,6 @@ Page({
           title: '获取数据失败',
           icon: 'error'
         });
-        // this.setData({ loading: false });
       }
     },
     onChangeChoice(event: WechatMiniprogram.CustomEvent) {
@@ -160,41 +158,60 @@ Page({
           icon: 'none'
         });
       }
-      // const answersFromAI = [...this.data.answersFromAI];
-      // answersFromAI[index] = true;
-      
-      // this.setData({ answersFromAI });
-  
-      // // 检查是否所有问题都已获得反馈
-      // if (answersFromAI.every(f => f)) {
-      //   this.setData({
-      //     nextReviewText: '请选择下次复习时间'
-      //   });
-      // }
     },
     // 选择复习时间
     onSelectTime(e: { currentTarget: { dataset: { time: string; }; }; }) {
+      
+      // 只有在state为0时才检查
+      const { questions, state } = this.data;
+      if (state === 0) {
+        // 检查所有问题的answerAI是否都存在
+        const allQuestionsAnswered = questions.every(question => question.answerAI);
+        if (!allQuestionsAnswered) {
+          wx.showToast({
+            title: '请先完成上面所有的AI定制答案',
+            icon: 'none',
+            duration: 2000
+          });
+          return;
+        }
+      }
+
       const time = e.currentTarget.dataset.time;
       this.setData({ selectedTime: time });
   
       if (time === 'done') {
         this.setData({
-          nextReviewText: '该主题已掌握，无需再复习',
-          canConfirm: true
+          nextReviewText: '已掌握，不再出现在学习列表中',
+          canConfirm: true,
+          nextReviewDate: 'done'
         });
       } else {
         const days = parseInt(time);
         const nextDate = new Date();
         nextDate.setDate(nextDate.getDate() + days);
-        const dateStr = `${nextDate.getFullYear()}年${nextDate.getMonth() + 1}月${nextDate.getDate()}日`;
+        // 设置时间为当天的开始（00:00:00）
+        nextDate.setHours(0, 0, 0, 0);
+        // 只获取日期部分，格式：YYYY-MM-DD
+        const dateStr = nextDate.toISOString().split('T')[0];
+        console.log('dateStr:', dateStr);  // 输出类似：2025-04-09
         
         this.setData({
           nextReviewText: `下次复习时间：${dateStr}`,
-          canConfirm: true
+          canConfirm: true,
+          nextReviewDate: dateStr  // 只存储日期部分
         });
       }
     },
-
+    // 确认复习时间
+    onConfirmTime() {
+      if (!this.data.canConfirm) return;
+      // TODO: 处理确认逻辑
+      wx.showToast({
+        title: '设置成功',
+        icon: 'success'
+      });
+    },
     onCardTap(e: { currentTarget: { dataset: { index: number; }; }; }) {
       const index = e.currentTarget.dataset.index;
       const questions = this.data.questions.map((q, i) => ({
@@ -203,16 +220,5 @@ Page({
       }));
       
       this.setData({ questions });
-    },
-
-    // 确认复习时间
-    onConfirmTime() {
-      if (!this.data.canConfirm) return;
-      
-      // TODO: 处理确认逻辑
-      wx.showToast({
-        title: '设置成功',
-        icon: 'success'
-      });
     }
 }); 

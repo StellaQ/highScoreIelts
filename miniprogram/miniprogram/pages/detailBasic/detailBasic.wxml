@@ -93,7 +93,7 @@
       <view class="review-option {{selectedTime === '15' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="15">15天</view>
       <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
     </view>
-    <text class="next-review-time">{{nextReviewText || state === 0 ? '以上问题都答完并获取AI定制答案再选【下次复习时间】' : state === 1 ? '打卡完再确认复习时间' : state === 2 ? '复习时间可以修改' : ''}}</text>
+    <text class="next-review-time">{{nextReviewText}}</text>
     <button class="confirm-btn" disabled="{{!canConfirm}}" bindtap="onConfirmTime">
       {{state === 2 ? '修改复习时间' : '确认'}}
     </button>
