@@ -117,6 +117,28 @@ const API = {
       });
     });
   },
+  // basic 更新下次复习时间
+  updateBasicReviewTime: (userId:string, topicId: string, nextReviewDate: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/basic/updateBasicReviewTime`,
+        method: 'POST',
+        data: {
+          userId,
+          topicId,
+          nextReviewDate
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
   // 执行签到 done
   signIn: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {

@@ -12,7 +12,6 @@ Page({
 
         selectedTime: '', // 选中的复习时间
         nextReviewText: '', // 下次复习时间文本
-        canConfirm: false, // 是否可以确认复习时间
         nextReviewDate: '' // 下次复习时间
     },
 
@@ -183,7 +182,6 @@ Page({
       if (time === 'done') {
         this.setData({
           nextReviewText: '已掌握，不再出现在学习列表中',
-          canConfirm: true,
           nextReviewDate: 'done'
         });
       } else {
@@ -198,19 +196,33 @@ Page({
         
         this.setData({
           nextReviewText: `下次复习时间：${dateStr}`,
-          canConfirm: true,
           nextReviewDate: dateStr  // 只存储日期部分
         });
       }
     },
     // 确认复习时间
-    onConfirmTime() {
-      if (!this.data.canConfirm) return;
-      // TODO: 处理确认逻辑
-      wx.showToast({
-        title: '设置成功',
-        icon: 'success'
-      });
+    async onConfirmTime() {
+      const { userId, topicId, nextReviewDate } = this.data;
+      try {
+        const result = await API.updateBasicReviewTime(userId, topicId, nextReviewDate);
+        
+        if (result.code === 0) {
+          wx.showToast({
+            title: '设置成功',
+            icon: 'success'
+          });
+          // 返回上一页
+          wx.navigateBack();
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error('设置复习时间失败:', error);
+        wx.showToast({
+          title: '设置失败',
+          icon: 'none'
+        });
+      }
     },
     onCardTap(e: { currentTarget: { dataset: { index: number; }; }; }) {
       const index = e.currentTarget.dataset.index;

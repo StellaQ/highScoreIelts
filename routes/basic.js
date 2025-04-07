@@ -168,7 +168,7 @@ router.get('/getBasicDetail', async (req, res) => {
 
     // 判断是否今天复习过
     const lastReviewDate = record.lastReviewDate ? new Date(record.lastReviewDate).setHours(0, 0, 0, 0) : null;
-    if (lastReviewDate === today) {
+    if (lastReviewDate === today && !record.isCompleted) {
       return res.json({
         state: 2,
         topicId,
@@ -270,4 +270,60 @@ router.post('/updateBasicAnswer', async (req, res) => {
   }
 });
 
+// 更新复习时间
+router.post('/updateBasicReviewTime', async (req, res) => {
+  try {
+    const { userId, topicId, nextReviewDate } = req.body;
+    
+    if (!userId || !topicId || !nextReviewDate) {
+      return res.status(400).json({
+        code: 400,
+        message: '缺少必要参数'
+      });
+    }
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    // 构建更新对象
+    const updateData = {
+      lastReviewDate: today  // 设置最后复习时间为今天
+    };
+    
+    // 根据nextReviewDate的值设置不同的状态
+    if (nextReviewDate === 'done') {
+      // 设置为已完成状态
+      updateData.nextReviewDate = null;
+      updateData.isCompleted = true;  // 标记为已完成
+    } else {
+      // 设置下次复习时间
+      updateData.nextReviewDate = new Date(nextReviewDate);
+      updateData.isCompleted = false;  // 确保不是已完成状态
+    }
+    
+    // 更新记录，practiceCount 的 $inc 操作符需要放在 $set 之外
+    const result = await BasicRecord.findOneAndUpdate(
+      { userId, topicId },
+      {
+        $set: updateData,
+        $inc: { practiceCount: 1 }  // 练习次数加1
+      },
+      { new: true }
+    );
+    
+    res.json({
+      code: 0,
+      message: 'success'
+      // data: result
+    });
+    
+  } catch (error) {
+    console.error('更新复习时间失败:', error);
+    res.status(500).json({
+      code: 500,
+      message: '更新复习时间失败',
+      error: error.message
+    });
+  }
+});
 module.exports = router;

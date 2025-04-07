@@ -94,7 +94,7 @@
       <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
     </view>
     <text class="next-review-time">{{nextReviewText}}</text>
-    <button class="confirm-btn" disabled="{{!canConfirm}}" bindtap="onConfirmTime">
+    <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">
       {{state === 2 ? '修改复习时间' : '确认'}}
     </button>
   </view>
