@@ -213,6 +213,33 @@ Page({
             title: '设置成功',
             icon: 'success'
           });
+          // 获取页面栈
+          const pages = getCurrentPages();
+          const prevPage = pages[pages.length - 2]; // 获取上一个页面
+          
+          // 根据选择的时间设置状态
+          const newState = nextReviewDate === 'done' ? 4 : 2;
+          
+          // 更新上一个页面的数据
+          if (prevPage) {
+            // 找到对应的 topic 并更新状态
+            const topics = prevPage.data.categories.flatMap((category: any) => category.topics);
+            const topicIndex = topics.findIndex((topic: any) => topic.topicId === topicId);
+            if (topicIndex !== -1) {
+              topics[topicIndex].status.state = newState;
+              topics[topicIndex].status.practiceCount++;
+              // 如果是完成状态，更新进度为100
+              if (newState === 4) {
+                topics[topicIndex].status.progress = 100;
+              } else if (newState === 2) {
+                topics[topicIndex].status.progress = topics[topicIndex].status.practiceCount * 10;
+              }
+              // 更新页面数据
+              prevPage.setData({
+                categories: prevPage.data.categories
+              });
+            }
+          }
           // 返回上一页
           wx.navigateBack();
         } else {

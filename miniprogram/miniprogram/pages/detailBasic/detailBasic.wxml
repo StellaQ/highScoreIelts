@@ -40,6 +40,7 @@
           placeholder="Point + Reason + Example"
           value="{{ item.answerUser }}"
           data-index="{{index}}"
+          maxlength="300"
           bindinput="onInputTextarea" />
         <view
           style="width: 100%; margin-bottom: 10px; display: flex; flex-direction: flex-end;">
@@ -72,7 +73,7 @@
             <view class="question-tip">smile & fluent & no repetition</view>
           </view>
           <view class="card-back">
-            <text class="answer-content" selectable="true">
+            <text class="answer-content" user-select="true">
               {{item.answerAI || '暂无参考答案'}}
             </text>
           </view>
