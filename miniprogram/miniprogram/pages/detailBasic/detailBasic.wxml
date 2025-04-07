@@ -63,17 +63,18 @@
       </view>
     </block>
 
-    <block wx:if="{{state === 1|| state === 2}}">
+    <block wx:if="{{state === 1}}">
+    <!-- <block wx:if="{{state === 1|| state === 2}}"> -->
       <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
         <view class="card-inner">
           <view class="card-front">
             <view class="question-title">{{item.qTitle}}</view>
-            <view class="question-tip">fluent & no repetition</view>
+            <view class="question-tip">smile & fluent & no repetition</view>
           </view>
           <view class="card-back">
-            <view class="answer-content">
-              {{item.answer || '暂无参考答案'}}
-            </view>
+            <text class="answer-content" selectable="true">
+              {{item.answerAI || '暂无参考答案'}}
+            </text>
           </view>
         </view>
       </view>
@@ -94,8 +95,8 @@
       <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
     </view>
     <view class="next-review-time">{{nextReviewText}}</view>
-    <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">
-      {{state === 2 ? '修改复习时间' : '确认'}}
+    <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">确认
+      <!-- {{state === 2 ? '修改复习时间' : '确认'}} -->
     </button>
   </view>
 </view>

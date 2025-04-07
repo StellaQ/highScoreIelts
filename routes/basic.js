@@ -92,9 +92,9 @@ router.get('/getBasicCategories', async (req, res) => {
               }
             };
           }
-          // 3. 判断今天需要复习
+          // 3. 判断是今天复习
           if (nextReviewDate && nextReviewDate <= today) {
-            // console.log(topic.topicId + '=======今天需要复习');
+            // console.log(topic.topicId + '=======是今天复习');
             return {
               topicId: topic.topicId,
               topicName: topic.topicName,
@@ -106,24 +106,9 @@ router.get('/getBasicCategories', async (req, res) => {
               }
             };
           }
-          // 4. 判断草稿状态
-          if (!lastReviewDate && !nextReviewDate) {
-            // console.log(topic.topicId + '=======判断是草稿');
-            return {
-              topicId: topic.topicId,
-              topicName: topic.topicName,
-              topicName_cn: topic.topicName_cn,
-              status: {
-                progress: 0,
-                practiceCount: 0,
-                state: 0,
-                isDraft: true
-              }
-            };
-          }
-          // 5. 判断不是今天复习
-          if (nextReviewDate) {
-            // console.log(topic.topicId + '=======判断后面几天复习');
+          // 4. 判断后面几天复习
+          if (nextReviewDate && nextReviewDate > today) {
+            // console.log(topic.topicId + '=======是后面几天复习');
             
             const gapDays = Math.ceil((nextReviewDate - today) / (1000 * 60 * 60 * 24));
             let gapDate = '';
@@ -145,6 +130,21 @@ router.get('/getBasicCategories', async (req, res) => {
                 practiceCount: record.practiceCount || 0,
                 state: 3,
                 gapDate
+              }
+            };
+          }
+          // 5. 判断草稿状态
+          if (!lastReviewDate && !nextReviewDate) {
+            // console.log(topic.topicId + '=======判断是草稿');
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: 0,
+                practiceCount: 0,
+                state: 0,
+                isDraft: true
               }
             };
           }
@@ -248,15 +248,15 @@ router.get('/getBasicDetail', async (req, res) => {
     }
 
     // 判断是否今天复习过
-    const lastReviewDate = record.lastReviewDate ? new Date(record.lastReviewDate).setHours(0, 0, 0, 0) : null;
-    if (lastReviewDate === today && !record.isCompleted) {
-      return res.json({
-        state: 2,
-        topicId,
-        questions: questionsWithAnswers,
-        nextReviewDate: record.nextReviewDate
-      });
-    }
+    // const lastReviewDate = record.lastReviewDate ? new Date(record.lastReviewDate).setHours(0, 0, 0, 0) : null;
+    // if (lastReviewDate === today && !record.isCompleted) {
+    //   return res.json({
+    //     state: 2,
+    //     topicId,
+    //     questions: questionsWithAnswers,
+    //     nextReviewDate: record.nextReviewDate
+    //   });
+    // }
 
     // 判断今天是否需要复习
     const nextReviewDate = record.nextReviewDate ? new Date(record.nextReviewDate).setHours(0, 0, 0, 0) : null;
