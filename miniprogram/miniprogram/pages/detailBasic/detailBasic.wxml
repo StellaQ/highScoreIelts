@@ -93,7 +93,7 @@
       <view class="review-option {{selectedTime === '15' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="15">15天</view>
       <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
     </view>
-    <text class="next-review-time">{{nextReviewText}}</text>
+    <view class="next-review-time">{{nextReviewText}}</view>
     <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">
       {{state === 2 ? '修改复习时间' : '确认'}}
     </button>

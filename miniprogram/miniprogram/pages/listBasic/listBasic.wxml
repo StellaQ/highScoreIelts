@@ -46,6 +46,7 @@
             </view>
             <view class="topic-info">
               <text class="topic-name">{{topic.topicName_cn}}</text>
+              <!-- <text style="font-size: 10px;">{{topic.topicId}}</text> -->
               <text class="topic-stats">{{topic.status.state === 0 ? '未开始练习' : 
                                         (topic.status.state === 1 || topic.status.state === 2 || topic.status.state === 3) ? '已练习' + topic.status.practiceCount + '次' : 
                                         '练习了' + topic.status.practiceCount + '次'}}</text>

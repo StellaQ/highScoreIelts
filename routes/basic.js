@@ -8,73 +8,154 @@ const BasicRecord = require('../models/basicRecord');
 const basic_system_prompt = require('../prompts/basic_system_prompt.js');
 const { getAIService } = require('../services/aiService.js'); 
 
-// 获取basic分类数据的API
+// 获取分类列表
 router.get('/getBasicCategories', async (req, res) => {
-  // console.log('getCategories');
   try {
     const categories = await BasicCategories.find({});
-
-    // 按userId去BasicRecord表里查询
-    const mockData = [
-      {
-        topicId: "Basic_2025Q1_t2",
-        status: {
-          progress: 10,
-          practiceCount: 1,
-          state: 1
-        }
-      },
-      {
-        topicId: "Basic_2025Q1_t4",
-        status: {
-          progress: 20,
-          practiceCount: 2,
-          state: 2
-        }
-      },
-      {
-        topicId: "Basic_2025Q1_t16",
-        status: {
-          progress: 30,
-          practiceCount: 3,
-          state: 3,
-          gapDate: '明天'
-          // gapDays: 0：'明天'
-          // gapDays: 1：'后天'
-          // gapDays: 2：'2天后'
-          // gapDays: 3：'3天后'
-        }
-      },
-      {
-        topicId: "Basic_2025Q1_t7",
-        status: {
-          progress: 100,
-          practiceCount: 4,
-          state: 4
-        }
-      }
-    ]
-    // 0:new   progress: 0
-    // 1:today-review
-    // 2:today-done
-    // 3:the-other-day-review : gapDays
-    // 4:completed  progress: 100
-
-    // 处理数据，添加额外的状态信息
+    const { userId } = req.query;  // 从 req.query 中获取 userId
+    
+    if (!userId) {
+      return res.status(400).json({
+        code: 400,
+        message: '缺少必要参数'
+      });
+    }
+    
+    // 获取所有topic的记录
+    const records = await BasicRecord.find({ userId });
+    
     const processedCategories = categories.map(category => {
       return {
         categoryId: category.categoryId,
         categoryName: category.categoryName,
         categoryName_cn: category.categoryName_cn,
         topics: category.topicCollection.map(topic => {
-          // 查找是否在mockData中存在匹配的topicId
-          const matchedTopic = mockData.find(mockTopic => mockTopic.topicId === topic.topicId);
+
+          const record = records.find(r => r.topicId === topic.topicId);
+
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          
+          // 如果没有记录，返回默认状态
+          if (!record) {
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: 0,
+                practiceCount: 0,
+                state: 0
+              }
+            };
+          }
+
+          // 初始化日期变量
+          let lastReviewDate = null;
+          let nextReviewDate = null;
+          
+          // 如果存在记录，初始化日期
+          if (record.lastReviewDate) {
+            lastReviewDate = new Date(record.lastReviewDate);
+            lastReviewDate.setHours(0, 0, 0, 0);
+          }
+          if (record.nextReviewDate) {
+            nextReviewDate = new Date(record.nextReviewDate);
+            nextReviewDate.setHours(0, 0, 0, 0);
+          }
+
+          // 1. 判断已完成
+          if (record.isCompleted) {
+            // console.log(topic.topicId + '=======判断已完成');
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: 100,
+                practiceCount: record.practiceCount || 0,
+                state: 4
+              }
+            };
+          } 
+          // 2. 判断今天已复习
+          if (lastReviewDate && lastReviewDate.getTime() === today.getTime()) {
+            // console.log(topic.topicId + '=======今天已复习');
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: (record.practiceCount || 0) * 10,
+                practiceCount: record.practiceCount || 0,
+                state: 2
+              }
+            };
+          }
+          // 3. 判断今天需要复习
+          if (nextReviewDate && nextReviewDate <= today) {
+            // console.log(topic.topicId + '=======今天需要复习');
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: (record.practiceCount || 0) * 10,
+                practiceCount: record.practiceCount || 0,
+                state: 1
+              }
+            };
+          }
+          // 4. 判断草稿状态
+          if (!lastReviewDate && !nextReviewDate) {
+            // console.log(topic.topicId + '=======判断是草稿');
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: 0,
+                practiceCount: 0,
+                state: 0,
+                isDraft: true
+              }
+            };
+          }
+          // 5. 判断不是今天复习
+          if (nextReviewDate) {
+            // console.log(topic.topicId + '=======判断后面几天复习');
+            
+            const gapDays = Math.ceil((nextReviewDate - today) / (1000 * 60 * 60 * 24));
+            let gapDate = '';
+            
+            if (gapDays === 0) {
+              gapDate = '明天';
+            } else if (gapDays === 1) {
+              gapDate = '后天';
+            } else {
+              gapDate = `${gapDays}天后`;
+            }
+            
+            return {
+              topicId: topic.topicId,
+              topicName: topic.topicName,
+              topicName_cn: topic.topicName_cn,
+              status: {
+                progress: (record.practiceCount || 0) * 10,
+                practiceCount: record.practiceCount || 0,
+                state: 3,
+                gapDate
+              }
+            };
+          }
+          
+          // 如果所有条件都不满足，返回默认状态
+          // console.log(topic.topicId + '=======所有条件都不满足,配置默认status');
           return {
             topicId: topic.topicId,
             topicName: topic.topicName,
             topicName_cn: topic.topicName_cn,
-            // 如果找到匹配的topic，使用其status，否则使用默认status
-            status: matchedTopic ? matchedTopic.status : {
+            status: {
               progress: 0,
               practiceCount: 0,
               state: 0
@@ -92,10 +173,10 @@ router.get('/getBasicCategories', async (req, res) => {
       }
     });
   } catch (error) {
-    console.error('Error reading categories:', error);
+    console.error('获取分类失败:', error);
     res.status(500).json({
       code: 500,
-      message: 'Failed to get categories',
+      message: '获取分类失败',
       error: error.message
     });
   }
@@ -281,9 +362,10 @@ router.post('/updateBasicReviewTime', async (req, res) => {
         message: '缺少必要参数'
       });
     }
-    
+
+    // 使用本地时间
     const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);  // 设置为本地时间的 00:00:00
     
     // 构建更新对象
     const updateData = {
@@ -296,8 +378,10 @@ router.post('/updateBasicReviewTime', async (req, res) => {
       updateData.nextReviewDate = null;
       updateData.isCompleted = true;  // 标记为已完成
     } else {
-      // 设置下次复习时间
-      updateData.nextReviewDate = new Date(nextReviewDate);
+      // 设置下次复习时间，使用本地时间
+      const nextDate = new Date(nextReviewDate);
+      nextDate.setHours(0, 0, 0, 0);
+      updateData.nextReviewDate = nextDate;
       updateData.isCompleted = false;  // 确保不是已完成状态
     }
     

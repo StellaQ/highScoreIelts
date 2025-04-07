@@ -5,8 +5,11 @@ const API = {
   getBasicCategories: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
-        url: `${BASE_URL}/api/basic/getBasicCategories?userId=${userId}`,
+        url: `${BASE_URL}/api/basic/getBasicCategories`,
         method: 'GET',
+        data: {
+          userId
+        },
         success: (res: any) => {
           if (res.statusCode === 200) {
             resolve(res.data);

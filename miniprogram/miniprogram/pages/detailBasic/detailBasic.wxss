@@ -294,6 +294,8 @@
   }
   
   .next-review-time {
+    height: 14px;
+    line-height: 14px;
     font-size: 12px;
     color: #86909C;
     margin-top: 16px;

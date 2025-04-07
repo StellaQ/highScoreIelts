@@ -187,16 +187,18 @@ Page({
       } else {
         const days = parseInt(time);
         const nextDate = new Date();
+        nextDate.setHours(0, 0, 0, 0);  // 设置为本地时间的 00:00:00
         nextDate.setDate(nextDate.getDate() + days);
-        // 设置时间为当天的开始（00:00:00）
-        nextDate.setHours(0, 0, 0, 0);
-        // 只获取日期部分，格式：YYYY-MM-DD
-        const dateStr = nextDate.toISOString().split('T')[0];
-        console.log('dateStr:', dateStr);  // 输出类似：2025-04-09
         
+        // 格式化日期显示
+        const year = nextDate.getFullYear();
+        const month = nextDate.getMonth() + 1;
+        const day = nextDate.getDate();
+        const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
         this.setData({
           nextReviewText: `下次复习时间：${dateStr}`,
-          nextReviewDate: dateStr  // 只存储日期部分
+          nextReviewDate: dateStr
         });
       }
     },
