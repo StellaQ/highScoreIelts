@@ -25,7 +25,7 @@
     <block wx:for="{{categories}}" wx:key="categoryId">
       <!-- 标题栏 -->
       <view wx:if="{{item.topics.length > 0}}" class="header">
-        <view class="title">{{item.categoryNameInChinese}}</view>
+        <view class="title">{{item.categoryName_cn}}</view>
         <view class="progress">{{item.masteredCount}}/{{item.topics.length}}</view>
       </view>
 

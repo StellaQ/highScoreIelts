@@ -9,7 +9,7 @@
 
     <!-- 话题卡片网格骨架屏 -->
     <view class="topics-grid">
-      <view wx:for="{{4}}" wx:key="index" class="skeleton-card">
+      <view wx:for="{{7}}" wx:key="index" class="skeleton-card">
         <view class="skeleton-circle"></view>
         <view class="skeleton-info">
           <view class="skeleton skeleton-name"></view>
@@ -25,7 +25,7 @@
     <block wx:for="{{categories}}" wx:key="categoryId">
       <!-- 标题栏 -->
       <view wx:if="{{item.topics.length > 0}}" class="header">
-        <view class="title">{{item.categoryNameInChinese}}</view>
+        <view class="title">{{item.categoryName_cn}}</view>
         <view class="progress">{{item.masteredCount}}/{{item.topics.length}}</view>
       </view>
 

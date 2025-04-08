@@ -21,40 +21,6 @@ const API = {
       });
     });
   },
-  // expert 获取分类数据
-  getExpertCategories: (userId: string): Promise<any> => {
-    return new Promise((resolve, reject) => {
-      wx.request({
-        url: `${BASE_URL}/api/expert/getCategories?userId=${userId}`,
-        method: 'GET',
-        success: (res: any) => {
-          if (res.statusCode === 200) {
-            resolve(res.data);
-          } else {
-            reject(res);
-          }
-        },
-        fail: reject
-      });
-    });
-  },
-  // advanced 获取分类数据
-  getAdvancedCategories: (userId: string): Promise<any> => {
-    return new Promise((resolve, reject) => {
-      wx.request({
-        url: `${BASE_URL}/api/advanced/getCategories?userId=${userId}`,
-        method: 'GET',
-        success: (res: any) => {
-          if (res.statusCode === 200) {
-            resolve(res.data);
-          } else {
-            reject(res);
-          }
-        },
-        fail: reject
-      });
-    });
-  },
   // detailBasic 获取详情
   getBasicDetail: (userId: string, topicId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
@@ -125,6 +91,206 @@ const API = {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/basic/updateBasicReviewTime`,
+        method: 'POST',
+        data: {
+          userId,
+          topicId,
+          nextReviewDate
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // advanced 获取分类数据
+  getAdvancedCategories: (userId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/advanced/getAdvancedCategories?userId=${userId}`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 获取题目详情
+  getAdvancedDetail: (userId: string, topicId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/advanced/getAdvancedDetail?userId=${userId}&topicId=${topicId}`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // AI定制化答案
+  getAdvancedAI: (question: string, answer: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/advanced/getAdvancedAI`,
+        method: 'POST',
+        data: {
+          question,
+          answer
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 更新单个答案
+  updateAdvancedAnswer: (userId: string, topicId: string, index: number, answer: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/advanced/updateAdvancedAnswer`,
+        method: 'POST',
+        data: {
+          userId,
+          topicId,
+          index,
+          answer
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 更新复习时间
+  updateAdvancedReviewTime: (userId: string, topicId: string, nextReviewDate: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/advanced/updateAdvancedReviewTime`,
+        method: 'POST',
+        data: {
+          userId,
+          topicId,
+          nextReviewDate
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // expert 获取分类数据
+  getExpertCategories: (userId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/expert/getExpertCategories?userId=${userId}`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 获取题目详情
+  getExpertDetail: (userId: string, topicId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/expert/getExpertDetail?userId=${userId}&topicId=${topicId}`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // AI定制化答案
+  getExpertAI: (question: string, answer: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/expert/getExpertAI`,
+        method: 'POST',
+        data: {
+          question,
+          answer
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 更新单个答案
+  updateExpertAnswer: (userId: string, topicId: string, index: number, answer: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/expert/updateExpertAnswer`,
+        method: 'POST',
+        data: {
+          userId,
+          topicId,
+          index,
+          answer
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 更新复习时间
+  updateExpertReviewTime: (userId: string, topicId: string, nextReviewDate: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/expert/updateExpertReviewTime`,
         method: 'POST',
         data: {
           userId,

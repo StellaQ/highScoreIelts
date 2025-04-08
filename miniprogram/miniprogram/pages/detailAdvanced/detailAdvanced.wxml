@@ -1,2 +1,91 @@
 <!--pages/detailAdvanced/detailAdvanced.wxml-->
-<text>pages/detailAdvanced/detailAdvanced.wxml</text>
+<view class="containerAdvanced {{state === 0 ? 'state0' : state === 1 ? 'state1' : state === 2 ? 'state2' : ''}}">
+  <!-- 头部信息 -->
+  <view class="header">
+    <view class="topic-title">
+      <view>
+        <text class="topic-name">{{topicName}}</text>
+      </view>
+      <view class="topic-status {{state === 0 ? 'status-new' : state === 1 ? 'status-review' : state === 2 ? 'status-done' : ''}}">
+        {{state === 0 ? '新题目' : state === 1 ? '待复习' : state === 2 ? '已复习' : ''}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 问题列表 -->
+  <view class="question-section">
+    <block wx:if="{{state === 0}}">
+      <view wx:for="{{questions}}" wx:key="index" class="question-card">
+        <view class="question-title">{{item.qTitle}}</view>
+        <view class="question-title-cn">{{item.qTitle_cn}}</view>
+        <view 
+        style="margin: 10px 0;"
+        wx:if="{{item.type == 1}}">
+          <van-radio-group
+            data-index="{{index}}"
+            bind:change="onChangeChoice"
+            direction="horizontal">
+            <van-radio
+              style="margin-bottom: 5px;"
+              wx:for="{{item.choices}}"
+              wx:for-item="choice"
+              wx:key="index" 
+              name="{{choice}}"
+              shape="square"
+              >{{choice}}
+            </van-radio>
+          </van-radio-group>
+        </view>
+        <textarea class="answer-input" 
+          placeholder="Point + Reason + Example"
+          value="{{ item.answerUser }}"
+          data-index="{{index}}"
+          maxlength="300"
+          bindinput="onInputTextarea" />
+        <view
+          style="width: 100%; margin-bottom: 10px; display: flex; flex-direction: flex-end;">
+          <button class="submit-btn"
+            data-qTitle="{{item.qTitle}}"
+            data-index="{{index}}"
+            data-choice="{{item.choice}}"
+            bindtap="onSubmitAnswer">AI定制答案</button>
+        </view>
+        <view class="ai-feedback" wx:if="{{item.answerAI}}">
+          <view class="ai-feedback-content">
+            {{item.answerAI}}
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{state === 1}}">
+      <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
+        <view class="card-inner">
+          <view class="card-front">
+            <view class="question-title">{{item.qTitle}}</view>
+            <view class="question-tip">smile & fluent & no repetition</view>
+          </view>
+          <view class="card-back">
+            <text class="answer-content" user-select="true">
+              {{item.answerAI || '暂无参考答案'}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 复习时间选择 -->
+  <view wx:if="{{questions.length>0}}" class="review-section">
+    <text class="review-title">选择下次复习时间</text>
+    <view class="review-options">
+      <view class="review-option {{selectedTime === '1' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="1">1天</view>
+      <view class="review-option {{selectedTime === '3' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="3">3天</view>
+      <view class="review-option {{selectedTime === '7' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="7">7天</view>
+      <view class="review-option {{selectedTime === '15' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="15">15天</view>
+      <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
+    </view>
+    <view class="next-review-time">{{nextReviewText}}</view>
+    <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">确认</button>
+  </view>
+</view>
