@@ -188,7 +188,6 @@ router.get('/getExpertDetail', async (req, res) => {
         questions: topic.questions.map((question, index) => ({
           ...question.toObject(),
           answerUser: '',
-          choice: '',
           answerAI: '' 
         }))
       });
@@ -201,7 +200,6 @@ router.get('/getExpertDetail', async (req, res) => {
       return {
         ...questionObj,
         answerUser: '',
-        choice: '',
         answerAI: record?.answers?.[index] || ''
       };
     });

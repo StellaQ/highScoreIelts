@@ -9,10 +9,11 @@
   .header {
     background: #fff;
     border-radius: 16px;
-    padding: 16px 24px;
+    padding: 16px 24px 50px 24px;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     width: calc(100% - 48px);
+    position: relative;
   }
   
   .topic-title {
@@ -25,6 +26,7 @@
     font-size: 20px;
     font-weight: 600;
     display: block;
+    text-align: justify;
   }
   
   .topic-name-cn {
@@ -39,6 +41,7 @@
     border-radius: 100px;
     font-size: 14px;
     font-weight: 500;
+    position: absolute; right: 24px; bottom: 10px;
   }
   
   .status-new {
@@ -93,6 +96,7 @@
     font-weight: 600;
     margin-bottom: 12px;
     color: #333;
+    text-align: justify;
   }
 
   .question-title-cn {
@@ -104,7 +108,7 @@
   .answer-input {
     width: 100%;
     height: 120px;
-    padding: 12px;
+    /* padding: 12px; */
     border: 1px solid #E5E6EB;
     border-radius: 8px;
     font-size: 16px;
@@ -122,16 +126,16 @@
   }
 
   .ai-feedback {
-    margin-top: 16px;
-    padding: 16px;
-    background: #F6F6F6;
-    border-radius: 8px;
+    background: #F8F9FC;
+    border-radius: 16px;
+    padding: 5px;
   }
 
   .ai-feedback-content {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
+    text-align: justify;
   }
 
   /* 卡片翻转效果 */
@@ -172,58 +176,76 @@
 
   /* 复习时间选择 */
   .review-section {
-    margin-top: 24px;
-    padding: 24px;
     background: #fff;
     border-radius: 16px;
+    padding: 24px;
+    margin-top: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    width: calc(100% - 48px);
   }
 
   .review-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
     display: block;
   }
 
   .review-options {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+    /* gap: 12px; */
     margin-bottom: 16px;
   }
 
   .review-option {
-    padding: 8px 16px;
-    background: #F5F7FA;
+    flex: 0 0 auto;
+    padding: 8px 8px;
     border-radius: 100px;
     font-size: 14px;
-    color: #666;
+    background: #F2F7FF;
+    color: #86909C;
+    text-align: center;
+    transition: all 0.3s ease;
   }
 
-  .review-option.selected {
-    background: #1890FF;
-    color: #fff;
+  /* state=0 的选项样式 */
+  .state0 .review-option.selected {
+    background: #F2F7FF;
+    color: #18A058;
   }
-
+  /* state=1 的选项样式 */
+  .state1 .review-option.selected {
+    background: #F2F7FF;
+    color: #13C2C2;
+  }
   .next-review-time {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 16px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #86909C;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 
   .confirm-btn {
-    width: 100%;
-    background: #1890FF;
+    width: 50%;
+    margin-top: 16px;
+    background: #18A058;
     color: #fff;
     border: none;
-    padding: 12px;
     border-radius: 8px;
-    font-size: 16px;
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  .state1 .confirm-btn {
+    background: #13C2C2;
   }
 
   .confirm-btn[disabled] {
-    background: #E5E6EB;
-    color: #C9CDD4;
+    background: #C9CDD4 !important;
+    color: #fff !important;
   }

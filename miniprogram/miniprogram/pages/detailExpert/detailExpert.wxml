@@ -3,11 +3,11 @@
   <!-- 头部信息 -->
   <view class="header">
     <view class="topic-title">
-      <view>
+      <view style="width: 100%;">
         <text class="topic-name">{{topicName}}</text>
       </view>
-      <view class="topic-status {{state === 0 ? 'status-new' : state === 1 ? 'status-review' : state === 2 ? 'status-done' : ''}}">
-        {{state === 0 ? '新题目' : state === 1 ? '待复习' : state === 2 ? '已复习' : ''}}
+      <view class="topic-status {{state === 0 ? 'status-new' : state === 1 ? 'status-review' : ''}}">
+        {{state === 0 ? '新题目' : state === 1 ? '待复习' : ''}}
       </view>
     </view>
   </view>
@@ -18,26 +18,8 @@
       <view wx:for="{{questions}}" wx:key="index" class="question-card">
         <view class="question-title">{{item.qTitle}}</view>
         <view class="question-title-cn">{{item.qTitle_cn}}</view>
-        <view 
-        style="margin: 10px 0;"
-        wx:if="{{item.type == 1}}">
-          <van-radio-group
-            data-index="{{index}}"
-            bind:change="onChangeChoice"
-            direction="horizontal">
-            <van-radio
-              style="margin-bottom: 5px;"
-              wx:for="{{item.choices}}"
-              wx:for-item="choice"
-              wx:key="index" 
-              name="{{choice}}"
-              shape="square"
-              >{{choice}}
-            </van-radio>
-          </van-radio-group>
-        </view>
         <textarea class="answer-input" 
-          placeholder="Point + Reason + Example"
+          placeholder="Opinion + 1ST Eeample/Reason + 2ND Example/Reason + Conclusion (不要拿自己，自己周边来举例。尽量客观论证。实在词穷，让AI帮你补全。）"
           value="{{ item.answerUser }}"
           data-index="{{index}}"
           maxlength="300"
@@ -47,7 +29,6 @@
           <button class="submit-btn"
             data-qTitle="{{item.qTitle}}"
             data-index="{{index}}"
-            data-choice="{{item.choice}}"
             bindtap="onSubmitAnswer">AI定制答案</button>
         </view>
         <view class="ai-feedback" wx:if="{{item.answerAI}}">
