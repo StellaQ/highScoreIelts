@@ -181,7 +181,7 @@ Page({
   
       if (time === 'done') {
         this.setData({
-          nextReviewText: '已掌握，不再出现在学习列表中',
+          nextReviewText: '已掌握，不再需要学习',
           nextReviewDate: 'done'
         });
       } else {

@@ -166,6 +166,7 @@
     font-size: 14px;
     color: #666;
     margin-top: 8px;
+    text-align: center;
   }
 
   .answer-content {

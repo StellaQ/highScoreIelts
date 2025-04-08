@@ -44,7 +44,7 @@
         <view class="card-inner">
           <view class="card-front">
             <view class="question-title">{{item.qTitle}}</view>
-            <view class="question-tip">smile & fluent & no repetition</view>
+            <view class="question-tip">soft spoken & natural & eye to eye contact</view>
           </view>
           <view class="card-back">
             <text class="answer-content" user-select="true">
