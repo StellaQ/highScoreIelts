@@ -182,36 +182,35 @@ router.get('/getAdvancedDetail', async (req, res) => {
     
     const today = new Date().setHours(0, 0, 0, 0);
     
-    if (!record) {
-      return res.json({
-        state: 0,
-        topicId,
-        questions: topic.points.map((point, index) => ({
-          ...point.toObject(),
-          answerUser: '',
-          choice: '',
-          answerAI: '' 
-        }))
-      });
-    }
-
-    const questionsWithAnswers = topic.points.map((point, index) => {
+    const questionsWithAnswerUser = topic.points.map((point, index) => {
       const pointObj = point.toObject();
       delete pointObj._id;
       
       return {
         ...pointObj,
-        answerUser: '',
-        choice: '',
-        answerAI: record?.answers?.[index] || ''
+        answerUser: ''
       };
     });
+
+    if (!record) {
+      return res.json({
+        state: 0,
+        topicId,
+        questions: questionsWithAnswerUser,
+        answer: {
+          opening: '',
+          body: '',
+          closing: ''
+        }
+      });
+    }
 
     if (!record.lastReviewDate && !record.nextReviewDate) {
       return res.json({
         state: 0,
         topicId,
-        questions: questionsWithAnswers,
+        questions: questionsWithAnswerUser,
+        answer: record.answer,
         isDraft: true
       });
     }
@@ -221,7 +220,8 @@ router.get('/getAdvancedDetail', async (req, res) => {
       return res.json({
         state: 1,
         topicId,
-        questions: questionsWithAnswers
+        questions: questionsWithAnswerUser,
+        answer: record.answer
       });
     }
 
@@ -240,15 +240,22 @@ router.get('/getAdvancedDetail', async (req, res) => {
 // AI定制化答案
 router.post('/getAdvancedAI', async (req, res) => {
   try {
-    const { question, answer } = req.body;
+    const { question, points } = req.body;
     
-    if (!question) {
+    if (!question || !points) {
       return res.status(400).json({
         code: 400,
         message: '缺少必要参数'
       });
     }
-    const user_prompt = `Question: ${question} Answer: ${answer}`;
+    
+    // 修正1：正确构建用户提示内容
+    const user_prompt = JSON.stringify({
+      question: question,
+      points: points
+    });
+    
+    // 修正2：确保getAIService正确处理参数
     const result = await getAIService(advanced_system_prompt, user_prompt);
     
     res.json(result);
@@ -266,9 +273,9 @@ router.post('/getAdvancedAI', async (req, res) => {
 // 更新单个答案
 router.post('/updateAdvancedAnswer', async (req, res) => {
   try {
-    const { userId, topicId, index, answer } = req.body;
+    const { userId, topicId, answer } = req.body;
     
-    if (!userId || !topicId || index === undefined || !answer) {
+    if (!userId || !topicId || !answer) {
       return res.status(400).json({
         code: 400,
         message: '缺少必要参数'
@@ -279,7 +286,8 @@ router.post('/updateAdvancedAnswer', async (req, res) => {
       { userId, topicId },
       { 
         $set: { 
-          [`answers.${index}`]: answer
+          answer: answer,
+          updatedAt: new Date()
         }
       },
       { 

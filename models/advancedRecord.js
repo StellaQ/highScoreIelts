@@ -21,7 +21,7 @@ const advancedRecordSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  answers: {
+  answer: {
     type: Object,
     default: {},
   },

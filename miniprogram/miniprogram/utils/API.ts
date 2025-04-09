@@ -143,14 +143,14 @@ const API = {
     });
   },
   // AI定制化答案
-  getAdvancedAI: (question: string, answer: string): Promise<any> => {
+  getAdvancedAI: (question: string, points: Array): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/advanced/getAdvancedAI`,
         method: 'POST',
         data: {
           question,
-          answer
+          points
         },
         success: (res: any) => {
           if (res.statusCode === 200) {
@@ -164,7 +164,7 @@ const API = {
     });
   },
   // 更新单个答案
-  updateAdvancedAnswer: (userId: string, topicId: string, index: number, answer: string): Promise<any> => {
+  updateAdvancedAnswer: (userId: string, topicId: string, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/advanced/updateAdvancedAnswer`,
@@ -172,7 +172,6 @@ const API = {
         data: {
           userId,
           topicId,
-          index,
           answer
         },
         success: (res: any) => {

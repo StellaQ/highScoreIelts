@@ -18,46 +18,14 @@
       <view wx:for="{{questions}}" wx:key="index" class="question-card">
         <view class="question-title">{{item.qTitle}}</view>
         <view class="question-title-cn">{{item.qTitle_cn}}</view>
-        <view 
-        style="margin: 10px 0;"
-        wx:if="{{item.type == 1}}">
-          <van-radio-group
-            data-index="{{index}}"
-            bind:change="onChangeChoice"
-            direction="horizontal">
-            <van-radio
-              style="margin-bottom: 5px;"
-              wx:for="{{item.choices}}"
-              wx:for-item="choice"
-              wx:key="index" 
-              name="{{choice}}"
-              shape="square"
-              >{{choice}}
-            </van-radio>
-          </van-radio-group>
-        </view>
         <textarea class="answer-input" 
-          placeholder="Point + Reason + Example"
+          placeholder="如果为空，就由AI自动补全[AI Generated]"
           value="{{ item.answerUser }}"
           data-index="{{index}}"
-          maxlength="300"
+          maxlength="100"
           bindinput="onInputTextarea" />
-        <view
-          style="width: 100%; margin-bottom: 10px; display: flex; flex-direction: flex-end;">
-          <button class="submit-btn"
-            data-qTitle="{{item.qTitle}}"
-            data-index="{{index}}"
-            data-choice="{{item.choice}}"
-            bindtap="onSubmitAnswer">AI定制答案</button>
-        </view>
-        <view class="ai-feedback" wx:if="{{item.answerAI}}">
-          <view class="ai-feedback-content">
-            {{item.answerAI}}
-          </view>
-        </view>
-      </view>
+      </view> 
     </block>
-
     <block wx:if="{{state === 1}}">
       <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
         <view class="card-inner">
@@ -74,7 +42,23 @@
       </view>
     </block>
   </view>
-
+  <view wx:if="{{state === 0}}"
+    style="width: 100%; margin: 14px 0; display: flex; flex-direction: flex-end;">
+    <button class="submit-btn"
+      bindtap="onSubmitAnswer">AI定制答案</button>
+  </view>
+  <view wx:if="{{state === 0 && (answerAI.opening || answerAI.body || answerAI.closing)}}"
+   class="ai-feedback">
+    <view class="ai-feedback-content" wx:if="{{answerAI.opening}}">
+      {{answerAI.opening}}
+    </view>
+    <view class="ai-feedback-content" wx:if="{{answerAI.body}}">
+      {{answerAI.body}}
+    </view>
+    <view class="ai-feedback-content" wx:if="{{answerAI.closing}}">
+      {{answerAI.closing}}
+    </view>
+  </view>
   <!-- 复习时间选择 -->
   <view wx:if="{{questions.length>0}}" class="review-section">
     <text class="review-title">选择下次复习时间</text>

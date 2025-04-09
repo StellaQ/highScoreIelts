@@ -10,10 +10,15 @@ Page({
     topicId: '',
     topicName: '',
     topicName_cn: '',
-    state: -1, // 0: 新题目, 1: 今天待复习, 2: 今天已完成
+    state: -1, // 0: 新题目, 1: 今天待复习
     userId: '',
 
     questions: [],
+    answerAI: {
+      opening: '',
+      body: '',
+      closing: ''
+    },
 
     selectedTime: '', // 选中的复习时间
     nextReviewText: '', // 下次复习时间文本
@@ -48,72 +53,23 @@ Page({
       this.fetchAdvancedDetail(userId, options.topicId);
     }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  },
-
   async fetchAdvancedDetail(userId: string, topicId: string) {
     try {
       const result = await API.getAdvancedDetail(userId, topicId);
-      if (result && result.state===1 || result && result.state===2) {
-        const questions = result.points.map((q: any) => ({
-          ...q,
-          isFlipped: false
-        }));
-        this.setData({
-          state: result.state,
-          questions: questions
-        });
+      if (result && result.state===1) {
+        // const questions = result.questions.map((q: any) => ({
+        //   ...q,
+        //   isFlipped: false
+        // }));
+        // this.setData({
+        //   state: result.state,
+        //   questions: questions
+        // });
       } else {
         this.setData({
           state: result.state,
-          questions: result.points
+          questions: result.questions,
+          answerAI: result.answer
         });
       }
     } catch (error) {
@@ -124,17 +80,6 @@ Page({
       });
     }
   },
-
-  onChangeChoice(event: WechatMiniprogram.CustomEvent) {
-    const value = event.detail;
-    const { index } = event.currentTarget.dataset;
-    const questions = this.data.questions;
-    questions[index].choice = value;
-    this.setData({
-      questions
-    });
-  },
-
   onInputTextarea(event: WechatMiniprogram.CustomEvent) {
     const { value } = event.detail;
     const { index } = event.currentTarget.dataset;
@@ -145,31 +90,55 @@ Page({
     });
   },
 
-  async onSubmitAnswer(e: any) {
-    const { index, qTitle } = e.currentTarget.dataset;
-    const question = this.data.questions[index];
-    
-    if (!question.answerUser) {
-      wx.showToast({
-        title: '请先输入答案',
-        icon: 'none'
-      });
-      return;
-    }
-
+  async onSubmitAnswer() {
+    const question = this.data.topicName;
+    const points = this.data.questions.map(q => ({
+      point: q.qTitle,
+      answer: q.answerUser || ''
+    }));
+    // console.log(question);
+    // console.log(points);
+    wx.showLoading({
+      title: 'AI定制答案中...',
+      mask: true  // 防止用户点击其他区域
+    });
     try {
-      const result = await API.getAdvancedAI({
-        userId: this.data.userId,
-        topicId: this.data.topicId,
-        qTitle: qTitle,
-        answerUser: question.answerUser
+      const resultAI = await API.getAdvancedAI(question, points);
+
+      const { answerAI } = this.data;
+      // console.log(resultAI);
+      // 更新数据
+      this.setData({
+        answerAI: resultAI.answer
       });
 
-      const questions = this.data.questions;
-      questions[index].answerAI = result.data.answer;
-      this.setData({
-        questions
+      // 隐藏loading
+      wx.hideLoading();
+      // 可以添加一个提示
+      wx.showToast({
+        title: 'AI定制答案完成',
+        icon: 'success',
+        duration: 1500
       });
+      // 尝试保存AI定制答案到数据库
+      try {
+        const { userId, topicId } = this.data;
+        // 调用API更新答案
+        const result = await API.updateAdvancedAnswer(userId, topicId, resultAI.answer);
+        // console.log(result);
+        if (result.code !== 0) {
+          wx.showToast({
+            title: '答案保存失败',
+            icon: 'none'
+          });
+        }
+      } catch (error) {
+        console.error('答案保存失败:', error);
+        wx.showToast({
+          title: '答案保存失败',
+          icon: 'none'
+        });
+      }
     } catch (error) {
       console.error('Failed to get AI answer:', error);
       wx.showToast({
@@ -180,77 +149,97 @@ Page({
   },
 
   onSelectTime(e: { currentTarget: { dataset: { time: string; }; }; }) {
+    
+    // 只有在state为0时才检查
+    const { state, answerAI } = this.data;
+    if (state === 0) {
+      // 检查answerAI是否有内容
+      if (!answerAI.opening && !answerAI.body && !answerAI.closing) {
+        wx.showToast({
+          title: '请先完成上面的AI定制答案',
+          icon: 'none',
+          duration: 2000
+        });
+        return;
+      }
+    }
+
     const time = e.currentTarget.dataset.time;
-    let nextReviewText = '';
-    let nextReviewDate = '';
+    this.setData({ selectedTime: time });
 
     if (time === 'done') {
-      nextReviewText = '已掌握';
-      nextReviewDate = 'done';
+      this.setData({
+        nextReviewText: '已掌握，不再需要学习',
+        nextReviewDate: 'done'
+      });
     } else {
       const days = parseInt(time);
-      const date = new Date();
-      date.setDate(date.getDate() + days);
-      nextReviewText = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-      nextReviewDate = nextReviewText;
+      const nextDate = new Date();
+      nextDate.setHours(0, 0, 0, 0);  // 设置为本地时间的 00:00:00
+      nextDate.setDate(nextDate.getDate() + days);
+
+      // 格式化日期显示
+      const year = nextDate.getFullYear();
+      const month = nextDate.getMonth() + 1;
+      const day = nextDate.getDate();
+      const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+      this.setData({
+        nextReviewText: `下次复习时间：${dateStr}`,
+        nextReviewDate: dateStr
+      });
     }
-
-    this.setData({
-      selectedTime: time,
-      nextReviewText,
-      nextReviewDate
-    });
   },
-
   async onConfirmTime() {
-    if (!this.data.nextReviewDate) {
-      wx.showToast({
-        title: '请选择复习时间',
-        icon: 'none'
-      });
-      return;
-    }
-
+    const { userId, topicId, nextReviewDate } = this.data;
     try {
-      await API.updateAdvancedReviewTime({
-        userId: this.data.userId,
-        topicId: this.data.topicId,
-        nextReviewDate: this.data.nextReviewDate
-      });
+      const result = await API.updateAdvancedReviewTime(userId, topicId, nextReviewDate);
 
-      // 获取页面栈
-      const pages = getCurrentPages();
-      const prevPage = pages[pages.length - 2];
-      
-      // 更新上一页面的状态
-      if (prevPage) {
-        const topics = prevPage.data.categories[0].topics;
-        const topicIndex = topics.findIndex((t: any) => t.topicId === this.data.topicId);
+      if (result.code === 0) {
+        wx.showToast({
+          title: '设置成功',
+          icon: 'success'
+        });
+        // 获取页面栈
+        const pages = getCurrentPages();
+        const prevPage = pages[pages.length - 2]; // 获取上一个页面
         
-        if (topicIndex !== -1) {
-          if (this.data.selectedTime === 'done') {
-            topics[topicIndex].status.state = 4;
-            topics[topicIndex].status.progress = 100;
-          } else {
-            topics[topicIndex].status.state = 2;
+        // 根据选择的时间设置状态
+        const newState = nextReviewDate === 'done' ? 4 : 2;
+        
+        // 更新上一个页面的数据
+        if (prevPage) {
+          // 找到对应的 topic 并更新状态
+          const topics = prevPage.data.categories.flatMap((category: any) => category.topics);
+          const topicIndex = topics.findIndex((topic: any) => topic.topicId === topicId);
+          if (topicIndex !== -1) {
+            topics[topicIndex].status.state = newState;
+            topics[topicIndex].status.practiceCount++;
+            // 如果是完成状态，更新进度为100
+            if (newState === 4) {
+              topics[topicIndex].status.progress = 100;
+            } else if (newState === 2) {
+              topics[topicIndex].status.progress = topics[topicIndex].status.practiceCount * 10;
+            }
+            // 更新页面数据
+            prevPage.setData({
+              categories: prevPage.data.categories
+            });
           }
-          
-          prevPage.setData({
-            'categories[0].topics': topics
-          });
         }
+        // 返回上一页
+        wx.navigateBack();
+      } else {
+        throw new Error(result.message);
       }
-
-      wx.navigateBack();
     } catch (error) {
-      console.error('Failed to update review time:', error);
-      wx.showToast({
-        title: '更新复习时间失败',
-        icon: 'error'
-      });
+      console.error('设置复习时间失败:', error);
+        wx.showToast({
+          title: '设置失败',
+          icon: 'none'
+        });
     }
   },
-
   onCardTap(e: { currentTarget: { dataset: { index: number; }; }; }) {
     const { index } = e.currentTarget.dataset;
     const questions = this.data.questions;
