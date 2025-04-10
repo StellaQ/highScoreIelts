@@ -95,11 +95,13 @@ router.post('/getOpenId', async (req, res) => {
     }
 
     res.json({
-      userInfo: {
-        userId: user.userId,
-        nickname: user.nickname,
-        avatarUrl: user.avatarUrl,
-        inviteCode: user.inviteCode
+      data: {  // 添加 data 层
+        userInfo: {
+          userId: user.userId,
+          nickname: user.nickname,
+          avatarUrl: user.avatarUrl,
+          inviteCode: user.inviteCode
+        }
       }
     });
   } catch (error) {

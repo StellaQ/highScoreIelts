@@ -61,24 +61,16 @@ App<IAppOption>({
           API.getOpenId(res.code, this.globalData.codeFromInviter)
             .then(async (response: any) => {
               const userInfo = response.data.userInfo;
-              
-              // 如果后端返回的用户信息不完整，使用默认值
-              const completeUserInfo: UserInfo = {
-                userId: userInfo.userId || '',
-                nickname: userInfo.nickname || '',
-                avatarUrl: userInfo.avatarUrl || '',
-                inviteCode: userInfo.inviteCode
-              };
 
               // 保存到本地存储
-              await simpleSecureStorage.setStorage('userInfo', completeUserInfo);
-              this.globalData.userInfo = completeUserInfo;
+              await simpleSecureStorage.setStorage('userInfo', userInfo);
+              this.globalData.userInfo = userInfo;
 
-              console.log("app.ts api/user/getOpenId 获取并存储用户数据:", completeUserInfo);
+              console.log("app.ts api/user/getOpenId 获取并存储用户数据:", userInfo);
 
               // 触发回调，通知所有等待的页面
               if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(completeUserInfo);
+                this.userInfoReadyCallback(userInfo);
               }
             })
             .catch(error => {
