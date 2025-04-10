@@ -1,4 +1,5 @@
 import { simpleSecureStorage } from './utils/simpleSecureStorage';
+import API from './utils/API';
 
 interface UserInfo {
   userId: string;
@@ -57,14 +58,8 @@ App<IAppOption>({
     wx.login({
       success: (res) => {
         if (res.code) {
-          wx.request({
-            url: 'http://localhost:3001/api/user/getOpenId',
-            method: 'POST',
-            data: { 
-              code: res.code,
-              codeFromInviter: this.globalData.codeFromInviter
-            },
-            success: async (response: any) => {
+          API.getOpenId(res.code, this.globalData.codeFromInviter)
+            .then(async (response: any) => {
               const userInfo = response.data.userInfo;
               
               // 如果后端返回的用户信息不完整，使用默认值
@@ -85,15 +80,14 @@ App<IAppOption>({
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(completeUserInfo);
               }
-            },
-            fail: (error) => {
+            })
+            .catch(error => {
               console.error("app.ts /api/user/getOpenId 获取用户信息失败:", error);
               // wx.showToast({
               //   title: '获取用户信息失败',
               //   icon: 'none'
               // });
-            }
-          });
+            });
         }
       }
     });

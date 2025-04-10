@@ -1,7 +1,9 @@
-const BASE_URL = 'http://localhost:3001'; // 替换为实际的 API 地址
+import { config } from './config';
+
+export const BASE_URL = config.BASE_URL;
 
 const API = {
-  // basic 获取分类数据
+  // listBasic 获取分类数据
   getBasicCategories: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -42,7 +44,7 @@ const API = {
       });
     });
   },
-  // basic 调用AI来定制化口语答案
+  // detailBasic AI定制答案
   getBasicAI: (question: string, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -63,7 +65,7 @@ const API = {
       });
     });
   },
-  // basic 更新单个答案
+  // detailBasic 更新单个答案
   updateBasicAnswer: (userId: string, topicId: string, index: number, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -86,7 +88,7 @@ const API = {
       });
     });
   },
-  // basic 更新下次复习时间
+  // detailBasic 更新复习时间
   updateBasicReviewTime: (userId:string, topicId: string, nextReviewDate: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -108,7 +110,7 @@ const API = {
       });
     });
   },
-  // advanced 获取分类数据
+  // listAdvanced 获取分类数据
   getAdvancedCategories: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -125,7 +127,7 @@ const API = {
       });
     });
   },
-  // 获取题目详情
+  // detailAdvanced 获取详情
   getAdvancedDetail: (userId: string, topicId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -142,8 +144,8 @@ const API = {
       });
     });
   },
-  // AI定制化答案
-  getAdvancedAI: (question: string, points: Array): Promise<any> => {
+  // detailAdvanced AI定制答案
+  getAdvancedAI: (question: string, points: Array<string>): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/advanced/getAdvancedAI`,
@@ -163,7 +165,7 @@ const API = {
       });
     });
   },
-  // 更新单个答案
+  // detailAdvanced 更新答案
   updateAdvancedAnswer: (userId: string, topicId: string, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -185,7 +187,7 @@ const API = {
       });
     });
   },
-  // 更新复习时间
+  // detailAdvanced 更新复习时间
   updateAdvancedReviewTime: (userId: string, topicId: string, nextReviewDate: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -207,7 +209,7 @@ const API = {
       });
     });
   },
-  // expert 获取分类数据
+  // listExpert 获取分类数据
   getExpertCategories: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -224,7 +226,7 @@ const API = {
       });
     });
   },
-  // 获取题目详情
+  // detailExpert 获取题目详情
   getExpertDetail: (userId: string, topicId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -241,7 +243,7 @@ const API = {
       });
     });
   },
-  // AI定制化答案
+  // detailExpert AI定制答案
   getExpertAI: (question: string, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -262,7 +264,7 @@ const API = {
       });
     });
   },
-  // 更新单个答案
+  // detailExpert 更新答案
   updateExpertAnswer: (userId: string, topicId: string, index: number, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -285,7 +287,7 @@ const API = {
       });
     });
   },
-  // 更新复习时间
+  // detailExpert 更新复习时间
   updateExpertReviewTime: (userId: string, topicId: string, nextReviewDate: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -307,7 +309,50 @@ const API = {
       });
     });
   },
-  // 执行签到 done
+  // app.ts 获取用户 openId
+  getOpenId: (code: string, codeFromInviter?: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/user/getOpenId`,
+        method: 'POST',
+        data: {
+          code,
+          codeFromInviter
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // abouMe 更新用户信息
+  updateProfile: (userId: string, nickname: string, avatarUrl: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/user/updateProfile`,
+        method: 'POST',
+        data: {
+          userId,
+          nickname,
+          avatarUrl
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // aboutMe 执行签到
   signIn: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -324,7 +369,7 @@ const API = {
       });
     });
   },
-  // 检查总的邀请人数和最近三天的邀请人数
+  // aboutMe 检查总的邀请人数和最近三天的邀请人数
   checkInvites: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -341,7 +386,7 @@ const API = {
       });
     });
   },
-  // 今日最新数据 doing
+  // aboutMe 今日最新数据 doing
   getLatestStatus: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -358,7 +403,7 @@ const API = {
       });
     });
   },
-  // 验证邀请码
+  // aboutMe 验证邀请码
   verifyInviteCode: (userId: string, inviteCode: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -370,6 +415,28 @@ const API = {
             resolve(res.data);
           } else {
             reject(new Error(res.data.error || '验证邀请码失败'));
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // feedback 上传反馈
+  uploadFeedback: (userId: string, content: string, images?: string[]): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/feedback/upload`,
+        method: 'POST',
+        data: {
+          userId,
+          content,
+          images: images || []
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
           }
         },
         fail: reject

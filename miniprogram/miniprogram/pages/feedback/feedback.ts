@@ -1,6 +1,7 @@
 import { validateFeedback, sanitizeText } from '../../utils/contentValidator';
 import { getShareAppMessage } from '../../utils/shareUtil';
 import { simpleSecureStorage } from '../../utils/simpleSecureStorage';
+import API, { BASE_URL } from '../../utils/API';
 
 interface PageData {
   feedbackText: string;
@@ -114,7 +115,7 @@ Page<PageData, PageInstance & PageMethods>({
         for (const tempFilePath of images) {
           const uploadRes = await new Promise<WechatMiniprogram.UploadFileSuccessCallbackResult>((resolve, reject) => {
             wx.uploadFile({
-              url: 'http://localhost:3001/api/feedback/upload',
+              url: `${BASE_URL}/api/feedback/upload`,
               filePath: tempFilePath,
               name: 'image',
               success: resolve,
@@ -127,18 +128,7 @@ Page<PageData, PageInstance & PageMethods>({
       }
 
       // 提交反馈
-      const res = await new Promise<WechatMiniprogram.RequestSuccessCallbackResult>((resolve, reject) => {
-        wx.request({
-          url: 'http://localhost:3001/api/feedback/submit',
-          method: 'POST',
-          data: {
-            content: sanitizedText,
-            images: uploadedImages
-          },
-          success: resolve,
-          fail: reject
-        });
-      });
+      const res = await API.uploadFeedback(this.data.userInfo.userId, sanitizedText, uploadedImages);
 
       if (res.statusCode === 200) {
         wx.showToast({

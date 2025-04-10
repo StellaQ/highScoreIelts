@@ -15,7 +15,7 @@ node_modules/
 .idea/
 
 miniprogram/node_modules
-vue-admin/node_modules
+vue-admin/
 README.md 
 miniprogram/README.md
 vue-admin/README.md

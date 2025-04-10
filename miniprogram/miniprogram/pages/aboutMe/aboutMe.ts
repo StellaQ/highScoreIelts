@@ -1,6 +1,24 @@
 import { simpleSecureStorage } from '../../utils/simpleSecureStorage';
 import API from '../../utils/API';
 
+interface PageData {
+  userInfo: {
+    userId: string;
+    nickname: string;
+    avatarUrl: string;
+    inviteCode: string;
+  };
+  configCheckedInNum: number;
+  configInviteNum: number;
+  points: number;
+  hasCheckedIn: boolean;
+  inviteCode: string;
+  recentInvites: number;
+  totalInvites: number;
+  streakDays: number;
+  inputInviteCode: string;
+}
+
 Page({
   data: {
     userInfo: {
@@ -266,21 +284,13 @@ Page({
         this.setData({ userInfo });
 
         // 后端更新用户信息
-        wx.request({
-          url: 'http://localhost:3001/api/user/updateProfile',
-          method: 'POST',
-          data: {
-            userId: this.data.userInfo.userId,
-            nickname: res.userInfo.nickName,
-            avatarUrl: res.userInfo.avatarUrl
-          },
-          success: () => {
+        API.updateProfile(this.data.userInfo.userId, this.data.userInfo.nickname, this.data.userInfo.avatarUrl)
+          .then(res => {
             console.log('api/user/updateProfile 用户信息更新成功');
-          },
-          fail: () => {  
+          })
+          .catch(err => {  
             console.error('api/user/updateProfile 用户信息更新失败');
-          }
-        });
+          });
       }
     });
   },
