@@ -10,11 +10,11 @@ const ENV = {
   },
   // 测试环境
   TEST: {
-    BASE_URL: 'https://test-api.highscoreielts.com'
+    BASE_URL: 'https://test-api.dds.com'
   },
   // 生产环境
   PROD: {
-    BASE_URL: 'https://api.highscoreielts.com'
+    BASE_URL: 'https://api.hlts.com'
   }
 };
 

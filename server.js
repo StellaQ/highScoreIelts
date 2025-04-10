@@ -1,73 +1,69 @@
 const express = require('express');
 const path = require('path');
+const logger = require('./config/logger');
+const morgan = require('morgan');
+const cors = require('cors');
+const { connectDB } = require('./config/db');
 
-// 获取当前环境 development debug test production
+// 获取当前环境 development/debug/test/production
 const env = process.env.NODE_ENV || 'development';
-// 根据环境选择配置
 const host = process.env[`${env.toUpperCase()}_HOST`] || 'localhost';
 const port = process.env[`${env.toUpperCase()}_PORT`] || 3000;
 
-const logger = require('./config/logger');
-const morgan = require('morgan');
-
-const cors = require('cors');
-
 const app = express();
 
-import { connectDB } from './config/db.js';
-// 连接 MongoDB 数据库
-await connectDB(); 
+(async () => {
+  try {
+    // 连接数据库
+    await connectDB();
 
-// 启用 CORS 以允许微信小程序访问
-app.use(cors());
+    // 中间件和路由
+    app.use(cors());
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+    app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+    app.use(express.static(path.join(__dirname, 'miniprogram')));
 
-// 使用 JSON 中间件
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+    // 路由模块
+    app.use('/api/user', require('./routes/user'));
+    app.use('/api/basic', require('./routes/basic'));
+    app.use('/api/advanced', require('./routes/advanced'));
+    app.use('/api/expert', require('./routes/expert'));
+    app.use('/api/feedback', require('./routes/feedback'));
 
-// 提供静态文件服务
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use(express.static(path.join(__dirname, 'miniprogram')));
-// app.use('/admin', express.static(path.join(__dirname, 'vue-admin/dist')));
+    // 日志
+    app.use(morgan('combined', {
+      stream: {
+        write: (message) => logger.info(message.trim())
+      }
+    }));
 
-const userRoutes = require('./routes/user');
-app.use('/api/user', userRoutes);
-const basicRoutes = require('./routes/basic');
-app.use('/api/basic', basicRoutes);
-const expertRoutes = require('./routes/expert');
-app.use('/api/expert', expertRoutes);
-const advancedRoutes = require('./routes/advanced');
-app.use('/api/advanced', advancedRoutes);
-const feedbackRoutes = require('./routes/feedback');
-app.use('/api/feedback', feedbackRoutes);
+    // 错误处理
+    app.use((err, req, res, next) => {
+      logger.error(err.stack);
+      res.status(500).json({
+        error: '服务器内部错误',
+        message: env === 'development' ? err.message : '发生错误'
+      });
+    });
 
+    // 未捕获异常和 Promise 拒绝
+    process.on('uncaughtException', (err) => {
+      logger.error('未捕获的异常:', err);
+      process.exit(1);
+    });
 
-// 请求日志
-app.use(morgan('combined', {
-  stream: {
-    write: (message) => logger.info(message.trim())
+    process.on('unhandledRejection', (reason, promise) => {
+      logger.error('未处理的 Promise 拒绝:', reason);
+    });
+
+    // 启动服务
+    app.listen(port, host, () => {
+      console.log(`Server is running at http://${host}:${port} in ${env} environment`);
+    });
+
+  } catch (err) {
+    console.error('❌ 启动失败:', err);
+    process.exit(1);
   }
-}));
-
-// 全局错误处理
-app.use((err, req, res, next) => {
-  logger.error(err.stack);
-  res.status(500).json({
-    error: '服务器内部错误',
-    message: process.env.NODE_ENV === 'development' ? err.message : '发生错误'
-  });
-});
-
-// 未捕获的异常处理
-process.on('uncaughtException', (err) => {
-  logger.error('未捕获的异常:', err);
-  process.exit(1);
-});
-
-process.on('unhandledRejection', (reason, promise) => {
-  logger.error('未处理的 Promise 拒绝:', reason);
-});
-
-app.listen(port, host, () => {
-  console.log(`Server is running at http://${host}:${port} in ${env} environment`);
-});
+})();

@@ -5,8 +5,11 @@
   "main": "server.js",
   "scripts": {
     "dev": "cross-env NODE_NO_WARNINGS=1 NODE_ENV=development nodemon server.js",
-    "debug": "cross-env NODE_ENV=debug node server.js",
-    "test": "cross-env NODE_ENV=test node server.js"
+    "debug": "cross-env NODE_NO_WARNINGS=1 NODE_ENV=debug node server.js",
+    "test": "cross-env NODE_ENV=test node server.js",
+    "import:dev": "cross-env NODE_ENV=development node scripts/importData.js",
+    "import:test": "cross-env NODE_ENV=test node scripts/importData.js",
+    "import:prod": "cross-env NODE_ENV=production node scripts/importData.js"
   },
   "keywords": [],
   "author": "",

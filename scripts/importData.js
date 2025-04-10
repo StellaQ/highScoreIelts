@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const { connectDB } = require('../config/db');  // 引入数据库连接配置
+
 const fs = require('fs');
 const path = require('path');
 
@@ -40,8 +42,8 @@ const dataFiles = {
 
 async function importData(fileNumber) {
   try {
-    // 连接数据库
-    await mongoose.connect('mongodb://localhost:27017/highScoreIelts_dev');
+    // 使用统一的数据库连接函数
+    await connectDB();
     console.log('数据库连接成功');
 
     // 如果指定了文件编号，只导入该文件
@@ -61,6 +63,7 @@ async function importData(fileNumber) {
     console.log('数据导入完成');
   } catch (error) {
     console.error('数据导入失败:', error);
+    process.exit(1);
   } finally {
     // 关闭数据库连接
     await mongoose.connection.close();
