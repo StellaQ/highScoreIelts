@@ -27,15 +27,25 @@
       </view> 
     </block>
     <block wx:if="{{state === 1}}">
-      <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
+      <view class="question-points">
+        <view class="question-point" wx:for="{{questions}}" wx:key="index">
+          * {{item.qTitle}}
+        </view>
+      </view>
+      <view class="question-card {{isFlipped ? 'flipped' : ''}}" bindtap="onCardTap">
         <view class="card-inner">
           <view class="card-front">
-            <view class="question-title">{{item.qTitle}}</view>
             <view class="question-tip">smile & fluent & no repetition</view>
           </view>
           <view class="card-back">
             <text class="answer-content" user-select="true">
-              {{item.answerAI || '暂无参考答案'}}
+              {{answerAI.opening}}
+            </text>
+            <text class="answer-content" user-select="true">
+              {{answerAI.body}}
+            </text>
+            <text class="answer-content" user-select="true">
+              {{answerAI.closing}}
             </text>
           </view>
         </view>

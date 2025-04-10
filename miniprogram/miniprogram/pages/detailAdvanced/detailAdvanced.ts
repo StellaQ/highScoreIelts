@@ -19,6 +19,7 @@ Page({
       body: '',
       closing: ''
     },
+    isFlipped: false,
 
     selectedTime: '', // 选中的复习时间
     nextReviewText: '', // 下次复习时间文本
@@ -56,16 +57,7 @@ Page({
   async fetchAdvancedDetail(userId: string, topicId: string) {
     try {
       const result = await API.getAdvancedDetail(userId, topicId);
-      if (result && result.state===1) {
-        // const questions = result.questions.map((q: any) => ({
-        //   ...q,
-        //   isFlipped: false
-        // }));
-        // this.setData({
-        //   state: result.state,
-        //   questions: questions
-        // });
-      } else {
+      if (result) {
         this.setData({
           state: result.state,
           questions: result.questions,
@@ -89,7 +81,6 @@ Page({
       questions
     });
   },
-
   async onSubmitAnswer() {
     const question = this.data.topicName;
     const points = this.data.questions.map(q => ({
@@ -147,7 +138,6 @@ Page({
       });
     }
   },
-
   onSelectTime(e: { currentTarget: { dataset: { time: string; }; }; }) {
     
     // 只有在state为0时才检查
@@ -240,12 +230,11 @@ Page({
         });
     }
   },
-  onCardTap(e: { currentTarget: { dataset: { index: number; }; }; }) {
-    const { index } = e.currentTarget.dataset;
-    const questions = this.data.questions;
-    questions[index].isFlipped = !questions[index].isFlipped;
+  onCardTap() {
+    let isFlipped = this.data.isFlipped;
+    isFlipped = !isFlipped;
     this.setData({
-      questions
+      isFlipped
     });
   }
 })
