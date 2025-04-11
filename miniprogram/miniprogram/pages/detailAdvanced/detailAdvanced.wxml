@@ -32,10 +32,20 @@
           * {{item.qTitle}}
         </view>
       </view>
-      <view class="question-card {{isFlipped ? 'flipped' : ''}}" bindtap="onCardTap">
+      <view class="question-card {{isFlipped ? 'flipped' : ''}}">
         <view class="card-inner">
           <view class="card-front">
-            <view class="question-tip">smile & fluent & no repetition</view>
+            <view class="question-tip">
+              <text>“思考感”：模拟思考过程</text>
+              <text>*</text>
+              <text>不要用背书的节奏讲出来。要：用正常对话的语调；有时加点停顿；重读关键词（比如“really memorable,” “absolutely amazing”）</text>
+              <text>*</text>
+              <text>多练“情绪反应”：一边讲，一边演绎出当时的情绪</text>
+              <text>*</text>
+              <text>把结构背熟，但在内容上，可以换换词，例如每次练习换掉一些形容词、连接词等，保证你有“灵活性”</text>
+              <text>*</text>
+              <text>录音+复现：可以每天用手机录音，然后回听，看看有没有“背书感”</text>
+            </view>
           </view>
           <view class="card-back">
             <text class="answer-content" user-select="true">
@@ -50,24 +60,32 @@
           </view>
         </view>
       </view>
+      <view class="button-container">
+        <van-button icon="exchange" type="default" data-index="{{index}}"  bindtap="onCardTap">翻转</van-button>
+      </view>
     </block>
   </view>
   <view wx:if="{{state === 0}}"
-    style="width: 100%; margin: 14px 0; display: flex; flex-direction: flex-end;">
+    style="width: 100%; margin: 0 0 16px 0; display: flex; flex-direction: flex-end;">
     <button class="submit-btn"
       bindtap="onSubmitAnswer">AI定制答案</button>
   </view>
   <view wx:if="{{state === 0 && (answerAI.opening || answerAI.body || answerAI.closing)}}"
    class="ai-feedback">
-    <view class="ai-feedback-content" wx:if="{{answerAI.opening}}">
+   <view class="feedback-container">
+    <text class="ai-feedback-content" user-select="true"
+      wx:if="{{answerAI.opening}}">
       {{answerAI.opening}}
-    </view>
-    <view class="ai-feedback-content" wx:if="{{answerAI.body}}">
+    </text>
+    <text class="ai-feedback-content" 
+      wx:if="{{answerAI.body}}">
       {{answerAI.body}}
-    </view>
-    <view class="ai-feedback-content" wx:if="{{answerAI.closing}}">
+    </text>
+    <text class="ai-feedback-content" 
+      wx:if="{{answerAI.closing}}">
       {{answerAI.closing}}
-    </view>
+    </text>
+   </view>
   </view>
   <!-- 复习时间选择 -->
   <view wx:if="{{questions.length>0}}" class="review-section">

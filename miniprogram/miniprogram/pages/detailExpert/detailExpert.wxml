@@ -32,15 +32,15 @@
             bindtap="onSubmitAnswer">AI定制答案</button>
         </view>
         <view class="ai-feedback" wx:if="{{item.answerAI}}">
-          <view class="ai-feedback-content">
+          <text class="ai-feedback-content" user-select="true">
             {{item.answerAI}}
-          </view>
+          </text>
         </view>
       </view>
     </block>
 
     <block wx:if="{{state === 1}}">
-      <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
+      <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}">
         <view class="card-inner">
           <view class="card-front">
             <view class="question-title">{{item.qTitle}}</view>
@@ -51,6 +51,9 @@
               {{item.answerAI || '暂无参考答案'}}
             </text>
           </view>
+        </view>
+        <view class="button-container">
+          <van-button icon="exchange" type="default" data-index="{{index}}"  bindtap="onCardTap">翻转</van-button>
         </view>
       </view>
     </block>

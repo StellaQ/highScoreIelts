@@ -51,23 +51,15 @@
             bindtap="onSubmitAnswer">AI定制答案</button>
         </view>
         <view class="ai-feedback" wx:if="{{item.answerAI}}">
-          <!-- <text class="ai-feedback-title">AI 反馈</text> -->
-          <view class="ai-feedback-content">
+          <text class="ai-feedback-content" user-select="true">
             {{item.answerAI}}
-            <!-- <view class="feedback-list">
-              <text>• 可以添加更多细节描述</text>
-              <text>• 建议使用更多时间相关的表达</text>
-              <text>• 可以谈谈这段时间的感受</text>
-            </view> -->
-          </view>
+          </text>
         </view>
       </view>
     </block>
-
-    <block wx:if="{{state === 1}}">
-    <!-- <block wx:if="{{state === 1|| state === 2}}"> -->
-      <view wx:for="{{questions}}" wx:key="index" class="question-card {{item.isFlipped ? 'flipped' : ''}}" bindtap="onCardTap" data-index="{{index}}">
-        <view class="card-inner">
+    <view wx:if="{{state === 1}}" class="card-container">
+      <view  wx:for="{{questions}}" wx:key="index" class="card-all">
+        <view class="card {{item.isFlipped ? 'flipped' : ''}}">
           <view class="card-front">
             <view class="question-title">{{item.qTitle}}</view>
             <view class="question-tip">smile & fluent & no repetition</view>
@@ -78,16 +70,16 @@
             </text>
           </view>
         </view>
+        <view class="button-container">
+          <van-button icon="exchange" type="default" data-index="{{index}}"  bindtap="onCardTap">翻转</van-button>
+        </view>
       </view>
-    </block>
+    </view>
   </view>
 
   <!-- 复习时间选择 -->
   <view wx:if="{{questions.length>0}}" class="review-section">
-    <text class="review-title">选择下次复习时间
-      <!-- <text wx:if="{{state === 1}}" class="review-status">必选</text> -->
-      <!-- <text wx:if="{{state === 2}}" class="review-status">可修改</text> -->
-    </text>
+    <text class="review-title">选择下次复习时间</text>
     <view class="review-options">
       <view class="review-option {{selectedTime === '1' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="1">1天</view>
       <view class="review-option {{selectedTime === '3' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="3">3天</view>
@@ -96,8 +88,6 @@
       <view class="review-option {{selectedTime === 'done' ? 'selected' : ''}}" bindtap="onSelectTime" data-time="done">已掌握</view>
     </view>
     <view class="next-review-time">{{nextReviewText}}</view>
-    <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">确认
-      <!-- {{state === 2 ? '修改复习时间' : '确认'}} -->
-    </button>
+    <button class="confirm-btn" disabled="{{!nextReviewDate}}" bindtap="onConfirmTime">确认</button>
   </view>
 </view>
