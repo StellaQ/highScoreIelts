@@ -236,5 +236,13 @@ Page({
     this.setData({
       isFlipped
     });
+  },
+  // 普通分享
+  onShareAppMessage() {
+    return getApp().getShareInfo();
+  },
+  // 朋友圈分享
+  onShareTimeline() {
+    return getApp().getTimelineInfo();
   }
 })
