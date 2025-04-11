@@ -266,7 +266,18 @@
   font-size: 28rpx;
   color: #1f2937;
 }
-
+.btn{
+  padding: 0;
+  background: #f8f9fa;
+  border: none;
+  text-align: left;
+  line-height: 1.6;
+  border-radius: 0;
+}
+.btn::after{
+  border: none;
+  border-radius: 0;
+}
 .arrow {
   color: #9ca3af;
   font-size: 28rpx;

@@ -86,11 +86,16 @@
     <!-- 功能列表区域 -->
     <view class="function-section">
       <view class="function-list">
-        <view class="function-item" bindtap="navigateToFeedback">
+        <view class="function-item">
+          <text class="function-icon">✉️</text>
+          <button class="function-text btn" open-type="feedback">问题反馈</button>
+          <text class="arrow">></text>
+        </view>
+        <!-- <view class="function-item" bindtap="navigateToFeedback">
           <text class="function-icon">✉️</text>
           <text class="function-text">反馈与建议</text>
           <text class="arrow">></text>
-        </view>
+        </view> -->
         <view class="function-item" bindtap="showPrivacyPolicy">
           <text class="function-icon">🔒</text>
           <text class="function-text">隐私政策</text>
