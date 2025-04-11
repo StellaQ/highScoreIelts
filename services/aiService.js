@@ -1,7 +1,7 @@
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-  baseURL: 'https://api.deepseek.com/v1',
+  baseURL: process.env.DEEPSEEK_API_ENDPOINT,
   apiKey: process.env.DEEPSEEK_API_KEY
 });
 

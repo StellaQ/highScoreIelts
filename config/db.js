@@ -1,7 +1,4 @@
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-
-dotenv.config();
 
 // 默认是微信开发者工具
 const env = process.env.NODE_ENV || 'development';

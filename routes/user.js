@@ -12,8 +12,8 @@ const ExpertRecord = require('../models/expertRecord');    // 引入专家题记
 
 const config = require('../config/configForMiniProgram');
 
-const APP_ID = 'wx64644819be1ec93a';
-const APP_SECRET = 'aeb6c176666f38a2d8b2ebccd0281504';
+const APP_ID = process.env.WX_APP_ID;
+const APP_SECRET = process.env.WX_APP_SECRET;
 
 router.post('/getOpenId', async (req, res) => {
   const { code, codeFromInviter } = req.body;

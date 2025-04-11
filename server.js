@@ -3,6 +3,8 @@ const path = require('path');
 const logger = require('./config/logger');
 const morgan = require('morgan');
 const cors = require('cors');
+
+require('dotenv').config();  
 const { connectDB } = require('./config/db');
 
 // 获取当前环境 development/debug/test/production
@@ -29,7 +31,7 @@ const app = express();
     app.use('/api/basic', require('./routes/basic'));
     app.use('/api/advanced', require('./routes/advanced'));
     app.use('/api/expert', require('./routes/expert'));
-    app.use('/api/feedback', require('./routes/feedback'));
+    // app.use('/api/feedback', require('./routes/feedback'));
 
     // 日志
     app.use(morgan('combined', {
@@ -59,7 +61,7 @@ const app = express();
 
     // 启动服务
     app.listen(port, host, () => {
-      console.log(`Server is running at http://${host}:${port} in ${env} environment`);
+      console.log(`✅ Server is running at http://${host}:${port} in ${env} environment`);
     });
 
   } catch (err) {
