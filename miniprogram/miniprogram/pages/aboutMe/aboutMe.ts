@@ -77,6 +77,7 @@ Page({
         points: cachedTodayStatus.points,
         inviteCode: cachedTodayStatus.inviteCode,
         hasCheckedIn: cachedTodayStatus.hasCheckedIn,
+        totalTopics: cachedTodayStatus.totalTopics,
         streakDays: cachedTodayStatus.streakDays,
         hasUsedInviteCode: cachedTodayStatus.hasUsedInviteCode
       });
@@ -88,6 +89,7 @@ Page({
         points: res.points,
         inviteCode: res.inviteCode,
         hasCheckedIn: res.hasCheckedIn,
+        totalTopics: res.totalTopics,
         streakDays: res.streakDays,
         hasUsedInviteCode: res.hasUsedInviteCode
       });
@@ -95,6 +97,7 @@ Page({
         points: res.points,
         inviteCode: res.inviteCode,
         hasCheckedIn: res.hasCheckedIn,
+        totalTopics: res.totalTopics,
         streakDays: res.streakDays,
         hasUsedInviteCode: res.hasUsedInviteCode
       }

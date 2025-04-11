@@ -217,7 +217,8 @@
   
   .ai-feedback-content {
     color: #4E5969;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 1.6;
     text-align: justify;
   }

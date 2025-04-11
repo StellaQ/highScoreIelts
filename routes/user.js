@@ -6,6 +6,10 @@ const axios = require('axios');
 const User = require('../models/UserModel'); // 引入用户模型
 const Invite = require('../models/InviteModel'); // 引入邀请记录模型
 
+const BasicRecord = require('../models/basicRecord');    // 引入基础题记录模型
+const AdvancedRecord = require('../models/advancedRecord');  // 引入进阶题记录模型
+const ExpertRecord = require('../models/expertRecord');    // 引入专家题记录模型
+
 const config = require('../config/configForMiniProgram');
 
 const APP_ID = 'wx64644819be1ec93a';
@@ -195,9 +199,28 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
     const hasCheckedIn = user.signInDates.includes(today);
     const streakDays = user.signInDates.length;
 
+    // 统计三个表中的已完成题目总数
+    const [basicCount, advancedCount, expertCount] = await Promise.all([
+      BasicRecord.countDocuments({ 
+        userId: user.userId, 
+        isCompleted: true 
+      }),
+      AdvancedRecord.countDocuments({ 
+        userId: user.userId, 
+        isCompleted: true 
+      }),
+      ExpertRecord.countDocuments({ 
+        userId: user.userId, 
+        isCompleted: true 
+      })
+    ]);
+    // 计算总题目数
+    const totalTopics = basicCount + advancedCount + expertCount;
+
     res.json({
       points: user.points,
       hasCheckedIn,
+      totalTopics,
       streakDays,
       inviteCode: user.inviteCode,
       hasUsedInviteCode: user.hasUsedInviteCode
