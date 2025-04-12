@@ -7,6 +7,8 @@ const AdvancedRecord = require('../models/advancedRecord');
 
 const advanced_system_prompt = require('../prompts/advanced_system_prompt.js');
 const { getAIService } = require('../services/aiService.js'); 
+const { checkAndDeductPoints } = require('../services/pointsService');
+const config = require('../config/configForMiniProgram');
 
 // 获取分类数据的API
 router.get('/getAdvancedCategories', async (req, res) => {
@@ -240,32 +242,44 @@ router.get('/getAdvancedDetail', async (req, res) => {
 // AI定制化答案
 router.post('/getAdvancedAI', async (req, res) => {
   try {
-    const { question, points } = req.body;
+    const { userId,question, points } = req.body;
     
-    if (!question || !points) {
+    if (!userId || !question || !points) {
       return res.status(400).json({
         code: 400,
         message: '缺少必要参数'
       });
     }
-    
+    // 检查并扣除积分
+    try {
+      await checkAndDeductPoints(userId, config.AI_PART2_POINTS);
+    } catch (pointsError) {
+      // 如果积分检查失败，直接返回错误
+      return res.status(pointsError.code || 400).json({
+        success: false,
+        code: pointsError.code || 400,
+        message: pointsError.message
+      });
+    }
+    // 只有在积分检查成功后才调用 AI 服务
     // 修正1：正确构建用户提示内容
     const user_prompt = JSON.stringify({
       question: question,
       points: points
     });
-    
     // 修正2：确保getAIService正确处理参数
     const result = await getAIService(advanced_system_prompt, user_prompt);
-    
-    res.json(result);
-
+    res.json({
+      success: true,
+      data: result,
+      pointsDeducted: config.AI_PART2_POINTS
+    });
   } catch (error) {
-    console.error('AI定制答案失败:', error);
+    console.error('获取答案失败:', err);
     res.status(500).json({
+      success: false,
       code: 500,
-      message: 'AI定制答案失败',
-      error: error.message
+      message: '获取答案失败'
     });
   }
 });

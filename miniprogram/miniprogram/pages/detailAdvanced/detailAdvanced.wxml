@@ -77,11 +77,11 @@
       wx:if="{{answerAI.opening}}">
       {{answerAI.opening}}
     </text>
-    <text class="ai-feedback-content" 
+    <text class="ai-feedback-content" user-select="true"
       wx:if="{{answerAI.body}}">
       {{answerAI.body}}
     </text>
-    <text class="ai-feedback-content" 
+    <text class="ai-feedback-content" user-select="true" 
       wx:if="{{answerAI.closing}}">
       {{answerAI.closing}}
     </text>

@@ -123,13 +123,18 @@ Page({
         wx.hideLoading();
         let title = `已扣除${resultAI.pointsDeducted}积分`;
         // console.log(title);
-        setTimeout(() => {
-          wx.showToast({
-            title: title,
-            icon: 'success',
-            duration: 1500
-          });
-        }, 100);
+        wx.showToast({
+          title: title,
+          icon: 'success',
+          duration: 1500
+        });
+        // setTimeout(() => {
+        //   wx.showToast({
+        //     title: title,
+        //     icon: 'success',
+        //     duration: 1500
+        //   });
+        // }, 100);
         // 尝试保存AI定制答案到数据库
         try {
           const { userId, topicId } = this.data;

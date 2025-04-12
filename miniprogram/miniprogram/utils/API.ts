@@ -146,12 +146,13 @@ const API = {
     });
   },
   // detailAdvanced AI定制答案
-  getAdvancedAI: (question: string, points: Array<string>): Promise<any> => {
+  getAdvancedAI: (userId: string, question: string, points: Array<string>): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/advanced/getAdvancedAI`,
         method: 'POST',
         data: {
+          userId,
           question,
           points
         },
