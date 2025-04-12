@@ -110,30 +110,31 @@ Page({
         mask: true  // 防止用户点击其他区域
       });
       try {
-        const resultAI = await API.getBasicAI(question, answer);
-        // console.log(result.answer);
-
+        const resultAI = await API.getBasicAI(this.data.userId, question, answer);
+        // console.log(resultAI);
         const { questions } = this.data;
         // 更新对应问题的answerAI
-        questions[index].answerAI = resultAI.answer;
+        questions[index].answerAI = resultAI.data.answer;
         // 更新数据
         this.setData({
           questions
         });
-        
         // 隐藏loading
         wx.hideLoading();
-        // 可以添加一个提示
-        wx.showToast({
-          title: 'AI定制答案完成',
-          icon: 'success',
-          duration: 1500
-        });
+        let title = `已扣除${resultAI.pointsDeducted}积分`;
+        // console.log(title);
+        setTimeout(() => {
+          wx.showToast({
+            title: title,
+            icon: 'success',
+            duration: 1500
+          });
+        }, 100);
         // 尝试保存AI定制答案到数据库
         try {
           const { userId, topicId } = this.data;
           // 调用API更新答案
-          const result = await API.updateBasicAnswer(userId, topicId, index,  resultAI.answer);
+          const result = await API.updateBasicAnswer(userId, topicId, index,  resultAI.data.answer);
           // console.log(result);
           if (result.code !== 0) {
             wx.showToast({
@@ -149,12 +150,14 @@ Page({
           });
         }
       } catch (error) {
-        console.error('getBasicAI', error);
+        // console.error('getBasicAI', error);
         // 隐藏loading
         wx.hideLoading();
+        // console.log(error.data.message);
         wx.showToast({
-          title: '获取AI定制答案失败',
-          icon: 'none'
+          title: error.data.message || '获取答案失败',
+          icon: 'none',
+          duration: 1500
         });
       }
     },

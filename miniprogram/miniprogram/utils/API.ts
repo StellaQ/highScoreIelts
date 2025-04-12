@@ -45,12 +45,13 @@ const API = {
     });
   },
   // detailBasic AI定制答案
-  getBasicAI: (question: string, answer: string): Promise<any> => {
+  getBasicAI: (userId: string, question: string, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/basic/getBasicAI`,
         method: 'POST',
         data: {
+          userId,
           question,
           answer
         },
