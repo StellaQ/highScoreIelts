@@ -8,8 +8,8 @@ interface PageData {
     avatarUrl: string;
     inviteCode: string;
   };
-  configCheckedInNum: number;
-  configInviteNum: number;
+  configSignInPoints: number;
+  configInvitePoints: number;
   points: number;
   hasCheckedIn: boolean;
   inviteCode: string;
@@ -27,8 +27,8 @@ Page({
       nickname: ''
     },            // 和app.ts的userInfo同步
     
-    configCheckedInNum: 20, // 每天签到+积分数
-    configInviteNum: 50,    // 邀请一个好友得到的积分数
+    configSignInPoints: 0, // 每天签到+积分数
+    configInvitePoints: 0,    // 邀请一个好友得到的积分数
 
     points: 0,    // aboutMe.ts 积分数
     hasCheckedIn: false,    // 判断今日是否已签到
@@ -75,6 +75,8 @@ Page({
       // console.log('每次aboutMe页面onLoad,若缓存存在，先赋值缓存cachedTodayStatus')
       this.setData({
         points: cachedTodayStatus.points,
+        configSignInPoints: cachedTodayStatus.configSignInPoints,
+        configInvitePoints: cachedTodayStatus.configInvitePoints,
         inviteCode: cachedTodayStatus.inviteCode,
         hasCheckedIn: cachedTodayStatus.hasCheckedIn,
         totalTopics: cachedTodayStatus.totalTopics,
@@ -87,6 +89,8 @@ Page({
       const res = await API.getLatestStatus(this.data.userInfo.userId);
       this.setData({
         points: res.points,
+        configSignInPoints: res.configSignInPoints,
+        configInvitePoints: res.configInvitePoints,
         inviteCode: res.inviteCode,
         hasCheckedIn: res.hasCheckedIn,
         totalTopics: res.totalTopics,
@@ -95,6 +99,8 @@ Page({
       });
       const todayStatus = {
         points: res.points,
+        configSignInPoints: res.configSignInPoints,
+        configInvitePoints: res.configInvitePoints,
         inviteCode: res.inviteCode,
         hasCheckedIn: res.hasCheckedIn,
         totalTopics: res.totalTopics,
@@ -155,7 +161,7 @@ Page({
       await simpleSecureStorage.setStorage('todayStatus', cachedTodayStatus);
 
       wx.showToast({
-        title: '签到成功 +' + this.data.configCheckedInNum + '积分',
+        title: '签到成功 +' + this.data.configSignInPoints + '积分',
         icon: 'success'
       });
     } catch (error) {
@@ -236,7 +242,7 @@ Page({
       });
 
       wx.showToast({
-        title: '邀请码验证成功 +' + this.data.configInviteNum + '积分',
+        title: '邀请码验证成功 +' + this.data.configInvitePoints + '积分',
         icon: 'success'
       });
     } catch (error: any) {

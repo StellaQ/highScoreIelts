@@ -20,12 +20,12 @@
             <text class="action-icon">📅</text>
             <view class="action-info">
               <text class="action-title">每日签到</text>
-              <text class="action-desc">每日签到可获得{{configCheckedInNum}}积分奖励</text>
+              <text class="action-desc">每日签到可获得{{configSignInPoints}}积分奖励</text>
             </view>
           </view>
           <view class="action-right">
             <text class="action-status">{{hasCheckedIn ? '今日已签到' : '去签到'}}</text>
-            <text class="action-points">+{{configCheckedInNum}}</text>
+            <text class="action-points">+{{configSignInPoints}}</text>
           </view>
         </view>
 
@@ -35,16 +35,16 @@
             <text class="action-icon">👥</text>
             <view class="action-info">
               <text class="action-title">邀请新用户</text>
-              <text class="action-desc">邀请好友登录，双方各得{{configInviteNum}}积分</text>
+              <text class="action-desc">邀请好友登录，双方各得{{configInvitePoints}}积分</text>
               <text class="action-desc"
-              wx:if="{{totalInvites>0}}">已得<text class="highlight">{{totalInvites * configInviteNum}}</text>积分</text>
+              wx:if="{{totalInvites>0}}">已得<text class="highlight">{{totalInvites * configInvitePoints}}</text>积分</text>
               <text class="action-desc"
               wx:if="{{recentInvites>0}}">+<text class="highlight">{{recentInvites}}</text>人最近三天</text>
             </view>
           </view>
           <view class="action-right">
             <text class="action-status">去邀请</text>
-            <text class="action-points">+{{configInviteNum}}</text>
+            <text class="action-points">+{{configInvitePoints}}</text>
           </view>
         </view>
 
@@ -62,7 +62,7 @@
       <view class="stats-grid">
         <view class="stat-card">
           <text class="stat-icon">🎤</text>
-          <text class="stat-label">练习话题</text>
+          <text class="stat-label">完成话题</text>
           <text class="stat-value">{{totalTopics}} 个</text>
         </view>
         <!-- <view class="stat-card">
@@ -124,12 +124,12 @@
       </view>
       <view class="invite-tips">
         <text class="tip-item">• 好友填写您给的邀请码</text>
-        <text class="tip-item">• 双方各获得{{configInviteNum}}积分奖励</text>
+        <text class="tip-item">• 双方各获得{{configInvitePoints}}积分奖励</text>
         <!-- <text class="tip-item">• 积分可用于解锁更多功能</text> -->
       </view>
       <view class="share-tips">
         <text class="tip-item">• 您也可以选择分享小程序给好友</text>
-        <text class="tip-item">• 好友通过分享链接进入，双方也可获得{{configInviteNum}}积分奖励</text>
+        <text class="tip-item">• 好友通过分享链接进入，双方也可获得{{configInvitePoints}}积分奖励</text>
       </view>
     </view>
   </view>
@@ -154,7 +154,7 @@
     </view>
     <view class="popup-tips">
       <text class="tip-item">• 填写好友给您的邀请码</text>
-      <text class="tip-item">• 双方各获得{{configInviteNum}}积分奖励</text>
+      <text class="tip-item">• 双方各获得{{configInvitePoints}}积分奖励</text>
     </view>
     <view class="popup-buttons">
       <button class="cancel-btn" bindtap="closeInviteCodeInputPopup">取消</button>

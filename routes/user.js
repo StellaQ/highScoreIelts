@@ -219,6 +219,8 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
 
     res.json({
       points: user.points,
+      configSignInPoints: config.SIGN_IN_POINTS,
+      configInvitePoints: config.INVITE_POINTS,
       hasCheckedIn,
       totalTopics,
       streakDays,
