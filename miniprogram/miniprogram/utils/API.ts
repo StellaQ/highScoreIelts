@@ -246,12 +246,13 @@ const API = {
     });
   },
   // detailExpert AI定制答案
-  getExpertAI: (question: string, answer: string): Promise<any> => {
+  getExpertAI: (userId: string, question: string, answer: string): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
         url: `${BASE_URL}/api/expert/getExpertAI`,
         method: 'POST',
         data: {
+          userId,
           question,
           answer
         },

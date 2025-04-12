@@ -97,11 +97,11 @@ Page({
     });
 
     try {
-      const resultAI = await API.getExpertAI(question, answer);
+      const resultAI = await API.getExpertAI(this.data.userId, question, answer);
 
       const { questions } = this.data;
       // 更新对应问题的answerAI
-      questions[index].answerAI = resultAI.answer;
+      questions[index].answerAI = resultAI.data.answer;
       // 更新数据
       this.setData({
         questions
@@ -109,9 +109,10 @@ Page({
 
       // 隐藏loading
       wx.hideLoading();
-      // 可以添加一个提示
+      let title = `已扣除${resultAI.pointsDeducted}积分`;
+      // console.log(title);
       wx.showToast({
-        title: 'AI定制答案完成',
+        title: title,
         icon: 'success',
         duration: 1500
       });
@@ -119,7 +120,7 @@ Page({
       try {
         const { userId, topicId } = this.data;
         // 调用API更新答案
-        const result = await API.updateExpertAnswer(userId, topicId, index,  resultAI.answer);
+        const result = await API.updateExpertAnswer(userId, topicId, index,  resultAI.data.answer);
         // console.log(result);
         if (result.code !== 0) {
           wx.showToast({
@@ -135,12 +136,14 @@ Page({
         });
       }
     } catch (error) {
-      console.error('getExpertAI', error);
+      // console.error('getExpertAI', error);
       // 隐藏loading
       wx.hideLoading();
+      // console.log(error.data.message);
       wx.showToast({
-        title: '获取AI定制答案失败',
-        icon: 'none'
+        title: error.data.message || '获取答案失败',
+        icon: 'none',
+        duration: 1500
       });
     }
   },
