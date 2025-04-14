@@ -1,0 +1,946 @@
+{
+    "mixed_questions": [
+      {
+        "topicName": "Professional Life",
+        "topicName_cn": "职业生活",
+        "topicId": "Basic_B0_topic1",
+        "questions": [
+          {
+            "qTitle": "Could you describe your typical workday activities?",
+            "qTitle_cn": "你能描述一下你典型的工作日活动吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How effective are you at managing your work schedule?",
+            "qTitle_cn": "你在管理工作日程方面效率如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which colleague provides you with the most assistance?",
+            "qTitle_cn": "哪位同事为你提供最多的帮助？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Could you tell me about your current profession?",
+            "qTitle_cn": "你能告诉我你目前的职业吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Was this career always your ambition?",
+            "qTitle_cn": "这个职业一直是你的志向吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "During which time of day are you most productive professionally?",
+            "qTitle_cn": "在一天中的哪个时间段你的工作效率最高？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Academic Activities",
+        "topicName_cn": "学术活动",
+        "topicId": "Basic_B0_topic2",
+        "questions": [
+          {
+            "qTitle": "Describe your typical study routine.",
+            "qTitle_cn": "描述你典型的学习日常。",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How successful are you at planning your academic schedule?",
+            "qTitle_cn": "你在规划学术日程方面有多成功？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which person supports your studies the most?",
+            "qTitle_cn": "谁对你的学习支持最多？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What academic discipline are you currently pursuing?",
+            "qTitle_cn": "你目前正在攻读什么学科？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Were these subjects always your preferred area of study?",
+            "qTitle_cn": "这些学科一直是你偏好的研究领域吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "At what time of day are you most focused academically?",
+            "qTitle_cn": "在一天中的什么时间你的学术注意力最集中？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Native Region",
+        "topicName_cn": "家乡地区",
+        "topicId": "Basic_B0_topic3",
+        "questions": [
+          {
+            "qTitle": "Could you describe your place of origin and its location?",
+            "qTitle_cn": "你能描述一下你的家乡及其位置吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Were you taught local history during your school years?",
+            "qTitle_cn": "你在学校期间学过当地历史吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "For what contemporary features is your native region renowned?",
+            "qTitle_cn": "你的家乡以哪些当代特色而闻名？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Residential Environment",
+        "topicName_cn": "居住环境",
+        "topicId": "Basic_B0_topic4",
+        "questions": [
+          {
+            "qTitle": "What type of dwelling do you currently reside in?",
+            "qTitle_cn": "你目前居住在什么类型的住宅中？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which area of your residence do you particularly enjoy?",
+            "qTitle_cn": "你特别喜欢你住所的哪个区域？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What aspects contribute to your home's comfortable atmosphere?",
+            "qTitle_cn": "哪些方面造就了你家舒适的氛围？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Monotony Experiences",
+        "topicName_cn": "单调体验",
+        "topicId": "Basic_B0_topic5",
+        "questions": [
+          {
+            "qTitle": "How frequently do you experience boredom?",
+            "qTitle_cn": "你多久会感到无聊？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Was school monotonous for you during your childhood?",
+            "qTitle_cn": "对你来说童年时期的学校生活单调吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which activities typically seem uninteresting to you?",
+            "qTitle_cn": "哪些活动通常让你觉得无趣？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do you prevent or overcome feelings of tedium?",
+            "qTitle_cn": "你如何预防或克服无聊感？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Personal Possessions",
+        "topicName_cn": "个人物品",
+        "topicId": "Basic_B0_topic6",
+        "questions": [
+          {
+            "qTitle": "Do you still possess numerous childhood mementos?",
+            "qTitle_cn": "你还保留着许多童年纪念品吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are you inclined to retain items for extended periods?",
+            "qTitle_cn": "你倾向于长期保留物品吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are your preferred storage locations for daily essentials such as keys or wallets?",
+            "qTitle_cn": "你更喜欢把钥匙或钱包等日常必需品存放在哪里？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you maintain an archive of all your photographic captures?",
+            "qTitle_cn": "你会保存所有拍摄的照片吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Historical Architecture",
+        "topicName_cn": "历史建筑",
+        "topicId": "Basic_B0_topic7",
+        "questions": [
+          {
+            "qTitle": "Have you had the opportunity to tour significant historical structures?",
+            "qTitle_cn": "你有机会参观过重要的历史建筑吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Would you prefer residing in heritage properties or contemporary constructions?",
+            "qTitle_cn": "你更喜欢住在历史建筑还是现代建筑中？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which architectural landmark would you most like to explore?",
+            "qTitle_cn": "你最想探索哪个建筑地标？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How crucial is historical building preservation in your opinion?",
+            "qTitle_cn": "你认为历史建筑保护有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Seating Habits",
+        "topicName_cn": "坐姿习惯",
+        "topicId": "Basic_B0_topic8",
+        "questions": [
+          {
+            "qTitle": "Are you frequently required to maintain seated positions for extended durations?",
+            "qTitle_cn": "你是否经常需要长时间保持坐姿？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "During your childhood, did you enjoy floor seating arrangements?",
+            "qTitle_cn": "童年时期，你喜欢坐在地板上吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is it possible for you to doze off while seated in an upright chair?",
+            "qTitle_cn": "你能在直背椅上打瞌睡吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you possess a preferred seating location that you particularly favor?",
+            "qTitle_cn": "你有特别偏好的座位位置吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Individual Aptitudes",
+        "topicName_cn": "个人才能",
+        "topicId": "Basic_B0_topic9",
+        "questions": [
+          {
+            "qTitle": "Which existing skill would you be most motivated to enhance?",
+            "qTitle_cn": "你最想提升现有的哪项技能？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "In which particular areas would you consider yourself proficient?",
+            "qTitle_cn": "你认为自己在哪些领域特别擅长？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you inherited any abilities from family members?",
+            "qTitle_cn": "你从家庭成员那里继承了任何才能吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Might your natural abilities influence your career trajectory?",
+            "qTitle_cn": "你的天赋可能会影响你的职业轨迹吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Social Gatherings",
+        "topicName_cn": "社交聚会",
+        "topicId": "Basic_B0_topic10",
+        "questions": [
+          {
+            "qTitle": "What are your preferred venues for socializing with companions?",
+            "qTitle_cn": "你更喜欢在哪里与朋友社交？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors determine ideal locations for friend meetups?",
+            "qTitle_cn": "哪些因素决定了朋友聚会的理想地点？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you favor intimate one-on-one meetings or larger group gatherings?",
+            "qTitle_cn": "你更喜欢亲密的单独见面还是大型团体聚会？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How have your social meeting spots evolved since your youth?",
+            "qTitle_cn": "从年轻时起，你的社交场所有什么变化？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Digital Device Usage",
+        "topicName_cn": "数字设备使用",
+        "topicId": "Basic_B0_topic11",
+        "questions": [
+          {
+            "qTitle": "What was your initial experience with digital devices like?",
+            "qTitle_cn": "你最初使用数字设备的体验如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the primary functions you utilize your electronic devices for?",
+            "qTitle_cn": "你使用电子设备的主要用途是什么？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do technological devices present any challenges for you?",
+            "qTitle_cn": "科技设备对你来说有什么挑战吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "In what ways would your daily routine change without digital technology?",
+            "qTitle_cn": "没有数字技术，你的日常生活会有哪些改变？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Timepiece Preferences",
+        "topicName_cn": "钟表偏好",
+        "topicId": "Basic_B0_topic12",
+        "questions": [
+          {
+            "qTitle": "Were you accustomed to wearing timepieces during your childhood?",
+            "qTitle_cn": "你童年时期习惯戴手表吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has anyone ever presented you with a wristwatch as a present?",
+            "qTitle_cn": "有人曾送过你手表作为礼物吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is watch-wearing part of your current daily routine?",
+            "qTitle_cn": "戴手表是你目前的日常习惯吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What motivates individuals to invest in luxury timekeeping devices?",
+            "qTitle_cn": "是什么促使人们投资奢侈计时设备？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Evening Routines",
+        "topicName_cn": "晚间日常",
+        "topicId": "Basic_B0_topic13",
+        "questions": [
+          {
+            "qTitle": "Describe your regular nighttime activities.",
+            "qTitle_cn": "描述你常规的夜间活动。",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What were your childhood evening routines like?",
+            "qTitle_cn": "你童年的晚间日常是怎样的？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do your weekday and weekend evening habits differ?",
+            "qTitle_cn": "你工作日和周末的晚间习惯有什么不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are there particular activities you avoid during nighttime hours?",
+            "qTitle_cn": "有哪些特定活动是你在夜间避免做的？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Marketing Exposure",
+        "topicName_cn": "营销接触",
+        "topicId": "Basic_B0_topic14",
+        "questions": [
+          {
+            "qTitle": "How memorable do you find marketing campaigns?",
+            "qTitle_cn": "你觉得营销活动有多令人难忘？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you encountered particularly objectionable promotional content?",
+            "qTitle_cn": "你遇到过特别令人反感的促销内容吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Would you consider participating in advertising productions?",
+            "qTitle_cn": "你会考虑参与广告制作吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What is your typical response to commercial interruptions during media consumption?",
+            "qTitle_cn": "在媒体消费时，你对商业广告插播的典型反应是什么？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Scientific Interest",
+        "topicName_cn": "科学兴趣",
+        "topicId": "Basic_B0_topic15",
+        "questions": [
+          {
+            "qTitle": "Are you a regular viewer of scientific television content?",
+            "qTitle_cn": "你是科学电视节目的常规观众吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How engaging did you find academic science instruction?",
+            "qTitle_cn": "你觉得学术科学教学有多吸引人？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are you motivated to expand your scientific knowledge?",
+            "qTitle_cn": "你有动力扩展科学知识吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How well-attended are science exhibition centers in your country?",
+            "qTitle_cn": "你们国家的科学展览中心参观情况如何？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Reading Habits",
+        "topicName_cn": "阅读习惯",
+        "topicId": "Basic_B0_topic16",
+        "questions": [
+          {
+            "qTitle": "How has your reading frequency changed since childhood?",
+            "qTitle_cn": "从童年起，你的阅读频率有什么变化？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you experienced both cinematic and literary versions of the same story?",
+            "qTitle_cn": "你是否体验过同一故事的影视版和文学版？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "During which periods do you dedicate the most time to reading?",
+            "qTitle_cn": "在哪些时间段你会花最多时间阅读？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What is your typical frequency for purchasing books?",
+            "qTitle_cn": "你购买书籍的典型频率是怎样的？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Athletic Activities",
+        "topicName_cn": "体育活动",
+        "topicId": "Basic_B0_topic17",
+        "questions": [
+          {
+            "qTitle": "Which athletic skills did you acquire during your childhood?",
+            "qTitle_cn": "你在童年时期掌握了哪些运动技能？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are there particular sports you aspire to experience?",
+            "qTitle_cn": "有哪些你渴望体验的特定运动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Should athletic participation be mandatory in school curricula?",
+            "qTitle_cn": "体育活动应该成为学校课程的必修内容吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which sporting events or activities do you enjoy as a spectator or participant?",
+            "qTitle_cn": "作为观众或参与者，你喜欢哪些体育赛事或活动？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Mirror Usage",
+        "topicName_cn": "镜子使用",
+        "topicId": "Basic_B0_topic18",
+        "questions": [
+          {
+            "qTitle": "What is your typical frequency of mirror usage?",
+            "qTitle_cn": "你使用镜子的典型频率是怎样的？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Could you purchase clothing without first evaluating your appearance in a mirror?",
+            "qTitle_cn": "你能不先照镜子就购买衣服吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you ever made a mirror purchase?",
+            "qTitle_cn": "你买过镜子吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are mirrors effective decorative elements in interior design?",
+            "qTitle_cn": "镜子是室内设计中有效的装饰元素吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Photography Practices",
+        "topicName_cn": "摄影实践",
+        "topicId": "Basic_B0_topic19",
+        "questions": [
+          {
+            "qTitle": "What is your typical frequency for capturing photographs?",
+            "qTitle_cn": "你拍摄照片的典型频率是怎样的？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you enjoy creating self-portrait photographs?",
+            "qTitle_cn": "你喜欢创作自拍肖像照片吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is there a particular family photograph that holds special significance for you?",
+            "qTitle_cn": "有没有一张对你具有特殊意义的家庭照片？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are you interested in enhancing your photographic abilities?",
+            "qTitle_cn": "你有兴趣提高摄影能力吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Automotive Preferences",
+        "topicName_cn": "汽车偏好",
+        "topicId": "Basic_B0_topic20",
+        "questions": [
+          {
+            "qTitle": "How significant is vehicle coloration in your automotive preferences?",
+            "qTitle_cn": "车辆颜色对你的汽车偏好有多大影响？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which automobile models interest you for potential future ownership?",
+            "qTitle_cn": "哪些汽车型号是你未来可能拥有的兴趣所在？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Were childhood road trips enjoyable experiences for you?",
+            "qTitle_cn": "对你来说童年的公路旅行是愉快的经历吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you favor operating vehicles or being transported as a rider?",
+            "qTitle_cn": "你更喜欢驾驶车辆还是作为乘客被运输？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Website Usage Habits",
+        "topicName_cn": "网站使用习惯",
+        "topicId": "Basic_B0_topic21",
+        "questions": [
+          {
+            "qTitle": "Which types of websites do you frequently visit?",
+            "qTitle_cn": "你经常访问哪些类型的网站？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Would you rather obtain information online or from printed books?",
+            "qTitle_cn": "你更喜欢从网上还是印刷书籍获取信息？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you value a website's design more than its user-friendliness?",
+            "qTitle_cn": "你更看重网站的设计还是其易用性？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has the appearance of your favorite website changed since you first started using it?",
+            "qTitle_cn": "你最喜欢的网站外观从你开始使用以来有变化吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Street Market Shopping",
+        "topicName_cn": "街市购物",
+        "topicId": "Basic_B0_topic22",
+        "questions": [
+          {
+            "qTitle": "What kinds of items are most worthwhile to purchase at street markets?",
+            "qTitle_cn": "在街市上哪些物品最值得购买？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you enjoy visiting street markets during your holidays?",
+            "qTitle_cn": "你喜欢在假期期间逛街市吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Can you recall your most recent visit to a street market?",
+            "qTitle_cn": "你能回忆起最近一次去街市的情况吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you favor shopping in street markets or in malls, and why?",
+            "qTitle_cn": "你更喜欢在街市还是商场购物，为什么？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Sports Viewing Habits",
+        "topicName_cn": "体育观看习惯",
+        "topicId": "Basic_B0_topic23",
+        "questions": [
+          {
+            "qTitle": "Are you fond of watching sports on television?",
+            "qTitle_cn": "你喜欢在电视上观看体育比赛吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you ever attended a live sporting event?",
+            "qTitle_cn": "你参加过现场体育赛事吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you prefer watching sports solo or with company?",
+            "qTitle_cn": "你更喜欢独自观看体育比赛还是有人陪伴？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is there any upcoming sports event you'd be interested in seeing?",
+            "qTitle_cn": "有没有你感兴趣的即将举行的体育赛事？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Interest in Art",
+        "topicName_cn": "艺术兴趣",
+        "topicId": "Basic_B0_topic24",
+        "questions": [
+          {
+            "qTitle": "Do you enjoy viewing artworks such as drawings or paintings?",
+            "qTitle_cn": "你喜欢欣赏绘画等艺术作品吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Did you receive any lessons in drawing or painting as a child?",
+            "qTitle_cn": "你童年时上过绘画课吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you ever been to an art exhibition or gallery?",
+            "qTitle_cn": "你去过艺术展览或画廊吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are you interested in expanding your knowledge of art in the future?",
+            "qTitle_cn": "你有兴趣在未来扩展艺术知识吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Lost and Found Experiences",
+        "topicName_cn": "失物招领经历",
+        "topicId": "Basic_B0_topic25",
+        "questions": [
+          {
+            "qTitle": "What kinds of lost items have you come across in public places?",
+            "qTitle_cn": "你在公共场所遇到过哪些遗失物品？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How would you respond if you discovered something valuable?",
+            "qTitle_cn": "如果你发现了贵重物品，你会如何应对？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Might you turn to social media for assistance in recovering a lost item?",
+            "qTitle_cn": "你会通过社交媒体寻求帮助找回失物吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Have you ever had a stranger return something you lost?",
+            "qTitle_cn": "有没有陌生人曾归还过你丢失的物品？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Email Communication",
+        "topicName_cn": "电子邮件沟通",
+        "topicId": "Basic_B0_topic26",
+        "questions": [
+          {
+            "qTitle": "Is using email common where you live?",
+            "qTitle_cn": "在你居住的地方，使用电子邮件普遍吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you frequently write and send emails?",
+            "qTitle_cn": "你经常写和发送电子邮件吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Would you rather communicate by email or make a phone call?",
+            "qTitle_cn": "你更喜欢通过电子邮件交流还是打电话？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "In your opinion, will the use of email increase or decrease over time?",
+            "qTitle_cn": "你认为电子邮件的使用会随着时间的推移而增加还是减少？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Daily Habits and Routines",
+        "topicName_cn": "日常习惯和作息",
+        "topicId": "Basic_B0_topic27",
+        "questions": [
+          {
+            "qTitle": "Are you someone who enjoys sleeping early or staying up late?",
+            "qTitle_cn": "你是喜欢早睡还是熬夜的人？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What activities are part of your usual morning routine?",
+            "qTitle_cn": "哪些活动是你早晨日常的一部分？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you enjoy having the same weekend schedule every time?",
+            "qTitle_cn": "你喜欢每个周末都有相同的日程安排吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you expect to make any changes to your daily schedule in the future?",
+            "qTitle_cn": "你预计未来会对日常作息做出改变吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Dreaming and Interpretation",
+        "topicName_cn": "做梦与解梦",
+        "topicId": "Basic_B0_topic28",
+        "questions": [
+          {
+            "qTitle": "Do you frequently recall your dreams when you wake up?",
+            "qTitle_cn": "你醒来时经常记得梦境吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are you interested in listening to others talk about their dreams?",
+            "qTitle_cn": "你有兴趣听别人谈论他们的梦吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you believe dreams carry symbolic or deeper meanings?",
+            "qTitle_cn": "你相信梦有象征性或更深层次的含义吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are you curious to explore the topic of dreams further?",
+            "qTitle_cn": "你有兴趣进一步探索梦的话题吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Mobile Phone Usage",
+        "topicName_cn": "手机使用",
+        "topicId": "Basic_B0_topic29",
+        "questions": [
+          {
+            "qTitle": "Do you often send text messages using your phone?",
+            "qTitle_cn": "你经常用手机发送短信吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you enjoy using your mobile device?",
+            "qTitle_cn": "你喜欢使用移动设备吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "At what age did you get your first mobile phone?",
+            "qTitle_cn": "你几岁时拥有了第一部手机？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are there specific places where you avoid using your cell phone?",
+            "qTitle_cn": "有没有你避免使用手机的特定场所？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Cinema Preferences",
+        "topicName_cn": "影院偏好",
+        "topicId": "Basic_B0_topic30",
+        "questions": [
+          {
+            "qTitle": "Did you frequently visit the cinema during your childhood?",
+            "qTitle_cn": "你童年时期经常去电影院吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you enjoy watching movies alone or with friends at the cinema?",
+            "qTitle_cn": "你喜欢独自还是和朋友一起在电影院看电影？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "In your country, is it more common to watch films in cinemas or at home?",
+            "qTitle_cn": "在你们国家，人们更常在电影院还是在家看电影？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do you still appreciate the same kinds of movies you enjoyed in your younger years?",
+            "qTitle_cn": "你还欣赏年轻时喜欢的同类型电影吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      }
+    ]
+  }

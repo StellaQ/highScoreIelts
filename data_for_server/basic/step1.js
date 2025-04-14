@@ -12,9 +12,9 @@ const prompt_basic_questions = `
      "ai_questions": [{
        "topicName_real": "原话题名称",
        "topicName_rewrite": "改写后话题名称",
+       "topicId": "话题ID",
        "questions_original": [{"qTitle": "原问题"}],
-       "questions_rewrite": [{"qTitle": "改写版"}],
-       "questions_new": [{"qTitle": "新增问题"}]
+       "questions_rewrite": [{"qTitle": "改写版"}]
      }]
    }
    \`\`\`
@@ -34,15 +34,6 @@ const prompt_basic_questions = `
 |**词汇升级**|使用更准确的同义词（如"like"→"enjoy/appreciate"）|
 |**语法规范**|保持原时态和疑问词|
 
-### 新增问题（questions_new）
-- **数量**：每个topic固定生成2个
-- **类型要求**：
-  - 1个比较类问题（compare/contrast）
-  - 1个预测/展望类问题（future-oriented）
-- **难度控制**：
-  - 使用B2级词汇（CEFR标准）
-  - 长度控制在15-25个单词
-
 ## 质量验证清单
 1. [ ] 所有改写问题通过语义相似度检测（与原问题核心意图匹配度>90%）
 2. [ ] 无任何中文或拼音残留
@@ -61,6 +52,7 @@ const prompt_basic_questions = `
 {
   "real_questions": [{
     "topicName": "Music",
+    "topicId": "B0_topic1",
     "questions": [
       "Do you play any instruments?",
       "Is music important in your culture?"
@@ -75,6 +67,7 @@ const prompt_basic_questions = `
   "ai_questions": [{
     "topicName_real": "Music",
     "topicName_rewrite": "Musical Engagement",
+    "topicId": "B0_topic1",
     "questions_original": [
       {"qTitle": "Do you play any instruments?"},
       {"qTitle": "Is music important in your culture?"}
@@ -82,10 +75,6 @@ const prompt_basic_questions = `
     "questions_rewrite": [
       {"qTitle": "Have you learned to play a musical instrument?"},
       {"qTitle": "How significant is music in your cultural traditions?"}
-    ],
-    "questions_new": [
-      {"qTitle": "How do classical and modern music differ in your country?"},
-      {"qTitle": "Do you think AI will change how we create music in the future?"}
     ]
   }]
 }

@@ -4,7 +4,7 @@ const prompt_question_selector = `
 ## 核心任务
 从处理后的题库中抽取题目并重组，严格遵循以下规则：
 1. 使用改写后英文话题名称(topicName_rewrite)
-2. 自动生成带"Basic_"前缀的topicId
+2. topicId前加上"Basic_"前缀
 3. 包含中英文双语输出
 4. 合理混合改写问题和新问题
 
@@ -15,13 +15,13 @@ const prompt_question_selector = `
     {
       "topicName": "改写后英文话题名称",
       "topicName_cn": "准确的中文翻译",
-      "topicId": "Basic_YYYYQX_tN (X=季度，N=顺序号)",
+      "topicId": "Basic_topicId",
       "questions": [
         {
           "qTitle": "英文问题文本",
           "qTitle_cn": "准确的中文翻译", 
           "type": 0,
-          "from": "rewrite/new"
+          "from": "rewrite"
         }
       ]
     }
@@ -34,16 +34,12 @@ const prompt_question_selector = `
 ### 1. ID生成规则
 | 组件 | 格式 | 示例 |
 |------|------|------|
-| 前缀 | Basic_ | Basic_ |
-| 年份 | YYYY | 2025 |
-| 季度 | Q1-Q4 | Q1(1-3月) |
-| 顺序号 | _t+N | _t1 |
+| 前缀 | Basic_ | Basic_ 
 
 ### 2. 问题选取规则
 | 类型 | 数量 | 位置 | 选择方式 |
 |------|------|------|----------|
-| 改写问题 | 全部 | 保持原序 | 按原始顺序 |
-| 新增问题 | 1题 | 随机插入 | 随机2选1 |
+| 改写问题 | 全部 | 保持原序 | 按原始顺序 
 
 ### 3. 翻译要求
 1. 话题名称翻译：
@@ -71,40 +67,33 @@ const prompt_question_selector = `
 {
   "ai_questions": [
     {
-      "topicName_rewrite": "Urban Life",
+      "topicName_real": "Work",
+      "topicName_rewrite": "Professional Life",
+      "topicId": "B0_topic1",
+      "questions_original": [],
       "questions_rewrite": [
         {"qTitle": "What do you like about city living?"},
         {"qTitle": "How is urban life different from rural life?"}
-      ],
-      "questions_new": [
-        {"qTitle": "What are the biggest challenges of urbanization?"},
-        {"qTitle": "How can cities become more livable?"}
       ]
     }
   ]
 }
 \`\`\`
 
-标准输出(2025年Q1季度)：
+标准输出：
 \`\`\`json
 {
   "mixed_questions": [
     {
-      "topicName": "Urban Life",
-      "topicName_cn": "城市生活",
-      "topicId": "Basic_2025Q1_t1",
+      "topicName": "Professional Life",
+      "topicName_cn": "",
+      "topicId": "Basic_B0_topic1",
       "questions": [
         {
           "qTitle": "What do you like about city living?",
           "qTitle_cn": "你喜欢城市生活的哪些方面？",
           "type": 0,
           "from": "rewrite"
-        },
-        {
-          "qTitle": "How can cities become more livable?",
-          "qTitle_cn": "城市如何才能变得更宜居？",
-          "type": 0,
-          "from": "new" 
         },
         {
           "qTitle": "How is urban life different from rural life?",
