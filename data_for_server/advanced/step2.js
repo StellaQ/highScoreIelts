@@ -16,7 +16,7 @@ const prompt_question_selector = `
     {
       "topicName": "改写后的英文话题名称",
       "topicName_cn": "准确的中文翻译",
-      "topicId": "Advanced_年份季度_序号（例：Advanced_2025Q1_t1）",
+      "topicId": "Advanced_原先的topicId",
       "points": [
         {
           "qTitle": "改写后的问题要点",
@@ -36,9 +36,6 @@ const prompt_question_selector = `
 | 组成部分 | 格式要求 | 示例说明 |
 |----------|----------|----------|
 | 前缀 | Advanced_ | 固定前缀 |
-| 年份 | 四位数年份 | 2025 |
-| 季度 | Q1-Q4 | Q1代表1-3月 |
-| 序号 | _t+数字 | _t1表示第一个问题 |
 
 ### 2. 翻译质量标准
 1. 话题名称翻译：
@@ -66,6 +63,7 @@ const prompt_question_selector = `
     {
       "topicName_real": "a person you know who likes to talk a lot",
       "topicName_rewrite": "someone in your life who is particularly talkative",
+      "topicId": B0_t1,
       "points_original": [
         "who this person is",
         "how you know this person",
@@ -90,7 +88,7 @@ const prompt_question_selector = `
     {
       "topicName": "someone in your life who is particularly talkative",
       "topicName_cn": "你生活中特别健谈的人",
-      "topicId": "Advanced_2025Q1_t1",
+      "topicId": "Advanced_B0_t1",
       "points": [
         {
           "qTitle": "identify this individual",

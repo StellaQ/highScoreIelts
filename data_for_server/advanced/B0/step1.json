@@ -1,0 +1,854 @@
+{
+    "ai_questions": [
+      {
+        "topicName_real": "something that surprised you and made you happy",
+        "topicName_rewrite": "an unexpected joyful experience you had",
+        "topicId": "B0_t1", 
+        "points_original": [
+          "What the surprise was",
+          "How you found out about the surprise",
+          "What you did after you found out",
+          "And explain why the surprise made you happy"
+        ],
+        "points_rewrite": [
+          "Describe the nature of this pleasant surprise",
+          "Explain how you discovered this surprise",
+          "Detail your subsequent actions",
+          "Share why this brought you happiness"
+        ]
+      },
+      {
+        "topicName_real": "an occasion when you lost something in a public place",
+        "topicName_rewrite": "a time you misplaced belongings in public",
+        "topicId": "B0_t2", 
+        "points_original": [
+          "What you lost",
+          "When and where you lost this thing",
+          "What you did to try and find it",
+          "And explain how you felt about it"
+        ],
+        "points_rewrite": [
+          "Identify the lost item",
+          "Specify the time and location of the incident",
+          "Describe your search efforts",
+          "Express your emotional response to the situation"
+        ]
+      },
+      {
+        "topicName_real": "a change you made in your daily life that saved you a lot of time",
+        "topicName_rewrite": "a time-saving adjustment to your routine",
+        "topicId": "B0_t3", 
+        "points_original": [
+          "What the change was",
+          "When you made this change",
+          "How easy it was to make this change",
+          "And explain how making this change in your daily life saved you a lot of time"
+        ],
+        "points_rewrite": [
+          "Describe the modification you implemented",
+          "State when this adjustment occurred",
+          "Assess the difficulty level of implementation",
+          "Explain the time efficiency benefits you gained"
+        ]
+      },
+      {
+        "topicName_real": "an invention which you think has changed the world in a good way",
+        "topicName_rewrite": "a beneficial innovation that transformed society",
+        "topicId": "B0_t4", 
+        "points_original": [
+          "What this invention is",
+          "What it does",
+          "How popular it is with people of different ages",
+          "And explain how you think this invention has changed the world in a good way"
+        ],
+        "points_rewrite": [
+          "Identify the significant creation",
+          "Explain its function and purpose",
+          "Discuss its cross-generational appeal",
+          "Articulate its positive global impact"
+        ]
+      },
+      {
+        "topicName_real": "a time when you helped child",
+        "topicName_rewrite": "an instance when you assisted a young person",
+        "topicId": "B0_t5", 
+        "points_original": [
+          "Who the child was",
+          "When you helped the child",
+          "How you helped the child",
+          "And explain how you felt about it"
+        ],
+        "points_rewrite": [
+          "Describe the young individual involved",
+          "Specify when this assistance occurred",
+          "Detail the nature of your help",
+          "Share your emotional response to helping"
+        ]
+      },
+      {
+        "topicName_real": "an occasion when someone said something positive about some work that you did",
+        "topicName_rewrite": "a time you received praise for your efforts",
+        "topicId": "B0_t6", 
+        "points_original": [
+          "Who it was",
+          "What kind of work you did",
+          "Why this person was positive about your work",
+          "And explain how you felt about it"
+        ],
+        "points_rewrite": [
+          "Identify the person who complimented you",
+          "Describe the nature of your work",
+          "Explain the reasons for their positive feedback",
+          "Express your feelings about receiving this recognition"
+        ]
+      },
+      {
+        "topicName_real": "an interesting neighbor",
+        "topicName_rewrite": "a particularly fascinating person living nearby",
+        "topicId": "B0_t7", 
+        "points_original": [
+          "Who the neighbor",
+          "How you met this neighbor",
+          "How often you see this neighbor",
+          "And explain why you find this neighbor interesting"
+        ],
+        "points_rewrite": [
+          "Describe this local resident",
+          "Explain your first encounter",
+          "State the frequency of your interactions",
+          "Share what makes them so captivating"
+        ]
+      },
+      {
+        "topicName_real": "a friend you enjoy talking with",
+        "topicName_rewrite": "a companion whose conversations you value",
+        "topicId": "B0_t8", 
+        "points_original": [
+          "How you first met this friend",
+          "What kind of person this friend is",
+          "What you talk about with this friend",
+          "And explain why you enjoy talking with this friend"
+        ],
+        "points_rewrite": [
+          "Describe your initial meeting",
+          "Characterize your friend's personality",
+          "Outline your typical discussion topics",
+          "Explain what makes your dialogues enjoyable"
+        ]
+      },
+      {
+        "topicName_real": "a time when you were very busy",
+        "topicName_rewrite": "a particularly hectic period in your life",
+        "topicId": "B0_t9", 
+        "points_original": [
+          "When it was",
+          "Why you were so busy",
+          "What you did to deal with the situation",
+          "And explain how you felt about being so busy"
+        ],
+        "points_rewrite": [
+          "Specify when this occurred",
+          "Explain the reasons for your busy schedule",
+          "Describe your coping strategies",
+          "Share your emotional state during this time"
+        ]
+      },
+      {
+        "topicName_real": "an important event that you celebrated",
+        "topicName_rewrite": "a significant occasion you commemorated",
+        "topicId": "B0_t10", 
+        "points_original": [
+          "What it was",
+          "Who celebrated the event with you",
+          "How you celebrated",
+          "And explain why the event was important to you"
+        ],
+        "points_rewrite": [
+          "Identify the special occasion",
+          "Name your celebration companions",
+          "Describe your festive activities",
+          "Explain the personal significance of this event"
+        ]
+      },
+      {
+        "topicName_real": "a time when you used a phone to do something important",
+        "topicName_rewrite": "an instance when your mobile device served a crucial purpose",
+        "topicId": "B0_t11", 
+        "points_original": [
+          "When and where you used the phone",
+          "What you used the phone for",
+          "Why it was important to do this",
+          "And explain what happened as a result of using the phone"
+        ],
+        "points_rewrite": [
+          "Specify the time and location of this phone usage",
+          "Describe the significant action you performed with it",
+          "Explain the importance of this activity",
+          "Share the outcome that resulted from this phone use"
+        ]
+      },
+      {
+        "topicName_real": "a time when you had to spend a long time in a traffic jam",
+        "topicName_rewrite": "an experience of being stuck in prolonged traffic congestion",
+        "topicId": "B0_t12", 
+        "points_original": [
+          "When and where it happened",
+          "What you did",
+          "How you felt about it",
+          "And explain what problems the delay caused you"
+        ],
+        "points_rewrite": [
+          "Identify when and where this occurred",
+          "Describe how you occupied yourself during the wait",
+          "Express your emotional reaction",
+          "Explain the negative consequences of this delay"
+        ]
+      },
+      {
+        "topicName_real": "a difficult decision you made that had a very good result",
+        "topicName_rewrite": "a challenging choice that led to positive outcomes",
+        "topicId": "B0_t13", 
+        "points_original": [
+          "What it was",
+          "Why it was difficult to make the decision",
+          "What helped you to decide",
+          "And explain why the decision you made had such a good result"
+        ],
+        "points_rewrite": [
+          "Describe the nature of this tough decision",
+          "Explain what made it particularly hard",
+          "Identify factors that influenced your choice",
+          "Articulate how this led to favorable consequences"
+        ]
+      },
+      {
+        "topicName_real": "a change you made recently that was positive",
+        "topicName_rewrite": "a beneficial modification you implemented in your life",
+        "topicId": "B0_t14", 
+        "points_original": [
+          "What it was",
+          "Why you decided to make this change",
+          "Whether other people helped you",
+          "And explain why it was a positive change"
+        ],
+        "points_rewrite": [
+          "Describe the alteration you introduced",
+          "Explain your motivation for this adjustment",
+          "Mention any assistance you received",
+          "Justify why this was an improvement"
+        ]
+      },
+      {
+        "topicName_real": "something you do that you think is important for keeping fit and healthy",
+        "topicName_rewrite": "an activity you consider crucial for maintaining wellbeing",
+        "topicId": "B0_t15", 
+        "points_original": [
+          "What you do",
+          "How often you do it",
+          "Who you do it with",
+          "And explain why you think this activity is important for keeping fit and healthy"
+        ],
+        "points_rewrite": [
+          "Describe your health-related practice",
+          "Specify its frequency",
+          "Identify any participation companions",
+          "Explain its significance for your physical condition"
+        ]
+      },
+      {
+        "topicName_real": "something that helps you to concentrate on work/study",
+        "topicName_rewrite": "a method you use to enhance your focus during tasks",
+        "topicId": "B0_t16", 
+        "points_original": [
+          "What do you do",
+          "Whether you always do the same thing",
+          "Where and when you do this",
+          "And explain how much this helps you to concentrate on work/study"
+        ],
+        "points_rewrite": [
+          "Describe your concentration technique",
+          "Indicate if this is your standard approach",
+          "Specify your typical setting and timing",
+          "Evaluate its effectiveness for your focus"
+        ]
+      },
+      {
+        "topicName_real": "a time when someone asked you for opinion",
+        "topicName_rewrite": "an occasion when someone sought your viewpoint",
+        "topicId": "B0_t17", 
+        "points_original": [
+          "Who asked you",
+          "Why this person wanted to know your opinion",
+          "What opinion you gave",
+          "And explain how you felt about it"
+        ],
+        "points_rewrite": [
+          "Identify the person making the request",
+          "Explain their reason for consulting you",
+          "Describe the perspective you shared",
+          "Express your feelings about being asked"
+        ]
+      },
+      {
+        "topicName_real": "an ambition you haven't achieved yet",
+        "topicName_rewrite": "an unfulfilled goal you still pursue",
+        "topicId": "B0_t18", 
+        "points_original": [
+          "What it is",
+          "Why you want to achieve this ambition",
+          "How long you have had this ambition",
+          "And explain why you haven't achieved this ambition yet"
+        ],
+        "points_rewrite": [
+          "Describe your unrealized objective",
+          "Explain your motivation to accomplish it",
+          "Indicate how long you've held this aspiration",
+          "Analyze the reasons it remains unfulfilled"
+        ]
+      },
+      {
+        "topicName_real": "a quiet place where you like to spend time",
+        "topicName_rewrite": "a peaceful location you frequent for relaxation",
+        "topicId": "B0_t19", 
+        "points_original": [
+          "Where it is",
+          "How you found it",
+          "How often you spend time in this quiet place",
+          "And explain why you like spending time in this quite place"
+        ],
+        "points_rewrite": [
+          "Identify this tranquil spot",
+          "Describe how you discovered it",
+          "Specify your visitation frequency",
+          "Explain what makes this place appealing to you"
+        ]
+      },
+      {
+        "topicName_real": "a special day out which didn't cost very much",
+        "topicName_rewrite": "an enjoyable inexpensive excursion",
+        "topicId": "B0_t20", 
+        "points_original": [
+          "Where and when you went",
+          "What you did",
+          "What the you spent money on",
+          "And explain why you enjoyed this special day out"
+        ],
+        "points_rewrite": [
+          "Specify the destination and timing",
+          "Describe your activities",
+          "List your minimal expenditures",
+          "Explain what made this outing memorable"
+        ]
+      },
+      {
+        "topicName_real": "a long walk that you enjoyed",
+        "topicName_rewrite": "a memorable extended stroll you took",
+        "topicId": "B0_t21", 
+        "points_original": [
+          "Where and when you did",
+          "Who you went with",
+          "What you saw on the walk",
+          "And explain why you enjoyed this long walk"
+        ],
+        "points_rewrite": [
+          "Specify the location and time of this walk",
+          "Identify your walking companions if any",
+          "Describe the sights you encountered",
+          "Explain what made this experience pleasurable"
+        ]
+      },
+      {
+        "topicName_real": "a place in the countryside that you enjoyed visiting",
+        "topicName_rewrite": "a rural location you found particularly delightful",
+        "topicId": "B0_t22", 
+        "points_original": [
+          "Where you went",
+          "Why you went to this place",
+          "What you saw and did there",
+          "And explain why you enjoyed visiting this place in the countryside"
+        ],
+        "points_rewrite": [
+          "Identify this countryside destination",
+          "Explain your purpose for going there",
+          "Describe your observations and activities",
+          "Share what made this rural visit enjoyable"
+        ]
+      },
+      {
+        "topicName_real": "a time that you remember being in a new place",
+        "topicName_rewrite": "a memorable experience of visiting an unfamiliar location",
+        "topicId": "B0_t23", 
+        "points_original": [
+          "Where you were",
+          "Why you went there",
+          "What you remember about it",
+          "And explain how you felt about being in this new place"
+        ],
+        "points_rewrite": [
+          "Describe this novel environment",
+          "Explain your reasons for going",
+          "Recall distinctive features that stood out",
+          "Express your emotions about this new experience"
+        ]
+      },
+      {
+        "topicName_real": "a time when you were preparing for a happy event",
+        "topicName_rewrite": "an instance when you made arrangements for a joyful occasion",
+        "topicId": "B0_t24", 
+        "points_original": [
+          "What it was",
+          "How you prepare for this event",
+          "Who helped you prepare",
+          "And explain how successful your preparations were"
+        ],
+        "points_rewrite": [
+          "Identify the celebratory event",
+          "Describe your organizational efforts",
+          "Mention any assistance you received",
+          "Evaluate the effectiveness of your preparations"
+        ]
+      },
+      {
+        "topicName_real": "a well-known person in your country who is very popular",
+        "topicName_rewrite": "a prominent national figure with widespread appeal",
+        "topicId": "B0_t25", 
+        "points_original": [
+          "Who this person is",
+          "What you know about this person",
+          "Why he/she is so popular",
+          "And explain how you feel about this person being so popular"
+        ],
+        "points_rewrite": [
+          "Identify this famous individual",
+          "Share your knowledge about them",
+          "Analyze the reasons for their popularity",
+          "Express your personal opinion about their fame"
+        ]
+      },
+      {
+        "topicName_real": "a person you know who does a job which is useful to society",
+        "topicName_rewrite": "an acquaintance with socially valuable employment",
+        "topicId": "B0_t26", 
+        "points_original": [
+          "Who this person is",
+          "What job this person does",
+          "What skills this person needs to do the job",
+          "And explain why you think this job is useful to society"
+        ],
+        "points_rewrite": [
+          "Describe this individual",
+          "Explain their professional role",
+          "Outline the required competencies",
+          "Justify the societal benefits of their work"
+        ]
+      },
+      {
+        "topicName_real": "a place you have visited that you would recommend as a good place to live",
+        "topicName_rewrite": "a location you've experienced that would make an excellent residence",
+        "topicId": "B0_t27", 
+        "points_original": [
+          "Where this place is",
+          "How well you know this place",
+          "What people can do in this place",
+          "And explain why you would recommend"
+        ],
+        "points_rewrite": [
+          "Identify this potential residential area",
+          "Describe your familiarity with it",
+          "List available activities and amenities",
+          "Present your reasons for recommending it"
+        ]
+      },
+      {
+        "topicName_real": "a famous city that you find interesting",
+        "topicName_rewrite": "a renowned urban center that captures your interest",
+        "topicId": "B0_t28", 
+        "points_original": [
+          "Where the city is",
+          "How you know about it",
+          "Why the city is famous",
+          "And explain why you find this city interesting"
+        ],
+        "points_rewrite": [
+          "Locate this notable city",
+          "Explain how you became aware of it",
+          "Describe its claims to fame",
+          "Share what makes it fascinating to you"
+        ]
+      },
+      {
+        "topicName_real": "a traditional product made in your country which you like",
+        "topicName_rewrite": "a culturally significant item from your homeland that you appreciate",
+        "topicId": "B0_t29", 
+        "points_original": [
+          "What it is",
+          "When you first tried this product",
+          "How this product is made",
+          "And explain why you like this traditional product"
+        ],
+        "points_rewrite": [
+          "Identify this heritage item",
+          "Recall your initial experience with it",
+          "Describe its production process",
+          "Explain your personal appreciation for it"
+        ]
+      },
+      {
+        "topicName_real": "a toy that you often played with as a child",
+        "topicName_rewrite": "a childhood plaything you frequently enjoyed",
+        "topicId": "B0_t30", 
+        "points_original": [
+          "What kind of toy it was",
+          "When did you get the toy",
+          "Whether you played with the toy by yourself or with other people",
+          "And explain how you felt about this toy"
+        ],
+        "points_rewrite": [
+          "Describe this play item",
+          "Specify when you acquired it",
+          "Indicate if it was for solo or group play",
+          "Share your emotional connection to it"
+        ]
+      },
+      {
+        "topicName_real": "something you did that helped you to learn another language",
+        "topicName_rewrite": "an effective method you used for language acquisition",
+        "topicId": "B0_t31", 
+        "points_original": [
+          "What you did",
+          "Where you did it",
+          "Who you did it with",
+          "And explain how doing this helped you to learn another language"
+        ],
+        "points_rewrite": [
+          "Describe your language learning strategy",
+          "Specify the location where you practiced",
+          "Mention any learning partners you had",
+          "Explain the effectiveness of this approach"
+        ]
+      },
+      {
+        "topicName_real": "a person you follow on social media",
+        "topicName_rewrite": "an individual whose social media content you regularly consume",
+        "topicId": "B0_t32", 
+        "points_original": [
+          "Who this person is",
+          "How you know about this person",
+          "What kinds of things he/she talks about",
+          "And explain why you follow this person regularly on social media or other media"
+        ],
+        "points_rewrite": [
+          "Identify this social media personality",
+          "Explain how you discovered them",
+          "Describe their typical content themes",
+          "Justify your continued interest in their posts"
+        ]
+      },
+      {
+        "topicName_real": "a story someone told you that you remember well",
+        "topicName_rewrite": "a memorable narrative shared with you",
+        "topicId": "B0_t33", 
+        "points_original": [
+          "Who told you the story",
+          "When this person told you",
+          "What the story was about",
+          "And explain why you remember it well"
+        ],
+        "points_rewrite": [
+          "Identify the storyteller",
+          "Recall when this storytelling occurred",
+          "Summarize the narrative content",
+          "Analyze what made it memorable"
+        ]
+      },
+      {
+        "topicName_real": "an interesting discussion that you had with friends",
+        "topicName_rewrite": "a particularly engaging conversation with companions",
+        "topicId": "B0_t34", 
+        "points_original": [
+          "What it was about",
+          "What did you and your friend talked about",
+          "What the result of the discussion was",
+          "And explain why you found this discussion was"
+        ],
+        "points_rewrite": [
+          "State the discussion topic",
+          "Detail the exchange of viewpoints",
+          "Describe any conclusions reached",
+          "Explain what made this dialogue compelling"
+        ]
+      },
+      {
+        "topicName_real": "a person you only met recently who you would like to get to know better",
+        "topicName_rewrite": "a new acquaintance you wish to develop a closer relationship with",
+        "topicId": "B0_t35", 
+        "points_original": [
+          "Who this person is",
+          "Where you met him/her",
+          "What you talked about",
+          "And explain why you would like to know this person better"
+        ],
+        "points_rewrite": [
+          "Describe this new contact",
+          "Explain the circumstances of your meeting",
+          "Recall your initial conversation topics",
+          "Share your reasons for wanting further connection"
+        ]
+      },
+      {
+        "topicName_real": "a person that you enjoy spending time with",
+        "topicName_rewrite": "an individual whose company you particularly value",
+        "topicId": "B0_t36", 
+        "points_original": [
+          "How you met him/her",
+          "What type of person he/she is",
+          "What you did you do with him/her together",
+          "And explain why you enjoy spending time with this person"
+        ],
+        "points_rewrite": [
+          "Describe your first encounter",
+          "Characterize their personality traits",
+          "List shared activities you've enjoyed",
+          "Explain what makes their company pleasurable"
+        ]
+      },
+      {
+        "topicName_real": "something you can't live without – not a mobile/cell phone or computer",
+        "topicName_rewrite": "an essential non-electronic item in your daily life",
+        "topicId": "B0_t37", 
+        "points_original": [
+          "What it is",
+          "How long you have had it",
+          "What you used for it",
+          "And explain why you can't live without this thing"
+        ],
+        "points_rewrite": [
+          "Identify this indispensable object",
+          "State how long it's been in your possession",
+          "Describe its practical uses",
+          "Justify its necessity in your life"
+        ]
+      },
+      {
+        "topicName_real": "a time when something in your home broke and you tried to repair it",
+        "topicName_rewrite": "an instance of attempting household repairs",
+        "topicId": "B0_t38", 
+        "points_original": [
+          "What thing broke",
+          "Why this thing broke",
+          "What you did to try to repair it",
+          "And explain how successful you were at trying to repair this thing"
+        ],
+        "points_rewrite": [
+          "Identify the malfunctioning item",
+          "Explain the cause of the damage",
+          "Describe your repair attempts",
+          "Evaluate the outcome of your efforts"
+        ]
+      },
+      {
+        "topicName_real": "a rule (e.g. at school or work) you dislike and would like to change",
+        "topicName_rewrite": "a regulation you find objectionable and wish to modify",
+        "topicId": "B0_t39", 
+        "points_original": [
+          "What it is",
+          "What the reason for the rule is",
+          "Why you don't like the rule",
+          "And explain how you would like to change the rule"
+        ],
+        "points_rewrite": [
+          "Specify the problematic regulation",
+          "Explain its original purpose",
+          "Articulate your objections to it",
+          "Propose your suggested amendments"
+        ]
+      },
+      {
+        "topicName_real": "an item of clothing that someone gave you",
+        "topicName_rewrite": "a garment you received as a gift",
+        "topicId": "B0_t40", 
+        "points_original": [
+          "What the item of clothing was",
+          "Who gave it to you",
+          "What it looked like",
+          "And explain why this person gave it to you"
+        ],
+        "points_rewrite": [
+          "Describe the clothing article",
+          "Identify the gift-giver",
+          "Detail its appearance and style",
+          "Explain the giver's motivation"
+        ]
+      },
+      {
+        "topicName_real": "a lesson that you remember well",
+        "topicName_rewrite": "an educational experience that left a lasting impression",
+        "topicId": "B0_t41", 
+        "points_original": [
+          "What the lesson was about",
+          "When and where this lesson took place",
+          "What happened",
+          "And explain why you remember this lesson so well"
+        ],
+        "points_rewrite": [
+          "Describe the subject matter of the lesson",
+          "Specify the time and location of this learning experience",
+          "Detail the events that occurred during it",
+          "Analyze what made it particularly memorable"
+        ]
+      },
+      {
+        "topicName_real": "a time when you had a cake that was special",
+        "topicName_rewrite": "an occasion involving a particularly meaningful cake",
+        "topicId": "B0_t42", 
+        "points_original": [
+          "What kind of cake it was",
+          "Why you had this cake",
+          "When you had this cake",
+          "And explain how you felt about having this special cake"
+        ],
+        "points_rewrite": [
+          "Describe the type and characteristics of the cake",
+          "Explain the reason for having this cake",
+          "Specify when this cake experience occurred",
+          "Share your emotional response to this cake"
+        ]
+      },
+      {
+        "topicName_real": "a time when you received something without having to pay for it",
+        "topicName_rewrite": "an instance of obtaining something at no cost",
+        "topicId": "B0_t43", 
+        "points_original": [
+          "What it was",
+          "Why it was free",
+          "What you did to get this free thing",
+          "And explain how you felt about it"
+        ],
+        "points_rewrite": [
+          "Identify the complimentary item or service",
+          "Explain why there was no charge",
+          "Describe how you acquired it",
+          "Express your feelings about receiving it"
+        ]
+      },
+      {
+        "topicName_real": "a gift you would like to buy for a friend",
+        "topicName_rewrite": "a present you're considering purchasing for a companion",
+        "topicId": "B0_t44", 
+        "points_original": [
+          "How do you know this friend",
+          "What kinds of gift you would like to buy",
+          "How much time you spend with him/her",
+          "And explain why you would like to buy this gift for him/her"
+        ],
+        "points_rewrite": [
+          "Describe your relationship with this friend",
+          "Outline potential gift options you're considering",
+          "Indicate the frequency of your interactions",
+          "Explain your motivation for wanting to give this gift"
+        ]
+      },
+      {
+        "topicName_real": "a useful skill you learned from an older person",
+        "topicName_rewrite": "a valuable ability acquired through intergenerational learning",
+        "topicId": "B0_t45", 
+        "points_original": [
+          "Who this person was",
+          "What skill you learned",
+          "How easy or difficult it was to learn this skill",
+          "And explain why it was useful for you to learn this skill"
+        ],
+        "points_rewrite": [
+          "Identify your elder mentor",
+          "Describe the practical ability they taught you",
+          "Assess the learning difficulty level",
+          "Justify the utility of this skill in your life"
+        ]
+      },
+      {
+        "topicName_real": "a song that you think is interesting",
+        "topicName_rewrite": "a musical composition you find particularly intriguing",
+        "topicId": "B0_t46", 
+        "points_original": [
+          "What country the song is from",
+          "How you know about it",
+          "What the song is about",
+          "And explain why you think this song is interesting"
+        ],
+        "points_rewrite": [
+          "State the song's country of origin",
+          "Explain how you discovered this song",
+          "Summarize its lyrical content or theme",
+          "Analyze what makes it fascinating to you"
+        ]
+      },
+      {
+        "topicName_real": "the kind of house or apartment you would like to live in",
+        "topicName_rewrite": "your ideal residential dwelling",
+        "topicId": "B0_t47", 
+        "points_original": [
+          "Where it would be",
+          "What it would look like",
+          "What would be special about",
+          "And explain why you would like to live in this house or apartment"
+        ],
+        "points_rewrite": [
+          "Describe your preferred location",
+          "Visualize its architectural features",
+          "Highlight its unique characteristics",
+          "Explain why this would be your perfect home"
+        ]
+      },
+      {
+        "topicName_real": "a family member you might like to work with in the future",
+        "topicName_rewrite": "a relative you'd consider as a potential professional partner",
+        "topicId": "B0_t48", 
+        "points_original": [
+          "Who this person is",
+          "Whether you have worked with this person before",
+          "What kind of work you might like to do with this person",
+          "And explain why you might like to work with this family member in the future"
+        ],
+        "points_rewrite": [
+          "Identify this family member",
+          "Mention any prior collaborative experiences",
+          "Describe potential joint professional activities",
+          "Explain why this working relationship appeals to you"
+        ]
+      },
+      {
+        "topicName_real": "an important river, lake or area of water in your country",
+        "topicName_rewrite": "a significant aquatic feature of your homeland",
+        "topicId": "B0_t49", 
+        "points_original": [
+          "Where in your country it is",
+          "How big it is",
+          "What it looks like",
+          "And explain why it is important for your country"
+        ],
+        "points_rewrite": [
+          "Locate this water body geographically",
+          "Describe its size and scale",
+          "Depict its physical characteristics",
+          "Explain its national significance"
+        ]
+      },
+      {
+        "topicName_real": "a competition you would like to take part in",
+        "topicName_rewrite": "a contest you aspire to participate in",
+        "topicId": "B0_t50", 
+        "points_original": [
+          "What it is",
+          "Where and when it happens",
+          "What you have to do to win the competition",
+          "And explain why you would like to take part in this competition"
+        ],
+        "points_rewrite": [
+          "Identify the nature of this competitive event",
+          "Specify its location and timing",
+          "Outline the requirements for victory",
+          "Explain your motivation for wanting to compete"
+        ]
+        }
+    ]
+  }
