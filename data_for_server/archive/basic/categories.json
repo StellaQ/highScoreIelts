@@ -2,7 +2,8 @@
     "mixed_categories": [
       {
         "categoryName": "Personal Information",
-        "categoryNameInChinese": "个人信息",
+        "categoryName_cn": "个人信息",
+        "categoryId": "c1",
         "topicCollection": [
           {
             "topicName": "Individual Aptitudes",
@@ -13,7 +14,8 @@
       },
       {
         "categoryName": "Daily",
-        "categoryNameInChinese": "日常生活",
+        "categoryName_cn": "日常生活",
+        "categoryId": "c2",
         "topicCollection": [
           {
             "topicName": "Professional Life",
@@ -39,7 +41,8 @@
       },
       {
         "categoryName": "Surroundings",
-        "categoryNameInChinese": "居住环境",
+        "categoryName_cn": "居住环境",
+        "categoryId": "c3",
         "topicCollection": [
           {
             "topicName": "Native Region",
@@ -60,7 +63,8 @@
       },
       {
         "categoryName": "Hobby",
-        "categoryNameInChinese": "兴趣爱好",
+        "categoryName_cn": "兴趣爱好",
+        "categoryId": "c4",
         "topicCollection": [
           {
             "topicName": "Reading Habits",
@@ -96,7 +100,8 @@
       },
       {
         "categoryName": "Habit",
-        "categoryNameInChinese": "习惯与常规",
+        "categoryName_cn": "习惯与常规",
+        "categoryId": "c5",
         "topicCollection": [
           {
             "topicName": "Monotony Experiences",
@@ -122,12 +127,14 @@
       },
       {
         "categoryName": "Future Plan",
-        "categoryNameInChinese": "未来计划",
+        "categoryName_cn": "未来计划",
+        "categoryId": "c6",
         "topicCollection": []
       },
       {
         "categoryName": "Technology",
-        "categoryNameInChinese": "技术与媒体",
+        "categoryName_cn": "技术与媒体",
+        "categoryId": "c7",
         "topicCollection": [
           {
             "topicName": "Digital Device Usage",
@@ -158,7 +165,8 @@
       },
       {
         "categoryName": "Travel",
-        "categoryNameInChinese": "旅游与出行",
+        "categoryName_cn": "旅游与出行",
+        "categoryId": "c8",
         "topicCollection": [
           {
             "topicName": "Automotive Preferences",
@@ -174,12 +182,14 @@
       },
       {
         "categoryName": "Celeberate",
-        "categoryNameInChinese": "节日与庆祝",
+        "categoryName_cn": "节日与庆祝",
+        "categoryId": "c9",
         "topicCollection": []
       },
       {
         "categoryName": "Culture",
-        "categoryNameInChinese": "文化与社会",
+        "categoryName_cn": "文化与社会",
+        "categoryId": "c10",
         "topicCollection": [
           {
             "topicName": "Marketing Exposure",
@@ -195,7 +205,8 @@
       },
       {
         "categoryName": "Other",
-        "categoryNameInChinese": "其它",
+        "categoryName_cn": "其它",
+        "categoryId": "c11",
         "topicCollection": [
           {
             "topicName": "Social Gatherings",

@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const path = require('path');
+require('dotenv').config();  // 加载环境变量
 const { connectDB } = require('../config/db');  // 引入数据库连接配置
 
 const fs = require('fs');
-const path = require('path');
 
 // 导入所有模型
 const BasicCategories = require('../models/basicCategories');
@@ -99,9 +100,12 @@ const fileNumber = process.argv[2] ? parseInt(process.argv[2]) : null;
 // 执行导入
 importData(fileNumber); 
 
-// 1导入所有数据
-// node scripts/importData.js
-// 2导入指定文件
-// node scripts/importData.js 1  # 导入 basic 数据
-// node scripts/importData.js 2  # 导入 advanced 数据
-// node scripts/importData.js 3  # 导入 expert 数据
+// 导入数据命令说明：
+// 1. 导入所有数据
+// npm run import:dev    # 开发环境
+// npm run import:test   # 测试环境
+// npm run import:prod   # 生产环境
+// 2. 导入指定文件
+// npm run import:dev 1  # 开发环境导入 basic 数据
+// npm run import:dev 2  # 开发环境导入 advanced 数据
+// npm run import:dev 3  # 开发环境导入 expert 数据

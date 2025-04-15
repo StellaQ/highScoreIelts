@@ -24,7 +24,8 @@ json
   "mixed_categories": [
     {
       "categoryName": "字符串，分类英文名",
-      "categoryNameInChinese": "字符串，分类中文名",
+      "categoryName_cn": "字符串，分类中文名",
+      "categoryId": "字符串，分类ID",
       "topicCollection": [
         {
           "topicName": "字符串，主题英文名",
