@@ -6,7 +6,7 @@ const prompt_question_selector = `
 输入数据：
 mixed_questions: 包含多个主题(topic)及其对应问题列表的数组
 
-categories: 预定义的分类体系，每个分类包含categoryId、中英文名称和描述
+categories: 预定义的分类体系，每个分类包含中英文名称和描述
 
 处理规则：
 
@@ -24,7 +24,6 @@ json
   "mixed_categories": [
     {
       "categoryName": "字符串，分类英文名",
-      "categoryId": "字符串，分类ID",
       "categoryNameInChinese": "字符串，分类中文名",
       "topicCollection": [
         {
@@ -39,7 +38,6 @@ json
   ]
 }
 特别注意：
-确保topicCollection中的每个topic都携带其完整的questions数组
 
 不要修改原始输入的内容和顺序
 

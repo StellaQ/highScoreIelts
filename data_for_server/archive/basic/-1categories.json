@@ -1,0 +1,234 @@
+{
+    "mixed_categories": [
+      {
+        "categoryName": "Personal Information",
+        "categoryId": "c1",
+        "categoryName_cn": "个人信息",
+        "topicCollection": [
+          {
+            "topicName": "Professional Life",
+            "topicName_cn": "职业生活",
+            "topicId": "Basic_2025Q1_t2"
+          },
+          {
+            "topicName": "Occupation",
+            "topicName_cn": "职业状况",
+            "topicId": "Basic_2025Q1_t4"
+          },
+          {
+            "topicName": "Life Phases",
+            "topicName_cn": "人生阶段",
+            "topicId": "Basic_2025Q1_t16"
+          }
+        ]
+      },
+      {
+        "categoryName": "Daily",
+        "categoryId": "c2",
+        "categoryName_cn": "日常生活",
+        "topicCollection": [
+          {
+            "topicName": "Recollection",
+            "topicName_cn": "记忆能力",
+            "topicId": "Basic_2025Q1_t7"
+          },
+          {
+            "topicName": "Conversation",
+            "topicName_cn": "交谈沟通",
+            "topicId": "Basic_2025Q1_t31"
+          }
+        ]
+      },
+      {
+        "categoryName": "Hobby",
+        "categoryId": "c3",
+        "categoryName_cn": "兴趣爱好",
+        "topicCollection": [
+          {
+            "topicName": "Color Preferences",
+            "topicName_cn": "色彩偏好",
+            "topicId": "Basic_2025Q1_t8"
+          },
+          {
+            "topicName": "Gaming",
+            "topicName_cn": "电子游戏",
+            "topicId": "Basic_2025Q1_t10"
+          },
+          {
+            "topicName": "Vocal Performance",
+            "topicName_cn": "声乐表演",
+            "topicId": "Basic_2025Q1_t13"
+          },
+          {
+            "topicName": "Musical Interests",
+            "topicName_cn": "音乐兴趣",
+            "topicId": "Basic_2025Q1_t18"
+          },
+          {
+            "topicName": "Musical Arts",
+            "topicName_cn": "音乐艺术",
+            "topicId": "Basic_2025Q1_t26"
+          },
+          {
+            "topicName": "Cinema",
+            "topicName_cn": "电影艺术",
+            "topicId": "Basic_2025Q1_t28"
+          },
+          {
+            "topicName": "Angling",
+            "topicName_cn": "垂钓",
+            "topicId": "Basic_2025Q1_t20"
+          },
+          {
+            "topicName": "Jogging",
+            "topicName_cn": "慢跑",
+            "topicId": "Basic_2025Q1_t24"
+          }
+        ]
+      },
+      {
+        "categoryName": "Habit",
+        "categoryId": "c4",
+        "categoryName_cn": "习惯与常规",
+        "topicCollection": [
+          {
+            "topicName": "Boredom",
+            "topicName_cn": "无聊感",
+            "topicId": "Basic_2025Q1_t14"
+          },
+          {
+            "topicName": "Desserts",
+            "topicName_cn": "甜品",
+            "topicId": "Basic_2025Q1_t12"
+          },
+          {
+            "topicName": "Beverage Preferences",
+            "topicName_cn": "饮品偏好",
+            "topicId": "Basic_2025Q1_t23"
+          }
+        ]
+      },
+      {
+        "categoryName": "Surroundings",
+        "categoryId": "c5",
+        "categoryName_cn": "居住环境",
+        "topicCollection": [
+          {
+            "topicName": "Current Residence",
+            "topicName_cn": "当前居住地",
+            "topicId": "Basic_2025Q1_t1"
+          },
+          {
+            "topicName": "Native Place",
+            "topicName_cn": "家乡",
+            "topicId": "Basic_2025Q1_t3"
+          },
+          {
+            "topicName": "High-density Areas",
+            "topicName_cn": "高密度区域",
+            "topicId": "Basic_2025Q1_t6"
+          },
+          {
+            "topicName": "Sound Environment",
+            "topicName_cn": "声音环境",
+            "topicId": "Basic_2025Q1_t30"
+          }
+        ]
+      },
+      {
+        "categoryName": "future plan",
+        "categoryId": "c6",
+        "categoryName_cn": "未来计划",
+        "topicCollection": []
+      },
+      {
+        "categoryName": "celeberate",
+        "categoryId": "c7",
+        "categoryName_cn": "节日与庆祝",
+        "topicCollection": [
+          {
+            "topicName": "Present-giving",
+            "topicName_cn": "礼物赠送",
+            "topicId": "Basic_2025Q1_t22"
+          }
+        ]
+      },
+      {
+        "categoryName": "Culture",
+        "categoryId": "c8",
+        "categoryName_cn": "文化与社会",
+        "topicCollection": [
+          {
+            "topicName": "Celebrity Culture",
+            "topicName_cn": "名人文化",
+            "topicId": "Basic_2025Q1_t9"
+          },
+          {
+            "topicName": "Altruism",
+            "topicName_cn": "利他主义",
+            "topicId": "Basic_2025Q1_t21"
+          },
+          {
+            "topicName": "Apparel",
+            "topicName_cn": "服装服饰",
+            "topicId": "Basic_2025Q1_t27"
+          }
+        ]
+      },
+      {
+        "categoryName": "Technology",
+        "categoryId": "c9",
+        "categoryName_cn": "技术与媒体",
+        "topicCollection": [
+          {
+            "topicName": "Marketing Communications",
+            "topicName_cn": "营销传播",
+            "topicId": "Basic_2025Q1_t5"
+          },
+          {
+            "topicName": "Digital Networking",
+            "topicName_cn": "数字社交",
+            "topicId": "Basic_2025Q1_t11"
+          },
+          {
+            "topicName": "Automation",
+            "topicName_cn": "自动化技术",
+            "topicId": "Basic_2025Q1_t25"
+          },
+          {
+            "topicName": "Cartography",
+            "topicName_cn": "地图绘制",
+            "topicId": "Basic_2025Q1_t29"
+          }
+        ]
+      },
+      {
+        "categoryName": "Travel",
+        "categoryId": "c10",
+        "categoryName_cn": "旅游与出行",
+        "topicCollection": []
+      },
+      {
+        "categoryName": "Other",
+        "categoryId": "c11",
+        "categoryName_cn": "其它",
+        "topicCollection": [
+          {
+            "topicName": "Eye Protection",
+            "topicName_cn": "眼部保护",
+            "topicId": "Basic_2025Q1_t15"
+          },
+          {
+            "topicName": "Finance",
+            "topicName_cn": "财务",
+            "topicId": "Basic_2025Q1_t17"
+          },
+          {
+            "topicName": "Geographical Studies",
+            "topicName_cn": "地理研究",
+            "topicId": "Basic_2025Q1_t19"
+          }
+        ]
+      }
+    ]
+  }
