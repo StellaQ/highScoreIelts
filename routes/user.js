@@ -197,7 +197,26 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
     }
 
     const hasCheckedIn = user.signInDates.includes(today);
-    const streakDays = user.signInDates.length;
+    
+    // 计算连续签到天数
+    let streakDays = 0;
+    if (user.signInDates.length > 0) {
+      // 获取最后一次签到日期
+      const lastSignIn = new Date(user.signInDates[user.signInDates.length - 1]);
+      const todayDate = new Date(today);
+      
+      // 计算日期差（以天为单位）
+      const diffTime = Math.abs(todayDate - lastSignIn);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      // 如果最后一次签到是昨天，则连续签到天数加1
+      if (diffDays <= 1) {
+        streakDays = user.signInDates.length;
+      } else if (diffDays > 1) {
+        // 如果超过一天没签到，则连续签到中断
+        streakDays = 0;
+      }
+    }
 
     // 统计三个表中的已完成题目总数
     const [basicCount, advancedCount, expertCount] = await Promise.all([
@@ -249,8 +268,9 @@ router.post('/signIn/:userId', async (req, res) => {
     }
 
     // 检查是否连续签到
-    const lastSignIn = user.signInDates[0];
-    if (lastSignIn) {
+    let lastSignIn = null;
+    if (user.signInDates.length > 0) {
+      lastSignIn = user.signInDates[user.signInDates.length - 1]; // 获取最后一次签到日期
       const lastDate = new Date(lastSignIn);
       const todayDate = new Date(today);
       const diffDays = Math.floor((todayDate - lastDate) / (1000 * 60 * 60 * 24));
@@ -262,7 +282,7 @@ router.post('/signIn/:userId', async (req, res) => {
     }
 
     // 添加今日签到记录
-    user.signInDates.unshift(today);
+    user.signInDates.push(today);
     
     // 更新积分
     user.points += config.SIGN_IN_POINTS;
