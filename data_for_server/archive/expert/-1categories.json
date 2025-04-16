@@ -1,0 +1,336 @@
+{
+    "mixed_categories": [
+      {
+        "categoryName": "Personal Development",
+        "categoryId": "p3_c1",
+        "categoryName_cn": "个人成长",
+        "topicCollection": [
+          {
+            "topicName": "Transformative moments and personal growth",
+            "topicName_cn": "人生转折点与个人成长",
+            "topicId": "Expert_2025Q1_t20"
+          },
+          {
+            "topicName": "Understanding exhaustion and modern lifestyle pressures",
+            "topicName_cn": "理解疲惫与现代生活压力",
+            "topicId": "Expert_2025Q1_t21"
+          },
+          {
+            "topicName": "Achievement through adversity and personal accomplishment",
+            "topicName_cn": "克服挑战与个人成就",
+            "topicId": "Expert_2025Q1_t22"
+          }
+        ]
+      },
+      {
+        "categoryName": "People & Relationships",
+        "categoryId": "p3_c2",
+        "categoryName_cn": "人与人际关系",
+        "topicCollection": [
+          {
+            "topicName": "The art of effective communication and verbal expression",
+            "topicName_cn": "有效沟通与语言表达的艺术",
+            "topicId": "Expert_2025Q1_t1"
+          },
+          {
+            "topicName": "Effective collaboration and team synergy",
+            "topicName_cn": "有效协作与团队协同",
+            "topicId": "Expert_2025Q1_t2"
+          },
+          {
+            "topicName": "The art of hospitality and guest reception",
+            "topicName_cn": "待客之道与接待艺术",
+            "topicId": "Expert_2025Q1_t3"
+          },
+          {
+            "topicName": "Bridging generational gaps through dialogue",
+            "topicName_cn": "通过对话弥合代际差距",
+            "topicId": "Expert_2025Q1_t4"
+          },
+          {
+            "topicName": "Understanding human relationships and individual traits",
+            "topicName_cn": "理解人际关系与个人特质",
+            "topicId": "Expert_2025Q1_t5"
+          },
+          {
+            "topicName": "The dynamics of social events and human interaction",
+            "topicName_cn": "社交活动与人际互动的动态关系",
+            "topicId": "Expert_2025Q1_t13"
+          },
+          {
+            "topicName": "The psychology of helping others and altruism",
+            "topicName_cn": "助人行为与利他主义的心理学",
+            "topicId": "Expert_2025Q1_t33"
+          }
+        ]
+      },
+      {
+        "categoryName": "Daily Life & Activities",
+        "categoryId": "p3_c3",
+        "categoryName_cn": "日常生活与活动",
+        "topicCollection": [
+          {
+            "topicName": "The social significance of cooking and cuisine",
+            "topicName_cn": "烹饪与美食的社会意义",
+            "topicId": "Expert_2025Q1_t9"
+          },
+          {
+            "topicName": "Primary school experiences and childhood development",
+            "topicName_cn": "小学经历与儿童发展",
+            "topicId": "Expert_2025Q1_t16"
+          },
+          {
+            "topicName": "The impact of daily habits on work and study efficiency",
+            "topicName_cn": "日常习惯对工作和学习效率的影响",
+            "topicId": "Expert_2025Q1_t35"
+          },
+          {
+            "topicName": "The role and impact of rules in institutions",
+            "topicName_cn": "规章制度在机构中的作用与影响",
+            "topicId": "Expert_2025Q1_t36"
+          }
+        ]
+      },
+      {
+        "categoryName": "Objects & Technology",
+        "categoryId": "p3_c4",
+        "categoryName_cn": "物品与科技",
+        "topicCollection": [
+          {
+            "topicName": "The role of maps in modern navigation",
+            "topicName_cn": "地图在现代导航中的作用",
+            "topicId": "Expert_2025Q1_t27"
+          },
+          {
+            "topicName": "Challenges in digital device usage",
+            "topicName_cn": "数字设备使用中的挑战",
+            "topicId": "Expert_2025Q1_t28"
+          },
+          {
+            "topicName": "Meaningful photographs and visual culture",
+            "topicName_cn": "有意义的照片与视觉文化",
+            "topicId": "Expert_2025Q1_t42"
+          },
+          {
+            "topicName": "The role of indispensable objects in domestic life",
+            "topicName_cn": "必需品在家庭生活中的作用",
+            "topicId": "Expert_2025Q1_t49"
+          }
+        ]
+      },
+      {
+        "categoryName": "Leisure & Recreation",
+        "categoryId": "p3_c5",
+        "categoryName_cn": "休闲与娱乐",
+        "topicCollection": [
+          {
+            "topicName": "The world of competitive sports and athletic excellence",
+            "topicName_cn": "竞技体育与运动卓越的世界",
+            "topicId": "Expert_2025Q1_t11"
+          },
+          {
+            "topicName": "The thrill of adventure and embracing novel experiences",
+            "topicName_cn": "冒险的刺激与拥抱新体验",
+            "topicId": "Expert_2025Q1_t12"
+          },
+          {
+            "topicName": "Unique vacation experiences and holiday culture",
+            "topicName_cn": "独特假期体验与节日文化",
+            "topicId": "Expert_2025Q1_t15"
+          },
+          {
+            "topicName": "The benefits and trends of outdoor activities",
+            "topicName_cn": "户外活动的益处与发展趋势",
+            "topicId": "Expert_2025Q1_t38"
+          },
+          {
+            "topicName": "The impact of cinema and movie-watching habits",
+            "topicName_cn": "电影院和观影习惯的影响",
+            "topicId": "Expert_2025Q1_t47"
+          }
+        ]
+      },
+      {
+        "categoryName": "Education & Learning",
+        "categoryId": "p3_c6",
+        "categoryName_cn": "教育与学习",
+        "topicCollection": [
+          {
+            "topicName": "The nature of innovative thought and perspective",
+            "topicName_cn": "创新思维与视角的本质",
+            "topicId": "Expert_2025Q1_t6"
+          },
+          {
+            "topicName": "Achieving excellence in education and beyond",
+            "topicName_cn": "追求学业成就与人生卓越",
+            "topicId": "Expert_2025Q1_t7"
+          },
+          {
+            "topicName": "Mastering foreign languages in a globalized world",
+            "topicName_cn": "全球化世界中的外语掌握",
+            "topicId": "Expert_2025Q1_t10"
+          },
+          {
+            "topicName": "Teenage skill development and lifelong learning",
+            "topicName_cn": "青少年技能培养与终身学习",
+            "topicId": "Expert_2025Q1_t18"
+          },
+          {
+            "topicName": "Passion for scientific disciplines and public understanding",
+            "topicName_cn": "科学学科热情与公众理解",
+            "topicId": "Expert_2025Q1_t40"
+          }
+        ]
+      },
+      {
+        "categoryName": "Work & Career",
+        "categoryId": "p3_c7",
+        "categoryName_cn": "工作与职业",
+        "topicCollection": [
+          {
+            "topicName": "Navigating the path to commercial achievement",
+            "topicName_cn": "探索商业成功的道路",
+            "topicId": "Expert_2025Q1_t8"
+          },
+          {
+            "topicName": "Managing urgent situations and time-sensitive tasks",
+            "topicName_cn": "紧急情况与时效性任务管理",
+            "topicId": "Expert_2025Q1_t23"
+          },
+          {
+            "topicName": "Modern busy schedules and productivity challenges",
+            "topicName_cn": "现代繁忙日程与生产力挑战",
+            "topicId": "Expert_2025Q1_t24"
+          },
+          {
+            "topicName": "Undesirable occupations and changing job markets",
+            "topicName_cn": "不受欢迎的职业与变化的就业市场",
+            "topicId": "Expert_2025Q1_t41"
+          }
+        ]
+      },
+      {
+        "categoryName": "Places & Environment",
+        "categoryId": "p3_c8",
+        "categoryName_cn": "场所与环境",
+        "topicCollection": [
+          {
+            "topicName": "Navigating journeys and modern transportation challenges",
+            "topicName_cn": "旅行体验与现代交通挑战",
+            "topicId": "Expert_2025Q1_t14"
+          },
+          {
+            "topicName": "The social and environmental value of public parks",
+            "topicName_cn": "公共公园的社会与环境价值",
+            "topicId": "Expert_2025Q1_t26"
+          },
+          {
+            "topicName": "Exploring geographical diversity and its significance",
+            "topicName_cn": "探索地理多样性及其意义",
+            "topicId": "Expert_2025Q1_t45"
+          },
+          {
+            "topicName": "The aesthetics and conservation of urban environments",
+            "topicName_cn": "城市环境的美学与保护",
+            "topicId": "Expert_2025Q1_t46"
+          },
+          {
+            "topicName": "The evolution and impact of community facilities",
+            "topicName_cn": "社区设施的发展与影响",
+            "topicId": "Expert_2025Q1_t50"
+          }
+        ]
+      },
+      {
+        "categoryName": "Society & Politics",
+        "categoryId": "p3_c9",
+        "categoryName_cn": "社会与政治",
+        "topicCollection": [
+          {
+            "topicName": "Traditional markets and evolving consumer behavior",
+            "topicName_cn": "传统市场与消费行为的演变",
+            "topicId": "Expert_2025Q1_t17"
+          },
+          {
+            "topicName": "The significance and impact of uniform policies",
+            "topicName_cn": "制服政策的意义与影响",
+            "topicId": "Expert_2025Q1_t19"
+          },
+          {
+            "topicName": "Managing noise in public spaces",
+            "topicName_cn": "公共场所的噪音管理",
+            "topicId": "Expert_2025Q1_t30"
+          },
+          {
+            "topicName": "The art and impact of persuasive marketing",
+            "topicName_cn": "说服性营销的艺术与影响",
+            "topicId": "Expert_2025Q1_t51"
+          }
+        ]
+      },
+      {
+        "categoryName": "Hypotheticals & Future",
+        "categoryId": "p3_c10",
+        "categoryName_cn": "假设与未来",
+        "topicCollection": [
+          {
+            "topicName": "Pursuing long-term objectives and life planning",
+            "topicName_cn": "追求长期目标与人生规划",
+            "topicId": "Expert_2025Q1_t37"
+          }
+        ]
+      },
+      {
+        "categoryName": "Other",
+        "categoryId": "p3_c11",
+        "categoryName_cn": "其它",
+        "topicCollection": [
+          {
+            "topicName": "The psychology of waiting and delayed gratification",
+            "topicName_cn": "等待心理与延迟满足",
+            "topicId": "Expert_2025Q1_t25"
+          },
+          {
+            "topicName": "The dynamics of advice exchange",
+            "topicName_cn": "建议交流的互动机制",
+            "topicId": "Expert_2025Q1_t29"
+          },
+          {
+            "topicName": "Handling public complaints and service recovery",
+            "topicName_cn": "处理公众投诉与服务补救",
+            "topicId": "Expert_2025Q1_t31"
+          },
+          {
+            "topicName": "Addressing service failures and quality improvement",
+            "topicName_cn": "解决服务失误与质量提升",
+            "topicId": "Expert_2025Q1_t32"
+          },
+          {
+            "topicName": "Ethical considerations around lost items",
+            "topicName_cn": "失物处理的伦理考量",
+            "topicId": "Expert_2025Q1_t34"
+          },
+          {
+            "topicName": "The impact and value of visual arts in society",
+            "topicName_cn": "视觉艺术在社会中的影响与价值",
+            "topicId": "Expert_2025Q1_t43"
+          },
+          {
+            "topicName": "The importance and characteristics of relaxation environments",
+            "topicName_cn": "放松环境的重要性与特征",
+            "topicId": "Expert_2025Q1_t44"
+          },
+          {
+            "topicName": "Fascination with historical periods and their legacy",
+            "topicName_cn": "对历史时期及其遗产的迷恋",
+            "topicId": "Expert_2025Q1_t48"
+          },
+          {
+            "topicName": "Desired possessions and financial attitudes",
+            "topicName_cn": "理想物品与财务态度",
+            "topicId": "Expert_2025Q1_t39"
+          }
+        ]
+      }
+    ]
+  }

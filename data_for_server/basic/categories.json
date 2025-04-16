@@ -38,9 +38,5 @@
     {"categoryName": "Culture",
     "categoryNameInChinese": "文化与社会",
     "categoryId": "c10",
-    "description": "- 文化习俗（例如家乡的文化、传统习俗）- 社会现象（例如环境保护、志愿者活动）"},
-    {"categoryName": "Other",
-    "categoryNameInChinese": "其它",
-    "categoryId": "c11",
-    "description": "- 不符合以上任何类别的话题"}]
+    "description": "- 文化习俗（例如家乡的文化、传统习俗）- 社会现象（例如环境保护、志愿者活动）"}]
 }

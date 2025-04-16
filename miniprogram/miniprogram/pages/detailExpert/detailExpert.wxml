@@ -19,7 +19,7 @@
         <view class="question-title">{{item.qTitle}}</view>
         <view class="question-title-cn">{{item.qTitle_cn}}</view>
         <textarea class="answer-input" 
-          placeholder="Opinion + 1ST Eeample/Reason + 2ND Example/Reason + Conclusion (不要拿自己，自己周边来举例。尽量客观论证。实在词穷，让AI帮你补全。）"
+          placeholder="Opinion + 1ST Eeample/Reason + 2ND Example/Reason + Conclusion (客观论证）"
           value="{{ item.answerUser }}"
           data-index="{{index}}"
           maxlength="300"

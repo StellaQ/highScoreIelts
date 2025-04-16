@@ -1,51 +1,96 @@
 const prompt_question_selector = `
-请根据提供的mixed_questions数组和categories分类体系，
-将问题主题(topic)智能分配到最匹配的category中，
-并生成符合以下格式的mixed_categories输出：
+任务描述：
+你需要将给定的 mixed_questions（混合问题集）中的每个 topic（主题）智能分类到预定义的 categories（分类体系）中，确保分类精准且无遗漏。
 
 输入数据：
-mixed_questions: 包含多个主题(topic)及其对应问题列表的数组
 
-categories: 预定义的分类体系，每个分类包含categoryId、中英文名称和描述
+mixed_questions：包含多个 topic 的数组，每个 topic 包含：
+
+topicName（英文主题名）
+
+topicName_cn（中文主题名）
+
+topicId（唯一标识符）
+
+questions（该主题下的具体问题列表）
+
+
+categories：预定义的分类体系，每个分类包含：
+
+categoryId（分类ID）
+
+categoryName（英文分类名）
+
+categoryName_cn（中文分类名）
+
+description（分类描述，含关键词）
 
 处理规则：
 
-1. 分类匹配规则：
-   - 仔细分析每个topic的topicName、topicName_cn和questions
-   - 按照categories数组中从上到下的顺序依次尝试匹配
-   - 匹配时应同时参考category的英文名(categoryName)、中文名(categoryNameInChinese)和description中的关键词
-   - 每个topic只能分配到一个category中
-   - 输出的mixed_categories的顺序和categories的顺序一致
+精准匹配优先
 
-2. 特殊处理：
-   - 如果topic明显不属于任何现有category，放入"Other"类别
-   - 不要创建重复的topic条目
-   - 保持categories的原始顺序，不要重新排序
+分析每个 topic 的 topicName、topicName_cn 和 questions，结合 category 的 名称（中英文）和描述 进行匹配。
 
-输出格式要求：
+不能简单按顺序匹配，必须计算语义相似度，选择最合适的分类。
+
+分类逻辑
+
+完全匹配（标题或关键词完全一致）→ 直接归类
+
+部分匹配（如问题内容与分类描述的关键词重合）→ 计算相似度，取最高分
+
+输出要求
+
+保持 categories 的原始顺序，即使某些分类没有匹配的 topic，仍需保留空数组。
+
+每个 topic 只能出现在一个分类中，不能重复。
+
+输出格式（JSON）：
 json
 {
   "mixed_categories": [
     {
-      "categoryName": "字符串，分类英文名",
-      "categoryId": "字符串，分类ID",
-      "categoryNameInChinese": "字符串，分类中文名",
+      "categoryName": "分类英文名",
+      "categoryId": "分类ID",
+      "categoryName_cn": "分类中文名",
       "topicCollection": [
         {
-          "topicName": "字符串，主题英文名",
-          "topicName_cn": "字符串，主题中文名",
-          "topicId": "字符串，主题ID"
+          "topicName": "主题英文名",
+          "topicName_cn": "主题中文名",
+          "topicId": "主题ID"
         }
-        // 其他匹配到此category的topic
+        // 其他匹配到此分类的 topic
       ]
     }
-    // 其他category（保持原始categories顺序）
+    // 其他分类（保持原始顺序）
   ]
 }
-
 特别注意：
-- 不匹配任何分类的topic放入"Other"
-- 不要创建新的category，只使用提供的categories
+
+不能创建新的 category，仅使用提供的分类体系。
+
+不能遗漏任何 topic
+
+分类必须精准，不能仅因顺序靠前就强行匹配。
+
+示例（伪代码逻辑）：
+
+python
+for topic in mixed_questions:
+    best_category = None
+    max_score = 0
+    
+    for category in categories:
+        score = calculate_similarity(topic, category)  # 计算相似度
+        if score > max_score:
+            max_score = score
+            best_category = category
+    
+    if max_score < THRESHOLD:  # 低于阈值则归入 Other
+        best_category = find_category("Other")
+    
+    assign_topic_to_category(topic, best_category)
+请严格按照要求处理并输出 JSON 格式结果。
 `;
 
 module.exports = prompt_question_selector;

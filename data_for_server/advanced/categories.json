@@ -19,40 +19,34 @@
         "description": "话题涉及描述城市、旅游景点、家乡、历史建筑等。"
       },
       {
-        "categoryName": "Events & Experiences",
+        "categoryName": "Education & Work",
         "categoryId": "c4",
+        "categoryName_cn": "教育与工作类",
+        "description": "话题涉及描述学校、课程、职业规划、工作经历等。"
+      },
+      {
+        "categoryName": "Events & Experiences",
+        "categoryId": "c5",
         "categoryName_cn": "事件与经历类",
         "description": "话题涉及描述难忘的经历、节日、旅行、学习经历等。"
       },
       {
         "categoryName": "Activities",
-        "categoryId": "c5",
+        "categoryId": "c6",
         "categoryName_cn": "活动类",
         "description": "话题涉及描述兴趣爱好、运动、技能学习、日常活动等。"
       },
       {
         "categoryName": "Media & Entertainment",
-        "categoryId": "c6",
+        "categoryId": "c7",
         "categoryName_cn": "媒体与娱乐类",
         "description": "话题涉及描述电影、音乐、电视节目、广告、社交媒体等。"
-      },
-      {
-        "categoryName": "Education & Work",
-        "categoryId": "c7",
-        "categoryName_cn": "教育与工作类",
-        "description": "话题涉及描述学校、课程、职业规划、工作经历等。"
       },
       {
         "categoryName": "Society & Culture",
         "categoryId": "c8",
         "categoryName_cn": "社会与文化类",
         "description": "话题涉及描述传统、习俗、社会问题、环保等。"
-      },
-      {
-        "categoryName": "Other",
-        "categoryId": "c9",
-        "categoryName_cn": "其它",
-        "description": "不符合以上任何类别的话题"
       }
     ]
 }

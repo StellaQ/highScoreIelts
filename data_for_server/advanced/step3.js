@@ -13,12 +13,11 @@ categories: 预定义的分类体系，每个分类包含categoryId、中英文�
 1. 分类匹配规则：
    - 仔细分析每个topic的topicName、topicName_cn和points
    - 按照categories数组中从上到下的顺序依次尝试匹配
-   - 匹配时应同时参考category的英文名(categoryName)、中文名(categoryNameInChinese)和description中的关键词
+   - 匹配时应同时参考category的英文名(categoryName)、中文名(categoryName_cn)和description中的关键词
    - 每个topic只能分配到一个category中
    - 输出的mixed_categories的顺序和categories的顺序一致
 
 2. 特殊处理：
-   - 如果topic明显不属于任何现有category，放入"Other"类别
    - 不要创建重复的topic条目
    - 保持categories的原始顺序，不要重新排序
 
@@ -29,7 +28,7 @@ json
     {
       "categoryName": "字符串，分类英文名",
       "categoryId": "字符串，分类ID",
-      "categoryNameInChinese": "字符串，分类中文名",
+      "categoryName_cn": "字符串，分类中文名",
       "topicCollection": [
         {
           "topicName": "字符串，主题英文名",
@@ -43,8 +42,7 @@ json
   ]
 }
 
-特别注意：
-- 不匹配任何分类的topic放入"Other"
+特别注意
 - 不要创建新的category，只使用提供的categories
 `;
 

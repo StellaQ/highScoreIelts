@@ -2,69 +2,63 @@
     "categories": [
       {
         "categoryName": "Personal Development",
-        "categoryId": "p3_c1",
-        "categoryNameInChinese": "个人成长",
+        "categoryId": "c1",
+        "categoryName_cn": "个人成长",
         "description": "- 聚焦个人转变、心理成长和自我提升\n- 例如：\n  - 'How to cope with life transitions?'\n  - 'What builds personal resilience?'\n  - '如何应对人生转折点？'"
       },
       {
-        "categoryName": "People & Relationships",
-        "categoryId": "p3_c2",
-        "categoryNameInChinese": "人与人际关系",
-        "description": "- 个人与家庭、朋友或群体的互动\n- 例如：\n  - 'How to improve communication skills?'\n  - 'Why are some leaders more popular?'\n  - '如何培养孩子的沟通能力？'"
-      },
-      {
-        "categoryName": "Daily Life & Activities",
-        "categoryId": "p3_c3",
-        "categoryNameInChinese": "日常生活与活动",
-        "description": "- 个人在生活环境中的日常实践\n- 例如：\n  - 'Is daily routine important?'\n  - 'How has cooking changed?'\n  - '校服制度有哪些教育益处？'"
-      },
-      {
-        "categoryName": "Objects & Technology",
-        "categoryId": "p3_c4",
-        "categoryNameInChinese": "物品与科技",
-        "description": "- 个人使用的物品和工具\n- 例如：\n  - 'Should kids use smartphones?'\n  - 'How digital navigation changed travel?'\n  - '相机质量对摄影成果的影响有多大？'"
-      },
-      {
-        "categoryName": "Leisure & Recreation",
-        "categoryId": "p3_c5",
-        "categoryNameInChinese": "休闲与娱乐",
-        "description": "- 个人的休闲活动和体验\n- 例如：\n  - 'Why are extreme sports popular?'\n  - 'How to choose vacation destinations?'\n  - '广场舞传统会有怎样的发展？'"
-      },
-      {
         "categoryName": "Education & Learning",
-        "categoryId": "p3_c6",
-        "categoryNameInChinese": "教育与学习",
+        "categoryId": "c2",
+        "categoryName_cn": "教育与学习",
         "description": "- 个人与教育系统的互动\n- 例如：\n  - 'What makes effective learning?'\n  - 'Should schools teach financial literacy?'\n  - '艺术教育对学生的成长有哪些益处？'"
       },
       {
         "categoryName": "Work & Career",
-        "categoryId": "p3_c7",
-        "categoryNameInChinese": "工作与职业",
+        "categoryId": "c3",
+        "categoryName_cn": "工作与职业",
         "description": "- 个人在职业环境中的实践\n- 例如：\n  - 'What makes a good leader?'\n  - 'How to achieve work-life balance?'\n  - '零工经济如何重塑就业结构？'"
       },
       {
+        "categoryName": "People & Relationships",
+        "categoryId": "c4",
+        "categoryName_cn": "人与人际关系",
+        "description": "- 个人与家庭、朋友或群体的互动\n- 例如：\n  - 'How to improve communication skills?'\n  - 'Why are some leaders more popular?'\n  - '如何培养孩子的沟通能力？'"
+      },
+      {
+        "categoryName": "Daily Life & Activities",
+        "categoryId": "c5",
+        "categoryName_cn": "日常生活与活动",
+        "description": "- 个人在生活环境中的日常实践\n- 例如：\n  - 'Is daily routine important?'\n  - 'How has cooking changed?'\n  - '校服制度有哪些教育益处？'"
+      },
+      {
+        "categoryName": "Objects & Technology",
+        "categoryId": "c6",
+        "categoryName_cn": "物品与科技",
+        "description": "- 个人使用的物品和工具\n- 例如：\n  - 'Should kids use smartphones?'\n  - 'How digital navigation changed travel?'\n  - '相机质量对摄影成果的影响有多大？'"
+      },
+      {
+        "categoryName": "Leisure & Recreation",
+        "categoryId": "c7",
+        "categoryName_cn": "休闲与娱乐",
+        "description": "- 个人的休闲活动和体验\n- 例如：\n  - 'Why are extreme sports popular?'\n  - 'How to choose vacation destinations?'\n  - '广场舞传统会有怎样的发展？'"
+      },
+      {
         "categoryName": "Places & Environment",
-        "categoryId": "p3_c8",
-        "categoryNameInChinese": "场所与环境",
+        "categoryId": "c8",
+        "categoryName_cn": "场所与环境",
         "description": "- 个人所处的外部物理环境\n- 例如：\n  - 'What makes a city livable?'\n  - 'Why preserve historical sites?'\n  - '公共交通系统中哪些行为构成恰当礼仪？'"
       },
       {
         "categoryName": "Society & Politics",
-        "categoryId": "p3_c9",
-        "categoryNameInChinese": "社会与政治",
+        "categoryId": "c9",
+        "categoryName_cn": "社会与政治",
         "description": "- 宏观的社会系统和公共事务\n- 例如：\n  - 'Should governments support artists?'\n  - 'How to improve public transport?'\n  - '针对儿童的营销需要考虑哪些伦理问题？'"
       },
       {
         "categoryName": "Hypotheticals & Future",
-        "categoryId": "p3_c10",
-        "categoryNameInChinese": "假设与未来",
+        "categoryId": "c10",
+        "categoryName_cn": "假设与未来",
         "description": "- 对整体未来的想象和预测\n- 例如：\n  - 'What jobs will disappear in 50 years?'\n  - 'How will AI change workplaces?'\n  - '自动化和人工智能正在驱动哪些职场变革？'"
-      },
-      {
-        "categoryName": "Other",
-        "categoryId": "p3_c11",
-        "categoryNameInChinese": "其它",
-        "description": "- 跨层次或特殊类型的话题\n- 例如：\n  - 'How to give effective advice?'\n  - 'Ethics of keeping lost items'\n  - '说服和欺骗的界限在哪里？'"
       }
     ]
   }

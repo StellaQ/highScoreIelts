@@ -1,0 +1,2197 @@
+{
+    "mixed_questions": [
+      {
+        "topicName": "The art of effective communication and verbal expression",
+        "topicName_cn": "有效沟通与语言表达的艺术",
+        "topicId": "Expert_2025Q1_t1",
+        "questions": [
+          {
+            "qTitle": "What approaches can parents use to foster their children's communication abilities?",
+            "qTitle_cn": "父母可以采用哪些方法来培养孩子的沟通能力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors contribute to differences in children's verbal expressiveness?",
+            "qTitle_cn": "哪些因素导致儿童在语言表达上的差异？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "When should children be taught the importance of silence and listening?",
+            "qTitle_cn": "应该在什么时候教导孩子沉默和倾听的重要性？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which professions primarily require public speaking and audience engagement?",
+            "qTitle_cn": "哪些职业主要需要公开演讲和观众互动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What essential competencies make someone an effective public speaker?",
+            "qTitle_cn": "哪些核心能力能使人成为有效的公共演讲者？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does strong communication ability provide advantages in modern social and professional contexts?",
+            "qTitle_cn": "强大的沟通能力如何在现代社交和职业环境中提供优势？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Effective collaboration and team synergy",
+        "topicName_cn": "有效协作与团队协同",
+        "topicId": "Expert_2025Q1_t2",
+        "questions": [
+          {
+            "qTitle": "What essential characteristics define an effective team leader?",
+            "qTitle_cn": "哪些关键特征定义了一个有效的团队领导者？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the potential consequences of poor leadership within a group?",
+            "qTitle_cn": "团队中领导不力可能带来什么后果？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors might make individuals prefer working alone rather than in teams?",
+            "qTitle_cn": "哪些因素可能导致个人更喜欢独自工作而非团队合作？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How would you assess the collaborative abilities of younger generations?",
+            "qTitle_cn": "你会如何评估年轻一代的协作能力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What benefits can team participation offer individuals?",
+            "qTitle_cn": "团队参与能为个人提供哪些好处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is collaborative learning more effective for children's educational development?",
+            "qTitle_cn": "协作学习对儿童的教育发展是否更有效？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The art of hospitality and guest reception",
+        "topicName_cn": "待客之道与接待艺术",
+        "topicId": "Expert_2025Q1_t3",
+        "questions": [
+          {
+            "qTitle": "How common is home hospitality as a social practice in your culture?",
+            "qTitle_cn": "在你们文化中，家庭待客作为一种社交习俗有多普遍？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which personality traits make individuals more inclined to host guests?",
+            "qTitle_cn": "哪些性格特征会让人更倾向于招待客人？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What cultural significance does offering food to guests hold?",
+            "qTitle_cn": "向客人提供食物具有什么文化意义？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How valued is the tradition of hospitality in your society?",
+            "qTitle_cn": "在你们社会中，待客传统有多受重视？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do rural destinations generally provide more authentic hospitality experiences than urban ones?",
+            "qTitle_cn": "乡村目的地通常比城市提供更真实的待客体验吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What improvements could urban areas make to enhance visitor experiences?",
+            "qTitle_cn": "城市地区可以做哪些改进来提升游客体验？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Bridging generational gaps through dialogue",
+        "topicName_cn": "通过对话弥合代际差距",
+        "topicId": "Expert_2025Q1_t4",
+        "questions": [
+          {
+            "qTitle": "What valuable life lessons can the youth gain from senior generations?",
+            "qTitle_cn": "年轻人能从长辈那里获得哪些宝贵的人生经验？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does multigenerational cohabitation benefit family members?",
+            "qTitle_cn": "多代同堂如何使家庭成员受益？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "In what aspects do older individuals typically outperform younger ones?",
+            "qTitle_cn": "老年人在哪些方面通常比年轻人表现更好？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "At what stage of life is retirement most appropriate and beneficial?",
+            "qTitle_cn": "在人生的哪个阶段退休最合适且最有益？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Should advanced age necessarily limit one's capacity for active living and exploration?",
+            "qTitle_cn": "高龄是否必然限制一个人积极生活和探索的能力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does contemporary society generally perceive and treat its elderly population?",
+            "qTitle_cn": "当代社会通常如何看待和对待老年人口？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Understanding human relationships and individual traits",
+        "topicName_cn": "理解人际关系与个人特质",
+        "topicId": "Expert_2025Q1_t5",
+        "questions": [
+          {
+            "qTitle": "What effective methods exist for initiating new social connections?",
+            "qTitle_cn": "有哪些有效的方法可以建立新的社交关系？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "To what extent does fashion choices reflect one's character traits?",
+            "qTitle_cn": "服装选择在多大程度上反映一个人的性格特征？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does urban density necessarily correlate with increased feelings of isolation?",
+            "qTitle_cn": "城市密度是否必然与孤独感增加相关？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors contribute to varying levels of social adaptability among individuals?",
+            "qTitle_cn": "哪些因素导致个人社交适应能力的不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How can siblings raised in the same environment develop distinct personalities?",
+            "qTitle_cn": "在相同环境中长大的兄弟姐妹为何会形成不同的个性？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does personality formation complete during early developmental stages?",
+            "qTitle_cn": "人格形成是否在早期发展阶段就已完成？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The nature of innovative thought and perspective",
+        "topicName_cn": "创新思维与视角的本质",
+        "topicId": "Expert_2025Q1_t6",
+        "questions": [
+          {
+            "qTitle": "At what developmental stage do children begin forming independent views?",
+            "qTitle_cn": "儿童在哪个发展阶段开始形成独立观点？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How significant is parental influence in shaping children's perspectives?",
+            "qTitle_cn": "父母影响在塑造儿童观点方面有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What educational approaches foster independent thinking in students?",
+            "qTitle_cn": "哪些教育方法能培养学生的独立思考能力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What cognitive processes underlie groundbreaking innovations and theories?",
+            "qTitle_cn": "突破性创新和理论背后的认知过程是什么？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which public figures in your nation are renowned for their influential concepts?",
+            "qTitle_cn": "贵国哪些公众人物以具有影响力的思想而闻名？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological factors contribute to resistance against changing one's mindset?",
+            "qTitle_cn": "哪些心理因素导致人们抗拒改变思维方式？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Achieving excellence in education and beyond",
+        "topicName_cn": "追求学业成就与人生卓越",
+        "topicId": "Expert_2025Q1_t7",
+        "questions": [
+          {
+            "qTitle": "What key strategies should students employ to excel academically?",
+            "qTitle_cn": "学生应该采用哪些关键策略才能在学业上取得优异成绩？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How has the difficulty level of academic achievement changed in modern education systems?",
+            "qTitle_cn": "现代教育体系中学术成就的难度水平发生了怎样的变化？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What makes financial wealth a predominant indicator of success for many?",
+            "qTitle_cn": "为什么财务财富成为许多人衡量成功的主要指标？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Should academic achievement be prioritized above other aspects of youth development?",
+            "qTitle_cn": "是否应该将学业成就置于青年发展的其他方面之上？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What personal compromises are often necessary when pursuing ambitious goals?",
+            "qTitle_cn": "追求雄心勃勃的目标时通常需要做出哪些个人妥协？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has the path to professional achievement become more challenging in contemporary society?",
+            "qTitle_cn": "在当代社会，通往职业成就的道路是否变得更加具有挑战性？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Navigating the path to commercial achievement",
+        "topicName_cn": "探索商业成功的道路",
+        "topicId": "Expert_2025Q1_t8",
+        "questions": [
+          {
+            "qTitle": "Which family-operated business models are most prevalent in your nation?",
+            "qTitle_cn": "在贵国，哪些家族经营模式最为普遍？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does nepotism in business affect both operations and family dynamics?",
+            "qTitle_cn": "商业中的裙带关系如何影响企业运营和家庭关系？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which critical elements typically determine entrepreneurial triumph?",
+            "qTitle_cn": "哪些关键因素通常决定创业成功？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What personal costs are frequently associated with building a prosperous enterprise?",
+            "qTitle_cn": "建立繁荣企业通常会带来哪些个人代价？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How achievable is examination success within your country's standardized testing framework?",
+            "qTitle_cn": "在贵国的标准化考试体系中，考试成功有多容易实现？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Can commercial viability be maintained while prioritizing ecological sustainability?",
+            "qTitle_cn": "在优先考虑生态可持续性的同时能否保持商业可行性？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The social significance of cooking and cuisine",
+        "topicName_cn": "烹饪与美食的社会意义",
+        "topicId": "Expert_2025Q1_t9",
+        "questions": [
+          {
+            "qTitle": "What essential preparations are involved in meal creation?",
+            "qTitle_cn": "烹饪一餐饭需要做哪些基本准备工作？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Would incorporating culinary education benefit school curricula?",
+            "qTitle_cn": "将烹饪教育纳入学校课程是否有益？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How has culinary practice evolved compared to previous generations?",
+            "qTitle_cn": "与过去几代人相比，烹饪方式发生了怎样的演变？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does cuisine play a central role in Chinese traditional celebrations?",
+            "qTitle_cn": "美食在中国传统庆祝活动中是否扮演核心角色？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What traditional foods are indispensable during festive occasions?",
+            "qTitle_cn": "哪些传统食物在节日场合不可或缺？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the arguments for making cooking classes compulsory versus elective?",
+            "qTitle_cn": "将烹饪课设为必修课而非选修课有哪些论据支持？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Mastering foreign languages in a globalized world",
+        "topicName_cn": "全球化世界中的外语掌握",
+        "topicId": "Expert_2025Q1_t10",
+        "questions": [
+          {
+            "qTitle": "Which non-native languages are commonly taught to Chinese youth?",
+            "qTitle_cn": "中国青少年通常学习哪些外语？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What practical benefits drive English education in Chinese schools?",
+            "qTitle_cn": "哪些实际利益推动着中国学校的英语教育？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What global factors contribute to the widespread study of English?",
+            "qTitle_cn": "哪些全球因素促使英语被广泛学习？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How has English language pedagogy evolved over recent decades?",
+            "qTitle_cn": "近几十年来英语教学方法经历了怎样的演变？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does childhood offer cognitive advantages for second language acquisition?",
+            "qTitle_cn": "儿童时期是否具有第二语言习得的认知优势？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What engaging teaching methods can enhance children's language learning experience?",
+            "qTitle_cn": "哪些有趣的教学方法可以提升儿童的语言学习体验？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The world of competitive sports and athletic excellence",
+        "topicName_cn": "竞技体育与运动卓越的世界",
+        "topicId": "Expert_2025Q1_t11",
+        "questions": [
+          {
+            "qTitle": "Which sporting activities enjoy the greatest popularity among your compatriots?",
+            "qTitle_cn": "哪些体育运动在你的同胞中最受欢迎？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What essential characteristics distinguish elite sports professionals?",
+            "qTitle_cn": "哪些关键特质区分了精英运动员？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does collective victory hold greater significance than individual athletic triumph?",
+            "qTitle_cn": "团队胜利是否比个人体育成就更重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Why is physical education crucial in school curricula?",
+            "qTitle_cn": "为什么体育教育在学校课程中至关重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How vital is early talent recognition in child development?",
+            "qTitle_cn": "早期才能识别对儿童发展有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is parental pressure justified in pursuing children's athletic success?",
+            "qTitle_cn": "家长施压追求孩子的运动成功是否合理？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The thrill of adventure and embracing novel experiences",
+        "topicName_cn": "冒险的刺激与拥抱新体验",
+        "topicId": "Expert_2025Q1_t12",
+        "questions": [
+          {
+            "qTitle": "Which adrenaline-fueled pursuits appeal most to youth in your nation?",
+            "qTitle_cn": "哪些充满肾上腺素的运动最吸引你们国家的年轻人？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological motivations drive individuals toward extreme physical challenges?",
+            "qTitle_cn": "哪些心理动机驱使人们追求极限身体挑战？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What personal growth opportunities emerge from novel experiences?",
+            "qTitle_cn": "新体验能带来哪些个人成长机会？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors contribute to resistance against unfamiliar activities?",
+            "qTitle_cn": "哪些因素导致人们对陌生活动的抗拒？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does age correlate with diminished openness to new experiences?",
+            "qTitle_cn": "年龄是否与对新体验的开放度降低相关？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Where should society draw the line regarding high-risk recreational activities?",
+            "qTitle_cn": "社会应如何划定高风险娱乐活动的界限？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The dynamics of social events and human interaction",
+        "topicName_cn": "社交活动与人际互动的动态关系",
+        "topicId": "Expert_2025Q1_t13",
+        "questions": [
+          {
+            "qTitle": "What cultural purposes do social gatherings serve in your society?",
+            "qTitle_cn": "社交聚会在你们社会中起到哪些文化作用？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What causes certain individuals to avoid social celebrations?",
+            "qTitle_cn": "什么原因导致某些人回避社交庆祝活动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How should one appropriately address noise disturbances from neighboring festivities?",
+            "qTitle_cn": "应该如何恰当处理邻居庆祝活动造成的噪音干扰？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does venue selection impact the nature of social events?",
+            "qTitle_cn": "场地选择如何影响社交活动的性质？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are musical elements fundamental to successful party atmospheres?",
+            "qTitle_cn": "音乐元素是否是成功派对氛围的基本要素？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What spectrum of perspectives exist regarding social event participation?",
+            "qTitle_cn": "关于参与社交活动存在哪些不同的观点？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Navigating journeys and modern transportation challenges",
+        "topicName_cn": "旅行体验与现代交通挑战",
+        "topicId": "Expert_2025Q1_t14",
+        "questions": [
+          {
+            "qTitle": "Which transportation modes dominate in your nation's infrastructure?",
+            "qTitle_cn": "哪些交通方式在你们国家的基础设施中占主导地位？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What policy measures could enhance national transportation systems?",
+            "qTitle_cn": "哪些政策措施可以改善国家交通系统？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has contemporary travel lost certain advantages that historical journeys offered?",
+            "qTitle_cn": "现代旅行是否失去了历史旅程提供的某些优势？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How effectively do popular destinations facilitate cultural understanding?",
+            "qTitle_cn": "热门旅游地在促进文化理解方面效果如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What common challenges confront modern travelers?",
+            "qTitle_cn": "现代旅行者面临哪些常见挑战？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What ecological impacts result from current transportation methods?",
+            "qTitle_cn": "当前交通方式造成了哪些生态影响？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Unique vacation experiences and holiday culture",
+        "topicName_cn": "独特假期体验与节日文化",
+        "topicId": "Expert_2025Q1_t15",
+        "questions": [
+          {
+            "qTitle": "Do workers in your nation receive sufficient vacation time annually?",
+            "qTitle_cn": "贵国工作者每年是否享有足够的休假时间？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What traditional celebrations are most widely observed nationally?",
+            "qTitle_cn": "哪些传统节日在全国范围内最广为庆祝？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which domestic destinations attract the most holidaymakers?",
+            "qTitle_cn": "哪些国内目的地最吸引度假者？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What economic role does the tourism sector play nationally?",
+            "qTitle_cn": "旅游业在全国经济中扮演什么角色？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do generational preferences differ in vacation planning?",
+            "qTitle_cn": "不同世代在假期规划上有何偏好差异？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How effective is international travel for cultural immersion?",
+            "qTitle_cn": "国际旅行对于文化融入的效果如何？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Primary school experiences and childhood development",
+        "topicName_cn": "小学经历与儿童发展",
+        "topicId": "Expert_2025Q1_t16",
+        "questions": [
+          {
+            "qTitle": "What recreational pursuits are most popular among children nationally?",
+            "qTitle_cn": "全国范围内儿童最喜爱的娱乐活动有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which extracurricular activities do parents typically promote?",
+            "qTitle_cn": "家长通常鼓励孩子参与哪些课外活动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do educational and domestic environments shape different activity patterns?",
+            "qTitle_cn": "教育环境和家庭环境如何塑造不同的活动模式？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has digital innovation transformed childhood recreation fundamentally?",
+            "qTitle_cn": "数字创新是否从根本上改变了儿童娱乐方式？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological benefits stem from social interaction?",
+            "qTitle_cn": "社交互动能带来哪些心理益处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What physiological impacts result from positive emotional states?",
+            "qTitle_cn": "积极情绪状态会产生哪些生理影响？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Traditional markets and evolving consumer behavior",
+        "topicName_cn": "传统市场与消费行为的演变",
+        "topicId": "Expert_2025Q1_t17",
+        "questions": [
+          {
+            "qTitle": "What varieties of traditional marketplaces exist in Chinese commerce?",
+            "qTitle_cn": "中国商业中存在哪些类型的传统市场？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are local bazaars facing extinction due to modernization?",
+            "qTitle_cn": "本地集市是否因现代化而面临消失？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How has consumer behavior evolved with technological advancement?",
+            "qTitle_cn": "消费者行为如何随着技术进步而演变？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do open-air market experiences contrast with mall shopping?",
+            "qTitle_cn": "露天市场购物体验与商场购物有何不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does budget retail compromise on product standards?",
+            "qTitle_cn": "平价零售是否会影响产品质量标准？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What motivations drive luxury consumption patterns?",
+            "qTitle_cn": "哪些动机推动了奢侈品消费模式？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Teenage skill development and lifelong learning",
+        "topicName_cn": "青少年技能培养与终身学习",
+        "topicId": "Expert_2025Q1_t18",
+        "questions": [
+          {
+            "qTitle": "What are the primary skill-development environments for youth?",
+            "qTitle_cn": "青少年技能培养的主要环境有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does autonomous learning compare with guided instruction?",
+            "qTitle_cn": "自主学习与指导教学相比如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which fundamental competencies should be cultivated early?",
+            "qTitle_cn": "哪些基本能力应该从小培养？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How can intergenerational learning benefit both age groups?",
+            "qTitle_cn": "代际学习如何使不同年龄群体受益？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What methodologies optimize hands-on skill acquisition?",
+            "qTitle_cn": "哪些方法可以优化实践技能的获取？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does neuroplasticity affect learning across different life stages?",
+            "qTitle_cn": "神经可塑性如何影响不同人生阶段的学习？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The significance and impact of uniform policies",
+        "topicName_cn": "制服政策的意义与影响",
+        "topicId": "Expert_2025Q1_t19",
+        "questions": [
+          {
+            "qTitle": "What educational benefits does school uniform implementation provide?",
+            "qTitle_cn": "校服制度能带来哪些教育益处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do professional uniforms contribute to workplace functionality?",
+            "qTitle_cn": "职业制服如何提升职场功能性？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do school uniforms both benefit and limit student expression?",
+            "qTitle_cn": "校服如何既有利于又限制学生个性表达？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What negative aspects accompany mandatory work uniforms?",
+            "qTitle_cn": "强制工作制服伴随哪些负面影响？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "To what extent does fashion choice reveal personality traits?",
+            "qTitle_cn": "服装选择能在多大程度上反映个性特征？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What social factors drive youth fashion conformity?",
+            "qTitle_cn": "哪些社会因素促使年轻人追求时尚趋同？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Transformative moments and personal growth",
+        "topicName_cn": "人生转折点与个人成长",
+        "topicId": "Expert_2025Q1_t20",
+        "questions": [
+          {
+            "qTitle": "How do children typically respond to routine variations?",
+            "qTitle_cn": "儿童通常如何应对日常生活的变化？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What challenges accompany school transitions for young students?",
+            "qTitle_cn": "转学给年轻学生带来哪些挑战？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What motivates professionals to pursue career changes?",
+            "qTitle_cn": "什么因素促使专业人士寻求职业转变？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "When does genuine psychological maturity typically emerge?",
+            "qTitle_cn": "真正的心理成熟通常何时出现？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What strategies help individuals cope with life transitions?",
+            "qTitle_cn": "哪些策略能帮助个人应对人生转变？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does personal transformation usually result from major life changes?",
+            "qTitle_cn": "个人转变通常源于重大人生变化吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Understanding exhaustion and modern lifestyle pressures",
+        "topicName_cn": "理解疲惫与现代生活压力",
+        "topicId": "Expert_2025Q1_t21",
+        "questions": [
+          {
+            "qTitle": "What common factors contribute to physical and mental exhaustion?",
+            "qTitle_cn": "哪些常见因素会导致身心疲惫？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has modern lifestyle increased fatigue levels compared to previous generations?",
+            "qTitle_cn": "与过去相比，现代生活方式是否增加了人们的疲劳程度？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does cognitive fatigue differ from physical exhaustion?",
+            "qTitle_cn": "脑力疲劳与体力消耗有何不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What approaches help maintain equilibrium between professional and personal life?",
+            "qTitle_cn": "哪些方法有助于保持工作与生活的平衡？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is leisure time adequately prioritized in contemporary society?",
+            "qTitle_cn": "当代社会是否充分重视休闲时间？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has vacation time decreased historically for working professionals?",
+            "qTitle_cn": "从历史角度看，职场人士的休假时间是否减少了？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Achievement through adversity and personal accomplishment",
+        "topicName_cn": "克服挑战与个人成就",
+        "topicId": "Expert_2025Q1_t22",
+        "questions": [
+          {
+            "qTitle": "What types of accomplishments typically generate personal pride?",
+            "qTitle_cn": "哪些类型的成就通常能带来个人自豪感？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does overcoming challenges affect self-perception?",
+            "qTitle_cn": "克服挑战如何影响自我认知？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which character traits enable professional problem-solving?",
+            "qTitle_cn": "哪些性格特质有助于解决职场问题？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How might the gig economy reshape future employment structures?",
+            "qTitle_cn": "零工经济可能如何重塑未来的就业结构？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does occupational pressure constitute the primary stress factor for adults?",
+            "qTitle_cn": "工作压力是否是成年人的主要压力来源？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Could a work-free society represent utopian or dystopian outcomes?",
+            "qTitle_cn": "一个无需工作的社会会是乌托邦还是反乌托邦的结果？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Managing urgent situations and time-sensitive tasks",
+        "topicName_cn": "紧急情况与时效性任务管理",
+        "topicId": "Expert_2025Q1_t23",
+        "questions": [
+          {
+            "qTitle": "What common situations require immediate action or rapid response?",
+            "qTitle_cn": "哪些常见情况需要立即采取行动或快速反应？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What circumstances necessitate swift decision-making?",
+            "qTitle_cn": "什么情况下需要快速做出决策？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How can rapid decision-making be beneficial in certain scenarios?",
+            "qTitle_cn": "在某些情况下快速决策有什么好处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What cultural or personal factors influence lengthy dining experiences?",
+            "qTitle_cn": "哪些文化或个人因素会影响用餐时间的长短？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does task completion speed affect personal satisfaction levels?",
+            "qTitle_cn": "任务完成速度是否影响个人满意度？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What considerations lead people to prefer ground transportation over air travel for long distances?",
+            "qTitle_cn": "哪些因素使人们在长途旅行中选择地面交通而非航空？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Modern busy schedules and productivity challenges",
+        "topicName_cn": "现代繁忙日程与生产力挑战",
+        "topicId": "Expert_2025Q1_t24",
+        "questions": [
+          {
+            "qTitle": "What typical situations create time pressure in daily life?",
+            "qTitle_cn": "日常生活中哪些典型情况会造成时间压力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Why might individuals choose to prolong their mealtime experiences?",
+            "qTitle_cn": "为什么有些人会选择延长用餐时间？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does efficiency impact personal fulfillment?",
+            "qTitle_cn": "效率如何影响个人成就感？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What modern factors contribute to increasingly packed schedules?",
+            "qTitle_cn": "哪些现代因素导致日程安排越来越满？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How has lifestyle pace changed compared to previous generations?",
+            "qTitle_cn": "与前几代人相比，现代生活节奏发生了怎样的变化？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What effective strategies exist for better time management?",
+            "qTitle_cn": "有哪些有效的时间管理策略？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The psychology of waiting and delayed gratification",
+        "topicName_cn": "等待心理与延迟满足",
+        "topicId": "Expert_2025Q1_t25",
+        "questions": [
+          {
+            "qTitle": "What routine situations often involve prolonged waiting periods?",
+            "qTitle_cn": "哪些日常情况通常涉及长时间的等待？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do individuals typically occupy themselves during waiting times?",
+            "qTitle_cn": "人们在等待时通常会做什么来打发时间？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What is the general attitude toward unavoidable waiting in daily routines?",
+            "qTitle_cn": "人们对日常生活中不可避免的等待通常持什么态度？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What developmental factors explain children's impatience?",
+            "qTitle_cn": "哪些发展因素解释了儿童的不耐烦？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does anticipation enhance the value of eventual outcomes?",
+            "qTitle_cn": "期待是否会增强最终结果的价值？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How orderly are public transportation boarding queues in practice?",
+            "qTitle_cn": "公共交通排队上车的秩序在实际中如何？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The social and environmental value of public parks",
+        "topicName_cn": "公共公园的社会与环境价值",
+        "topicId": "Expert_2025Q1_t26",
+        "questions": [
+          {
+            "qTitle": "How popular are parks among younger demographics?",
+            "qTitle_cn": "公园在年轻人群中受欢迎程度如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What activities do senior citizens typically enjoy in park settings?",
+            "qTitle_cn": "老年人通常在公园里喜欢进行什么活动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do different age groups benefit from park visits?",
+            "qTitle_cn": "不同年龄群体如何从公园游览中受益？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What motivates individuals to engage in horticultural activities?",
+            "qTitle_cn": "是什么促使人们参与园艺活动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What positive impacts do green spaces have on urban environments?",
+            "qTitle_cn": "绿色空间对城市环境有哪些积极影响？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What civic responsibilities should urban residents have regarding park maintenance?",
+            "qTitle_cn": "城市居民在公园维护方面应承担哪些公民责任？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The role of maps in modern navigation",
+        "topicName_cn": "地图在现代导航中的作用",
+        "topicId": "Expert_2025Q1_t27",
+        "questions": [
+          {
+            "qTitle": "What common strategies do people employ when they lose their way?",
+            "qTitle_cn": "人们迷路时通常采用哪些策略？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do traditional and digital mapping technologies differ in functionality?",
+            "qTitle_cn": "传统地图与数字地图在功能上有何不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is map-reading an essential skill everyone should acquire?",
+            "qTitle_cn": "识图能力是否是每个人都应该掌握的基本技能？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are current trends in map usage preferences among the general public?",
+            "qTitle_cn": "当前大众在地图使用偏好上有何趋势？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are there potential drawbacks to relying on car navigation systems?",
+            "qTitle_cn": "依赖汽车导航系统有哪些潜在缺点？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What urban design factors contribute to navigation difficulties in certain areas?",
+            "qTitle_cn": "哪些城市设计因素导致某些区域容易迷路？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Challenges in digital device usage",
+        "topicName_cn": "数字设备使用中的挑战",
+        "topicId": "Expert_2025Q1_t28",
+        "questions": [
+          {
+            "qTitle": "What methods do individuals typically use to familiarize themselves with new technology?",
+            "qTitle_cn": "人们通常用什么方法来熟悉新技术？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is the improvement between smartphone generations always significant?",
+            "qTitle_cn": "智能手机代际之间的改进总是显著的吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors create barriers to adopting new technological devices?",
+            "qTitle_cn": "哪些因素会阻碍人们接受新科技设备？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is parental regulation of digital device usage beneficial for children?",
+            "qTitle_cn": "家长管控数字设备使用对孩子有益吗？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What drives the extensive screen time observed in younger generations?",
+            "qTitle_cn": "是什么导致年轻一代花费大量时间看屏幕？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Can excessive technology use hinder the development of fundamental skills in children?",
+            "qTitle_cn": "过度使用科技会阻碍儿童基本技能的发展吗？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The dynamics of advice exchange",
+        "topicName_cn": "建议交流的互动机制",
+        "topicId": "Expert_2025Q1_t29",
+        "questions": [
+          {
+            "qTitle": "What are common parental guidance topics for young children?",
+            "qTitle_cn": "父母给幼儿的常见建议主题有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What role should parental advice play in child development?",
+            "qTitle_cn": "父母的建议在儿童发展中应扮演什么角色？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How valuable is peer advice in personal decision-making?",
+            "qTitle_cn": "朋友建议在个人决策中有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How should advice-giving approaches differ based on the recipient's age?",
+            "qTitle_cn": "给予建议的方式应如何根据接受者的年龄而调整？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How qualified are educators to provide career guidance to students?",
+            "qTitle_cn": "教育工作者在为学生提供职业建议方面具备怎样的资质？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological factors lead people to reject helpful suggestions?",
+            "qTitle_cn": "哪些心理因素会导致人们拒绝有益的建议？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Managing noise in public spaces",
+        "topicName_cn": "公共场所的噪音管理",
+        "topicId": "Expert_2025Q1_t30",
+        "questions": [
+          {
+            "qTitle": "Which public spaces require strict noise control measures?",
+            "qTitle_cn": "哪些公共场所需要严格的噪音控制措施？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is it appropriate to bring young children to quiet public spaces?",
+            "qTitle_cn": "带幼儿去安静的公共场所是否合适？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How crucial is proper public conduct for social harmony?",
+            "qTitle_cn": "得体的公共行为对社会和谐有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What accounts for differences in people's public behavior standards?",
+            "qTitle_cn": "人们公共行为标准的差异是由什么造成的？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What causes noise levels to escalate in crowded public areas?",
+            "qTitle_cn": "什么原因导致拥挤公共场所的噪音水平升高？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are considered fundamental public etiquette rules in your culture?",
+            "qTitle_cn": "在你们文化中被视为基本的公共礼仪规则有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Handling public complaints and service recovery",
+        "topicName_cn": "处理公众投诉与服务补救",
+        "topicId": "Expert_2025Q1_t31",
+        "questions": [
+          {
+            "qTitle": "What customer service training methods help employees handle complaints effectively?",
+            "qTitle_cn": "哪些客服培训方法能帮助员工有效处理投诉？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the most common subjects of customer complaints?",
+            "qTitle_cn": "客户投诉最常见的主题有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the preferred channels for customers to voice complaints?",
+            "qTitle_cn": "客户表达投诉的首选渠道是什么？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What personality or situational factors make some individuals more prone to complaining?",
+            "qTitle_cn": "哪些性格或情境因素使人更倾向于投诉？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is financial compensation always the appropriate response to customer dissatisfaction?",
+            "qTitle_cn": "经济赔偿是否总是应对客户不满的合适方式？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Can the act of complaining provide psychological benefits to the complainer?",
+            "qTitle_cn": "投诉行为能否给投诉者带来心理益处？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Addressing service failures and quality improvement",
+        "topicName_cn": "解决服务失误与质量提升",
+        "topicId": "Expert_2025Q1_t32",
+        "questions": [
+          {
+            "qTitle": "What are typical examples of poor service experiences customers encounter?",
+            "qTitle_cn": "客户遇到的典型劣质服务案例有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are appropriate actions when receiving substandard service?",
+            "qTitle_cn": "遇到不合格服务时应采取哪些恰当措施？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What barriers prevent customers from reporting service failures?",
+            "qTitle_cn": "哪些障碍阻止客户报告服务失误？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What management strategies can maintain consistent service quality?",
+            "qTitle_cn": "哪些管理策略能保持稳定的服务质量？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is employee training alone sufficient to guarantee excellent service delivery?",
+            "qTitle_cn": "仅靠员工培训能否确保优质服务？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What underlying factors contribute to frequent customer dissatisfaction?",
+            "qTitle_cn": "哪些深层因素导致客户频繁不满？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The psychology of helping others and altruism",
+        "topicName_cn": "助人行为与利他主义的心理学",
+        "topicId": "Expert_2025Q1_t33",
+        "questions": [
+          {
+            "qTitle": "Is kindness an essential value that should be intentionally taught to children?",
+            "qTitle_cn": "善良是否应该作为核心价值有意识地教导给孩子？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What domestic responsibilities are age-appropriate for children to assist with?",
+            "qTitle_cn": "哪些家务责任适合不同年龄段的孩子参与？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does parental assistance with schoolwork hinder children's independent learning?",
+            "qTitle_cn": "家长辅导作业是否会阻碍孩子的自主学习能力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does the helper's relationship with the recipient affect willingness to assist?",
+            "qTitle_cn": "帮助者与受助者的关系是否影响助人意愿？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How important is parental guidance in developing children's prosocial behavior?",
+            "qTitle_cn": "家长引导对培养儿童亲社会行为有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Can excessive kindness become detrimental to an individual's wellbeing?",
+            "qTitle_cn": "过度善良是否会对个人福祉产生负面影响？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Ethical considerations around lost items",
+        "topicName_cn": "失物处理的伦理考量",
+        "topicId": "Expert_2025Q1_t34",
+        "questions": [
+          {
+            "qTitle": "What types of items are commonly discovered as lost property?",
+            "qTitle_cn": "哪些物品最常被拾获？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which personal belongings are most frequently misplaced?",
+            "qTitle_cn": "哪些个人物品最容易遗失？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What personal characteristics correlate with frequent loss of possessions?",
+            "qTitle_cn": "哪些个人特质与频繁丢失物品相关？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Why are some individuals more observant at spotting lost items?",
+            "qTitle_cn": "为什么有些人更善于发现遗失物品？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What ethical principles should children learn regarding found property?",
+            "qTitle_cn": "儿童应该学习哪些关于拾获物品的道德准则？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What motivates people to keep lost items instead of returning them?",
+            "qTitle_cn": "什么动机使人选择保留而非归还拾获物品？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The impact of daily habits on work and study efficiency",
+        "topicName_cn": "日常习惯对工作和学习效率的影响",
+        "topicId": "Expert_2025Q1_t35",
+        "questions": [
+          {
+            "qTitle": "What common activities constitute people's daily personal rituals?",
+            "qTitle_cn": "哪些常见活动构成了人们的日常个人习惯？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How crucial are structured schedules for children's development?",
+            "qTitle_cn": "规律作息对儿童发展有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What benefits do established routines provide in professional settings?",
+            "qTitle_cn": "固定工作流程为职场环境带来哪些好处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are typical morning and evening routine patterns among working adults?",
+            "qTitle_cn": "职场人士典型的晨间和晚间作息模式是怎样的？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How significant are scheduled pauses for maintaining workplace productivity?",
+            "qTitle_cn": "定时休息对维持工作效率有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What value do organizational routines bring to corporate operations?",
+            "qTitle_cn": "组织常规对企业运营有何价值？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The role and impact of rules in institutions",
+        "topicName_cn": "规章制度在机构中的作用与影响",
+        "topicId": "Expert_2025Q1_t36",
+        "questions": [
+          {
+            "qTitle": "What are common household rules for children in your culture?",
+            "qTitle_cn": "在你们文化中常见的儿童家规有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "When is it appropriate to excuse children for rule violations?",
+            "qTitle_cn": "在什么情况下可以原谅孩子违反规则？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What constitutes proper etiquette on public transportation systems?",
+            "qTitle_cn": "公共交通系统中哪些行为构成恰当礼仪？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is rule-testing behavior a natural part of childhood development?",
+            "qTitle_cn": "试探规则的行为是否是儿童发展的自然部分？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How beneficial is child participation in establishing family rules?",
+            "qTitle_cn": "儿童参与制定家规有多大益处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has excessive rule signage become a problem in public spaces?",
+            "qTitle_cn": "过多的规则标识是否已成为公共空间的问题？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Pursuing long-term objectives and life planning",
+        "topicName_cn": "追求长期目标与人生规划",
+        "topicId": "Expert_2025Q1_t37",
+        "questions": [
+          {
+            "qTitle": "What are typical aspirations among today's youth?",
+            "qTitle_cn": "当代年轻人通常有哪些典型志向？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What practical steps can individuals take for future readiness?",
+            "qTitle_cn": "个人可以采取哪些实际步骤为未来做准备？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What educational support systems exist for student goal attainment?",
+            "qTitle_cn": "有哪些教育支持系统帮助学生实现目标？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How valuable is adult guidance in children's decision-making processes?",
+            "qTitle_cn": "成人指导在儿童决策过程中有何价值？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What strategies effectively contribute to goal realization?",
+            "qTitle_cn": "哪些策略能有效促进目标实现？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What challenges exist in maintaining present enjoyment while planning for the future?",
+            "qTitle_cn": "在规划未来的同时保持当下生活享受存在哪些挑战？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The benefits and trends of outdoor activities",
+        "topicName_cn": "户外活动的益处与发展趋势",
+        "topicId": "Expert_2025Q1_t38",
+        "questions": [
+          {
+            "qTitle": "Has modern lifestyle increased or decreased outdoor activity participation?",
+            "qTitle_cn": "现代生活方式增加还是减少了户外活动的参与？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What non-exercise recreational options exist in outdoor settings?",
+            "qTitle_cn": "户外环境中有哪些非运动类的休闲选择？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are peak times for nature engagement among urban populations?",
+            "qTitle_cn": "城市人群接触自然的高峰时段是什么时候？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What activities facilitate meaningful connections with the natural environment?",
+            "qTitle_cn": "哪些活动有助于建立与自然环境的深刻联系？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors might influence future trends in outdoor recreation?",
+            "qTitle_cn": "哪些因素可能影响户外休闲的未来趋势？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological and physical benefits does nature exposure provide?",
+            "qTitle_cn": "接触自然能带来哪些心理和生理益处？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Desired possessions and financial attitudes",
+        "topicName_cn": "理想物品与财务态度",
+        "topicId": "Expert_2025Q1_t39",
+        "questions": [
+          {
+            "qTitle": "What are the primary expenditure categories for today's youth?",
+            "qTitle_cn": "当代年轻人的主要消费类别有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the key benefits of developing savings habits early?",
+            "qTitle_cn": "早期培养储蓄习惯有哪些关键好处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How common is impulse buying and unnecessary consumption?",
+            "qTitle_cn": "冲动消费和非必要消费有多普遍？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How crucial is financial philanthropy education for children?",
+            "qTitle_cn": "对儿童进行财务慈善教育有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What responsibilities do wealthy individuals have towards societal welfare?",
+            "qTitle_cn": "富人对社会福利应承担哪些责任？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What non-monetary forms of support can people provide to those in need?",
+            "qTitle_cn": "人们可以提供哪些非金钱形式的支持给需要帮助的人？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Passion for scientific disciplines and public understanding",
+        "topicName_cn": "科学学科热情与公众理解",
+        "topicId": "Expert_2025Q1_t40",
+        "questions": [
+          {
+            "qTitle": "Why is science education fundamental in school curricula?",
+            "qTitle_cn": "为什么科学教育是学校课程的基础？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which scientific discipline provides the most essential foundation for students?",
+            "qTitle_cn": "哪个科学学科能为学生提供最重要的基础？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How valuable is lifelong learning in scientific fields?",
+            "qTitle_cn": "科学领域的终身学习有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the benefits of scientists communicating their methods to laypeople?",
+            "qTitle_cn": "科学家向公众解释研究方法有哪些好处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors contribute to student disengagement with science subjects?",
+            "qTitle_cn": "哪些因素导致学生对科学学科失去兴趣？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What combination of attributes makes an exceptional scientific researcher?",
+            "qTitle_cn": "哪些特质的组合能造就杰出的科研人员？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Undesirable occupations and changing job markets",
+        "topicName_cn": "不受欢迎的职业与变化的就业市场",
+        "topicId": "Expert_2025Q1_t41",
+        "questions": [
+          {
+            "qTitle": "What career paths are currently most attractive to Chinese youth?",
+            "qTitle_cn": "目前哪些职业路径对中国年轻人最有吸引力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do young professionals prioritize passion or financial reward in career choices?",
+            "qTitle_cn": "年轻专业人士在职业选择中更看重热情还是经济回报？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has job accessibility improved or worsened in recent decades?",
+            "qTitle_cn": "近几十年来就业机会的可获得性是改善还是恶化了？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do we define and measure professional success?",
+            "qTitle_cn": "我们如何定义和衡量职业成功？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What workplace transformations are being driven by automation and AI?",
+            "qTitle_cn": "自动化和人工智能正在驱动哪些职场变革？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How common is intercity relocation for employment opportunities among graduates?",
+            "qTitle_cn": "毕业生为就业机会跨城市迁移有多普遍？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Meaningful photographs and visual culture",
+        "topicName_cn": "有意义的照片与视觉文化",
+        "topicId": "Expert_2025Q1_t42",
+        "questions": [
+          {
+            "qTitle": "What subjects are most commonly captured in personal photography?",
+            "qTitle_cn": "个人摄影中最常拍摄的主题是什么？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How has smartphone technology affected photography frequency?",
+            "qTitle_cn": "智能手机技术如何影响了拍照频率？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How significantly does camera quality impact photographic results?",
+            "qTitle_cn": "相机质量对摄影成果的影响有多大？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What value do professional photographers add in the age of digital self-sufficiency?",
+            "qTitle_cn": "在数字自给自足的时代，专业摄影师提供了什么价值？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological needs does photo-sharing on platforms satisfy?",
+            "qTitle_cn": "在平台上分享照片满足了哪些心理需求？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which medium carries more credibility - photographic evidence or textual accounts?",
+            "qTitle_cn": "哪种媒介更有可信度——照片证据还是文字描述？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The impact and value of visual arts in society",
+        "topicName_cn": "视觉艺术在社会中的影响与价值",
+        "topicId": "Expert_2025Q1_t43",
+        "questions": [
+          {
+            "qTitle": "Which artistic styles and subjects typically appeal to children's sensibilities?",
+            "qTitle_cn": "哪些艺术风格和主题通常能吸引儿童的感受力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What benefits does art education provide for students' development?",
+            "qTitle_cn": "艺术教育对学生的成长有哪些益处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How can art observation contribute to youth education and personal growth?",
+            "qTitle_cn": "艺术观察如何促进青少年教育和个人成长？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "In what ways do building designs influence human behavior and wellbeing?",
+            "qTitle_cn": "建筑设计以何种方式影响人类行为与福祉？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How significant is personal aesthetic choice in home environment design?",
+            "qTitle_cn": "个人审美选择在家庭环境设计中有多重要？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Should functional objects prioritize aesthetic qualities alongside practicality?",
+            "qTitle_cn": "功能性物品是否应该在实用性的同时优先考虑美学品质？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The importance and characteristics of relaxation environments",
+        "topicName_cn": "放松环境的重要性与特征",
+        "topicId": "Expert_2025Q1_t44",
+        "questions": [
+          {
+            "qTitle": "How adequate are public and private relaxation facilities nationally?",
+            "qTitle_cn": "全国范围内的公共和私人放松设施是否充足？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are common leisure activities people engage in during their free time?",
+            "qTitle_cn": "人们在空闲时间通常会从事哪些休闲活动？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How effective is exercise compared to other relaxation methods?",
+            "qTitle_cn": "与其他放松方法相比，锻炼的效果如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does digital media consumption provide genuine relaxation benefits?",
+            "qTitle_cn": "数字媒体消费是否能提供真正的放松益处？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How accessible is quality relaxation for people with limited budgets?",
+            "qTitle_cn": "对于预算有限的人群，高质量的放松活动有多容易获得？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What environmental factors create optimal conditions for relaxation?",
+            "qTitle_cn": "哪些环境因素能创造最佳的放松条件？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Exploring geographical diversity and its significance",
+        "topicName_cn": "探索地理多样性及其意义",
+        "topicId": "Expert_2025Q1_t45",
+        "questions": [
+          {
+            "qTitle": "What are the most reliable sources for travel planning information?",
+            "qTitle_cn": "旅行规划信息最可靠的来源是什么？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which factors contribute to a location's livability and appeal?",
+            "qTitle_cn": "哪些因素影响一个地区的宜居性和吸引力？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do tourist hotspots compare as permanent residential locations?",
+            "qTitle_cn": "旅游热点作为永久居住地相比如何？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does openness to new experiences vary across generations?",
+            "qTitle_cn": "不同世代对新体验的开放程度有何不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Are there noticeable personality trends associated with specific geographical areas?",
+            "qTitle_cn": "特定地理区域是否与明显的人格特征相关？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What historical and environmental factors create regional distinctions?",
+            "qTitle_cn": "哪些历史和环境因素造成了地区差异？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The aesthetics and conservation of urban environments",
+        "topicName_cn": "城市环境的美学与保护",
+        "topicId": "Expert_2025Q1_t46",
+        "questions": [
+          {
+            "qTitle": "What psychological and educational values do heritage sites provide visitors?",
+            "qTitle_cn": "历史遗迹为游客提供了哪些心理和教育价值？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What challenges complicate the maintenance of historical urban areas?",
+            "qTitle_cn": "哪些因素使历史城区的维护变得复杂？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What responsibilities do authorities have in safeguarding architectural heritage?",
+            "qTitle_cn": "当局在保护建筑遗产方面有哪些责任？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What preservation strategies effectively protect historical structures?",
+            "qTitle_cn": "哪些保护策略能有效保护历史建筑？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What urban development trends are likely to shape future cities?",
+            "qTitle_cn": "哪些城市发展趋势可能塑造未来城市？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What economic and practical factors drive vertical urban expansion?",
+            "qTitle_cn": "哪些经济和现实因素推动城市的垂直扩张？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The impact of cinema and movie-watching habits",
+        "topicName_cn": "电影院和观影习惯的影响",
+        "topicId": "Expert_2025Q1_t47",
+        "questions": [
+          {
+            "qTitle": "What factors influence people's preference for home viewing versus theatrical experiences?",
+            "qTitle_cn": "哪些因素影响人们对家庭观影和影院体验的偏好？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How does the social aspect enhance the cinema-going experience?",
+            "qTitle_cn": "社交方面如何提升观影体验？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has streaming technology affected the popularity of traditional movie theaters?",
+            "qTitle_cn": "流媒体技术是否影响了传统影院的受欢迎程度？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which film genres benefit most from the big screen format?",
+            "qTitle_cn": "哪些电影类型最能从大银幕格式中受益？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What innovations could revitalize cinema attendance rates?",
+            "qTitle_cn": "哪些创新可以重振影院上座率？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How effective are films as tools for cultural education and exposure?",
+            "qTitle_cn": "电影作为文化教育和传播工具有多有效？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "Fascination with historical periods and their legacy",
+        "topicName_cn": "对历史时期及其遗产的迷恋",
+        "topicId": "Expert_2025Q1_t48",
+        "questions": [
+          {
+            "qTitle": "Which historical sites in your nation offer particularly valuable insights?",
+            "qTitle_cn": "贵国的哪些历史遗址能提供特别有价值的见解？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological needs do historical dramas fulfill for audiences?",
+            "qTitle_cn": "历史剧能满足观众的哪些心理需求？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is the current emphasis on historical education appropriate for young learners?",
+            "qTitle_cn": "当前对历史教育的重视对年轻学习者是否合适？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do museums contribute to historical understanding beyond textbooks?",
+            "qTitle_cn": "博物馆如何超越教科书促进历史理解？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What role does personal history play in identity formation?",
+            "qTitle_cn": "个人历史在身份形成中扮演什么角色？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the arguments against being overly influenced by past experiences?",
+            "qTitle_cn": "反对过度受过去经验影响的论点有哪些？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The role of indispensable objects in domestic life",
+        "topicName_cn": "必需品在家庭生活中的作用",
+        "topicId": "Expert_2025Q1_t49",
+        "questions": [
+          {
+            "qTitle": "How has workplace technology improved productivity and efficiency?",
+            "qTitle_cn": "工作场所技术如何提高生产力和效率？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Which domestic devices have become daily necessities for most households?",
+            "qTitle_cn": "哪些家用设备已成为大多数家庭的日常必需品？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Has consumerism led to excessive accumulation of home gadgets?",
+            "qTitle_cn": "消费主义是否导致家庭小工具的过度积累？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What concerns do employees have about workplace technological integration?",
+            "qTitle_cn": "员工对工作场所技术整合有哪些担忧？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Does price always correlate with product quality and performance?",
+            "qTitle_cn": "价格是否总是与产品质量和性能相关？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What drives the consumer demand for multiple home appliances?",
+            "qTitle_cn": "是什么驱动消费者对多种家用电器的需求？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The evolution and impact of community facilities",
+        "topicName_cn": "社区设施的发展与影响",
+        "topicId": "Expert_2025Q1_t50",
+        "questions": [
+          {
+            "qTitle": "Which types of community infrastructure see the highest public utilization?",
+            "qTitle_cn": "哪些类型的社区基础设施使用率最高？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do shared public resources enhance quality of life?",
+            "qTitle_cn": "共享公共资源如何提升生活质量？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Do modern facilities invariably outperform their predecessors in functionality?",
+            "qTitle_cn": "现代设施在功能上是否总是优于旧设施？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What factors contribute to underutilization of certain public amenities?",
+            "qTitle_cn": "哪些因素导致某些公共设施使用不足？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How do transportation preferences vary across different age demographics?",
+            "qTitle_cn": "不同年龄段人群的交通偏好有何不同？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "How might China's square dancing tradition evolve in coming years?",
+            "qTitle_cn": "中国的广场舞传统在未来几年可能会有怎样的发展？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "The art and impact of persuasive marketing",
+        "topicName_cn": "说服性营销的艺术与影响",
+        "topicId": "Expert_2025Q1_t51",
+        "questions": [
+          {
+            "qTitle": "Which product categories typically attract the most consumer interest?",
+            "qTitle_cn": "哪些产品类别通常最能吸引消费者的兴趣？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What psychological factors drive the pleasure of acquiring new possessions?",
+            "qTitle_cn": "哪些心理因素驱动人们从获取新物品中获得快乐？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What aspects of digital advertising create user frustration?",
+            "qTitle_cn": "数字广告的哪些方面会造成用户反感？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Is minimalist consumption preferable to frequent purchasing?",
+            "qTitle_cn": "极简主义消费是否比频繁购买更可取？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "What are the ethical considerations regarding child-targeted marketing?",
+            "qTitle_cn": "针对儿童的营销需要考虑哪些伦理问题？",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Where should advertisers draw the line between persuasion and deception?",
+            "qTitle_cn": "广告商应如何在说服和欺骗之间划清界限？",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      }
+    ]
+  }
