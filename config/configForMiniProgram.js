@@ -8,5 +8,7 @@ module.exports = {
     CURRENT_BATCH: 'B0',  // 当前批次，如 B1, B2, B3...
     PREVIOUS_BATCH: '2025Q1',  // 上一批次
     // 题库更新时间
-    QUESTION_BANK_UPDATE_DATE: '2025-04-15'
+    QUESTION_BANK_UPDATE_DATE: '2025-04-15',
+    showUpdateAlert: true,
+    updateTip: "4月-8月" // 不能为空
   };

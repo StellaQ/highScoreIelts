@@ -45,7 +45,7 @@
       </view>
     </view>
 
-    <view class="features">
+    <view class="features" wx:if="{{!showUpdateAlert}}">
       <!-- AI助手 -->
       <view class="feature-card">
         <image class="feature-icon" src="/assets/pics/index_ai.svg" />
@@ -58,6 +58,14 @@
         <image class="feature-icon" src="/assets/pics/index_curve.svg" />
         <view class="feature-title">科学记忆曲线</view>
         <view class="feature-desc">定期复习提醒</view>
+      </view>
+    </view>
+    <view class="features-update" wx:if="{{showUpdateAlert}}">
+      <!-- AI助手 -->
+      <view class="feature-card-update">
+        <image class="feature-icon" src="/assets/pics/index_update.svg" />
+        <view class="feature-title">题库内容已更新</view>
+        <view class="feature-desc">{{updateTip}}</view>
       </view>
     </view>
   </view>

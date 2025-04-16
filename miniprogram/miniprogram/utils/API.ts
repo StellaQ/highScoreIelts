@@ -3,6 +3,23 @@ import { config } from './config';
 export const BASE_URL = config.BASE_URL;
 
 const API = {
+  // index页面检查题库是否有更新
+  checkIfShowUpdate: (): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/index/checkUpdate`,
+        method: 'GET',
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
   // listBasic 获取分类数据
   getBasicCategories: (userId: string): Promise<any> => {
     return new Promise((resolve, reject) => {

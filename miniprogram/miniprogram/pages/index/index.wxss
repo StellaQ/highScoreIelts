@@ -160,6 +160,21 @@ page {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+.features-update {
+  margin-top: auto;
+  /* padding-bottom: 20px; */
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  /* gap: 12px; */
+}
+.feature-card-update {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
 .feature-icon {
   width: 48px;

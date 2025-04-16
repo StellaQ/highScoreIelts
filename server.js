@@ -28,6 +28,7 @@ const app = express();
 
     // 路由模块
     app.use('/api/user', require('./routes/user'));
+    app.use('/api/index', require('./routes/index'));
     app.use('/api/basic', require('./routes/basic'));
     app.use('/api/advanced', require('./routes/advanced'));
     app.use('/api/expert', require('./routes/expert'));
