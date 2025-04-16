@@ -9,7 +9,16 @@
     "test": "cross-env NODE_ENV=test node server.js",
     "import:dev": "cross-env NODE_ENV=development node scripts/importData.js",
     "import:test": "cross-env NODE_ENV=test node scripts/importData.js",
-    "import:prod": "cross-env NODE_ENV=production node scripts/importData.js"
+    "import:prod": "cross-env NODE_ENV=production node scripts/importData.js",
+    "reset:dev": "cross-env NODE_ENV=development node scripts/resetData.js",
+    "reset:test": "cross-env NODE_ENV=test node scripts/resetData.js",
+    "reset:prod": "cross-env NODE_ENV=production node scripts/resetData.js",
+    "backup:dev": "cross-env NODE_ENV=development node scripts/backupDB.js",
+    "backup:test": "cross-env NODE_ENV=test node scripts/backupDB.js",
+    "backup:prod": "cross-env NODE_ENV=production node scripts/backupDB.js",
+    "restore:dev": "cross-env NODE_ENV=development node scripts/restoreDB.js",
+    "restore:test": "cross-env NODE_ENV=test node scripts/restoreDB.js",
+    "restore:prod": "cross-env NODE_ENV=production node scripts/restoreDB.js"
   },
   "keywords": [],
   "author": "",
