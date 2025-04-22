@@ -141,7 +141,47 @@ router.post('/updateProfile', async (req, res) => {
     res.status(500).json({ error: '服务器错误' });
   }
 });
+// 检查用户是否是vip
+router.get('/vip-status', async (req, res) => {
+  try {
+    const { userId } = req.query;
+    
+    if (!userId) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '缺少必要参数' 
+      });
+    }
 
+    // 从数据库查询用户VIP状态
+    const user = await User.findOne({ userId });
+    
+    if (!user) {
+      return res.status(404).json({ 
+        success: false, 
+        message: '用户不存在' 
+      });
+    }
+
+    // 判断用户是否是VIP
+    let isVip = false;
+    if (user.vipExpireDate) {
+      // 如果设置了过期时间，判断是否过期
+      isVip = new Date(user.vipExpireDate) > new Date();
+    }
+
+    res.json({
+      success: true,
+      isVip
+    });
+  } catch (error) {
+    console.error('获取VIP状态失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
+    });
+  }
+});
 // 更新用户积分 done
 router.post('/updatePoints', async (req, res) => {
   try {

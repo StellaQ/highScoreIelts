@@ -3,7 +3,7 @@ import { config } from './config';
 export const BASE_URL = config.BASE_URL;
 
 const API = {
-  // index页面检查题库是否有更新
+  // index页面决定是否显示题库的更新消息
   checkIfShowUpdate: (): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -14,6 +14,24 @@ const API = {
             resolve(res.data);
           } else {
             reject(res);
+          }
+        },
+        fail: reject
+      });
+    });
+  },
+  // 获取用户VIP状态
+  getVipStatus: (userId: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/user/vip-status`,
+        method: 'GET',
+        data: { userId },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(new Error('获取VIP状态失败'));
           }
         },
         fail: reject
@@ -441,7 +459,7 @@ const API = {
       });
     });
   },
-  // feedback 上传反馈
+  // feedback 上传反馈 忽略
   uploadFeedback: (userId: string, content: string, images?: string[]): Promise<any> => {
     return new Promise((resolve, reject) => {
       wx.request({

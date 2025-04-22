@@ -17,6 +17,7 @@ interface PageData {
   totalInvites: number;
   streakDays: number;
   inputInviteCode: string;
+  isVip: boolean;
 }
 
 Page({
@@ -48,12 +49,14 @@ Page({
     showInviteCodeInputPopup: false,  // 弹窗：填写收到的邀请码
     showPrivacyPopup: false,  // 弹窗：隐私政策
 
-    inputInviteCode: ''
+    inputInviteCode: '',
+    isVip: false    // 添加VIP状态默认值
   },
   onLoad() {
     console.log('aboutMe 页面 onLoad');
     this.getUserInfoFromAppTs();
     this.getLatestStatus();
+    this.getVipStatus();
     this.checkInvites();
   },
   // 从app.ts获取userInfo
@@ -81,7 +84,8 @@ Page({
         hasCheckedIn: cachedTodayStatus.hasCheckedIn,
         totalTopics: cachedTodayStatus.totalTopics,
         streakDays: cachedTodayStatus.streakDays,
-        hasUsedInviteCode: cachedTodayStatus.hasUsedInviteCode
+        hasUsedInviteCode: cachedTodayStatus.hasUsedInviteCode,
+        isVip: cachedTodayStatus.isVip
       });
     };
     try {
@@ -95,7 +99,8 @@ Page({
         hasCheckedIn: res.hasCheckedIn,
         totalTopics: res.totalTopics,
         streakDays: res.streakDays,
-        hasUsedInviteCode: res.hasUsedInviteCode
+        hasUsedInviteCode: res.hasUsedInviteCode,
+        isVip: res.isVip
       });
       const todayStatus = {
         points: res.points,
@@ -105,11 +110,35 @@ Page({
         hasCheckedIn: res.hasCheckedIn,
         totalTopics: res.totalTopics,
         streakDays: res.streakDays,
-        hasUsedInviteCode: res.hasUsedInviteCode
+        hasUsedInviteCode: res.hasUsedInviteCode,
+        isVip: res.isVip
       }
       await simpleSecureStorage.setStorage('todayStatus', todayStatus);
     } catch (error) {
-      // console.error('getLatestStatus失败:', error);
+      console.error('getLatestStatus失败:', error);
+    }
+  },
+  // 获取VIP状态
+  async getVipStatus() {
+    try {
+      // 先从缓存获取VIP状态
+      const cachedVipStatus = await simpleSecureStorage.getStorage('vipStatus');
+      if (cachedVipStatus) {
+        this.setData({
+          isVip: cachedVipStatus.isVip
+        });
+      }
+      const res = await API.getVipStatus(this.data.userInfo.userId);
+      this.setData({
+        isVip: res.isVip
+      });
+      // 单独缓存VIP状态
+      await simpleSecureStorage.setStorage('vipStatus', {
+        isVip: res.isVip,
+        lastUpdateTime: new Date().getTime()
+      });
+    } catch (error) {
+      console.error('获取VIP状态失败:', error);
     }
   },
   // [邀请好友]下的邀请好友总数&最近3天邀请好友总数

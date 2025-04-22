@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false // 默认不是 VIP
   },
+  vipExpireDate: {
+    type: Date,
+    default: null // VIP 过期时间
+  },
   gender: {
     type: Number, // 0: 未知, 1: 男, 2: 女
     default: 0
@@ -67,10 +71,6 @@ const userSchema = new mongoose.Schema({
   lastLogin: {
     type: Date,
     default: null
-  },
-  vipExpireDate: {
-    type: Date,
-    default: null // VIP 过期时间
   },
   // 预留字段，方便后续扩展
   extra: {

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 原型图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .prototype-container {
+            width: 375px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .back-btn {
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .more-btn {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .user-section {
+            padding: 20px 16px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #e5e5e5;
+        }
+
+        .nickname {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .vip-badge {
+            background: #FFD700;
+            color: #8B4513;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .points-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .points-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .points-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .action-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .action-left {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .action-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .action-desc {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .stats-section {
+            padding: 20px 16px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .stat-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .function-section {
+            padding: 0 16px 20px;
+        }
+
+        .function-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .function-icon {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
+        .function-text {
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .arrow {
+            color: #999;
+        }
+
+        .tab-bar {
+            height: 50px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: white;
+        }
+
+        .tab-item {
+            text-align: center;
+            color: #999;
+        }
+
+        .tab-item.active {
+            color: #6366f1;
+        }
+
+        .prototype-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- 普通版原型图 -->
+    <div class="prototype-container">
+        <div class="prototype-title">普通版</div>
+        <div class="header">
+            <a href="#" class="back-btn">←</a>
+            <div class="title">我的</div>
+            <div class="more-btn">⋯</div>
+        </div>
+        <div class="user-section">
+            <div class="user-info">
+                <div class="avatar"></div>
+                <div class="nickname">口语小超人</div>
+            </div>
+            <div class="points-section">
+                <div class="points-header">
+                    <div class="points-title">我的积分</div>
+                    <div class="points-value">58</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-left">
+                        <div>📅</div>
+                        <div class="action-info">
+                            <div>每日签到</div>
+                            <div class="action-desc">每日签到可获得20积分奖励</div>
+                        </div>
+                    </div>
+                    <div>+20</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-left">
+                        <div>👥</div>
+                        <div class="action-info">
+                            <div>邀请新用户</div>
+                            <div class="action-desc">邀请好友登录，双方各得50积分</div>
+                        </div>
+                    </div>
+                    <div>+50</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-section">
+            <div class="section-title">📊 训练统计</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎤</div>
+                    <div class="stat-label">完成话题</div>
+                    <div class="stat-value">0 个</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-label">连续签到</div>
+                    <div class="stat-value">1 天</div>
+                </div>
+            </div>
+        </div>
+        <div class="function-section">
+            <div class="function-item">
+                <div class="function-icon">✉️</div>
+                <div class="function-text">问题反馈</div>
+                <div class="arrow">></div>
+            </div>
+            <div class="function-item">
+                <div class="function-icon">🔒</div>
+                <div class="function-text">隐私政策</div>
+                <div class="arrow">></div>
+            </div>
+        </div>
+        <div class="tab-bar">
+            <div class="tab-item">首页</div>
+            <div class="tab-item active">我的</div>
+        </div>
+    </div>
+
+    <!-- VIP版原型图 -->
+    <div class="prototype-container">
+        <div class="prototype-title">VIP版</div>
+        <div class="header">
+            <a href="#" class="back-btn">←</a>
+            <div class="title">我的</div>
+            <div class="more-btn">⋯</div>
+        </div>
+        <div class="user-section">
+            <div class="user-info">
+                <div class="avatar"></div>
+                <div>
+                    <div class="nickname">口语小超人 <span class="vip-badge">VIP</span></div>
+                </div>
+            </div>
+            <div class="points-section">
+                <div class="points-header">
+                    <div class="points-title">我的积分</div>
+                    <div class="points-value">∞</div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-section">
+            <div class="section-title">📊 训练统计</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎤</div>
+                    <div class="stat-label">完成话题</div>
+                    <div class="stat-value">0 个</div>
+                </div>
+            </div>
+        </div>
+        <div class="function-section">
+            <div class="function-item">
+                <div class="function-icon">✉️</div>
+                <div class="function-text">问题反馈</div>
+                <div class="arrow">></div>
+            </div>
+            <div class="function-item">
+                <div class="function-icon">🔒</div>
+                <div class="function-text">隐私政策</div>
+                <div class="arrow">></div>
+            </div>
+        </div>
+        <div class="tab-bar">
+            <div class="tab-item">首页</div>
+            <div class="tab-item active">我的</div>
+        </div>
+    </div>
+</body>
+</html> 
