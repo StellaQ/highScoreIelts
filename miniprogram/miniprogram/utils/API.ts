@@ -480,6 +480,27 @@ const API = {
         fail: reject
       });
     });
+  },
+  // 绑定手机号
+  bindPhoneNumber: (userId: string, phoneNumber: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BASE_URL}/api/user/bind-phone`,
+        method: 'POST',
+        data: {
+          userId,
+          phoneNumber
+        },
+        success: (res: any) => {
+          if (res.statusCode === 200) {
+            resolve(res.data);
+          } else {
+            reject(new Error(res.data.message || '绑定手机号失败'));
+          }
+        },
+        fail: reject
+      });
+    });
   }
 };
 

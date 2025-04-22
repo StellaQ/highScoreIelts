@@ -86,6 +86,16 @@
     <!-- 功能列表区域 -->
     <view class="function-section">
       <view class="function-list">
+        <view class="function-item" bindtap="showOfficialAccountPopup">
+          <text class="function-icon">📱</text>
+          <button class="function-text btn">关注公众号</button>
+          <text class="arrow">></text>
+        </view>
+        <view class="function-item" bindtap="showPhonePopup">
+          <text class="function-icon">📞</text>
+          <button class="function-text btn">绑定手机号码</button>
+          <text class="arrow">></text>
+        </view>
         <view class="function-item">
           <text class="function-icon">✉️</text>
           <button class="function-text btn" open-type="feedback">问题反馈</button>
@@ -212,5 +222,59 @@
         </view>
       </view>
     </scroll-view>
+  </view>
+</van-popup>
+
+<!-- 公众号弹窗 -->
+<van-popup
+  show="{{ showOfficialAccountPopup }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closeOfficialAccountPopup"
+>
+  <view class="invite-popup">
+    <view class="invite-title">关注公众号</view>
+    <view class="invite-content">
+      <image class="qrcode" src="{{qrcodeUrl}}" mode="aspectFit" show-menu-by-longpress></image>
+      <view class="invite-tips">
+        <text class="tip-item">• 长按上方二维码关注公众号</text>
+        <!-- <text class="tip-item">• 或者在公众号内搜索[小鼠SPEAKING]</text> -->
+        <text class="tip-item">• 获取更多学习资源和活动信息</text>
+      </view>
+    </view>
+  </view>
+</van-popup>
+
+<!-- 手机号弹窗 -->
+<van-popup
+  show="{{ showPhonePopup }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closePhonePopup"
+>
+  <view class="invite-popup">
+    <view class="invite-title">绑定手机号</view>
+    <view class="invite-content">
+      <view class="phone-input-container">
+        <input 
+          class="phone-input"
+          type="number"
+          maxlength="11"
+          placeholder="请输入手机号"
+          bindinput="onPhoneInput"
+          value="{{phoneNumber}}"
+        />
+        <button 
+          class="get-phone-btn"
+          bindtap="submitPhoneNumber"
+        >确认绑定</button>
+      </view>
+      <view class="invite-tips">
+        <text class="tip-item">• 绑定手机号后可以：</text>
+        <text class="tip-item">• 接收重要通知</text>
+        <text class="tip-item">• 找回账号</text>
+        <text class="tip-item">• 参与更多活动</text>
+      </view>
+    </view>
   </view>
 </van-popup>

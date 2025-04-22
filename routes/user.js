@@ -429,4 +429,61 @@ router.post('/verifyInviteCode', async (req, res) => {
   }
 });
 
+// 绑定手机号
+router.post('/bind-phone', async (req, res) => {
+  try {
+    const { userId, phoneNumber } = req.body;
+
+    if (!userId || !phoneNumber) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '缺少必要参数' 
+      });
+    }
+
+    // 验证手机号格式
+    const phoneRegex = /^1[3-9]\d{9}$/;
+    if (!phoneRegex.test(phoneNumber)) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '手机号格式不正确' 
+      });
+    }
+
+    // 检查手机号是否已被其他用户绑定
+    const existingUser = await User.findOne({ phone: phoneNumber });
+    if (existingUser && existingUser.userId !== userId) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '该手机号已被其他用户绑定' 
+      });
+    }
+
+    // 更新用户手机号
+    const updatedUser = await User.findOneAndUpdate(
+      { userId },
+      { phone: phoneNumber },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ 
+        success: false, 
+        message: '用户不存在' 
+      });
+    }
+
+    res.json({
+      success: true,
+      message: '手机号绑定成功'
+    });
+  } catch (error) {
+    console.error('绑定手机号失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
+    });
+  }
+});
+
 module.exports = router;

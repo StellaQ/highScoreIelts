@@ -7,6 +7,7 @@ interface PageData {
     nickname: string;
     avatarUrl: string;
     inviteCode: string;
+    phone?: string;
   };
   configSignInPoints: number;
   configInvitePoints: number;
@@ -18,6 +19,15 @@ interface PageData {
   streakDays: number;
   inputInviteCode: string;
   isVip: boolean;
+  showOfficialAccountPopup: boolean;
+  showPhonePopup: boolean;
+  qrcodeUrl: string;
+  phoneNumber: string;
+}
+
+interface PhoneNumberResponse {
+  success: boolean;
+  phone: string;
 }
 
 Page({
@@ -50,7 +60,12 @@ Page({
     showPrivacyPopup: false,  // 弹窗：隐私政策
 
     inputInviteCode: '',
-    isVip: false    // 添加VIP状态默认值
+    isVip: false,    // 添加VIP状态默认值
+
+    showOfficialAccountPopup: false,
+    showPhonePopup: false,
+    qrcodeUrl: '../../assets/pics/official.jpg', // 替换为实际的二维码图片URL
+    phoneNumber: ''
   },
   onLoad() {
     console.log('aboutMe 页面 onLoad');
@@ -339,5 +354,79 @@ Page({
   // 朋友圈分享
   onShareTimeline() {
     return getApp().getTimelineInfo();
+  },
+  // 显示公众号弹窗
+  showOfficialAccountPopup() {
+    this.setData({
+      showOfficialAccountPopup: true
+    });
+  },
+  // 关闭公众号弹窗
+  closeOfficialAccountPopup() {
+    this.setData({
+      showOfficialAccountPopup: false
+    });
+  },
+  // 显示手机号弹窗
+  showPhonePopup() {
+    this.setData({
+      showPhonePopup: true
+    });
+  },
+  // 关闭手机号弹窗
+  closePhonePopup() {
+    this.setData({
+      showPhonePopup: false
+    });
+  },
+  // 手机号输入处理
+  onPhoneInput(e: any) {
+    this.setData({
+      phoneNumber: e.detail.value
+    });
+  },
+  // 提交手机号
+  async submitPhoneNumber() {
+    const phoneNumber = this.data.phoneNumber.trim();
+    if (!phoneNumber) {
+      wx.showToast({
+        title: '请输入手机号',
+        icon: 'none'
+      });
+      return;
+    }
+    if (!/^1[3-9]\d{9}$/.test(phoneNumber)) {
+      wx.showToast({
+        title: '请输入正确的手机号',
+        icon: 'none'
+      });
+      return;
+    }
+    console.log(phoneNumber);
+    try {
+      // 调用后端接口保存手机号
+      const res = await API.bindPhoneNumber(this.data.userInfo.userId, phoneNumber);
+      if (res.success) {
+        this.setData({
+          showPhonePopup: false,
+          phoneNumber: ''
+        });
+        wx.showToast({
+          title: '手机号绑定成功',
+          icon: 'success'
+        });
+      } else {
+        wx.showToast({
+          title: res.message || '绑定失败',
+          icon: 'error'
+        });
+      }
+    } catch (error) {
+      console.error('绑定手机号失败:', error);
+      wx.showToast({
+        title: '绑定失败，请重试',
+        icon: 'error'
+      });
+    }
   }
 }); 

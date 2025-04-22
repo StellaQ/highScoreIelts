@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  phone: {
+    type: String,
+    default: ''
+  },
   points: {
     type: Number,
     default: 0
