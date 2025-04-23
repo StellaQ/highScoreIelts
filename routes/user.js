@@ -284,7 +284,8 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
       totalTopics,
       streakDays,
       inviteCode: user.inviteCode,
-      hasUsedInviteCode: user.hasUsedInviteCode
+      hasUsedInviteCode: user.hasUsedInviteCode,
+      phone: user.phone
     });
   } catch (error) {
     console.error('检查签到状态失败:', error);

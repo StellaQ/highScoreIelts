@@ -267,7 +267,7 @@
         <button 
           class="get-phone-btn"
           bindtap="submitPhoneNumber"
-        >确认绑定</button>
+        >{{hasbindedPhone ? '已绑定，修改手机号' : '确认绑定'}}</button>
       </view>
       <view class="invite-tips">
         <text class="tip-item">• 绑定手机号后可以：</text>

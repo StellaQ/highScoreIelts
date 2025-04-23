@@ -65,13 +65,14 @@ Page({
     showOfficialAccountPopup: false,
     showPhonePopup: false,
     qrcodeUrl: '../../assets/pics/official.jpg', // 替换为实际的二维码图片URL
-    phoneNumber: ''
+    phoneNumber: '',
+    hasbindedPhone: false
   },
   onLoad() {
     console.log('aboutMe 页面 onLoad');
     this.getUserInfoFromAppTs();
-    this.getLatestStatus();
     this.getVipStatus();
+    this.getLatestStatus();
     this.checkInvites();
   },
   // 从app.ts获取userInfo
@@ -82,55 +83,6 @@ Page({
       this.setData({
         userInfo: app.globalData.userInfo
       });
-    }
-  },
-  // points inviteCode hasCheckedIn streakDays
-  async getLatestStatus() {
-    // 先从缓存获取用户信息
-    const cachedTodayStatus = await simpleSecureStorage.getStorage('todayStatus');
-    // console.log(cachedTodayStatus);
-    if (cachedTodayStatus) {
-      // console.log('每次aboutMe页面onLoad,若缓存存在，先赋值缓存cachedTodayStatus')
-      this.setData({
-        points: cachedTodayStatus.points,
-        configSignInPoints: cachedTodayStatus.configSignInPoints,
-        configInvitePoints: cachedTodayStatus.configInvitePoints,
-        inviteCode: cachedTodayStatus.inviteCode,
-        hasCheckedIn: cachedTodayStatus.hasCheckedIn,
-        totalTopics: cachedTodayStatus.totalTopics,
-        streakDays: cachedTodayStatus.streakDays,
-        hasUsedInviteCode: cachedTodayStatus.hasUsedInviteCode,
-        isVip: cachedTodayStatus.isVip
-      });
-    };
-    try {
-      // console.log('每次aboutMe页面onLoad,再请求后端api')
-      const res = await API.getLatestStatus(this.data.userInfo.userId);
-      this.setData({
-        points: res.points,
-        configSignInPoints: res.configSignInPoints,
-        configInvitePoints: res.configInvitePoints,
-        inviteCode: res.inviteCode,
-        hasCheckedIn: res.hasCheckedIn,
-        totalTopics: res.totalTopics,
-        streakDays: res.streakDays,
-        hasUsedInviteCode: res.hasUsedInviteCode,
-        isVip: res.isVip
-      });
-      const todayStatus = {
-        points: res.points,
-        configSignInPoints: res.configSignInPoints,
-        configInvitePoints: res.configInvitePoints,
-        inviteCode: res.inviteCode,
-        hasCheckedIn: res.hasCheckedIn,
-        totalTopics: res.totalTopics,
-        streakDays: res.streakDays,
-        hasUsedInviteCode: res.hasUsedInviteCode,
-        isVip: res.isVip
-      }
-      await simpleSecureStorage.setStorage('todayStatus', todayStatus);
-    } catch (error) {
-      console.error('getLatestStatus失败:', error);
     }
   },
   // 获取VIP状态
@@ -154,6 +106,27 @@ Page({
       });
     } catch (error) {
       console.error('获取VIP状态失败:', error);
+    }
+  },
+  // points inviteCode hasCheckedIn streakDays
+  async getLatestStatus() {
+    try {
+      // console.log('每次aboutMe页面onLoad,再请求后端api')
+      const res = await API.getLatestStatus(this.data.userInfo.userId);
+      this.setData({
+        points: res.points,
+        configSignInPoints: res.configSignInPoints,
+        configInvitePoints: res.configInvitePoints,
+        inviteCode: res.inviteCode,
+        hasCheckedIn: res.hasCheckedIn,
+        totalTopics: res.totalTopics,
+        streakDays: res.streakDays,
+        hasUsedInviteCode: res.hasUsedInviteCode,
+        phoneNumber: res.phone,
+        hasbindedPhone: !!res.phone
+      });
+    } catch (error) {
+      console.error('getLatestStatus失败:', error);
     }
   },
   // [邀请好友]下的邀请好友总数&最近3天邀请好友总数
@@ -195,15 +168,6 @@ Page({
         hasCheckedIn: true,
         streakDays: res.streakDays
       }); 
-      // 更新缓存
-      const cachedTodayStatus = await simpleSecureStorage.getStorage('todayStatus');
-      if(cachedTodayStatus) {
-        cachedTodayStatus.points = res.points,
-        cachedTodayStatus.hasCheckedIn = true,
-        cachedTodayStatus.streakDays = res.streakDays
-      }
-      await simpleSecureStorage.setStorage('todayStatus', cachedTodayStatus);
-
       wx.showToast({
         title: '签到成功 +' + this.data.configSignInPoints + '积分',
         icon: 'success'
@@ -275,14 +239,6 @@ Page({
         hasUsedInviteCode: true,
         showInviteCodeInputPopup: false,
         inputInviteCode: ''
-      });
-
-      // 更新缓存中的状态
-      const todayStatus = await simpleSecureStorage.getStorage('todayStatus') || {};
-      await simpleSecureStorage.setStorage('todayStatus', {
-        ...todayStatus,
-        points: res.points,
-        hasUsedInviteCode: true
       });
 
       wx.showToast({
@@ -402,18 +358,18 @@ Page({
       });
       return;
     }
-    console.log(phoneNumber);
+    // console.log(phoneNumber);
     try {
       // 调用后端接口保存手机号
       const res = await API.bindPhoneNumber(this.data.userInfo.userId, phoneNumber);
       if (res.success) {
-        this.setData({
-          showPhonePopup: false,
-          phoneNumber: ''
-        });
         wx.showToast({
           title: '手机号绑定成功',
           icon: 'success'
+        });
+        this.setData({
+          showPhonePopup: false,
+          hasbindedPhone: true
         });
       } else {
         wx.showToast({
