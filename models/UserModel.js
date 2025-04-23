@@ -36,10 +36,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  isVip: {
-    type: Boolean,
-    default: false // 默认不是 VIP
-  },
+  // isVip: {
+  //   type: Boolean,
+  //   default: false // 默认不是 VIP
+  // },
   vipExpireDate: {
     type: Date,
     default: null // VIP 过期时间
