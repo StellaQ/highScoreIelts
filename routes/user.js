@@ -165,14 +165,25 @@ router.get('/vip-status', async (req, res) => {
 
     // 判断用户是否是VIP
     let isVip = false;
+    let vipExpireDate = null;
     if (user.vipExpireDate) {
       // 如果设置了过期时间，判断是否过期
       isVip = new Date(user.vipExpireDate) > new Date();
+      // 转换为本地时间并精确到分钟
+      vipExpireDate = new Date(user.vipExpireDate).toLocaleString('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }).replace(/\//g, '-');
     }
 
     res.json({
       success: true,
-      isVip
+      isVip,
+      vipExpireDate
     });
   } catch (error) {
     console.error('获取VIP状态失败:', error);

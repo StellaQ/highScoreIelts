@@ -40,10 +40,29 @@
   margin-right: 24rpx;
   border: 4rpx solid rgba(255, 255, 255, 0.3);
 }
-
+.user-detail{
+  display: flex;
+  align-items: center;
+}
 .nickname {
   font-size: 36rpx;
   font-weight: 500;
+  color: #fff;
+}
+.vip-badge1{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: #FFD700;
+  color: #8B4513;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-left: 8px;
+}
+.vip-expire-time {
+  display: flex;
+  font-size: 12px;
   color: #fff;
 }
 

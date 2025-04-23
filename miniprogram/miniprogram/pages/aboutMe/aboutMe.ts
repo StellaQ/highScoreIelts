@@ -61,6 +61,7 @@ Page({
 
     inputInviteCode: '',
     isVip: false,    // 添加VIP状态默认值
+    vipExpireDate: '',
 
     showOfficialAccountPopup: false,
     showPhonePopup: false,
@@ -88,21 +89,10 @@ Page({
   // 获取VIP状态
   async getVipStatus() {
     try {
-      // 先从缓存获取VIP状态
-      const cachedVipStatus = await simpleSecureStorage.getStorage('vipStatus');
-      if (cachedVipStatus) {
-        this.setData({
-          isVip: cachedVipStatus.isVip
-        });
-      }
       const res = await API.getVipStatus(this.data.userInfo.userId);
       this.setData({
-        isVip: res.isVip
-      });
-      // 单独缓存VIP状态
-      await simpleSecureStorage.setStorage('vipStatus', {
         isVip: res.isVip,
-        lastUpdateTime: new Date().getTime()
+        vipExpireDate: res.vipExpireDate
       });
     } catch (error) {
       console.error('获取VIP状态失败:', error);

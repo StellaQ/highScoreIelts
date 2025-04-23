@@ -6,16 +6,22 @@
         <image class="avatar" src="{{userInfo.avatarUrl || '../../assets/pics/user8.jpeg'}}" mode="aspectFill"></image>
         <view class="user-detail">
           <text class="nickname">{{userInfo.nickname}}</text>
+          <view class="vip-badge1" wx:if="{{isVip}}">vip</view>
         </view>
       </view>
       <view class="points-section">
         <view class="points-header">
           <text class="points-title">我的积分</text>
-          <text class="points-value">{{points}}</text>
+          <text class="points-value">{{isVip ? '∞' : points}}</text>
         </view>
-        
+        <view class="vip-expire-time"
+          wx:if="{{isVip}}">
+          <view style="margin-left: auto;">到期时间：{{vipExpireDate}}</view>
+        </view>
         <!-- 每日签到区域 -->
-        <view class="action-card sign-in-card {{hasCheckedIn ? 'checked' : ''}}" bindtap="handleCheckIn">
+        <view 
+          wx:if="{{!isVip}}"
+          class="action-card sign-in-card {{hasCheckedIn ? 'checked' : ''}}" bindtap="handleCheckIn">
           <view class="action-left">
             <text class="action-icon">📅</text>
             <view class="action-info">
@@ -30,7 +36,9 @@
         </view>
 
         <!-- 邀请好友区域 -->
-        <view class="action-card invite-card" bindtap="handleInvite">
+        <view class="action-card invite-card"
+          wx:if="{{!isVip}}"
+          bindtap="handleInvite">
           <view class="action-left">
             <text class="action-icon">👥</text>
             <view class="action-info">
@@ -49,7 +57,8 @@
         </view>
 
         <!-- 填写邀请码入口 -->
-        <view class="invite-code-entry" bindtap="showInviteCodeInput" wx:if="{{!hasUsedInviteCode && !inviterId}}">
+        <view class="invite-code-entry" 
+          bindtap="showInviteCodeInput" wx:if="{{!isVip & !hasUsedInviteCode && !inviterId}}">
           <text class="entry-text">填写您收到的邀请码</text>
           <text class="entry-arrow">></text>
         </view>
@@ -75,7 +84,8 @@
           <text class="stat-label">AI模拟考</text>
           <text class="stat-value">{{aiScore}} 分</text>
         </view> -->
-        <view class="stat-card">
+        <view class="stat-card"
+          wx:if="{{!isVip}}">
           <text class="stat-icon">🔥</text>
           <text class="stat-label">连续签到</text>
           <text class="stat-value">{{streakDays}} 天</text>
