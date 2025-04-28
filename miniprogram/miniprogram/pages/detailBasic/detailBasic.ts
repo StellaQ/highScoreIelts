@@ -121,7 +121,7 @@ Page({
         });
         // 隐藏loading
         wx.hideLoading();
-        let title = `已扣除${resultAI.pointsDeducted}积分`;
+        let title = `消耗了${resultAI.pointsDeducted}积分`;
         // console.log(title);
         wx.showToast({
           title: title,

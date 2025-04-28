@@ -106,7 +106,7 @@ Page({
       // 隐藏loading
       wx.hideLoading();
       // 可以添加一个提示
-      let title = `已扣除${resultAI.pointsDeducted}积分`;
+      let title = `消耗了${resultAI.pointsDeducted}积分`;
       wx.showToast({
         title: title,
         icon: 'success',
