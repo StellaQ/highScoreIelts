@@ -10,7 +10,7 @@ const { connectDB } = require('./config/db');
 // 获取当前环境 development/debug/test/production
 const env = process.env.NODE_ENV || 'development';
 const host = process.env[`${env.toUpperCase()}_HOST`] || 'localhost';
-const port = process.env[`${env.toUpperCase()}_PORT`] || 3000;
+const port = process.env[`${env.toUpperCase()}_PORT`] || 3001;
 
 const app = express();
 

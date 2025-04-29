@@ -6,7 +6,7 @@ module.exports = {
       exec_mode: 'cluster',  // 使用集群模式
       env: {
         NODE_ENV: 'production',
-        PORT: 3000
+        PORT: 3001
       },
       error_file: 'logs/err.log',  // 错误日志
       out_file: 'logs/out.log',    // 输出日志
