@@ -20,21 +20,18 @@ const ENV = {
 
 // 根据当前环境选择配置
 const getEnvConfig = () => {
-  // 判断是否在微信开发者工具中
-  const isDevTools = __wxConfig.envVersion === 'develop';
-  // 判断是否在真机调试中
-  const isDebug = __wxConfig.envVersion === 'trial';
-  // 判断是否在生产环境中
-  const isProd = __wxConfig.envVersion === 'release';
-
-  if (isDevTools) {
-    return ENV.DEV;
-  } else if (isDebug) {
-    return ENV.DEBUG;
-  } else if (isProd) {
-    return ENV.PROD;
-  } else {
-    return ENV.TEST;
+  let env = 'develop'
+  switch (env) {
+    case 'develop':
+      return ENV.DEV;
+    case 'debug':
+      return ENV.DEBUG;
+    case 'test':
+      return ENV.TEST;
+    case 'prod':
+      return ENV.PROD;
+    default:
+      return ENV.DEV;
   }
 };
 

@@ -65,7 +65,7 @@ Page({
 
     showOfficialAccountPopup: false,
     showPhonePopup: false,
-    qrcodeUrl: '../../assets/pics/official.jpg', // 替换为实际的二维码图片URL
+    qrcodeUrl: 'https://img.xiaoshuspeaking.site/official.jpg', // 替换为实际的二维码图片URL
     phoneNumber: '',
     hasbindedPhone: false
   },

@@ -2,7 +2,7 @@
   <view class="inner-container">
     <!-- 热门话题 -->
     <view class="hot-topics">
-      <image class="hot-icon" src="/assets/pics/index_hot.svg" />
+      <image class="hot-icon" src="https://img.xiaoshuspeaking.site/index_hot.svg" />
       <text class="section-title">热门话题推荐</text>
     </view>
 
@@ -11,7 +11,7 @@
       <!-- 基础级 -->
       <view class="level-card basic" bindtap="navigateToBasic">
         <view class="level-icon">
-          <image src="/assets/pics/index_basic.svg" />
+          <image src="https://img.xiaoshuspeaking.site/index_basic.svg" />
         </view>
         <view class="level-info">
           <view class="level-title">基础口语练习</view>
@@ -23,7 +23,7 @@
       <!-- 进阶级 -->
       <view class="level-card advanced" bindtap="navigateToAdvanced">
         <view class="level-icon">
-          <image src="/assets/pics/index_advanced.svg" />
+          <image src="https://img.xiaoshuspeaking.site/index_advanced.svg" />
         </view>
         <view class="level-info">
           <view class="level-title">进阶口语训练</view>
@@ -35,7 +35,7 @@
       <!-- 专家级 -->
       <view class="level-card expert" bindtap="navigateToExpert">
         <view class="level-icon">
-          <image src="/assets/pics/index_expert.svg" />
+          <image src="https://img.xiaoshuspeaking.site/index_expert.svg" />
         </view>
         <view class="level-info">
           <view class="level-title">高级口语挑战</view>
@@ -48,14 +48,14 @@
     <view class="features" wx:if="{{!showUpdateAlert}}">
       <!-- AI助手 -->
       <view class="feature-card">
-        <image class="feature-icon" src="/assets/pics/index_ai.svg" />
+        <image class="feature-icon" src="https://img.xiaoshuspeaking.site/index_ai.svg" />
         <view class="feature-title">AI智能助练</view>
         <view class="feature-desc">个性化口语建议</view>
       </view>
 
       <!-- 科学记忆曲线 -->
       <view class="feature-card">
-        <image class="feature-icon" src="/assets/pics/index_curve.svg" />
+        <image class="feature-icon" src="https://img.xiaoshuspeaking.site/index_curve.svg" />
         <view class="feature-title">科学记忆曲线</view>
         <view class="feature-desc">定期复习提醒</view>
       </view>
@@ -63,7 +63,7 @@
     <view class="features-update" wx:if="{{showUpdateAlert}}">
       <!-- AI助手 -->
       <view class="feature-card-update">
-        <image class="feature-icon" src="/assets/pics/index_update.svg" />
+        <image class="feature-icon" src="https://img.xiaoshuspeaking.site/index_update.svg" />
         <view class="feature-title">题库内容已更新</view>
         <view class="feature-desc">{{updateTip}}</view>
       </view>
