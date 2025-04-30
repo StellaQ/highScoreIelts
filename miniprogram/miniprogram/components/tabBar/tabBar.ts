@@ -9,12 +9,12 @@ Component({
     tabBarList: [
       {
         text: '首页',
-        icon: '/assets/pics/home2.png',
+        icon: 'https://img.xiaoshuspeaking.site/home2.png',
         url: '/pages/index/index',
       },
       {
         text: '我的',
-        icon: '/assets/pics/info4.png',
+        icon: 'https://img.xiaoshuspeaking.site/info4.png',
         url: '/pages/aboutMe/aboutMe',
       }
     ],

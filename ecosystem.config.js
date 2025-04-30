@@ -24,10 +24,10 @@ module.exports = {
     // wait_ready: true,
     // listen_timeout: 80000,
 
-    // 7. 生产环境变量
-    env_production: {
+    // 这里用 env，因为我们要在生产状态下也加载 .env
+    env: {
       NODE_ENV: 'production',
-      PORT:     3001,
+      PORT: 3001
     }
   }]
 }

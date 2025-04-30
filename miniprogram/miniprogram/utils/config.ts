@@ -14,13 +14,13 @@ const ENV = {
   },
   // 生产环境
   PROD: {
-    BASE_URL: 'https://api.hlts.com'
+    BASE_URL: 'https://www.xiaoshuspeaking.site'
   }
 };
 
 // 根据当前环境选择配置
 const getEnvConfig = () => {
-  let env = 'develop'
+  let env = 'prod'
   switch (env) {
     case 'develop':
       return ENV.DEV;
