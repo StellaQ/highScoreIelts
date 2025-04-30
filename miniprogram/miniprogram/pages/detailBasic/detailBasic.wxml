@@ -37,7 +37,7 @@
           </van-radio-group>
         </view>
         <textarea class="answer-input" 
-          placeholder="Point + Reason + Example"
+          placeholder=""
           value="{{ item.answerUser }}"
           data-index="{{index}}"
           maxlength="300"

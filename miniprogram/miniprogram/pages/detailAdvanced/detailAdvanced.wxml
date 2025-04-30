@@ -19,7 +19,7 @@
         <view class="question-title">{{item.qTitle}}</view>
         <view class="question-title-cn">{{item.qTitle_cn}}</view>
         <textarea class="answer-input" 
-          placeholder="如果为空，就由AI自动补全[AI Generated]"
+          placeholder=""
           value="{{ item.answerUser }}"
           data-index="{{index}}"
           maxlength="100"
