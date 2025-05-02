@@ -21,9 +21,9 @@ const checkAndDeductPoints = async (userId, requiredPoints) => {
     }
 
     if (user.points < requiredPoints) {
-      throw {
+      throw { 
         code: 400,
-        message: '积分不足'
+        message: '积分不足，请前往公众号查看获取方式'
       };
     }
 

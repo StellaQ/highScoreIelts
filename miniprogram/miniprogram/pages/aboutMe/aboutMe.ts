@@ -139,6 +139,60 @@ Page({
       console.error('Failed to check new invites:', error);
     }
   },
+  async onChooseAvatar(e: any) {
+    const { avatarUrl } = e.detail;
+  
+    try {
+      const qiniuUrl = await API.uploadAvatarToServer(avatarUrl);
+      console.log('上传成功，七牛地址:', qiniuUrl);
+  
+      const userInfo = {
+        userId: this.data.userInfo.userId,
+        avatarUrl: qiniuUrl, // 替换为七牛地址
+        nickname: this.data.userInfo.nickname
+      };
+  
+      this.updateUserInfo(userInfo); // 上传成功后再执行
+    } catch (err) {
+      console.error('上传头像失败', err);
+      wx.showToast({ title: '上传失败', icon: 'none' });
+    }
+  },
+  onChooseNickname(e: any) {
+    console.log(e.detail);
+    if (e.detail.cursor === 0) {
+      return;
+    };
+    const nickname = e.detail.value;
+    const userInfo = {
+      userId: this.data.userInfo.userId,
+      avatarUrl: this.data.userInfo.avatarUrl,
+      nickname: nickname
+    };
+    this.updateUserInfo(userInfo);
+  },
+  updateUserInfo (userInfo: any) {
+    // 更新页面数据
+    this.setData({ userInfo });
+
+    // 更新全局数据
+    const app = getApp<IAppOption>();
+    if (app.globalData) {
+      app.globalData.userInfo = userInfo;
+    };
+
+    // 保存到本地存储
+    simpleSecureStorage.setStorage('userInfo', userInfo);
+
+    // 后端更新用户信息
+    API.updateProfile(userInfo.userId, userInfo.nickname, userInfo.avatarUrl)
+      .then(res => {
+        console.log('api/user/updateProfile 用户信息更新成功');
+      })
+      .catch(err => {  
+        console.error('api/user/updateProfile 用户信息更新失败');
+      });
+  },
   // [每日签到]
   async handleCheckIn() {
     try {
@@ -253,45 +307,6 @@ Page({
     //     id: '740829'  // 这里填写你的小程序的 sourceId
     //   }
     // });
-  },
-  // 更新头像
-  updateUserProfile() {
-    if (this.data.userInfo.avatarUrl) {
-      // console.log('aboutMe.ts userInfo.avatarUrl有值说明已经更新头像过');
-      return;
-    };
-    wx.getUserProfile({
-      desc: '用于完善会员资料',
-      success: (res) => {
-        // console.log(res);
-        const userInfo = {
-          userId: this.data.userInfo.userId,
-          avatarUrl: res.userInfo.avatarUrl,
-          nickname: res.userInfo.nickName
-        };
-        
-        // 保存到本地存储
-        simpleSecureStorage.setStorage('userInfo', userInfo);
-        
-        // 更新全局数据
-        const app = getApp<IAppOption>();
-        if (app.globalData) {
-          app.globalData.userInfo = userInfo;
-        }
-
-        // 更新页面数据
-        this.setData({ userInfo });
-
-        // 后端更新用户信息
-        API.updateProfile(this.data.userInfo.userId, this.data.userInfo.nickname, this.data.userInfo.avatarUrl)
-          .then(res => {
-            console.log('api/user/updateProfile 用户信息更新成功');
-          })
-          .catch(err => {  
-            console.error('api/user/updateProfile 用户信息更新失败');
-          });
-      }
-    });
   },
   // 普通分享
   onShareAppMessage() {

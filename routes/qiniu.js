@@ -1,25 +1,10 @@
 const express = require('express');
-const router = express.Router();
 const multer = require('multer');
 const qiniu = require('qiniu');
 const path = require('path');
 const fs = require('fs');
 
-// 配置七牛云
-const accessKey = process.env.QINIU_ACCESS_KEY;
-const secretKey = process.env.QINIU_SECRET_KEY;
-const bucket = process.env.QINIU_BUCKET;
-const domain = process.env.QINIU_DOMAIN;
-
-// 配置七牛云上传区域
-const config = new qiniu.conf.Config();
-config.zone = qiniu.zone.Zone_as0; // 修改为东南亚区域
-config.useHttpsDomain = true; // 使用HTTPS域名
-config.useCdnDomain = true; // 使用CDN加速域名
-
-const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
-const formUploader = new qiniu.form_up.FormUploader(config);
-const putExtra = new qiniu.form_up.PutExtra();
+const router = express.Router();
 
 // 配置 multer
 const storage = multer.diskStorage({
@@ -34,10 +19,51 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + path.extname(file.originalname));
   }
 });
-
 const upload = multer({ storage: storage });
 
-// 上传图片到七牛云
+// 配置七牛云
+const accessKey = process.env.QINIU_ACCESS_KEY;
+const secretKey = process.env.QINIU_SECRET_KEY;
+const bucket = process.env.QINIU_BUCKET;
+const domain = process.env.QINIU_DOMAIN;
+// 配置七牛云上传区域
+const config = new qiniu.conf.Config();
+config.zone = qiniu.zone.Zone_z0;
+config.useHttpsDomain = true; // 使用HTTPS域名
+config.accelerateUploading = true; // 使用CDN加速域名
+
+const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+const formUploader = new qiniu.form_up.FormUploader(config);
+const putExtra = new qiniu.form_up.PutExtra();
+
+router.post('/uploadAvatar', upload.single('file'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: '未上传文件' });
+  }
+
+  const localFilePath = req.file.path;
+  const key = req.file.filename;
+
+  const options = { scope: bucket };
+  const putPolicy = new qiniu.rs.PutPolicy(options);
+  const uploadToken = putPolicy.uploadToken(mac);
+
+  formUploader.putFile(uploadToken, key, localFilePath, putExtra, function (err, body, info) {
+    fs.unlink(localFilePath, (err) => {
+      if (err) console.warn('删除临时文件失败', err);
+    });
+
+    if (err || info.statusCode !== 200) {
+      console.error('七牛上传失败', err || body);
+      return res.status(500).json({ error: '上传七牛失败' });
+    }
+
+    const qiniuUrl = `https://${domain}/${key}`;
+    res.json({ qiniuUrl });
+  });
+});
+
+// 上传图片到七牛云 弃用
 router.post('/upload', upload.single('image'), async (req, res) => {
   try {
     if (!req.file) {
@@ -128,7 +154,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
   }
 });
 
-// 获取已上传的图片列表
+// 获取已上传的图片列表 弃用
 router.get('/images', async (req, res) => {
   try {
     const bucketManager = new qiniu.rs.BucketManager(mac, config);

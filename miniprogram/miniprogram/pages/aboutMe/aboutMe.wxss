@@ -28,21 +28,33 @@
 }
 
 .user-info {
+  width: 100%;
   display: flex;
-  align-items: center;
+  align-items:center;
+  /* justify-content: space-between; */
   margin-bottom: 32rpx;
 }
 
-.avatar {
+.user-button{
+  /* width: 120rpx;
+  height: 120rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3); */
+  display: flex;
+  padding: 0;
+  margin: 0 20rpx 0 0;
+  /* width: 120rpx; */
+  /* height: 120rpx; */
+}
+.avatar{
   width: 120rpx;
   height: 120rpx;
-  border-radius: 60rpx;
-  margin-right: 24rpx;
-  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  /* border-radius: 60rpx; */
+  /* border: 4rpx solid rgba(255, 255, 255, 0.3); */
 }
 .user-detail{
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .nickname {
   font-size: 36rpx;

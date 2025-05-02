@@ -2,10 +2,14 @@
   <view class="container">
     <!-- 用户信息区域 -->
     <view class="user-section">
-      <view class="user-info" bindtap="updateUserProfile">
-        <image class="avatar" src="{{userInfo.avatarUrl || 'https://img.xiaoshuspeaking.site/user8.jpeg'}}" mode="aspectFill"></image>
+      <view class="user-info">
+        <button class="user-button" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{userInfo.avatarUrl || 'https://img.xiaoshuspeaking.site/user8.jpeg'}}" mode="aspectFill"></image>
+        </button> 
         <view class="user-detail">
-          <text class="nickname">{{userInfo.nickname}}</text>
+          <input type="nickname" class="nickname" placeholder="请输入昵称"
+          value="{{userInfo.nickname}}" bindblur="onChooseNickname"/>
+          <!-- <text class="nickname">{{userInfo.nickname}}</text> -->
           <view class="vip-badge1" wx:if="{{isVip}}">vip</view>
         </view>
       </view>
