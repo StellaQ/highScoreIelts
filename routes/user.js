@@ -15,7 +15,12 @@ const config = require('../config/configForMiniProgram');
 const APP_ID = process.env.WX_APP_ID;
 const APP_SECRET = process.env.WX_APP_SECRET;
 
-router.post('/getOpenId', async (req, res) => {
+const jwt = require('jsonwebtoken');
+// JWT密钥
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+
+// 导出 getOpenId 处理函数
+const getOpenId = async (req, res) => {
   const { code, codeFromInviter } = req.body;
 
   try {
@@ -93,26 +98,39 @@ router.post('/getOpenId', async (req, res) => {
           );
         }
       }
-    } else {
-      // user.lastLogin = new Date();
-      // await user.save();
     }
 
+    // 生成JWT token时加入session_key
+    const token = jwt.sign(
+      { 
+        userId: user.userId,
+        openid: user.openid,
+        sessionKey: session_key // 添加session_key
+      },
+      JWT_SECRET,
+      { expiresIn: '30d' }
+    );
+
     res.json({
-      data: {  // 添加 data 层
+      data: {
         userInfo: {
           userId: user.userId,
           nickname: user.nickname,
           avatarUrl: user.avatarUrl,
           inviteCode: user.inviteCode
-        }
+        },
+        token
       }
     });
   } catch (error) {
     console.error('获取 openid 失败:', error);
     res.status(500).json({ error: '获取 openid 失败' });
   }
-});
+};
+
+// 注册路由
+router.post('/getOpenId', getOpenId);
+
 // 更新用户信息 done
 router.post('/updateProfile', async (req, res) => {
   try {
@@ -498,4 +516,7 @@ router.post('/bind-phone', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = {
+  router,
+  getOpenId
+};

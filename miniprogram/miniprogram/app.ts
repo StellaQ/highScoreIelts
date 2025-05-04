@@ -1,6 +1,8 @@
 import { simpleSecureStorage } from './utils/simpleSecureStorage';
 import API from './utils/API';
 
+// 只负责应用级别的配置和状态管理
+
 interface UserInfo {
   userId: string;
   nickname: string;
@@ -10,13 +12,14 @@ interface UserInfo {
 
 interface IAppOption {
   globalData: {
-    userInfo?: {
+    userInfo: {
       userId: string;
-      avatarUrl: string;
       nickname: string;
-      inviteCode: string
-    },
-    codeFromInviter?: string
+      avatarUrl: string;
+      inviteCode: string;
+    } | undefined;
+    codeFromInviter?: string;
+    token?: string;
   };
   userInfoReadyCallback?: (userInfo: UserInfo) => void;
   loginAndFetchUserData: () => void;
@@ -28,7 +31,8 @@ interface IAppOption {
 App<IAppOption>({
   globalData: {
     userInfo: undefined,
-    codeFromInviter: undefined
+    codeFromInviter: undefined,
+    token: undefined
   },
 
   async onLaunch(options) {
@@ -61,10 +65,14 @@ App<IAppOption>({
           API.getOpenId(res.code, this.globalData.codeFromInviter)
             .then(async (response: any) => {
               const userInfo = response.data.userInfo;
+              const token = response.data.token;
 
               // 保存到本地存储
               await simpleSecureStorage.setStorage('userInfo', userInfo);
+              await simpleSecureStorage.setStorage('token', token);
+              
               this.globalData.userInfo = userInfo;
+              this.globalData.token = token;
 
               console.log("app.ts api/user/getOpenId 获取并存储用户数据:", userInfo);
 

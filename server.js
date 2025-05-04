@@ -1,10 +1,13 @@
+require('dotenv').config();  
+
 const express = require('express');
 const path = require('path');
 const logger = require('./config/logger');
 const morgan = require('morgan');
 const cors = require('cors');
 
-require('dotenv').config();  
+const authMiddleware = require('./middleware/auth');
+
 const { connectDB } = require('./config/db');
 
 // 获取当前环境 development/debug/test/production
@@ -27,12 +30,16 @@ const app = express();
     app.use('/static', express.static(path.join(__dirname, 'static')));
 
     // 路由模块
-    app.use('/api/user', require('./routes/user'));
+    // 先注册不需要验证的路由
+    const { router: userRouter, getOpenId } = require('./routes/user');
+    app.post('/api/user/getOpenId', getOpenId);
     app.use('/api/index', require('./routes/index'));
-    app.use('/api/basic', require('./routes/basic'));
-    app.use('/api/advanced', require('./routes/advanced'));
-    app.use('/api/expert', require('./routes/expert'));
-    app.use('/api/qiniu', require('./routes/qiniu'));
+    // 再注册需要验证的路由
+    app.use('/api/user', authMiddleware, userRouter);
+    app.use('/api/basic', authMiddleware, require('./routes/basic'));
+    app.use('/api/advanced', authMiddleware, require('./routes/advanced'));
+    app.use('/api/expert', authMiddleware, require('./routes/expert'));
+    app.use('/api/qiniu', authMiddleware, require('./routes/qiniu'));
     // app.use('/api/feedback', require('./routes/feedback'));
 
     // 日志

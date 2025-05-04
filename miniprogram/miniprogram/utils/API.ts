@@ -1,7 +1,7 @@
-import { config } from './config';
+import { BASE_URL } from './config';
+import './request';  // 引入请求配置
 
-export const BASE_URL = config.BASE_URL;
-
+// 负责处理所有请求相关的逻辑
 const API = {
   // index页面决定是否显示题库的更新消息
   checkIfShowUpdate: (): Promise<any> => {
@@ -17,6 +17,31 @@ const API = {
           }
         },
         fail: reject
+      });
+    });
+  },
+  // 上传微信头像临时地址到七牛云
+  uploadAvatarToServer: (filePath: string): Promise<any> => {
+    return new Promise((resolve, reject) => {
+      wx.uploadFile({
+        url: `${BASE_URL}/api/qiniu/uploadAvatar`, 
+        filePath: filePath,
+        name: 'file', // 必须和后台 multer 配置一致
+        success: (uploadRes) => {
+          try {
+            const data = JSON.parse(uploadRes.data);
+            if (data.qiniuUrl) {
+              resolve(data.qiniuUrl);
+            } else {
+              reject('未返回七牛云地址');
+            }
+          } catch (err) {
+            reject('解析上传响应失败');
+          }
+        },
+        fail: (err) => {
+          reject('上传失败: ' + err.errMsg);
+        }
       });
     });
   },

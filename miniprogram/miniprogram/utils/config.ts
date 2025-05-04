@@ -35,4 +35,5 @@ const getEnvConfig = () => {
   }
 };
 
-export const config = getEnvConfig(); 
+export const config = getEnvConfig();
+export const BASE_URL = config.BASE_URL; 
