@@ -485,7 +485,7 @@ router.post('/bind-phone', async (req, res) => {
     if (existingUser && existingUser.userId !== userId) {
       return res.status(400).json({ 
         success: false, 
-        message: '该手机号已被其他用户绑定' 
+        message: '该手机号已被其他用户绑定，请联系客服排查' 
       });
     }
 

@@ -21,7 +21,9 @@ const userSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    default: ''
+    default: '',
+    unique: true,  // 添加唯一性约束
+    sparse: true   // 允许空值，但非空值必须唯一
   },
   points: {
     type: Number,

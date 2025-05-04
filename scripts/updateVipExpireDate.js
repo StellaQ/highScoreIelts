@@ -18,14 +18,24 @@ async function updateVipExpireDate() {
     // 连接数据库
     await connectDB();
 
-    // 查找用户
-    const user = await User.findOne({ phone: phoneNumber });
+    // 查找所有使用该手机号的用户
+    const users = await User.find({ phone: phoneNumber });
     
-    if (!user) {
+    if (users.length === 0) {
       console.log('未找到该手机号绑定的用户');
       return;
     }
 
+    if (users.length > 1) {
+      console.log('警告：发现多个用户绑定了相同的手机号：');
+      users.forEach(user => {
+        console.log(`- 用户ID: ${user.userId}, 昵称: ${user.nickname}, 绑定时间: ${user.updatedAt}`);
+      });
+      console.log('\n请先解决手机号重复绑定的问题，再继续操作。');
+      return;
+    }
+
+    const user = users[0];
     console.log(`找到用户: ${user.userId}, 当前VIP过期时间: ${user.vipExpireDate}`);
 
     // 计算新的VIP过期时间
@@ -49,8 +59,6 @@ async function updateVipExpireDate() {
       { userId: user.userId },
       { vipExpireDate: newExpireDate }
     );
-
-    // console.log('更新结果:', result);
 
     if (result.modifiedCount === 1) {
       console.log(`成功更新用户 ${user.userId} 的VIP过期时间为: ${newExpireDate}`);
