@@ -38,13 +38,18 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  // isVip: {
-  //   type: Boolean,
-  //   default: false // 默认不是 VIP
-  // },
+  vipType: {
+    type: Number,
+    enum: [0, 1, 2], // 0: 非VIP, 1: 季卡, 2: 年卡
+    default: 0
+  },
+  vipBatch: {
+    type: String,
+    default: null // 季卡用户的批次号
+  },
   vipExpireDate: {
     type: Date,
-    default: null // VIP 过期时间
+    default: null // 年卡 VIP 过期时间
   },
   gender: {
     type: Number, // 0: 未知, 1: 男, 2: 女
@@ -84,6 +89,25 @@ const userSchema = new mongoose.Schema({
     default: {} // 存储额外的动态数据
   }
 });
+
+// 添加复合索引，用于快速查询季卡用户
+userSchema.index({ vipType: 1, vipBatch: 1 });
+
+// 添加方法：检查用户是否是有效的季卡用户
+userSchema.methods.isValidSeasonCardUser = function(currentBatch) {
+  return this.vipType === 1 && this.vipBatch === currentBatch;
+};
+
+// 添加方法：检查用户是否是有效的年卡用户
+userSchema.methods.isValidYearCardUser = function() {
+  return this.vipType === 2 && this.vipExpireDate && this.vipExpireDate > new Date();
+};
+
+// 添加方法：检查用户是否是有效的VIP用户
+userSchema.methods.isValidVipUser = function(currentBatch) {
+  return this.isValidSeasonCardUser(currentBatch) || this.isValidYearCardUser();
+};
+
 // 创建并导出模型
 const UserModel = mongoose.model('User', userSchema);
 

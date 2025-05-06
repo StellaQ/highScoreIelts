@@ -181,21 +181,27 @@ router.get('/vip-status', async (req, res) => {
       });
     }
 
-    // 判断用户是否是VIP
     let isVip = false;
-    let vipExpireDate = null;
-    if (user.vipExpireDate) {
-      // 如果设置了过期时间，判断是否过期
-      isVip = new Date(user.vipExpireDate) > new Date();
-      // 转换为本地时间并精确到分钟
-      vipExpireDate = new Date(user.vipExpireDate).toLocaleString('zh-CN', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      }).replace(/\//g, '-');
+    let vipExpireDate = '';
+    
+    // 季卡用户：vipType=1 且当前批次匹配
+    // 年卡用户：vipType=2 且未过期
+    isVip = (user.vipType === 1 && user.vipBatch === config.CURRENT_BATCH) || 
+            (user.vipType === 2 && user.vipExpireDate && new Date(user.vipExpireDate) > new Date());
+    
+    if (isVip) {
+      if (user.vipType === 1) {
+        vipExpireDate = '季卡 ' + config.CURRENT_BATCH_EXPIRE_DATE;
+      } else {
+        vipExpireDate = '年卡 ' + new Date(user.vipExpireDate).toLocaleString('zh-CN', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        }).replace(/\//g, '-');
+      }
     }
 
     res.json({
