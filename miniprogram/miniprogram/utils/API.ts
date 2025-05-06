@@ -1,14 +1,13 @@
 import { BASE_URL } from './config';
-import './request';  // 引入请求配置
 import { simpleSecureStorage } from './simpleSecureStorage';
 
 // 统一的请求函数
 const request = async (options: WechatMiniprogram.RequestOption) => {
-  console.log('==========API.ts 中的 request 被调用');
+  // console.log('==========API.ts 中的 request 被调用');
   
   // 获取 token
   const token = await simpleSecureStorage.getStorage('token');
-  console.log('==========token is:', token);
+  // console.log('==========token is:', token);
   
   // 合并请求头
   const headers = {
@@ -17,8 +16,8 @@ const request = async (options: WechatMiniprogram.RequestOption) => {
     ...options.header
   };
   
-  console.log('==========request url:', options.url);
-  console.log('==========request headers:', headers);
+  // console.log('==========request url:', options.url);
+  // console.log('==========request headers:', headers);
 
   return new Promise((resolve, reject) => {
     wx.request({
@@ -27,7 +26,7 @@ const request = async (options: WechatMiniprogram.RequestOption) => {
       success: (res: any) => {
         // 如果返回401，说明token过期或无效
         if (res.statusCode === 401) {
-          console.log('==========token 已过期，清除缓存并重新登录');
+          // console.log('==========token 已过期，清除缓存并重新登录');
           // 清除本地存储的token和用户信息
           simpleSecureStorage.removeStorage('token');
           simpleSecureStorage.removeStorage('userInfo');
@@ -68,14 +67,12 @@ const API = {
   uploadAvatarToServer: async (filePath: string): Promise<any> => {
     // 获取 token
     const token = await simpleSecureStorage.getStorage('token');
-    console.log('==========uploadAvatarToServer token is:', token);
-    
+    // console.log('==========uploadAvatarToServer token is:', token);
     // 合并请求头
     const headers = {
       ...(token ? { 'Authorization': `Bearer ${token}` } : {})
     };
-    
-    console.log('==========uploadAvatarToServer headers:', headers);
+    // console.log('==========uploadAvatarToServer headers:', headers);
 
     return new Promise((resolve, reject) => {
       wx.uploadFile({
@@ -87,7 +84,7 @@ const API = {
           try {
             // 如果返回401，说明token过期或无效
             if (uploadRes.statusCode === 401) {
-              console.log('==========token 已过期，清除缓存并重新登录');
+              // console.log('==========token 已过期，清除缓存并重新登录');
               // 清除本地存储的token和用户信息
               simpleSecureStorage.removeStorage('token');
               simpleSecureStorage.removeStorage('userInfo');
