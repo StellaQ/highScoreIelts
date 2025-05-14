@@ -189,41 +189,42 @@
     <scroll-view scroll-y class="privacy-content">
       <view class="privacy-section">
         <view class="section-title">1. 信息收集</view>
-        <view class="section-text">我们收集的信息包括但不限于：</view>
+        <view class="section-text">我们仅在提供服务所必需的范围内收集以下信息：</view>
         <view class="section-list">
-          <view class="list-item">• 用户基本信息（昵称、头像等）</view>
-          <view class="list-item">• 练习记录和成绩数据</view>
-          <view class="list-item">• 设备信息和使用日志</view>
+          <view class="list-item">• 用户公开信息：包括 微信昵称、头像、openid（用于识别用户身份）</view>
+          <view class="list-item">• 使用数据：包括用户在本小程序内的 口语作答记录、打卡情况、复习计划与设置</view>
+          <view class="list-item">• 设备相关信息：用于提升系统安全性与功能稳定性（例如崩溃日志）</view>
+          <view class="list-item">• 我们不会收集您的手机号码、身份信息、联系人信息或其它隐私敏感数据。</view>
         </view>
       </view>
       
       <view class="privacy-section">
         <view class="section-title">2. 信息使用</view>
-        <view class="section-text">我们使用收集的信息用于：</view>
+        <view class="section-text">我们收集的信息仅用于以下目的：</view>
         <view class="section-list">
-          <view class="list-item">• 提供和改进服务</view>
-          <view class="list-item">• 个性化学习体验</view>
-          <view class="list-item">• 发送服务通知</view>
+          <view class="list-item">• 提供、维护和优化小程序服务</view>
+          <view class="list-item">• 帮助用户记录学习进度和复习时间，提升学习效果</view>
+          <view class="list-item">• 保障账号安全与内容合规</view>
         </view>
       </view>
       
       <view class="privacy-section">
-        <view class="section-title">3. 信息保护</view>
-        <view class="section-text">我们采取多种安全措施保护您的信息：</view>
+        <view class="section-title">3. 信息存储与保护</view>
+        <view class="section-text">我们采取严格措施保障您的信息安全：</view>
         <view class="section-list">
-          <view class="list-item">• 数据加密存储</view>
-          <view class="list-item">• 访问权限控制</view>
-          <view class="list-item">• 定期安全审计</view>
+          <view class="list-item">• 所有用户数据均进行加密传输与存储</view>
+          <view class="list-item">• 仅限内部授权系统访问，避免数据泄露</view>
+          <view class="list-item">• 定期审查安全机制，防止未经授权的访问和使用</view>
         </view>
       </view>
       
       <view class="privacy-section">
-        <view class="section-title">4. 信息共享</view>
-        <view class="section-text">我们不会将您的信息用于商业目的或与第三方共享，除非：</view>
+        <view class="section-title">4. 信息共享与披露</view>
+        <view class="section-text">我们不会将您的信息用于商业目的或与任何第三方共享，除非出现以下情形：</view>
         <view class="section-list">
-          <view class="list-item">• 获得您的明确同意</view>
-          <view class="list-item">• 法律法规要求</view>
-          <view class="list-item">• 保护我们的合法权益</view>
+          <view class="list-item">• 经您明确同意</view>
+          <view class="list-item">• 根据法律法规或监管要求</view>
+          <view class="list-item">• 为维护本平台合法权益（如防止作弊、盗用等）</view>
         </view>
       </view>
     </scroll-view>
