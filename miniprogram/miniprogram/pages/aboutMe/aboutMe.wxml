@@ -100,14 +100,14 @@
     <!-- 功能列表区域 -->
     <view class="function-section">
       <view class="function-list">
+        <view class="function-item" bindtap="showVipSubscribePopup">
+          <text class="function-icon">👑</text>
+          <button class="function-text btn">会员订阅</button>
+          <text class="arrow">></text>
+        </view>
         <view class="function-item" bindtap="showOfficialAccountPopup">
           <text class="function-icon">📱</text>
           <button class="function-text btn">关注公众号</button>
-          <text class="arrow">></text>
-        </view>
-        <view class="function-item" bindtap="showPhonePopup">
-          <text class="function-icon">📞</text>
-          <button class="function-text btn">绑定手机号码</button>
           <text class="arrow">></text>
         </view>
         <view class="function-item">
@@ -115,11 +115,6 @@
           <button class="function-text btn" open-type="feedback">问题反馈</button>
           <text class="arrow">></text>
         </view>
-        <!-- <view class="function-item" bindtap="navigateToFeedback">
-          <text class="function-icon">✉️</text>
-          <text class="function-text">反馈与建议</text>
-          <text class="arrow">></text>
-        </view> -->
         <view class="function-item" bindtap="showPrivacyPolicy">
           <text class="function-icon">🔒</text>
           <text class="function-text">隐私政策</text>
@@ -143,17 +138,13 @@
     <view class="invite-content">
       <view class="invite-code">
         <text class="code-label">你的邀请码</text>
-        <text class="code-value">{{inviteCode}}</text>
+        <text class="code-value">{{userInfo.inviteCode}}</text>
         <view class="copy-btn" bindtap="copyInviteCode">复制邀请码</view>
       </view>
       <view class="invite-tips">
         <text class="tip-item">• 好友填写您给的邀请码</text>
         <text class="tip-item">• 双方各获得{{configInvitePoints}}积分奖励</text>
         <!-- <text class="tip-item">• 积分可用于解锁更多功能</text> -->
-      </view>
-      <view class="share-tips">
-        <text class="tip-item">• 您也可以选择分享小程序给好友</text>
-        <text class="tip-item">• 好友通过分享链接进入，双方也可获得{{configInvitePoints}}积分奖励</text>
       </view>
     </view>
   </view>
@@ -258,37 +249,49 @@
     </view>
   </view>
 </van-popup>
-
-<!-- 手机号弹窗 -->
+<!-- 会员订阅弹窗 -->
 <van-popup
-  show="{{ showPhonePopup }}"
+  show="{{ showVipSubscribePopup }}"
   position="center"
-  custom-style="width: 80%; max-height: 80vh;"
-  bind:close="closePhonePopup"
+  custom-style="width: 90%; max-height: 90vh;"
+  bind:close="closeVipSubscribePopup"
 >
-  <view class="invite-popup">
-    <view class="invite-title">绑定手机号</view>
-    <view class="invite-content">
-      <view class="phone-input-container">
-        <input 
-          class="phone-input"
-          type="number"
-          maxlength="11"
-          placeholder="请输入手机号"
-          bindinput="onPhoneInput"
-          value="{{phoneNumber}}"
-        />
-        <button 
-          class="get-phone-btn"
-          bindtap="submitPhoneNumber"
-        >{{hasbindedPhone ? '已绑定，修改手机号' : '确认绑定'}}</button>
+  <view class="vip-subscribe-popup">
+    <view class="vip-title">会员订阅</view>
+    <view class="vip-content">
+      <view class="service-description">
+        <view class="desc-title">服务说明</view>
+        <view class="desc-item">• 付费后可在有效期内不限次数使用AI定制您的专属口语答案</view>
       </view>
-      <view class="invite-tips">
-        <text class="tip-item">• 绑定手机号后可以：</text>
-        <text class="tip-item">• 接收重要通知</text>
-        <text class="tip-item">• 找回账号</text>
-        <text class="tip-item">• 参与更多活动</text>
+      
+      <view class="price-description">
+        <view class="desc-title">价格说明</view>
+        <view class="desc-item">• {{vipConfig.seasonName}}：{{vipConfig.seasonPrice}}元/3个月</view>
+        <view class="desc-item">• {{vipConfig.yearlyName}}：{{vipConfig.yearlyPrice}}元/12个月</view>
       </view>
+
+      <view class="refund-description">
+        <view class="desc-title">退款说明</view>
+        <view class="desc-item">• 会员服务为虚拟商品，开通后不支持退款</view>
+      </view>
+
+      <view class="agreement-section">
+        <checkbox-group bindchange="onAgreementChange">
+          <checkbox value="agreed" checked="{{hasAgreed}}">我已阅读并同意以上服务说明</checkbox>
+        </checkbox-group>
+      </view>
+    </view>
+    
+    <view class="vip-buttons {{hasAgreed ? '' : 'disabled'}}">
+      <button class="vip-btn season" bindtap="handleSubscribe" data-type="season" disabled="{{!hasAgreed}}">
+        <view class="btn-title">开通{{vipConfig.seasonName}}</view>
+        <view class="btn-price">¥{{vipConfig.seasonPrice}}</view>
+      </button>
+      <button class="vip-btn yearly" bindtap="handleSubscribe" data-type="yearly" disabled="{{!hasAgreed}}">
+        <view class="btn-title">开通{{vipConfig.yearlyName}}</view>
+        <view class="btn-price">¥{{vipConfig.yearlyPrice}}</view>
+        <view class="btn-tag">推荐</view>
+      </button>
     </view>
   </view>
 </van-popup>

@@ -4,9 +4,13 @@ module.exports = {
     AI_PART1_POINTS: 10, // 有用：调用AI扣分数
     AI_PART2_POINTS: 20, // 有用：调用AI扣分数
     AI_PART3_POINTS: 10, // 有用：调用AI扣分数
+    // 会员订阅价格配置（单位：元）
+    VIP_SEASON_PRICE: 1,  // 季卡价格
+    VIP_YEARLY_PRICE: 198,  // 年卡价格
+    VIP_SEASON_NAME: '季卡',  // 季卡名称
+    VIP_YEARLY_NAME: '年卡',  // 年卡名称
     // 题目批次配置
-    CURRENT_BATCH: 'B0',  // 有用：当前批次，如 B1, B2, B3...
-    CURRENT_BATCH_EXPIRE_DATE: '2025-08-31', // 有用：当前批次过期时间
+    CURRENT_BATCH: 'B0',  // 当前批次，如 B1, B2, B3...
     PREVIOUS_BATCH: '2025Q1',  // 上一批次
     // 题库更新时间
     QUESTION_BANK_UPDATE_DATE: '2025-04-15',

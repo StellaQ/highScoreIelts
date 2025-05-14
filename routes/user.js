@@ -19,6 +19,9 @@ const jwt = require('jsonwebtoken');
 // JWT密钥
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
+const Order = require('../models/OrderModel'); // 引入订单模型
+const wxpay = require('../utils/wxpay'); // 引入微信支付工具
+
 // 导出 getOpenId 处理函数
 const getOpenId = async (req, res) => {
   const { code, codeFromInviter } = req.body;
@@ -184,30 +187,32 @@ router.get('/vip-status', async (req, res) => {
     let isVip = false;
     let vipExpireDate = '';
     
-    // 季卡用户：vipType=1 且当前批次匹配
-    // 年卡用户：vipType=2 且未过期
-    isVip = (user.vipType === 1 && user.vipBatch === config.CURRENT_BATCH) || 
-            (user.vipType === 2 && user.vipExpireDate && new Date(user.vipExpireDate) > new Date());
+    // 季卡用户：vipType=1
+    // 年卡用户：vipType=2
+    isVip = Boolean(user.vipExpireDate) && new Date(user.vipExpireDate) > new Date();
     
     if (isVip) {
-      if (user.vipType === 1) {
-        vipExpireDate = '季卡 ' + config.CURRENT_BATCH_EXPIRE_DATE;
-      } else {
-        vipExpireDate = '年卡 ' + new Date(user.vipExpireDate).toLocaleString('zh-CN', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        }).replace(/\//g, '-');
-      }
+      const cardType = user.vipType === 1 ? config.VIP_SEASON_NAME : config.VIP_YEARLY_NAME;
+      vipExpireDate = cardType + ' ' + new Date(user.vipExpireDate).toLocaleString('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }).replace(/\//g, '-');
     }
 
     res.json({
       success: true,
       isVip,
-      vipExpireDate
+      vipExpireDate,
+      vipConfig: {
+        seasonPrice: config.VIP_SEASON_PRICE,
+        yearlyPrice: config.VIP_YEARLY_PRICE,
+        seasonName: config.VIP_SEASON_NAME,
+        yearlyName: config.VIP_YEARLY_NAME
+      }
     });
   } catch (error) {
     console.error('获取VIP状态失败:', error);
@@ -318,9 +323,7 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
       hasCheckedIn,
       totalTopics,
       streakDays,
-      inviteCode: user.inviteCode,
-      hasUsedInviteCode: user.hasUsedInviteCode,
-      phone: user.phone
+      hasUsedInviteCode: user.hasUsedInviteCode
     });
   } catch (error) {
     console.error('检查签到状态失败:', error);
@@ -465,7 +468,7 @@ router.post('/verifyInviteCode', async (req, res) => {
   }
 });
 
-// 绑定手机号
+// 绑定手机号 不用
 router.post('/bind-phone', async (req, res) => {
   try {
     const { userId, phoneNumber } = req.body;
@@ -518,6 +521,211 @@ router.post('/bind-phone', async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: '服务器错误' 
+    });
+  }
+});
+
+// 创建会员订阅订单
+router.post('/subscribe', async (req, res) => {
+  const { userId, subscribeType } = req.body;
+  // console.log('========== 开始创建会员订阅订单 ==========');
+  // console.log('1. 接收到的参数:', { userId, subscribeType });
+  
+  try {
+    // 1. 验证参数
+    if (!userId || !subscribeType) {
+      // console.log('参数验证失败: 参数不完整');
+      return res.status(400).json({ 
+        code: -1,
+        message: '参数不完整'
+      });
+    }
+    if (!['season', 'yearly'].includes(subscribeType)) {
+      // console.log('参数验证失败: 无效的订阅类型');
+      return res.status(400).json({
+        code: -1,
+        message: '无效的订阅类型'
+      });
+    }
+
+    // 2. 计算订单金额和会员到期时间
+    const amount = subscribeType === 'season' ? config.VIP_SEASON_PRICE : config.VIP_YEARLY_PRICE;
+    const now = new Date();
+    const expireDate = new Date(now);
+    if (subscribeType === 'season') {
+      expireDate.setMonth(now.getMonth() + 3);
+    } else {
+      expireDate.setFullYear(now.getFullYear() + 1);
+    }
+    // console.log('2. 订单信息:', { 
+    //   subscribeType, 
+    //   amount, 
+    //   expireDate: expireDate.toLocaleString('zh-CN') 
+    // });
+
+    // 3. 创建订单记录
+    const order = await Order.create({
+      userId,
+      orderType: 'vip_subscribe',
+      subscribeType,
+      amount,
+      status: 'pending',
+      expireDate
+    });
+    // console.log('3. 创建订单记录成功:', {
+    //   orderId: order._id,
+    //   status: order.status,
+    //   amount: order.amount
+    // });
+
+    // 4. 调用微信支付统一下单接口
+    const trade_no = order._id.toString(); // 商户订单号
+    const cardName = subscribeType === 'season' ? config.VIP_SEASON_NAME : config.VIP_YEARLY_NAME;
+    const body = `AI口语练习${cardName}`; // 商品描述
+    
+    // 获取用户openid
+    const user = await User.findOne({ userId });
+    if (!user || !user.openid) {
+      // console.log('获取用户openid失败:', { userId, userFound: !!user });
+      return res.status(400).json({
+        code: -1,
+        message: '用户openid不存在'
+      });
+    }
+    // console.log('4. 准备调用微信支付:', { 
+    //   trade_no,
+    //   body,
+    //   openid: user.openid.substring(0, 5) + '***' // 只显示部分openid
+    // });
+
+    // 调用微信支付统一下单
+    const result = await wxpay.unifiedOrder({
+      appid: APP_ID,
+      openid: user.openid,
+      mch_id: process.env.WX_MCH_ID,
+      body,
+      out_trade_no: trade_no,
+      total_fee: amount * 100, // 微信支付金额单位是分
+      trade_type: 'JSAPI',
+      notify_url: process.env.WX_PAY_NOTIFY_URL
+    });
+    // console.log('5. 微信支付下单结果:', {
+    //   return_code: result.return_code,
+    //   result_code: result.result_code,
+    //   prepay_id: result.prepay_id,
+    //   err_code_des: result.err_code_des
+    // });
+
+    if (result.return_code !== 'SUCCESS' || result.result_code !== 'SUCCESS') {
+      // console.log('微信支付下单失败:', result);
+      return res.status(500).json({
+        code: -1,
+        message: '微信支付下单失败：' + (result.err_code_des || result.return_msg)
+      });
+    }
+
+    // 6. 生成支付参数
+    const payParams = wxpay.getPayParams({
+      appId: APP_ID,
+      timeStamp: Math.floor(Date.now() / 1000).toString(),
+      nonceStr: result.nonce_str,
+      package: `prepay_id=${result.prepay_id}`,
+      signType: 'MD5'
+    });
+    // console.log('6. 生成支付参数成功');
+    // console.log('========== 订单创建完成 ==========\n');
+
+    res.json({
+      code: 0,
+      data: {
+        payParams,
+        orderId: order._id.toString()
+      }
+    });
+  } catch (err) {
+    console.error('创建订阅订单失败:', err);
+    res.status(500).json({
+      code: -1,
+      message: err.message || '创建订阅订单失败'
+    });
+  }
+});
+
+// 支付成功后立即更新用户状态
+router.post('/pay/success', async (req, res) => {
+  // console.log('========== 收到前端支付成功通知 ==========');
+  try {
+    const { userId, orderId } = req.body;
+    
+    // console.log('1. 接收到的参数:', { userId, orderId });
+
+    // 1. 查找订单
+    const order = await Order.findById(orderId);
+    if (!order) {
+      // console.log('未找到对应订单:', orderId);
+      return res.status(404).json({
+        success: false,
+        message: '订单不存在'
+      });
+    }
+    // console.log('2. 找到订单:', {
+    //   orderId: order._id,
+    //   subscribeType: order.subscribeType,
+    //   amount: order.amount,
+    //   expireDate: order.expireDate
+    // });
+
+    // 2. 更新订单状态（如果还未更新）
+    if (order.status !== 'paid') {
+      await Order.updateOne(
+        { _id: order._id },
+        {
+          status: 'paid',
+          paidAt: new Date()
+        }
+      );
+      // console.log('3. 订单状态更新为已支付');
+    }
+
+    // 3. 更新用户会员状态
+    const vipType = order.subscribeType === 'season' ? 1 : 2;
+    await User.updateOne(
+      { userId: order.userId },
+      {
+        vipType: vipType,
+        vipExpireDate: order.expireDate
+      }
+    );
+    // console.log('4. 用户会员状态更新成功:', {
+    //   userId: order.userId,
+    //   vipType: vipType,
+    //   expireDate: order.expireDate.toLocaleString('zh-CN')
+    // });
+
+    // 4. 返回更新后的VIP状态
+    const cardType = vipType === 1 ? config.VIP_SEASON_NAME : config.VIP_YEARLY_NAME;
+    const vipExpireDate = cardType + ' ' + new Date(order.expireDate).toLocaleString('zh-CN', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    }).replace(/\//g, '-');
+
+    // console.log('5. 返回最新VIP状态');
+    // console.log('========== 前端支付成功处理完成 ==========\n');
+
+    res.json({
+      success: true,
+      isVip: true,
+      vipExpireDate
+    });
+  } catch (error) {
+    console.error('处理支付成功通知失败:', error);
+    res.status(500).json({
+      success: false,
+      message: '服务器错误'
     });
   }
 });

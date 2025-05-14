@@ -45,11 +45,11 @@ const userSchema = new mongoose.Schema({
   },
   vipBatch: {
     type: String,
-    default: null // 季卡用户的批次号
+    default: null 
   },
   vipExpireDate: {
     type: Date,
-    default: null // 年卡 VIP 过期时间
+    default: null // VIP 过期时间
   },
   gender: {
     type: Number, // 0: 未知, 1: 男, 2: 女

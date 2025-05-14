@@ -2,7 +2,7 @@ import { BASE_URL } from './config';
 import { simpleSecureStorage } from './simpleSecureStorage';
 
 // 统一的请求函数
-const request = async (options: WechatMiniprogram.RequestOption) => {
+const request = async <T>(options: WechatMiniprogram.RequestOption): Promise<T> => {
   // console.log('==========API.ts 中的 request 被调用');
   
   // 获取 token
@@ -53,6 +53,22 @@ const request = async (options: WechatMiniprogram.RequestOption) => {
     });
   });
 };
+
+interface VipOrderResponse {
+  code: number;
+  message?: string;
+  data: {
+    payParams: WechatMiniprogram.RequestPaymentOption;
+    orderId: string;
+  };
+}
+
+interface PaymentSuccessResponse {
+  success: boolean;
+  message?: string;
+  isVip: boolean;
+  vipExpireDate: string;
+}
 
 // 负责处理所有请求相关的逻辑
 const API = {
@@ -298,12 +314,28 @@ const API = {
       data: { userId, content, images: images || [] }
     });
   },
-  // 绑定手机号
+  // 绑定手机号 不用
   bindPhoneNumber: (userId: string, phoneNumber: string): Promise<any> => {
     return request({
       url: `${BASE_URL}/api/user/bind-phone`,
       method: 'POST',
       data: { userId, phoneNumber }
+    });
+  },
+  // 创建VIP订单
+  createVipOrder: (userId: string, subscribeType: 'season' | 'yearly'): Promise<VipOrderResponse> => {
+    return request({
+      url: `${BASE_URL}/api/user/subscribe`,
+      method: 'POST',
+      data: { userId, subscribeType }
+    });
+  },
+  // 支付成功后更新状态
+  updatePaymentSuccess: (userId: string, orderId: string): Promise<PaymentSuccessResponse> => {
+    return request({
+      url: `${BASE_URL}/api/user/pay/success`,
+      method: 'POST',
+      data: { userId, orderId }
     });
   }
 };
