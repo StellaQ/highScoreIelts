@@ -181,7 +181,7 @@
 <van-popup
   show="{{ showPrivacyPopup }}"
   position="center"
-  custom-style="width: 80%; max-height: 80vh;"
+  custom-style="width: 90%; max-height: 80vh;"
   bind:close="closePrivacyPopup"
 >
   <view class="privacy-popup">
@@ -262,7 +262,9 @@
     <view class="vip-content">
       <view class="service-description">
         <view class="desc-title">服务说明</view>
-        <view class="desc-item">• 付费后可在有效期内不限次数使用AI定制您的专属口语答案</view>
+        <view class="desc-item">• 成为会员后，您可在订阅有效期内<span style="color: #ff4d4f;">不限次数</span>使用AI定制专属口语答案</view>
+        <view class="desc-item">• 您的支持将帮助我们持续优化题库内容、提升AI回答质量，保障系统稳定运行</view>
+        <view class="desc-item">• 会员权益即时生效，有效期内全功能畅享</view>
       </view>
       
       <view class="price-description">
@@ -273,7 +275,7 @@
 
       <view class="refund-description">
         <view class="desc-title">退款说明</view>
-        <view class="desc-item">• 会员服务为虚拟商品，开通后不支持退款</view>
+        <view class="desc-item">• 会员服务属于虚拟内容服务，开通后即刻生效，<span style="color: #ff4d4f;">不支持退款</span></view>
       </view>
 
       <view class="agreement-section">
