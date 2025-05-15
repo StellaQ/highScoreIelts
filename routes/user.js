@@ -550,23 +550,54 @@ router.post('/subscribe', async (req, res) => {
 
     // 2. 计算订单金额和会员到期时间
     const amount = subscribeType === 'season' ? config.VIP_SEASON_PRICE : config.VIP_YEARLY_PRICE;
-    const now = new Date();
-    const expireDate = new Date(now);
-    if (subscribeType === 'season') {
-      expireDate.setMonth(now.getMonth() + 3);
-    } else {
-      expireDate.setFullYear(now.getFullYear() + 1);
+    
+    // 获取用户当前的会员状态
+    const user = await User.findOne({ userId });
+    if (!user) {
+      console.log('用户不存在:', userId);
+      return res.status(404).json({
+        code: -1,
+        message: '用户不存在'
+      });
     }
-    // console.log('2. 订单信息:', { 
+
+    // 计算新的到期时间和确定订单类型
+    const now = new Date();
+    let expireDate;
+    let orderType;
+
+    // 判断用户的会员状态，确定订单类型
+    if (!user.vipExpireDate) {
+      // console.log('用户首次订阅会员');
+      orderType = 'vip_first_subscribe';
+      expireDate = new Date(now);
+    } else if (new Date(user.vipExpireDate) > now) {
+      // console.log('用户在有效期内续费');
+      orderType = 'vip_renewal_active';
+      expireDate = new Date(user.vipExpireDate);
+    } else {
+      // console.log('用户已过期续费');
+      orderType = 'vip_renewal_expired';
+      expireDate = new Date(now);
+    }
+    // 根据订阅类型延长时间
+    if (subscribeType === 'season') {
+      expireDate.setMonth(expireDate.getMonth() + 3);
+    } else {
+      expireDate.setFullYear(expireDate.getFullYear() + 1);
+    }
+    
+    // console.log('订阅信息:', { 
     //   subscribeType, 
     //   amount, 
-    //   expireDate: expireDate.toLocaleString('zh-CN') 
+    //   currentExpireDate: user.vipExpireDate,
+    //   newExpireDate: expireDate.toLocaleString('zh-CN') 
     // });
 
     // 3. 创建订单记录
     const order = await Order.create({
       userId,
-      orderType: 'vip_subscribe',
+      orderType,
       subscribeType,
       amount,
       status: 'pending',
@@ -584,8 +615,8 @@ router.post('/subscribe', async (req, res) => {
     const body = `AI口语练习${cardName}`; // 商品描述
     
     // 获取用户openid
-    const user = await User.findOne({ userId });
-    if (!user || !user.openid) {
+    const userOpenid = user.openid;
+    if (!userOpenid) {
       // console.log('获取用户openid失败:', { userId, userFound: !!user });
       return res.status(400).json({
         code: -1,
@@ -601,7 +632,7 @@ router.post('/subscribe', async (req, res) => {
     // 调用微信支付统一下单
     const result = await wxpay.unifiedOrder({
       appid: APP_ID,
-      openid: user.openid,
+      openid: userOpenid,
       mch_id: process.env.WX_MCH_ID,
       body,
       out_trade_no: trade_no,

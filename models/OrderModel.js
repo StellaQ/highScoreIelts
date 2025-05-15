@@ -10,7 +10,7 @@ const OrderSchema = new Schema({
   orderType: { 
     type: String, 
     required: true,
-    enum: ['vip_subscribe']
+    enum: ['vip_first_subscribe', 'vip_renewal_active', 'vip_renewal_expired']
   },
   subscribeType: { 
     type: String,

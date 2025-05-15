@@ -262,7 +262,7 @@
     <view class="vip-content">
       <view class="service-description">
         <view class="desc-title">服务说明</view>
-        <view class="desc-item">• 成为会员后，您可在订阅有效期内<span style="color: #ff4d4f;">不限次数</span>使用AI定制专属口语答案</view>
+        <view class="desc-item">• 订阅成为会员后，您可在订阅有效期内<span style="color: #ff4d4f;">不限次数</span>使用AI定制专属口语答案</view>
         <view class="desc-item">• 您的支持将帮助我们持续优化题库内容、提升AI回答质量，保障系统稳定运行</view>
         <view class="desc-item">• 会员权益即时生效，有效期内全功能畅享</view>
       </view>
@@ -287,11 +287,11 @@
     
     <view class="vip-buttons {{hasAgreed ? '' : 'disabled'}}">
       <button class="vip-btn season" bindtap="handleSubscribe" data-type="season" disabled="{{!hasAgreed}}">
-        <view class="btn-title">开通{{vipConfig.seasonName}}</view>
+        <view class="btn-title">{{isVip ? '续费' : '开通'}}{{vipConfig.seasonName}}</view>
         <view class="btn-price">¥{{vipConfig.seasonPrice}}</view>
       </button>
       <button class="vip-btn yearly" bindtap="handleSubscribe" data-type="yearly" disabled="{{!hasAgreed}}">
-        <view class="btn-title">开通{{vipConfig.yearlyName}}</view>
+        <view class="btn-title">{{isVip ? '续费' : '开通'}}{{vipConfig.yearlyName}}</view>
         <view class="btn-price">¥{{vipConfig.yearlyPrice}}</view>
         <view class="btn-tag">推荐</view>
       </button>
