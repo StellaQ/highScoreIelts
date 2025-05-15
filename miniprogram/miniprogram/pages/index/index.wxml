@@ -71,3 +71,17 @@
   </view>
   <tab-bar active="0"></tab-bar>
 </view>
+
+<!-- 目标分提醒蒙版 -->
+<view class="target-score-mask" wx:if="{{showTargetScoreReminder}}">
+  <view class="reminder-card">
+    <view class="reminder-title">设置目标分 🎯</view>
+    <view class="reminder-desc">为了给您提供更好的练习体验，建议先去【我的】页面设置口语目标分哦～</view>
+    <view class="reminder-checkbox">
+      <checkbox-group bindchange="onCheckboxChange">
+        <checkbox value="dontRemind">不再提醒</checkbox>
+      </checkbox-group>
+    </view>
+    <button class="reminder-btn" bindtap="handleReminderConfirm">知道了</button>
+  </view>
+</view>

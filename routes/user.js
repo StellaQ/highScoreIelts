@@ -262,17 +262,22 @@ router.post('/updatePoints', async (req, res) => {
     });
   }
 });
-// 检查今日最新数据
-router.get('/getLatestStatus/:userId', async (req, res) => {
+// 获取用户最新状态
+router.get('/getLatestStatus', async (req, res) => {
   try {
-    const { userId } = req.params;
-    const today = new Date().toISOString().split('T')[0];
+    const { userId } = req.query;
     
+    if (!userId) {
+      return res.status(400).json({ message: '缺少必要参数' });
+    }
+
     const user = await User.findOne({ userId });
     if (!user) {
       return res.status(404).json({ message: '用户不存在' });
     }
 
+    const today = new Date().toISOString().split('T')[0];
+    
     const hasCheckedIn = user.signInDates.includes(today);
     
     // 计算连续签到天数
@@ -759,7 +764,7 @@ router.post('/pay/success', async (req, res) => {
   }
 });
 
-// 更新用户目标分
+// aboutMe更新用户目标分
 router.post('/update-target-score', async (req, res) => {
   try {
     const { userId, targetScore } = req.body;
@@ -791,6 +796,69 @@ router.post('/update-target-score', async (req, res) => {
     });
   } catch (error) {
     console.error('更新目标分失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
+    });
+  }
+});
+
+// index更新目标分提醒状态
+router.post('/update-target-score-reminded', async (req, res) => {
+  try {
+    const userId = req.body.userId;
+
+    // 更新提醒状态
+    await User.updateOne(
+      { userId },
+      { hasTargetScoreReminded: true }
+    );
+
+    res.json({
+      success: true,
+      message: '提醒状态更新成功'
+    });
+  } catch (error) {
+    console.error('更新提醒状态失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
+    });
+  }
+});
+
+// 查询目标分提醒状态
+router.get('/check-target-score-reminded', async (req, res) => {
+  try {
+    const { userId } = req.query;
+    
+    if (!userId) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '缺少必要参数' 
+      });
+    }
+
+    const user = await User.findOne(
+      { userId }, 
+      { hasTargetScoreReminded: 1 }  // 只查询这个字段
+    );
+
+    if (!user) {
+      return res.status(404).json({ 
+        success: false, 
+        message: '用户不存在' 
+      });
+    }
+
+    res.json({
+      success: true,
+      data: {
+        hasTargetScoreReminded: user.hasTargetScoreReminded || false
+      }
+    });
+  } catch (error) {
+    console.error('查询提醒状态失败:', error);
     res.status(500).json({ 
       success: false, 
       message: '服务器错误' 

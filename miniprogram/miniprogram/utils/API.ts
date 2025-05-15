@@ -1,6 +1,18 @@
 import { BASE_URL } from './config';
 import { simpleSecureStorage } from './simpleSecureStorage';
 
+// GET 请求：
+// 使用 req.query 获取参数
+// 前端通过 data 参数传递
+// 例如：getLatestStatus、check-target-score-reminded
+// POST 请求：
+// 使用 req.body 获取参数
+// 前端通过 data 参数传递
+// 例如：update-target-score、update-target-score-reminded
+// 这样的统一原则更加清晰和一致：
+// GET 请求用于查询操作，参数通过 query string 传递
+// POST 请求用于更新操作，参数通过 request body 传递
+
 // 统一的请求函数
 const request = async <T>(options: WechatMiniprogram.RequestOption): Promise<T> => {
   // console.log('==========API.ts 中的 request 被调用');
@@ -54,27 +66,6 @@ const request = async <T>(options: WechatMiniprogram.RequestOption): Promise<T> 
   });
 };
 
-interface VipOrderResponse {
-  code: number;
-  message?: string;
-  data: {
-    payParams: WechatMiniprogram.RequestPaymentOption;
-    orderId: string;
-  };
-}
-
-interface PaymentSuccessResponse {
-  success: boolean;
-  message?: string;
-  isVip: boolean;
-  vipExpireDate: string;
-}
-
-interface TargetScoreResponse {
-  success: boolean;
-  message?: string;
-}
-
 // 负责处理所有请求相关的逻辑
 const API = {
   // index页面决定是否显示题库的更新消息
@@ -82,6 +73,22 @@ const API = {
     return request({
       url: `${BASE_URL}/api/index/checkUpdate`,
       method: 'GET'
+    });
+  },
+  // index查询目标分提醒状态
+  checkTargetScoreReminded: (userId: string): Promise<any> => {
+    return request({
+      url: `${BASE_URL}/api/user/check-target-score-reminded`,
+      method: 'GET',
+      data: { userId }
+    });
+  },
+  // index更新目标分提醒状态
+  updateTargetScoreReminded: (userId: string): Promise<any> => {
+    return request({
+      url: `${BASE_URL}/api/user/update-target-score-reminded`,
+      method: 'POST',
+      data: { userId }
     });
   },
   // 上传微信头像临时地址到七牛云
@@ -296,11 +303,12 @@ const API = {
       method: 'GET'
     });
   },
-  // aboutMe 今日最新数据 doing
+  // 获取用户最新状态
   getLatestStatus: (userId: string): Promise<any> => {
     return request({
-      url: `${BASE_URL}/api/user/getLatestStatus/${userId}`,
-      method: 'GET'
+      url: `${BASE_URL}/api/user/getLatestStatus`,
+      method: 'GET',
+      data: { userId }
     });
   },
   // aboutMe 验证邀请码
@@ -311,24 +319,16 @@ const API = {
       data: { userId, inviteCode }
     });
   },
-  // feedback 上传反馈 忽略
-  uploadFeedback: (userId: string, content: string, images?: string[]): Promise<any> => {
+  // aboutMe更新目标分
+  updateTargetScore: (userId: string, targetScore: number): Promise<any> => {
     return request({
-      url: `${BASE_URL}/api/feedback/upload`,
+      url: `${BASE_URL}/api/user/update-target-score`,
       method: 'POST',
-      data: { userId, content, images: images || [] }
-    });
-  },
-  // 绑定手机号 不用
-  bindPhoneNumber: (userId: string, phoneNumber: string): Promise<any> => {
-    return request({
-      url: `${BASE_URL}/api/user/bind-phone`,
-      method: 'POST',
-      data: { userId, phoneNumber }
+      data: { userId, targetScore }
     });
   },
   // 创建VIP订单
-  createVipOrder: (userId: string, subscribeType: 'season' | 'yearly'): Promise<VipOrderResponse> => {
+  createVipOrder: (userId: string, subscribeType: 'season' | 'yearly'): Promise<any> => {
     return request({
       url: `${BASE_URL}/api/user/subscribe`,
       method: 'POST',
@@ -336,19 +336,11 @@ const API = {
     });
   },
   // 支付成功后更新状态
-  updatePaymentSuccess: (userId: string, orderId: string): Promise<PaymentSuccessResponse> => {
+  updatePaymentSuccess: (userId: string, orderId: string): Promise<any> => {
     return request({
       url: `${BASE_URL}/api/user/pay/success`,
       method: 'POST',
       data: { userId, orderId }
-    });
-  },
-  // 更新目标分
-  updateTargetScore: (userId: string, targetScore: number): Promise<TargetScoreResponse> => {
-    return request({
-      url: `${BASE_URL}/api/user/update-target-score`,
-      method: 'POST',
-      data: { userId, targetScore }
     });
   }
 };

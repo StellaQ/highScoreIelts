@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema({
     min: 6,       // 最小6分
     max: 9        // 最大9分
   },
+  hasTargetScoreReminded: {
+    type: Boolean,
+    default: false
+  },
   signInDates: { type: [String], default: [] }, // 存储签到日期数组
   inviteCode: {
     type: String,
