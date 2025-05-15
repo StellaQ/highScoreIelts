@@ -1,5 +1,5 @@
 const User = require('../models/UserModel');
-const { CURRENT_BATCH } = require('../config/configForMiniProgram');
+const { isValidVip } = require('../utils/vipUtils');
 
 // 检查并扣除积分
 const checkAndDeductPoints = async (userId, requiredPoints) => {
@@ -13,20 +13,19 @@ const checkAndDeductPoints = async (userId, requiredPoints) => {
     }
 
     // 检查用户是否是VIP
-    const isSeasonCardVip = user.vipType === 1 && user.vipBatch === CURRENT_BATCH;
-    const isYearCardVip = user.vipType === 2 && user.vipExpireDate && new Date(user.vipExpireDate) > new Date();
+    const isVip = isValidVip(user.vipExpireDate);
     
-    if (isSeasonCardVip || isYearCardVip) {
+    if (isVip) {
       return {
         success: true,
-        message: isSeasonCardVip ? '季卡VIP用户无需扣除积分' : '年卡VIP用户无需扣除积分'
+        message: '会员有效期内无限调用AI'
       };
     }
 
     if (user.points < requiredPoints) {
       throw { 
         code: 400,
-        message: '积分不足，请前往公众号查看获取方式'
+        message: '积分不足呢...'
       };
     }
 
@@ -46,4 +45,6 @@ const checkAndDeductPoints = async (userId, requiredPoints) => {
   }
 };
 
-module.exports = { checkAndDeductPoints };
+module.exports = {
+  checkAndDeductPoints
+};

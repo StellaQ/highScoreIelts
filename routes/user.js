@@ -21,6 +21,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 const Order = require('../models/OrderModel'); // 引入订单模型
 const wxpay = require('../utils/wxpay'); // 引入微信支付工具
+const { isValidVip } = require('../utils/vipUtils');
 
 // 导出 getOpenId 处理函数
 const getOpenId = async (req, res) => {
@@ -184,12 +185,8 @@ router.get('/vip-status', async (req, res) => {
       });
     }
 
-    let isVip = false;
+    const isVip = isValidVip(user.vipExpireDate);
     let vipExpireDate = '';
-    
-    // 季卡用户：vipType=1
-    // 年卡用户：vipType=2
-    isVip = Boolean(user.vipExpireDate) && new Date(user.vipExpireDate) > new Date();
     
     if (isVip) {
       const cardType = user.vipType === 1 ? config.VIP_SEASON_NAME : config.VIP_YEARLY_NAME;

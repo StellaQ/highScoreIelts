@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { isValidVip } = require('../utils/vipUtils');
 
 const userSchema = new mongoose.Schema({
   openid: {
@@ -90,22 +91,9 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-// 添加复合索引，用于快速查询季卡用户
-userSchema.index({ vipType: 1, vipBatch: 1 });
-
-// 添加方法：检查用户是否是有效的季卡用户
-userSchema.methods.isValidSeasonCardUser = function(currentBatch) {
-  return this.vipType === 1 && this.vipBatch === currentBatch;
-};
-
-// 添加方法：检查用户是否是有效的年卡用户
-userSchema.methods.isValidYearCardUser = function() {
-  return this.vipType === 2 && this.vipExpireDate && this.vipExpireDate > new Date();
-};
-
 // 添加方法：检查用户是否是有效的VIP用户
-userSchema.methods.isValidVipUser = function(currentBatch) {
-  return this.isValidSeasonCardUser(currentBatch) || this.isValidYearCardUser();
+userSchema.methods.isValidVipUser = function() {
+  return isValidVip(this.vipExpireDate);
 };
 
 // 创建并导出模型
