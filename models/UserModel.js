@@ -30,6 +30,12 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  targetScore: {  // 添加目标分字段
+    type: Number,
+    default: 6,   // 默认6分
+    min: 6,       // 最小6分
+    max: 9        // 最大9分
+  },
   signInDates: { type: [String], default: [] }, // 存储签到日期数组
   inviteCode: {
     type: String,

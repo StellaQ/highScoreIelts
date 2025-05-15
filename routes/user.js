@@ -320,7 +320,8 @@ router.get('/getLatestStatus/:userId', async (req, res) => {
       hasCheckedIn,
       totalTopics,
       streakDays,
-      hasUsedInviteCode: user.hasUsedInviteCode
+      hasUsedInviteCode: user.hasUsedInviteCode,
+      targetScore: user.targetScore || 6  // 添加目标分字段，如果不存在则默认为6
     });
   } catch (error) {
     console.error('检查签到状态失败:', error);
@@ -754,6 +755,45 @@ router.post('/pay/success', async (req, res) => {
     res.status(500).json({
       success: false,
       message: '服务器错误'
+    });
+  }
+});
+
+// 更新用户目标分
+router.post('/update-target-score', async (req, res) => {
+  try {
+    const { userId, targetScore } = req.body;
+    
+    if (!userId || targetScore === undefined) {
+      return res.status(400).json({ 
+        success: false, 
+        message: '缺少必要参数' 
+      });
+    }
+
+    // 验证分数范围
+    if (targetScore < 6 || targetScore > 9 || targetScore % 0.5 !== 0) {
+      return res.status(400).json({
+        success: false,
+        message: '无效的目标分数'
+      });
+    }
+
+    // 更新用户目标分
+    await User.updateOne(
+      { userId },
+      { targetScore }
+    );
+
+    res.json({
+      success: true,
+      message: '目标分更新成功'
+    });
+  } catch (error) {
+    console.error('更新目标分失败:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: '服务器错误' 
     });
   }
 });

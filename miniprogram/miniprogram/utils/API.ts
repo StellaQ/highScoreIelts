@@ -70,6 +70,11 @@ interface PaymentSuccessResponse {
   vipExpireDate: string;
 }
 
+interface TargetScoreResponse {
+  success: boolean;
+  message?: string;
+}
+
 // 负责处理所有请求相关的逻辑
 const API = {
   // index页面决定是否显示题库的更新消息
@@ -336,6 +341,14 @@ const API = {
       url: `${BASE_URL}/api/user/pay/success`,
       method: 'POST',
       data: { userId, orderId }
+    });
+  },
+  // 更新目标分
+  updateTargetScore: (userId: string, targetScore: number): Promise<TargetScoreResponse> => {
+    return request({
+      url: `${BASE_URL}/api/user/update-target-score`,
+      method: 'POST',
+      data: { userId, targetScore }
     });
   }
 };

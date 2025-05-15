@@ -33,7 +33,7 @@ Page({
     inputInviteCode: '',
     hasUsedInviteCode: false,   // 用户已经使用了邀请码 API.getLatestStatus
 
-    streakDays: 0,          // 连续训练 天数 API.getLatestStatus
+    streakDays: 0,          // 连续训练 天数 API.getLatestStatus 不用
 
     showInvitePopup: false,   // 弹窗：邀请好友
     showInviteCodeInputPopup: false,  // 弹窗：填写收到的邀请码
@@ -44,7 +44,10 @@ Page({
     showPrivacyPopup: false,  // 弹窗：隐私政策
     showOfficialAccountPopup: false,  // 弹窗：公众号二维码
     qrcodeUrl: 'https://img.xiaoshuspeaking.site/official.jpg', // 公众号二维码图片URL
-    hasAgreed: false // 会员订阅同意付款协议
+    hasAgreed: false, // 会员订阅同意付款协议
+
+    targetScore: 6,  // 默认目标分数
+    showTargetScoreHelp: false,  // 目标分说明弹窗显示状态
   },
   async onLoad() {
     this.getUserInfoFromAppTs();
@@ -82,7 +85,8 @@ Page({
       
       // 4. 更新通用数据
       this.setData({
-        totalTopics: statusRes.totalTopics
+        totalTopics: statusRes.totalTopics,
+        targetScore: statusRes.targetScore || 6  // 添加目标分的获取
       });
 
       // 5. 如果不是VIP，更新积分相关数据
@@ -418,5 +422,51 @@ Page({
     this.setData({
       showOfficialAccountPopup: false
     });
-  }
+  },
+  // 显示目标分说明
+  showTargetScoreHelp() {
+    this.setData({
+      showTargetScoreHelp: true
+    });
+  },
+  // 关闭目标分说明
+  closeTargetScoreHelp() {
+    this.setData({
+      showTargetScoreHelp: false
+    });
+  },
+  // 减少目标分
+  decreaseScore() {
+    const currentScore = this.data.targetScore;
+    if (currentScore > 6) {
+      const newScore = Math.round((currentScore - 0.5) * 10) / 10;
+      this.setData({
+        targetScore: newScore
+      });
+      this.updateTargetScore(newScore);
+    }
+  },
+  // 增加目标分
+  increaseScore() {
+    const currentScore = this.data.targetScore;
+    if (currentScore < 9) {
+      const newScore = Math.round((currentScore + 0.5) * 10) / 10;
+      this.setData({
+        targetScore: newScore
+      });
+      this.updateTargetScore(newScore);
+    }
+  },
+  // 更新目标分到后端
+  async updateTargetScore(score: number) {
+    try {
+      await API.updateTargetScore(this.data.userInfo.userId, score);
+    } catch (error) {
+      console.error('更新目标分失败:', error);
+      // wx.showToast({
+      //   title: '更新失败',
+      //   icon: 'error'
+      // });
+    }
+  },
 }); 

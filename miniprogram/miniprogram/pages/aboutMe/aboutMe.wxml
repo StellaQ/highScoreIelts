@@ -73,27 +73,32 @@
     <view class="stats-section">
       <view class="section-title">📊 训练统计</view>
       <view class="stats-grid">
+        <!-- 目标分设置卡片 -->
+        <view class="stat-card target-score-card">
+          <view class="stat-header">
+            <text class="stat-icon">🎯</text>
+            <text class="stat-label">目标分数</text>
+            <view class="help-icon" bindtap="showTargetScoreHelp">?</view>
+          </view>
+          <view class="score-selector">
+            <view class="score-btn {{targetScore <= 6 ? 'disabled' : ''}}" bindtap="decreaseScore">-</view>
+            <text class="stat-value">{{targetScore}}</text>
+            <view class="score-btn {{targetScore >= 9 ? 'disabled' : ''}}" bindtap="increaseScore">+</view>
+          </view>
+        </view>
+        
         <view class="stat-card">
           <text class="stat-icon">🎤</text>
           <text class="stat-label">完成话题</text>
           <text class="stat-value">{{totalTopics}} 个</text>
         </view>
-        <!-- <view class="stat-card">
-          <text class="stat-icon">📅</text>
-          <text class="stat-label">最近练习</text>
-          <text class="stat-value">{{lastPractice}}</text>
-        </view> -->
-        <!-- <view class="stat-card">
-          <text class="stat-icon">🎯</text>
-          <text class="stat-label">AI模拟考</text>
-          <text class="stat-value">{{aiScore}} 分</text>
-        </view> -->
-        <view class="stat-card"
+        
+        <!-- <view class="stat-card"
           wx:if="{{!isVip}}">
           <text class="stat-icon">🔥</text>
           <text class="stat-label">连续签到</text>
           <text class="stat-value">{{streakDays}} 天</text>
-        </view>
+        </view> -->
       </view>
     </view>
 
@@ -295,6 +300,24 @@
         <view class="btn-price">¥{{vipConfig.yearlyPrice}}</view>
         <view class="btn-tag">推荐</view>
       </button>
+    </view>
+  </view>
+</van-popup>
+
+<!-- 目标分说明弹窗 -->
+<van-popup
+  show="{{ showTargetScoreHelp }}"
+  position="center"
+  custom-style="width: 80%; max-height: 80vh;"
+  bind:close="closeTargetScoreHelp"
+>
+  <view class="target-score-popup">
+    <view class="popup-title">设置目标分说明</view>
+    <view class="popup-content">
+      <view class="content-item">• 建议在当前水平基础上提高0.5-1分</view>
+      <view class="content-item">• AI会根据您设定的目标分数调整答案难度和表达</view>
+      <view class="content-item">• 如果您是初学者或未参加过考试，建议从6分开始</view>
+      <view class="content-item">• 随着练习进步，可以逐步提高目标分数</view>
     </view>
   </view>
 </van-popup>

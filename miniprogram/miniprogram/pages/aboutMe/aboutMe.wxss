@@ -985,3 +985,74 @@
   padding: 4rpx 12rpx;
   border-radius: 12rpx;
 }
+
+/* 目标分设置卡片样式 */
+.target-score-card {
+  position: relative;
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.help-icon {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #666;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.score-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.score-btn {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.score-btn.disabled {
+  background-color: #e0e0e0;
+  color: #999;
+}
+
+/* 目标分说明弹窗样式 */
+.target-score-popup {
+  padding: 24px;
+}
+
+.target-score-popup .popup-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.target-score-popup .popup-content {
+  color: #666;
+}
+
+.target-score-popup .content-item {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 14px;
+}
