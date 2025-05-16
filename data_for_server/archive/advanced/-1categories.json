@@ -1,322 +1,110 @@
 {
-    "mixed_categories": [
-      {
-        "categoryName": "People",
-        "categoryId": "p2_c1",
-        "categoryName_cn": "人物类",
-        "topicCollection": [
-          {
-            "topicName": "someone in your life who is particularly talkative",
-            "topicName_cn": "你生活中特别健谈的人",
-            "topicId": "Advanced_2025Q1_t1"
-          },
-          {
-            "topicName": "an effective team player you're acquainted with",
-            "topicName_cn": "你认识的高效团队合作者",
-            "topicId": "Advanced_2025Q1_t2"
-          },
-          {
-            "topicName": "someone with exceptional hospitality skills",
-            "topicName_cn": "拥有卓越待客之道的人",
-            "topicId": "Advanced_2025Q1_t3"
-          },
-          {
-            "topicName": "a memorable discussion with an elderly individual",
-            "topicName_cn": "与年长者的一次难忘对话",
-            "topicId": "Advanced_2025Q1_t4"
-          },
-          {
-            "topicName": "a fascinating individual you'd like to meet",
-            "topicName_cn": "你想结识的一位有趣人物",
-            "topicId": "Advanced_2025Q1_t5"
-          },
-          {
-            "topicName": "an individual known for their thought-provoking perspectives",
-            "topicName_cn": "以发人深省观点著称的人",
-            "topicId": "Advanced_2025Q1_t6"
-          },
-          {
-            "topicName": "a former classmate who has achieved significant success",
-            "topicName_cn": "一位取得重大成就的前同学",
-            "topicId": "Advanced_2025Q1_t7"
-          },
-          {
-            "topicName": "an entrepreneur you're familiar with who has built a thriving enterprise",
-            "topicName_cn": "你熟悉的一位成功企业家",
-            "topicId": "Advanced_2025Q1_t8"
-          },
-          {
-            "topicName": "someone who finds joy in preparing meals for people",
-            "topicName_cn": "一位以烹饪为乐的人",
-            "topicId": "Advanced_2025Q1_t9"
-          },
-          {
-            "topicName": "a non-native speaker with exceptional Chinese language skills",
-            "topicName_cn": "一位中文水平出色的非母语者",
-            "topicId": "Advanced_2025Q1_t10"
-          },
-          {
-            "topicName": "an accomplished athlete you look up to",
-            "topicName_cn": "你敬佩的一位成功运动员",
-            "topicId": "Advanced_2025Q1_t11"
-          }
-        ]
-      },
-      {
-        "categoryName": "Objects",
-        "categoryId": "p2_c2",
-        "categoryName_cn": "物品类",
-        "topicCollection": [
-          {
-            "topicName": "a fascinating possession you desire to own",
-            "topicName_cn": "一件你想拥有的迷人物品",
-            "topicId": "Advanced_2025Q1_t39"
-          },
-          {
-            "topicName": "a photograph you treasure that brings you joy",
-            "topicName_cn": "一张让你开心的珍藏照片",
-            "topicId": "Advanced_2025Q1_t42"
-          },
-          {
-            "topicName": "a piece of visual art you appreciate",
-            "topicName_cn": "一幅你欣赏的视觉艺术作品",
-            "topicId": "Advanced_2025Q1_t43"
-          },
-          {
-            "topicName": "an essential household item you depend on",
-            "topicName_cn": "你离不开的重要家居物品",
-            "topicId": "Advanced_2025Q1_t49"
-          }
-        ]
-      },
-      {
-        "categoryName": "Places",
-        "categoryId": "p2_c3",
-        "categoryName_cn": "地点类",
-        "topicCollection": [
-          {
-            "topicName": "a memorable visit to an open-air market",
-            "topicName_cn": "一次难忘的露天市场之旅",
-            "topicId": "Advanced_2025Q1_t17"
-          },
-          {
-            "topicName": "a memorable visit to a green space",
-            "topicName_cn": "一次难忘的绿地游览经历",
-            "topicId": "Advanced_2025Q1_t26"
-          },
-          {
-            "topicName": "a destination you prefer for unwinding",
-            "topicName_cn": "一个你喜欢的放松去处",
-            "topicId": "Advanced_2025Q1_t44"
-          },
-          {
-            "topicName": "the most fascinating region in your nation",
-            "topicName_cn": "你国家最有趣的地区",
-            "topicId": "Advanced_2025Q1_t45"
-          },
-          {
-            "topicName": "an urban area you consider particularly attractive",
-            "topicName_cn": "你认为特别美丽的城市",
-            "topicId": "Advanced_2025Q1_t46"
-          },
-          {
-            "topicName": "a recently built public amenity that enhanced a familiar location",
-            "topicName_cn": "一个改善了你熟悉区域的近期建成的公共设施",
-            "topicId": "Advanced_2025Q1_t50"
-          }
-        ]
-      },
-      {
-        "categoryName": "Events & Experiences",
-        "categoryId": "p2_c4",
-        "categoryName_cn": "事件与经历类",
-        "topicCollection": [
-          {
-            "topicName": "a significant trip that experienced unexpected postponement",
-            "topicName_cn": "一次遭遇意外延误的重要旅程",
-            "topicId": "Advanced_2025Q1_t14"
-          },
-          {
-            "topicName": "a distinctive vacation experience",
-            "topicName_cn": "一次与众不同的度假经历",
-            "topicId": "Advanced_2025Q1_t15"
-          },
-          {
-            "topicName": "a positive life-changing event",
-            "topicName_cn": "一次改变人生的积极事件",
-            "topicId": "Advanced_2025Q1_t20"
-          },
-          {
-            "topicName": "an experience of exhaustion following physical exertion",
-            "topicName_cn": "一次体力活动后的疲惫体验",
-            "topicId": "Advanced_2025Q1_t21"
-          },
-          {
-            "topicName": "a challenging accomplishment that filled you with pride",
-            "topicName_cn": "一项令你自豪的挑战性成就",
-            "topicId": "Advanced_2025Q1_t22"
-          },
-          {
-            "topicName": "a time-sensitive task you needed to complete urgently",
-            "topicName_cn": "一次需要紧急完成的时效性任务",
-            "topicId": "Advanced_2025Q1_t23"
-          },
-          {
-            "topicName": "an extended period of anticipation for a positive outcome",
-            "topicName_cn": "期待美好结果的一段漫长等待期",
-            "topicId": "Advanced_2025Q1_t25"
-          },
-          {
-            "topicName": "an instance when you benefited greatly from using a map",
-            "topicName_cn": "一次地图给你带来极大帮助的经历",
-            "topicId": "Advanced_2025Q1_t27"
-          },
-          {
-            "topicName": "a technical difficulty you encountered with a computer",
-            "topicName_cn": "一次遇到的电脑技术问题",
-            "topicId": "Advanced_2025Q1_t28"
-          },
-          {
-            "topicName": "an experience of being disturbed by loud surroundings",
-            "topicName_cn": "一次被嘈杂环境打扰的经历",
-            "topicId": "Advanced_2025Q1_t30"
-          },
-          {
-            "topicName": "an experience of poor customer service",
-            "topicName_cn": "一次糟糕的客户服务经历",
-            "topicId": "Advanced_2025Q1_t32"
-          },
-          {
-            "topicName": "discovering a lost item that belonged to someone else",
-            "topicName_cn": "发现他人遗失物品的经历",
-            "topicId": "Advanced_2025Q1_t34"
-          }
-        ]
-      },
-      {
-        "categoryName": "Activities",
-        "categoryId": "p2_c5",
-        "categoryName_cn": "活动类",
-        "topicCollection": [
-          {
-            "topicName": "an exhilarating group activity you participated in",
-            "topicName_cn": "你参与过的一次激动人心的团体活动",
-            "topicId": "Advanced_2025Q1_t12"
-          },
-          {
-            "topicName": "a favorite childhood activity from your elementary school days",
-            "topicName_cn": "小学时期最喜爱的童年活动",
-            "topicId": "Advanced_2025Q1_t16"
-          },
-          {
-            "topicName": "an ability you took pleasure in acquiring during your adolescent years",
-            "topicName_cn": "青少年时期乐于学习的一项技能",
-            "topicId": "Advanced_2025Q1_t18"
-          },
-          {
-            "topicName": "a routine activity that enhances your productivity",
-            "topicName_cn": "一项提升你工作效率的日常活动",
-            "topicId": "Advanced_2025Q1_t35"
-          },
-          {
-            "topicName": "a recreational pursuit you prefer doing in open spaces",
-            "topicName_cn": "你喜欢的户外休闲活动",
-            "topicId": "Advanced_2025Q1_t38"
-          }
-        ]
-      },
-      {
-        "categoryName": "Media & Entertainment",
-        "categoryId": "p2_c6",
-        "categoryName_cn": "媒体与娱乐类",
-        "topicCollection": [
-          {
-            "topicName": "a memorable party experience",
-            "topicName_cn": "一次难忘的派对经历",
-            "topicId": "Advanced_2025Q1_t13"
-          },
-          {
-            "topicName": "a movie that evoked powerful emotions in you",
-            "topicName_cn": "一部引发你强烈情感的电影",
-            "topicId": "Advanced_2025Q1_t47"
-          },
-          {
-            "topicName": "a commercial or promotional content you consider effective",
-            "topicName_cn": "你认为效果良好的广告或宣传内容",
-            "topicId": "Advanced_2025Q1_t51"
-          }
-        ]
-      },
-      {
-        "categoryName": "Education & Work",
-        "categoryId": "p2_c7",
-        "categoryName_cn": "教育与工作类",
-        "topicCollection": [
-          {
-            "topicName": "a period of intense activity and limited free time",
-            "topicName_cn": "一段忙碌且空闲时间有限的时期",
-            "topicId": "Advanced_2025Q1_t24"
-          },
-          {
-            "topicName": "a significant regulation in your workplace or educational institution",
-            "topicName_cn": "你工作场所或教育机构的一项重要规定",
-            "topicId": "Advanced_2025Q1_t36"
-          },
-          {
-            "topicName": "an occupation you would prefer not to have",
-            "topicName_cn": "一份你不愿意从事的职业",
-            "topicId": "Advanced_2025Q1_t41"
-          }
-        ]
-      },
-      {
-        "categoryName": "Society & Culture",
-        "categoryId": "p2_c8",
-        "categoryName_cn": "社会与文化类",
-        "topicCollection": [
-          {
-            "topicName": "an experience of mandatory uniform wearing",
-            "topicName_cn": "一次必须穿制服的特殊经历",
-            "topicId": "Advanced_2025Q1_t19"
-          },
-          {
-            "topicName": "a public complaint you witnessed",
-            "topicName_cn": "一次你目睹的公开投诉",
-            "topicId": "Advanced_2025Q1_t31"
-          },
-          {
-            "topicName": "a historical era that fascinates you",
-            "topicName_cn": "一个令你着迷的历史时期",
-            "topicId": "Advanced_2025Q1_t48"
-          }
-        ]
-      },
-      {
-        "categoryName": "Other",
-        "categoryId": "p2_c9",
-        "categoryName_cn": "其它",
-        "topicCollection": [
-          {
-            "topicName": "an occasion when you offered guidance to another person",
-            "topicName_cn": "一次你为他人提供建议的经历",
-            "topicId": "Advanced_2025Q1_t29"
-          },
-          {
-            "topicName": "an instance when you assisted someone with a difficulty",
-            "topicName_cn": "一次你帮助他人解决困难的经历",
-            "topicId": "Advanced_2025Q1_t33"
-          },
-          {
-            "topicName": "a long-term personal aspiration",
-            "topicName_cn": "一个长期追求的个人目标",
-            "topicId": "Advanced_2025Q1_t37"
-          },
-          {
-            "topicName": "a scientific field that captures your curiosity",
-            "topicName_cn": "一个引起你好奇的科学领域",
-            "topicId": "Advanced_2025Q1_t40"
-          }
-        ]
-      }
-    ]
-  }
+  "mixed_categories": [
+    {
+      "categoryName": "People",
+      "categoryId": "c1",
+      "categoryName_cn": "人物类",
+      "topicCollection": [
+        {"topicName": "a particularly fascinating person living nearby", "topicName_cn": "一位特别有趣的邻居", "topicId": "Advanced_B0_t7"},
+        {"topicName": "a companion whose conversations you value", "topicName_cn": "一位你珍视与其对话的朋友", "topicId": "Advanced_B0_t8"},
+        {"topicName": "a prominent national figure with widespread appeal", "topicName_cn": "一位深受欢迎的知名人物", "topicId": "Advanced_B0_t25"},
+        {"topicName": "an acquaintance with socially valuable employment", "topicName_cn": "一位从事有社会价值工作的熟人", "topicId": "Advanced_B0_t26"},
+        {"topicName": "an instance when you assisted a young person", "topicName_cn": "一次你帮助年轻人的经历", "topicId": "Advanced_B0_t5"},
+        {"topicName": "a time you received praise for your efforts", "topicName_cn": "一次因你的努力而受到表扬的经历", "topicId": "Advanced_B0_t6"},
+        {"topicName": "a new acquaintance you wish to develop a closer relationship with", "topicName_cn": "一个你希望增进关系的新认识的人", "topicId": "Advanced_B0_t35"},
+        {"topicName": "an individual whose company you particularly value", "topicName_cn": "一个你特别喜欢与之相处的人", "topicId": "Advanced_B0_t36"},
+        {"topicName": "a relative you'd consider as a potential professional partner", "topicName_cn": "你未来可能与之共事的家庭成员", "topicId": "Advanced_B0_t48"}
+      ]
+    },
+    {
+      "categoryName": "Objects",
+      "categoryId": "c2",
+      "categoryName_cn": "物品类",
+      "topicCollection": [
+        {"topicName": "a culturally significant item from your homeland that you appreciate", "topicName_cn": "一个你喜欢的具有文化意义的本国传统产品", "topicId": "Advanced_B0_t29"},
+        {"topicName": "a childhood plaything you frequently enjoyed", "topicName_cn": "一个你小时候常玩的玩具", "topicId": "Advanced_B0_t30"},
+        {"topicName": "an essential non-electronic item in your daily life", "topicName_cn": "你日常生活中不可或缺的非电子物品", "topicId": "Advanced_B0_t37"},
+        {"topicName": "a garment you received as a gift", "topicName_cn": "一件你收到的衣物礼物", "topicId": "Advanced_B0_t40"},
+        {"topicName": "an instance when your mobile device served a crucial purpose", "topicName_cn": "你用手机完成一件重要事情的经历", "topicId": "Advanced_B0_t11"}
+      ]
+    },
+    {
+      "categoryName": "Places",
+      "categoryId": "c3",
+      "categoryName_cn": "地点类",
+      "topicCollection": [
+        {"topicName": "a peaceful location you frequent for relaxation", "topicName_cn": "你经常去放松的安静地点", "topicId": "Advanced_B0_t19"},
+        {"topicName": "a rural location you found particularly delightful", "topicName_cn": "一个你特别喜欢的乡村地点", "topicId": "Advanced_B0_t22"},
+        {"topicName": "a memorable experience of visiting an unfamiliar location", "topicName_cn": "一次参观陌生地方的难忘经历", "topicId": "Advanced_B0_t23"},
+        {"topicName": "a location you've experienced that would make an excellent residence", "topicName_cn": "一个你去过并认为适合居住的地方", "topicId": "Advanced_B0_t27"},
+        {"topicName": "a renowned urban center that captures your interest", "topicName_cn": "一个引起你兴趣的著名城市", "topicId": "Advanced_B0_t28"},
+        {"topicName": "your ideal residential dwelling", "topicName_cn": "你理想的住所", "topicId": "Advanced_B0_t47"},
+        {"topicName": "a significant aquatic feature of your homeland", "topicName_cn": "你国家的重要水域", "topicId": "Advanced_B0_t49"}
+      ]
+    },
+    {
+      "categoryName": "Education & Work",
+      "categoryId": "c4",
+      "categoryName_cn": "教育与工作类",
+      "topicCollection": [
+        {"topicName": "an effective method you used for language acquisition", "topicName_cn": "你用来学习语言的有效方法", "topicId": "Advanced_B0_t31"},
+        {"topicName": "an educational experience that left a lasting impression", "topicName_cn": "一次令人印象深刻的学习经历", "topicId": "Advanced_B0_t41"},
+        {"topicName": "a valuable ability acquired through intergenerational learning", "topicName_cn": "从长辈那里学到的一项有用技能", "topicId": "Advanced_B0_t45"}
+      ]
+    },
+    {
+      "categoryName": "Events & Experiences",
+      "categoryId": "c5",
+      "categoryName_cn": "事件与经历类",
+      "topicCollection": [
+        {"topicName": "an unexpected joyful experience you had", "topicName_cn": "一次令你惊喜的愉快经历", "topicId": "Advanced_B0_t1"},
+        {"topicName": "a time you misplaced belongings in public", "topicName_cn": "在公共场所丢失物品的一次经历", "topicId": "Advanced_B0_t2"},
+        {"topicName": "a particularly hectic period in your life", "topicName_cn": "你生活中特别忙碌的一段时期", "topicId": "Advanced_B0_t9"},
+        {"topicName": "a significant occasion you commemorated", "topicName_cn": "你庆祝过的一个重要场合", "topicId": "Advanced_B0_t10"},
+        {"topicName": "an experience of being stuck in prolonged traffic congestion", "topicName_cn": "一次陷入长时间交通堵塞的经历", "topicId": "Advanced_B0_t12"},
+        {"topicName": "a challenging choice that led to positive outcomes", "topicName_cn": "一次带来好结果的艰难决定", "topicId": "Advanced_B0_t13"},
+        {"topicName": "a beneficial modification you implemented in your life", "topicName_cn": "你最近做出的一个积极改变", "topicId": "Advanced_B0_t14"},
+        {"topicName": "an instance of attempting household repairs", "topicName_cn": "一次你尝试修理家中物品的经历", "topicId": "Advanced_B0_t38"},
+        {"topicName": "an instance of obtaining something at no cost", "topicName_cn": "一次免费获得物品的经历", "topicId": "Advanced_B0_t43"},
+        {"topicName": "an occasion involving a particularly meaningful cake", "topicName_cn": "一次与特殊蛋糕有关的重要时刻", "topicId": "Advanced_B0_t42"}
+      ]
+    },
+    {
+      "categoryName": "Activities",
+      "categoryId": "c6",
+      "categoryName_cn": "活动类",
+      "topicCollection": [
+        {"topicName": "a time-saving adjustment to your routine", "topicName_cn": "对日常习惯的节省时间调整", "topicId": "Advanced_B0_t3"},
+        {"topicName": "an activity you consider crucial for maintaining wellbeing", "topicName_cn": "你认为对健康很重要的一项活动", "topicId": "Advanced_B0_t15"},
+        {"topicName": "a method you use to enhance your focus during tasks", "topicName_cn": "你用来提升专注力的方法", "topicId": "Advanced_B0_t16"},
+        {"topicName": "an occasion when someone sought your viewpoint", "topicName_cn": "一次别人向你征求意见的经历", "topicId": "Advanced_B0_t17"},
+        {"topicName": "an enjoyable inexpensive excursion", "topicName_cn": "一次令人愉快且花费不多的外出活动", "topicId": "Advanced_B0_t20"},
+        {"topicName": "a memorable extended stroll you took", "topicName_cn": "一次令人难忘的长时间散步", "topicId": "Advanced_B0_t21"},
+        {"topicName": "an instance when you made arrangements for a joyful occasion", "topicName_cn": "一次为快乐事件做准备的经历", "topicId": "Advanced_B0_t24"},
+        {"topicName": "a contest you aspire to participate in", "topicName_cn": "你渴望参与的一场比赛", "topicId": "Advanced_B0_t50"}
+      ]
+    },
+    {
+      "categoryName": "Media & Entertainment",
+      "categoryId": "c7",
+      "categoryName_cn": "媒体与娱乐类",
+      "topicCollection": [
+        {"topicName": "an individual whose social media content you regularly consume", "topicName_cn": "你经常关注社交媒体内容的某人", "topicId": "Advanced_B0_t32"},
+        {"topicName": "a memorable narrative shared with you", "topicName_cn": "一个让你记忆犹新的故事", "topicId": "Advanced_B0_t33"},
+        {"topicName": "a particularly engaging conversation with companions", "topicName_cn": "一次特别有趣的朋友间对话", "topicId": "Advanced_B0_t34"},
+        {"topicName": "a musical composition you find particularly intriguing", "topicName_cn": "一首你觉得很有趣的歌曲", "topicId": "Advanced_B0_t46"}
+      ]
+    },
+    {
+      "categoryName": "Society & Culture",
+      "categoryId": "c8",
+      "categoryName_cn": "社会与文化类",
+      "topicCollection": [
+        {"topicName": "a beneficial innovation that transformed society", "topicName_cn": "一项改变社会的有益创新", "topicId": "Advanced_B0_t4"},
+        {"topicName": "a regulation you find objectionable and wish to modify", "topicName_cn": "你不喜欢并希望修改的一项规定", "topicId": "Advanced_B0_t39"},
+        {"topicName": "an unfulfilled goal you still pursue", "topicName_cn": "一个你尚未实现的目标", "topicId": "Advanced_B0_t18"},
+        {"topicName": "a present you're considering purchasing for a companion", "topicName_cn": "你想为朋友购买的礼物", "topicId": "Advanced_B0_t44"}
+      ]
+    }
+  ]
+}
