@@ -1,0 +1,368 @@
+{
+    "ai_questions": [
+      {
+        "topicName_real": "Work",
+        "topicName_rewrite": "Professional Life",
+        "questions_original": [
+          {"qTitle": "What’s your job?"},
+          {"qTitle": "Do you sometimes feel that you have to work too hard?"},
+          {"qTitle": "What do you like to do just after you finish work every day?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Could you describe your current profession?"},
+          {"qTitle": "Do you frequently experience excessive work pressure?"},
+          {"qTitle": "How do you typically unwind after completing your workday?"}
+        ]
+      },
+      {
+        "topicName_real": "Study",
+        "topicName_rewrite": "Academic Pursuits",
+        "questions_original": [
+          {"qTitle": "What do you study?"},
+          {"qTitle": "Do you sometimes feel that you have to study too hard?"},
+          {"qTitle": "What do you like to do just after you finish class every day?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What academic discipline are you currently pursuing?"},
+          {"qTitle": "Do you often feel overwhelmed by your study workload?"},
+          {"qTitle": "What leisure activities do you engage in post-class sessions?"}
+        ]
+      },
+      {
+        "topicName_real": "Where you live",
+        "topicName_rewrite": "Residential Environment",
+        "questions_original": [
+          {"qTitle": "Where are you living at the moment?"},
+          {"qTitle": "What do you like about the area you're living in?"},
+          {"qTitle": "Do you know many other people who live nearby?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Could you describe your current place of residence?"},
+          {"qTitle": "What aspects of your neighborhood do you find appealing?"},
+          {"qTitle": "Are you acquainted with numerous residents in your vicinity?"}
+        ]
+      },
+      {
+        "topicName_real": "Birthdays",
+        "topicName_rewrite": "Birthday Celebrations",
+        "questions_original": [
+          {"qTitle": "What do you normally do on your birthday?"},
+          {"qTitle": "What did you like to do on your birthday when you were a child?"},
+          {"qTitle": "How important are birthdays to you now?"},
+          {"qTitle": "Which birthdays are most important in your country?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Describe your typical birthday celebration routine."},
+          {"qTitle": "What childhood birthday traditions were most memorable for you?"},
+          {"qTitle": "What significance do birthdays hold in your current life?"},
+          {"qTitle": "Which milestone birthdays carry special cultural importance in your nation?"}
+        ]
+      },
+      {
+        "topicName_real": "Technology",
+        "topicName_rewrite": "Technology Usage",
+        "questions_original": [
+          {"qTitle": "What types of technology do you use most?"},
+          {"qTitle": "Do you like using technology?"},
+          {"qTitle": "Is there a piece of technology that you would like to buy?"},
+          {"qTitle": "What made you choose the last piece of technology you bought?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which technological devices do you utilize most frequently?"},
+          {"qTitle": "Do you derive satisfaction from interacting with modern technology?"},
+          {"qTitle": "Is there any particular gadget you're currently aspiring to acquire?"},
+          {"qTitle": "What factors influenced your most recent technology purchase decision?"}
+        ]
+      },
+      {
+        "topicName_real": "Writing",
+        "topicName_rewrite": "Writing Practices",
+        "questions_original": [
+          {"qTitle": "What kinds of things do you write during a typical day?"},
+          {"qTitle": "Do you prefer typing or writing things by hand?"},
+          {"qTitle": "Did you like writing when you were a child?"},
+          {"qTitle": "Do you think the kinds of things you write will change in the future?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Describe the various forms of writing you engage in daily."},
+          {"qTitle": "Do you favor digital input or manual handwriting for written communication?"},
+          {"qTitle": "Did you have an affinity for writing during your childhood years?"},
+          {"qTitle": "Do you anticipate significant changes in your writing content over time?"}
+        ]
+      },
+      {
+        "topicName_real": "Geography",
+        "topicName_rewrite": "Geographical Knowledge",
+        "questions_original": [
+          {"qTitle": "Did/do you study geography at school?"},
+          {"qTitle": "Do you enjoy learning about the geography of other countries?"},
+          {"qTitle": "Is there a country you'd like to visit because of its geography?"},
+          {"qTitle": "How good are you at reading maps?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Have you received formal geography education in academic settings?"},
+          {"qTitle": "Do you find pleasure in studying foreign nations' geographical features?"},
+          {"qTitle": "Which country attracts you primarily due to its physical landscape?"},
+          {"qTitle": "How proficient are you in interpreting cartographic materials?"}
+        ]
+      },
+      {
+        "topicName_real": "Weather",
+        "topicName_rewrite": "Weather Patterns",
+        "questions_original": [
+          {"qTitle": "How often do you check the weather forecast?"},
+          {"qTitle": "Do you generally prefer hot weather or cold weather?"},
+          {"qTitle": "Has the weather changed much in recent years in your country?"},
+          {"qTitle": "Would you like to live in a place that has a very different climate from your country?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What frequency do you consult meteorological predictions?"},
+          {"qTitle": "Which climatic condition do you find more agreeable - warm or cold?"},
+          {"qTitle": "Have you observed significant weather pattern shifts in your homeland recently?"},
+          {"qTitle": "Would you consider residing in a region with substantially different weather conditions?"}
+        ]
+      },
+      {
+        "topicName_real": "Mornings times",
+        "topicName_rewrite": "Morning Routines",
+        "questions_original": [
+          {"qTitle": "Do you like getting up early in the morning?"},
+          {"qTitle": "Do you eat breakfast at home every morning?"},
+          {"qTitle": "Do you have the same morning routine every day of the week?"},
+          {"qTitle": "Are your mornings very different now from when you were younger?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Do you enjoy early morning awakenings?"},
+          {"qTitle": "Is consuming breakfast at home part of your daily morning ritual?"},
+          {"qTitle": "Does your morning schedule remain consistent throughout the workweek?"},
+          {"qTitle": "How have your morning habits evolved since your younger days?"}
+        ]
+      },
+      {
+        "topicName_real": "Housework and cooking",
+        "topicName_rewrite": "Domestic Responsibilities",
+        "questions_original": [
+          {"qTitle": "Did you do anything to help at home when you were younger?"},
+          {"qTitle": "Do you do a lot of cooking at home now?"},
+          {"qTitle": "Do you like everything to be very tidy at home?"},
+          {"qTitle": "Is there a job at home that you really don't enjoy doing?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What domestic chores were you responsible for during your childhood?"},
+          {"qTitle": "Do you frequently prepare meals in your household currently?"},
+          {"qTitle": "Do you maintain strict organizational standards in your living space?"},
+          {"qTitle": "Which household task do you find particularly disagreeable?"}
+        ]
+      },
+      {
+        "topicName_real": "Public transport",
+        "topicName_rewrite": "Public Transportation Usage",
+        "questions_original": [
+          {"qTitle": "Do you often travel on public transport?"},
+          {"qTitle": "Did you use public transport when you were a child?"},
+          {"qTitle": "Do many people use public transport in your country?"},
+          {"qTitle": "Will you use public transport more in the future?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "How frequently do you utilize public transportation systems?"},
+          {"qTitle": "Did you regularly commute via public transport during your childhood?"},
+          {"qTitle": "Is public transportation widely adopted among citizens in your nation?"},
+          {"qTitle": "Do you anticipate increasing your use of mass transit systems going forward?"}
+        ]
+      },
+      {
+        "topicName_real": "Puzzles",
+        "topicName_rewrite": "Puzzle-Solving Activities",
+        "questions_original": [
+          {"qTitle": "Did you enjoy doing puzzles when you were a child?"},
+          {"qTitle": "Which do you find easier to do: word puzzles or number puzzles?"},
+          {"qTitle": "Would you ever do a puzzle when you're travelling?"},
+          {"qTitle": "Do you think doing puzzles is a good way for older people to spend their free time?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Did puzzle-solving activities bring you enjoyment during your younger years?"},
+          {"qTitle": "Which category of puzzles do you find more manageable - linguistic or numerical?"},
+          {"qTitle": "Would you consider solving puzzles during your travels?"},
+          {"qTitle": "Do you believe puzzles constitute beneficial leisure activities for senior citizens?"}
+        ]
+      },
+      {
+        "topicName_real": "Names",
+        "topicName_rewrite": "Naming Conventions",
+        "questions_original": [
+          {"qTitle": "Does anyone in your family have the same name as you?"},
+          {"qTitle": "Does your name have any meaning?"},
+          {"qTitle": "What name would you choose to give a child?"},
+          {"qTitle": "Are some names more popular than others in your country?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Do you share your name with any family members?"},
+          {"qTitle": "Is there particular significance or etymology behind your name?"},
+          {"qTitle": "What would be your preferred choice for a child's name?"},
+          {"qTitle": "Do certain names enjoy greater popularity in your cultural context?"}
+        ]
+      },
+      {
+        "topicName_real": "Singing",
+        "topicName_rewrite": "Vocal Performance",
+        "questions_original": [
+          {"qTitle": "Did you learn to sing when you were at school?"},
+          {"qTitle": "Would you ever sing with other people now?"},
+          {"qTitle": "Do you like listening to other people sing?"},
+          {"qTitle": "Do you think singing can make people feel happy?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Did you receive any formal vocal training during your school years?"},
+          {"qTitle": "Would you currently participate in group singing activities?"},
+          {"qTitle": "Do you derive pleasure from hearing vocal performances by others?"},
+          {"qTitle": "Do you believe singing has the capacity to elevate people's moods?"}
+        ]
+      },
+      {
+        "topicName_real": "Social media",
+        "topicName_rewrite": "Social Media Engagement",
+        "questions_original": [
+          {"qTitle": "How often do you use social media?"},
+          {"qTitle": "Did you use social media more in the past?"},
+          {"qTitle": "Do you think your friends use social media too much?"},
+          {"qTitle": "Would you like to work in social media in the future?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What is your frequency of social media platform usage?"},
+          {"qTitle": "Was your social media consumption more intensive previously?"},
+          {"qTitle": "Do you perceive your peers as being overly engaged with social platforms?"},
+          {"qTitle": "Are you considering a professional career in the social media industry?"}
+        ]
+      },
+      {
+        "topicName_real": "Snacks",
+        "topicName_rewrite": "Snacking Habits",
+        "questions_original": [
+          {"qTitle": "When you were a child, did you have a favourite snack?"},
+          {"qTitle": "When do you eat snacks now?"},
+          {"qTitle": "Would you choose a snack that is healthy, or a snack that tastes good?"},
+          {"qTitle": "Do people in your country often eat snacks between meals?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "What was your preferred childhood snack food?"},
+          {"qTitle": "During which times do you typically consume snacks nowadays?"},
+          {"qTitle": "Do you prioritize nutritional value or flavor when selecting snacks?"},
+          {"qTitle": "Is intermeal snacking a common practice among people in your culture?"}
+        ]
+      },
+      {
+        "topicName_real": "Flowers",
+        "topicName_rewrite": "Floral Appreciation",
+        "questions_original": [
+          {"qTitle": "Do you love flowers?"},
+          {"qTitle": "Do you know anyone who loves flowers?"},
+          {"qTitle": "Are there a lot of flowers where you live?"},
+          {"qTitle": "Do you take photos of flowers in your daily life?"},
+          {"qTitle": "Do people in your country often send flowers to others?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Do you have a particular fondness for floral plants?"},
+          {"qTitle": "Are you acquainted with individuals who are flower enthusiasts?"},
+          {"qTitle": "Is your local environment abundant with flowering plants?"},
+          {"qTitle": "Do you frequently photograph blossoms in your routine activities?"},
+          {"qTitle": "Is flower-giving a prevalent social custom in your society?"}
+        ]
+      },
+      {
+        "topicName_real": "Memory",
+        "topicName_rewrite": "Memory Capacity",
+        "questions_original": [
+          {"qTitle": "Are you good at memorising things?"},
+          {"qTitle": "Have you ever forgotten something important?"},
+          {"qTitle": "What do you need to remember in your daily life?"},
+          {"qTitle": "How do you remember important things?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Would you consider yourself skilled at information retention?"},
+          {"qTitle": "Have you experienced significant memory lapses?"},
+          {"qTitle": "What essential information must you recall regularly?"},
+          {"qTitle": "What techniques do you employ for retaining crucial information?"}
+        ]
+      },
+      {
+        "topicName_real": "Machine",
+        "topicName_rewrite": "Household Appliances",
+        "questions_original": [
+          {"qTitle": "What is your favourite machine in your home?"},
+          {"qTitle": "Do you think washing machines and sweeping machines are important?"},
+          {"qTitle": "Do you read the instructions before using a machine?"},
+          {"qTitle": "Do you think it is important to read the instructions?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Which domestic appliance do you value most in your household?"},
+          {"qTitle": "Do you consider cleaning appliances like washers and vacuums essential?"},
+          {"qTitle": "Do you consult user manuals prior to operating new devices?"},
+          {"qTitle": "Do you believe reviewing operational guidelines is crucial?"}
+        ]
+      },
+      {
+        "topicName_real": "Patience",
+        "topicName_rewrite": "Personal Patience",
+        "questions_original": [
+          {"qTitle": "Are you a patient person?"},
+          {"qTitle": "What is it that makes you feel impatient?"},
+          {"qTitle": "How do you feel when you have to do something for a long time?"},
+          {"qTitle": "Does your job require you to be patient?"},
+          {"qTitle": "Are you more patient now than when you were a child?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Would you characterize yourself as tolerant of delays?"},
+          {"qTitle": "What specific situations test your patience?"},
+          {"qTitle": "What is your emotional response to prolonged tasks?"},
+          {"qTitle": "Is patience a necessary virtue in your professional role?"},
+          {"qTitle": "Has your capacity for patience increased since childhood?"}
+        ]
+      },
+      {
+        "topicName_real": "Spending time by yourself",
+        "topicName_rewrite": "Solo Activities",
+        "questions_original": [
+          {"qTitle": "Do you usually spend time by yourself?"},
+          {"qTitle": "What did you do last time you were by yourself?"},
+          {"qTitle": "How do you usually spend your time by yourself?"},
+          {"qTitle": "Do you like spending time by yourself?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Is solitary time a regular part of your routine?"},
+          {"qTitle": "How did you occupy yourself during your most recent alone time?"},
+          {"qTitle": "What are your typical activities during periods of solitude?"},
+          {"qTitle": "Do you derive satisfaction from your own company?"}
+        ]
+      },
+      {
+        "topicName_real": "Spare time",
+        "topicName_rewrite": "Leisure Time",
+        "questions_original": [
+          {"qTitle": "Do you often have free time?"},
+          {"qTitle": "What do you usually do in your spare time?"},
+          {"qTitle": "Which day do you have more free time on Saturday or Sunday?"},
+          {"qTitle": "Would you like to have more free time in the future?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Do you frequently have discretionary time available?"},
+          {"qTitle": "How do you typically allocate your leisure hours?"},
+          {"qTitle": "Which weekend day affords you greater relaxation time?"},
+          {"qTitle": "Do you aspire to have increased personal time going forward?"}
+        ]
+      },
+      {
+        "topicName_real": "Saying 'thank you'",
+        "topicName_rewrite": "Expressions of Gratitude",
+        "questions_original": [
+          {"qTitle": "Have you ever sent a thank you card to others?"},
+          {"qTitle": "Do people in your country often say 'thank you'?"},
+          {"qTitle": "On what occasions do you say 'thank you ?"}
+        ],
+        "questions_rewrite": [
+          {"qTitle": "Have you previously mailed gratitude cards to individuals?"},
+          {"qTitle": "Is verbal appreciation commonly expressed in your culture?"},
+          {"qTitle": "During which situations do you typically express thanks?"}
+        ]
+      }
+    ]
+  }

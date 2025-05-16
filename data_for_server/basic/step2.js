@@ -4,7 +4,7 @@ const prompt_question_selector = `
 ## 核心任务
 从处理后的题库中抽取题目并重组，严格遵循以下规则：
 1. 使用改写后英文话题名称(topicName_rewrite)
-2. topicId前加上"Basic_"前缀
+2. topicId命名方式为"Basic_25Q2_t"+数字
 3. 包含中英文双语输出
 4. 合理混合改写问题和新问题
 
@@ -15,7 +15,7 @@ const prompt_question_selector = `
     {
       "topicName": "改写后英文话题名称",
       "topicName_cn": "准确的中文翻译",
-      "topicId": "Basic_topicId",
+      "topicId": "Basic_25Q2_t"+数字,
       "questions": [
         {
           "qTitle": "英文问题文本",
@@ -69,7 +69,6 @@ const prompt_question_selector = `
     {
       "topicName_real": "Work",
       "topicName_rewrite": "Professional Life",
-      "topicId": "B0_topic1",
       "questions_original": [],
       "questions_rewrite": [
         {"qTitle": "What do you like about city living?"},
@@ -86,8 +85,8 @@ const prompt_question_selector = `
   "mixed_questions": [
     {
       "topicName": "Professional Life",
-      "topicName_cn": "",
-      "topicId": "Basic_B0_topic1",
+      "topicName_cn": "职业生活",
+      "topicId": "Basic_25Q2_t1",
       "questions": [
         {
           "qTitle": "What do you like about city living?",

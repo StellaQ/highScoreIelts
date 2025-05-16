@@ -12,7 +12,6 @@ const prompt_basic_questions = `
      "ai_questions": [{
        "topicName_real": "原话题名称",
        "topicName_rewrite": "改写后话题名称",
-       "topicId": "话题ID",
        "questions_original": [{"qTitle": "原问题"}],
        "questions_rewrite": [{"qTitle": "改写版"}]
      }]
@@ -52,7 +51,6 @@ const prompt_basic_questions = `
 {
   "real_questions": [{
     "topicName": "Music",
-    "topicId": "B0_topic1",
     "questions": [
       "Do you play any instruments?",
       "Is music important in your culture?"
@@ -67,7 +65,6 @@ const prompt_basic_questions = `
   "ai_questions": [{
     "topicName_real": "Music",
     "topicName_rewrite": "Musical Engagement",
-    "topicId": "B0_topic1",
     "questions_original": [
       {"qTitle": "Do you play any instruments?"},
       {"qTitle": "Is music important in your culture?"}
