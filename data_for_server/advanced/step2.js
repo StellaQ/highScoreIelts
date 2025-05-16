@@ -6,7 +6,7 @@ const prompt_question_selector = `
 
 ## 核心功能要求
 1. 必须使用改写后的英文话题名称(topicName_rewrite)
-2. 自动生成带"Advanced_"前缀的标准题号
+2. 自动生成带"Advanced_2025Q2_"+ 数字的标准题号
 3. 输出中英双语内容
 
 ## 数据输出规范
@@ -16,7 +16,7 @@ const prompt_question_selector = `
     {
       "topicName": "改写后的英文话题名称",
       "topicName_cn": "准确的中文翻译",
-      "topicId": "Advanced_原先的topicId",
+      "topicId": "Advanced_2025Q2_t"+数字,
       "points": [
         {
           "qTitle": "改写后的问题要点",
@@ -63,7 +63,6 @@ const prompt_question_selector = `
     {
       "topicName_real": "a person you know who likes to talk a lot",
       "topicName_rewrite": "someone in your life who is particularly talkative",
-      "topicId": B0_t1,
       "points_original": [
         "who this person is",
         "how you know this person",
@@ -88,7 +87,7 @@ const prompt_question_selector = `
     {
       "topicName": "someone in your life who is particularly talkative",
       "topicName_cn": "你生活中特别健谈的人",
-      "topicId": "Advanced_B0_t1",
+      "topicId": "Advanced_25Q2_t"+数字,
       "points": [
         {
           "qTitle": "identify this individual",

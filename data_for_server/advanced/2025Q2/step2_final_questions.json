@@ -1,0 +1,1153 @@
+{
+    "mixed_questions": [
+      {
+        "topicName": "someone in your life who takes particular care with their appearance",
+        "topicName_cn": "你生活中特别注重外表的人",
+        "topicId": "Advanced_2025Q2_t1",
+        "points": [
+          {
+            "qTitle": "identify this individual",
+            "qTitle_cn": "说明这个人是谁",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "describe their occupation or field of study",
+            "qTitle_cn": "描述他们的职业或学习领域",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "explain their typical fashion choices",
+            "qTitle_cn": "说明他们典型的穿着选择",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "share your perspective on their motivation for dressing well",
+            "qTitle_cn": "分享你对他们注重穿着动机的看法",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an occasion when you missed a scheduled commitment",
+        "topicName_cn": "错过预约的一次经历",
+        "topicId": "Advanced_2025Q2_t2",
+        "points": [
+          {
+            "qTitle": "specify the time and location of the missed appointment",
+            "qTitle_cn": "说明错过预约的具体时间和地点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "explain the reasons for your oversight",
+            "qTitle_cn": "解释你疏忽的原因",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "describe the consequences of missing the appointment",
+            "qTitle_cn": "描述错过预约的后果",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "express your emotional reaction to this situation",
+            "qTitle_cn": "表达你对此情况的情感反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an instance of encountering significant plastic pollution in nature",
+        "topicName_cn": "目睹自然环境塑料污染的一次经历",
+        "topicId": "Advanced_2025Q2_t3",
+        "points": [
+          {
+            "qTitle": "indicate the time and location of this observation",
+            "qTitle_cn": "说明观察到的具体时间和地点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "share your theories about the origin of this pollution",
+            "qTitle_cn": "分享你对污染来源的看法",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "explain what drew your attention to it",
+            "qTitle_cn": "解释是什么引起了你的注意",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "describe your emotional response to witnessing this environmental issue",
+            "qTitle_cn": "描述你目睹这一环境问题时的情感反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly memorable childhood companion",
+        "topicName_cn": "一位印象深刻的童年伙伴",
+        "topicId": "Advanced_2025Q2_t4",
+        "points": [
+          {
+            "qTitle": "identify this childhood friend",
+            "qTitle_cn": "说明这位童年朋友是谁",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "recount how your friendship began",
+            "qTitle_cn": "讲述你们友谊的开始",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "describe your shared activities",
+            "qTitle_cn": "描述你们一起的活动",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "explain what makes this friend especially memorable to you",
+            "qTitle_cn": "解释这位朋友让你特别难忘的原因",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly aesthetically pleasing item",
+        "topicName_cn": "一件特别美观的物品",
+        "topicId": "Advanced_2025Q2_t5",
+        "points": [
+          {
+            "qTitle": "identify this beautiful object",
+            "qTitle_cn": "说明这件美丽物品是什么",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "describe the circumstances of your first encounter with it",
+            "qTitle_cn": "描述你第一次见到它的情景",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "provide a detailed description of its appearance",
+            "qTitle_cn": "详细描述它的外观",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "express your personal appreciation for this object",
+            "qTitle_cn": "表达你对这件物品的个人欣赏",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a culturally diverse acquaintance whose company you appreciate",
+        "topicName_cn": "一位你欣赏的跨文化朋友",
+        "topicId": "Advanced_2025Q2_t6",
+        "points": [
+          {
+            "qTitle": "Identify this individual and your relationship with them",
+            "qTitle_cn": "说明这个人是谁以及你们的关系",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe their cultural heritage and background",
+            "qTitle_cn": "描述他们的文化背景",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the circumstances of your first meeting",
+            "qTitle_cn": "说明你们初次见面的情况",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share what makes your cross-cultural interactions enjoyable",
+            "qTitle_cn": "分享你们跨文化交流的乐趣所在",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a familiar residence that holds significance for you",
+        "topicName_cn": "一个对你意义非凡的熟悉住所",
+        "topicId": "Advanced_2025Q2_t7",
+        "points": [
+          {
+            "qTitle": "Specify the homeowner and your connection to them",
+            "qTitle_cn": "说明房主是谁以及你们的关系",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Indicate the frequency of your visits",
+            "qTitle_cn": "说明你拜访的频率",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Provide a detailed description of the residence",
+            "qTitle_cn": "详细描述这个住所",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your emotional response to this living space",
+            "qTitle_cn": "表达你对这个生活空间的情感反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a memorable cinematic experience worth revisiting",
+        "topicName_cn": "值得重温的难忘观影体验",
+        "topicId": "Advanced_2025Q2_t8",
+        "points": [
+          {
+            "qTitle": "Name the film and its basic details",
+            "qTitle_cn": "说明电影名称及其基本信息",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the viewing circumstances (time and place)",
+            "qTitle_cn": "描述观影环境（时间和地点）",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Summarize the plot or central theme",
+            "qTitle_cn": "概述剧情或中心主题",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain what makes this film worthy of rewatching",
+            "qTitle_cn": "解释这部电影值得重看的原因",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a personally meaningful photographic achievement",
+        "topicName_cn": "具有个人意义的摄影成就",
+        "topicId": "Advanced_2025Q2_t9",
+        "points": [
+          {
+            "qTitle": "Describe the subject matter of the photograph",
+            "qTitle_cn": "描述照片的拍摄对象",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Specify when the photo was captured",
+            "qTitle_cn": "说明照片拍摄的时间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain your motivation for taking this picture",
+            "qTitle_cn": "解释拍摄这张照片的动机",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share what makes this photo special to you",
+            "qTitle_cn": "分享这张照片对你的特殊意义",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly engaging literary work you've encountered",
+        "topicName_cn": "一部特别引人入胜的文学作品",
+        "topicId": "Advanced_2025Q2_t10",
+        "points": [
+          {
+            "qTitle": "Explain your initial reason for reading this work",
+            "qTitle_cn": "说明最初阅读这部作品的原因",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Summarize the narrative or central themes",
+            "qTitle_cn": "概括故事情节或中心主题",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Indicate the duration of your reading experience",
+            "qTitle_cn": "说明阅读所花费的时间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze what made this story compelling to you",
+            "qTitle_cn": "分析这个故事吸引你的原因",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an instance when you had a difference of opinion with someone",
+        "topicName_cn": "与他人意见分歧的一次经历",
+        "topicId": "Advanced_2025Q2_t11",
+        "points": [
+          {
+            "qTitle": "Identify the person you had the disagreement with",
+            "qTitle_cn": "说明与你意见分歧的人是谁",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the subject or issue of your disagreement",
+            "qTitle_cn": "描述分歧的主题或问题",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the outcome or resolution of the disagreement",
+            "qTitle_cn": "解释分歧的结果或解决方案",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share your emotional response to this conflict situation",
+            "qTitle_cn": "分享你对这种冲突情境的情绪反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an occasion when you needed to research information",
+        "topicName_cn": "你曾经需要查找信息的场合",
+        "topicId": "Advanced_2025Q2_t12",
+        "points": [
+          {
+            "qTitle": "Specify the type of information you were seeking",
+            "qTitle_cn": "说明你要查找的信息类型",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the sources or methods you used in your search",
+            "qTitle_cn": "描述你查找信息时使用的方法或渠道",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Evaluate how enjoyable or interesting the research process was",
+            "qTitle_cn": "评价你在查找过程中是否感到有趣或享受",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the purpose or importance of obtaining this information",
+            "qTitle_cn": "解释你为何需要这条信息及其重要性",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly memorable English language learning experience",
+        "topicName_cn": "一次令人难忘的英语学习经历",
+        "topicId": "Advanced_2025Q2_t13",
+        "points": [
+          {
+            "qTitle": "Describe the setting or location of the lesson",
+            "qTitle_cn": "描述这节课的地点或环境",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the topic or focus of the instructional content",
+            "qTitle_cn": "说明课程内容的主题或重点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Detail the teaching methods or activities the instructor used",
+            "qTitle_cn": "描述老师使用的教学方法或课堂活动",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze what made this lesson especially enjoyable for you",
+            "qTitle_cn": "分析为什么你觉得这节课特别有趣",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an achievement where you overcame significant challenges",
+        "topicName_cn": "你克服重大挑战后取得的成就",
+        "topicId": "Advanced_2025Q2_t14",
+        "points": [
+          {
+            "qTitle": "Describe the specific accomplishment or goal you achieved",
+            "qTitle_cn": "描述你取得的具体成就或目标",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the challenges or obstacles that made it difficult",
+            "qTitle_cn": "说明你遇到的困难或障碍",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Indicate the level of assistance or support you required",
+            "qTitle_cn": "说明你在过程中获得了多少帮助",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share your emotional reaction to this personal achievement",
+            "qTitle_cn": "分享你在达成这一成就后的情感体验",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an occasion when you received monetary gift",
+        "topicName_cn": "你收到金钱礼物的一个场合",
+        "topicId": "Advanced_2025Q2_t15",
+        "points": [
+          {
+            "qTitle": "Identify the person who gifted you the money",
+            "qTitle_cn": "指出送你钱的人是谁",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the occasion or reason for this financial gift",
+            "qTitle_cn": "解释这笔金钱礼物的缘由或场合",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe how you utilized or spent the money",
+            "qTitle_cn": "描述你如何使用这笔钱",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your feelings about receiving this monetary present",
+            "qTitle_cn": "表达你收到这笔金钱礼物的感受",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an experience of sharing resources or possessions with others",
+        "topicName_cn": "一次与他人分享资源或物品的经历",
+        "topicId": "Advanced_2025Q2_t16",
+        "points": [
+          {
+            "qTitle": "Specify the item or resource you shared",
+            "qTitle_cn": "说明你分享的物品或资源",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Identify the individual(s) you shared with",
+            "qTitle_cn": "指出你与谁分享",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the circumstances that required sharing",
+            "qTitle_cn": "解释当时需要分享的情况",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe your emotional response to this sharing experience",
+            "qTitle_cn": "描述你在这次分享中的感受",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly engaging television or online program",
+        "topicName_cn": "一个特别吸引人的电视或网络节目",
+        "topicId": "Advanced_2025Q2_t17",
+        "points": [
+          {
+            "qTitle": "Summarize the program's content or theme",
+            "qTitle_cn": "简要介绍该节目的内容或主题",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the viewing platform or location",
+            "qTitle_cn": "说明你是在哪里或通过什么平台观看的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Identify any viewing companions",
+            "qTitle_cn": "指出你是否和他人一起观看",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze what made this program especially enjoyable",
+            "qTitle_cn": "分析是什么让这个节目特别有趣",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a noteworthy region in your nation worth visiting",
+        "topicName_cn": "你国家中值得一游的一个地区",
+        "topicId": "Advanced_2025Q2_t18",
+        "points": [
+          {
+            "qTitle": "Identify the specific region or location",
+            "qTitle_cn": "指出这个地区或具体位置",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain your personal familiarity with the area",
+            "qTitle_cn": "说明你对这个地区的了解",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Comment on its popularity with tourists",
+            "qTitle_cn": "评论这个地方在游客中的受欢迎程度",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Highlight the features that make it worth visiting",
+            "qTitle_cn": "强调该地值得一游的特色",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a significant life lesson acquired outside formal education",
+        "topicName_cn": "一次在学校之外获得的重要人生经验",
+        "topicId": "Advanced_2025Q2_t19",
+        "points": [
+          {
+            "qTitle": "Describe the knowledge or skill acquired",
+            "qTitle_cn": "描述你获得的知识或技能",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the learning process or experience",
+            "qTitle_cn": "说明你学习这一技能的过程",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Assess the level of challenge involved",
+            "qTitle_cn": "评估学习这一经验的难度",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Articulate the personal significance of this learning",
+            "qTitle_cn": "阐述这一学习经历对你的重要意义",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an acquaintance with a passion for horticulture",
+        "topicName_cn": "一个热衷于园艺的熟人",
+        "topicId": "Advanced_2025Q2_t20",
+        "points": [
+          {
+            "qTitle": "Describe your relationship with this individual",
+            "qTitle_cn": "描述你与这个人的关系",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Specify the types of plants they cultivate",
+            "qTitle_cn": "说明他们种植的植物类型",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Identify their gardening location or space",
+            "qTitle_cn": "指出他们从事园艺的地点或空间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share your perspective on their gardening motivation",
+            "qTitle_cn": "分享你对他们种植动机的看法",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a well-known sports facility in your area",
+        "topicName_cn": "你所在地区的一个知名体育设施",
+        "topicId": "Advanced_2025Q2_t21",
+        "points": [
+          {
+            "qTitle": "Specify the location of this sports venue",
+            "qTitle_cn": "说明这个体育场所的位置",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe how you became familiar with this facility",
+            "qTitle_cn": "描述你是如何了解这个设施的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Indicate if you have personal experience visiting it",
+            "qTitle_cn": "说明你是否亲自去过那里",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze the factors contributing to its popularity",
+            "qTitle_cn": "分析导致它受欢迎的原因",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an influential figure who motivated you to pursue an engaging activity",
+        "topicName_cn": "一个激励你去做某件有趣事情的影响人物",
+        "topicId": "Advanced_2025Q2_t22",
+        "points": [
+          {
+            "qTitle": "Identify this inspirational individual",
+            "qTitle_cn": "指出这个激励你的人",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the noteworthy activity you undertook",
+            "qTitle_cn": "描述你所从事的这项有趣活动",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the nature of their motivational influence",
+            "qTitle_cn": "解释他们是如何激励你的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share your emotional response to this experience",
+            "qTitle_cn": "分享你对这次经历的情感反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an instance when you chose to practice patience for an outcome",
+        "topicName_cn": "你决定耐心等待结果的一次经历",
+        "topicId": "Advanced_2025Q2_t23",
+        "points": [
+          {
+            "qTitle": "Specify the anticipated event or result you waited for",
+            "qTitle_cn": "说明你等待的事件或结果",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe how you occupied yourself during the waiting period",
+            "qTitle_cn": "描述在等待期间你是如何度过的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your emotional state during this waiting time",
+            "qTitle_cn": "表达你在等待时的情绪状态",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Evaluate the wisdom of your decision to wait",
+            "qTitle_cn": "评估你做出等待决定的明智与否",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a location you visited for recreational outdoor pursuits",
+        "topicName_cn": "你曾经去过的进行户外活动的地点",
+        "topicId": "Advanced_2025Q2_t24",
+        "points": [
+          {
+            "qTitle": "Identify the location and time of your visit",
+            "qTitle_cn": "说明你去的地点和时间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Detail the specific outdoor activity you engaged in",
+            "qTitle_cn": "描述你参与的具体户外活动",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain your motivation for choosing this activity",
+            "qTitle_cn": "解释你选择这个活动的原因",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe your overall experience and enjoyment level",
+            "qTitle_cn": "描述你整体的体验和享受程度",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a purchasing experience that encountered difficulties",
+        "topicName_cn": "一次遇到问题的购物经历",
+        "topicId": "Advanced_2025Q2_t25",
+        "points": [
+          {
+            "qTitle": "Describe the purchased item or service",
+            "qTitle_cn": "描述你购买的物品或服务",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Specify the retailer and timing of your purchase",
+            "qTitle_cn": "说明你在哪买的以及购买时间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Detail the specific issue you encountered",
+            "qTitle_cn": "详细说明你遇到的具体问题",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your emotional reaction to this problematic situation",
+            "qTitle_cn": "表达你对此次问题经历的情绪反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a collaborative decision-making experience with a friend",
+        "topicName_cn": "一次你和朋友共同做出的决定经历",
+        "topicId": "Advanced_2025Q2_t26",
+        "points": [
+          {
+            "qTitle": "Specify the timing and rationale behind this joint decision",
+            "qTitle_cn": "说明你们决定的时间和原因",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the nature and subject of the decision",
+            "qTitle_cn": "描述这个决定的内容和主题",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the collaborative aspect of your decision-making process",
+            "qTitle_cn": "解释你们是如何协作做出这个决定的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze what made this shared decision particularly noteworthy",
+            "qTitle_cn": "分析这个决定为何特别有趣或值得一提",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an informative health-related article you encountered",
+        "topicName_cn": "你读过的一篇健康相关的文章",
+        "topicId": "Advanced_2025Q2_t27",
+        "points": [
+          {
+            "qTitle": "Describe the content and focus of the health article",
+            "qTitle_cn": "描述这篇健康文章的内容和重点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Identify the publication platform or source",
+            "qTitle_cn": "说明你在哪个平台或来源看到这篇文章",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain your motivation for reading this material",
+            "qTitle_cn": "解释你阅读这篇文章的原因",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share your personal evaluation and reaction to the article",
+            "qTitle_cn": "分享你对这篇文章的看法和感受",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly loud environment you've experienced",
+        "topicName_cn": "你曾经历过的特别嘈杂的环境",
+        "topicId": "Advanced_2025Q2_t28",
+        "points": [
+          {
+            "qTitle": "Identify the location of this noisy environment",
+            "qTitle_cn": "指出这个嘈杂环境的地点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Specify when you visited this place",
+            "qTitle_cn": "说明你是什么时候去的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe your activities while there",
+            "qTitle_cn": "描述你在那里的活动",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze the sources and impact of the noise levels",
+            "qTitle_cn": "分析噪音的来源及其带来的影响",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a personal competency suitable for instruction",
+        "topicName_cn": "你可以教别人的某项技能",
+        "topicId": "Advanced_2025Q2_t29",
+        "points": [
+          {
+            "qTitle": "Define the specific skill you possess",
+            "qTitle_cn": "说明你掌握的这项具体技能",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Recall when and how you acquired this ability",
+            "qTitle_cn": "回忆你何时以及如何掌握了这项技能",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Outline your potential teaching methodology",
+            "qTitle_cn": "描述你可能采取的教学方法",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your personal connection to this skill",
+            "qTitle_cn": "表达你对这项技能的个人情感和理解",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a remarkably bright individual in your acquaintance",
+        "topicName_cn": "你认识的一位非常聪明的人",
+        "topicId": "Advanced_2025Q2_t30",
+        "points": [
+          {
+            "qTitle": "Identify this intellectually gifted individual",
+            "qTitle_cn": "指出这位有才智的人是谁",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe how you came to know them",
+            "qTitle_cn": "描述你是如何认识他的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain their professional or academic pursuits",
+            "qTitle_cn": "解释他在专业或学术方面的追求",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze the qualities that demonstrate their intelligence",
+            "qTitle_cn": "分析表明他很聪明的特质",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an individual whose initial impression changed positively over time",
+        "topicName_cn": "起初不喜欢但后来成为朋友的人",
+        "topicId": "Advanced_2025Q2_t31",
+        "points": [
+          {
+            "qTitle": "Identify this person and your current relationship",
+            "qTitle_cn": "说明这个人以及你们现在的关系",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the circumstances of how you met",
+            "qTitle_cn": "描述你们是如何认识的",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain your initial negative perception and subsequent change",
+            "qTitle_cn": "解释你最初的负面印象及后来为何改变",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Reflect on what this experience taught you about first impressions",
+            "qTitle_cn": "反思这段经历对你第一印象的看法带来了什么启发",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an influential individual who convinced you to take action",
+        "topicName_cn": "一个成功说服你做某事的人",
+        "topicId": "Advanced_2025Q2_t32",
+        "points": [
+          {
+            "qTitle": "Specify the time period of this persuasion",
+            "qTitle_cn": "说明这次说服发生的大致时间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Detail the action or decision you were convinced to take",
+            "qTitle_cn": "具体描述你被说服去做的事情",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Analyze their motivation for persuading you",
+            "qTitle_cn": "分析他们为什么想说服你",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Reveal the outcome and your compliance with their suggestion",
+            "qTitle_cn": "说明最终结果，以及你是否接受了他们的建议",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a personally meaningful photographic achievement",
+        "topicName_cn": "你拍的一张引以为傲的照片",
+        "topicId": "Advanced_2025Q2_t33",
+        "points": [
+          {
+            "qTitle": "Recall the specific time you captured this image",
+            "qTitle_cn": "回忆你拍下这张照片的具体时间",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Identify the location where the photo was taken",
+            "qTitle_cn": "指出拍摄这张照片的地点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the subject matter and composition",
+            "qTitle_cn": "描述这张照片的内容和构图",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain what makes this photograph special to you",
+            "qTitle_cn": "解释这张照片为何对你意义非凡",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an instance of organizing a group event",
+        "topicName_cn": "你策划集体活动的一次经历",
+        "topicId": "Advanced_2025Q2_t34",
+        "points": [
+          {
+            "qTitle": "Describe the nature of this group plan",
+            "qTitle_cn": "描述这个集体活动计划的性质",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Specify the timing and location of your planning",
+            "qTitle_cn": "说明你是在什么时候、哪里进行的策划",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Detail the actual activity involved",
+            "qTitle_cn": "详细说明这个活动具体是什么",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Share your emotional response to this organizational experience",
+            "qTitle_cn": "分享你对这次组织经历的情感反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "an observation of children's inappropriate public conduct",
+        "topicName_cn": "你看到小孩在公共场合表现不当的一次经历",
+        "topicId": "Advanced_2025Q2_t35",
+        "points": [
+          {
+            "qTitle": "Identify the public setting where this occurred",
+            "qTitle_cn": "指出事件发生的公共场所",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the specific misbehavior displayed",
+            "qTitle_cn": "描述孩子们的不当行为",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Explain the bystanders' responses to the situation",
+            "qTitle_cn": "说明旁观者对此行为的反应",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your personal reaction to witnessing this behavior",
+            "qTitle_cn": "表达你亲眼目睹此行为时的感受",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a particularly memorable celestial view",
+        "topicName_cn": "你欣赏到的一次美丽天空景象",
+        "topicId": "Advanced_2025Q2_t36",
+        "points": [
+          {
+            "qTitle": "Specify the location where you observed this sky",
+            "qTitle_cn": "指出你看到这片天空的地点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Identify any companions who shared this experience",
+            "qTitle_cn": "说明是否有人与你一同欣赏这片天空",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Describe the visual elements of the sky you witnessed",
+            "qTitle_cn": "描述你看到的天空景象的视觉特点",
+            "type": 0,
+            "from": "rewrite"
+          },
+          {
+            "qTitle": "Express your emotional response to this natural spectacle",
+            "qTitle_cn": "表达你对这次自然景象的情感反应",
+            "type": 0,
+            "from": "rewrite"
+          }
+        ]
+      },
+      {
+        "topicName": "a memorable product advertisement you encountered",
+        "topicName_cn": "你看到过的一则印象深刻的产品广告",
+        "topicId": "Advanced_2025Q2_t37",
+        "points": [
+            {
+                "qTitle": "Recall the time and medium of this advertisement",
+                "qTitle_cn": "回忆你看到这个广告的时间和媒介",
+                "type": 0,
+                "from": "rewrite"
+            },
+            {
+                "qTitle": "Describe the promoted product's features and purpose",
+                "qTitle_cn": "描述这款产品的特点和用途",
+                "type": 0,
+                "from": "rewrite"
+            },
+            {
+                "qTitle": "Evaluate the advertisement's effectiveness and appeal",
+                "qTitle_cn": "评价这个广告的吸引力和效果",
+                "type": 0,
+                "from": "rewrite"
+            },
+            {
+                "qTitle": "Share your overall impression of the marketing approach",
+                "qTitle_cn": "分享你对这个广告营销方式的总体印象",
+                "type": 0,
+                "from": "rewrite"
+            }
+            ]
+      }
+    ]
+  }
+        
+      
