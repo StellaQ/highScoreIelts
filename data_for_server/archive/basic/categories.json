@@ -1,175 +1,175 @@
 {
-    "mixed_categories": [
-      {
-        "categoryName": "Personal Information",
-        "categoryName_cn": "个人信息",
-        "categoryId": "c1",
-        "topicCollection": [
-          {
-            "topicName": "Professional Life",
-            "topicName_cn": "职业生活",
-            "topicId": "Basic_25Q2_t1"
-          },
-          {
-            "topicName": "Academic Pursuits",
-            "topicName_cn": "学术追求",
-            "topicId": "Basic_25Q2_t2"
-          },
-          {
-            "topicName": "Naming Conventions",
-            "topicName_cn": "命名习俗",
-            "topicId": "Basic_25Q2_t13"
-          }
-        ]
-      },
-      {
-        "categoryName": "Daily",
-        "categoryName_cn": "日常生活",
-        "categoryId": "c2",
-        "topicCollection": [
-          {
-            "topicName": "Morning Routines",
-            "topicName_cn": "晨间习惯",
-            "topicId": "Basic_25Q2_t9"
-          },
-          {
-            "topicName": "Domestic Responsibilities",
-            "topicName_cn": "家庭责任",
-            "topicId": "Basic_25Q2_t10"
-          },
-          {
-            "topicName": "Solo Activities",
-            "topicName_cn": "独处活动",
-            "topicId": "Basic_25Q2_t21"
-          },
-          {
-            "topicName": "Leisure Time",
-            "topicName_cn": "闲暇时光",
-            "topicId": "Basic_25Q2_t22"
-          }
-        ]
-      },
-      {
-        "categoryName": "Surroundings",
-        "categoryName_cn": "居住环境",
-        "categoryId": "c3",
-        "topicCollection": [
-          {
-            "topicName": "Residential Environment",
-            "topicName_cn": "居住环境",
-            "topicId": "Basic_25Q2_t3"
-          },
-          {
-            "topicName": "Public Transportation Usage",
-            "topicName_cn": "公共交通使用",
-            "topicId": "Basic_25Q2_t11"
-          },
-          {
-            "topicName": "Floral Appreciation",
-            "topicName_cn": "花卉欣赏",
-            "topicId": "Basic_25Q2_t17"
-          }
-        ]
-      },
-      {
-        "categoryName": "Hobby",
-        "categoryName_cn": "兴趣爱好",
-        "categoryId": "c4",
-        "topicCollection": [
-          {
-            "topicName": "Puzzle-Solving Activities",
-            "topicName_cn": "解谜活动",
-            "topicId": "Basic_25Q2_t12"
-          },
-          {
-            "topicName": "Vocal Performance",
-            "topicName_cn": "声乐表演",
-            "topicId": "Basic_25Q2_t14"
-          },
-          {
-            "topicName": "Writing Practices",
-            "topicName_cn": "写作习惯",
-            "topicId": "Basic_25Q2_t6"
-          }
-        ]
-      },
-      {
-        "categoryName": "Habit",
-        "categoryName_cn": "习惯与常规",
-        "categoryId": "c5",
-        "topicCollection": [
-          {
-            "topicName": "Snacking Habits",
-            "topicName_cn": "零食习惯",
-            "topicId": "Basic_25Q2_t16"
-          },
-          {
-            "topicName": "Personal Patience",
-            "topicName_cn": "个人耐心",
-            "topicId": "Basic_25Q2_t20"
-          },
-          {
-            "topicName": "Memory Capacity",
-            "topicName_cn": "记忆能力",
-            "topicId": "Basic_25Q2_t18"
-          }
-        ]
-      },
-      {
-        "categoryName": "Technology",
-        "categoryName_cn": "技术与媒体",
-        "categoryId": "c7",
-        "topicCollection": [
-          {
-            "topicName": "Technology Usage",
-            "topicName_cn": "科技使用",
-            "topicId": "Basic_25Q2_t5"
-          },
-          {
-            "topicName": "Social Media Engagement",
-            "topicName_cn": "社交媒体参与",
-            "topicId": "Basic_25Q2_t15"
-          },
-          {
-            "topicName": "Household Appliances",
-            "topicName_cn": "家用电器",
-            "topicId": "Basic_25Q2_t19"
-          }
-        ]
-      },
-      {
-        "categoryName": "Celeberate",
-        "categoryName_cn": "节日与庆祝",
-        "categoryId": "c9",
-        "topicCollection": [
-          {
-            "topicName": "Birthday Celebrations",
-            "topicName_cn": "生日庆祝",
-            "topicId": "Basic_25Q2_t4"
-          },
-          {
-            "topicName": "Expressions of Gratitude",
-            "topicName_cn": "感恩表达",
-            "topicId": "Basic_25Q2_t23"
-          }
-        ]
-      },
-      {
-        "categoryName": "Culture",
-        "categoryName_cn": "文化与社会",
-        "categoryId": "c10",
-        "topicCollection": [
-          {
-            "topicName": "Geographical Knowledge",
-            "topicName_cn": "地理知识",
-            "topicId": "Basic_25Q2_t7"
-          },
-          {
-            "topicName": "Weather Patterns",
-            "topicName_cn": "天气模式",
-            "topicId": "Basic_25Q2_t8"
-          }
-        ]
-      }
-    ]
-  }
+  "mixed_categories": [
+    {
+      "categoryName": "Personal Information",
+      "categoryName_cn": "个人信息",
+      "categoryId": "c1",
+      "topicCollection": [
+        {
+          "topicName": "Professional Life",
+          "topicName_cn": "职业生活（二选一）",
+          "topicId": "Basic_25Q2_t1"
+        },
+        {
+          "topicName": "Academic Pursuits",
+          "topicName_cn": "学术追求（二选一）",
+          "topicId": "Basic_25Q2_t2"
+        },
+        {
+          "topicName": "Naming Conventions",
+          "topicName_cn": "命名习俗",
+          "topicId": "Basic_25Q2_t13"
+        }
+      ]
+    },
+    {
+      "categoryName": "Daily",
+      "categoryName_cn": "日常生活",
+      "categoryId": "c2",
+      "topicCollection": [
+        {
+          "topicName": "Morning Routines",
+          "topicName_cn": "晨间习惯",
+          "topicId": "Basic_25Q2_t9"
+        },
+        {
+          "topicName": "Domestic Responsibilities",
+          "topicName_cn": "家庭责任",
+          "topicId": "Basic_25Q2_t10"
+        },
+        {
+          "topicName": "Solo Activities",
+          "topicName_cn": "独处活动",
+          "topicId": "Basic_25Q2_t21"
+        },
+        {
+          "topicName": "Leisure Time",
+          "topicName_cn": "闲暇时光",
+          "topicId": "Basic_25Q2_t22"
+        }
+      ]
+    },
+    {
+      "categoryName": "Surroundings",
+      "categoryName_cn": "居住环境",
+      "categoryId": "c3",
+      "topicCollection": [
+        {
+          "topicName": "Residential Environment",
+          "topicName_cn": "居住环境",
+          "topicId": "Basic_25Q2_t3"
+        },
+        {
+          "topicName": "Public Transportation Usage",
+          "topicName_cn": "公共交通使用",
+          "topicId": "Basic_25Q2_t11"
+        },
+        {
+          "topicName": "Floral Appreciation",
+          "topicName_cn": "花卉欣赏",
+          "topicId": "Basic_25Q2_t17"
+        }
+      ]
+    },
+    {
+      "categoryName": "Hobby",
+      "categoryName_cn": "兴趣爱好",
+      "categoryId": "c4",
+      "topicCollection": [
+        {
+          "topicName": "Puzzle-Solving Activities",
+          "topicName_cn": "解谜活动",
+          "topicId": "Basic_25Q2_t12"
+        },
+        {
+          "topicName": "Vocal Performance",
+          "topicName_cn": "声乐表演",
+          "topicId": "Basic_25Q2_t14"
+        },
+        {
+          "topicName": "Writing Practices",
+          "topicName_cn": "写作习惯",
+          "topicId": "Basic_25Q2_t6"
+        }
+      ]
+    },
+    {
+      "categoryName": "Habit",
+      "categoryName_cn": "习惯与常规",
+      "categoryId": "c5",
+      "topicCollection": [
+        {
+          "topicName": "Snacking Habits",
+          "topicName_cn": "零食习惯",
+          "topicId": "Basic_25Q2_t16"
+        },
+        {
+          "topicName": "Personal Patience",
+          "topicName_cn": "个人耐心",
+          "topicId": "Basic_25Q2_t20"
+        },
+        {
+          "topicName": "Memory Capacity",
+          "topicName_cn": "记忆能力",
+          "topicId": "Basic_25Q2_t18"
+        }
+      ]
+    },
+    {
+      "categoryName": "Technology",
+      "categoryName_cn": "技术与媒体",
+      "categoryId": "c7",
+      "topicCollection": [
+        {
+          "topicName": "Technology Usage",
+          "topicName_cn": "科技使用",
+          "topicId": "Basic_25Q2_t5"
+        },
+        {
+          "topicName": "Social Media Engagement",
+          "topicName_cn": "社交媒体参与",
+          "topicId": "Basic_25Q2_t15"
+        },
+        {
+          "topicName": "Household Appliances",
+          "topicName_cn": "家用电器",
+          "topicId": "Basic_25Q2_t19"
+        }
+      ]
+    },
+    {
+      "categoryName": "Celeberate",
+      "categoryName_cn": "节日与庆祝",
+      "categoryId": "c9",
+      "topicCollection": [
+        {
+          "topicName": "Birthday Celebrations",
+          "topicName_cn": "生日庆祝",
+          "topicId": "Basic_25Q2_t4"
+        },
+        {
+          "topicName": "Expressions of Gratitude",
+          "topicName_cn": "感恩表达",
+          "topicId": "Basic_25Q2_t23"
+        }
+      ]
+    },
+    {
+      "categoryName": "Culture",
+      "categoryName_cn": "文化与社会",
+      "categoryId": "c10",
+      "topicCollection": [
+        {
+          "topicName": "Geographical Knowledge",
+          "topicName_cn": "地理知识",
+          "topicId": "Basic_25Q2_t7"
+        },
+        {
+          "topicName": "Weather Patterns",
+          "topicName_cn": "天气模式",
+          "topicId": "Basic_25Q2_t8"
+        }
+      ]
+    }
+  ]
+}

@@ -165,29 +165,37 @@
 }
 
 .stat-card {
-  background: #f8f9fa;
-  padding: 24rpx;
-  border-radius: 16rpx;
-  text-align: center;
+  position: relative;
+  padding: 16rpx;
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  margin-bottom: 8rpx;
 }
 
 .stat-icon {
-  font-size: 40rpx;
-  margin-bottom: 12rpx;
-  display: block;
+  font-size: 32rpx;
 }
 
 .stat-label {
-  font-size: 24rpx;
-  color: #6b7280;
-  margin-bottom: 8rpx;
-  display: block;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.stat-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
 }
 
 .stat-value {
-  font-size: 32rpx;
-  color: #1f2937;
+  font-size: 36rpx;
   font-weight: bold;
+  color: #333;
 }
 
 /* 训练计划区域 */
@@ -991,41 +999,35 @@
   position: relative;
 }
 
-.stat-header {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
 .help-icon {
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
   text-align: center;
   border-radius: 50%;
   background-color: #e0e0e0;
   color: #666;
-  font-size: 12px;
-  margin-left: 4px;
+  font-size: 24rpx;
+  margin-left: 8rpx;
 }
 
 .score-selector {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 12rpx;
+  margin-top: 8rpx;
 }
 
 .score-btn {
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
   text-align: center;
   border-radius: 50%;
   background-color: #4CAF50;
   color: white;
-  font-size: 16px;
+  font-size: 32rpx;
   font-weight: bold;
 }
 
@@ -1055,4 +1057,57 @@
   margin-bottom: 12px;
   line-height: 1.5;
   font-size: 14px;
+}
+
+/* 目标分数特殊样式 */
+.target-score-card .score-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  margin-top: 8rpx;
+}
+
+.score-btn {
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.score-btn.disabled {
+  background-color: #e0e0e0;
+  color: #999;
+}
+
+.help-icon {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #666;
+  font-size: 24rpx;
+  margin-left: 8rpx;
+}
+
+/* Loading 图标样式 */
+.loading-icon {
+  width: 36rpx;
+  height: 36rpx;
+  border: 4rpx solid #f3f3f3;
+  border-top: 4rpx solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -4,6 +4,7 @@ const router = express.Router();
 const BasicCategories = require('../models/basicCategories');
 const BasicQuestions = require('../models/basicQuestions');
 const BasicRecord = require('../models/basicRecord');
+const User = require('../models/UserModel');  // 添加 User 模型引入
 
 const basic_system_prompt = require('../prompts/basic_system_prompt.js');
 const { getAIService } = require('../services/aiService.js'); 
@@ -293,6 +294,16 @@ router.post('/getBasicAI', async (req, res) => {
         message: '缺少必要参数'
       });
     }
+
+    // 查询用户的目标分数
+    const user = await User.findOne({ userId }, { targetScore: 1 });
+    if (!user) {
+      return res.status(404).json({
+        code: 404,
+        message: '用户不存在'
+      });
+    }
+
     // 检查并扣除积分
     try {
       await checkAndDeductPoints(userId, config.AI_PART1_POINTS);
@@ -305,15 +316,22 @@ router.post('/getBasicAI', async (req, res) => {
       });
     }
     // 只有在积分检查成功后才调用 AI 服务
+
+    // 获取目标分数并替换模板中的占位符
+    const targetScore = user.targetScore || 6;
+    const system_prompt_with_score = basic_system_prompt.replace(/\[targetScore\]/g, targetScore.toString());
+
+    // 调用 AI 服务
     const user_prompt = `Question: ${question} Answer: ${answer}`;
-    const result = await getAIService(basic_system_prompt, user_prompt);
+    const result = await getAIService(system_prompt_with_score, user_prompt);
+    
     res.json({
       success: true,
       data: result,
       pointsDeducted: config.AI_PART1_POINTS
     });
   } catch (error) {
-    console.error('获取答案失败:', err);
+    console.error('获取答案失败:', error);
     res.status(500).json({
       success: false,
       code: 500,

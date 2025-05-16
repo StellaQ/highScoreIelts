@@ -7,12 +7,12 @@
         "topicCollection": [
           {
             "topicName": "Professional Life",
-            "topicName_cn": "职业生活",
+            "topicName_cn": "职业生活（二选一）",
             "topicId": "Basic_25Q2_t1"
           },
           {
             "topicName": "Academic Pursuits",
-            "topicName_cn": "学术追求",
+            "topicName_cn": "学术追求（二选一）",
             "topicId": "Basic_25Q2_t2"
           },
           {

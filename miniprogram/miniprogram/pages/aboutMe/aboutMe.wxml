@@ -88,9 +88,18 @@
         </view>
         
         <view class="stat-card">
-          <text class="stat-icon">🎤</text>
-          <text class="stat-label">完成话题</text>
-          <text class="stat-value">{{totalTopics}} 个</text>
+          <view class="stat-header">
+            <text class="stat-icon">🎤</text>
+            <text class="stat-label">已完成话题</text>
+          </view>
+          <view class="stat-content">
+            <block wx:if="{{totalTopics > 0}}">
+              <text class="stat-value">{{totalTopics}} 个</text>
+            </block>
+            <block wx:else>
+              <view class="loading-icon"></view>
+            </block>
+          </view>
         </view>
         
         <!-- <view class="stat-card"
