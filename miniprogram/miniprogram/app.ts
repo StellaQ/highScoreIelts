@@ -107,7 +107,7 @@ App<IAppOption>({
     return {
       title: '烤鸭们，主包在这里用AI学习SPEAKING',
       path: '/pages/index/index',
-      imageUrl: 'https://img.xiaoshuspeaking.site/share-info2.png'
+      imageUrl: 'https://img.xiaoshuspeaking.site/WechatIMG213.jpg'
     }
   },
   // 朋友圈分享
@@ -115,7 +115,7 @@ App<IAppOption>({
     return {
       title: '烤鸭们，主包在这里用AI学习SPEAKING',  // 朋友圈标题
       query: '',  // 不带任何参数
-      imageUrl: 'https://img.xiaoshuspeaking.site/share-info2.png'  // 朋友圈分享的图片尺寸要求可能与普通分享不同，建议使用 1:1 的图片
+      imageUrl: 'https://img.xiaoshuspeaking.site/WechatIMG213.jpg'  // 朋友圈分享的图片尺寸要求可能与普通分享不同，建议使用 1:1 的图片
     }
   }
 });
