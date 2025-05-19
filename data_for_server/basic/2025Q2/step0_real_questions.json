@@ -52,15 +52,6 @@
             ]
         },
         {
-            "topicName": "Geography",
-            "questions": [
-                "Did/do you study geography at school?",
-                "Do you enjoy learning about the geography of other countries?",
-                "Is there a country you'd like to visit because of its geography?",
-                "How good are you at reading maps?"
-            ]
-        },
-        {
             "topicName": "Weather",
             "questions": [  
                 "How often do you check the weather forecast?",
@@ -180,15 +171,6 @@
             ]
         },
         {
-            "topicName": "Spending time by yourself",
-            "questions": [  
-                "Do you usually spend time by yourself?",
-                "What did you do last time you were by yourself?",
-                "How do you usually spend your time by yourself?",
-                "Do you like spending time by yourself?"
-            ]
-        },
-        {
             "topicName": "Spare time",
             "questions": [  
                 "Do you often have free time?",
@@ -202,8 +184,74 @@
             "questions": [
                 "Have you ever sent a thank you card to others?",
                 "Do people in your country often say 'thank you'?",
-                "On what occasions do you say 'thank you ?"
+                "On what occasions do you say 'thank you ?",
+                "Why do people need to say 'thank you'?"
+            ]
+        },
+        {
+            "topicName": "Being busy",
+            "questions": [
+                "Are you busier now than when you were a child?",
+                "When was the last time you were busy?",
+                "What are you busy with recently?",
+                "What do you do in your free time?"
+            ]
+        },
+        {
+            "topicName": "List",
+            "questions": [
+                "Do you make a list when you shop?",
+                "Do you make a list for your work?",
+                "Do you prefer to make a list on paper or your phone?",
+                "Why don't some people like making lists?",
+                "What are the benefits of making plans?"
+            ]
+        },
+        {
+            "topicName": "Photograph",
+            "questions": [
+                "Do you like to take photographs?",
+                "Do you often take photographs?",
+                "Will you print out your photographs?",
+                "Do you family like to take photographs?",
+                "Do you want to be a photographer in the future?"
+            ]
+        },
+        {
+            "topicName": "Cooking",
+            "questions": [
+                "How often do you usually cook?",
+                "Do you want to learn to cook?",
+                "How does it feel to cook for many people?",
+                "What do you feel if you stand in a restaurant all day?"
+            ]
+        },
+        {
+            "topicName": "Praise",
+            "questions": [
+                "Have you received any praise recently?",
+                "How do you feel when others praise you?",
+                "When was the last time you praised someone?",
+                "Should parents praise their children?"
+            ]
+        },
+        {
+            "topicName": "Phone",
+            "questions": [
+                "What do you usually do with your mobile phone？",
+                "Have you ever dropped or lost your mobile phone？",
+                "Would you be happy if someone gave you a mobile phone for free?"
+            ]
+        },
+        {
+            "topicName": "Staying up",
+            "questions": [
+                "Do you often go to bed very late?",
+                "Did you stay up late when you were a child?",
+                "How do you feel the next morning after a late night?",
+                "What do you like to do when you stay up late?"
             ]
         }
+       
     ]
 }

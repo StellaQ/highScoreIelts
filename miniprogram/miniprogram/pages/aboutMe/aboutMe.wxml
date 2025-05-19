@@ -93,11 +93,8 @@
             <text class="stat-label">已完成话题</text>
           </view>
           <view class="stat-content">
-            <block wx:if="{{totalTopics > 0}}">
+            <block>
               <text class="stat-value">{{totalTopics}} 个</text>
-            </block>
-            <block wx:else>
-              <view class="loading-icon"></view>
             </block>
           </view>
         </view>

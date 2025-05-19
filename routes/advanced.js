@@ -4,6 +4,7 @@ const router = express.Router();
 const AdvancedCategories = require('../models/advancedCategories');
 const AdvancedQuestions = require('../models/advancedQuestions');
 const AdvancedRecord = require('../models/advancedRecord');
+const User = require('../models/UserModel');
 
 const advanced_system_prompt = require('../prompts/advanced_system_prompt.js');
 const { getAIService } = require('../services/aiService.js'); 
@@ -242,7 +243,7 @@ router.get('/getAdvancedDetail', async (req, res) => {
 // AI定制化答案
 router.post('/getAdvancedAI', async (req, res) => {
   try {
-    const { userId,question, points } = req.body;
+    const { userId, question, points } = req.body;
     
     if (!userId || !question || !points) {
       return res.status(400).json({
@@ -250,6 +251,16 @@ router.post('/getAdvancedAI', async (req, res) => {
         message: '缺少必要参数'
       });
     }
+
+    // 查询用户的目标分数
+    const user = await User.findOne({ userId }, { targetScore: 1 });
+    if (!user) {
+      return res.status(404).json({
+        code: 404,
+        message: '用户不存在'
+      });
+    }
+
     // 检查并扣除积分
     try {
       await checkAndDeductPoints(userId, config.AI_PART2_POINTS);
@@ -261,21 +272,28 @@ router.post('/getAdvancedAI', async (req, res) => {
         message: pointsError.message
       });
     }
-    // 只有在积分检查成功后才调用 AI 服务
-    // 修正1：正确构建用户提示内容
+
+    // 获取目标分数并替换模板中的占位符
+    const targetScore = user.targetScore || 6;
+    const system_prompt_with_score = advanced_system_prompt.replace(/\[targetScore\]/g, targetScore.toString());
+
+    // console.log('system_prompt_with_score', system_prompt_with_score);
+    // 构建用户提示内容
     const user_prompt = JSON.stringify({
       question: question,
       points: points
     });
-    // 修正2：确保getAIService正确处理参数
-    const result = await getAIService(advanced_system_prompt, user_prompt);
+
+    // 调用 AI 服务
+    const result = await getAIService(system_prompt_with_score, user_prompt);
+    
     res.json({
       success: true,
       data: result,
       pointsDeducted: config.AI_PART2_POINTS
     });
   } catch (error) {
-    console.error('获取答案失败:', err);
+    console.error('获取答案失败:', error);
     res.status(500).json({
       success: false,
       code: 500,

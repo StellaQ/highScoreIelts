@@ -4,6 +4,7 @@ const router = express.Router();
 const ExpertCategories = require('../models/expertCategories');
 const ExpertQuestions = require('../models/expertQuestions');
 const ExpertRecord = require('../models/expertRecord');
+const User = require('../models/UserModel');
 
 const expert_system_prompt = require('../prompts/expert_system_prompt.js');
 const { getAIService } = require('../services/aiService.js'); 
@@ -247,27 +248,48 @@ router.post('/getExpertAI', async (req, res) => {
         message: '缺少必要参数'
       });
     }
+
+    // 查询用户的目标分数
+    const user = await User.findOne({ userId }, { targetScore: 1 });
+    if (!user) {
+      return res.status(404).json({
+        code: 404,
+        message: '用户不存在'
+      });
+    }
+
     // 检查并扣除积分
     try {
       await checkAndDeductPoints(userId, config.AI_PART3_POINTS);
     } catch (pointsError) {
-      // 如果积分检查失败，直接返回错误
       return res.status(pointsError.code || 400).json({
         success: false,
         code: pointsError.code || 400,
         message: pointsError.message
       });
     }
-    // 只有在积分检查成功后才调用 AI 服务
-    const user_prompt = `Question: ${question} Answer: ${answer}`;
-    const result = await getAIService(expert_system_prompt, user_prompt);
+
+    // 获取目标分数并替换模板中的占位符
+    const targetScore = user.targetScore || 6;
+    const system_prompt_with_score = expert_system_prompt.replace(/\[targetScore\]/g, targetScore.toString());
+
+    // 构建用户提示内容
+    const user_prompt = JSON.stringify({
+      targetBand: targetScore,
+      question: question,
+      answer: answer
+    });
+
+    // 调用 AI 服务
+    const result = await getAIService(system_prompt_with_score, user_prompt);
+    
     res.json({
       success: true,
       data: result,
       pointsDeducted: config.AI_PART3_POINTS
     });
   } catch (error) {
-    console.error('获取答案失败:', err);
+    console.error('获取答案失败:', error);
     res.status(500).json({
       success: false,
       code: 500,
