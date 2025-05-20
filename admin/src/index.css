@@ -1,0 +1,401 @@
+@import 'antd/dist/reset.css';
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  min-height: 800px;
+}
+
+/* 列表项基础样式 */
+.list-item {
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid transparent;
+}
+
+.list-item:hover {
+  background: #f5f5f5;
+}
+
+.list-item.active {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.list-item.archived {
+  color: #999;
+  background: #fafafa;
+}
+
+.list-item.new-item {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.list-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+}
+
+.list-content {
+  flex: 1;
+  position: relative;
+}
+
+.list-content .edit-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  color: #1890ff;
+  font-size: 16px;
+}
+
+.question-text {
+  margin-bottom: 8px;
+}
+
+.question-text:last-child {
+  margin-bottom: 0;
+}
+
+/* 分类项样式 */
+.category-item {
+  padding: 15px;
+  border-radius: 4px;
+  background: #fafafa;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.category-item:hover {
+  background: #f0f5ff;
+}
+
+.category-item.active {
+  background: #e6f7ff;
+  border-color: #1890ff;
+}
+
+.category-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.category-name-cn {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* 标签列表样式 */
+.tag-list {
+  margin-top: 8px;
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  background: #fff;
+  border: 1px solid transparent;
+}
+
+.tag-item:hover {
+  background: #f0f5ff;
+  border-color: #91d5ff;
+}
+
+.tag-item.active {
+  background: #e6f7ff;
+  border-color: #1890ff;
+  font-weight: 500;
+}
+
+.tag-item .tag {
+  flex: 1;
+  font-size: 14px;
+  color: #1890ff;
+}
+
+.tag-item .tag-count {
+  font-size: 14px;
+  color: #999;
+  margin-left: 8px;
+}
+
+.tag-item .tag-actions {
+  display: none;
+  position: absolute;
+  right: 32px;
+  gap: 4px;
+}
+
+.tag-item:hover .tag-actions {
+  display: flex;
+}
+
+.tag-action-btn {
+  padding: 2px 4px;
+  color: #999;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tag-action-btn:hover {
+  color: #1890ff;
+}
+
+/* 拖拽手柄样式 */
+.drag-handle {
+  cursor: move;
+  color: #999;
+  visibility: hidden;
+  margin-top: 4px;
+}
+
+.list-item:hover .drag-handle {
+  visibility: visible;
+}
+
+/* 添加按钮样式 */
+.add-button {
+  width: 100%;
+  height: 40px;
+  border: 2px dashed #d9d9d9;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.add-button:hover {
+  border-color: #40a9ff;
+  color: #40a9ff;
+}
+
+.add-button .plus {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+/* 搜索框样式 */
+.search-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  padding-left: 32px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+/* 话题和问题文本样式 */
+.item-original {
+  font-weight: 400;
+  color: #333;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.item-paraphrase {
+  color: #1890ff;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.item-chinese {
+  color: #666;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* 模态框样式 */
+.ant-modal-content {
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.ant-modal-header {
+  margin-bottom: 20px;
+}
+
+.ant-modal-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.ant-input-group-addon {
+  border: none;
+  background: none;
+  padding-right: 0;
+}
+
+/* AI建议样式 */
+.ai-suggestion {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.ai-suggestion-title {
+  color: #52c41a;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* 分割线样式 */
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}
+
+/* 按钮组样式 */
+.ant-space-item .ant-btn {
+  padding: 4px 8px;
+}
+
+/* 动画效果 */
+.ant-btn, .tag-item, .list-item, .category-item, .add-button {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* 表单样式 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+textarea.form-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.input-group .form-input {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.input-group .btn {
+  white-space: nowrap;
+  height: 38px;
+  padding: 0 12px;
+}
+
+/* 状态样式 */
+.status-new {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.status-active {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.status-inactive {
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  color: #999;
+}
+
+/* 分类操作按钮 */
+.category-actions {
+  display: none;
+  position: absolute;
+  right: 32px;
+  top: 8px;
+  gap: 4px;
+}
+
+.category-item:hover .category-actions {
+  display: flex;
+}
+
+.category-action-btn {
+  padding: 2px 4px;
+  color: #999;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.category-action-btn:hover {
+  color: #1890ff;
+}
