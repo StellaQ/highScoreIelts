@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS题库管理系统 - Part 2题目分类</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            min-height: 800px;
+        }
+        .categories {
+            width: 240px;
+            border-right: 1px solid #eee;
+            padding-right: 20px;
+        }
+        .topics {
+            width: 400px;
+            border-right: 1px solid #eee;
+            padding: 0 20px;
+        }
+        .questions {
+            flex: 1;
+            padding-left: 20px;
+        }
+        .list-item {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .list-item:hover {
+            background: #f5f5f5;
+        }
+        .list-item.active {
+            background: #e6f7ff;
+            border: 1px solid #91d5ff;
+        }
+        .list-item.archived {
+            color: #999;
+            background: #fafafa;
+        }
+        .list-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-top: 4px;
+        }
+        .list-content {
+            flex: 1;
+            position: relative;
+        }
+        .edit-icon {
+            color: #1890ff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .edit-icon:hover {
+            background: rgba(24, 144, 255, 0.1);
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .category-header h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        .category-item {
+            padding: 15px;
+            border-radius: 4px;
+            background: #fafafa;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .category-item:hover {
+            border-color: #40a9ff;
+            background: #f0f5ff;
+        }
+        .category-item.active {
+            background: #e6f7ff;
+            border-color: #1890ff;
+        }
+        .category-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        .category-name-cn {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .category-desc {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+        /* 新增标签列表样式 */
+        .tag-list {
+            margin-top: 8px;
+        }
+        .tag-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            margin: 4px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            background: #fff;
+            border: 1px solid transparent;
+        }
+        .tag-item:hover {
+            background: #f0f5ff;
+            border-color: #91d5ff;
+        }
+        .tag-item.active {
+            background: #e6f7ff;
+            border-color: #1890ff;
+            font-weight: 500;
+        }
+        .tag-item .tag {
+            flex: 1;
+            font-size: 14px;
+            color: #1890ff;
+        }
+        .tag-item .tag-count {
+            font-size: 14px;
+            color: #999;
+            margin-left: 8px;
+        }
+        .tag-item .tag-actions {
+            display: none;
+            position: absolute;
+            right: 32px;
+            gap: 4px;
+        }
+        .tag-item:hover .tag-actions {
+            display: flex;
+        }
+        .tag-action-btn {
+            padding: 2px 4px;
+            color: #999;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .tag-action-btn:hover {
+            color: #1890ff;
+        }
+        .search-box {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 8px 12px;
+            padding-left: 32px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        .add-button {
+            width: 100%;
+            height: 40px;
+            border: 2px dashed #d9d9d9;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #999;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        .add-button:hover {
+            border-color: #40a9ff;
+            color: #40a9ff;
+        }
+        .add-button .plus {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        .btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-primary {
+            background: #1890ff;
+            color: white;
+        }
+        .drag-handle {
+            cursor: move;
+            color: #999;
+            visibility: hidden;
+            margin-top: 4px;
+        }
+        .list-item:hover .drag-handle {
+            visibility: visible;
+        }
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+        .item-original {
+            font-weight: 400;
+            color: #333;
+            font-size: 13px;
+        }
+        .item-paraphrase {
+            color: #1890ff;
+            font-style: italic;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        .item-chinese {
+            color: #666;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            width: 600px;
+            max-width: 90%;
+        }
+        .modal-header {
+            margin-bottom: 20px;
+        }
+        .modal-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .input-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        textarea.form-input {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .input-group .form-input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        .input-group .btn {
+            white-space: nowrap;
+        }
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .modal-buttons .btn {
+            min-width: 100px;
+            height: 36px;
+        }
+        .btn-default {
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            color: #666;
+        }
+        .btn-default:hover {
+            border-color: #40a9ff;
+            color: #40a9ff;
+        }
+        .btn-success {
+            background: #52c41a;
+            color: white;
+        }
+        .ai-suggestion {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .ai-suggestion-title {
+            color: #52c41a;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .topic-display, .question-display {
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .status-new {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+        }
+        /* 分类标签样式 */
+        .category-desc .tag {
+            display: inline-block;
+            padding: 2px 6px;
+            background: #f0f5ff;
+            color: #1890ff;
+            border-radius: 4px;
+            font-size: 12px;
+            margin: 2px;
+        }
+        /* 标签选择器样式 */
+        .tag-selector {
+            margin-top: 8px;
+        }
+        .selected-tags {
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .selected-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            background: #f0f5ff;
+            color: #1890ff;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .remove-tag {
+            margin-left: 4px;
+            cursor: pointer;
+            color: #999;
+        }
+        .remove-tag:hover {
+            color: #f5222d;
+        }
+        /* 分类项移动按钮 */
+        .category-actions {
+            display: none;
+            position: absolute;
+            right: 32px;
+            top: 8px;
+            gap: 4px;
+        }
+        .category-item:hover .category-actions {
+            display: flex;
+        }
+        .category-action-btn {
+            padding: 2px 4px;
+            color: #999;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .category-action-btn:hover {
+            color: #1890ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 分类列表 -->
+        <div class="categories">
+            <div class="category-header">
+                <h3>Part 2分类列表</h3>
+                <button class="btn btn-primary" onclick="showAIModal()">AI归类</button>
+            </div>
+            <div class="category-list">
+                <!-- 人物描述 -->
+                <div class="category-item">
+                    <div class="category-name">People Description</div>
+                    <div class="category-name-cn">人物描述</div>
+                    <div class="tag-list">
+                        <div class="tag-item active">
+                            <span class="tag">性格特征</span>
+                            <span class="tag-count">(12)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">能力才干</span>
+                            <span class="tag-count">(10)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">外貌穿着</span>
+                            <span class="tag-count">(8)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">生活习惯</span>
+                            <span class="tag-count">(6)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 物品描述 -->
+                <div class="category-item">
+                    <div class="category-name">Object Description</div>
+                    <div class="category-name-cn">物品描述</div>
+                    <div class="tag-list">
+                        <div class="tag-item">
+                            <span class="tag">日常用品</span>
+                            <span class="tag-count">(10)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">科技产品</span>
+                            <span class="tag-count">(8)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">艺术作品</span>
+                            <span class="tag-count">(6)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">纪念物品</span>
+                            <span class="tag-count">(7)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 地点描述 -->
+                <div class="category-item">
+                    <div class="category-name">Place Description</div>
+                    <div class="category-name-cn">地点描述</div>
+                    <div class="tag-list">
+                        <div class="tag-item">
+                            <span class="tag">自然景观</span>
+                            <span class="tag-count">(9)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">建筑场所</span>
+                            <span class="tag-count">(11)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">公共设施</span>
+                            <span class="tag-count">(8)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">休闲场所</span>
+                            <span class="tag-count">(7)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 事件经历 -->
+                <div class="category-item">
+                    <div class="category-name">Event Experience</div>
+                    <div class="category-name-cn">事件经历</div>
+                    <div class="tag-list">
+                        <div class="tag-item">
+                            <span class="tag">重要时刻</span>
+                            <span class="tag-count">(12)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">学习经历</span>
+                            <span class="tag-count">(9)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">工作经历</span>
+                            <span class="tag-count">(8)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">社交活动</span>
+                            <span class="tag-count">(10)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 计划目标 -->
+                <div class="category-item">
+                    <div class="category-name">Plans & Goals</div>
+                    <div class="category-name-cn">计划目标</div>
+                    <div class="tag-list">
+                        <div class="tag-item">
+                            <span class="tag">个人规划</span>
+                            <span class="tag-count">(11)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">学习目标</span>
+                            <span class="tag-count">(9)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">职业发展</span>
+                            <span class="tag-count">(10)</span>
+                        </div>
+                        <div class="tag-item">
+                            <span class="tag">生活愿望</span>
+                            <span class="tag-count">(8)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 话题列表 -->
+        <div class="topics">
+            <div class="add-button" onclick="showTopicModal()">
+                <span class="plus">+</span>
+            </div>
+
+            <!-- 当前题库话题 -->
+            <div class="list-item active">
+                <input type="checkbox" checked>
+                <span class="drag-handle">⋮</span>
+                <div class="list-content">
+                    <div class="item-original">Describe a person you know who enjoys dressing well</div>
+                    <div class="item-paraphrase">Tell me about someone in your life who has a great sense of fashion</div>
+                    <div class="item-chinese">描述一个你认识的爱好穿着打扮的人</div>
+                    <span class="edit-icon" onclick="showTopicEditModal(this)">✎</span>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <input type="checkbox" checked>
+                <span class="drag-handle">⋮</span>
+                <div class="list-content">
+                    <div class="item-original">Describe a friend from childhood who you remember very well</div>
+                    <div class="item-paraphrase">Tell me about a memorable childhood friend</div>
+                    <div class="item-chinese">描述一个你记忆深刻的童年朋友</div>
+                    <span class="edit-icon" onclick="showTopicEditModal(this)">✎</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 未选中的话题 -->
+            <div class="list-item archived">
+                <input type="checkbox">
+                <span class="drag-handle">⋮</span>
+                <div class="list-content">
+                    <div class="item-original">Describe someone from another culture who you enjoy spending time with</div>
+                    <div class="item-paraphrase">Tell me about a person from a different cultural background whom you like to spend time with</div>
+                    <div class="item-chinese">描述一个你喜欢与之相处的其他文化背景的人</div>
+                    <span class="edit-icon" onclick="showTopicEditModal(this)">✎</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 子问题列表 -->
+        <div class="questions">
+            <div class="add-button" onclick="showQuestionModal()">
+                <span class="plus">+</span>
+            </div>
+
+            <!-- 当前使用的题目 -->
+            <div class="list-item">
+                <input type="checkbox" checked>
+                <span class="drag-handle">⋮</span>
+                <div class="list-content">
+                    <div class="question-text">
+                        <div class="item-original">Who is this person that you want to talk about?</div>
+                        <div class="item-paraphrase">Could you introduce the person you're going to describe?</div>
+                        <div class="item-chinese">你想要谈论的这个人是谁？</div>
+                    </div>
+                    <span class="edit-icon" onclick="showQuestionEditModal(this)">✎</span>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <input type="checkbox" checked>
+                <span class="drag-handle">⋮</span>
+                <div class="list-content">
+                    <div class="question-text">
+                        <div class="item-original">What kind of clothes does this person usually wear?</div>
+                        <div class="item-paraphrase">Could you describe this person's typical fashion choices and style?</div>
+                        <div class="item-chinese">这个人通常穿什么样的衣服？</div>
+                    </div>
+                    <span class="edit-icon" onclick="showQuestionEditModal(this)">✎</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 未使用的题目 -->
+            <div class="list-item archived">
+                <input type="checkbox">
+                <span class="drag-handle">⋮</span>
+                <div class="list-content">
+                    <div class="question-text">
+                        <div class="item-original">Why do you think this person enjoys dressing well?</div>
+                        <div class="item-paraphrase">What do you think motivates this person to maintain such a good fashion sense?</div>
+                        <div class="item-chinese">你认为这个人为什么喜欢精心打扮？</div>
+                    </div>
+                    <span class="edit-icon" onclick="showQuestionEditModal(this)">✎</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI归类模态框 -->
+    <div class="modal" id="aiModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">AI智能归类</h3>
+            </div>
+            <div class="form-group">
+                <textarea class="form-input" style="min-height: 200px;" placeholder="请输入Part 2题目内容，例如：&#10;Describe a person you know who enjoys dressing well&#10;Who the person is&#10;What job/studies the person does&#10;What sort of clothes the person wears&#10;And explain why you think this person enjoys dressing well"></textarea>
+            </div>
+            <div class="ai-suggestion" id="aiSuggestion" style="display: none;">
+                <div class="ai-suggestion-title">AI建议分类</div>
+                <p>根据内容分析，建议将该话题归类到：<strong id="categoryMatch">People（人物类）</strong></p>
+                <p>匹配度：<span id="matchScore">95%</span></p>
+
+                <div class="topic-display status-new">
+                    <div class="item-original">Describe a person you know who enjoys dressing well</div>
+                    <div class="item-paraphrase">Tell me about someone in your life who has a great sense of fashion</div>
+                    <div class="item-chinese">描述一个你认识的爱好穿着打扮的人</div>
+                </div>
+
+                <div class="question-display status-new">
+                    <div class="item-original">Who is this person that you want to talk about?</div>
+                    <div class="item-paraphrase">Could you introduce the person you're going to describe?</div>
+                    <div class="item-chinese">你想要谈论的这个人是谁？</div>
+                </div>
+                <div class="question-display status-new">
+                    <div class="item-original">What kind of clothes does this person usually wear?</div>
+                    <div class="item-paraphrase">Could you describe this person's typical fashion choices and style?</div>
+                    <div class="item-chinese">这个人通常穿什么样的衣服？</div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" onclick="aiMatch()">AI匹配</button>
+                <button class="btn btn-default" onclick="hideAIModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 话题新增模态框 -->
+    <div class="modal" id="topicModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">新增Part 2话题</h3>
+            </div>
+            <div class="form-group">
+                <div class="input-label">原始话题</div>
+                <input type="text" class="form-input" id="originalTopic" placeholder="请输入原始话题（英文），例如：Describe a person you know who...">
+            </div>
+            <div class="form-group">
+                <div class="input-label">改写话题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="paraphraseTopic" placeholder="请输入改写话题（英文），例如：Tell me about someone who...">
+                    <button class="btn btn-primary" onclick="generateParaphraseTopic()">AI生成</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-label">中文话题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="chineseTopic" placeholder="请输入中文话题">
+                    <button class="btn btn-primary" onclick="generateChineseTopic()">AI生成</button>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-success" onclick="confirmAddTopic()">确认新增</button>
+                <button class="btn btn-default" onclick="hideTopicModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 子问题新增模态框 -->
+    <div class="modal" id="questionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">新增Part 2子问题</h3>
+            </div>
+            <div class="form-group">
+                <div class="input-label">原始问题</div>
+                <input type="text" class="form-input" id="originalQuestion" placeholder="请输入原始问题（英文），例如：Who is this person...">
+            </div>
+            <div class="form-group">
+                <div class="input-label">改写问题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="paraphraseQuestion" placeholder="请输入改写问题（英文），例如：Could you tell me about...">
+                    <button class="btn btn-primary" onclick="generateParaphraseQuestion()">AI生成</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-label">中文问题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="chineseQuestion" placeholder="请输入中文问题">
+                    <button class="btn btn-primary" onclick="generateChineseQuestion()">AI生成</button>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-success" onclick="confirmAddQuestion()">确认新增</button>
+                <button class="btn btn-default" onclick="hideQuestionModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 话题编辑模态框 -->
+    <div class="modal" id="topicEditModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">编辑Part 2话题</h3>
+            </div>
+            <div class="form-group">
+                <div class="input-label">原始话题</div>
+                <input type="text" class="form-input" id="editOriginalTopic">
+            </div>
+            <div class="form-group">
+                <div class="input-label">改写话题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="editParaphraseTopic">
+                    <button class="btn btn-primary" onclick="generateEditParaphraseTopic()">AI生成</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-label">中文话题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="editChineseTopic">
+                    <button class="btn btn-primary" onclick="generateEditChineseTopic()">AI生成</button>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-success" onclick="confirmEditTopic()">确认修改</button>
+                <button class="btn btn-default" onclick="hideTopicEditModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 子问题编辑模态框 -->
+    <div class="modal" id="questionEditModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">编辑Part 2子问题</h3>
+            </div>
+            <div class="form-group">
+                <div class="input-label">原始问题</div>
+                <input type="text" class="form-input" id="editOriginalQuestion">
+            </div>
+            <div class="form-group">
+                <div class="input-label">改写问题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="editParaphraseQuestion">
+                    <button class="btn btn-primary" onclick="generateEditParaphraseQuestion()">AI生成</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-label">中文问题</div>
+                <div class="input-group">
+                    <input type="text" class="form-input" id="editChineseQuestion">
+                    <button class="btn btn-primary" onclick="generateEditChineseQuestion()">AI生成</button>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-success" onclick="confirmEditQuestion()">确认修改</button>
+                <button class="btn btn-default" onclick="hideQuestionEditModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // AI归类模态框
+        function showAIModal() {
+            document.getElementById('aiModal').style.display = 'block';
+            document.getElementById('aiSuggestion').style.display = 'none';
+        }
+
+        function hideAIModal() {
+            document.getElementById('aiModal').style.display = 'none';
+        }
+
+        function aiMatch() {
+            document.getElementById('aiSuggestion').style.display = 'block';
+            document.getElementById('categoryMatch').textContent = 'People（人物类）';
+            document.getElementById('matchScore').textContent = '95%';
+        }
+
+        // 话题模态框
+        function showTopicModal() {
+            document.getElementById('topicModal').style.display = 'block';
+        }
+
+        function hideTopicModal() {
+            document.getElementById('topicModal').style.display = 'none';
+        }
+
+        function generateParaphraseTopic() {
+            const originalTopic = document.getElementById('originalTopic').value;
+            if (!originalTopic) {
+                alert('请先输入原始话题');
+                return;
+            }
+            // 调用AI生成改写话题
+            document.getElementById('paraphraseTopic').value = 'Tell me about someone who...';
+        }
+
+        function generateChineseTopic() {
+            const originalTopic = document.getElementById('originalTopic').value;
+            if (!originalTopic) {
+                alert('请先输入原始话题');
+                return;
+            }
+            // 调用AI生成中文话题
+            document.getElementById('chineseTopic').value = '描述一个...';
+        }
+
+        function confirmAddTopic() {
+            const originalTopic = document.getElementById('originalTopic').value;
+            const paraphraseTopic = document.getElementById('paraphraseTopic').value;
+            const chineseTopic = document.getElementById('chineseTopic').value;
+
+            if (!originalTopic || !paraphraseTopic || !chineseTopic) {
+                alert('请确保所有字段都已填写');
+                return;
+            }
+
+            hideTopicModal();
+        }
+
+        // 子问题模态框
+        function showQuestionModal() {
+            document.getElementById('questionModal').style.display = 'block';
+        }
+
+        function hideQuestionModal() {
+            document.getElementById('questionModal').style.display = 'none';
+        }
+
+        function generateParaphraseQuestion() {
+            const originalQuestion = document.getElementById('originalQuestion').value;
+            if (!originalQuestion) {
+                alert('请先输入原始问题');
+                return;
+            }
+            // 调用AI生成改写问题
+            document.getElementById('paraphraseQuestion').value = 'Could you tell me about...';
+        }
+
+        function generateChineseQuestion() {
+            const originalQuestion = document.getElementById('originalQuestion').value;
+            if (!originalQuestion) {
+                alert('请先输入原始问题');
+                return;
+            }
+            // 调用AI生成中文问题
+            document.getElementById('chineseQuestion').value = '请告诉我...';
+        }
+
+        function confirmAddQuestion() {
+            const originalQuestion = document.getElementById('originalQuestion').value;
+            const paraphraseQuestion = document.getElementById('paraphraseQuestion').value;
+            const chineseQuestion = document.getElementById('chineseQuestion').value;
+
+            if (!originalQuestion || !paraphraseQuestion || !chineseQuestion) {
+                alert('请确保所有字段都已填写');
+                return;
+            }
+
+            hideQuestionModal();
+        }
+
+        // 话题编辑模态框
+        function showTopicEditModal(element) {
+            const topicContent = element.parentElement;
+            document.getElementById('editOriginalTopic').value = topicContent.querySelector('.item-original').textContent;
+            document.getElementById('editParaphraseTopic').value = topicContent.querySelector('.item-paraphrase').textContent;
+            document.getElementById('editChineseTopic').value = topicContent.querySelector('.item-chinese').textContent;
+            document.getElementById('topicEditModal').style.display = 'block';
+        }
+
+        function hideTopicEditModal() {
+            document.getElementById('topicEditModal').style.display = 'none';
+        }
+
+        function generateEditParaphraseTopic() {
+            const originalTopic = document.getElementById('editOriginalTopic').value;
+            if (!originalTopic) {
+                alert('请先输入原始话题');
+                return;
+            }
+            // 调用AI生成改写话题
+            document.getElementById('editParaphraseTopic').value = 'Tell me about someone who...';
+        }
+
+        function generateEditChineseTopic() {
+            const originalTopic = document.getElementById('editOriginalTopic').value;
+            if (!originalTopic) {
+                alert('请先输入原始话题');
+                return;
+            }
+            // 调用AI生成中文话题
+            document.getElementById('editChineseTopic').value = '描述一个...';
+        }
+
+        function confirmEditTopic() {
+            const originalTopic = document.getElementById('editOriginalTopic').value;
+            const paraphraseTopic = document.getElementById('editParaphraseTopic').value;
+            const chineseTopic = document.getElementById('editChineseTopic').value;
+
+            if (!originalTopic || !paraphraseTopic || !chineseTopic) {
+                alert('请确保所有字段都已填写');
+                return;
+            }
+
+            hideTopicEditModal();
+        }
+
+        // 子问题编辑模态框
+        function showQuestionEditModal(element) {
+            const questionContent = element.parentElement;
+            document.getElementById('editOriginalQuestion').value = questionContent.querySelector('.item-original').textContent;
+            document.getElementById('editParaphraseQuestion').value = questionContent.querySelector('.item-paraphrase').textContent;
+            document.getElementById('editChineseQuestion').value = questionContent.querySelector('.item-chinese').textContent;
+            document.getElementById('questionEditModal').style.display = 'block';
+        }
+
+        function hideQuestionEditModal() {
+            document.getElementById('questionEditModal').style.display = 'none';
+        }
+
+        function generateEditParaphraseQuestion() {
+            const originalQuestion = document.getElementById('editOriginalQuestion').value;
+            if (!originalQuestion) {
+                alert('请先输入原始问题');
+                return;
+            }
+            // 调用AI生成改写问题
+            document.getElementById('editParaphraseQuestion').value = 'Could you tell me about...';
+        }
+
+        function generateEditChineseQuestion() {
+            const originalQuestion = document.getElementById('editOriginalQuestion').value;
+            if (!originalQuestion) {
+                alert('请先输入原始问题');
+                return;
+            }
+            // 调用AI生成中文问题
+            document.getElementById('editChineseQuestion').value = '请告诉我...';
+        }
+
+        function confirmEditQuestion() {
+            const originalQuestion = document.getElementById('editOriginalQuestion').value;
+            const paraphraseQuestion = document.getElementById('editParaphraseQuestion').value;
+            const chineseQuestion = document.getElementById('editChineseQuestion').value;
+
+            if (!originalQuestion || !paraphraseQuestion || !chineseQuestion) {
+                alert('请确保所有字段都已填写');
+                return;
+            }
+
+            hideQuestionEditModal();
+        }
+
+        function searchQuestions(keyword) {
+            console.log('搜索问题关键词:', keyword);
+        }
+
+        // 添加拖拽相关的事件处理
+        document.addEventListener('DOMContentLoaded', function() {
+            // 标签项拖拽
+            const tagItems = document.querySelectorAll('.tag-item');
+            tagItems.forEach(item => {
+                item.addEventListener('dragstart', handleDragStart);
+                item.addEventListener('dragend', handleDragEnd);
+                item.addEventListener('dragover', handleDragOver);
+                item.addEventListener('drop', handleDrop);
+            });
+
+            // 分类项拖拽
+            const categoryItems = document.querySelectorAll('.category-item');
+            categoryItems.forEach(item => {
+                item.addEventListener('dragstart', handleDragStart);
+                item.addEventListener('dragend', handleDragEnd);
+                item.addEventListener('dragover', handleDragOver);
+                item.addEventListener('drop', handleDrop);
+            });
+
+            // 标签点击切换选中状态
+            document.querySelectorAll('.tag-item').forEach(tag => {
+                tag.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('tag-action-btn')) {
+                        document.querySelectorAll('.tag-item').forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        // 这里添加更新右侧内容的逻辑
+                        updateTopicsAndQuestions(this.querySelector('.tag').textContent);
+                    }
+                });
+            });
+
+            // 标签和分类的上下移动和删除
+            document.querySelectorAll('.tag-action-btn, .category-action-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const item = this.closest('.tag-item') || this.closest('.category-item');
+                    const parent = item.parentElement;
+                    
+                    if (this.title === '上移' && item.previousElementSibling) {
+                        parent.insertBefore(item, item.previousElementSibling);
+                    } else if (this.title === '下移' && item.nextElementSibling) {
+                        parent.insertBefore(item.nextElementSibling, item);
+                    } else if (this.title === '删除') {
+                        if (confirm('确定要删除这个' + (item.classList.contains('tag-item') ? '标签' : '分类') + '吗？')) {
+                            item.remove();
+                        }
+                    }
+                });
+            });
+        });
+
+        function handleDragStart(e) {
+            e.target.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', e.target.id);
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const draggedItem = document.querySelector('.dragging');
+            const dropTarget = e.target.closest('.tag-item') || e.target.closest('.category-item');
+            
+            if (draggedItem && dropTarget) {
+                const parent = dropTarget.parentElement;
+                const rect = dropTarget.getBoundingClientRect();
+                const midpoint = rect.top + rect.height / 2;
+                
+                if (e.clientY < midpoint) {
+                    parent.insertBefore(draggedItem, dropTarget);
+                } else {
+                    parent.insertBefore(draggedItem, dropTarget.nextElementSibling);
+                }
+            }
+        }
+
+        function updateTopicsAndQuestions(tagName) {
+            // 根据选中的标签更新右侧的话题和问题列表
+            console.log('更新标签相关内容:', tagName);
+        }
+    </script>
+</body>
+</html> 
