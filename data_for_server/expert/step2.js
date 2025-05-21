@@ -4,59 +4,35 @@ const prompt_question_selector = `
 
 输入要求
 用户将提供包含以下内容的JSON数据：
-
-原始话题名称 (topicName_real)
-改写后话题名称 (topicName_rewrite)
-topicId
-原始问题列表 (questions_original)
-改写后问题列表 (questions_rewrite)
+话题名称 (topicName_ai)
+问题列表 (questions):"questions": [
+  {
+    "question_original": "原始问题",
+    "question_rewrite": "改写后问题"
+  },
+  ...
+]
 
 处理要求
-
-使用改写后的话题名称(topicName_rewrite)作为输出话题名
 为每个话题生成中文翻译(topicName_cn)
-为topicId加上"Expert_"前缀
-选择改写后的问题(questions_rewrite)作为输出问题
-为每个问题生成中文翻译(qTitle_cn)
-
-标记问题类型(type)为0(常规问题)
-标注问题来源(from)为"rewrite"
+为每个话题生成topicId,命名方式为"Expert_2025Q2_t"+顺序1，2，3..
+为每个问题question_rewrite生成中文翻译(question_cn)
+为每个问题生成questionId,命名方式为"Expert_2025Q2_q"+顺序1，2，3..
 
 输出格式
 严格按照以下JSON格式输出处理结果：
-
-json
 {
   "mixed_questions": [
     {
-      "topicName": "改写后话题名称",
-      "topicName_cn": "话题中文翻译",
-      "topicId": "加上"Expert_"前缀的话题ID",
+      "topicName": "输入的topicName_ai",
+      "topicName_cn": "输入的topicName_ai的中文翻译",
+      "topicId": "Expert_2025Q2_t+顺序1，2，3..",
       "questions": [
         {
-          "qTitle": "改写后的问题内容",
-          "qTitle_cn": "问题中文翻译",
-          "type": 0,
-          "from": "rewrite"
-        }
-      ]
-    }
-  ]
-}
-示例输出
-json
-{
-  "mixed_questions": [
-    {
-      "topicName": "The art of effective communication and verbal expression",
-      "topicName_cn": "有效沟通与语言表达的艺术",
-      "topicId": "Expert_B0_t1",
-      "questions": [
-        {
-          "qTitle": "What approaches can parents use to foster their children's communication abilities?",
-          "qTitle_cn": "父母可以采用哪些方法来培养孩子的沟通能力？",
-          "type": 0,
-          "from": "rewrite"
+          "question_original": "输入的question_original",
+          "question_rewrite": "输入的question_rewrite",
+          "question_cn": "输入的question_rewrite的中文翻译",
+          "questionId": "Expert_2025Q2_q+顺序1，2，3.."
         }
       ]
     }

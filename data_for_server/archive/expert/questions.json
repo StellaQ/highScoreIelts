@@ -1,1848 +1,1588 @@
 {
-    "mixed_questions": [
-      {
-        "topicName": "Strategies for preparedness and organizational skills",
-        "topicName_cn": "准备与组织能力的策略",
-        "topicId": "Expert_B0_t1",
-        "questions": [
-          {
-            "qTitle": "What strategies can parents use to teach children adaptability?",
-            "qTitle_cn": "父母可以采用哪些策略来教导孩子的适应能力？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can you describe situations where preparation leads to better outcomes?",
-            "qTitle_cn": "能否描述准备如何带来更好结果的情况？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What routines help people prepare effectively for daily responsibilities?",
-            "qTitle_cn": "哪些日常习惯能帮助人们有效准备日常责任？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is organizational ability an innate trait or learned skill?",
-            "qTitle_cn": "组织能力是与生俱来的特质还是后天习得的技能？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Career opportunities and wage structures",
-        "topicName_cn": "职业机会与薪资结构",
-        "topicId": "Expert_B0_t2",
-        "questions": [
-          {
-            "qTitle": "Which professions typically offer the highest salaries nationally?",
-            "qTitle_cn": "哪些职业通常在全国范围内提供最高薪资？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Should compensation be based on experience rather than age?",
-            "qTitle_cn": "薪酬应该基于经验而非年龄吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which occupations are typically undercompensated?",
-            "qTitle_cn": "哪些职业通常报酬不足？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How can secondary education better equip students for employment?",
-            "qTitle_cn": "中等教育如何更好地为学生就业做准备？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does higher education effectively prepare students for professional life?",
-            "qTitle_cn": "高等教育是否能有效帮助学生为职业生涯做好准备？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Interpersonal dynamics and social behavior",
-        "topicName_cn": "人际动态与社会行为",
-        "topicId": "Expert_B0_t3",
-        "questions": [
-          {
-            "qTitle": "Which relationships typically dominate people's daily social interactions?",
-            "qTitle_cn": "哪些关系通常主导人们的日常社交互动？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What benefits come from diversifying one's social circle?",
-            "qTitle_cn": "多样化社交圈能带来哪些好处？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What constitutes appropriate managerial conduct towards staff?",
-            "qTitle_cn": "什么是对员工的恰当管理行为？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does intergenerational interaction affect behavior patterns?",
-            "qTitle_cn": "代际互动如何影响行为模式？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Playthings and child development",
-        "topicName_cn": "玩具与儿童发展",
-        "topicId": "Expert_B0_t4",
-        "questions": [
-          {
-            "qTitle": "Are there gender-based preferences in toy selection?",
-            "qTitle_cn": "玩具选择是否存在基于性别的偏好？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How have toy preferences evolved over generations?",
-            "qTitle_cn": "玩具偏好如何随着世代演变？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What factors should guide appropriate toy selection for children?",
-            "qTitle_cn": "哪些因素应指导为儿童选择合适的玩具？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is independent toy selection beneficial for children's development?",
-            "qTitle_cn": "独立选择玩具是否有利于儿童发展？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Do children derive equal enjoyment from non-commercial play objects?",
-            "qTitle_cn": "儿童从非商业玩具中获得的乐趣是否相同？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What motivates excessive toy purchases by parents?",
-            "qTitle_cn": "什么促使父母过度购买玩具？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Cultural practices of gift exchange",
-        "topicName_cn": "礼物交换的文化实践",
-        "topicId": "Expert_B0_t5",
-        "questions": [
-          {
-            "qTitle": "Which gift categories present the most selection challenges?",
-            "qTitle_cn": "哪些礼物类别最具选择挑战性？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What criteria should guide thoughtful gift selection?",
-            "qTitle_cn": "哪些标准应指导周到的礼物选择？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is over-gifting to children a common parental behavior?",
-            "qTitle_cn": "过度赠礼给孩子是否是常见的父母行为？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which cultural events necessitate gift exchanges?",
-            "qTitle_cn": "哪些文化活动需要礼物交换？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does societal expectation create undue pressure regarding gift value?",
-            "qTitle_cn": "社会期望是否会给礼物价值带来不当压力？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Second language learning processes",
-        "topicName_cn": "第二语言学习过程",
-        "topicId": "Expert_B0_t6",
-        "questions": [
-          {
-            "qTitle": "What major challenges do language learners typically encounter?",
-            "qTitle_cn": "语言学习者通常会遇到哪些主要挑战？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does age affect language acquisition ability?",
-            "qTitle_cn": "年龄如何影响语言习得能力？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which language learning approaches yield the best results?",
-            "qTitle_cn": "哪些语言学习方法能产生最佳效果？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What personal benefits derive from multilingualism?",
-            "qTitle_cn": "多语言能力能带来哪些个人益处？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Has foreign language proficiency gained importance in modern society?",
-            "qTitle_cn": "外语能力在现代社会是否变得更加重要？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does bilingualism affect cultural perspective?",
-            "qTitle_cn": "双语能力如何影响文化视角？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Culinary traditions for celebrations",
-        "topicName_cn": "庆祝活动的烹饪传统",
-        "topicId": "Expert_B0_t7",
-        "questions": [
-          {
-            "qTitle": "During which events do Chinese culinary traditions become particularly important?",
-            "qTitle_cn": "哪些活动中中国的烹饪传统变得特别重要？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Should celebratory meals differ significantly from daily fare?",
-            "qTitle_cn": "庆祝餐食是否应与日常饮食有显著不同？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What motivates extensive culinary preparation for special events?",
-            "qTitle_cn": "什么促使人们为特殊活动进行大量烹饪准备？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do shared meals facilitate family bonding?",
-            "qTitle_cn": "共享餐食如何促进家庭联系？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What factors have contributed to decreased home cooking?",
-            "qTitle_cn": "哪些因素导致了家庭烹饪的减少？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Has overall food quality improved in recent decades?",
-            "qTitle_cn": "近几十年来整体食品质量是否有所提高？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Maintenance decisions and manufacturing standards",
-        "topicName_cn": "维修决策与制造标准",
-        "topicId": "Expert_B0_t8",
-        "questions": [
-          {
-            "qTitle": "Which household repairs are typically DIY-friendly?",
-            "qTitle_cn": "哪些家庭维修通常适合自己动手？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "When does professional repair become economically unwise?",
-            "qTitle_cn": "专业维修何时在经济上不划算？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What criteria should determine seeking professional repair services?",
-            "qTitle_cn": "哪些标准应决定寻求专业维修服务？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does planned obsolescence affect consumer product longevity?",
-            "qTitle_cn": "计划性淘汰是否影响消费品的使用寿命？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does premium pricing consistently reflect superior product quality?",
-            "qTitle_cn": "高价是否始终反映更优质的产品质量？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Storytelling for young audiences",
-        "topicName_cn": "面向年轻观众的故事讲述",
-        "topicId": "Expert_B0_t9",
-        "questions": [
-          {
-            "qTitle": "Which genres dominate contemporary Chinese children's literature?",
-            "qTitle_cn": "哪些类型主导当代中国儿童文学？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do story preferences vary between age groups?",
-            "qTitle_cn": "不同年龄组的故事偏好有何不同？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What digital innovations have transformed modern storytelling?",
-            "qTitle_cn": "哪些数字创新改变了现代故事讲述方式？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What psychological benefits do children derive from storytelling?",
-            "qTitle_cn": "儿童从听故事中获得哪些心理益处？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does traditional reading stimulate creativity more than visual media?",
-            "qTitle_cn": "传统阅读是否比视觉媒体更能激发创造力？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Residential living choices",
-        "topicName_cn": "住宅生活选择",
-        "topicId": "Expert_B0_t10",
-        "questions": [
-          {
-            "qTitle": "Which residential property types are most prevalent locally?",
-            "qTitle_cn": "当地最常见的住宅物业类型有哪些？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What are the pros and cons of home ownership?",
-            "qTitle_cn": "拥有住房有哪些利弊？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Do generational differences affect housing preferences?",
-            "qTitle_cn": "代际差异是否影响住房偏好？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What's the predominant housing tenure model in China?",
-            "qTitle_cn": "中国主要的住房保有模式是什么？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What role should governments play in housing availability?",
-            "qTitle_cn": "政府在住房供应中应扮演什么角色？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Adapting to change and novel situations",
-        "topicName_cn": "适应变化与新情境",
-        "topicId": "Expert_B0_t11",
-        "questions": [
-          {
-            "qTitle": "What challenges do newcomers typically face in workplace integration?",
-            "qTitle_cn": "新员工在职场融入中通常面临哪些挑战？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What emotional responses characterize children's first school transitions?",
-            "qTitle_cn": "儿童初次入学过渡时有哪些典型情绪反应？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What motivates students to pursue education in unfamiliar locations?",
-            "qTitle_cn": "什么促使学生前往陌生地点求学？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How crucial is pre-travel research for successful adaptation?",
-            "qTitle_cn": "旅行前调研对成功适应有多重要？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What psychological benefits derive from visiting unfamiliar destinations?",
-            "qTitle_cn": "造访陌生目的地能带来哪些心理益处？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can excessive international mobility create personal or social drawbacks?",
-            "qTitle_cn": "过度国际流动会带来个人或社会弊端吗？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Musical tastes across generations",
-        "topicName_cn": "跨世代音乐品味",
-        "topicId": "Expert_B0_t12",
-        "questions": [
-          {
-            "qTitle": "Which music genres currently dominate Chinese youth culture?",
-            "qTitle_cn": "哪些音乐类型主导当代中国青年文化？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do musical preferences vary between age demographics?",
-            "qTitle_cn": "不同年龄群体的音乐偏好有何差异？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which carries more artistic weight - lyrical content or musical composition?",
-            "qTitle_cn": "歌词内容与音乐作曲哪个更具艺术分量？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What explains the global appeal of televised vocal competitions?",
-            "qTitle_cn": "电视歌唱比赛全球吸引力的原因是什么？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does live concert attendance differ from mediated viewing experiences?",
-            "qTitle_cn": "现场音乐会与媒介观看体验有何不同？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Goal-setting and achievement",
-        "topicName_cn": "目标设定与成就",
-        "topicId": "Expert_B0_t13",
-        "questions": [
-          {
-            "qTitle": "What career aspirations commonly appear during childhood?",
-            "qTitle_cn": "童年时期常见的职业抱负有哪些？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How important is early goal-setting for personal development?",
-            "qTitle_cn": "早期目标设定对个人发展有多重要？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can excessive childhood ambition create negative consequences?",
-            "qTitle_cn": "童年过度野心会产生负面后果吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which personal attributes support professional ambition?",
-            "qTitle_cn": "哪些个人特质支持职业抱负？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "When might workplace ambition become counterproductive?",
-            "qTitle_cn": "职场野心何时可能适得其反？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Social norms and legal frameworks",
-        "topicName_cn": "社会规范与法律框架",
-        "topicId": "Expert_B0_t14",
-        "questions": [
-          {
-            "qTitle": "What purposes do educational regulations serve?",
-            "qTitle_cn": "教育规范有哪些作用？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which domestic regulations commonly govern children's behavior?",
-            "qTitle_cn": "哪些家庭规范通常约束儿童行为？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is occasional law-breaking an inevitable human behavior?",
-            "qTitle_cn": "偶尔违法是否不可避免的人类行为？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which disciplinary measures appropriately address minor infractions?",
-            "qTitle_cn": "哪些纪律措施适合处理轻微违规？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Has childhood become more regulated historically?",
-            "qTitle_cn": "从历史上看，儿童生活是否变得更加规范？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can civil disobedience ever be morally justified?",
-            "qTitle_cn": "公民抗命在道德上能被证明正当吗？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Purchasing habits and influences",
-        "topicName_cn": "购买习惯与影响因素",
-        "topicId": "Expert_B0_t15",
-        "questions": [
-          {
-            "qTitle": "What drives youth demand for cutting-edge devices?",
-            "qTitle_cn": "什么驱动年轻人对尖端设备的需求？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What psychological factors contribute to hoarding behavior?",
-            "qTitle_cn": "哪些心理因素导致囤积行为？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does media exposure shape consumer preferences?",
-            "qTitle_cn": "媒体曝光如何影响消费者偏好？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What explains children's attachment to particular play objects?",
-            "qTitle_cn": "如何解释儿童对特定玩具的依恋？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does excessive product variety create consumer paralysis?",
-            "qTitle_cn": "产品种类过多会导致消费者决策瘫痪吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What motivates unnecessary purchasing decisions?",
-            "qTitle_cn": "什么促使人们做出不必要的购买决定？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Knowledge transfer between age groups",
-        "topicName_cn": "代际知识传递",
-        "topicId": "Expert_B0_t16",
-        "questions": [
-          {
-            "qTitle": "What makes elder instruction appealing to children?",
-            "qTitle_cn": "什么使长辈教导对孩子有吸引力？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which valuable knowledge can seniors impart to younger generations?",
-            "qTitle_cn": "长辈可以向年轻一代传授哪些宝贵知识？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is non-parental adult instruction pedagogically superior?",
-            "qTitle_cn": "非父母成人的教导在教学上是否更优越？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What support systems do elderly individuals commonly need?",
-            "qTitle_cn": "老年人通常需要哪些支持系统？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is intergenerational assistance more beneficial to givers or receivers?",
-            "qTitle_cn": "代际互助对给予者还是接受者更有益？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Recreational pursuits in natural settings",
-        "topicName_cn": "自然环境中的休闲活动",
-        "topicId": "Expert_B0_t17",
-        "questions": [
-          {
-            "qTitle": "How does outdoor recreation contribute to child development?",
-            "qTitle_cn": "户外娱乐如何促进儿童发展？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which open-air pursuits are currently trending nationally?",
-            "qTitle_cn": "哪些户外活动目前在全国流行？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How have outdoor recreation patterns evolved historically?",
-            "qTitle_cn": "户外娱乐模式如何历史演变？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Why are recreational pursuits vital across all life stages?",
-            "qTitle_cn": "为什么休闲活动在所有人生阶段都很重要？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does gender inequality persist in leisure time allocation?",
-            "qTitle_cn": "休闲时间分配中是否仍存在性别不平等？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Cognitive retention processes",
-        "topicName_cn": "认知保留过程",
-        "topicId": "Expert_B0_t18",
-        "questions": [
-          {
-            "qTitle": "Has digital storage reduced human memory reliance?",
-            "qTitle_cn": "数字存储是否减少了人类对记忆的依赖？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which mementos best preserve personal memories?",
-            "qTitle_cn": "哪些纪念品最能保存个人记忆？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What essential information requires daily recollection?",
-            "qTitle_cn": "哪些基本信息需要日常回忆？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What factors contribute to superior memory performance?",
-            "qTitle_cn": "哪些因素促成更优的记忆表现？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which stimulus type enhances recall more effectively - verbal or visual?",
-            "qTitle_cn": "哪种刺激类型更有效增强回忆 - 语言还是视觉？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Why does subjective perception affect event recollection?",
-            "qTitle_cn": "为什么主观感知会影响事件回忆？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Dress codes and cultural expressions",
-        "topicName_cn": "着装规范与文化表达",
-        "topicId": "Expert_B0_t19",
-        "questions": [
-          {
-            "qTitle": "What are the pros and cons of standardized dress codes?",
-            "qTitle_cn": "标准化着装规范的利弊是什么？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What explains wardrobe differentiation between professional and personal contexts?",
-            "qTitle_cn": "如何解释职业与个人情境下的着装差异？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does clothing serve as social signaling?",
-            "qTitle_cn": "服装如何作为社交信号？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "When does traditional ethnic attire become culturally significant?",
-            "qTitle_cn": "传统民族服饰何时具有文化意义？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is global fashion homogenization inevitable?",
-            "qTitle_cn": "全球时尚同质化不可避免吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does geographical location influence sartorial traditions?",
-            "qTitle_cn": "地理位置如何影响服装传统？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Developing personal viewpoints",
-        "topicName_cn": "发展个人观点",
-        "topicId": "Expert_B0_t20",
-        "questions": [
-          {
-            "qTitle": "When does independent opinion formation typically begin?",
-            "qTitle_cn": "独立观点形成通常何时开始？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How consistently should parental decisions incorporate children's views?",
-            "qTitle_cn": "父母决策应在多大程度上考虑孩子的观点？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which professions demand superior verbal interaction abilities?",
-            "qTitle_cn": "哪些职业需要卓越的言语互动能力？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which subjects commonly generate strong childhood preferences?",
-            "qTitle_cn": "哪些主题通常产生强烈的童年偏好？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Why is active listening crucial for effective communication?",
-            "qTitle_cn": "为什么积极倾听对有效沟通至关重要？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How achievable is communication skill enhancement?",
-            "qTitle_cn": "沟通技能提升有多大可行性？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Complimentary offerings and public provisions",
-        "topicName_cn": "免费赠品与公共服务",
-        "topicId": "Expert_B0_t21",
-        "questions": [
-          {
-            "qTitle": "Which products are commonly given as promotional freebies?",
-            "qTitle_cn": "哪些产品通常作为促销赠品？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What commercial objectives motivate corporate gift-giving?",
-            "qTitle_cn": "哪些商业目标促使企业赠送礼品？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can complimentary items sometimes create negative reactions?",
-            "qTitle_cn": "免费物品有时会产生负面反应吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which essential services should be publicly funded?",
-            "qTitle_cn": "哪些基本服务应由公共资金支持？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Information channels and usage patterns",
-        "topicName_cn": "信息渠道与使用模式",
-        "topicId": "Expert_B0_t22",
-        "questions": [
-          {
-            "qTitle": "Which media platforms currently dominate national consumption?",
-            "qTitle_cn": "哪些媒体平台目前主导国民消费？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does media preference vary across generations?",
-            "qTitle_cn": "媒体偏好如何在不同世代间变化？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What fundamental needs does social networking fulfill?",
-            "qTitle_cn": "社交网络满足哪些基本需求？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can digital platforms facilitate genuine interpersonal understanding?",
-            "qTitle_cn": "数字平台能促进真正的人际理解吗？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "City travel experiences",
-        "topicName_cn": "城市旅行体验",
-        "topicId": "Expert_B0_t23",
-        "questions": [
-          {
-            "qTitle": "How does tourism economically and culturally benefit metropolitan areas?",
-            "qTitle_cn": "旅游业如何从经济和文化上使大都市受益？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which urban activities particularly appeal to visitors?",
-            "qTitle_cn": "哪些城市活动特别吸引游客？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What negative impacts does tourism create for city dwellers?",
-            "qTitle_cn": "旅游业为城市居民带来哪些负面影响？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What attracts younger demographics to metropolitan living?",
-            "qTitle_cn": "什么吸引年轻人群到大都市生活？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Countryside lifestyles and visits",
-        "topicName_cn": "乡村生活方式与访问",
-        "topicId": "Expert_B0_t24",
-        "questions": [
-          {
-            "qTitle": "Which rural locations attract most local visitors?",
-            "qTitle_cn": "哪些乡村地点吸引最多本地游客？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Has rural tourism increased in recent decades?",
-            "qTitle_cn": "近几十年来乡村旅游是否有所增加？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What motivates permanent relocation to non-urban areas?",
-            "qTitle_cn": "什么促使人们永久搬迁到非城市地区？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What challenges does rural residency present?",
-            "qTitle_cn": "乡村居住面临哪些挑战？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which demographic groups particularly appreciate countryside excursions?",
-            "qTitle_cn": "哪些人口群体特别欣赏乡村远足？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Social bonding and interpersonal connections",
-        "topicName_cn": "社交联结与人际关系",
-        "topicId": "Expert_B0_t25",
-        "questions": [
-          {
-            "qTitle": "What etiquette governs initial social interactions?",
-            "qTitle_cn": "初次社交互动遵循哪些礼仪？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which social practices facilitate new acquaintances locally?",
-            "qTitle_cn": "哪些社交实践有助于在当地结识新朋友？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which characteristics define ideal friendship?",
-            "qTitle_cn": "哪些特质定义了理想的友谊？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does common ground strengthen new relationships?",
-            "qTitle_cn": "共同点如何加强新关系？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Are educational years peak periods for deep friendship formation?",
-            "qTitle_cn": "求学时期是深厚友谊形成的高峰期吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How could digital connectivity transform future social bonds?",
-            "qTitle_cn": "数字连接如何改变未来的社会纽带？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Adaptation to lifestyle modifications",
-        "topicName_cn": "适应生活方式改变",
-        "topicId": "Expert_B0_t26",
-        "questions": [
-          {
-            "qTitle": "Which lifestyle modifications do people commonly implement?",
-            "qTitle_cn": "人们通常实施哪些生活方式改变？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does age affect willingness to alter habitual patterns?",
-            "qTitle_cn": "年龄是否影响改变习惯模式的意愿？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Are routine modifications psychologically advantageous?",
-            "qTitle_cn": "常规改变在心理上是否有优势？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What are the pros and cons of frequent career changes?",
-            "qTitle_cn": "频繁职业变更的利弊是什么？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does international work experience broaden perspectives?",
-            "qTitle_cn": "国际工作经验如何拓宽视野？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can professional advancement sometimes have negative consequences?",
-            "qTitle_cn": "职业晋升有时会有负面后果吗？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Neighborhood interactions",
-        "topicName_cn": "邻里互动",
-        "topicId": "Expert_B0_t27",
-        "questions": [
-          {
-            "qTitle": "What's the typical depth of neighborly relationships nationally?",
-            "qTitle_cn": "全国邻里关系的典型深度如何？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does community familiarity enhance residential quality?",
-            "qTitle_cn": "社区熟悉度如何提升居住质量？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does urban scale inhibit neighbor connections?",
-            "qTitle_cn": "城市规模会抑制邻里联系吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How can commercial entities contribute to area improvement?",
-            "qTitle_cn": "商业实体如何促进地区改善？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which citizen actions foster desirable living environments?",
-            "qTitle_cn": "哪些公民行动促进理想的居住环境？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Community support systems",
-        "topicName_cn": "社区支持系统",
-        "topicId": "Expert_B0_t28",
-        "questions": [
-          {
-            "qTitle": "Which forms of mutual aid commonly occur between residents?",
-            "qTitle_cn": "居民间通常有哪些互助形式？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does education foster youth altruism?",
-            "qTitle_cn": "教育如何培养青年利他主义？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Is prosocial behavior an inherent human trait?",
-            "qTitle_cn": "亲社会行为是人类固有特质吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Should community service be universally expected?",
-            "qTitle_cn": "社区服务应该被普遍期待吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Why are both temporal and financial contributions valuable for social welfare?",
-            "qTitle_cn": "为什么时间和金钱贡献对社会福利都有价值？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does helping behavior create greater rewards for givers or receivers?",
-            "qTitle_cn": "帮助行为给给予者还是接受者带来更大回报？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Viewpoint sharing behaviors",
-        "topicName_cn": "观点分享行为",
-        "topicId": "Expert_B0_t29",
-        "questions": [
-          {
-            "qTitle": "What inhibits some individuals from voicing perspectives?",
-            "qTitle_cn": "什么阻碍某些人表达观点？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which careers require regular opinion articulation?",
-            "qTitle_cn": "哪些职业需要定期表达观点？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Has consumer feedback culture intensified recently?",
-            "qTitle_cn": "消费者反馈文化最近是否强化了？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which evaluation aspects dominate digital commentary?",
-            "qTitle_cn": "哪些评价方面主导数字评论？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does online anonymity encourage more emphatic self-expression?",
-            "qTitle_cn": "网络匿名是否鼓励更强烈的自我表达？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Attention management",
-        "topicName_cn": "注意力管理",
-        "topicId": "Expert_B0_t30",
-        "questions": [
-          {
-            "qTitle": "Does digital device usage impair juvenile attention spans?",
-            "qTitle_cn": "数字设备使用会损害青少年的注意力持续时间吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which occupations demand exceptional focus abilities?",
-            "qTitle_cn": "哪些职业需要非凡的专注能力？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does concentration ability benefit childhood development?",
-            "qTitle_cn": "专注能力如何有益于儿童发展？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What athletic advantages derive from sustained focus?",
-            "qTitle_cn": "持续专注带来哪些运动优势？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What workplace factors commonly disrupt attention?",
-            "qTitle_cn": "哪些工作场所因素通常会分散注意力？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which organizational strategies support staff concentration?",
-            "qTitle_cn": "哪些组织策略支持员工专注？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Domestic recreation and enjoyment",
-        "topicName_cn": "家庭娱乐与享受",
-        "topicId": "Expert_B0_t31",
-        "questions": [
-          {
-            "qTitle": "What home-based activities can provide satisfying leisure experiences?",
-            "qTitle_cn": "哪些家庭活动能提供令人满意的休闲体验？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do meteorological conditions influence outdoor activity satisfaction?",
-            "qTitle_cn": "气象条件如何影响户外活动满意度？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do solitary and social outings differ experientially?",
-            "qTitle_cn": "单独外出和社交外出在体验上有何不同？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "To what extent does expenditure correlate with recreational enjoyment?",
-            "qTitle_cn": "支出在多大程度上与娱乐享受相关？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which destinations are popular for domestic day trips nationally?",
-            "qTitle_cn": "全国范围内哪些目的地适合一日游？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Metropolitan transportation challenges",
-        "topicName_cn": "大都市交通挑战",
-        "topicId": "Expert_B0_t32",
-        "questions": [
-          {
-            "qTitle": "Is further deterioration of city traffic conditions inevitable?",
-            "qTitle_cn": "城市交通状况进一步恶化是不可避免的吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "During which daily periods do traffic volumes typically peak?",
-            "qTitle_cn": "交通量通常在每天的哪些时段达到高峰？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Do arterial roads effectively improve vehicular movement?",
-            "qTitle_cn": "主干道能有效改善车辆流动吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does mass transit contribute to congestion reduction?",
-            "qTitle_cn": "公共交通如何有助于减少拥堵？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Auditory environmental factors",
-        "topicName_cn": "听觉环境因素",
-        "topicId": "Expert_B0_t33",
-        "questions": [
-          {
-            "qTitle": "What challenges exist in locating silent urban spaces?",
-            "qTitle_cn": "寻找安静的城市空间存在哪些挑战？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Has residential acoustic insulation improved historically?",
-            "qTitle_cn": "住宅隔音在历史上是否有所改善？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does age correlate with preference for tranquil environments?",
-            "qTitle_cn": "年龄是否与偏好宁静环境相关？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "What explains the productivity benefits some derive from ambient sound?",
-            "qTitle_cn": "如何解释一些人从环境声音中获得的生产力益处？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Which issues arise from excessive neighbor-generated noise?",
-            "qTitle_cn": "邻居产生过多噪音会引发哪些问题？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Affirmative reinforcement strategies",
-        "topicName_cn": "积极强化策略",
-        "topicId": "Expert_B0_t34",
-        "questions": [
-          {
-            "qTitle": "Under which circumstances should parental praise be administered?",
-            "qTitle_cn": "在什么情况下应给予父母表扬？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Can excessive affirmation create developmental drawbacks?",
-            "qTitle_cn": "过度肯定会产生发展弊端吗？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How does encouragement contribute to childhood growth?",
-            "qTitle_cn": "鼓励如何促进儿童成长？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "When does positive communication lack authenticity?",
-            "qTitle_cn": "积极的沟通何时缺乏真实性？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do different feedback types influence work performance?",
-            "qTitle_cn": "不同类型的反馈如何影响工作表现？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Why does human psychology favor positive self-assessments?",
-            "qTitle_cn": "为什么人类心理偏爱积极的自我评价？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
-      {
-        "topicName": "Cultural heritage artifacts",
-        "topicName_cn": "文化遗产工艺品",
-        "topicId": "Expert_B0_t35",
-        "questions": [
-          {
-            "qTitle": "Which culturally significant goods originate from Chinese tradition?",
-            "qTitle_cn": "哪些具有文化意义的商品源自中国传统？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Why is cultural heritage awareness valuable for citizens?",
-            "qTitle_cn": "为什么文化遗产意识对公民有价值？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Should traditional knowledge transmission occur domestically or educationally?",
-            "qTitle_cn": "传统知识传承应该发生在家庭还是教育中？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "Does heritage craftsmanship typically surpass contemporary production standards?",
-            "qTitle_cn": "传统工艺是否通常超越当代生产标准？",
-            "type": 0,
-            "from": "rewrite"
-          },
-          {
-            "qTitle": "How do artisanal goods contribute to tourist appeal?",
-            "qTitle_cn": "手工制品如何增加旅游吸引力？",
-            "type": 0,
-            "from": "rewrite"
-          }
-        ]
-      },
+  "mixed_questions": [
+    {
+      "topicName": "Beautiful Things in Life",
+      "topicName_cn": "生活中的美好事物",
+      "topicId": "Expert_2025Q2_t1",
+      "questions": [
         {
-        "topicName": "Interpersonal communication dynamics",
-        "topicName_cn": "人际沟通的动态",
-        "topicId": "Expert_B0_t36",
-        "questions": [
-            {
-            "qTitle": "Which subjects dominate youth peer discussions?",
-            "qTitle_cn": "青少年之间的对话主要围绕哪些话题？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does active listening enhance friendship communication?",
-            "qTitle_cn": "积极倾听如何促进朋友之间的交流？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "When does interaction with unfamiliar individuals become necessary?",
-            "qTitle_cn": "在什么情况下人们需要与陌生人交流？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What psychological barriers inhibit conversation with strangers?",
-            "qTitle_cn": "哪些心理障碍会阻碍与陌生人的交流？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Does communication style differ significantly between familiar and unfamiliar interlocutors?",
-            "qTitle_cn": "与熟人和陌生人的交流方式是否存在显著差异？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
+          "question_original": "Do you think there are more beautiful things now than in the past? Why?",
+          "question_rewrite": "Do you think there are more beautiful things today compared to the past? Why is that?",
+          "question_cn": "你认为现在比过去有更多美好的事物吗？为什么？",
+          "questionId": "Expert_2025Q2_q1"
         },
         {
-        "topicName": "Personal productivity strategies",
-        "topicName_cn": "个人效率策略",
-        "topicId": "Expert_B0_t37",
-        "questions": [
-            {
-            "qTitle": "Does temporal management ability correlate with age?",
-            "qTitle_cn": "时间管理能力是否与年龄相关？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Which techniques enhance daily efficiency?",
-            "qTitle_cn": "哪些方法有助于提升日常效率？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should time management be part of core curricula?",
-            "qTitle_cn": "时间管理应否纳入核心课程？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is contemporary society characterized by time wastage?",
-            "qTitle_cn": "当代社会是否普遍存在时间浪费的问题？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does time management correlate with life achievement?",
-            "qTitle_cn": "时间管理与人生成就之间有何关系？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Are digital tools invariably beneficial for schedule organization?",
-            "qTitle_cn": "数字工具是否总能有效帮助管理日程？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
+          "question_original": "What beautiful scenery spots are there in your country?",
+          "question_rewrite": "Can you name some beautiful places in your country?",
+          "question_cn": "你能列举一些你国家的美丽景点吗？",
+          "questionId": "Expert_2025Q2_q2"
         },
         {
-        "topicName": "Domestic technological applications",
-        "topicName_cn": "家庭技术应用",
-        "topicId": "Expert_B0_t38",
-        "questions": [
-            {
-            "qTitle": "Which domestic technological innovation provides greatest utility?",
-            "qTitle_cn": "哪项家庭技术创新最为实用？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Do labor-saving devices reduce personal motivation?",
-            "qTitle_cn": "节省劳力的设备会降低个人的主动性吗？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Which digital tools are educationally essential currently?",
-            "qTitle_cn": "当前哪些数字工具在教育中最为重要？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What futuristic home technologies might become desirable?",
-            "qTitle_cn": "未来哪些家庭科技设备可能会受到欢迎？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is televised content pedagogically valuable in classrooms?",
-            "qTitle_cn": "在课堂中使用电视内容是否具有教育价值？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
+          "question_original": "Where do you think people usually come into contact with beautiful things?",
+          "question_rewrite": "Where do people usually see beautiful things in daily life?",
+          "question_cn": "人们在日常生活中通常在哪里看到美好的事物？",
+          "questionId": "Expert_2025Q2_q3"
         },
         {
-        "topicName": "Mobile communication patterns",
-        "topicName_cn": "移动通讯模式",
-        "topicId": "Expert_B0_t39",
-        "questions": [
-            {
-            "qTitle": "Which everyday functions do smartphones commonly fulfill?",
-            "qTitle_cn": "智能手机在日常生活中常承担哪些功能？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does mobile usage vary generationally?",
-            "qTitle_cn": "不同年龄群体在手机使用上有何差异？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Does voice communication remain the primary phone function?",
-            "qTitle_cn": "语音通话仍然是手机的主要功能吗？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What social norms govern late-night phone calls?",
-            "qTitle_cn": "关于深夜打电话有哪些社交规范？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Subjective wellbeing",
-        "topicName_cn": "主观幸福感",
-        "topicId": "Expert_B0_t40",
-        "questions": [
-            {
-            "qTitle": "How is joy typically manifested culturally?",
-            "qTitle_cn": "在文化中，人们通常如何表达快乐？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What health benefits correlate with positive emotional states?",
-            "qTitle_cn": "积极情绪状态有哪些健康益处？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Does retail therapy genuinely enhance wellbeing?",
-            "qTitle_cn": "“购物疗法”真的能提升幸福感吗？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is happiness an acquirable skill?",
-            "qTitle_cn": "幸福是一种可以习得的技能吗？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does life perspective affect contentment levels?",
-            "qTitle_cn": "生活观念如何影响一个人的满足感？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Can temporary sadness yield long-term benefits?",
-            "qTitle_cn": "短暂的悲伤能带来长期的积极效果吗？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Reading and cognitive development",
-        "topicName_cn": "阅读与认知发展",
-        "topicId": "Expert_B0_t41",
-        "questions": [
-            {
-            "qTitle": "Why do some individuals prefer visual media over books?",
-            "qTitle_cn": "为什么有些人更喜欢视觉媒体而不是书籍？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does literature shape an individual's worldview?",
-            "qTitle_cn": "文学作品如何影响一个人的世界观？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should classic literature be mandatory in school curricula?",
-            "qTitle_cn": "学校课程是否应强制学习经典文学？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Do digital formats affect reading comprehension?",
-            "qTitle_cn": "数字阅读格式是否会影响理解力？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Workplace attire and professionalism",
-        "topicName_cn": "职场着装与专业性",
-        "topicId": "Expert_B0_t42",
-        "questions": [
-            {
-            "qTitle": "Does professional attire influence workplace performance?",
-            "qTitle_cn": "职业装是否会影响工作表现？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should companies impose strict dress codes?",
-            "qTitle_cn": "公司是否应实施严格的着装规范？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does clothing affect first impressions in business contexts?",
-            "qTitle_cn": "在商务场合中，服装如何影响第一印象？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is casual dress acceptable in creative industries?",
-            "qTitle_cn": "创意行业是否可以接受休闲着装？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Urban design and livability",
-        "topicName_cn": "城市设计与宜居性",
-        "topicId": "Expert_B0_t43",
-        "questions": [
-            {
-            "qTitle": "What urban features enhance residents’ wellbeing?",
-            "qTitle_cn": "哪些城市特征能提升居民的幸福感？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does public transportation impact city life?",
-            "qTitle_cn": "公共交通如何影响城市生活？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should green spaces be prioritized in urban planning?",
-            "qTitle_cn": "城市规划中是否应优先考虑绿地？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Are high-rise apartments a sustainable solution for urbanization?",
-            "qTitle_cn": "高层公寓是否是城市化的可持续解决方案？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Career decision-making",
-        "topicName_cn": "职业决策",
-        "topicId": "Expert_B0_t44",
-        "questions": [
-            {
-            "qTitle": "What factors most influence a person’s career path?",
-            "qTitle_cn": "哪些因素最能影响一个人的职业道路？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should salary be the main consideration when choosing a job?",
-            "qTitle_cn": "选择工作时，薪水是否应是主要考虑因素？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How important is passion in long-term job satisfaction?",
-            "qTitle_cn": "在长期职业满意度中，热情有多重要？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What role does family play in career decisions?",
-            "qTitle_cn": "家庭在职业选择中起到什么作用？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Cultural identity and festivals",
-        "topicName_cn": "文化认同与节日",
-        "topicId": "Expert_B0_t45",
-        "questions": [
-            {
-            "qTitle": "How do national festivals promote cultural unity?",
-            "qTitle_cn": "国家节日如何促进文化团结？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should traditional customs be adapted for modern times?",
-            "qTitle_cn": "传统习俗是否应适应现代社会？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What influence do global holidays have on local traditions?",
-            "qTitle_cn": "全球性节日对本地传统有何影响？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Why do some young people feel disconnected from their cultural roots?",
-            "qTitle_cn": "为什么有些年轻人对自己的文化根源感到疏离？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Technological innovation",
-        "topicName_cn": "技术创新",
-        "topicId": "Expert_B0_t46",
-        "questions": [
-            {
-            "qTitle": "How has technology changed the way we communicate?",
-            "qTitle_cn": "科技如何改变了我们的沟通方式？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should governments invest more in space technology?",
-            "qTitle_cn": "政府是否应增加对太空技术的投资？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is artificial intelligence a threat or an opportunity?",
-            "qTitle_cn": "人工智能是威胁还是机遇？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How do technological innovations affect job markets?",
-            "qTitle_cn": "技术创新如何影响就业市场？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Parenting and child development",
-        "topicName_cn": "育儿与儿童发展",
-        "topicId": "Expert_B0_t47",
-        "questions": [
-            {
-            "qTitle": "What is the most important role of a parent?",
-            "qTitle_cn": "父母最重要的职责是什么？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should parents be strict or lenient?",
-            "qTitle_cn": "父母应该严格还是宽容？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How does parenting style influence a child's behavior?",
-            "qTitle_cn": "育儿方式如何影响孩子的行为？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should both parents share childcare responsibilities equally?",
-            "qTitle_cn": "父母双方是否应平等分担育儿责任？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Health and fitness",
-        "topicName_cn": "健康与健身",
-        "topicId": "Expert_B0_t48",
-        "questions": [
-            {
-            "qTitle": "Why do some people avoid regular exercise?",
-            "qTitle_cn": "为什么有些人避免定期锻炼？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should schools include fitness training in the curriculum?",
-            "qTitle_cn": "学校是否应在课程中加入健身训练？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What role does diet play in maintaining health?",
-            "qTitle_cn": "饮食在保持健康中起什么作用？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "How can governments promote healthier lifestyles?",
-            "qTitle_cn": "政府如何推广更健康的生活方式？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Art and public spaces",
-        "topicName_cn": "艺术与公共空间",
-        "topicId": "Expert_B0_t49",
-        "questions": [
-            {
-            "qTitle": "Should art be displayed in public areas?",
-            "qTitle_cn": "是否应在公共区域展示艺术品？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "What impact does public art have on a community?",
-            "qTitle_cn": "公共艺术对社区有何影响？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Who should fund public art projects?",
-            "qTitle_cn": "谁应该为公共艺术项目提供资金？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is modern art as valuable as traditional art?",
-            "qTitle_cn": "现代艺术是否和传统艺术一样有价值？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
-        },
-        {
-        "topicName": "Advertising and consumer behavior",
-        "topicName_cn": "广告与消费者行为",
-        "topicId": "Expert_B0_t50",
-        "questions": [
-            {
-            "qTitle": "How does advertising influence people's buying decisions?",
-            "qTitle_cn": "广告如何影响人们的购买决策？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Should advertisements for unhealthy products be banned?",
-            "qTitle_cn": "是否应禁止不健康产品的广告？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Is online advertising more effective than traditional methods?",
-            "qTitle_cn": "网络广告是否比传统方式更有效？",
-            "type": 0,
-            "from": "rewrite"
-            },
-            {
-            "qTitle": "Do celebrities in ads influence youth more than adults?",
-            "qTitle_cn": "广告中的名人是否对青少年的影响大于成人？",
-            "type": 0,
-            "from": "rewrite"
-            }
-        ]
+          "question_original": "Why do you think people enjoy visiting beautiful places?",
+          "question_rewrite": "Why do people like going to beautiful places?",
+          "question_cn": "为什么人们喜欢去美丽的地方？",
+          "questionId": "Expert_2025Q2_q4"
         }
-    ]
+      ]
+    },
+    {
+      "topicName": "Sports and Young People",
+      "topicName_cn": "运动与年轻人",
+      "topicId": "Expert_2025Q2_t2",
+      "questions": [
+        {
+          "question_original": "Do young people like to do sports?",
+          "question_rewrite": "Do many young people enjoy sports?",
+          "question_cn": "很多年轻人喜欢运动吗？",
+          "questionId": "Expert_2025Q2_q5"
+        },
+        {
+          "question_original": "What are the benefits of sports for young people?",
+          "question_rewrite": "How does playing sports help young people?",
+          "question_cn": "运动对年轻人有什么帮助？",
+          "questionId": "Expert_2025Q2_q6"
+        },
+        {
+          "question_original": "Is it necessary to build public sports spaces?",
+          "question_rewrite": "Should cities have more public sports facilities?",
+          "question_cn": "城市应该有更多的公共体育设施吗？",
+          "questionId": "Expert_2025Q2_q7"
+        },
+        {
+          "question_original": "What do you think of companies donating sports venues for poor children?",
+          "question_rewrite": "Is it a good idea for companies to donate sports facilities to poor kids?",
+          "question_cn": "企业为贫困儿童捐赠体育设施是个好主意吗？",
+          "questionId": "Expert_2025Q2_q8"
+        }
+      ]
+    },
+    {
+      "topicName": "Handling Disagreements",
+      "topicName_cn": "处理分歧",
+      "topicId": "Expert_2025Q2_t3",
+      "questions": [
+        {
+          "question_original": "What do you do if you disagree with someone?",
+          "question_rewrite": "How do you usually handle a situation when you don't agree with someone?",
+          "question_cn": "当你不同意别人的观点时，你通常会如何处理这种情况？",
+          "questionId": "Expert_2025Q2_q9"
+        },
+        {
+          "question_original": "How can we stop an argument from escalating into a fight?",
+          "question_rewrite": "What are some good ways to prevent a disagreement from turning into a serious conflict?",
+          "question_cn": "有什么好方法可以防止分歧演变成严重的冲突？",
+          "questionId": "Expert_2025Q2_q10"
+        },
+        {
+          "question_original": "Who do you think should teach children to respect their teacher?",
+          "question_rewrite": "Whose responsibility is it to teach kids to respect their teachers - parents or schools?",
+          "question_cn": "教导孩子尊重老师是谁的责任 - 家长还是学校？",
+          "questionId": "Expert_2025Q2_q11"
+        },
+        {
+          "question_original": "What disagreements do parents and children usually have?",
+          "question_rewrite": "What are some common things that parents and children often argue about?",
+          "question_cn": "父母和孩子通常会因为什么事情发生争执？",
+          "questionId": "Expert_2025Q2_q12"
+        }
+      ]
+    },
+    {
+      "topicName": "Urban vs Rural Living",
+      "topicName_cn": "城市生活与乡村生活",
+      "topicId": "Expert_2025Q2_t4",
+      "questions": [
+        {
+          "question_original": "What are the differences between buildings in the city and in the countryside?",
+          "question_rewrite": "How are buildings different in cities compared to rural areas?",
+          "question_cn": "城市中的建筑与乡村的建筑有哪些不同？",
+          "questionId": "Expert_2025Q2_q13"
+        },
+        {
+          "question_original": "Do you prefer to live in the city or in the countryside?",
+          "question_rewrite": "Would you rather live in a city or the countryside, and why?",
+          "question_cn": "你更愿意住在城市还是乡村？为什么？",
+          "questionId": "Expert_2025Q2_q14"
+        },
+        {
+          "question_original": "What safety risks are there in residential buildings in cities?",
+          "question_rewrite": "What safety problems might people face in city apartment buildings?",
+          "question_cn": "城市公寓楼里人们可能面临哪些安全问题？",
+          "questionId": "Expert_2025Q2_q15"
+        },
+        {
+          "question_original": "Is it expensive to decorate a house or an apartment in the place where you live?",
+          "question_rewrite": "Does it cost a lot to furnish and decorate a home where you live?",
+          "question_cn": "在你居住的地方，装修和布置房子是否很昂贵？",
+          "questionId": "Expert_2025Q2_q16"
+        }
+      ]
+    },
+    {
+      "topicName": "Activities and Lifestyle",
+      "topicName_cn": "活动与生活方式",
+      "topicId": "Expert_2025Q2_t5",
+      "questions": [
+        {
+          "question_original": "What outdoor activities are popular in China?",
+          "question_rewrite": "What outdoor sports or activities do many Chinese people enjoy?",
+          "question_cn": "中国人喜欢哪些户外运动或活动？",
+          "questionId": "Expert_2025Q2_q17"
+        },
+        {
+          "question_original": "Are those people who like dangerous activities more likely to be successful?",
+          "question_rewrite": "Do you think people who enjoy risky activities tend to be more successful in life?",
+          "question_cn": "你认为喜欢冒险活动的人在生活中更容易成功吗？",
+          "questionId": "Expert_2025Q2_q18"
+        },
+        {
+          "question_original": "Do you think it's better for people to change jobs when there are new chances?",
+          "question_rewrite": "Is it a good idea to switch jobs when new opportunities come up?",
+          "question_cn": "当出现新的机会时，换工作是个好主意吗？",
+          "questionId": "Expert_2025Q2_q19"
+        },
+        {
+          "question_original": "Should young people try as many new activities as possible?",
+          "question_rewrite": "Is it beneficial for young people to experience lots of different activities?",
+          "question_cn": "年轻人尝试各种不同的活动是否有益？",
+          "questionId": "Expert_2025Q2_q20"
+        }
+      ]
+    },
+    {
+      "topicName": "Media Consumption",
+      "topicName_cn": "媒体消费",
+      "topicId": "Expert_2025Q2_t6",
+      "questions": [
+        {
+          "question_original": "What programs do people like to watch in your country?",
+          "question_rewrite": "What kinds of TV shows are popular in your country?",
+          "question_cn": "在你的国家，哪些类型的电视节目受欢迎？",
+          "questionId": "Expert_2025Q2_q21"
+        },
+        {
+          "question_original": "Do people in your country like to watch foreign TV programs?",
+          "question_rewrite": "Are international TV shows popular where you live?",
+          "question_cn": "你所在的地方，人们喜欢看国外的电视节目吗？",
+          "questionId": "Expert_2025Q2_q22"
+        },
+        {
+          "question_original": "What's the benefit of letting kids watch animal videos rather than visiting zoos?",
+          "question_rewrite": "Why might it be better for children to learn about animals through videos instead of zoo visits?",
+          "question_cn": "让孩子通过视频而不是去动物园来了解动物，有哪些好处？",
+          "questionId": "Expert_2025Q2_q23"
+        },
+        {
+          "question_original": "Do teachers play videos in class in your country?",
+          "question_rewrite": "Is it common for teachers to use video materials in classrooms where you live?",
+          "question_cn": "在你所在的地区，老师上课时常用视频教学吗？",
+          "questionId": "Expert_2025Q2_q24"
+        }
+      ]
+    },
+    {
+      "topicName": "Photography and Memories",
+      "topicName_cn": "摄影与回忆",
+      "topicId": "Expert_2025Q2_t7",
+      "questions": [
+        {
+          "question_original": "Why do some people like to record important things with photos?",
+          "question_rewrite": "What makes photography a popular way to remember special moments?",
+          "question_cn": "是什么让摄影成为记录特殊时刻的流行方式？",
+          "questionId": "Expert_2025Q2_q25"
+        },
+        {
+          "question_original": "What can people learn from historical photographs?",
+          "question_rewrite": "How can old photos help us understand history better?",
+          "question_cn": "旧照片如何帮助我们更好地理解历史？",
+          "questionId": "Expert_2025Q2_q26"
+        },
+        {
+          "question_original": "Is taking photos the best way to remember something?",
+          "question_rewrite": "Do you think photography is the most effective method for preserving memories?",
+          "question_cn": "你认为摄影是保存记忆最有效的方法吗？",
+          "questionId": "Expert_2025Q2_q27"
+        },
+        {
+          "question_original": "What do you think of beautified selfies?",
+          "question_rewrite": "How do you feel about selfies that are heavily edited or filtered?",
+          "question_cn": "你如何看待经过大量美化或滤镜处理的自拍照？",
+          "questionId": "Expert_2025Q2_q28"
+        }
+      ]
+    },
+    {
+      "topicName": "Shopping and Fashion Trends",
+      "topicName_cn": "购物与时尚潮流",
+      "topicId": "Expert_2025Q2_t8",
+      "questions": [
+        {
+          "question_original": "Do you think online shopping will replace in-store shopping in the future? Why?",
+          "question_rewrite": "Will people shop online more than in physical stores in the future? What makes you think so?",
+          "question_cn": "你认为未来人们会更多地在网上购物而不是去实体店吗？你为什么这么认为？",
+          "questionId": "Expert_2025Q2_q29"
+        },
+        {
+          "question_original": "Why is fashion very important to some people?",
+          "question_rewrite": "Why do some people care so much about fashion and clothing styles?",
+          "question_cn": "为什么有些人如此在意时尚和穿衣风格？",
+          "questionId": "Expert_2025Q2_q30"
+        },
+        {
+          "question_original": "Are older people as fashionable as young people? why?",
+          "question_rewrite": "Do you think older generations dress as stylishly as young people? Why or why not?",
+          "question_cn": "你认为年长一代的穿着是否和年轻人一样时尚？为什么或为什么不？",
+          "questionId": "Expert_2025Q2_q31"
+        },
+        {
+          "question_original": "Are women more fashionable than men? Why?",
+          "question_rewrite": "Do women generally pay more attention to fashion than men? What could be the reason?",
+          "question_cn": "女性通常比男性更关注时尚吗？这可能是什么原因？",
+          "questionId": "Expert_2025Q2_q32"
+        }
+      ]
+    },
+    {
+      "topicName": "Lifestyle and Patience",
+      "topicName_cn": "生活方式与耐心",
+      "topicId": "Expert_2025Q2_t9",
+      "questions": [
+        {
+          "question_original": "Do people in your country like to take public transportation?",
+          "question_rewrite": "Is public transportation popular in your country? Why or why not?",
+          "question_cn": "公共交通在你的国家受欢迎吗？为什么或为什么不？",
+          "questionId": "Expert_2025Q2_q33"
+        },
+        {
+          "question_original": "Why do some people like a slow-paced life?",
+          "question_rewrite": "What makes some people prefer a more relaxed and slower lifestyle?",
+          "question_cn": "是什么让一些人更喜欢轻松而缓慢的生活方式？",
+          "questionId": "Expert_2025Q2_q34"
+        },
+        {
+          "question_original": "Is being patient good for people? Why?",
+          "question_rewrite": "Why is patience considered a good quality to have?",
+          "question_cn": "为什么耐心被认为是一种良好的品质？",
+          "questionId": "Expert_2025Q2_q35"
+        },
+        {
+          "question_original": "Are people less patient now than people in the past? Why?",
+          "question_rewrite": "Do you think people today are less patient than previous generations? What might explain this?",
+          "question_cn": "你认为现代人比以前的人更缺乏耐心吗？这可能是为什么？",
+          "questionId": "Expert_2025Q2_q36"
+        }
+      ]
+    },
+    {
+      "topicName": "Reading and Storytelling",
+      "topicName_cn": "阅读与讲故事",
+      "topicId": "Expert_2025Q2_t10",
+      "questions": [
+        {
+          "question_original": "How does technology help people tell stories?",
+          "question_rewrite": "In what ways has technology changed how people share and tell stories?",
+          "question_cn": "科技在多大程度上改变了人们讲述和分享故事的方式？",
+          "questionId": "Expert_2025Q2_q37"
+        },
+        {
+          "question_original": "Do you prefer to read e-books or paper books?",
+          "question_rewrite": "Which do you like better - reading books digitally or physical books? Why?",
+          "question_cn": "你更喜欢电子书还是纸质书？为什么？",
+          "questionId": "Expert_2025Q2_q38"
+        },
+        {
+          "question_original": "Why are mystery novels so popular nowadays?",
+          "question_rewrite": "What makes mystery stories so appealing to readers these days?",
+          "question_cn": "是什么让悬疑小说在当今如此受欢迎？",
+          "questionId": "Expert_2025Q2_q39"
+        },
+        {
+          "question_original": "What kinds of stories do children like?",
+          "question_rewrite": "What types of stories are most popular with young children?",
+          "question_cn": "什么类型的故事最受小朋友欢迎？",
+          "questionId": "Expert_2025Q2_q40"
+        }
+      ]
+    },
+    {
+      "topicName": "Farming and Agriculture",
+      "topicName_cn": "农业与耕作",
+      "topicId": "Expert_2025Q2_t11",
+      "questions": [
+        {
+          "question_original": "Are there many people growing their own vegetables now?",
+          "question_rewrite": "Do you think more people are starting to grow their own food these days?",
+          "question_cn": "你认为现在有更多人开始自己种植食物了吗？",
+          "questionId": "Expert_2025Q2_q41"
+        },
+        {
+          "question_original": "Do you think it's good to let kids learn how to plant?",
+          "question_rewrite": "Is teaching children about planting and gardening beneficial? Why?",
+          "question_cn": "教孩子种植和园艺有益吗？为什么？",
+          "questionId": "Expert_2025Q2_q42"
+        },
+        {
+          "question_original": "What do you think of the job as a farmer?",
+          "question_rewrite": "How would you describe the work and life of a farmer?",
+          "question_cn": "你会如何描述农民的工作和生活？",
+          "questionId": "Expert_2025Q2_q43"
+        },
+        {
+          "question_original": "What are the differences between traditional and modern agriculture?",
+          "question_rewrite": "How is farming today different from how it was done in the past?",
+          "question_cn": "如今的农业与过去相比有何不同？",
+          "questionId": "Expert_2025Q2_q44"
+        }
+      ]
+    },
+    {
+      "topicName": "Memory and Appointments",
+      "topicName_cn": "记忆与约会",
+      "topicId": "Expert_2025Q2_t12",
+      "questions": [
+        {
+          "question_original": "How do people who are busy remember things they need to do?",
+          "question_rewrite": "What methods do busy people use to keep track of their tasks and appointments?",
+          "question_cn": "忙碌的人用什么方法来记住他们的任务和约会？",
+          "questionId": "Expert_2025Q2_q45"
+        },
+        {
+          "question_original": "Do you think people should remember family history?",
+          "question_rewrite": "How important is it to remember and pass down family stories and history?",
+          "question_cn": "记住并传承家族故事和历史有多重要？",
+          "questionId": "Expert_2025Q2_q46"
+        },
+        {
+          "question_original": "If someone doesn't really like whom they are going to meet, they may deliberately forget their appointment, is that true? Why?",
+          "question_rewrite": "Do you think people sometimes 'forget' meetings on purpose if they don't want to see someone? Why would they do that?",
+          "question_cn": "你认为人们如果不想见某人，有时会故意'忘记'会议吗？为什么会这样做？",
+          "questionId": "Expert_2025Q2_q47"
+        },
+        {
+          "question_original": "Which is more important, a work-related appointment or an appointment with a friend? Why?",
+          "question_rewrite": "If you had to choose, would you prioritize a work meeting or meeting a friend? What's your reason?",
+          "question_cn": "如果必须选择，你会优先考虑工作会议还是与朋友见面？你的理由是什么？",
+          "questionId": "Expert_2025Q2_q48"
+        }
+      ]
+    },
+    {
+      "topicName": "Plastic Usage and Environment",
+      "topicName_cn": "塑料使用与环境",
+      "topicId": "Expert_2025Q2_t13",
+      "questions": [
+        {
+          "question_original": "Do you think we should use plastic products?",
+          "question_rewrite": "Should people continue using plastic items in daily life? Why or why not?",
+          "question_cn": "人们应该继续在日常生活中使用塑料制品吗？为什么？",
+          "questionId": "Expert_2025Q2_q49"
+        },
+        {
+          "question_original": "How can we reduce our use of plastic?",
+          "question_rewrite": "What are some practical ways to use less plastic in our everyday lives?",
+          "question_cn": "在我们的日常生活中，有哪些实用的方法可以减少塑料的使用？",
+          "questionId": "Expert_2025Q2_q50"
+        },
+        {
+          "question_original": "What kinds of plastic waste are often seen in your country?",
+          "question_rewrite": "What types of plastic garbage are most common where you live?",
+          "question_cn": "在你居住的地方，最常见的塑料垃圾类型是什么？",
+          "questionId": "Expert_2025Q2_q51"
+        },
+        {
+          "question_original": "Why do people like to use plastic products?",
+          "question_rewrite": "What makes plastic products so popular despite environmental concerns?",
+          "question_cn": "尽管存在环境问题，是什么让塑料制品如此受欢迎？",
+          "questionId": "Expert_2025Q2_q52"
+        }
+      ]
+    },
+    {
+      "topicName": "Friendship and Social Media",
+      "topicName_cn": "友谊与社交媒体",
+      "topicId": "Expert_2025Q2_t14",
+      "questions": [
+        {
+          "question_original": "Do you still keep in touch with your friends from childhood? Why or why not?",
+          "question_rewrite": "Are you still connected with your childhood friends? What helps or prevents this?",
+          "question_cn": "你还和童年的朋友保持联系吗？是什么帮助或阻碍了这一点？",
+          "questionId": "Expert_2025Q2_q53"
+        },
+        {
+          "question_original": "How important is childhood friendship to children?",
+          "question_rewrite": "Why are childhood friendships valuable for kids' development?",
+          "question_cn": "为什么童年友谊对孩子的成长很有价值？",
+          "questionId": "Expert_2025Q2_q54"
+        },
+        {
+          "question_original": "What do you think of online social media?",
+          "question_rewrite": "How do you feel about social networking sites and apps?",
+          "question_cn": "你对社交网站和应用有什么看法？",
+          "questionId": "Expert_2025Q2_q55"
+        },
+        {
+          "question_original": "Do you think online social media will replace face-to-face communication?",
+          "question_rewrite": "Will online interactions completely take over real-life conversations in the future?",
+          "question_cn": "未来在线互动会完全取代现实生活中的对话吗？",
+          "questionId": "Expert_2025Q2_q56"
+        }
+      ]
+    },
+    {
+      "topicName": "Cultural Understanding",
+      "topicName_cn": "文化理解",
+      "topicId": "Expert_2025Q2_t15",
+      "questions": [
+        {
+          "question_original": "Where and how can we get to know people of different cultures better?",
+          "question_rewrite": "What are good ways to learn about and connect with people from other cultures?",
+          "question_cn": "了解和接触其他文化人群的好方法有哪些？",
+          "questionId": "Expert_2025Q2_q57"
+        },
+        {
+          "question_original": "What are the advantages and disadvantages of cultural diversity?",
+          "question_rewrite": "How does having many cultures in one place help or challenge society?",
+          "question_cn": "多种文化共存如何帮助或挑战社会？",
+          "questionId": "Expert_2025Q2_q58"
+        },
+        {
+          "question_original": "How can traditional culture and other cultures coexist?",
+          "question_rewrite": "What helps local traditions and foreign influences exist together peacefully?",
+          "question_cn": "什么因素有助于本土传统与外来影响和平共存？",
+          "questionId": "Expert_2025Q2_q59"
+        },
+        {
+          "question_original": "Which traditions are disappearing?",
+          "question_rewrite": "What kinds of cultural practices are becoming less common these days?",
+          "question_cn": "哪些文化习俗在当今变得越来越少见？",
+          "questionId": "Expert_2025Q2_q60"
+        }
+      ]
+    },
+    {
+      "topicName": "Movie Watching Habits",
+      "topicName_cn": "观影习惯",
+      "topicId": "Expert_2025Q2_t16",
+      "questions": [
+        {
+          "question_original": "Where do people normally watch movies?",
+          "question_rewrite": "What are the most common places for people to watch films nowadays?",
+          "question_cn": "如今人们最常见的观影场所是哪些？",
+          "questionId": "Expert_2025Q2_q61"
+        },
+        {
+          "question_original": "What are the differences between watching movies at home and in a cinema?",
+          "question_rewrite": "How does the experience of watching films at home compare to going to theaters?",
+          "question_cn": "在家观影与去影院观影的体验有何不同？",
+          "questionId": "Expert_2025Q2_q62"
+        },
+        {
+          "question_original": "Are actors or actresses important to movies? Why?",
+          "question_rewrite": "How much do movie stars influence a film's success? Why?",
+          "question_cn": "电影明星对电影成功的影响有多大？为什么？",
+          "questionId": "Expert_2025Q2_q63"
+        },
+        {
+          "question_original": "Why are there fewer people going to the cinema to watch movies nowadays?",
+          "question_rewrite": "What's making cinema attendance decline in recent years?",
+          "question_cn": "近年来导致影院上座率下降的原因是什么？",
+          "questionId": "Expert_2025Q2_q64"
+        }
+      ]
+    },
+    {
+      "topicName": "Information Access",
+      "topicName_cn": "信息获取",
+      "topicId": "Expert_2025Q2_t17",
+      "questions": [
+        {
+          "question_original": "How can people search for information now?",
+          "question_rewrite": "What are the main ways people find information today compared to before?",
+          "question_cn": "与过去相比，如今人们获取信息的主要方式有哪些？",
+          "questionId": "Expert_2025Q2_q65"
+        },
+        {
+          "question_original": "What information can people get from television?",
+          "question_rewrite": "How useful is TV as a source of news and knowledge these days?",
+          "question_cn": "电视作为新闻和知识来源在当今有多大用处？",
+          "questionId": "Expert_2025Q2_q66"
+        },
+        {
+          "question_original": "Do you think libraries are still important in the digital age?",
+          "question_rewrite": "Are public libraries still valuable when so much is available online?",
+          "question_cn": "在大量信息可在线获取的今天，公共图书馆还有价值吗？",
+          "questionId": "Expert_2025Q2_q67"
+        },
+        {
+          "question_original": "Does the development of the Internet have any impact on some disadvantaged people?",
+          "question_rewrite": "How has internet access affected people who struggle financially or socially?",
+          "question_cn": "互联网接入如何影响经济或社交方面处于弱势的人群？",
+          "questionId": "Expert_2025Q2_q68"
+        }
+      ]
+    },
+    {
+      "topicName": "Language Learning",
+      "topicName_cn": "语言学习",
+      "topicId": "Expert_2025Q2_t18",
+      "questions": [
+        {
+          "question_original": "Why do people learn foreign languages?",
+          "question_rewrite": "What are the main reasons people study other languages?",
+          "question_cn": "人们学习外语的主要原因有哪些？",
+          "questionId": "Expert_2025Q2_q69"
+        },
+        {
+          "question_original": "What makes a good foreign language teacher?",
+          "question_rewrite": "What qualities should an excellent language teacher have?",
+          "question_cn": "优秀的语言教师应具备哪些品质？",
+          "questionId": "Expert_2025Q2_q70"
+        },
+        {
+          "question_original": "Do you think grammar is important when learning foreign languages?",
+          "question_rewrite": "How crucial is grammar study for mastering a new language?",
+          "question_cn": "语法学习对于掌握一门新语言有多关键？",
+          "questionId": "Expert_2025Q2_q71"
+        },
+        {
+          "question_original": "Is it interesting to be a foreign language teacher? Why?",
+          "question_rewrite": "What makes teaching languages an enjoyable or rewarding job?",
+          "question_cn": "什么因素使语言教学成为一项有趣或有回报的工作？",
+          "questionId": "Expert_2025Q2_q72"
+        }
+      ]
+    },
+    {
+      "topicName": "Shopping Experiences",
+      "topicName_cn": "购物经历",
+      "topicId": "Expert_2025Q2_t19",
+      "questions": [
+        {
+          "question_original": "What kind of customer service do you think is good?",
+          "question_rewrite": "What makes customer service excellent in your opinion?",
+          "question_cn": "在你看来，什么样的客户服务才算优秀？",
+          "questionId": "Expert_2025Q2_q73"
+        },
+        {
+          "question_original": "What are the differences between shopping online and in-store?",
+          "question_rewrite": "How is shopping online different from shopping in physical stores?",
+          "question_cn": "线上购物与实体店购物有什么不同？",
+          "questionId": "Expert_2025Q2_q74"
+        },
+        {
+          "question_original": "What problems do customers often have while shopping?",
+          "question_rewrite": "What common issues do shoppers typically face?",
+          "question_cn": "购物者通常会遇到哪些常见问题？",
+          "questionId": "Expert_2025Q2_q75"
+        },
+        {
+          "question_original": "What do you think customers should do when there are problems with products bought online?",
+          "question_rewrite": "What steps should online shoppers take when they receive faulty products?",
+          "question_cn": "当网购商品有问题时，顾客应采取哪些措施？",
+          "questionId": "Expert_2025Q2_q76"
+        }
+      ]
+    },
+    {
+      "topicName": "Children and Sharing",
+      "topicName_cn": "儿童与分享",
+      "topicId": "Expert_2025Q2_t20",
+      "questions": [
+        {
+          "question_original": "Do you think kids like to share? Why?",
+          "question_rewrite": "Are children naturally willing to share? Why or why not?",
+          "question_cn": "孩子天生愿意分享吗？为什么或为什么不？",
+          "questionId": "Expert_2025Q2_q77"
+        },
+        {
+          "question_original": "How can parents teach their children to share?",
+          "question_rewrite": "What are effective ways for parents to encourage sharing in children?",
+          "question_cn": "家长有哪些有效方法可以鼓励孩子学会分享？",
+          "questionId": "Expert_2025Q2_q78"
+        },
+        {
+          "question_original": "What do you think is the benefit of sharing for children?",
+          "question_rewrite": "How does sharing help children's development?",
+          "question_cn": "分享如何促进孩子的成长和发展？",
+          "questionId": "Expert_2025Q2_q79"
+        },
+        {
+          "question_original": "Is there anything that parents should persuade children to share with others?",
+          "question_rewrite": "Are there certain things children should be especially encouraged to share?",
+          "question_cn": "有没有一些东西是家长特别应该鼓励孩子与他人分享的？",
+          "questionId": "Expert_2025Q2_q80"
+        }
+      ]
+    },
+    {
+      "topicName": "Money and Finance",
+      "topicName_cn": "金钱与财务",
+      "topicId": "Expert_2025Q2_t21",
+      "questions": [
+        {
+          "question_original": "Why do people rarely use cash now?",
+          "question_rewrite": "What has caused the decline in cash usage these days?",
+          "question_cn": "如今人们使用现金减少的原因是什么？",
+          "questionId": "Expert_2025Q2_q81"
+        },
+        {
+          "question_original": "When do children begin to comprehend the value of money?",
+          "question_rewrite": "At what age do children typically start understanding money's importance?",
+          "question_cn": "孩子通常在几岁开始理解金钱的重要性？",
+          "questionId": "Expert_2025Q2_q82"
+        },
+        {
+          "question_original": "Should parents reward children with money?",
+          "question_rewrite": "Is giving money as rewards a good parenting practice?",
+          "question_cn": "用金钱作为奖励是一种好的育儿方式吗？",
+          "questionId": "Expert_2025Q2_q83"
+        },
+        {
+          "question_original": "Is it good and necessary to teach children to save money?",
+          "question_rewrite": "Why is teaching kids about saving money important?",
+          "question_cn": "为什么教育孩子储蓄钱很重要？",
+          "questionId": "Expert_2025Q2_q84"
+        }
+      ]
+    },
+    {
+      "topicName": "Travel Experiences",
+      "topicName_cn": "旅行经历",
+      "topicId": "Expert_2025Q2_t22",
+      "questions": [
+        {
+          "question_original": "Is it important to take photos while traveling?",
+          "question_rewrite": "How valuable is photograph-taking during trips?",
+          "question_cn": "旅行中拍照有多重要？",
+          "questionId": "Expert_2025Q2_q85"
+        },
+        {
+          "question_original": "Can you trust other people's travel journals on the Internet?",
+          "question_rewrite": "How reliable are online travel blogs and reviews?",
+          "question_cn": "网上的旅行博客和评论靠谱吗？",
+          "questionId": "Expert_2025Q2_q86"
+        },
+        {
+          "question_original": "What factors affect how people feel about travel?",
+          "question_rewrite": "What influences people's travel experiences and satisfaction?",
+          "question_cn": "哪些因素会影响人们的旅行体验与满意度？",
+          "questionId": "Expert_2025Q2_q87"
+        },
+        {
+          "question_original": "Will people go to a foreign country to travel because of the distinct landscape?",
+          "question_rewrite": "Do unique natural attractions significantly influence international travel decisions?",
+          "question_cn": "独特的自然景观是否会显著影响人们出国旅行的决定？",
+          "questionId": "Expert_2025Q2_q88"
+        }
+      ]
+    },
+    {
+      "topicName": "Learning and Development",
+      "topicName_cn": "学习与成长",
+      "topicId": "Expert_2025Q2_t23",
+      "questions": [
+        {
+          "question_original": "What can children learn from parents?",
+          "question_rewrite": "What important lessons do children typically learn from their parents?",
+          "question_cn": "孩子通常能从父母那里学到哪些重要的东西？",
+          "questionId": "Expert_2025Q2_q89"
+        },
+        {
+          "question_original": "Do you think some children are well-behaved because they are influenced by their parents?",
+          "question_rewrite": "How much does parental influence affect children's behavior?",
+          "question_cn": "父母的影响在多大程度上决定了孩子的行为举止？",
+          "questionId": "Expert_2025Q2_q90"
+        },
+        {
+          "question_original": "Is it necessary for adults to learn new things?",
+          "question_rewrite": "Why should adults continue learning throughout their lives?",
+          "question_cn": "为什么成年人应该终身学习？",
+          "questionId": "Expert_2025Q2_q91"
+        },
+        {
+          "question_original": "How can people learn new things?",
+          "question_rewrite": "What are effective ways for people to acquire new knowledge and skills?",
+          "question_cn": "人们有哪些有效方式可以学习新知识和技能？",
+          "questionId": "Expert_2025Q2_q92"
+        }
+      ]
+    },
+    {
+      "topicName": "Success and Achievement",
+      "topicName_cn": "成功与成就",
+      "topicId": "Expert_2025Q2_t24",
+      "questions": [
+        {
+          "question_original": "Should people set goals for themselves?",
+          "question_rewrite": "Is it important for people to have personal goals? Why or why not?",
+          "question_cn": "人们设立个人目标重要吗？为什么？",
+          "questionId": "Expert_2025Q2_q93"
+        },
+        {
+          "question_original": "How do you define success?",
+          "question_rewrite": "What does being successful mean to you?",
+          "question_cn": "你如何定义“成功”？",
+          "questionId": "Expert_2025Q2_q94"
+        },
+        {
+          "question_original": "How do we judge whether young people are successful?",
+          "question_rewrite": "What standards should we use to measure young people's success?",
+          "question_cn": "我们应使用哪些标准来衡量年轻人的成功？",
+          "questionId": "Expert_2025Q2_q95"
+        },
+        {
+          "question_original": "Are successful people lonely?",
+          "question_rewrite": "Do you think highly successful people often feel lonely?",
+          "question_cn": "你认为非常成功的人经常感到孤独吗？",
+          "questionId": "Expert_2025Q2_q96"
+        }
+      ]
+    },
+    {
+      "topicName": "Role Models and Inspiration",
+      "topicName_cn": "榜样与激励",
+      "topicId": "Expert_2025Q2_t25",
+      "questions": [
+        {
+          "question_original": "What qualities make a role model?",
+          "question_rewrite": "What characteristics should a good role model have?",
+          "question_cn": "一个优秀的榜样应具备哪些特质？",
+          "questionId": "Expert_2025Q2_q97"
+        },
+        {
+          "question_original": "What types of people will inspire children to do interesting things?",
+          "question_rewrite": "Who can motivate children to pursue exciting activities?",
+          "question_cn": "哪些人能激励孩子去尝试有趣的活动？",
+          "questionId": "Expert_2025Q2_q98"
+        },
+        {
+          "question_original": "Who do you think will inspire children more: parents or teachers?",
+          "question_rewrite": "Between parents and teachers, who has greater influence on children's inspiration?",
+          "question_cn": "在你看来，父母和老师谁更能激发孩子的灵感？",
+          "questionId": "Expert_2025Q2_q99"
+        },
+        {
+          "question_original": "Should adults encourage young children to set their own goals?",
+          "question_rewrite": "Is it good for adults to help young children create personal goals?",
+          "question_cn": "成年人是否应该鼓励小孩子设立自己的目标？",
+          "questionId": "Expert_2025Q2_q100"
+        }
+      ]
+    },
+    {
+      "topicName": "Education and Learning",
+      "topicName_cn": "教育与学习",
+      "topicId": "Expert_2025Q2_t26",
+      "questions": [
+        {
+          "question_original": "Should teachers be funny when they teach?",
+          "question_rewrite": "Is humor important for teachers in the classroom?",
+          "question_cn": "幽默在课堂教学中对老师来说重要吗？",
+          "questionId": "Expert_2025Q2_q101"
+        },
+        {
+          "question_original": "What qualities should teachers have?",
+          "question_rewrite": "What makes someone a good teacher?",
+          "question_cn": "一个好老师应具备哪些品质？",
+          "questionId": "Expert_2025Q2_q102"
+        },
+        {
+          "question_original": "Which do you think is more important, practical skills or academic skills?",
+          "question_rewrite": "What's more valuable in life - hands-on skills or book knowledge?",
+          "question_cn": "在生活中，动手能力和书本知识哪个更有价值？",
+          "questionId": "Expert_2025Q2_q103"
+        },
+        {
+          "question_original": "Which age group is the best at learning new things?",
+          "question_rewrite": "At what age do people learn most effectively?",
+          "question_cn": "人们在哪个年龄段学习新知识最有效？",
+          "questionId": "Expert_2025Q2_q104"
+        }
+      ]
+    },
+    {
+      "topicName": "Intelligence and Development",
+      "topicName_cn": "智力与成长",
+      "topicId": "Expert_2025Q2_t27",
+      "questions": [
+        {
+          "question_original": "Are smart people happier than others?",
+          "question_rewrite": "Do intelligent people tend to be happier in life?",
+          "question_cn": "聪明的人在生活中是否更容易感到幸福？",
+          "questionId": "Expert_2025Q2_q105"
+        },
+        {
+          "question_original": "Do you think people tend to be selfish?",
+          "question_rewrite": "Are humans naturally selfish in your opinion?",
+          "question_cn": "你认为人类天性是否自私？",
+          "questionId": "Expert_2025Q2_q106"
+        },
+        {
+          "question_original": "Who do you think plays a more important role in a child's development, teachers or parents?",
+          "question_rewrite": "Between teachers and parents, who influences children's growth more significantly?",
+          "question_cn": "老师和父母，谁对孩子的成长影响更大？",
+          "questionId": "Expert_2025Q2_q107"
+        },
+        {
+          "question_original": "Why are some children more intelligent than others?",
+          "question_rewrite": "What factors make certain children develop higher intelligence?",
+          "question_cn": "哪些因素导致有些孩子更聪明？",
+          "questionId": "Expert_2025Q2_q108"
+        }
+      ]
+    },
+    {
+      "topicName": "Friendship and Relationships",
+      "topicName_cn": "友谊与人际关系",
+      "topicId": "Expert_2025Q2_t28",
+      "questions": [
+        {
+          "question_original": "What do you think of making friends online?",
+          "question_rewrite": "How do you feel about forming friendships through the internet?",
+          "question_cn": "你如何看待通过互联网结交朋友？",
+          "questionId": "Expert_2025Q2_q109"
+        },
+        {
+          "question_original": "Is it a good idea to make friends with people who are much older than you?",
+          "question_rewrite": "What are the benefits and drawbacks of having much older friends?",
+          "question_cn": "交年长许多的朋友有哪些好处与不足？",
+          "questionId": "Expert_2025Q2_q110"
+        },
+        {
+          "question_original": "Do the people in your country enjoy meeting new people?",
+          "question_rewrite": "Are people in your country generally open to making new acquaintances?",
+          "question_cn": "你国家的人是否普遍愿意结识新朋友？",
+          "questionId": "Expert_2025Q2_q111"
+        },
+        {
+          "question_original": "Do you think friendship is important?",
+          "question_rewrite": "How valuable are friendships in people's lives?",
+          "question_cn": "你认为友谊在人们生活中有多重要？",
+          "questionId": "Expert_2025Q2_q112"
+        },
+        {
+          "question_original": "Why is it difficult for some people to make friends with others?",
+          "question_rewrite": "What challenges prevent certain people from forming friendships easily?",
+          "question_cn": "哪些困难会阻碍一些人建立友谊？",
+          "questionId": "Expert_2025Q2_q113"
+        },
+        {
+          "question_original": "Do we benefit from having friends with different personalities?",
+          "question_rewrite": "What advantages come from having friends who are very different from us?",
+          "question_cn": "拥有性格迥异的朋友有什么好处？",
+          "questionId": "Expert_2025Q2_q114"
+        }
+      ]
+    },
+    {
+      "topicName": "Parenting and Influence",
+      "topicName_cn": "育儿与影响力",
+      "topicId": "Expert_2025Q2_t29",
+      "questions": [
+        {
+          "question_original": "What impact does advertising have on children and their parents?",
+          "question_rewrite": "How do commercials affect both kids and their parents?",
+          "question_cn": "广告如何影响孩子和他们的父母？",
+          "questionId": "Expert_2025Q2_q115"
+        },
+        {
+          "question_original": "What do parents often persuade their children to do?",
+          "question_rewrite": "What things do parents typically encourage their kids to do?",
+          "question_cn": "父母通常会鼓励孩子做哪些事情？",
+          "questionId": "Expert_2025Q2_q116"
+        },
+        {
+          "question_original": "Who do children listen to more, their parents or their teachers? Why?",
+          "question_rewrite": "Do kids pay more attention to parents or teachers? What's the reason?",
+          "question_cn": "孩子更听父母的还是老师的？为什么？",
+          "questionId": "Expert_2025Q2_q117"
+        },
+        {
+          "question_original": "What are the good ways to persuade children?",
+          "question_rewrite": "What methods work best when trying to convince children?",
+          "question_cn": "有哪些方法在说服孩子时最有效？",
+          "questionId": "Expert_2025Q2_q118"
+        },
+        {
+          "question_original": "What advice should young people follow?",
+          "question_rewrite": "What guidance is most valuable for teenagers?",
+          "question_cn": "对青少年来说，哪些建议最有价值？",
+          "questionId": "Expert_2025Q2_q119"
+        }
+      ]
+    },
+    {
+      "topicName": "Planning and Organization",
+      "topicName_cn": "计划与组织能力",
+      "topicId": "Expert_2025Q2_t30",
+      "questions": [
+        {
+          "question_original": "What kind of plans do young people often make?",
+          "question_rewrite": "What types of plans are common among young adults?",
+          "question_cn": "年轻人常见的计划类型有哪些？",
+          "questionId": "Expert_2025Q2_q120"
+        },
+        {
+          "question_original": "Why can't people always follow their plans?",
+          "question_rewrite": "What usually prevents people from sticking to their plans?",
+          "question_cn": "人们通常因为什么无法坚持自己的计划？",
+          "questionId": "Expert_2025Q2_q121"
+        },
+        {
+          "question_original": "Why do people make plans?",
+          "question_rewrite": "What's the purpose of making plans in life?",
+          "question_cn": "人们为什么要制定生活计划？",
+          "questionId": "Expert_2025Q2_q122"
+        },
+        {
+          "question_original": "Is it important to make plans?",
+          "question_rewrite": "How valuable is planning in daily life?",
+          "question_cn": "在日常生活中，计划有多重要？",
+          "questionId": "Expert_2025Q2_q123"
+        },
+        {
+          "question_original": "Why do some people like to make plans while others don't like to?",
+          "question_rewrite": "What makes some people enjoy planning when others avoid it?",
+          "question_cn": "为什么有些人喜欢计划，而有些人却避免做计划？",
+          "questionId": "Expert_2025Q2_q124"
+        },
+        {
+          "question_original": "Are there any people who never make plans?",
+          "question_rewrite": "Do some individuals really never plan anything?",
+          "question_cn": "真的有些人从不做任何计划吗？",
+          "questionId": "Expert_2025Q2_q125"
+        }
+      ]
+    },
+    {
+      "topicName": "Child Behavior and Discipline",
+      "topicName_cn": "儿童行为与管教",
+      "topicId": "Expert_2025Q2_t31",
+      "questions": [
+        {
+          "question_original": "What bad behavior do children usually have?",
+          "question_rewrite": "What are some common behavior problems in kids?",
+          "question_cn": "孩子常见的不良行为有哪些？",
+          "questionId": "Expert_2025Q2_q126"
+        },
+        {
+          "question_original": "How should parents stop their children from behaving badly in public?",
+          "question_rewrite": "What's the best way for parents to handle children misbehaving in public?",
+          "question_cn": "父母在面对孩子在公共场合行为不当时，最好的处理方式是什么？",
+          "questionId": "Expert_2025Q2_q127"
+        },
+        {
+          "question_original": "Are parents these days stricter than those in the past?",
+          "question_rewrite": "Is parenting today more strict compared to previous generations?",
+          "question_cn": "现在的父母比过去的更严格吗？",
+          "questionId": "Expert_2025Q2_q128"
+        },
+        {
+          "question_original": "Whose influence on children is more important? Friends' or parents'?",
+          "question_rewrite": "Who impacts kids more - their friends or their parents?",
+          "question_cn": "谁对孩子的影响更大——朋友还是父母？",
+          "questionId": "Expert_2025Q2_q129"
+        }
+      ]
+    },
+    {
+      "topicName": "Astronomy Interest",
+      "topicName_cn": "天文学兴趣",
+      "topicId": "Expert_2025Q2_t32",
+      "questions": [
+        {
+          "question_original": "Should kids know more about stars and planets?",
+          "question_rewrite": "Is learning about space important for children?",
+          "question_cn": "了解太空对孩子来说重要吗？",
+          "questionId": "Expert_2025Q2_q130"
+        },
+        {
+          "question_original": "Is high technology helpful for star watching?",
+          "question_rewrite": "How has modern technology improved astronomy?",
+          "question_cn": "现代科技如何促进了天文学的发展？",
+          "questionId": "Expert_2025Q2_q131"
+        },
+        {
+          "question_original": "What kind of people are interested in stars?",
+          "question_rewrite": "Who tends to be most fascinated by astronomy?",
+          "question_cn": "哪类人对天文学最感兴趣？",
+          "questionId": "Expert_2025Q2_q132"
+        },
+        {
+          "question_original": "Why do some people like to watch movies about stars or planets?",
+          "question_rewrite": "What makes space movies so appealing to certain people?",
+          "question_cn": "为什么有些人特别喜欢关于太空的电影？",
+          "questionId": "Expert_2025Q2_q133"
+        }
+      ]
+    },
+    {
+      "topicName": "Advertising Effects",
+      "topicName_cn": "广告的影响",
+      "topicId": "Expert_2025Q2_t33",
+      "questions": [
+        {
+          "question_original": "Where do we often see advertisements?",
+          "question_rewrite": "What are the most common places we encounter ads?",
+          "question_cn": "我们最常在哪些地方看到广告？",
+          "questionId": "Expert_2025Q2_q134"
+        },
+        {
+          "question_original": "What are the benefits of advertising?",
+          "question_rewrite": "How can advertising be helpful?",
+          "question_cn": "广告能带来哪些好处？",
+          "questionId": "Expert_2025Q2_q135"
+        },
+        {
+          "question_original": "Are advertisements good or bad for children?",
+          "question_rewrite": "What effects do ads have on kids - positive or negative?",
+          "question_cn": "广告对孩子是利大于弊还是弊大于利？",
+          "questionId": "Expert_2025Q2_q136"
+        },
+        {
+          "question_original": "How does advertising affect people?",
+          "question_rewrite": "In what ways do commercials influence consumers?",
+          "question_cn": "广告通过哪些方式影响消费者？",
+          "questionId": "Expert_2025Q2_q137"
+        },
+        {
+          "question_original": "Do people pay attention to advertisements on public transport?",
+          "question_rewrite": "How effective are ads on buses and subways?",
+          "question_cn": "公交和地铁上的广告效果如何？",
+          "questionId": "Expert_2025Q2_q138"
+        },
+        {
+          "question_original": "Do you think it is good to see the same advertisements everywhere?",
+          "question_rewrite": "Is repetitive advertising helpful or annoying?",
+          "question_cn": "你觉得到处看到同样的广告是好还是烦？",
+          "questionId": "Expert_2025Q2_q139"
+        }
+      ]
+    },
+    {
+      "topicName": "Shopping habits and shopping places",
+      "topicName_cn": "购物习惯与购物地点",
+      "topicId": "Expert_2025Q2_t34",
+      "questions": [
+        {
+          "question_original": "Do people in your country go to the shopping mall frequently?",
+          "question_rewrite": "Do people in your country often visit shopping malls?",
+          "question_cn": "你们国家的人经常去购物中心吗？",
+          "questionId": "Expert_2025Q2_q140"
+        },
+        {
+          "question_original": "How have people's shopping habits changed in recent decades?",
+          "question_rewrite": "How has the way people shop changed in the last few decades?",
+          "question_cn": "在过去几十年里，人们的购物方式发生了哪些变化？",
+          "questionId": "Expert_2025Q2_q141"
+        },
+        {
+          "question_original": "Do you think shops and shopping malls will disappear in the future?",
+          "question_rewrite": "Do you think shops and malls might stop existing in the future?",
+          "question_cn": "你认为商店和购物中心在未来可能会消失吗？",
+          "questionId": "Expert_2025Q2_q142"
+        },
+        {
+          "question_original": "What are the differences between shopping in street markets and big shopping malls?",
+          "question_rewrite": "How is shopping at street markets different from shopping in big malls?",
+          "question_cn": "在街市购物和在大型购物中心购物有什么不同？",
+          "questionId": "Expert_2025Q2_q143"
+        },
+        {
+          "question_original": "What are the differences in the shopping habits of different age groups?",
+          "question_rewrite": "How do shopping habits vary between younger and older people?",
+          "question_cn": "不同年龄段的人在购物习惯上有哪些差异？",
+          "questionId": "Expert_2025Q2_q144"
+        },
+        {
+          "question_original": "What are the differences between shopping online and in-store?",
+          "question_rewrite": "How is online shopping different from shopping in a store?",
+          "question_cn": "网上购物和实体店购物有哪些不同？",
+          "questionId": "Expert_2025Q2_q145"
+        }
+      ]
+    },
+    {
+      "topicName": "Laughter, comedy and humor",
+      "topicName_cn": "笑声、喜剧与幽默",
+      "topicId": "Expert_2025Q2_t35",
+      "questions": [
+        {
+          "question_original": "Do people like comedy?",
+          "question_rewrite": "Do people enjoy watching comedy?",
+          "question_cn": "人们喜欢看喜剧吗？",
+          "questionId": "Expert_2025Q2_q146"
+        },
+        {
+          "question_original": "Why do people of all ages like cartoons?",
+          "question_rewrite": "Why do people of all ages enjoy cartoons?",
+          "question_cn": "为什么各个年龄段的人都喜欢看卡通片？",
+          "questionId": "Expert_2025Q2_q147"
+        },
+        {
+          "question_original": "Why do some people like to make others laugh?",
+          "question_rewrite": "Why do some people enjoy making others laugh?",
+          "question_cn": "为什么有些人喜欢逗别人笑？",
+          "questionId": "Expert_2025Q2_q148"
+        },
+        {
+          "question_original": "Should teachers tell jokes in class?",
+          "question_rewrite": "Is it a good idea for teachers to tell jokes during class?",
+          "question_cn": "老师在课堂上讲笑话是个好主意吗？",
+          "questionId": "Expert_2025Q2_q149"
+        }
+      ]
+    },
+    {
+      "topicName": "Clothing, recycling and second-hand clothes",
+      "topicName_cn": "服装、回收与二手衣物",
+      "topicId": "Expert_2025Q2_t36",
+      "questions": [
+        {
+          "question_original": "Some people think it's a waste to buy too many clothes for children. What do you think?",
+          "question_rewrite": "Do you think buying lots of clothes for kids is a waste?",
+          "question_cn": "你认为给孩子买太多衣服是一种浪费吗？",
+          "questionId": "Expert_2025Q2_q150"
+        },
+        {
+          "question_original": "How do people usually handle the clothes they don't want?",
+          "question_rewrite": "What do people usually do with clothes they no longer wear?",
+          "question_cn": "人们通常如何处理不再穿的衣服？",
+          "questionId": "Expert_2025Q2_q151"
+        },
+        {
+          "question_original": "Why do people buy second-hand clothes?",
+          "question_rewrite": "Why do some people choose to buy used clothes?",
+          "question_cn": "为什么有些人会选择购买二手衣物？",
+          "questionId": "Expert_2025Q2_q152"
+        },
+        {
+          "question_original": "What problems will occur if people don't recycle?",
+          "question_rewrite": "What problems can happen if people don’t recycle?",
+          "question_cn": "如果人们不进行回收，会产生哪些问题？",
+          "questionId": "Expert_2025Q2_q153"
+        },
+        {
+          "question_original": "Should the government encourage people to recycle items?",
+          "question_rewrite": "Do you think the government should push people to recycle?",
+          "question_cn": "你认为政府应该推动人们进行回收吗？",
+          "questionId": "Expert_2025Q2_q154"
+        },
+        {
+          "question_original": "How do people in your country recycle various items they don't want?",
+          "question_rewrite": "How do people in your country recycle things they no longer use?",
+          "question_cn": "你们国家的人通常如何回收不再使用的物品？",
+          "questionId": "Expert_2025Q2_q155"
+        }
+      ]
+    },
+    {
+      "topicName": "Clothing and personal expression",
+      "topicName_cn": "服装与个人表达",
+      "topicId": "Expert_2025Q2_t37",
+      "questions": [
+        {
+          "question_original": "Do you think what people wear can influence their mood?",
+          "question_rewrite": "Do you think clothes can affect a person’s mood?",
+          "question_cn": "你认为穿着会影响一个人的情绪吗？",
+          "questionId": "Expert_2025Q2_q156"
+        },
+        {
+          "question_original": "Do you think it is a good idea to buy clothes online?",
+          "question_rewrite": "Is buying clothes online a good idea, in your opinion?",
+          "question_cn": "你觉得网购衣服是个好主意吗？",
+          "questionId": "Expert_2025Q2_q157"
+        },
+        {
+          "question_original": "What kind of clothes do people wear in the workplace?",
+          "question_rewrite": "What clothes do people usually wear to work?",
+          "question_cn": "人们在工作场合通常穿什么样的衣服？",
+          "questionId": "Expert_2025Q2_q158"
+        },
+        {
+          "question_original": "What are the differences between clothes worn by old people and that by young people?",
+          "question_rewrite": "How do the clothes of older people differ from those of younger people?",
+          "question_cn": "老年人和年轻人在穿衣风格上有哪些不同？",
+          "questionId": "Expert_2025Q2_q159"
+        }
+      ]
+    },
+    {
+      "topicName": "Children's opinions and communication skills",
+      "topicName_cn": "孩子的观点与沟通能力",
+      "topicId": "Expert_2025Q2_t38",
+      "questions": [
+        {
+          "question_original": "What age do young children start to have their own opinions?",
+          "question_rewrite": "At what age do kids begin to form their own opinions?",
+          "question_cn": "孩子从几岁开始有自己的看法？",
+          "questionId": "Expert_2025Q2_q160"
+        },
+        {
+          "question_original": "What kinds of things do children have strong opinions about?",
+          "question_rewrite": "What do children usually have strong opinions about?",
+          "question_cn": "孩子通常会对哪些事情有强烈的看法？",
+          "questionId": "Expert_2025Q2_q161"
+        },
+        {
+          "question_original": "Should parents always consider their children’s opinions?",
+          "question_rewrite": "Do you think parents should always listen to their kids’ opinions?",
+          "question_cn": "你认为父母应该总是听取孩子的意见吗？",
+          "questionId": "Expert_2025Q2_q162"
+        },
+        {
+          "question_original": "In which kinds of job are excellent communication skills essential?",
+          "question_rewrite": "What kinds of jobs really need great communication skills?",
+          "question_cn": "哪些类型的工作特别需要出色的沟通能力？",
+          "questionId": "Expert_2025Q2_q163"
+        },
+        {
+          "question_original": "What is the importance of having good listening skills?",
+          "question_rewrite": "Why are good listening skills important?",
+          "question_cn": "为什么拥有良好的倾听能力很重要？",
+          "questionId": "Expert_2025Q2_q164"
+        },
+        {
+          "question_original": "How easy it is for people to improve their communication skills?",
+          "question_rewrite": "Is it easy for people to get better at communication?",
+          "question_cn": "人们提升沟通能力是否容易？",
+          "questionId": "Expert_2025Q2_q165"
+        }
+      ]
+    },
+    {
+      "topicName": "Noise and quiet places in cities",
+      "topicName_cn": "城市中的噪音与安静场所",
+      "topicId": "Expert_2025Q2_t39",
+      "questions": [
+        {
+          "question_original": "Is it hard to find quiet places in cities?",
+          "question_rewrite": "Is it difficult to find quiet spots in cities?",
+          "question_cn": "在城市里找到安静的地方是否困难？",
+          "questionId": "Expert_2025Q2_q166"
+        },
+        {
+          "question_original": "Are there more or less quiet places compared to the past?",
+          "question_rewrite": "Are there fewer quiet places now than in the past?",
+          "question_cn": "与过去相比，现在的安静场所是否更少了？",
+          "questionId": "Expert_2025Q2_q167"
+        },
+        {
+          "question_original": "What kinds of thing can make noise?",
+          "question_rewrite": "What kinds of things usually make noise?",
+          "question_cn": "哪些东西通常会产生噪音？",
+          "questionId": "Expert_2025Q2_q168"
+        },
+        {
+          "question_original": "Do you think how noises in cities could be reduced?",
+          "question_rewrite": "How do you think city noise could be reduced?",
+          "question_cn": "你认为城市的噪音可以如何减少？",
+          "questionId": "Expert_2025Q2_q169"
+        },
+        {
+          "question_original": "What do you think are the negative effects of noise pollution?",
+          "question_rewrite": "What bad effects can noise pollution have?",
+          "question_cn": "你认为噪音污染会带来哪些负面影响？",
+          "questionId": "Expert_2025Q2_q170"
+        },
+        {
+          "question_original": "Do you think whether noises could be eliminated in the future?",
+          "question_rewrite": "Do you think it's possible to get rid of noise in the future?",
+          "question_cn": "你认为未来有可能消除噪音吗？",
+          "questionId": "Expert_2025Q2_q171"
+        }
+      ]
+    },
+    {
+      "topicName": "Setting goals in life and work",
+      "topicName_cn": "生活与工作中的目标设定",
+      "topicId": "Expert_2025Q2_t40",
+      "questions": [
+        {
+          "question_original": "Do people in your country set goals?",
+          "question_rewrite": "Do people in your country like to set goals?",
+          "question_cn": "你们国家的人喜欢设定目标吗？",
+          "questionId": "Expert_2025Q2_q172"
+        },
+        {
+          "question_original": "Do people usually set long-term goals or short-term ones?",
+          "question_rewrite": "Do people prefer setting long-term goals or short-term ones?",
+          "question_cn": "人们更倾向于设立长期目标还是短期目标？",
+          "questionId": "Expert_2025Q2_q173"
+        },
+        {
+          "question_original": "Why is setting goals important in the workplace?",
+          "question_rewrite": "Why is it important to set goals at work?",
+          "question_cn": "在职场中设立目标为什么很重要？",
+          "questionId": "Expert_2025Q2_q174"
+        },
+        {
+          "question_original": "What is the difference between goals set by old people and young people?",
+          "question_rewrite": "How are the goals of older people different from those of younger people?",
+          "question_cn": "老年人和年轻人设定的目标有什么不同？",
+          "questionId": "Expert_2025Q2_q175"
+        },
+        {
+          "question_original": "How do people set goals?",
+          "question_rewrite": "How do people usually make plans to reach their goals?",
+          "question_cn": "人们通常如何制定实现目标的计划？",
+          "questionId": "Expert_2025Q2_q176"
+        },
+        {
+          "question_original": "Do you think people should have personal life goals?",
+          "question_rewrite": "Do you think it's good to have personal goals in life?",
+          "question_cn": "你认为拥有个人生活目标是一件好事吗？",
+          "questionId": "Expert_2025Q2_q177"
+        }
+      ]
+    },
+    {
+      "topicName": "City life vs. countryside life",
+      "topicName_cn": "城市生活与乡村生活的对比",
+      "topicId": "Expert_2025Q2_t41",
+      "questions": [
+        {
+          "question_original": "What’s the difference between the city and the country?",
+          "question_rewrite": "How is life in the city different from life in the countryside?",
+          "question_cn": "城市生活与乡村生活有何不同？",
+          "questionId": "Expert_2025Q2_q178"
+        },
+        {
+          "question_original": "Some people say large cities are suitable for old people. What do you think?",
+          "question_rewrite": "Do you think big cities are good places for older people to live?",
+          "question_cn": "你认为大城市适合老年人居住吗？",
+          "questionId": "Expert_2025Q2_q179"
+        },
+        {
+          "question_original": "Do you think it is possible that all of the population move to cities?",
+          "question_rewrite": "Do you think everyone could move to cities in the future?",
+          "question_cn": "你认为未来所有人都可能搬到城市里生活吗？",
+          "questionId": "Expert_2025Q2_q180"
+        },
+        {
+          "question_original": "Do you think people in the countryside are friendlier than people in the city?",
+          "question_rewrite": "Are people in rural areas usually friendlier than city people?",
+          "question_cn": "你觉得乡村的人通常比城市的人更友好吗？",
+          "questionId": "Expert_2025Q2_q181"
+        }
+      ]
+    },
+    {
+      "topicName": "Music and its cultural impact",
+      "topicName_cn": "音乐及其文化影响",
+      "topicId": "Expert_2025Q2_t42",
+      "questions": [
+        {
+          "question_original": "What kind of music is popular in China now and what kind will be in the future?",
+          "question_rewrite": "What music is popular in China now, and what might be popular in the future?",
+          "question_cn": "现在中国流行什么样的音乐，未来可能流行什么音乐？",
+          "questionId": "Expert_2025Q2_q182"
+        },
+        {
+          "question_original": "Why do some people like to listen to live music while others prefer CDs?",
+          "question_rewrite": "Why do some people enjoy live music more, while others like recorded music?",
+          "question_cn": "为什么有些人更喜欢现场音乐，而另一些人则喜欢录制音乐？",
+          "questionId": "Expert_2025Q2_q183"
+        },
+        {
+          "question_original": "Do Chinese parents require their children to learn to play musical instruments?",
+          "question_rewrite": "Do parents in China often want their kids to learn a musical instrument?",
+          "question_cn": "中国的家长是否常常希望孩子学习乐器？",
+          "questionId": "Expert_2025Q2_q184"
+        },
+        {
+          "question_original": "How do you think the government could support very talented musicians?",
+          "question_rewrite": "How can the government help really talented musicians?",
+          "question_cn": "政府可以如何帮助非常有才华的音乐家？",
+          "questionId": "Expert_2025Q2_q185"
+        },
+        {
+          "question_original": "Do you think it is valuable to hold international music events?",
+          "question_rewrite": "Is it a good idea to host international music events?",
+          "question_cn": "举办国际音乐活动是一个好主意吗？",
+          "questionId": "Expert_2025Q2_q186"
+        },
+        {
+          "question_original": "Do you think a country's music can boost its international reputation?",
+          "question_rewrite": "Can music help a country build a good image around the world?",
+          "question_cn": "音乐能否帮助一个国家在国际上树立良好形象？",
+          "questionId": "Expert_2025Q2_q187"
+        }
+      ]
+    },
+    {
+      "topicName": "Outdoor and indoor sports",
+      "topicName_cn": "室内与户外运动",
+      "topicId": "Expert_2025Q2_t43",
+      "questions": [
+        {
+          "question_original": "What are the differences between indoor sports and outdoor sports?",
+          "question_rewrite": "How are indoor and outdoor sports different?",
+          "question_cn": "室内运动和户外运动有哪些不同？",
+          "questionId": "Expert_2025Q2_q188"
+        },
+        {
+          "question_original": "Which outdoor sports are popular in China?",
+          "question_rewrite": "What outdoor sports are popular in China?",
+          "question_cn": "在中国哪些户外运动比较受欢迎？",
+          "questionId": "Expert_2025Q2_q189"
+        },
+        {
+          "question_original": "Which sports are popular among elderly people?",
+          "question_rewrite": "What sports do older people usually like?",
+          "question_cn": "年长者通常喜欢哪些运动？",
+          "questionId": "Expert_2025Q2_q190"
+        },
+        {
+          "question_original": "Which outdoor sports are popular with children?",
+          "question_rewrite": "What outdoor sports do kids usually enjoy?",
+          "question_cn": "孩子们通常喜欢哪些户外运动？",
+          "questionId": "Expert_2025Q2_q191"
+        },
+        {
+          "question_original": "How do weather affect outdoor sports?",
+          "question_rewrite": "How does the weather affect outdoor sports?",
+          "question_cn": "天气如何影响户外运动？",
+          "questionId": "Expert_2025Q2_q192"
+        },
+        {
+          "question_original": "Which sports can children do on rainy days?",
+          "question_rewrite": "What sports can kids play when it's raining?",
+          "question_cn": "下雨天孩子们可以做哪些运动？",
+          "questionId": "Expert_2025Q2_q193"
+        }
+      ]
+    },
+    {
+      "topicName": "Watching sports and competition",
+      "topicName_cn": "观看体育与竞争",
+      "topicId": "Expert_2025Q2_t44",
+      "questions": [
+        {
+          "question_original": "What kinds of sports events are broadcast on TV or other media in your country?",
+          "question_rewrite": "What kinds of sports are shown on TV or online in your country?",
+          "question_cn": "在你的国家，哪些体育赛事会在电视或网络媒体上播放？",
+          "questionId": "Expert_2025Q2_q194"
+        },
+        {
+          "question_original": "Do people in your country enjoy watching football games?",
+          "question_rewrite": "Do people in your country like watching football?",
+          "question_cn": "你所在国家的人喜欢看足球吗？",
+          "questionId": "Expert_2025Q2_q195"
+        },
+        {
+          "question_original": "Does encouragement and applause from the audience have an impact on athletes?",
+          "question_rewrite": "Does cheering from the crowd affect athletes' performance?",
+          "question_cn": "观众的鼓励和掌声会影响运动员的表现吗？",
+          "questionId": "Expert_2025Q2_q196"
+        },
+        {
+          "question_original": "Do you prefer to watch live sports or watch it on TV?",
+          "question_rewrite": "Do you prefer watching sports live or on TV?",
+          "question_cn": "你更喜欢现场看体育比赛还是通过电视观看？",
+          "questionId": "Expert_2025Q2_q197"
+        },
+        {
+          "question_original": "Why do some people like to watch live sports?",
+          "question_rewrite": "Why do some people enjoy watching sports in person?",
+          "question_cn": "为什么有些人喜欢亲自观看体育比赛？",
+          "questionId": "Expert_2025Q2_q198"
+        },
+        {
+          "question_original": "What kinds of sports do Chinese people like to watch?",
+          "question_rewrite": "What sports do people in China like to watch?",
+          "question_cn": "中国人喜欢看哪些体育项目？",
+          "questionId": "Expert_2025Q2_q199"
+        },
+        {
+          "question_original": "Do you think competition is good for students?",
+          "question_rewrite": "Do you think it's good for students to face competition?",
+          "question_cn": "你认为学生面对竞争是一件好事吗？",
+          "questionId": "Expert_2025Q2_q200"
+        }
+      ]
+    },
+    {
+      "topicName": "Health and fitness",
+      "topicName_cn": "健康与健身",
+      "topicId": "Expert_2025Q2_t45",
+      "questions": [
+        {
+          "question_original": "What can governments do to improve people’s health?",
+          "question_rewrite": "What can the government do to help people stay healthy?",
+          "question_cn": "政府可以做些什么来帮助人们保持健康？",
+          "questionId": "Expert_2025Q2_q201"
+        },
+        {
+          "question_original": "How can people keep fit?",
+          "question_rewrite": "What can people do to stay in shape?",
+          "question_cn": "人们可以做些什么来保持身材？",
+          "questionId": "Expert_2025Q2_q202"
+        },
+        {
+          "question_original": "How can you tell whether a website is reliable or not?",
+          "question_rewrite": "How do you know if a website is trustworthy?",
+          "question_cn": "你怎么判断一个网站是否可靠？",
+          "questionId": "Expert_2025Q2_q203"
+        },
+        {
+          "question_original": "Do you think people are healthier now than in the past?",
+          "question_rewrite": "Are people healthier now than they were in the past?",
+          "question_cn": "你认为现在人们比过去更健康吗？",
+          "questionId": "Expert_2025Q2_q204"
+        },
+        {
+          "question_original": "Who should be responsible for the exaggerated claims that are on the supplement packaging?",
+          "question_rewrite": "Who should take the blame for false claims on supplement labels?",
+          "question_cn": "谁应为保健品标签上的虚假宣传负责？",
+          "questionId": "Expert_2025Q2_q205"
+        },
+        {
+          "question_original": "How much healthier people are nowadays compared to those in the past?",
+          "question_rewrite": "Are people a lot healthier now than in the past?",
+          "question_cn": "与过去相比，如今人们健康了多少？",
+          "questionId": "Expert_2025Q2_q206"
+        }
+      ]
+    },
+    {
+      "topicName": "Arguments and communication in relationships",
+      "topicName_cn": "争执与人际沟通",
+      "topicId": "Expert_2025Q2_t46",
+      "questions": [
+        {
+          "question_original": "Do you think arguments are important?",
+          "question_rewrite": "Do you think having arguments is important?",
+          "question_cn": "你认为争执重要吗？",
+          "questionId": "Expert_2025Q2_q207"
+        },
+        {
+          "question_original": "What do family members usually have arguments about?",
+          "question_rewrite": "What do family members often argue about?",
+          "question_cn": "家庭成员通常会因为什么争吵？",
+          "questionId": "Expert_2025Q2_q208"
+        },
+        {
+          "question_original": "Is it easier for you to have arguments with your family or with your friends?",
+          "question_rewrite": "Is it easier to argue with family or with friends?",
+          "question_cn": "你觉得和家人还是朋友更容易产生争执？",
+          "questionId": "Expert_2025Q2_q209"
+        },
+        {
+          "question_original": "Do you think people should change the way they think when having arguments?",
+          "question_rewrite": "Should people try to change their mindset during arguments?",
+          "question_cn": "你认为人们在争执中应该调整自己的思维方式吗？",
+          "questionId": "Expert_2025Q2_q210"
+        }
+      ]
+    }
+  ]
 }
+
+  

@@ -6,29 +6,29 @@
       "categoryName_cn": "个人成长",
       "topicCollection": [
         {
-          "topicName": "Strategies for preparedness and organizational skills",
-          "topicName_cn": "准备与组织能力的策略",
-          "topicId": "Expert_B0_t1"
+          "topicName": "Beautiful Things in Life",
+          "topicName_cn": "生活中的美好事物",
+          "topicId": "Expert_2025Q2_t1"
         },
         {
-          "topicName": "Adapting to change and novel situations",
-          "topicName_cn": "适应变化与新情境",
-          "topicId": "Expert_B0_t11"
+          "topicName": "Lifestyle and Patience",
+          "topicName_cn": "生活方式与耐心",
+          "topicId": "Expert_2025Q2_t9"
         },
         {
-          "topicName": "Goal-setting and achievement",
-          "topicName_cn": "目标设定与成就",
-          "topicId": "Expert_B0_t13"
+          "topicName": "Success and Achievement",
+          "topicName_cn": "成功与成就",
+          "topicId": "Expert_2025Q2_t24"
         },
         {
-          "topicName": "Developing personal viewpoints",
-          "topicName_cn": "发展个人观点",
-          "topicId": "Expert_B0_t20"
+          "topicName": "Role Models and Inspiration",
+          "topicName_cn": "榜样与激励",
+          "topicId": "Expert_2025Q2_t25"
         },
         {
-          "topicName": "Personal productivity strategies",
-          "topicName_cn": "个人效率策略",
-          "topicId": "Expert_B0_t37"
+          "topicName": "Setting goals in life and work",
+          "topicName_cn": "生活与工作中的目标设定",
+          "topicId": "Expert_2025Q2_t40"
         }
       ]
     },
@@ -38,14 +38,29 @@
       "categoryName_cn": "教育与学习",
       "topicCollection": [
         {
-          "topicName": "Second language learning processes",
-          "topicName_cn": "第二语言学习过程",
-          "topicId": "Expert_B0_t6"
+          "topicName": "Reading and Storytelling",
+          "topicName_cn": "阅读与讲故事",
+          "topicId": "Expert_2025Q2_t10"
         },
         {
-          "topicName": "Reading and cognitive development",
-          "topicName_cn": "阅读与认知发展",
-          "topicId": "Expert_B0_t41"
+          "topicName": "Language Learning",
+          "topicName_cn": "语言学习",
+          "topicId": "Expert_2025Q2_t18"
+        },
+        {
+          "topicName": "Learning and Development",
+          "topicName_cn": "学习与成长",
+          "topicId": "Expert_2025Q2_t23"
+        },
+        {
+          "topicName": "Education and Learning",
+          "topicName_cn": "教育与学习",
+          "topicId": "Expert_2025Q2_t26"
+        },
+        {
+          "topicName": "Intelligence and Development",
+          "topicName_cn": "智力与成长",
+          "topicId": "Expert_2025Q2_t27"
         }
       ]
     },
@@ -55,24 +70,9 @@
       "categoryName_cn": "工作与职业",
       "topicCollection": [
         {
-          "topicName": "Career opportunities and wage structures",
-          "topicName_cn": "职业机会与薪资结构",
-          "topicId": "Expert_B0_t2"
-        },
-        {
-          "topicName": "Adaptation to lifestyle modifications",
-          "topicName_cn": "适应生活方式改变",
-          "topicId": "Expert_B0_t26"
-        },
-        {
-          "topicName": "Workplace attire and professionalism",
-          "topicName_cn": "职场着装与专业性",
-          "topicId": "Expert_B0_t42"
-        },
-        {
-          "topicName": "Career decision-making",
-          "topicName_cn": "职业决策",
-          "topicId": "Expert_B0_t44"
+          "topicName": "Planning and Organization",
+          "topicName_cn": "计划与组织能力",
+          "topicId": "Expert_2025Q2_t30"
         }
       ]
     },
@@ -82,29 +82,39 @@
       "categoryName_cn": "人与人际关系",
       "topicCollection": [
         {
-          "topicName": "Interpersonal dynamics and social behavior",
-          "topicName_cn": "人际动态与社会行为",
-          "topicId": "Expert_B0_t3"
+          "topicName": "Handling Disagreements",
+          "topicName_cn": "处理分歧",
+          "topicId": "Expert_2025Q2_t3"
         },
         {
-          "topicName": "Knowledge transfer between age groups",
-          "topicName_cn": "代际知识传递",
-          "topicId": "Expert_B0_t16"
+          "topicName": "Friendship and Social Media",
+          "topicName_cn": "友谊与社交媒体",
+          "topicId": "Expert_2025Q2_t14"
         },
         {
-          "topicName": "Social bonding and interpersonal connections",
-          "topicName_cn": "社交联结与人际关系",
-          "topicId": "Expert_B0_t25"
+          "topicName": "Friendship and Relationships",
+          "topicName_cn": "友谊与人际关系",
+          "topicId": "Expert_2025Q2_t28"
         },
         {
-          "topicName": "Interpersonal communication dynamics",
-          "topicName_cn": "人际沟通的动态",
-          "topicId": "Expert_B0_t36"
+          "topicName": "Parenting and Influence",
+          "topicName_cn": "育儿与影响力",
+          "topicId": "Expert_2025Q2_t29"
         },
         {
-          "topicName": "Parenting and child development",
-          "topicName_cn": "育儿与儿童发展",
-          "topicId": "Expert_B0_t47"
+          "topicName": "Child Behavior and Discipline",
+          "topicName_cn": "儿童行为与管教",
+          "topicId": "Expert_2025Q2_t31"
+        },
+        {
+          "topicName": "Children's opinions and communication skills",
+          "topicName_cn": "孩子的观点与沟通能力",
+          "topicId": "Expert_2025Q2_t38"
+        },
+        {
+          "topicName": "Arguments and communication in relationships",
+          "topicName_cn": "争执与人际沟通",
+          "topicId": "Expert_2025Q2_t46"
         }
       ]
     },
@@ -114,24 +124,34 @@
       "categoryName_cn": "日常生活与活动",
       "topicCollection": [
         {
-          "topicName": "Culinary traditions for celebrations",
-          "topicName_cn": "庆祝活动的烹饪传统",
-          "topicId": "Expert_B0_t7"
+          "topicName": "Activities and Lifestyle",
+          "topicName_cn": "活动与生活方式",
+          "topicId": "Expert_2025Q2_t5"
         },
         {
-          "topicName": "Residential living choices",
-          "topicName_cn": "住宅生活选择",
-          "topicId": "Expert_B0_t10"
+          "topicName": "Shopping and Fashion Trends",
+          "topicName_cn": "购物与时尚潮流",
+          "topicId": "Expert_2025Q2_t8"
         },
         {
-          "topicName": "Neighborhood interactions",
-          "topicName_cn": "邻里互动",
-          "topicId": "Expert_B0_t27"
+          "topicName": "Memory and Appointments",
+          "topicName_cn": "记忆与约会",
+          "topicId": "Expert_2025Q2_t12"
         },
         {
-          "topicName": "Domestic recreation and enjoyment",
-          "topicName_cn": "家庭娱乐与享受",
-          "topicId": "Expert_B0_t31"
+          "topicName": "Shopping Experiences",
+          "topicName_cn": "购物经历",
+          "topicId": "Expert_2025Q2_t19"
+        },
+        {
+          "topicName": "Children and Sharing",
+          "topicName_cn": "儿童与分享",
+          "topicId": "Expert_2025Q2_t20"
+        },
+        {
+          "topicName": "Shopping habits and shopping places",
+          "topicName_cn": "购物习惯与购物地点",
+          "topicId": "Expert_2025Q2_t34"
         }
       ]
     },
@@ -141,29 +161,29 @@
       "categoryName_cn": "物品与科技",
       "topicCollection": [
         {
-          "topicName": "Playthings and child development",
-          "topicName_cn": "玩具与儿童发展",
-          "topicId": "Expert_B0_t4"
+          "topicName": "Media Consumption",
+          "topicName_cn": "媒体消费",
+          "topicId": "Expert_2025Q2_t6"
         },
         {
-          "topicName": "Maintenance decisions and manufacturing standards",
-          "topicName_cn": "维修决策与制造标准",
-          "topicId": "Expert_B0_t8"
+          "topicName": "Photography and Memories",
+          "topicName_cn": "摄影与回忆",
+          "topicId": "Expert_2025Q2_t7"
         },
         {
-          "topicName": "Domestic technological applications",
-          "topicName_cn": "家庭技术应用",
-          "topicId": "Expert_B0_t38"
+          "topicName": "Information Access",
+          "topicName_cn": "信息获取",
+          "topicId": "Expert_2025Q2_t17"
         },
         {
-          "topicName": "Mobile communication patterns",
-          "topicName_cn": "移动通讯模式",
-          "topicId": "Expert_B0_t39"
+          "topicName": "Clothing, recycling and second-hand clothes",
+          "topicName_cn": "服装、回收与二手衣物",
+          "topicId": "Expert_2025Q2_t36"
         },
         {
-          "topicName": "Technological innovation",
-          "topicName_cn": "技术创新",
-          "topicId": "Expert_B0_t46"
+          "topicName": "Clothing and personal expression",
+          "topicName_cn": "服装与个人表达",
+          "topicId": "Expert_2025Q2_t37"
         }
       ]
     },
@@ -173,24 +193,44 @@
       "categoryName_cn": "休闲与娱乐",
       "topicCollection": [
         {
-          "topicName": "Storytelling for young audiences",
-          "topicName_cn": "面向年轻观众的故事讲述",
-          "topicId": "Expert_B0_t9"
+          "topicName": "Sports and Young People",
+          "topicName_cn": "运动与年轻人",
+          "topicId": "Expert_2025Q2_t2"
         },
         {
-          "topicName": "Musical tastes across generations",
-          "topicName_cn": "跨世代音乐品味",
-          "topicId": "Expert_B0_t12"
+          "topicName": "Movie Watching Habits",
+          "topicName_cn": "观影习惯",
+          "topicId": "Expert_2025Q2_t16"
         },
         {
-          "topicName": "Recreational pursuits in natural settings",
-          "topicName_cn": "自然环境中的休闲活动",
-          "topicId": "Expert_B0_t17"
+          "topicName": "Travel Experiences",
+          "topicName_cn": "旅行经历",
+          "topicId": "Expert_2025Q2_t22"
         },
         {
-          "topicName": "Art and public spaces",
-          "topicName_cn": "艺术与公共空间",
-          "topicId": "Expert_B0_t49"
+          "topicName": "Laughter, comedy and humor",
+          "topicName_cn": "笑声、喜剧与幽默",
+          "topicId": "Expert_2025Q2_t35"
+        },
+        {
+          "topicName": "Music and its cultural impact",
+          "topicName_cn": "音乐及其文化影响",
+          "topicId": "Expert_2025Q2_t42"
+        },
+        {
+          "topicName": "Outdoor and indoor sports",
+          "topicName_cn": "室内与户外运动",
+          "topicId": "Expert_2025Q2_t43"
+        },
+        {
+          "topicName": "Watching sports and competition",
+          "topicName_cn": "观看体育与竞争",
+          "topicId": "Expert_2025Q2_t44"
+        },
+        {
+          "topicName": "Health and fitness",
+          "topicName_cn": "健康与健身",
+          "topicId": "Expert_2025Q2_t45"
         }
       ]
     },
@@ -200,19 +240,24 @@
       "categoryName_cn": "场所与环境",
       "topicCollection": [
         {
-          "topicName": "City travel experiences",
-          "topicName_cn": "城市旅行体验",
-          "topicId": "Expert_B0_t23"
+          "topicName": "Urban vs Rural Living",
+          "topicName_cn": "城市生活与乡村生活",
+          "topicId": "Expert_2025Q2_t4"
         },
         {
-          "topicName": "Countryside lifestyles and visits",
-          "topicName_cn": "乡村生活方式与访问",
-          "topicId": "Expert_B0_t24"
+          "topicName": "Farming and Agriculture",
+          "topicName_cn": "农业与耕作",
+          "topicId": "Expert_2025Q2_t11"
         },
         {
-          "topicName": "Urban design and livability",
-          "topicName_cn": "城市设计与宜居性",
-          "topicId": "Expert_B0_t43"
+          "topicName": "Noise and quiet places in cities",
+          "topicName_cn": "城市中的噪音与安静场所",
+          "topicId": "Expert_2025Q2_t39"
+        },
+        {
+          "topicName": "City life vs. countryside life",
+          "topicName_cn": "城市生活与乡村生活的对比",
+          "topicId": "Expert_2025Q2_t41"
         }
       ]
     },
@@ -222,29 +267,24 @@
       "categoryName_cn": "社会与政治",
       "topicCollection": [
         {
-          "topicName": "Cultural practices of gift exchange",
-          "topicName_cn": "礼物交换的文化实践",
-          "topicId": "Expert_B0_t5"
+          "topicName": "Plastic Usage and Environment",
+          "topicName_cn": "塑料使用与环境",
+          "topicId": "Expert_2025Q2_t13"
         },
         {
-          "topicName": "Social norms and legal frameworks",
-          "topicName_cn": "社会规范与法律框架",
-          "topicId": "Expert_B0_t14"
+          "topicName": "Cultural Understanding",
+          "topicName_cn": "文化理解",
+          "topicId": "Expert_2025Q2_t15"
         },
         {
-          "topicName": "Complimentary offerings and public provisions",
-          "topicName_cn": "免费赠品与公共服务",
-          "topicId": "Expert_B0_t21"
+          "topicName": "Money and Finance",
+          "topicName_cn": "金钱与财务",
+          "topicId": "Expert_2025Q2_t21"
         },
         {
-          "topicName": "Community support systems",
-          "topicName_cn": "社区支持系统",
-          "topicId": "Expert_B0_t28"
-        },
-        {
-          "topicName": "Cultural identity and festivals",
-          "topicName_cn": "文化认同与节日",
-          "topicId": "Expert_B0_t45"
+          "topicName": "Advertising Effects",
+          "topicName_cn": "广告的影响",
+          "topicId": "Expert_2025Q2_t33"
         }
       ]
     },
@@ -254,69 +294,9 @@
       "categoryName_cn": "假设与未来",
       "topicCollection": [
         {
-          "topicName": "Cognitive retention processes",
-          "topicName_cn": "认知保留过程",
-          "topicId": "Expert_B0_t18"
-        },
-        {
-          "topicName": "Dress codes and cultural expressions",
-          "topicName_cn": "着装规范与文化表达",
-          "topicId": "Expert_B0_t19"
-        },
-        {
-          "topicName": "Purchasing habits and influences",
-          "topicName_cn": "购买习惯与影响因素",
-          "topicId": "Expert_B0_t15"
-        },
-        {
-          "topicName": "Information channels and usage patterns",
-          "topicName_cn": "信息渠道与使用模式",
-          "topicId": "Expert_B0_t22"
-        },
-        {
-          "topicName": "Viewpoint sharing behaviors",
-          "topicName_cn": "观点分享行为",
-          "topicId": "Expert_B0_t29"
-        },
-        {
-          "topicName": "Attention management",
-          "topicName_cn": "注意力管理",
-          "topicId": "Expert_B0_t30"
-        },
-        {
-          "topicName": "Metropolitan transportation challenges",
-          "topicName_cn": "大都市交通挑战",
-          "topicId": "Expert_B0_t32"
-        },
-        {
-          "topicName": "Auditory environmental factors",
-          "topicName_cn": "听觉环境因素",
-          "topicId": "Expert_B0_t33"
-        },
-        {
-          "topicName": "Affirmative reinforcement strategies",
-          "topicName_cn": "积极强化策略",
-          "topicId": "Expert_B0_t34"
-        },
-        {
-          "topicName": "Cultural heritage artifacts",
-          "topicName_cn": "文化遗产工艺品",
-          "topicId": "Expert_B0_t35"
-        },
-        {
-          "topicName": "Subjective wellbeing",
-          "topicName_cn": "主观幸福感",
-          "topicId": "Expert_B0_t40"
-        },
-        {
-          "topicName": "Health and fitness",
-          "topicName_cn": "健康与健身",
-          "topicId": "Expert_B0_t48"
-        },
-        {
-          "topicName": "Advertising and consumer behavior",
-          "topicName_cn": "广告与消费者行为",
-          "topicId": "Expert_B0_t50"
+          "topicName": "Astronomy Interest",
+          "topicName_cn": "天文学兴趣",
+          "topicId": "Expert_2025Q2_t32"
         }
       ]
     }

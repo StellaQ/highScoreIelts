@@ -12,8 +12,6 @@ topicName_cn（中文主题名）
 
 topicId（唯一标识符）
 
-questions（该主题下的具体问题列表）
-
 
 categories：预定义的分类体系，每个分类包含：
 
@@ -29,7 +27,7 @@ description（分类描述，含关键词）
 
 精准匹配优先
 
-分析每个 topic 的 topicName、topicName_cn 和 questions，结合 category 的 名称（中英文）和描述 进行匹配。
+分析每个 topic 的 topicName、topicName_cn，结合 category 的 名称（中英文）和描述 进行匹配。
 
 不能简单按顺序匹配，必须计算语义相似度，选择最合适的分类。
 

@@ -1,0 +1,304 @@
+{
+    "mixed_categories": [
+      {
+        "categoryName": "Personal Development",
+        "categoryId": "c1",
+        "categoryName_cn": "个人成长",
+        "topicCollection": [
+          {
+            "topicName": "Beautiful Things in Life",
+            "topicName_cn": "生活中的美好事物",
+            "topicId": "Expert_2025Q2_t1"
+          },
+          {
+            "topicName": "Lifestyle and Patience",
+            "topicName_cn": "生活方式与耐心",
+            "topicId": "Expert_2025Q2_t9"
+          },
+          {
+            "topicName": "Success and Achievement",
+            "topicName_cn": "成功与成就",
+            "topicId": "Expert_2025Q2_t24"
+          },
+          {
+            "topicName": "Role Models and Inspiration",
+            "topicName_cn": "榜样与激励",
+            "topicId": "Expert_2025Q2_t25"
+          },
+          {
+            "topicName": "Setting goals in life and work",
+            "topicName_cn": "生活与工作中的目标设定",
+            "topicId": "Expert_2025Q2_t40"
+          }
+        ]
+      },
+      {
+        "categoryName": "Education & Learning",
+        "categoryId": "c2",
+        "categoryName_cn": "教育与学习",
+        "topicCollection": [
+          {
+            "topicName": "Reading and Storytelling",
+            "topicName_cn": "阅读与讲故事",
+            "topicId": "Expert_2025Q2_t10"
+          },
+          {
+            "topicName": "Language Learning",
+            "topicName_cn": "语言学习",
+            "topicId": "Expert_2025Q2_t18"
+          },
+          {
+            "topicName": "Learning and Development",
+            "topicName_cn": "学习与成长",
+            "topicId": "Expert_2025Q2_t23"
+          },
+          {
+            "topicName": "Education and Learning",
+            "topicName_cn": "教育与学习",
+            "topicId": "Expert_2025Q2_t26"
+          },
+          {
+            "topicName": "Intelligence and Development",
+            "topicName_cn": "智力与成长",
+            "topicId": "Expert_2025Q2_t27"
+          }
+        ]
+      },
+      {
+        "categoryName": "Work & Career",
+        "categoryId": "c3",
+        "categoryName_cn": "工作与职业",
+        "topicCollection": [
+          {
+            "topicName": "Planning and Organization",
+            "topicName_cn": "计划与组织能力",
+            "topicId": "Expert_2025Q2_t30"
+          }
+        ]
+      },
+      {
+        "categoryName": "People & Relationships",
+        "categoryId": "c4",
+        "categoryName_cn": "人与人际关系",
+        "topicCollection": [
+          {
+            "topicName": "Handling Disagreements",
+            "topicName_cn": "处理分歧",
+            "topicId": "Expert_2025Q2_t3"
+          },
+          {
+            "topicName": "Friendship and Social Media",
+            "topicName_cn": "友谊与社交媒体",
+            "topicId": "Expert_2025Q2_t14"
+          },
+          {
+            "topicName": "Friendship and Relationships",
+            "topicName_cn": "友谊与人际关系",
+            "topicId": "Expert_2025Q2_t28"
+          },
+          {
+            "topicName": "Parenting and Influence",
+            "topicName_cn": "育儿与影响力",
+            "topicId": "Expert_2025Q2_t29"
+          },
+          {
+            "topicName": "Child Behavior and Discipline",
+            "topicName_cn": "儿童行为与管教",
+            "topicId": "Expert_2025Q2_t31"
+          },
+          {
+            "topicName": "Children's opinions and communication skills",
+            "topicName_cn": "孩子的观点与沟通能力",
+            "topicId": "Expert_2025Q2_t38"
+          },
+          {
+            "topicName": "Arguments and communication in relationships",
+            "topicName_cn": "争执与人际沟通",
+            "topicId": "Expert_2025Q2_t46"
+          }
+        ]
+      },
+      {
+        "categoryName": "Daily Life & Activities",
+        "categoryId": "c5",
+        "categoryName_cn": "日常生活与活动",
+        "topicCollection": [
+          {
+            "topicName": "Activities and Lifestyle",
+            "topicName_cn": "活动与生活方式",
+            "topicId": "Expert_2025Q2_t5"
+          },
+          {
+            "topicName": "Shopping and Fashion Trends",
+            "topicName_cn": "购物与时尚潮流",
+            "topicId": "Expert_2025Q2_t8"
+          },
+          {
+            "topicName": "Memory and Appointments",
+            "topicName_cn": "记忆与约会",
+            "topicId": "Expert_2025Q2_t12"
+          },
+          {
+            "topicName": "Shopping Experiences",
+            "topicName_cn": "购物经历",
+            "topicId": "Expert_2025Q2_t19"
+          },
+          {
+            "topicName": "Children and Sharing",
+            "topicName_cn": "儿童与分享",
+            "topicId": "Expert_2025Q2_t20"
+          },
+          {
+            "topicName": "Shopping habits and shopping places",
+            "topicName_cn": "购物习惯与购物地点",
+            "topicId": "Expert_2025Q2_t34"
+          }
+        ]
+      },
+      {
+        "categoryName": "Objects & Technology",
+        "categoryId": "c6",
+        "categoryName_cn": "物品与科技",
+        "topicCollection": [
+          {
+            "topicName": "Media Consumption",
+            "topicName_cn": "媒体消费",
+            "topicId": "Expert_2025Q2_t6"
+          },
+          {
+            "topicName": "Photography and Memories",
+            "topicName_cn": "摄影与回忆",
+            "topicId": "Expert_2025Q2_t7"
+          },
+          {
+            "topicName": "Information Access",
+            "topicName_cn": "信息获取",
+            "topicId": "Expert_2025Q2_t17"
+          },
+          {
+            "topicName": "Clothing, recycling and second-hand clothes",
+            "topicName_cn": "服装、回收与二手衣物",
+            "topicId": "Expert_2025Q2_t36"
+          },
+          {
+            "topicName": "Clothing and personal expression",
+            "topicName_cn": "服装与个人表达",
+            "topicId": "Expert_2025Q2_t37"
+          }
+        ]
+      },
+      {
+        "categoryName": "Leisure & Recreation",
+        "categoryId": "c7",
+        "categoryName_cn": "休闲与娱乐",
+        "topicCollection": [
+          {
+            "topicName": "Sports and Young People",
+            "topicName_cn": "运动与年轻人",
+            "topicId": "Expert_2025Q2_t2"
+          },
+          {
+            "topicName": "Movie Watching Habits",
+            "topicName_cn": "观影习惯",
+            "topicId": "Expert_2025Q2_t16"
+          },
+          {
+            "topicName": "Travel Experiences",
+            "topicName_cn": "旅行经历",
+            "topicId": "Expert_2025Q2_t22"
+          },
+          {
+            "topicName": "Laughter, comedy and humor",
+            "topicName_cn": "笑声、喜剧与幽默",
+            "topicId": "Expert_2025Q2_t35"
+          },
+          {
+            "topicName": "Music and its cultural impact",
+            "topicName_cn": "音乐及其文化影响",
+            "topicId": "Expert_2025Q2_t42"
+          },
+          {
+            "topicName": "Outdoor and indoor sports",
+            "topicName_cn": "室内与户外运动",
+            "topicId": "Expert_2025Q2_t43"
+          },
+          {
+            "topicName": "Watching sports and competition",
+            "topicName_cn": "观看体育与竞争",
+            "topicId": "Expert_2025Q2_t44"
+          },
+          {
+            "topicName": "Health and fitness",
+            "topicName_cn": "健康与健身",
+            "topicId": "Expert_2025Q2_t45"
+          }
+        ]
+      },
+      {
+        "categoryName": "Places & Environment",
+        "categoryId": "c8",
+        "categoryName_cn": "场所与环境",
+        "topicCollection": [
+          {
+            "topicName": "Urban vs Rural Living",
+            "topicName_cn": "城市生活与乡村生活",
+            "topicId": "Expert_2025Q2_t4"
+          },
+          {
+            "topicName": "Farming and Agriculture",
+            "topicName_cn": "农业与耕作",
+            "topicId": "Expert_2025Q2_t11"
+          },
+          {
+            "topicName": "Noise and quiet places in cities",
+            "topicName_cn": "城市中的噪音与安静场所",
+            "topicId": "Expert_2025Q2_t39"
+          },
+          {
+            "topicName": "City life vs. countryside life",
+            "topicName_cn": "城市生活与乡村生活的对比",
+            "topicId": "Expert_2025Q2_t41"
+          }
+        ]
+      },
+      {
+        "categoryName": "Society & Politics",
+        "categoryId": "c9",
+        "categoryName_cn": "社会与政治",
+        "topicCollection": [
+          {
+            "topicName": "Plastic Usage and Environment",
+            "topicName_cn": "塑料使用与环境",
+            "topicId": "Expert_2025Q2_t13"
+          },
+          {
+            "topicName": "Cultural Understanding",
+            "topicName_cn": "文化理解",
+            "topicId": "Expert_2025Q2_t15"
+          },
+          {
+            "topicName": "Money and Finance",
+            "topicName_cn": "金钱与财务",
+            "topicId": "Expert_2025Q2_t21"
+          },
+          {
+            "topicName": "Advertising Effects",
+            "topicName_cn": "广告的影响",
+            "topicId": "Expert_2025Q2_t33"
+          }
+        ]
+      },
+      {
+        "categoryName": "Hypotheticals & Future",
+        "categoryId": "c10",
+        "categoryName_cn": "假设与未来",
+        "topicCollection": [
+          {
+            "topicName": "Astronomy Interest",
+            "topicName_cn": "天文学兴趣",
+            "topicId": "Expert_2025Q2_t32"
+          }
+        ]
+      }
+    ]
+  }

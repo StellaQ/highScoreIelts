@@ -1,0 +1,1079 @@
+{
+    "ai_questions": [
+      {
+        "topicName_ai": "Beautiful Things in Life",
+        "questions": [
+          {
+            "question_original": "Do you think there are more beautiful things now than in the past? Why?",
+            "question_rewrite": "Do you think there are more beautiful things today compared to the past? Why is that?"
+          },
+          {
+            "question_original": "What beautiful scenery spots are there in your country?",
+            "question_rewrite": "Can you name some beautiful places in your country?"
+          },
+          {
+            "question_original": "Where do you think people usually come into contact with beautiful things?",
+            "question_rewrite": "Where do people usually see beautiful things in daily life?"
+          },
+          {
+            "question_original": "Why do you think people enjoy visiting beautiful places?",
+            "question_rewrite": "Why do people like going to beautiful places?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Sports and Young People",
+        "questions": [
+          {
+            "question_original": "Do young people like to do sports?",
+            "question_rewrite": "Do many young people enjoy sports?"
+          },
+          {
+            "question_original": "What are the benefits of sports for young people?",
+            "question_rewrite": "How does playing sports help young people?"
+          },
+          {
+            "question_original": "Is it necessary to build public sports spaces?",
+            "question_rewrite": "Should cities have more public sports facilities?"
+          },
+          {
+            "question_original": "What do you think of companies donating sports venues for poor children?",
+            "question_rewrite": "Is it a good idea for companies to donate sports facilities to poor kids?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Handling Disagreements",
+        "questions": [
+          {
+            "question_original": "What do you do if you disagree with someone?",
+            "question_rewrite": "How do you usually handle a situation when you don't agree with someone?"
+          },
+          {
+            "question_original": "How can we stop an argument from escalating into a fight?",
+            "question_rewrite": "What are some good ways to prevent a disagreement from turning into a serious conflict?"
+          },
+          {
+            "question_original": "Who do you think should teach children to respect their teacher?",
+            "question_rewrite": "Whose responsibility is it to teach kids to respect their teachers - parents or schools?"
+          },
+          {
+            "question_original": "What disagreements do parents and children usually have?",
+            "question_rewrite": "What are some common things that parents and children often argue about?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Urban vs Rural Living",
+        "questions": [
+          {
+            "question_original": "What are the differences between buildings in the city and in the countryside?",
+            "question_rewrite": "How are buildings different in cities compared to rural areas?"
+          },
+          {
+            "question_original": "Do you prefer to live in the city or in the countryside?",
+            "question_rewrite": "Would you rather live in a city or the countryside, and why?"
+          },
+          {
+            "question_original": "What safety risks are there in residential buildings in cities?",
+            "question_rewrite": "What safety problems might people face in city apartment buildings?"
+          },
+          {
+            "question_original": "Is it expensive to decorate a house or an apartment in the place where you live?",
+            "question_rewrite": "Does it cost a lot to furnish and decorate a home where you live?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Activities and Lifestyle",
+        "questions": [
+          {
+            "question_original": "What outdoor activities are popular in China?",
+            "question_rewrite": "What outdoor sports or activities do many Chinese people enjoy?"
+          },
+          {
+            "question_original": "Are those people who like dangerous activities more likely to be successful?",
+            "question_rewrite": "Do you think people who enjoy risky activities tend to be more successful in life?"
+          },
+          {
+            "question_original": "Do you think it's better for people to change jobs when there are new chances?",
+            "question_rewrite": "Is it a good idea to switch jobs when new opportunities come up?"
+          },
+          {
+            "question_original": "Should young people try as many new activities as possible?",
+            "question_rewrite": "Is it beneficial for young people to experience lots of different activities?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Media Consumption",
+        "questions": [
+          {
+            "question_original": "What programs do people like to watch in your country?",
+            "question_rewrite": "What kinds of TV shows are popular in your country?"
+          },
+          {
+            "question_original": "Do people in your country like to watch foreign TV programs?",
+            "question_rewrite": "Are international TV shows popular where you live?"
+          },
+          {
+            "question_original": "What's the benefit of letting kids watch animal videos rather than visiting zoos?",
+            "question_rewrite": "Why might it be better for children to learn about animals through videos instead of zoo visits?"
+          },
+          {
+            "question_original": "Do teachers play videos in class in your country?",
+            "question_rewrite": "Is it common for teachers to use video materials in classrooms where you live?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Photography and Memories",
+        "questions": [
+          {
+            "question_original": "Why do some people like to record important things with photos?",
+            "question_rewrite": "What makes photography a popular way to remember special moments?"
+          },
+          {
+            "question_original": "What can people learn from historical photographs?",
+            "question_rewrite": "How can old photos help us understand history better?"
+          },
+          {
+            "question_original": "Is taking photos the best way to remember something?",
+            "question_rewrite": "Do you think photography is the most effective method for preserving memories?"
+          },
+          {
+            "question_original": "What do you think of beautified selfies?",
+            "question_rewrite": "How do you feel about selfies that are heavily edited or filtered?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Shopping and Fashion Trends",
+        "questions": [
+          {
+            "question_original": "Do you think online shopping will replace in-store shopping in the future? Why?",
+            "question_rewrite": "Will people shop online more than in physical stores in the future? What makes you think so?"
+          },
+          {
+            "question_original": "Why is fashion very important to some people?",
+            "question_rewrite": "Why do some people care so much about fashion and clothing styles?"
+          },
+          {
+            "question_original": "Are older people as fashionable as young people? why?",
+            "question_rewrite": "Do you think older generations dress as stylishly as young people? Why or why not?"
+          },
+          {
+            "question_original": "Are women more fashionable than men? Why?",
+            "question_rewrite": "Do women generally pay more attention to fashion than men? What could be the reason?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Lifestyle and Patience",
+        "questions": [
+          {
+            "question_original": "Do people in your country like to take public transportation?",
+            "question_rewrite": "Is public transportation popular in your country? Why or why not?"
+          },
+          {
+            "question_original": "Why do some people like a slow-paced life?",
+            "question_rewrite": "What makes some people prefer a more relaxed and slower lifestyle?"
+          },
+          {
+            "question_original": "Is being patient good for people? Why?",
+            "question_rewrite": "Why is patience considered a good quality to have?"
+          },
+          {
+            "question_original": "Are people less patient now than people in the past? Why?",
+            "question_rewrite": "Do you think people today are less patient than previous generations? What might explain this?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Reading and Storytelling",
+        "questions": [
+          {
+            "question_original": "How does technology help people tell stories?",
+            "question_rewrite": "In what ways has technology changed how people share and tell stories?"
+          },
+          {
+            "question_original": "Do you prefer to read e-books or paper books?",
+            "question_rewrite": "Which do you like better - reading books digitally or physical books? Why?"
+          },
+          {
+            "question_original": "Why are mystery novels so popular nowadays?",
+            "question_rewrite": "What makes mystery stories so appealing to readers these days?"
+          },
+          {
+            "question_original": "What kinds of stories do children like?",
+            "question_rewrite": "What types of stories are most popular with young children?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Farming and Agriculture",
+        "questions": [
+          {
+            "question_original": "Are there many people growing their own vegetables now?",
+            "question_rewrite": "Do you think more people are starting to grow their own food these days?"
+          },
+          {
+            "question_original": "Do you think it's good to let kids learn how to plant?",
+            "question_rewrite": "Is teaching children about planting and gardening beneficial? Why?"
+          },
+          {
+            "question_original": "What do you think of the job as a farmer?",
+            "question_rewrite": "How would you describe the work and life of a farmer?"
+          },
+          {
+            "question_original": "What are the differences between traditional and modern agriculture?",
+            "question_rewrite": "How is farming today different from how it was done in the past?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Memory and Appointments",
+        "questions": [
+          {
+            "question_original": "How do people who are busy remember things they need to do?",
+            "question_rewrite": "What methods do busy people use to keep track of their tasks and appointments?"
+          },
+          {
+            "question_original": "Do you think people should remember family history?",
+            "question_rewrite": "How important is it to remember and pass down family stories and history?"
+          },
+          {
+            "question_original": "If someone doesn't really like whom they are going to meet, they may deliberately forget their appointment, is that true? Why?",
+            "question_rewrite": "Do you think people sometimes 'forget' meetings on purpose if they don't want to see someone? Why would they do that?"
+          },
+          {
+            "question_original": "Which is more important, a work-related appointment or an appointment with a friend? Why?",
+            "question_rewrite": "If you had to choose, would you prioritize a work meeting or meeting a friend? What's your reason?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Plastic Usage and Environment",
+        "questions": [
+          {
+            "question_original": "Do you think we should use plastic products?",
+            "question_rewrite": "Should people continue using plastic items in daily life? Why or why not?"
+          },
+          {
+            "question_original": "How can we reduce our use of plastic?",
+            "question_rewrite": "What are some practical ways to use less plastic in our everyday lives?"
+          },
+          {
+            "question_original": "What kinds of plastic waste are often seen in your country?",
+            "question_rewrite": "What types of plastic garbage are most common where you live?"
+          },
+          {
+            "question_original": "Why do people like to use plastic products?",
+            "question_rewrite": "What makes plastic products so popular despite environmental concerns?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Friendship and Social Media",
+        "questions": [
+          {
+            "question_original": "Do you still keep in touch with your friends from childhood? Why or why not?",
+            "question_rewrite": "Are you still connected with your childhood friends? What helps or prevents this?"
+          },
+          {
+            "question_original": "How important is childhood friendship to children?",
+            "question_rewrite": "Why are childhood friendships valuable for kids' development?"
+          },
+          {
+            "question_original": "What do you think of online social media?",
+            "question_rewrite": "How do you feel about social networking sites and apps?"
+          },
+          {
+            "question_original": "Do you think online social media will replace face-to-face communication?",
+            "question_rewrite": "Will online interactions completely take over real-life conversations in the future?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Cultural Understanding",
+        "questions": [
+          {
+            "question_original": "Where and how can we get to know people of different cultures better?",
+            "question_rewrite": "What are good ways to learn about and connect with people from other cultures?"
+          },
+          {
+            "question_original": "What are the advantages and disadvantages of cultural diversity?",
+            "question_rewrite": "How does having many cultures in one place help or challenge society?"
+          },
+          {
+            "question_original": "How can traditional culture and other cultures coexist?",
+            "question_rewrite": "What helps local traditions and foreign influences exist together peacefully?"
+          },
+          {
+            "question_original": "Which traditions are disappearing?",
+            "question_rewrite": "What kinds of cultural practices are becoming less common these days?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Movie Watching Habits",
+        "questions": [
+          {
+            "question_original": "Where do people normally watch movies?",
+            "question_rewrite": "What are the most common places for people to watch films nowadays?"
+          },
+          {
+            "question_original": "What are the differences between watching movies at home and in a cinema?",
+            "question_rewrite": "How does the experience of watching films at home compare to going to theaters?"
+          },
+          {
+            "question_original": "Are actors or actresses important to movies? Why?",
+            "question_rewrite": "How much do movie stars influence a film's success? Why?"
+          },
+          {
+            "question_original": "Why are there fewer people going to the cinema to watch movies nowadays?",
+            "question_rewrite": "What's making cinema attendance decline in recent years?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Information Access",
+        "questions": [
+          {
+            "question_original": "How can people search for information now?",
+            "question_rewrite": "What are the main ways people find information today compared to before?"
+          },
+          {
+            "question_original": "What information can people get from television?",
+            "question_rewrite": "How useful is TV as a source of news and knowledge these days?"
+          },
+          {
+            "question_original": "Do you think libraries are still important in the digital age?",
+            "question_rewrite": "Are public libraries still valuable when so much is available online?"
+          },
+          {
+            "question_original": "Does the development of the Internet have any impact on some disadvantaged people?",
+            "question_rewrite": "How has internet access affected people who struggle financially or socially?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Language Learning",
+        "questions": [
+          {
+            "question_original": "Why do people learn foreign languages?",
+            "question_rewrite": "What are the main reasons people study other languages?"
+          },
+          {
+            "question_original": "What makes a good foreign language teacher?",
+            "question_rewrite": "What qualities should an excellent language teacher have?"
+          },
+          {
+            "question_original": "Do you think grammar is important when learning foreign languages?",
+            "question_rewrite": "How crucial is grammar study for mastering a new language?"
+          },
+          {
+            "question_original": "Is it interesting to be a foreign language teacher? Why?",
+            "question_rewrite": "What makes teaching languages an enjoyable or rewarding job?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Shopping Experiences",
+        "questions": [
+          {
+            "question_original": "What kind of customer service do you think is good?",
+            "question_rewrite": "What makes customer service excellent in your opinion?"
+          },
+          {
+            "question_original": "What are the differences between shopping online and in-store?",
+            "question_rewrite": "How is shopping online different from shopping in physical stores?"
+          },
+          {
+            "question_original": "What problems do customers often have while shopping?",
+            "question_rewrite": "What common issues do shoppers typically face?"
+          },
+          {
+            "question_original": "What do you think customers should do when there are problems with products bought online?",
+            "question_rewrite": "What steps should online shoppers take when they receive faulty products?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Children and Sharing",
+        "questions": [
+          {
+            "question_original": "Do you think kids like to share? Why?",
+            "question_rewrite": "Are children naturally willing to share? Why or why not?"
+          },
+          {
+            "question_original": "How can parents teach their children to share?",
+            "question_rewrite": "What are effective ways for parents to encourage sharing in children?"
+          },
+          {
+            "question_original": "What do you think is the benefit of sharing for children?",
+            "question_rewrite": "How does sharing help children's development?"
+          },
+          {
+            "question_original": "Is there anything that parents should persuade children to share with others?",
+            "question_rewrite": "Are there certain things children should be especially encouraged to share?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Money and Finance",
+        "questions": [
+          {
+            "question_original": "Why do people rarely use cash now?",
+            "question_rewrite": "What has caused the decline in cash usage these days?"
+          },
+          {
+            "question_original": "When do children begin to comprehend the value of money?",
+            "question_rewrite": "At what age do children typically start understanding money's importance?"
+          },
+          {
+            "question_original": "Should parents reward children with money?",
+            "question_rewrite": "Is giving money as rewards a good parenting practice?"
+          },
+          {
+            "question_original": "Is it good and necessary to teach children to save money?",
+            "question_rewrite": "Why is teaching kids about saving money important?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Travel Experiences",
+        "questions": [
+          {
+            "question_original": "Is it important to take photos while traveling?",
+            "question_rewrite": "How valuable is photograph-taking during trips?"
+          },
+          {
+            "question_original": "Can you trust other people's travel journals on the Internet?",
+            "question_rewrite": "How reliable are online travel blogs and reviews?"
+          },
+          {
+            "question_original": "What factors affect how people feel about travel?",
+            "question_rewrite": "What influences people's travel experiences and satisfaction?"
+          },
+          {
+            "question_original": "Will people go to a foreign country to travel because of the distinct landscape?",
+            "question_rewrite": "Do unique natural attractions significantly influence international travel decisions?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Learning and Development",
+        "questions": [
+          {
+            "question_original": "What can children learn from parents?",
+            "question_rewrite": "What important lessons do children typically learn from their parents?"
+          },
+          {
+            "question_original": "Do you think some children are well-behaved because they are influenced by their parents?",
+            "question_rewrite": "How much does parental influence affect children's behavior?"
+          },
+          {
+            "question_original": "Is it necessary for adults to learn new things?",
+            "question_rewrite": "Why should adults continue learning throughout their lives?"
+          },
+          {
+            "question_original": "How can people learn new things?",
+            "question_rewrite": "What are effective ways for people to acquire new knowledge and skills?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Success and Achievement",
+        "questions": [
+          {
+            "question_original": "Should people set goals for themselves?",
+            "question_rewrite": "Is it important for people to have personal goals? Why or why not?"
+          },
+          {
+            "question_original": "How do you define success?",
+            "question_rewrite": "What does being successful mean to you?"
+          },
+          {
+            "question_original": "How do we judge whether young people are successful?",
+            "question_rewrite": "What standards should we use to measure young people's success?"
+          },
+          {
+            "question_original": "Are successful people lonely?",
+            "question_rewrite": "Do you think highly successful people often feel lonely?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Role Models and Inspiration",
+        "questions": [
+          {
+            "question_original": "What qualities make a role model?",
+            "question_rewrite": "What characteristics should a good role model have?"
+          },
+          {
+            "question_original": "What types of people will inspire children to do interesting things?",
+            "question_rewrite": "Who can motivate children to pursue exciting activities?"
+          },
+          {
+            "question_original": "Who do you think will inspire children more: parents or teachers?",
+            "question_rewrite": "Between parents and teachers, who has greater influence on children's inspiration?"
+          },
+          {
+            "question_original": "Should adults encourage young children to set their own goals?",
+            "question_rewrite": "Is it good for adults to help young children create personal goals?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Education and Learning",
+        "questions": [
+          {
+            "question_original": "Should teachers be funny when they teach?",
+            "question_rewrite": "Is humor important for teachers in the classroom?"
+          },
+          {
+            "question_original": "What qualities should teachers have?",
+            "question_rewrite": "What makes someone a good teacher?"
+          },
+          {
+            "question_original": "Which do you think is more important, practical skills or academic skills?",
+            "question_rewrite": "What's more valuable in life - hands-on skills or book knowledge?"
+          },
+          {
+            "question_original": "Which age group is the best at learning new things?",
+            "question_rewrite": "At what age do people learn most effectively?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Intelligence and Development",
+        "questions": [
+          {
+            "question_original": "Are smart people happier than others?",
+            "question_rewrite": "Do intelligent people tend to be happier in life?"
+          },
+          {
+            "question_original": "Do you think people tend to be selfish?",
+            "question_rewrite": "Are humans naturally selfish in your opinion?"
+          },
+          {
+            "question_original": "Who do you think plays a more important role in a child's development, teachers or parents?",
+            "question_rewrite": "Between teachers and parents, who influences children's growth more significantly?"
+          },
+          {
+            "question_original": "Why are some children more intelligent than others?",
+            "question_rewrite": "What factors make certain children develop higher intelligence?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Friendship and Relationships",
+        "questions": [
+          {
+            "question_original": "What do you think of making friends online?",
+            "question_rewrite": "How do you feel about forming friendships through the internet?"
+          },
+          {
+            "question_original": "Is it a good idea to make friends with people who are much older than you?",
+            "question_rewrite": "What are the benefits and drawbacks of having much older friends?"
+          },
+          {
+            "question_original": "Do the people in your country enjoy meeting new people?",
+            "question_rewrite": "Are people in your country generally open to making new acquaintances?"
+          },
+          {
+            "question_original": "Do you think friendship is important?",
+            "question_rewrite": "How valuable are friendships in people's lives?"
+          },
+          {
+            "question_original": "Why is it difficult for some people to make friends with others?",
+            "question_rewrite": "What challenges prevent certain people from forming friendships easily?"
+          },
+          {
+            "question_original": "Do we benefit from having friends with different personalities?",
+            "question_rewrite": "What advantages come from having friends who are very different from us?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Parenting and Influence",
+        "questions": [
+          {
+            "question_original": "What impact does advertising have on children and their parents?",
+            "question_rewrite": "How do commercials affect both kids and their parents?"
+          },
+          {
+            "question_original": "What do parents often persuade their children to do?",
+            "question_rewrite": "What things do parents typically encourage their kids to do?"
+          },
+          {
+            "question_original": "Who do children listen to more, their parents or their teachers? Why?",
+            "question_rewrite": "Do kids pay more attention to parents or teachers? What's the reason?"
+          },
+          {
+            "question_original": "What are the good ways to persuade children?",
+            "question_rewrite": "What methods work best when trying to convince children?"
+          },
+          {
+            "question_original": "What advice should young people follow?",
+            "question_rewrite": "What guidance is most valuable for teenagers?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Planning and Organization",
+        "questions": [
+          {
+            "question_original": "What kind of plans do young people often make?",
+            "question_rewrite": "What types of plans are common among young adults?"
+          },
+          {
+            "question_original": "Why can't people always follow their plans?",
+            "question_rewrite": "What usually prevents people from sticking to their plans?"
+          },
+          {
+            "question_original": "Why do people make plans?",
+            "question_rewrite": "What's the purpose of making plans in life?"
+          },
+          {
+            "question_original": "Is it important to make plans?",
+            "question_rewrite": "How valuable is planning in daily life?"
+          },
+          {
+            "question_original": "Why do some people like to make plans while others don't like to?",
+            "question_rewrite": "What makes some people enjoy planning when others avoid it?"
+          },
+          {
+            "question_original": "Are there any people who never make plans?",
+            "question_rewrite": "Do some individuals really never plan anything?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Child Behavior and Discipline",
+        "questions": [
+          {
+            "question_original": "What bad behavior do children usually have?",
+            "question_rewrite": "What are some common behavior problems in kids?"
+          },
+          {
+            "question_original": "How should parents stop their children from behaving badly in public?",
+            "question_rewrite": "What's the best way for parents to handle children misbehaving in public?"
+          },
+          {
+            "question_original": "Are parents these days stricter than those in the past?",
+            "question_rewrite": "Is parenting today more strict compared to previous generations?"
+          },
+          {
+            "question_original": "Whose influence on children is more important? Friends' or parents'?",
+            "question_rewrite": "Who impacts kids more - their friends or their parents?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Astronomy Interest",
+        "questions": [
+          {
+            "question_original": "Should kids know more about stars and planets?",
+            "question_rewrite": "Is learning about space important for children?"
+          },
+          {
+            "question_original": "Is high technology helpful for star watching?",
+            "question_rewrite": "How has modern technology improved astronomy?"
+          },
+          {
+            "question_original": "What kind of people are interested in stars?",
+            "question_rewrite": "Who tends to be most fascinated by astronomy?"
+          },
+          {
+            "question_original": "Why do some people like to watch movies about stars or planets?",
+            "question_rewrite": "What makes space movies so appealing to certain people?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Advertising Effects",
+        "questions": [
+          {
+            "question_original": "Where do we often see advertisements?",
+            "question_rewrite": "What are the most common places we encounter ads?"
+          },
+          {
+            "question_original": "What are the benefits of advertising?",
+            "question_rewrite": "How can advertising be helpful?"
+          },
+          {
+            "question_original": "Are advertisements good or bad for children?",
+            "question_rewrite": "What effects do ads have on kids - positive or negative?"
+          },
+          {
+            "question_original": "How does advertising affect people?",
+            "question_rewrite": "In what ways do commercials influence consumers?"
+          },
+          {
+            "question_original": "Do people pay attention to advertisements on public transport?",
+            "question_rewrite": "How effective are ads on buses and subways?"
+          },
+          {
+            "question_original": "Do you think it is good to see the same advertisements everywhere?",
+            "question_rewrite": "Is repetitive advertising helpful or annoying?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Shopping habits and shopping places",
+        "questions": [
+          {
+            "question_original": "Do people in your country go to the shopping mall frequently?",
+            "question_rewrite": "Do people in your country often visit shopping malls?"
+          },
+          {
+            "question_original": "How have people's shopping habits changed in recent decades?",
+            "question_rewrite": "How has the way people shop changed in the last few decades?"
+          },
+          {
+            "question_original": "Do you think shops and shopping malls will disappear in the future?",
+            "question_rewrite": "Do you think shops and malls might stop existing in the future?"
+          },
+          {
+            "question_original": "What are the differences between shopping in street markets and big shopping malls?",
+            "question_rewrite": "How is shopping at street markets different from shopping in big malls?"
+          },
+          {
+            "question_original": "What are the differences in the shopping habits of different age groups?",
+            "question_rewrite": "How do shopping habits vary between younger and older people?"
+          },
+          {
+            "question_original": "What are the differences between shopping online and in-store?",
+            "question_rewrite": "How is online shopping different from shopping in a store?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Laughter, comedy and humor",
+        "questions": [
+          {
+            "question_original": "Do people like comedy?",
+            "question_rewrite": "Do people enjoy watching comedy?"
+          },
+          {
+            "question_original": "Why do people of all ages like cartoons?",
+            "question_rewrite": "Why do people of all ages enjoy cartoons?"
+          },
+          {
+            "question_original": "Why do some people like to make others laugh?",
+            "question_rewrite": "Why do some people enjoy making others laugh?"
+          },
+          {
+            "question_original": "Should teachers tell jokes in class?",
+            "question_rewrite": "Is it a good idea for teachers to tell jokes during class?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Clothing, recycling and second-hand clothes",
+        "questions": [
+          {
+            "question_original": "Some people think it's a waste to buy too many clothes for children. What do you think?",
+            "question_rewrite": "Do you think buying lots of clothes for kids is a waste?"
+          },
+          {
+            "question_original": "How do people usually handle the clothes they don't want?",
+            "question_rewrite": "What do people usually do with clothes they no longer wear?"
+          },
+          {
+            "question_original": "Why do people buy second-hand clothes?",
+            "question_rewrite": "Why do some people choose to buy used clothes?"
+          },
+          {
+            "question_original": "What problems will occur if people don't recycle?",
+            "question_rewrite": "What problems can happen if people don’t recycle?"
+          },
+          {
+            "question_original": "Should the government encourage people to recycle items?",
+            "question_rewrite": "Do you think the government should push people to recycle?"
+          },
+          {
+            "question_original": "How do people in your country recycle various items they don't want?",
+            "question_rewrite": "How do people in your country recycle things they no longer use?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Clothing and personal expression",
+        "questions": [
+          {
+            "question_original": "Do you think what people wear can influence their mood?",
+            "question_rewrite": "Do you think clothes can affect a person’s mood?"
+          },
+          {
+            "question_original": "Do you think it is a good idea to buy clothes online?",
+            "question_rewrite": "Is buying clothes online a good idea, in your opinion?"
+          },
+          {
+            "question_original": "What kind of clothes do people wear in the workplace?",
+            "question_rewrite": "What clothes do people usually wear to work?"
+          },
+          {
+            "question_original": "What are the differences between clothes worn by old people and that by young people?",
+            "question_rewrite": "How do the clothes of older people differ from those of younger people?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Children's opinions and communication skills",
+        "questions": [
+          {
+            "question_original": "What age do young children start to have their own opinions?",
+            "question_rewrite": "At what age do kids begin to form their own opinions?"
+          },
+          {
+            "question_original": "What kinds of things do children have strong opinions about?",
+            "question_rewrite": "What do children usually have strong opinions about?"
+          },
+          {
+            "question_original": "Should parents always consider their children’s opinions?",
+            "question_rewrite": "Do you think parents should always listen to their kids’ opinions?"
+          },
+          {
+            "question_original": "In which kinds of job are excellent communication skills essential?",
+            "question_rewrite": "What kinds of jobs really need great communication skills?"
+          },
+          {
+            "question_original": "What is the importance of having good listening skills?",
+            "question_rewrite": "Why are good listening skills important?"
+          },
+          {
+            "question_original": "How easy it is for people to improve their communication skills?",
+            "question_rewrite": "Is it easy for people to get better at communication?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Noise and quiet places in cities",
+        "questions": [
+          {
+            "question_original": "Is it hard to find quiet places in cities?",
+            "question_rewrite": "Is it difficult to find quiet spots in cities?"
+          },
+          {
+            "question_original": "Are there more or less quiet places compared to the past?",
+            "question_rewrite": "Are there fewer quiet places now than in the past?"
+          },
+          {
+            "question_original": "What kinds of thing can make noise?",
+            "question_rewrite": "What kinds of things usually make noise?"
+          },
+          {
+            "question_original": "Do you think how noises in cities could be reduced?",
+            "question_rewrite": "How do you think city noise could be reduced?"
+          },
+          {
+            "question_original": "What do you think are the negative effects of noise pollution?",
+            "question_rewrite": "What bad effects can noise pollution have?"
+          },
+          {
+            "question_original": "Do you think whether noises could be eliminated in the future?",
+            "question_rewrite": "Do you think it's possible to get rid of noise in the future?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Setting goals in life and work",
+        "questions": [
+          {
+            "question_original": "Do people in your country set goals?",
+            "question_rewrite": "Do people in your country like to set goals?"
+          },
+          {
+            "question_original": "Do people usually set long-term goals or short-term ones?",
+            "question_rewrite": "Do people prefer setting long-term goals or short-term ones?"
+          },
+          {
+            "question_original": "Why is setting goals important in the workplace?",
+            "question_rewrite": "Why is it important to set goals at work?"
+          },
+          {
+            "question_original": "What is the difference between goals set by old people and young people?",
+            "question_rewrite": "How are the goals of older people different from those of younger people?"
+          },
+          {
+            "question_original": "How do people set goals?",
+            "question_rewrite": "How do people usually make plans to reach their goals?"
+          },
+          {
+            "question_original": "Do you think people should have personal life goals?",
+            "question_rewrite": "Do you think it's good to have personal goals in life?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "City life vs. countryside life",
+        "questions": [
+          {
+            "question_original": "What’s the difference between the city and the country?",
+            "question_rewrite": "How is life in the city different from life in the countryside?"
+          },
+          {
+            "question_original": "Some people say large cities are suitable for old people. What do you think?",
+            "question_rewrite": "Do you think big cities are good places for older people to live?"
+          },
+          {
+            "question_original": "Do you think it is possible that all of the population move to cities?",
+            "question_rewrite": "Do you think everyone could move to cities in the future?"
+          },
+          {
+            "question_original": "Do you think people in the countryside are friendlier than people in the city?",
+            "question_rewrite": "Are people in rural areas usually friendlier than city people?"
+          }
+        ]
+      },
+        // 42. 看到动物的地方
+        // 43. 别人帮助下做的重要决定
+        // 44. 跟老人的有趣谈话
+        // 45. 一件特殊的衣服
+      {
+        "topicName_ai": "Music and its cultural impact",
+        "questions": [
+          {
+            "question_original": "What kind of music is popular in China now and what kind will be in the future?",
+            "question_rewrite": "What music is popular in China now, and what might be popular in the future?"
+          },
+          {
+            "question_original": "Why do some people like to listen to live music while others prefer CDs?",
+            "question_rewrite": "Why do some people enjoy live music more, while others like recorded music?"
+          },
+          {
+            "question_original": "Do Chinese parents require their children to learn to play musical instruments?",
+            "question_rewrite": "Do parents in China often want their kids to learn a musical instrument?"
+          },
+          {
+            "question_original": "How do you think the government could support very talented musicians?",
+            "question_rewrite": "How can the government help really talented musicians?"
+          },
+          {
+            "question_original": "Do you think it is valuable to hold international music events?",
+            "question_rewrite": "Is it a good idea to host international music events?"
+          },
+          {
+            "question_original": "Do you think a country's music can boost its international reputation?",
+            "question_rewrite": "Can music help a country build a good image around the world?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Outdoor and indoor sports",
+        "questions": [
+          {
+            "question_original": "What are the differences between indoor sports and outdoor sports?",
+            "question_rewrite": "How are indoor and outdoor sports different?"
+          },
+          {
+            "question_original": "Which outdoor sports are popular in China?",
+            "question_rewrite": "What outdoor sports are popular in China?"
+          },
+          {
+            "question_original": "Which sports are popular among elderly people?",
+            "question_rewrite": "What sports do older people usually like?"
+          },
+          {
+            "question_original": "Which outdoor sports are popular with children?",
+            "question_rewrite": "What outdoor sports do kids usually enjoy?"
+          },
+          {
+            "question_original": "How do weather affect outdoor sports?",
+            "question_rewrite": "How does the weather affect outdoor sports?"
+          },
+          {
+            "question_original": "Which sports can children do on rainy days?",
+            "question_rewrite": "What sports can kids play when it's raining?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Watching sports and competition",
+        "questions": [
+          {
+            "question_original": "What kinds of sports events are broadcast on TV or other media in your country?",
+            "question_rewrite": "What kinds of sports are shown on TV or online in your country?"
+          },
+          {
+            "question_original": "Do people in your country enjoy watching football games?",
+            "question_rewrite": "Do people in your country like watching football?"
+          },
+          {
+            "question_original": "Does encouragement and applause from the audience have an impact on athletes?",
+            "question_rewrite": "Does cheering from the crowd affect athletes' performance?"
+          },
+          {
+            "question_original": "Do you prefer to watch live sports or watch it on TV?",
+            "question_rewrite": "Do you prefer watching sports live or on TV?"
+          },
+          {
+            "question_original": "Why do some people like to watch live sports?",
+            "question_rewrite": "Why do some people enjoy watching sports in person?"
+          },
+          {
+            "question_original": "What kinds of sports do Chinese people like to watch?",
+            "question_rewrite": "What sports do people in China like to watch?"
+          },
+          {
+            "question_original": "Do you think competition is good for students?",
+            "question_rewrite": "Do you think it's good for students to face competition?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Health and fitness",
+        "questions": [
+          {
+            "question_original": "What can governments do to improve people’s health?",
+            "question_rewrite": "What can the government do to help people stay healthy?"
+          },
+          {
+            "question_original": "How can people keep fit?",
+            "question_rewrite": "What can people do to stay in shape?"
+          },
+          {
+            "question_original": "How can you tell whether a website is reliable or not?",
+            "question_rewrite": "How do you know if a website is trustworthy?"
+          },
+          {
+            "question_original": "Do you think people are healthier now than in the past?",
+            "question_rewrite": "Are people healthier now than they were in the past?"
+          },
+          {
+            "question_original": "Who should be responsible for the exaggerated claims that are on the supplement packaging?",
+            "question_rewrite": "Who should take the blame for false claims on supplement labels?"
+          },
+          {
+            "question_original": "How much healthier people are nowadays compared to those in the past?",
+            "question_rewrite": "Are people a lot healthier now than in the past?"
+          }
+        ]
+      },
+      {
+        "topicName_ai": "Arguments and communication in relationships",
+        "questions": [
+          {
+            "question_original": "Do you think arguments are important?",
+            "question_rewrite": "Do you think having arguments is important?"
+          },
+          {
+            "question_original": "What do family members usually have arguments about?",
+            "question_rewrite": "What do family members often argue about?"
+          },
+          {
+            "question_original": "Is it easier for you to have arguments with your family or with your friends?",
+            "question_rewrite": "Is it easier to argue with family or with friends?"
+          },
+          {
+            "question_original": "Do you think people should change the way they think when having arguments?",
+            "question_rewrite": "Should people try to change their mindset during arguments?"
+          }
+        ]
+      }
+    ]
+  }
+  
