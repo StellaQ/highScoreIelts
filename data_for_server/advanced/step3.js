@@ -31,9 +31,9 @@ json
       "categoryName_cn": "字符串，分类中文名",
       "topicCollection": [
         {
-          "topicName": "字符串，主题英文名",
-          "topicName_cn": "字符串，主题中文名",
-          "topicId": "字符串，主题ID"
+          "topicName": "输入的topicName_rewrite",
+          "topicName_cn": "输入的topicName_cn",
+          "topicId": "输入的topicId"
         }
         // 其他匹配到此category的topic
       ]

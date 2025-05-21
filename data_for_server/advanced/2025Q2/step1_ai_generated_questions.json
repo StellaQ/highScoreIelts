@@ -1,596 +1,1104 @@
 {
-    "ai_questions": [
-      {
-        "topicName_real": "a person you know who enjoys dressing well",
-        "topicName_rewrite": "someone in your life who takes particular care with their appearance",
-        "points_original": [
-          "Who the person is",
-          "What job/studies the person does",
-          "What sort of clothes the person wears",
-          "And explain why you think this person enjoys dressing well"
-        ],
-        "points_rewrite": [
-          "identify this individual",
-          "describe their occupation or field of study",
-          "explain their typical fashion choices",
-          "share your perspective on their motivation for dressing well"
-        ]
-      },
-      {
-        "topicName_real": "a time when you forgot an appointment",
-        "topicName_rewrite": "an occasion when you missed a scheduled commitment",
-        "points_original": [
-          "When and where the appointment was",
-          "Why you forgot the appointment",
-          "What happened after you forgot the appointment",
-          "And explain how you felt about forgetting the appointment"
-        ],
-        "points_rewrite": [
-          "specify the time and location of the missed appointment",
-          "explain the reasons for your oversight",
-          "describe the consequences of missing the appointment",
-          "express your emotional reaction to this situation"
-        ]
-      },
-      {
-        "topicName_real": "a time when you saw a lot of plastic waste in a natural environment",
-        "topicName_rewrite": "an instance of encountering significant plastic pollution in nature",
-        "points_original": [
-          "When and where you saw this plastic waste",
-          "How you think this plastic waste got there",
-          "Why you noticed it",
-          "And explain how you felt about seeing plastic waste in this natural environment"
-        ],
-        "points_rewrite": [
-          "indicate the time and location of this observation",
-          "share your theories about the origin of this pollution",
-          "explain what drew your attention to it",
-          "describe your emotional response to witnessing this environmental issue"
-        ]
-      },
-      {
-        "topicName_real": "a friend from childhood who you remember very well",
-        "topicName_rewrite": "a particularly memorable childhood companion",
-        "points_original": [
-          "Who the friend is",
-          "How you met him/her",
-          "What you used to do together",
-          "And explain why you remember this childhood friend so well"
-        ],
-        "points_rewrite": [
-          "identify this childhood friend",
-          "recount how your friendship began",
-          "describe your shared activities",
-          "explain what makes this friend especially memorable to you"
-        ]
-      },
-      {
-        "topicName_real": "an object that you think is very beautiful",
-        "topicName_rewrite": "a particularly aesthetically pleasing item",
-        "points_original": [
-          "What the object is",
-          "Where you first saw the object",
-          "What it looks like",
-          "And explain how you feel about this beautiful object"
-        ],
-        "points_rewrite": [
-          "identify this beautiful object",
-          "describe the circumstances of your first encounter with it",
-          "provide a detailed description of its appearance",
-          "express your personal appreciation for this object"
-        ]
-      },
-      {
-        "topicName_real": "someone from another culture who you enjoy spending time with",
-        "topicName_rewrite": "a culturally diverse acquaintance whose company you appreciate",
-        "points_original": [
-          "Who this person is",
-          "What his/her cultural background is",
-          "When and where you met this person",
-          "And explain why you enjoy spending time with this person from another culture"
-        ],
-        "points_rewrite": [
-          "Identify this individual and your relationship with them",
-          "Describe their cultural heritage and background",
-          "Explain the circumstances of your first meeting",
-          "Share what makes your cross-cultural interactions enjoyable"
-        ]
-      },
-      {
-        "topicName_real": "the home of somebody who you know well",
-        "topicName_rewrite": "a familiar residence that holds significance for you",
-        "points_original": [
-          "Whose home this is",
-          "How often you go there",
-          "What this home looks like",
-          "And explain how you feel about this person's home"
-        ],
-        "points_rewrite": [
-          "Specify the homeowner and your connection to them",
-          "Indicate the frequency of your visits",
-          "Provide a detailed description of the residence",
-          "Express your emotional response to this living space"
-        ]
-      },
-      {
-        "topicName_real": "a film/movie you enjoyed and would like to see again",
-        "topicName_rewrite": "a memorable cinematic experience worth revisiting",
-        "points_original": [
-          "What the film/movie was",
-          "When and where you saw the film/movie",
-          "What the film/movie was about",
-          "And explain why you would like to see this film/movie again"
-        ],
-        "points_rewrite": [
-          "Name the film and its basic details",
-          "Describe the viewing circumstances (time and place)",
-          "Summarize the plot or central theme",
-          "Explain what makes this film worthy of rewatching"
-        ]
-      },
-      {
-        "topicName_real": "a photo you took that you are proud of",
-        "topicName_rewrite": "a personally meaningful photographic achievement",
-        "points_original": [
-          "Who or what was in your photo",
-          "When you took the photo",
-          "Why you took it",
-          "And explain why you are proud of this photo you took"
-        ],
-        "points_rewrite": [
-          "Describe the subject matter of the photograph",
-          "Specify when the photo was captured",
-          "Explain your motivation for taking this picture",
-          "Share what makes this photo special to you"
-        ]
-      },
-      {
-        "topicName_real": "a novel or a story you have read that you thought was particularly interesting",
-        "topicName_rewrite": "a particularly engaging literary work you've encountered",
-        "points_original": [
-          "Why you read the novel/story",
-          "What the novel/story was about",
-          "How long it took you to read it",
-          "And explain why you thought this novel/story was so interesting"
-        ],
-        "points_rewrite": [
-          "Explain your initial reason for reading this work",
-          "Summarize the narrative or central themes",
-          "Indicate the duration of your reading experience",
-          "Analyze what made this story compelling to you"
-        ]
-      },
-      {
-        "topicName_real": "a time when you disagreed with somebody about something",
-        "topicName_rewrite": "an instance when you had a difference of opinion with someone",
-        "points_original": [
-          "Who you disagreed with",
-          "What you disagreed about",
-          "What the result of this disagreement was",
-          "And explain how you felt about disagreeing with this person"
-        ],
-        "points_rewrite": [
-          "Identify the person you had the disagreement with",
-          "Describe the subject or issue of your disagreement",
-          "Explain the outcome or resolution of the disagreement",
-          "Share your emotional response to this conflict situation"
-        ]
-      },
-      {
-        "topicName_real": "a time when you had to find some information",
-        "topicName_rewrite": "an occasion when you needed to research information",
-        "points_original": [
-          "What kind of information you had to find",
-          "Where you looked for the information",
-          "How much you enjoyed looking for the information",
-          "And explain why you needed the information"
-        ],
-        "points_rewrite": [
-          "Specify the type of information you were seeking",
-          "Describe the sources or methods you used in your search",
-          "Evaluate how enjoyable or interesting the research process was",
-          "Explain the purpose or importance of obtaining this information"
-        ]
-      },
-      {
-        "topicName_real": "an English lesson that you really enjoyed",
-        "topicName_rewrite": "a particularly memorable English language learning experience",
-        "points_original": [
-          "Where the lesson took place",
-          "What the lesson was about",
-          "What the teacher did",
-          "And explain why you enjoyed this lesson so much"
-        ],
-        "points_rewrite": [
-          "Describe the setting or location of the lesson",
-          "Explain the topic or focus of the instructional content",
-          "Detail the teaching methods or activities the instructor used",
-          "Analyze what made this lesson especially enjoyable for you"
-        ]
-      },
-      {
-        "topicName_real": "a time when you succeeded in doing something that was difficult",
-        "topicName_rewrite": "an achievement where you overcame significant challenges",
-        "points_original": [
-          "What you succeeded in doing",
-          "Why it was difficult to do",
-          "How much help you needed",
-          "And explain how you felt when you succeeded in doing this difficult thing"
-        ],
-        "points_rewrite": [
-          "Describe the specific accomplishment or goal you achieved",
-          "Explain the challenges or obstacles that made it difficult",
-          "Indicate the level of assistance or support you required",
-          "Share your emotional reaction to this personal achievement"
-        ]
-      },
-      {
-        "topicName_real": "a time when someone gave you some money as a gift",
-        "topicName_rewrite": "an occasion when you received monetary gift",
-        "points_original": [
-          "Who gave you the money",
-          "Why they gave it to you",
-          "What you did with it",
-          "And explain how you felt about receiving this money"
-        ],
-        "points_rewrite": [
-          "Identify the person who gifted you the money",
-          "Explain the occasion or reason for this financial gift",
-          "Describe how you utilized or spent the money",
-          "Express your feelings about receiving this monetary present"
-        ]
-      },
-      {
-        "topicName_real": "a time when you had to share something with another person or other people",
-        "topicName_rewrite": "an experience of sharing resources or possessions with others",
-        "points_original": [
-          "What you had to share",
-          "Who you had to share with",
-          "Why you had to share",
-          "And explain how you felt about sharing something with another person or other people"
-        ],
-        "points_rewrite": [
-          "Specify the item or resource you shared",
-          "Identify the individual(s) you shared with",
-          "Explain the circumstances that required sharing",
-          "Describe your emotional response to this sharing experience"
-        ]
-      },
-      {
-        "topicName_real": "a programme that you enjoyed very much",
-        "topicName_rewrite": "a particularly engaging television or online program",
-        "points_original": [
-          "What the programme was about",
-          "Where you watched this programme",
-          "Who you watched it with",
-          "And explain why you enjoyed this programme so much"
-        ],
-        "points_rewrite": [
-          "Summarize the program's content or theme",
-          "Describe the viewing platform or location",
-          "Identify any viewing companions",
-          "Analyze what made this program especially enjoyable"
-        ]
-      },
-      {
-        "topicName_real": "a part of your country that you would recommend to visitors",
-        "topicName_rewrite": "a noteworthy region in your nation worth visiting",
-        "points_original": [
-          "Which part of your country you would recommend",
-          "How you know about this part of your country",
-          "Whether many visitors go there",
-          "And explain why you would recommend this part of your country to visitors"
-        ],
-        "points_rewrite": [
-          "Identify the specific region or location",
-          "Explain your personal familiarity with the area",
-          "Comment on its popularity with tourists",
-          "Highlight the features that make it worth visiting"
-        ]
-      },
-      {
-        "topicName_real": "something important that you learned, not in school or college",
-        "topicName_rewrite": "a significant life lesson acquired outside formal education",
-        "points_original": [
-          "What you learned",
-          "How you learned it",
-          "How easy/difficult it was to learn",
-          "And explain why learning this was important to you"
-        ],
-        "points_rewrite": [
-          "Describe the knowledge or skill acquired",
-          "Explain the learning process or experience",
-          "Assess the level of challenge involved",
-          "Articulate the personal significance of this learning"
-        ]
-      },
-      {
-        "topicName_real": "a person you know who enjoys growing plants",
-        "topicName_rewrite": "an acquaintance with a passion for horticulture",
-        "points_original": [
-          "How you know this person",
-          "What plants this person enjoys growing",
-          "Where this person grows plants",
-          "And explain why you think this person enjoys growing these plants"
-        ],
-        "points_rewrite": [
-          "Describe your relationship with this individual",
-          "Specify the types of plants they cultivate",
-          "Identify their gardening location or space",
-          "Share your perspective on their gardening motivation"
-        ]
-      },
-      {
-        "topicName_real": "a popular place for playing sport that you know about",
-        "topicName_rewrite": "a well-known sports facility in your area",
-        "points_original": [
-          "Where this place for playing sport is",
-          "How you know about this place",
-          "Whether you have visited this place",
-          "And explain why you think this place for playing sport is popular"
-        ],
-        "points_rewrite": [
-          "Specify the location of this sports venue",
-          "Describe how you became familiar with this facility",
-          "Indicate if you have personal experience visiting it",
-          "Analyze the factors contributing to its popularity"
-        ]
-      },
-      {
-        "topicName_real": "a person who inspired you to do something interesting",
-        "topicName_rewrite": "an influential figure who motivated you to pursue an engaging activity",
-        "points_original": [
-          "Who the person is",
-          "What interesting thing you did",
-          "How this person inspired you to do this thing",
-          "And explain how you felt after this person inspired you to do something interesting"
-        ],
-        "points_rewrite": [
-          "Identify this inspirational individual",
-          "Describe the noteworthy activity you undertook",
-          "Explain the nature of their motivational influence",
-          "Share your emotional response to this experience"
-        ]
-      },
-      {
-        "topicName_real": "a time when you made a decision to wait for something",
-        "topicName_rewrite": "an instance when you chose to practice patience for an outcome",
-        "points_original": [
-          "What you decided to wait for",
-          "What you did while you were waiting",
-          "How you felt while you were waiting",
-          "And explain why deciding to wait was a good/bad decision"
-        ],
-        "points_rewrite": [
-          "Specify the anticipated event or result you waited for",
-          "Describe how you occupied yourself during the waiting period",
-          "Express your emotional state during this waiting time",
-          "Evaluate the wisdom of your decision to wait"
-        ]
-      },
-      {
-        "topicName_real": "a place you went to do an outdoor activity",
-        "topicName_rewrite": "a location you visited for recreational outdoor pursuits",
-        "points_original": [
-          "Where you went and when",
-          "What outdoor activity you did at this place",
-          "Why you did this outdoor activity",
-          "And explain how you felt about doing the outdoor activity at this place"
-        ],
-        "points_rewrite": [
-          "Identify the location and time of your visit",
-          "Detail the specific outdoor activity you engaged in",
-          "Explain your motivation for choosing this activity",
-          "Describe your overall experience and enjoyment level"
-        ]
-      },
-      {
-        "topicName_real": "a problem you had when you bought something",
-        "topicName_rewrite": "a purchasing experience that encountered difficulties",
-        "points_original": [
-          "What you bought",
-          "Where and when you bought it",
-          "What problem you had with it",
-          "And explain how you felt about having this problem"
-        ],
-        "points_rewrite": [
-          "Describe the purchased item or service",
-          "Specify the retailer and timing of your purchase",
-          "Detail the specific issue you encountered",
-          "Express your emotional reaction to this problematic situation"
-        ]
-      },
-      {
-        "topicName_real": "an interesting decision that you and your friend made together",
-        "topicName_rewrite": "a collaborative decision-making experience with a friend",
-        "points_original": [
-          "When and why you made the decision",
-          "What the decision was about",
-          "Why you made the decision together",
-          "And explain why you think it was interesting"
-        ],
-        "points_rewrite": [
-          "Specify the timing and rationale behind this joint decision",
-          "Describe the nature and subject of the decision",
-          "Explain the collaborative aspect of your decision-making process",
-          "Analyze what made this shared decision particularly noteworthy"
-        ]
-      },
-      {
-        "topicName_real": "an article on health you read in a magazine or on the internet",
-        "topicName_rewrite": "an informative health-related article you encountered",
-        "points_original": [
-          "What it was",
-          "Where you read it",
-          "Why you read it",
-          "And how you felt about it"
-        ],
-        "points_rewrite": [
-          "Describe the content and focus of the health article",
-          "Identify the publication platform or source",
-          "Explain your motivation for reading this material",
-          "Share your personal evaluation and reaction to the article"
-        ]
-      },
-      {
-        "topicName_real": "a noisy place you have been to",
-        "topicName_rewrite": "a particularly loud environment you've experienced",
-        "points_original": [
-          "Where it is",
-          "When you went there",
-          "What you did there",
-          "And explain why you feel it's a noisy place"
-        ],
-        "points_rewrite": [
-          "Identify the location of this noisy environment",
-          "Specify when you visited this place",
-          "Describe your activities while there",
-          "Analyze the sources and impact of the noise levels"
-        ]
-      },
-      {
-        "topicName_real": "a skill that you think you can teach other people",
-        "topicName_rewrite": "a personal competency suitable for instruction",
-        "points_original": [
-          "What it is",
-          "When you learned it",
-          "How you can teach others",
-          "And how you feel about this skill"
-        ],
-        "points_rewrite": [
-          "Define the specific skill you possess",
-          "Recall when and how you acquired this ability",
-          "Outline your potential teaching methodology",
-          "Express your personal connection to this skill"
-        ]
-      },
-      {
-        "topicName_real": "an intelligent person you know",
-        "topicName_rewrite": "a remarkably bright individual in your acquaintance",
-        "points_original": [
-          "Who this person is",
-          "How you knew this person",
-          "What this person does",
-          "And explain why you think this person is intelligent"
-        ],
-        "points_rewrite": [
-          "Identify this intellectually gifted individual",
-          "Describe how you came to know them",
-          "Explain their professional or academic pursuits",
-          "Analyze the qualities that demonstrate their intelligence"
-        ]
-      },
-      {
-        "topicName_real": "a person you disliked at first but ended up being friends with",
-        "topicName_rewrite": "an individual whose initial impression changed positively over time",
-        "points_original": [
-          "Who he/she is",
-          "How you knew him/her",
-          "Why you disliked him/her at first but changed your mind",
-          "And explain how you feel about the experience"
-        ],
-        "points_rewrite": [
-          "Identify this person and your current relationship",
-          "Describe the circumstances of how you met",
-          "Explain your initial negative perception and subsequent change",
-          "Reflect on what this experience taught you about first impressions"
-        ]
-      },
-      {
-        "topicName_real": "a person who persuaded you to do something",
-        "topicName_rewrite": "an influential individual who convinced you to take action",
-        "points_original": [
-          "When it happened",
-          "What he/she persuaded you to do",
-          "Why he/she persuaded you to do it",
-          "And explain whether you did it at last"
-        ],
-        "points_rewrite": [
-          "Specify the time period of this persuasion",
-          "Detail the action or decision you were convinced to take",
-          "Analyze their motivation for persuading you",
-          "Reveal the outcome and your compliance with their suggestion"
-        ]
-      },
-      {
-        "topicName_real": "a photo you took that you are proud of",
-        "topicName_rewrite": "a personally meaningful photographic achievement",
-        "points_original": [
-          "When you took it",
-          "Where you took it",
-          "What is in this photo",
-          "And explain why you are proud of it"
-        ],
-        "points_rewrite": [
-          "Recall the specific time you captured this image",
-          "Identify the location where the photo was taken",
-          "Describe the subject matter and composition",
-          "Explain what makes this photograph special to you"
-        ]
-      },
-      {
-        "topicName_real": "a time when you made a plan to do an activity with a lot of people",
-        "topicName_rewrite": "an instance of organizing a group event",
-        "points_original": [
-          "What it was",
-          "When and where you made it",
-          "What the activity was",
-          "And explain how you felt about the plan"
-        ],
-        "points_rewrite": [
-          "Describe the nature of this group plan",
-          "Specify the timing and location of your planning",
-          "Detail the actual activity involved",
-          "Share your emotional response to this organizational experience"
-        ]
-      },
-      {
-        "topicName_real": "a time when you saw children behave badly in public",
-        "topicName_rewrite": "an observation of children's inappropriate public conduct",
-        "points_original": [
-          "Where it was",
-          "What the children were doing",
-          "How others reacted to it",
-          "And explain how you felt about it"
-        ],
-        "points_rewrite": [
-          "Identify the public setting where this occurred",
-          "Describe the specific misbehavior displayed",
-          "Explain the bystanders' responses to the situation",
-          "Express your personal reaction to witnessing this behavior"
-        ]
-      },
-      {
-        "topicName_real": "a beautiful sky you enjoyed seeing",
-        "topicName_rewrite": "a particularly memorable celestial view",
-        "points_original": [
-          "Where you saw it",
-          "Who you saw it with",
-          "What you saw",
-          "And how you felt about it"
-        ],
-        "points_rewrite": [
-          "Specify the location where you observed this sky",
-          "Identify any companions who shared this experience",
-          "Describe the visual elements of the sky you witnessed",
-          "Express your emotional response to this natural spectacle"
-        ]
-      },
-      {
-        "topicName_real": "an advertisement which introduced a product you have seen",
-        "topicName_rewrite": "a memorable product advertisement you encountered",
-        "points_original": [
-          "When and where you saw the advertisement",
-          "What the product was",
-          "How you liked the advertisement",
-          "And explain how you felt about it"
-        ],
-        "points_rewrite": [
-          "Recall the time and medium of this advertisement",
-          "Describe the promoted product's features and purpose",
-          "Evaluate the advertisement's effectiveness and appeal",
-          "Share your overall impression of the marketing approach"
-        ]
-      }
-    ]
-  }
+  "ai_questions": [
+    {
+      "topicName_real": "a person you know who enjoys dressing well",
+      "topicName_rewrite": "someone who takes pride in their appearance",
+      "points": [
+        {
+          "point_real": "Who the person is",
+          "point_rewrite": "Tell me about this individual"
+        },
+        {
+          "point_real": "What job/studies the person does",
+          "point_rewrite": "Their profession or area of study"
+        },
+        {
+          "point_real": "What sort of clothes the person wears",
+          "point_rewrite": "The style of clothing they prefer"
+        },
+        {
+          "point_real": "And explain why you think this person enjoys dressing well",
+          "point_rewrite": "Explain why you believe they value looking good"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you forgot an appointment",
+      "topicName_rewrite": "an occasion when you missed a scheduled meeting",
+      "points": [
+        {
+          "point_real": "When and where the appointment was",
+          "point_rewrite": "The time and location of the planned meeting"
+        },
+        {
+          "point_real": "Why you forgot the appointment",
+          "point_rewrite": "The reason you failed to remember it"
+        },
+        {
+          "point_real": "What happened after you forgot the appointment",
+          "point_rewrite": "The consequences of missing it"
+        },
+        {
+          "point_real": "And explain how you felt about forgetting the appointment",
+          "point_rewrite": "Describe your emotions about this oversight"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you saw a lot of plastic waste in a natural environment",
+      "topicName_rewrite": "an instance when you noticed significant plastic pollution outdoors",
+      "points": [
+        {
+          "point_real": "When and where you saw this plastic waste",
+          "point_rewrite": "The time and location of this observation"
+        },
+        {
+          "point_real": "How you think this plastic waste got there",
+          "point_rewrite": "Your thoughts on how the pollution accumulated"
+        },
+        {
+          "point_real": "Why you noticed it",
+          "point_rewrite": "What made it stand out to you"
+        },
+        {
+          "point_real": "And explain how you felt about seeing plastic waste in this natural environment",
+          "point_rewrite": "Share your emotional response to this environmental issue"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a friend from childhood who you remember very well",
+      "topicName_rewrite": "a childhood companion who left a lasting impression",
+      "points": [
+        {
+          "point_real": "Who the friend is",
+          "point_rewrite": "Identify this person"
+        },
+        {
+          "point_real": "How you met him/her",
+          "point_rewrite": "Describe your first encounter"
+        },
+        {
+          "point_real": "What you used to do together",
+          "point_rewrite": "Your shared activities"
+        },
+        {
+          "point_real": "And explain why you remember this childhood friend so well",
+          "point_rewrite": "Explain why this friend remains memorable to you"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an object that you think is very beautiful",
+      "topicName_rewrite": "an item you consider exceptionally attractive",
+      "points": [
+        {
+          "point_real": "What the object is",
+          "point_rewrite": "Describe the item"
+        },
+        {
+          "point_real": "Where you first saw the object",
+          "point_rewrite": "Your initial encounter with it"
+        },
+        {
+          "point_real": "What it looks like",
+          "point_rewrite": "Its physical appearance"
+        },
+        {
+          "point_real": "And explain how you feel about this beautiful object",
+          "point_rewrite": "Share your emotional connection to this item"
+        }
+      ]
+    },
+    {
+      "topicName_real": "someone from another culture who you enjoy spending time with",
+      "topicName_rewrite": "a person from a different cultural background you like being with",
+      "points": [
+        {
+          "point_real": "Who this person is",
+          "point_rewrite": "Tell me about this individual"
+        },
+        {
+          "point_real": "What his/her cultural background is",
+          "point_rewrite": "Their cultural heritage"
+        },
+        {
+          "point_real": "When and where you met this person",
+          "point_rewrite": "The circumstances of your meeting"
+        },
+        {
+          "point_real": "And explain why you enjoy spending time with this person from another culture",
+          "point_rewrite": "Explain what makes your cross-cultural interactions enjoyable"
+        }
+      ]
+    },
+    {
+      "topicName_real": "the home of somebody who you know well",
+      "topicName_rewrite": "a familiar person's residence that you're acquainted with",
+      "points": [
+        {
+          "point_real": "Whose home this is",
+          "point_rewrite": "Identify the owner of this dwelling"
+        },
+        {
+          "point_real": "How often you go there",
+          "point_rewrite": "The frequency of your visits"
+        },
+        {
+          "point_real": "What this home looks like",
+          "point_rewrite": "Describe the appearance of the residence"
+        },
+        {
+          "point_real": "And explain how you feel about this person's home",
+          "point_rewrite": "Share your personal impressions of their living space"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a film/movie you enjoyed and would like to see again",
+      "topicName_rewrite": "a cinematic production you appreciated and wish to rewatch",
+      "points": [
+        {
+          "point_real": "What the film/movie was",
+          "point_rewrite": "The title of this motion picture"
+        },
+        {
+          "point_real": "When and where you saw the film/movie",
+          "point_rewrite": "The circumstances of your initial viewing"
+        },
+        {
+          "point_real": "What the film/movie was about",
+          "point_rewrite": "The plot or subject matter of the production"
+        },
+        {
+          "point_real": "And explain why you would like to see this film/movie again",
+          "point_rewrite": "Your reasons for desiring a repeat viewing"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a photo you took that you are proud of",
+      "topicName_rewrite": "a photograph you captured that gives you satisfaction",
+      "points": [
+        {
+          "point_real": "Who or what was in your photo",
+          "point_rewrite": "The subject matter of your photograph"
+        },
+        {
+          "point_real": "When you took the photo",
+          "point_rewrite": "The time when you captured this image"
+        },
+        {
+          "point_real": "Why you took it",
+          "point_rewrite": "Your motivation for taking this picture"
+        },
+        {
+          "point_real": "And explain why you are proud of this photo you took",
+          "point_rewrite": "The reasons this photograph brings you pride"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a novel or a story you have read that you thought was particularly interesting",
+      "topicName_rewrite": "a literary work you found especially engaging",
+      "points": [
+        {
+          "point_real": "Why you read the novel story",
+          "point_rewrite": "Your reasons for choosing this piece of literature"
+        },
+        {
+          "point_real": "What the novel/story was about",
+          "point_rewrite": "The narrative content of the work"
+        },
+        {
+          "point_real": "How long it took you to read it",
+          "point_rewrite": "The duration of your reading process"
+        },
+        {
+          "point_real": "And explain why you thought this novel/story was so interesting",
+          "point_rewrite": "What made this literary work particularly captivating for you"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you disagreed with somebody about something",
+      "topicName_rewrite": "an occasion when you held differing views from another person",
+      "points": [
+        {
+          "point_real": "Who you disagreed with",
+          "point_rewrite": "The individual with whom you had this difference"
+        },
+        {
+          "point_real": "What you disagreed about",
+          "point_rewrite": "The subject matter of your disagreement"
+        },
+        {
+          "point_real": "What the result of this disagreement was",
+          "point_rewrite": "The outcome of this difference in opinion"
+        },
+        {
+          "point_real": "And explain how you felt about disagreeing with this person",
+          "point_rewrite": "Your emotional response to this conflict of views"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you had to find some information",
+      "topicName_rewrite": "an instance when you needed to locate specific details",
+      "points": [
+        {
+          "point_real": "What kind of information you had to find",
+          "point_rewrite": "The nature of the information you sought"
+        },
+        {
+          "point_real": "Where you looked for the information",
+          "point_rewrite": "The sources you consulted in your search"
+        },
+        {
+          "point_real": "How much you enjoyed looking for the information",
+          "point_rewrite": "Your level of satisfaction with the research process"
+        },
+        {
+          "point_real": "And explain why you needed the information",
+          "point_rewrite": "The purpose behind your information search"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an English lesson that you really enjoyed",
+      "topicName_rewrite": "a particularly enjoyable English language class",
+      "points": [
+        {
+          "point_real": "Where the lesson took place",
+          "point_rewrite": "The location where this class occurred"
+        },
+        {
+          "point_real": "What the lesson was about",
+          "point_rewrite": "The subject matter covered in this session"
+        },
+        {
+          "point_real": "What the teacher did",
+          "point_rewrite": "The instructor's teaching methods and activities"
+        },
+        {
+          "point_real": "And explain why you enjoyed this lesson so much",
+          "point_rewrite": "Reasons this particular class was especially enjoyable for you"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you succeeded in doing something that was difficult",
+      "topicName_rewrite": "an occasion when you overcame a challenging task",
+      "points": [
+        {
+          "point_real": "What you succeeded in doing",
+          "point_rewrite": "The challenging accomplishment you achieved"
+        },
+        {
+          "point_real": "Why it was difficult to do",
+          "point_rewrite": "The factors that made this task challenging"
+        },
+        {
+          "point_real": "How much help you needed",
+          "point_rewrite": "The level of assistance you required"
+        },
+        {
+          "point_real": "And explain how you felt when you succeeded in doing this difficult thing",
+          "point_rewrite": "Your emotional response to this achievement"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when someone gave you some money as a gift",
+      "topicName_rewrite": "an instance when you received monetary gifts",
+      "points": [
+        {
+          "point_real": "Who gave you the money",
+          "point_rewrite": "The giver of this financial present"
+        },
+        {
+          "point_real": "Why they gave it to you",
+          "point_rewrite": "The reason behind this monetary gift"
+        },
+        {
+          "point_real": "What you did with it",
+          "point_rewrite": "How you utilized these funds"
+        },
+        {
+          "point_real": "And explain how you felt about receiving this money",
+          "point_rewrite": "Your feelings about getting this financial gift"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you had to share something with another person or other people",
+      "topicName_rewrite": "an occasion requiring you to share resources with others",
+      "points": [
+        {
+          "point_real": "What you had to share",
+          "point_rewrite": "The item or resource you shared"
+        },
+        {
+          "point_real": "Who you had to share with",
+          "point_rewrite": "The recipient(s) of your sharing"
+        },
+        {
+          "point_real": "Why you had to share",
+          "point_rewrite": "The circumstances necessitating sharing"
+        },
+        {
+          "point_real": "And explain how you felt about sharing something with another person other people",
+          "point_rewrite": "Your emotional response to this sharing experience"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a programme that you enjoyed very much",
+      "topicName_rewrite": "a television or online show you particularly liked",
+      "points": [
+        {
+          "point_real": "What the programme was about",
+          "point_rewrite": "The content and theme of this show"
+        },
+        {
+          "point_real": "Where you watched this programme",
+          "point_rewrite": "The platform or location of viewing"
+        },
+        {
+          "point_real": "Who you watched it with",
+          "point_rewrite": "Your viewing companions (if any)"
+        },
+        {
+          "point_real": "And explain why you enjoyed this programme so much",
+          "point_rewrite": "The aspects that made this show especially enjoyable"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a part of your country that you would recommend to visitors",
+      "topicName_rewrite": "a recommended destination within your nation for tourists",
+      "points": [
+        {
+          "point_real": "Which part of your country you would recommend",
+          "point_rewrite": "The specific region you suggest visiting"
+        },
+        {
+          "point_real": "How you know about this part of your country",
+          "point_rewrite": "Your familiarity with this location"
+        },
+        {
+          "point_real": "Whether many visitors go there",
+          "point_rewrite": "The popularity of this destination among tourists"
+        },
+        {
+          "point_real": "And explain why you would recommend this part of your country to visitors",
+          "point_rewrite": "The appealing qualities of this recommended place"
+        }
+      ]
+    },
+    {
+      "topicName_real": "something important that you learned, not in school or college",
+      "topicName_rewrite": "a valuable skill or knowledge acquired outside formal education",
+      "points": [
+        {
+          "point_real": "What you learned",
+          "point_rewrite": "The specific knowledge or skill acquired"
+        },
+        {
+          "point_real": "How you learned it",
+          "point_rewrite": "The method of acquiring this knowledge"
+        },
+        {
+          "point_real": "How easy/difficult it was to learn",
+          "point_rewrite": "The level of challenge in the learning process"
+        },
+        {
+          "point_real": "And explain why learning this was important to you",
+          "point_rewrite": "The significance of this learning experience"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person you know who enjoys growing plants",
+      "topicName_rewrite": "someone who takes pleasure in cultivating plants",
+      "points": [
+        {
+          "point_real": "How you know this person",
+          "point_rewrite": "Your relationship with this individual"
+        },
+        {
+          "point_real": "What plants this person enjoys growing",
+          "point_rewrite": "The types of vegetation they cultivate"
+        },
+        {
+          "point_real": "Where this person grows plants",
+          "point_rewrite": "The location of their gardening activities"
+        },
+        {
+          "point_real": "And explain why you think this person enjoys growing these plants",
+          "point_rewrite": "Reasons for their passion in horticulture"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a popular place for playing sport",
+      "topicName_rewrite": "a well-known sports facility or venue",
+      "points": [
+        {
+          "point_real": "Where this place for playing sport is",
+          "point_rewrite": "The location of this sports venue"
+        },
+        {
+          "point_real": "How you know about this place",
+          "point_rewrite": "How you became aware of this facility"
+        },
+        {
+          "point_real": "Whether you have visited this place",
+          "point_rewrite": "Your personal experience with the venue"
+        },
+        {
+          "point_real": "And explain why you think this place for playing sport is popular",
+          "point_rewrite": "Factors contributing to its popularity"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person who inspired you to do something interesting",
+      "topicName_rewrite": "an individual who motivated you to undertake an engaging activity",
+      "points": [
+        {
+          "point_real": "Who the person is",
+          "point_rewrite": "The identity of this inspirational figure"
+        },
+        {
+          "point_real": "What interesting thing you did",
+          "point_rewrite": "The noteworthy activity you pursued"
+        },
+        {
+          "point_real": "How this person inspired you to do this thing",
+          "point_rewrite": "Their method of motivating you"
+        },
+        {
+          "point_real": "And explain how you felt after this person inspired you to do something interesting",
+          "point_rewrite": "Your emotional response to this inspiration"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you made a decision to wait for something",
+      "topicName_rewrite": "an occasion when you chose to practice patience",
+      "points": [
+        {
+          "point_real": "What you decided to wait for",
+          "point_rewrite": "The object or event you awaited"
+        },
+        {
+          "point_real": "What you did while you were waiting",
+          "point_rewrite": "Your activities during the waiting period"
+        },
+        {
+          "point_real": "How you felt while you were waiting",
+          "point_rewrite": "Your emotional state during this time"
+        },
+        {
+          "point_real": "And explain why deciding to wait was a good/bad decision",
+          "point_rewrite": "The outcome and evaluation of your choice"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a place you went to do an outdoor activity",
+      "topicName_rewrite": "a location you visited for open-air recreation",
+      "points": [
+        {
+          "point_real": "Where you went and when",
+          "point_rewrite": "The destination and timing of your visit"
+        },
+        {
+          "point_real": "What outdoor activity you did at this place",
+          "point_rewrite": "The nature activity you engaged in"
+        },
+        {
+          "point_real": "Why you did this outdoor activity",
+          "point_rewrite": "Your reasons for choosing this pursuit"
+        },
+        {
+          "point_real": "And explain how you felt about doing the outdoor activity at this place",
+          "point_rewrite": "Your personal experience and satisfaction"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a problem you had when you bought something",
+      "topicName_rewrite": "an issue encountered during a purchase",
+      "points": [
+        {
+          "point_real": "What you bought",
+          "point_rewrite": "The purchased item"
+        },
+        {
+          "point_real": "Where and when you bought it",
+          "point_rewrite": "The purchase location and timing"
+        },
+        {
+          "point_real": "What problem you had with it",
+          "point_rewrite": "The specific issue encountered"
+        },
+        {
+          "point_real": "And explain how you felt about having this problem",
+          "point_rewrite": "Your emotional response to this situation"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a skill that you think you can teach other people",
+      "topicName_rewrite": "an ability you're capable of instructing others in",
+      "points": [
+        {
+          "point_real": "What it is",
+          "point_rewrite": "The specific skill you possess"
+        },
+        {
+          "point_real": "When you learned it",
+          "point_rewrite": "The time period of acquiring this skill"
+        },
+        {
+          "point_real": "How you can teach others",
+          "point_rewrite": "Your methodology for instruction"
+        },
+        {
+          "point_real": "And how you feel about this skill",
+          "point_rewrite": "Your personal attitude toward this ability"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an intelligent person you know",
+      "topicName_rewrite": "a particularly bright individual in your acquaintance",
+      "points": [
+        {
+          "point_real": "Who this person is",
+          "point_rewrite": "The identity of this intelligent individual"
+        },
+        {
+          "point_real": "How you knew this person",
+          "point_rewrite": "The nature of your relationship"
+        },
+        {
+          "point_real": "What this person does",
+          "point_rewrite": "Their occupation or main activities"
+        },
+        {
+          "point_real": "And explain why you think this person is intelligent",
+          "point_rewrite": "The evidence of their intellectual capacity"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person you disliked at first but ended up being friends with",
+      "topicName_rewrite": "someone whose initial impression changed positively over time",
+      "points": [
+        {
+          "point_real": "Who he/she is",
+          "point_rewrite": "This individual's identity"
+        },
+        {
+          "point_real": "How you knew him/her",
+          "point_rewrite": "The circumstances of your meeting"
+        },
+        {
+          "point_real": "Why you disliked him/her at first but changed your mind",
+          "point_rewrite": "The transformation in your perception"
+        },
+        {
+          "point_real": "And explain how you feel about the experience",
+          "point_rewrite": "Your reflections on this relationship evolution"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person who persuaded you to do something",
+      "topicName_rewrite": "an individual who convinced you to take certain action",
+      "points": [
+        {
+          "point_real": "When it happened",
+          "point_rewrite": "The timeframe of this persuasion"
+        },
+        {
+          "point_real": "What he/she persuaded you to do",
+          "point_rewrite": "The action you were convinced to take"
+        },
+        {
+          "point_real": "Why he/she persuaded you to do it",
+          "point_rewrite": "Their motivations for convincing you"
+        },
+        {
+          "point_real": "And explain whether you did it at last",
+          "point_rewrite": "The ultimate outcome of this persuasion"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you made a plan to do an activity with a lot of people",
+      "topicName_rewrite": "an occasion of organizing a group event",
+      "points": [
+        {
+          "point_real": "What it was",
+          "point_rewrite": "The nature of this planned activity"
+        },
+        {
+          "point_real": "When and where you made it",
+          "point_rewrite": "The timing and location of planning"
+        },
+        {
+          "point_real": "What the activity was",
+          "point_rewrite": "Details about the group event"
+        },
+        {
+          "point_real": "And explain how you felt about the plan",
+          "point_rewrite": "Your emotions regarding this organizational effort"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you saw children behave badly in public",
+      "topicName_rewrite": "an instance of observing children's poor public conduct",
+      "points": [
+        {
+          "point_real": "Where it was",
+          "point_rewrite": "The location of this incident"
+        },
+        {
+          "point_real": "What the children were doing",
+          "point_rewrite": "The specific misbehavior observed"
+        },
+        {
+          "point_real": "How others reacted to it",
+          "point_rewrite": "The response from people nearby"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "point_rewrite": "Your personal reaction to the situation"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a beautiful sky you enjoyed seeing",
+      "topicName_rewrite": "a breathtaking sky view you appreciated",
+      "points": [
+        {
+          "point_real": "Where you saw it",
+          "point_rewrite": "The location where you observed this sky"
+        },
+        {
+          "point_real": "Who you saw it with",
+          "point_rewrite": "Your companions during this experience"
+        },
+        {
+          "point_real": "What you saw",
+          "point_rewrite": "The specific features of the sky you noticed"
+        },
+        {
+          "point_real": "And how you felt about it",
+          "point_rewrite": "Your emotional response to this natural spectacle"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an advertisement you have seen",
+      "topicName_rewrite": "a commercial or promotional content you viewed",
+      "points": [
+        {
+          "point_real": "When and where you saw the advertisement",
+          "point_rewrite": "The time and place of encountering this ad"
+        },
+        {
+          "point_real": "What the product was",
+          "point_rewrite": "The item or service being promoted"
+        },
+        {
+          "point_real": "How you liked the advertisement",
+          "point_rewrite": "Your opinion about the ad's effectiveness"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "point_rewrite": "Your overall impression of this advertising"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a shop you often visit",
+      "topicName_rewrite": "a retail establishment you frequent",
+      "points": [
+        {
+          "point_real": "What the shop's name is",
+          "point_rewrite": "The name of this store"
+        },
+        {
+          "point_real": "Where it is",
+          "point_rewrite": "Its physical location"
+        },
+        {
+          "point_real": "How often you visit it",
+          "point_rewrite": "The frequency of your visits"
+        },
+        {
+          "point_real": "And explain why you like to visit it",
+          "point_rewrite": "The reasons for your preference"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a film that makes you laugh",
+      "topicName_rewrite": "a comedy movie you find hilarious",
+      "points": [
+        {
+          "point_real": "What it is",
+          "point_rewrite": "The title of this humorous film"
+        },
+        {
+          "point_real": "When you watch it",
+          "point_rewrite": "The occasions when you view it"
+        },
+        {
+          "point_real": "Who you watched it with",
+          "point_rewrite": "Your viewing companions"
+        },
+        {
+          "point_real": "And explain why it made you laugh",
+          "point_rewrite": "The elements that trigger your laughter"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a second-hand and recycle website",
+      "topicName_rewrite": "an online platform for used goods and recycling",
+      "points": [
+        {
+          "point_real": "What the website is called",
+          "point_rewrite": "The name of this digital marketplace"
+        },
+        {
+          "point_real": "What kinds of information it provide",
+          "point_rewrite": "The content and services available"
+        },
+        {
+          "point_real": "What you bought",
+          "point_rewrite": "Your purchases through this site"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "point_rewrite": "Your satisfaction with this platform"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person who you think wears unusual clothes",
+      "topicName_rewrite": "someone with distinctive fashion choices",
+      "points": [
+        {
+          "point_real": "Who this person is",
+          "point_rewrite": "The identity of this individual"
+        },
+        {
+          "point_real": "How you know this person",
+          "point_rewrite": "Your relationship with them"
+        },
+        {
+          "point_real": "What this person's clothes are like",
+          "point_rewrite": "Description of their unique attire"
+        },
+        {
+          "point_real": "And explain why you think his/her clothes are unusual",
+          "point_rewrite": "The aspects that make their style stand out"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an interesting discussion that you had with friends",
+      "topicName_rewrite": "a stimulating conversation with your peers",
+      "points": [
+        {
+          "point_real": "What the discussion was about",
+          "point_rewrite": "The topic of your conversation"
+        },
+        {
+          "point_real": "What opinions you and your friends expressed",
+          "point_rewrite": "The different viewpoints shared"
+        },
+        {
+          "point_real": "What the result of the discussion was",
+          "point_rewrite": "The outcome or conclusion reached"
+        },
+        {
+          "point_real": "And explain why you found this discussion was interesting",
+          "point_rewrite": "What made this exchange particularly engaging"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a quiet place you like to spend your time in",
+      "topicName_rewrite": "a peaceful location you frequent",
+      "points": [
+        {
+          "point_real": "Where it is",
+          "point_rewrite": "The location of this tranquil spot"
+        },
+        {
+          "point_real": "How you knew it",
+          "point_rewrite": "How you discovered this place"
+        },
+        {
+          "point_real": "What do you there",
+          "point_rewrite": "Your activities in this setting"
+        },
+        {
+          "point_real": "And explain why you like the place",
+          "point_rewrite": "The appeal of this quiet location"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a goal you set before",
+      "topicName_rewrite": "an objective you previously established",
+      "points": [
+        {
+          "point_real": "What it was",
+          "point_rewrite": "The nature of this goal"
+        },
+        {
+          "point_real": "When it was",
+          "point_rewrite": "The timeframe of this goal"
+        },
+        {
+          "point_real": "How well you achieve it",
+          "point_rewrite": "Your degree of success in accomplishing it"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "point_rewrite": "Your emotional response to this experience"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a city that you want to go back once again",
+      "topicName_rewrite": "an urban destination you wish to revisit",
+      "points": [
+        {
+          "point_real": "What it is",
+          "point_rewrite": "The name of this city"
+        },
+        {
+          "point_real": "When you have gone there before",
+          "point_rewrite": "Your previous visit timeframe"
+        },
+        {
+          "point_real": "What you did there",
+          "point_rewrite": "Your activities during your stay"
+        },
+        {
+          "point_real": "And explain why you want to go back there once again",
+          "point_rewrite": "Your reasons for desiring to return"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a place where people can see lots of animals",
+      "topicName_rewrite": "a location abundant with wildlife observation opportunities",
+      "points": [
+        {
+          "point_real": "Where it is",
+          "point_rewrite": "The geographical location"
+        },
+        {
+          "point_real": "What animals people can see",
+          "point_rewrite": "The species available for viewing"
+        },
+        {
+          "point_real": "Why people like to go there",
+          "point_rewrite": "The appeal of this animal habitat"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "point_rewrite": "Your personal impressions of this place"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an important decision you made with the help of others",
+      "topicName_rewrite": "a significant choice you made collaboratively",
+      "points": [
+        {
+          "point_real": "Who helped you make the decision",
+          "point_rewrite": "The people who assisted in your decision-making"
+        },
+        {
+          "point_real": "What it was",
+          "point_rewrite": "The nature of this important choice"
+        },
+        {
+          "point_real": "Whether it was correct",
+          "point_rewrite": "The accuracy or appropriateness of the decision"
+        },
+        {
+          "point_real": "And explain why it was an important decision",
+          "point_rewrite": "The significance of this choice"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an old person who you had an interesting discussion with",
+      "topicName_rewrite": "an elderly individual you had a fascinating conversation with",
+      "points": [
+        {
+          "point_real": "Who he/she is",
+          "point_rewrite": "The identity of this senior person"
+        },
+        {
+          "point_real": "What does he/she do",
+          "point_rewrite": "Their occupation or main activities"
+        },
+        {
+          "point_real": "When and where you met him/her",
+          "point_rewrite": "The circumstances of your meeting"
+        },
+        {
+          "point_real": "And explain why you think he/she have an interesting life",
+          "point_rewrite": "What makes their life experiences remarkable"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a piece of special clothes you have",
+      "topicName_rewrite": "a particular garment that holds significance for you",
+      "points": [
+        {
+          "point_real": "What it is like",
+          "point_rewrite": "Description of this clothing item"
+        },
+        {
+          "point_real": "How you got it",
+          "point_rewrite": "The way you acquired it"
+        },
+        {
+          "point_real": "When you had it",
+          "point_rewrite": "The timeframe of ownership"
+        },
+        {
+          "point_real": "And explain why you think it is special",
+          "point_rewrite": "The sentimental or practical value it holds"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a singer you like",
+      "topicName_rewrite": "a musical artist you admire",
+      "points": [
+        {
+          "point_real": "Who is he/she",
+          "point_rewrite": "The name of this performer"
+        },
+        {
+          "point_real": "When and where you first listen to his/her music",
+          "point_rewrite": "Your initial exposure to their work"
+        },
+        {
+          "point_real": "Why you like his/her music",
+          "point_rewrite": "What appeals to you about their artistry"
+        },
+        {
+          "point_real": "And explain how you felt about him/her",
+          "point_rewrite": "Your overall impression of this artist"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an outdoor sport you want to try for the first time",
+      "topicName_rewrite": "an open-air athletic activity you wish to attempt",
+      "points": [
+        {
+          "point_real": "What it was",
+          "point_rewrite": "The specific sport you're interested in"
+        },
+        {
+          "point_real": "When you first played it",
+          "point_rewrite": "Your initial experience with it"
+        },
+        {
+          "point_real": "Who you played it with",
+          "point_rewrite": "Your companions in this activity"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "point_rewrite": "Your emotional response to this new experience"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a sport event you would like to be as a part of audience",
+      "topicName_rewrite": "a sporting competition you wish to attend",
+      "points": [
+        {
+          "point_real": "What it is",
+          "point_rewrite": "The nature of this sports event"
+        },
+        {
+          "point_real": "When and where it will hold",
+          "point_rewrite": "The scheduled time and venue"
+        },
+        {
+          "point_real": "Who do you like to watch with",
+          "point_rewrite": "Your preferred viewing companions"
+        },
+        {
+          "point_real": "And explain why you would like to watch",
+          "point_rewrite": "Your reasons for wanting to attend"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an interesting article on health you read",
+      "topicName_rewrite": "a compelling health-related publication you encountered",
+      "points": [
+        {
+          "point_real": "What it was",
+          "point_rewrite": "The subject matter of the article"
+        },
+        {
+          "point_real": "Where you read it",
+          "point_rewrite": "The publication source or platform"
+        },
+        {
+          "point_real": "Why you read it",
+          "point_rewrite": "Your motivation for reading it"
+        },
+        {
+          "point_real": "And explain why you think it is interesting",
+          "point_rewrite": "What made this health content engaging"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an argument that two of your friends have",
+      "topicName_rewrite": "a disagreement between two acquaintances",
+      "points": [
+        {
+          "point_real": "When it happened",
+          "point_rewrite": "The timeframe of this conflict"
+        },
+        {
+          "point_real": "What it was about",
+          "point_rewrite": "The subject of their dispute"
+        },
+        {
+          "point_real": "How it was solved",
+          "point_rewrite": "The resolution process"
+        },
+        {
+          "point_real": "And how you felt about that",
+          "point_rewrite": "Your emotional response to this situation"
+        }
+      ]
+    }
+  ]
+}
