@@ -1,110 +1,96 @@
 const prompt_question_selector = `
-# 雅思口语题抽取系统指令
+# 雅思口语题目处理系统指令
 
-## 核心任务
-从处理后的题库中抽取题目并重组，严格遵循以下规则：
-1. 使用改写后英文话题名称(topicName_rewrite)
-2. topicId命名方式为"Basic_25Q2_t"+数字
-3. 包含中英文双语输出
-4. 合理混合改写问题和新问题
+## 核心要求
+1. **严格的顺序对应**：
+   - 必须保持与 step1_ai_generated_questions.json 中完全相同的话题顺序
+   - 每个话题下的问题顺序必须与原文件一一对应
+   - 不允许跳过或遗漏任何话题或问题
+   - ID的编号必须按照话题和问题的实际顺序递增
 
-## 输出规范
+2. **翻译处理**：
+   - 将 topicName_rewrite 翻译成中文，添加到 topicName_cn
+   - 将 qRewrite 翻译成中文，添加到 qTitle_cn
+
+3. **ID生成规则**：
+   - 话题ID (topicId)：
+     * 前缀：Basic_25Q2_t
+     * 编号：从1开始严格按照话题顺序递增（如 Basic_25Q2_t1, Basic_25Q2_t2, ...)
+   - 问题ID (qId)：
+     * 前缀：Basic_25Q2_q
+     * 编号：从1开始严格按照所有问题的顺序递增（如 Basic_25Q2_q1, Basic_25Q2_q2, ...)
+     * 问题编号必须连续，不能跳号或重复
+
+## 输出结构
 \`\`\`json
 {
-  "mixed_questions": [
-    {
-      "topicName": "改写后英文话题名称",
-      "topicName_cn": "准确的中文翻译",
-      "topicId": "Basic_25Q2_t"+数字,
-      "questions": [
-        {
-          "qTitle": "英文问题文本",
-          "qTitle_cn": "准确的中文翻译", 
-          "type": 0,
-          "from": "rewrite"
-        }
-      ]
-    }
-  ]
+  "mixed_questions": [{
+    "topicName_real": "原话题名称",
+    "topicName_rewrite": "改写后话题名称",
+    "topicName_cn": "中文话题名称",
+    "topicId": "Basic_25Q2_t序号",
+    "questions": [
+      {
+        "qTitle": "原问题",
+        "qRewrite": "改写版问题",
+        "qTitle_cn": "中文翻译",
+        "qId": "Basic_25Q2_q序号"
+      }
+    ]
+  }]
 }
 \`\`\`
 
-## 处理规则
-
-### 1. ID生成规则
-| 组件 | 格式 | 示例 |
-|------|------|------|
-| 前缀 | Basic_ | Basic_ 
-
-### 2. 问题选取规则
-| 类型 | 数量 | 位置 | 选择方式 |
-|------|------|------|----------|
-| 改写问题 | 全部 | 保持原序 | 按原始顺序 
-
-### 3. 翻译要求
-1. 话题名称翻译：
-   - 保持专业性和一致性
-   - 避免直译，使用自然的中文表达
-2. 问题翻译：
-   - 准确传达原意
-   - 符合中文口语习惯
-
-## 质量规范
-1. 必须包含：
-   - 完整的双语字段
-   - 正确的ID格式
-   - 准确的问题来源标记
-2. 禁止：
-   - 使用原始问题(questions_original)
-   - 重复或遗漏问题
-3. 错误处理：
-   - 无效数据跳过并记录
-   - 保持JSON结构有效性
+## 翻译标准
+1. 保持专业性和准确性
+2. 符合中文表达习惯
+3. 保留原文的学术性和正式程度
+4. 确保问题的核心意图不变
 
 ## 示例演示
-输入数据：
+输入：
 \`\`\`json
 {
-  "ai_questions": [
-    {
-      "topicName_real": "Work",
-      "topicName_rewrite": "Professional Life",
-      "questions_original": [],
-      "questions_rewrite": [
-        {"qTitle": "What do you like about city living?"},
-        {"qTitle": "How is urban life different from rural life?"}
-      ]
-    }
-  ]
+  "ai_questions": [{
+    "topicName_real": "Work",
+    "topicName_rewrite": "Professional Engagement",
+    "questions": [
+      {"qTitle": "What's your job?",
+      "qRewrite": "Could you elaborate on your current professional role and responsibilities?"}
+    ]
+  }]
 }
 \`\`\`
 
-标准输出：
+输出：
 \`\`\`json
 {
-  "mixed_questions": [
-    {
-      "topicName": "Professional Life",
-      "topicName_cn": "职业生活",
-      "topicId": "Basic_25Q2_t1",
-      "questions": [
-        {
-          "qTitle": "What do you like about city living?",
-          "qTitle_cn": "你喜欢城市生活的哪些方面？",
-          "type": 0,
-          "from": "rewrite"
-        },
-        {
-          "qTitle": "How is urban life different from rural life?",
-          "qTitle_cn": "城市生活和乡村生活有什么不同？",
-          "type": 0,
-          "from": "rewrite"
-        }
-      ]
-    }
-  ]
+  "mixed_questions": [{
+    "topicName_real": "Work",
+    "topicName_rewrite": "Professional Engagement",
+    "topicName_cn": "职业参与",
+    "topicId": "Basic_25Q2_t1",
+    "questions": [
+      {
+        "qTitle": "What's your job?",
+        "qRewrite": "Could you elaborate on your current professional role and responsibilities?",
+        "qTitle_cn": "您能详细描述一下您目前的职业角色和职责吗？",
+        "qId": "Basic_25Q2_q1"
+      }
+    ]
+  }]
 }
 \`\`\`
+
+## 质量验证清单
+1. [ ] 话题顺序与 step1_ai_generated_questions.json 完全一致
+2. [ ] 每个话题下的问题顺序与原文件一一对应
+3. [ ] 所有话题和问题都有对应的ID
+4. [ ] 话题ID和问题ID严格按顺序递增，不存在跳号
+5. [ ] 中文翻译准确且自然
+6. [ ] 保持原文的正式程度
+7. [ ] JSON格式完整且有效
+8. [ ] 确认没有遗漏任何话题或问题
 `;
 
 module.exports = prompt_question_selector;

@@ -1,48 +1,61 @@
 const prompt_question_selector = `
-请根据提供的mixed_questions数组和categories分类体系，
-将问题主题(topic)智能分配到最匹配的category中，
-并生成符合以下格式的mixed_categories输出：
+# 任务目标
+将提供的IELTS口语话题(topics)根据语义相关性智能分配到预定义的分类(categories)中。
 
-输入数据：
-mixed_questions: 包含多个主题(topic)及其对应问题列表的数组
+# 输入数据
+1. mixed_questions数组：包含多个话题(topic)及其详细信息
+   - topicName_real: 原始话题名
+   - topicName_rewrite: 改写后的话题名
+   - topicName_cn: 话题中文名
+   - topicId: 话题唯一标识
+   - questions: 该话题下的问题列表
 
-categories: 预定义的分类体系，每个分类包含中英文名称和描述
+2. categories数组：预定义的分类体系
+   - categoryName: 分类英文名
+   - categoryName_cn: 分类中文名
+   - description: 分类描述
 
-处理规则：
+# 处理规则
+1. 语义匹配原则
+   - 仔细分析每个topic的语义内容
+   - 将topic分配到最匹配的category
+   - 考虑topic的问题内容以确保分类准确性
 
-仔细分析每个topic的topicName和问题内容，匹配到最合适的category
+2. 分配限制
+   - 每个topic必须且只能分配到一个category
+   - 不能遗漏任何topic
+   - 不能重复分配topic
 
-匹配时应参考category的英文名(categoryName)和中文名(categoryNameInChinese)，以及description中的关键词
+3. 保持完整性
+   - 保持原始topic信息的完整性
+   - 不修改任何原始数据内容
 
-每个topic只能分配到一个category中
-
-保持原始topic的完整结构不变
-
-输出格式要求：
-json
+# 输出格式
 {
   "mixed_categories": [
     {
-      "categoryName": "字符串，分类英文名",
-      "categoryName_cn": "字符串，分类中文名",
-      "categoryId": "字符串，分类ID",
+      "categoryName": "分类英文名",
+      "categoryName_cn": "分类中文名",
+      "categoryId": "分类唯一标识",
       "topicCollection": [
         {
-          "topicName": "字符串，主题英文名",
-          "topicName_cn": "字符串，主题中文名",
-          "topicId": "字符串，主题ID"
+          "topicName": "topic的topicName_rewrite",
+          "topicName_cn": "topic的topicName_cn",
+          "topicId": "topic的topicId"
         }
-        // 其他匹配到此category的topic
+        // 该分类下的其他topics
       ]
     }
-    // 其他category
+    // 其他分类
   ]
 }
-特别注意：
 
-不要修改原始输入的内容和顺序
-
-不要创建示例中重复的topic条目
+# 质量检查清单
+1. 确保所有topic都被分配
+2. 确保没有topic重复分配
+3. 确保每个topic的信息完整准确
+4. 确保分类合理且符合语义关联
+5. 确保输出格式符合要求
 `;
 
 module.exports = prompt_question_selector;

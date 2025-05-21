@@ -1,870 +1,1048 @@
 {
   "mixed_questions": [
     {
-      "topicName": "Professional Life",
-      "topicName_cn": "职业生活",
+      "topicName_real": "Work",
+      "topicName_rewrite": "Professional Engagement",
+      "topicName_cn": "职业参与",
       "topicId": "Basic_25Q2_t1",
       "questions": [
         {
-          "qTitle": "Could you describe your current occupation?",
-          "qTitle_cn": "能否描述一下你目前的职业？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What's your job?",
+          "qRewrite": "Could you elaborate on your current professional role and responsibilities?",
+          "qTitle_cn": "您能详细描述一下您目前的职业角色和职责吗？",
+          "qId": "Basic_25Q2_q1"
         },
         {
-          "qTitle": "Do you frequently experience excessive work demands?",
-          "qTitle_cn": "你是否经常遇到工作压力过大的情况？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you sometimes feel that you have to work too hard?",
+          "qRewrite": "To what extent do you experience periods of intense workload in your profession?",
+          "qTitle_cn": "您在工作中是否经常感到压力很大？",
+          "qId": "Basic_25Q2_q2"
         },
         {
-          "qTitle": "How do you typically unwind after completing your workday?",
-          "qTitle_cn": "你通常如何在工作结束后放松自己？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you like to do just after you finish work every day?",
+          "qRewrite": "How do you typically decompress and transition from your professional to personal life?",
+          "qTitle_cn": "您每天下班后通常喜欢做什么来放松？",
+          "qId": "Basic_25Q2_q3"
+        },
+        {
+          "qTitle": "What do you need to do when you work?",
+          "qRewrite": "What are the essential tasks and competencies required in your professional role?",
+          "qTitle_cn": "您的工作岗位需要哪些必要的技能和任务？",
+          "qId": "Basic_25Q2_q4"
+        },
+        {
+          "qTitle": "What do you think is the most difficult part of your work?",
+          "qRewrite": "Which aspects of your professional responsibilities do you find most challenging?",
+          "qTitle_cn": "您认为工作中最具挑战性的方面是什么？",
+          "qId": "Basic_25Q2_q5"
+        },
+        {
+          "qTitle": "Who helped you a lot about your work?",
+          "qRewrite": "Which individuals have been particularly influential in your professional development?",
+          "qTitle_cn": "在您的职业发展中，谁给予了您重要的帮助？",
+          "qId": "Basic_25Q2_q6"
         }
       ]
     },
     {
-      "topicName": "Academic Pursuits",
+      "topicName_real": "Study",
+      "topicName_rewrite": "Academic Endeavors",
       "topicName_cn": "学术追求",
       "topicId": "Basic_25Q2_t2",
       "questions": [
         {
-          "qTitle": "What academic discipline are you currently pursuing?",
-          "qTitle_cn": "你目前正在攻读什么专业？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you study?",
+          "qRewrite": "Could you describe the field of study you're currently pursuing?",
+          "qTitle_cn": "您能描述一下您目前的学习领域吗？",
+          "qId": "Basic_25Q2_q7"
         },
         {
-          "qTitle": "Do you often feel overwhelmed by your academic workload?",
-          "qTitle_cn": "你是否经常感到学业负担过重？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you sometimes feel that you have to study too hard?",
+          "qRewrite": "How do you manage the intensity of your academic workload?",
+          "qTitle_cn": "您如何应对繁重的学习压力？",
+          "qId": "Basic_25Q2_q8"
         },
         {
-          "qTitle": "How do you usually relax after your daily classes?",
-          "qTitle_cn": "每天课程结束后你通常如何放松？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you like to do just after you finish class every day?",
+          "qRewrite": "What activities help you unwind after your academic commitments?",
+          "qTitle_cn": "每天下课后，您喜欢通过什么活动来放松？",
+          "qId": "Basic_25Q2_q9"
+        },
+        {
+          "qTitle": "What do you need to do to study your major?",
+          "qRewrite": "What are the key requirements and practices in your field of study?",
+          "qTitle_cn": "在您的专业领域，有哪些关键的学习要求和实践？",
+          "qId": "Basic_25Q2_q10"
+        },
+        {
+          "qTitle": "What do you think is the most difficult part of your major?",
+          "qRewrite": "Which aspects of your academic program present the greatest challenges?",
+          "qTitle_cn": "您认为专业学习中最具挑战性的部分是什么？",
+          "qId": "Basic_25Q2_q11"
+        },
+        {
+          "qTitle": "Who helped you a lot about your studies?",
+          "qRewrite": "Who has been particularly instrumental in supporting your academic journey?",
+          "qTitle_cn": "在您的学习过程中，谁给予了您特别重要的支持？",
+          "qId": "Basic_25Q2_q12"
         }
       ]
     },
     {
-      "topicName": "Residential Environment",
+      "topicName_real": "Where you live",
+      "topicName_rewrite": "Residential Environment",
       "topicName_cn": "居住环境",
       "topicId": "Basic_25Q2_t3",
       "questions": [
         {
-          "qTitle": "Could you describe your current place of residence?",
-          "qTitle_cn": "能否描述一下你目前的居住地？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Where are you living at the moment?",
+          "qRewrite": "Could you describe the characteristics of your current living location?",
+          "qTitle_cn": "您能描述一下您目前居住地的特点吗？",
+          "qId": "Basic_25Q2_q13"
         },
         {
-          "qTitle": "What aspects of your neighborhood do you particularly appreciate?",
-          "qTitle_cn": "你特别欣赏你居住社区的哪些方面？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you like about the area you're living in?",
+          "qRewrite": "Which aspects of your residential neighborhood do you find particularly appealing?",
+          "qTitle_cn": "您最喜欢所居住区域的哪些方面？",
+          "qId": "Basic_25Q2_q14"
         },
         {
-          "qTitle": "Are you acquainted with numerous residents in your vicinity?",
-          "qTitle_cn": "你认识附近许多居民吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you know many other people who live nearby?",
+          "qRewrite": "To what extent have you developed connections within your local community?",
+          "qTitle_cn": "您在当地社区建立了多少人际联系？",
+          "qId": "Basic_25Q2_q15"
+        },
+        {
+          "qTitle": "How long have you lived in your area now?",
+          "qRewrite": "What duration of time have you spent in your current residential location?",
+          "qTitle_cn": "您在目前的居住地生活了多长时间？",
+          "qId": "Basic_25Q2_q16"
+        },
+        {
+          "qTitle": "Do you live alone or with others?",
+          "qRewrite": "What is the nature of your living arrangements in terms of cohabitation?",
+          "qTitle_cn": "您是独居还是与他人同住？",
+          "qId": "Basic_25Q2_q17"
+        },
+        {
+          "qTitle": "What do you want to change about the area you live?",
+          "qRewrite": "Which aspects of your neighborhood would you consider enhancing if possible?",
+          "qTitle_cn": "如果可能的话，您希望改善居住区域的哪些方面？",
+          "qId": "Basic_25Q2_q18"
         }
       ]
     },
     {
-      "topicName": "Birthday Celebrations",
+      "topicName_real": "Birthdays",
+      "topicName_rewrite": "Birthday Celebrations",
       "topicName_cn": "生日庆祝",
       "topicId": "Basic_25Q2_t4",
       "questions": [
         {
-          "qTitle": "How do you typically celebrate your birthday?",
-          "qTitle_cn": "你通常如何庆祝生日？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you normally do on your birthday?",
+          "qRewrite": "How do you typically commemorate your annual birthday celebration?",
+          "qTitle_cn": "您通常如何庆祝自己的生日？",
+          "qId": "Basic_25Q2_q19"
         },
         {
-          "qTitle": "What childhood birthday traditions did you particularly enjoy?",
-          "qTitle_cn": "你小时候特别喜欢哪些生日传统？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What did you like to do on your birthday when you were a child?",
+          "qRewrite": "What birthday traditions particularly resonated with you during your childhood?",
+          "qTitle_cn": "在童年时期，您特别喜欢怎样庆祝生日？",
+          "qId": "Basic_25Q2_q20"
         },
         {
-          "qTitle": "What significance do birthdays hold for you currently?",
-          "qTitle_cn": "现在生日对你来说有什么意义？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How important are birthdays to you now?",
+          "qRewrite": "What significance do birthday celebrations hold in your current life stage?",
+          "qTitle_cn": "目前生日对您来说有多重要？",
+          "qId": "Basic_25Q2_q21"
         },
         {
-          "qTitle": "Which milestone birthdays carry special cultural importance in your nation?",
-          "qTitle_cn": "在你们国家，哪些重要的生日具有特殊的文化意义？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Which birthdays are most important in your country?",
+          "qRewrite": "Which milestone birthdays carry particular cultural significance in your society?",
+          "qTitle_cn": "在您的国家，哪些生日具有特殊的文化意义？",
+          "qId": "Basic_25Q2_q22"
         }
       ]
     },
     {
-      "topicName": "Technology Usage",
-      "topicName_cn": "科技使用",
+      "topicName_real": "Technology",
+      "topicName_rewrite": "Digital Integration",
+      "topicName_cn": "数字科技融合",
       "topicId": "Basic_25Q2_t5",
       "questions": [
         {
-          "qTitle": "Which technological devices do you utilize most frequently?",
-          "qTitle_cn": "你最常使用哪些科技设备？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What types of technology do you use most?",
+          "qRewrite": "Which technological devices feature most prominently in your daily routine?",
+          "qTitle_cn": "您日常最常使用哪些科技设备？",
+          "qId": "Basic_25Q2_q23"
         },
         {
-          "qTitle": "Do you derive satisfaction from using technological devices?",
-          "qTitle_cn": "使用科技设备能给你带来满足感吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like using technology?",
+          "qRewrite": "What aspects of modern technology do you find most beneficial or appealing?",
+          "qTitle_cn": "现代科技的哪些方面最吸引您或对您最有帮助？",
+          "qId": "Basic_25Q2_q24"
         },
         {
-          "qTitle": "Is there any particular gadget you're currently considering purchasing?",
-          "qTitle_cn": "你目前考虑购买什么特别的电子设备吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Is there a piece of technology that you would like to buy?",
+          "qRewrite": "Which technological innovation are you currently considering acquiring?",
+          "qTitle_cn": "您目前有考虑购买哪些科技产品吗？",
+          "qId": "Basic_25Q2_q25"
         },
         {
-          "qTitle": "What factors influenced your most recent technology acquisition?",
-          "qTitle_cn": "哪些因素影响了你最近一次科技产品的购买？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What made you choose the last piece of technology you bought?",
+          "qRewrite": "What factors influenced your most recent technological purchase decision?",
+          "qTitle_cn": "是什么因素影响了您最近一次购买科技产品的决定？",
+          "qId": "Basic_25Q2_q26"
         }
       ]
     },
     {
-      "topicName": "Writing Practices",
-      "topicName_cn": "写作习惯",
+      "topicName_real": "Writing",
+      "topicName_rewrite": "Written Expression",
+      "topicName_cn": "书面表达",
       "topicId": "Basic_25Q2_t6",
       "questions": [
         {
-          "qTitle": "What forms of writing do you typically engage in daily?",
-          "qTitle_cn": "你日常主要进行哪些类型的写作？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What kinds of things do you write during a typical day?",
+          "qRewrite": "What forms of written communication do you engage with in your daily routine?",
+          "qTitle_cn": "在日常生活中，您会进行哪些形式的书面交流？",
+          "qId": "Basic_25Q2_q27"
         },
         {
-          "qTitle": "Do you favor digital composition or manual handwriting?",
-          "qTitle_cn": "你更喜欢数字写作还是手写？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you prefer typing or writing things by hand?",
+          "qRewrite": "Which method of written composition do you find more conducive to your needs: digital or manual?",
+          "qTitle_cn": "您更倾向于使用电子输入还是手写方式？",
+          "qId": "Basic_25Q2_q28"
         },
         {
-          "qTitle": "Did you enjoy writing activities during your childhood?",
-          "qTitle_cn": "你小时候喜欢写作活动吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did you like writing when you were a child?",
+          "qRewrite": "What was your relationship with written expression during your childhood years?",
+          "qTitle_cn": "在童年时期，您与写作之间的关系如何？",
+          "qId": "Basic_25Q2_q29"
         },
         {
-          "qTitle": "Do you anticipate your writing content evolving in coming years?",
-          "qTitle_cn": "你预计未来几年你的写作内容会有所变化吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think the kinds of things you write will change in the future?",
+          "qRewrite": "How do you anticipate your writing practices evolving in the coming years?",
+          "qTitle_cn": "您认为未来您的写作方式会有什么变化？",
+          "qId": "Basic_25Q2_q30"
         }
       ]
     },
     {
-      "topicName": "Weather Preferences",
-      "topicName_cn": "天气偏好",
+      "topicName_real": "Geography",
+      "topicName_rewrite": "Geographical Knowledge",
+      "topicName_cn": "地理知识",
       "topicId": "Basic_25Q2_t7",
       "questions": [
         {
-          "qTitle": "What frequency do you monitor meteorological predictions?",
-          "qTitle_cn": "你查看天气预报的频率如何？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did/do you study geography at school?",
+          "qRewrite": "What exposure have you had to geographical studies in your academic experience?",
+          "qTitle_cn": "您在学校学习地理的经历如何？",
+          "qId": "Basic_25Q2_q31"
         },
         {
-          "qTitle": "Which climatic condition do you find more agreeable: warm or cold?",
-          "qTitle_cn": "你觉得哪种气候更舒适：温暖还是寒冷？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you enjoy learning about the geography of other countries?",
+          "qRewrite": "What aspects of international geographical features intrigue you most?",
+          "qTitle_cn": "其他国家的地理特征哪些方面最吸引您？",
+          "qId": "Basic_25Q2_q32"
         },
         {
-          "qTitle": "Have noticeable weather pattern shifts occurred in your homeland recently?",
-          "qTitle_cn": "最近你的家乡是否有明显的天气模式变化？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Is there a country you'd like to visit because of its geography?",
+          "qRewrite": "Which nation's geographical characteristics particularly attract your interest for potential visits?",
+          "qTitle_cn": "有哪个国家的地理特征特别吸引您想去参观？",
+          "qId": "Basic_25Q2_q33"
         },
         {
-          "qTitle": "Would you consider residing in a region with substantially different weather patterns?",
-          "qTitle_cn": "你会考虑居住在天气模式完全不同的地区吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How good are you at reading maps?",
+          "qRewrite": "To what extent have you developed your cartographic interpretation skills?",
+          "qTitle_cn": "您的地图阅读能力如何？",
+          "qId": "Basic_25Q2_q34"
         }
       ]
     },
     {
-      "topicName": "Morning Routines",
-      "topicName_cn": "晨间惯例",
+      "topicName_real": "Weather",
+      "topicName_rewrite": "Meteorological Preferences",
+      "topicName_cn": "天气偏好",
       "topicId": "Basic_25Q2_t8",
       "questions": [
         {
-          "qTitle": "Do you enjoy early morning awakenings?",
-          "qTitle_cn": "你喜欢早起吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How often do you check the weather forecast?",
+          "qRewrite": "What is your frequency of consulting meteorological predictions?",
+          "qTitle_cn": "您多久查看一次天气预报？",
+          "qId": "Basic_25Q2_q35"
         },
         {
-          "qTitle": "Is consuming breakfast at home part of your daily morning ritual?",
-          "qTitle_cn": "在家吃早餐是你每日晨间惯例的一部分吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you generally prefer hot weather or cold weather?",
+          "qRewrite": "Which climatic conditions align more closely with your personal comfort?",
+          "qTitle_cn": "您个人更喜欢炎热还是寒冷的天气？",
+          "qId": "Basic_25Q2_q36"
         },
         {
-          "qTitle": "Does your morning schedule remain consistent throughout the week?",
-          "qTitle_cn": "你的晨间安排在一周中都保持一致吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Has the weather changed much in recent years in your country?",
+          "qRewrite": "What notable climate patterns have you observed in your region recently?",
+          "qTitle_cn": "近年来您所在地区的气候有什么明显变化？",
+          "qId": "Basic_25Q2_q37"
         },
         {
-          "qTitle": "How have your morning habits changed since your younger years?",
-          "qTitle_cn": "与年轻时相比，你的晨间习惯有什么变化？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Would you like to live in a place that has a very different climate from your country?",
+          "qRewrite": "How do you feel about potentially residing in an area with contrasting weather patterns?",
+          "qTitle_cn": "您对居住在气候与本国完全不同的地方有什么想法？",
+          "qId": "Basic_25Q2_q38"
         }
       ]
     },
     {
-      "topicName": "Domestic Responsibilities",
-      "topicName_cn": "家庭责任",
+      "topicName_real": "Mornings times",
+      "topicName_rewrite": "Morning Routines",
+      "topicName_cn": "晨间习惯",
       "topicId": "Basic_25Q2_t9",
       "questions": [
         {
-          "qTitle": "What household contributions did you make during your childhood?",
-          "qTitle_cn": "你小时候为家庭做过哪些贡献？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like getting up early in the morning?",
+          "qRewrite": "What are your sentiments towards early morning awakening?",
+          "qTitle_cn": "您对早起有什么看法？",
+          "qId": "Basic_25Q2_q39"
         },
         {
-          "qTitle": "Do you frequently prepare meals in your current living situation?",
-          "qTitle_cn": "在目前的生活状况下，你经常做饭吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you eat breakfast at home every morning?",
+          "qRewrite": "To what extent is home-prepared breakfast integrated into your morning routine?",
+          "qTitle_cn": "在家吃早餐是您晨间例行的一部分吗？",
+          "qId": "Basic_25Q2_q40"
         },
         {
-          "qTitle": "Do you maintain strict organizational standards in your living space?",
-          "qTitle_cn": "你在生活空间中保持严格的组织标准吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you have the same morning routine every day of the week?",
+          "qRewrite": "How consistent are your morning practices throughout the week?",
+          "qTitle_cn": "您的晨间作息在一周内保持一致吗？",
+          "qId": "Basic_25Q2_q41"
         },
         {
-          "qTitle": "Which domestic chore do you find particularly disagreeable?",
-          "qTitle_cn": "你觉得哪项家务特别令人不快？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Are your mornings very different now from when you were younger?",
+          "qRewrite": "In what ways have your morning habits evolved since your earlier years?",
+          "qTitle_cn": "与年轻时相比，您的晨间习惯有什么变化？",
+          "qId": "Basic_25Q2_q42"
         }
       ]
     },
     {
-      "topicName": "Transportation Habits",
-      "topicName_cn": "交通习惯",
+      "topicName_real": "Housework and cooking",
+      "topicName_rewrite": "Domestic Management",
+      "topicName_cn": "家务管理",
       "topicId": "Basic_25Q2_t10",
       "questions": [
         {
-          "qTitle": "How frequently do you utilize mass transit systems?",
-          "qTitle_cn": "你使用公共交通系统的频率如何？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did you do anything to help at home when you were younger?",
+          "qRewrite": "What domestic responsibilities did you assume during your younger years?",
+          "qTitle_cn": "在年轻时，您在家里承担过哪些家务责任？",
+          "qId": "Basic_25Q2_q43"
         },
         {
-          "qTitle": "Was public transportation part of your childhood experiences?",
-          "qTitle_cn": "公共交通是你童年经历的一部分吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you do a lot of cooking at home now?",
+          "qRewrite": "To what extent are you involved in household meal preparation currently?",
+          "qTitle_cn": "目前您在家中参与烹饪的程度如何？",
+          "qId": "Basic_25Q2_q44"
         },
         {
-          "qTitle": "Is public transportation widely adopted in your nation?",
-          "qTitle_cn": "公共交通在你的国家普及程度如何？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like everything to be very tidy at home?",
+          "qRewrite": "How significant is maintaining orderliness in your living environment?",
+          "qTitle_cn": "保持居家环境整洁对您来说有多重要？",
+          "qId": "Basic_25Q2_q45"
         },
         {
-          "qTitle": "Do you anticipate increasing your use of public transit systems?",
-          "qTitle_cn": "你预计会增加使用公共交通系统吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Is there a job at home that you really don't enjoy doing?",
+          "qRewrite": "Which household task do you find particularly challenging or unpleasant?",
+          "qTitle_cn": "有什么家务工作是您特别不喜欢做的？",
+          "qId": "Basic_25Q2_q46"
         }
       ]
     },
     {
-      "topicName": "Puzzle Activities",
-      "topicName_cn": "解谜活动",
+      "topicName_real": "Public transport",
+      "topicName_rewrite": "Public Transportation",
+      "topicName_cn": "公共交通",
       "topicId": "Basic_25Q2_t11",
       "questions": [
         {
-          "qTitle": "Were puzzle games among your childhood pastimes?",
-          "qTitle_cn": "解谜游戏是你童年的消遣活动之一吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you often travel on public transport?",
+          "qRewrite": "How frequently do you utilize public transportation systems?",
+          "qTitle_cn": "您多常使用公共交通系统？",
+          "qId": "Basic_25Q2_q47"
         },
         {
-          "qTitle": "Which category of puzzles do you find more accessible: linguistic or numerical?",
-          "qTitle_cn": "你觉得哪类谜题更容易：文字类还是数字类？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did you use public transport when you were a child?",
+          "qRewrite": "What role did public transportation play in your early years?",
+          "qTitle_cn": "在您童年时期，公共交通在您生活中扮演什么角色？",
+          "qId": "Basic_25Q2_q48"
         },
         {
-          "qTitle": "Would you consider solving puzzles during travel periods?",
-          "qTitle_cn": "你会考虑在旅行期间解谜题吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do many people use public transport in your country?",
+          "qRewrite": "How prevalent is public transportation usage in your society?",
+          "qTitle_cn": "在您的社会中，公共交通的使用普及程度如何？",
+          "qId": "Basic_25Q2_q49"
         },
         {
-          "qTitle": "Are puzzle activities beneficial leisure pursuits for senior citizens?",
-          "qTitle_cn": "解谜活动对老年人来说是有益的休闲活动吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Will you use public transport more in the future?",
+          "qRewrite": "Do you anticipate increasing your reliance on public transportation systems?",
+          "qTitle_cn": "您预计未来会更多地依赖公共交通系统吗？",
+          "qId": "Basic_25Q2_q50"
         }
       ]
     },
     {
-      "topicName": "Naming Conventions",
-      "topicName_cn": "命名习惯",
+      "topicName_real": "Puzzles",
+      "topicName_rewrite": "Problem-Solving Activities",
+      "topicName_cn": "解谜活动",
       "topicId": "Basic_25Q2_t12",
       "questions": [
         {
-          "qTitle": "Do you share your name with any family members?",
-          "qTitle_cn": "你和家人有重名的情况吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did you enjoy doing puzzles when you were a child?",
+          "qRewrite": "What was your relationship with puzzle-solving activities during your childhood?",
+          "qTitle_cn": "在童年时期，您与解谜活动的关系如何？",
+          "qId": "Basic_25Q2_q51"
         },
         {
-          "qTitle": "Is there particular significance behind your given name?",
-          "qTitle_cn": "你的名字有什么特别的含义吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Which do you find easier to do: word puzzles or number puzzles?",
+          "qRewrite": "Do you find greater facility with linguistic or numerical puzzle challenges?",
+          "qTitle_cn": "您觉得文字谜题还是数字谜题更容易？",
+          "qId": "Basic_25Q2_q52"
         },
         {
-          "qTitle": "What naming selection would you make for offspring?",
-          "qTitle_cn": "你会为孩子选择什么名字？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Would you ever do a puzzle when you're travelling?",
+          "qRewrite": "To what extent do you incorporate puzzle-solving into your travel activities?",
+          "qTitle_cn": "您会在旅行时进行解谜活动吗？",
+          "qId": "Basic_25Q2_q53"
         },
         {
-          "qTitle": "Do certain names dominate naming trends in your culture?",
-          "qTitle_cn": "在你们的文化中，某些名字是否主导了命名趋势？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think doing puzzles is a good way for older people to spend their free time?",
+          "qRewrite": "How beneficial do you consider puzzle activities for cognitive maintenance in elderly populations?",
+          "qTitle_cn": "您认为解谜活动对老年人的认知保健有多大帮助？",
+          "qId": "Basic_25Q2_q54"
         }
       ]
     },
     {
-      "topicName": "Vocal Performance",
-      "topicName_cn": "声乐表演",
+      "topicName_real": "Names",
+      "topicName_rewrite": "Nominal Identity",
+      "topicName_cn": "名字身份",
       "topicId": "Basic_25Q2_t13",
       "questions": [
         {
-          "qTitle": "Was vocal training part of your educational experience?",
-          "qTitle_cn": "声乐训练是你教育经历的一部分吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Does anyone in your family have the same name as you?",
+          "qRewrite": "Are there any instances of name sharing within your family circle?",
+          "qTitle_cn": "在您的家族中是否有人与您同名？",
+          "qId": "Basic_25Q2_q55"
         },
         {
-          "qTitle": "Would you currently participate in group singing activities?",
-          "qTitle_cn": "你现在会参加合唱活动吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Does your name have any meaning?",
+          "qRewrite": "What significance or etymology is associated with your given name?",
+          "qTitle_cn": "您的名字有什么特殊含义或来源？",
+          "qId": "Basic_25Q2_q56"
         },
         {
-          "qTitle": "Do you derive pleasure from hearing vocal performances?",
-          "qTitle_cn": "听声乐表演能给你带来愉悦吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What name would you choose to give a child?",
+          "qRewrite": "Which naming considerations would influence your choice for offspring?",
+          "qTitle_cn": "您会考虑给孩子取什么样的名字？",
+          "qId": "Basic_25Q2_q57"
         },
         {
-          "qTitle": "Can musical vocalization positively impact emotional states?",
-          "qTitle_cn": "音乐演唱能对情绪状态产生积极影响吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Are some names more popular than others in your country?",
+          "qRewrite": "What naming trends or patterns are prevalent in your cultural context?",
+          "qTitle_cn": "在您的文化背景下，有哪些流行的取名趋势或模式？",
+          "qId": "Basic_25Q2_q58"
         }
       ]
     },
     {
-      "topicName": "Digital Socialization",
-      "topicName_cn": "数字社交",
+      "topicName_real": "Singing",
+      "topicName_rewrite": "Vocal Expression",
+      "topicName_cn": "歌唱表达",
       "topicId": "Basic_25Q2_t14",
       "questions": [
         {
-          "qTitle": "What frequency do you engage with social networking platforms?",
-          "qTitle_cn": "你使用社交网络平台的频率如何？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did you learn to sing when you were at school?",
+          "qRewrite": "What exposure did you have to vocal training during your educational years?",
+          "qTitle_cn": "您在学校时期接受过什么样的声乐训练？",
+          "qId": "Basic_25Q2_q59"
         },
         {
-          "qTitle": "Was your social media usage more intensive previously?",
-          "qTitle_cn": "你以前使用社交媒体更频繁吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Would you ever sing with other people now?",
+          "qRewrite": "How do you feel about participating in group vocal activities currently?",
+          "qTitle_cn": "您现在对参与集体歌唱活动有什么看法？",
+          "qId": "Basic_25Q2_q60"
         },
         {
-          "qTitle": "Do you perceive your peers as overly dependent on social platforms?",
-          "qTitle_cn": "你觉得同龄人是否过度依赖社交平台？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like listening to other people sing?",
+          "qRewrite": "What is your response to live vocal performances by others?",
+          "qTitle_cn": "您对观看他人现场演唱有什么反应？",
+          "qId": "Basic_25Q2_q61"
         },
         {
-          "qTitle": "Are you considering a career in the social media industry?",
-          "qTitle_cn": "你考虑过从事社交媒体行业吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think singing can make people feel happy?",
+          "qRewrite": "How do you perceive the emotional impact of vocal expression on well-being?",
+          "qTitle_cn": "您如何看待歌唱对人们情绪健康的影响？",
+          "qId": "Basic_25Q2_q62"
         }
       ]
     },
     {
-      "topicName": "Between-Meal Eating",
-      "topicName_cn": "餐间饮食",
+      "topicName_real": "Social media",
+      "topicName_rewrite": "Digital Social Engagement",
+      "topicName_cn": "数字社交参与",
       "topicId": "Basic_25Q2_t15",
       "questions": [
         {
-          "qTitle": "What was your preferred childhood snack food?",
-          "qTitle_cn": "你小时候最喜欢的零食是什么？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How often do you use social media?",
+          "qRewrite": "What is your frequency of engagement with social networking platforms?",
+          "qTitle_cn": "您使用社交网络平台的频率如何？",
+          "qId": "Basic_25Q2_q63"
         },
         {
-          "qTitle": "During which periods do you typically consume snacks currently?",
-          "qTitle_cn": "你现在通常在什么时间段吃零食？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Did you use social media more in the past?",
+          "qRewrite": "How has your social media consumption pattern evolved over time?",
+          "qTitle_cn": "您的社交媒体使用模式是如何随时间演变的？",
+          "qId": "Basic_25Q2_q64"
         },
         {
-          "qTitle": "Do you prioritize nutritional value or flavor when selecting snacks?",
-          "qTitle_cn": "选择零食时，你更看重营养价值还是口味？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think your friends use social media too much?",
+          "qRewrite": "What are your observations regarding your peers' social media engagement levels?",
+          "qTitle_cn": "您如何看待朋友们的社交媒体使用程度？",
+          "qId": "Basic_25Q2_q65"
         },
         {
-          "qTitle": "Is intermeal snacking common in your culture?",
-          "qTitle_cn": "在你们的文化中，餐间吃零食常见吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Would you like to work in social media in the future?",
+          "qRewrite": "Do you envision a professional career involving social media platforms?",
+          "qTitle_cn": "您是否考虑未来从事社交媒体相关的职业？",
+          "qId": "Basic_25Q2_q66"
         }
       ]
     },
     {
-      "topicName": "Floral Appreciation",
-      "topicName_cn": "花卉欣赏",
+      "topicName_real": "Snacks",
+      "topicName_rewrite": "Dietary Habits",
+      "topicName_cn": "饮食习惯",
       "topicId": "Basic_25Q2_t16",
       "questions": [
         {
-          "qTitle": "Do you have a particular fondness for botanical blooms?",
-          "qTitle_cn": "你对植物花卉有特别的喜爱吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "When you were a child, did you have a favourite snack?",
+          "qRewrite": "What snack foods particularly appealed to you during your childhood?",
+          "qTitle_cn": "在童年时期，您特别喜欢什么零食？",
+          "qId": "Basic_25Q2_q67"
         },
         {
-          "qTitle": "Are you acquainted with passionate floral enthusiasts?",
-          "qTitle_cn": "你认识狂热的鲜花爱好者吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "When do you eat snacks now?",
+          "qRewrite": "At what intervals do you typically incorporate snacks into your daily routine?",
+          "qTitle_cn": "您现在通常在什么时候吃零食？",
+          "qId": "Basic_25Q2_q68"
         },
         {
-          "qTitle": "Is your local environment abundant with flowering plants?",
-          "qTitle_cn": "你当地环境中开花植物丰富吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Would you choose a snack that is healthy, or a snack that tastes good?",
+          "qRewrite": "How do you balance nutritional value against palatability in snack selection?",
+          "qTitle_cn": "在选择零食时，您更注重健康还是口味？",
+          "qId": "Basic_25Q2_q69"
         },
         {
-          "qTitle": "Do you frequently photograph floral specimens?",
-          "qTitle_cn": "你经常拍摄花卉标本吗？",
-          "type": 0,
-          "from": "rewrite"
-        },
-        {
-          "qTitle": "Is floral gifting a common social practice in your nation?",
-          "qTitle_cn": "在你们国家，赠送鲜花是常见的社交行为吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do people in your country often eat snacks between meals?",
+          "qRewrite": "To what extent is intermeal snacking prevalent in your cultural context?",
+          "qTitle_cn": "在您的文化背景下，人们在正餐之间吃零食的情况有多普遍？",
+          "qId": "Basic_25Q2_q70"
         }
       ]
     },
     {
-      "topicName": "Cognitive Recall",
-      "topicName_cn": "认知记忆",
+      "topicName_real": "Flowers",
+      "topicName_rewrite": "Floral Appreciation",
+      "topicName_cn": "花卉欣赏",
       "topicId": "Basic_25Q2_t17",
       "questions": [
         {
-          "qTitle": "Would you consider yourself skilled at information retention?",
-          "qTitle_cn": "你认为自己擅长信息记忆吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you love flowers?",
+          "qRewrite": "What is your emotional response to floral displays?",
+          "qTitle_cn": "您对花卉展示有什么情感反应？",
+          "qId": "Basic_25Q2_q71"
         },
         {
-          "qTitle": "Have you experienced significant memory lapses?",
-          "qTitle_cn": "你有过严重的记忆缺失经历吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you know anyone who loves flowers?",
+          "qRewrite": "Are you acquainted with individuals who have a particular appreciation for floriculture?",
+          "qTitle_cn": "您认识特别喜爱花卉的人吗？",
+          "qId": "Basic_25Q2_q72"
         },
         {
-          "qTitle": "What essential information requires daily recollection?",
-          "qTitle_cn": "哪些重要信息需要你每天回忆？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Are there a lot of flowers where you live?",
+          "qRewrite": "How would you characterize the floral diversity in your residential environment?",
+          "qTitle_cn": "您居住的环境中花卉种类丰富吗？",
+          "qId": "Basic_25Q2_q73"
         },
         {
-          "qTitle": "What techniques do you employ for crucial memory retention?",
-          "qTitle_cn": "你使用什么技巧来记住重要信息？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you take photos of flowers in your daily life?",
+          "qRewrite": "To what extent do you document floral specimens through photography?",
+          "qTitle_cn": "您在日常生活中会拍摄花卉照片吗？",
+          "qId": "Basic_25Q2_q74"
+        },
+        {
+          "qTitle": "Do people in your country often send flowers to others?",
+          "qRewrite": "How prevalent is the practice of floral gifting in your cultural context?",
+          "qTitle_cn": "在您的文化背景下，赠送鲜花的习俗有多普遍？",
+          "qId": "Basic_25Q2_q75"
         }
       ]
     },
     {
-      "topicName": "Mechanical Devices",
-      "topicName_cn": "机械设备",
+      "topicName_real": "Memory",
+      "topicName_rewrite": "Cognitive Retention",
+      "topicName_cn": "认知记忆",
       "topicId": "Basic_25Q2_t18",
       "questions": [
         {
-          "qTitle": "Which household appliance do you value most?",
-          "qTitle_cn": "你最重视哪种家用电器？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Are you good at memorising things?",
+          "qRewrite": "How would you evaluate your capacity for information retention?",
+          "qTitle_cn": "您如何评价自己的记忆力？",
+          "qId": "Basic_25Q2_q76"
         },
         {
-          "qTitle": "How essential are cleaning appliances in domestic settings?",
-          "qTitle_cn": "清洁电器在家庭环境中多重要？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Have you ever forgotten something important?",
+          "qRewrite": "Can you recall instances of significant memory lapses?",
+          "qTitle_cn": "您是否经历过遗忘重要事情的情况？",
+          "qId": "Basic_25Q2_q77"
         },
         {
-          "qTitle": "Do you consult operational manuals prior to device usage?",
-          "qTitle_cn": "使用设备前你会查阅操作手册吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you need to remember in your daily life?",
+          "qRewrite": "What information requires active retention in your daily routine?",
+          "qTitle_cn": "在日常生活中，您需要记住哪些信息？",
+          "qId": "Basic_25Q2_q78"
         },
         {
-          "qTitle": "Is reviewing instructional material crucial for equipment operation?",
-          "qTitle_cn": "查看说明书对设备操作至关重要吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How do you remember important things?",
+          "qRewrite": "What strategies do you employ for retaining crucial information?",
+          "qTitle_cn": "您用什么方法记住重要信息？",
+          "qId": "Basic_25Q2_q79"
         }
       ]
     },
     {
-      "topicName": "Emotional Tolerance",
-      "topicName_cn": "情绪耐性",
+      "topicName_real": "Machine",
+      "topicName_rewrite": "Technological Appliances",
+      "topicName_cn": "科技设备",
       "topicId": "Basic_25Q2_t19",
       "questions": [
         {
-          "qTitle": "Would you characterize yourself as tolerant of delays?",
-          "qTitle_cn": "你会形容自己是一个能容忍延误的人吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What is your favourite machine in your home?",
+          "qRewrite": "Which household appliance do you find most indispensable?",
+          "qTitle_cn": "在家中，您最离不开哪种电器？",
+          "qId": "Basic_25Q2_q80"
         },
         {
-          "qTitle": "Which circumstances typically trigger your impatience?",
-          "qTitle_cn": "哪些情况通常会引发你的不耐烦？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think washing machines and sweeping machines are important?",
+          "qRewrite": "How essential do you consider automated cleaning appliances in modern living?",
+          "qTitle_cn": "您认为洗衣机和扫地机在现代生活中有多重要？",
+          "qId": "Basic_25Q2_q81"
         },
         {
-          "qTitle": "What emotional response accompanies prolonged tasks?",
-          "qTitle_cn": "长时间任务会伴随什么情绪反应？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you read the instructions before using a machine?",
+          "qRewrite": "What is your approach to familiarizing yourself with new appliance operations?",
+          "qTitle_cn": "在使用新设备前，您会阅读使用说明吗？",
+          "qId": "Basic_25Q2_q82"
         },
         {
-          "qTitle": "Is patience an occupational requirement in your field?",
-          "qTitle_cn": "耐心是你所在领域的职业要求吗？",
-          "type": 0,
-          "from": "rewrite"
-        },
-        {
-          "qTitle": "Has your capacity for patience developed since childhood?",
-          "qTitle_cn": "从童年起，你的耐心能力有所发展吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think it is important to read the instructions?",
+          "qRewrite": "How significant do you consider manual consultation for optimal device utilization?",
+          "qTitle_cn": "您认为阅读使用说明对于设备使用有多重要？",
+          "qId": "Basic_25Q2_q83"
         }
       ]
     },
     {
-      "topicName": "Leisure Activities",
-      "topicName_cn": "休闲活动",
+      "topicName_real": "Patience",
+      "topicName_rewrite": "Emotional Resilience",
+      "topicName_cn": "情绪韧性",
       "topicId": "Basic_25Q2_t20",
       "questions": [
         {
-          "qTitle": "Do you regularly experience periods of leisure?",
-          "qTitle_cn": "你经常有休闲时间吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Are you a patient person?",
+          "qRewrite": "How would you characterize your capacity for maintaining composure in challenging situations?",
+          "qTitle_cn": "您如何评价自己在面对挑战时保持冷静的能力？",
+          "qId": "Basic_25Q2_q84"
         },
         {
-          "qTitle": "How do you typically occupy your discretionary time?",
-          "qTitle_cn": "你通常如何支配自由时间？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What is it that makes you feel impatient?",
+          "qRewrite": "Which circumstances tend to challenge your emotional equilibrium?",
+          "qTitle_cn": "什么情况会让您感到不耐烦？",
+          "qId": "Basic_25Q2_q85"
         },
         {
-          "qTitle": "Which weekend day provides greater recreational opportunities?",
-          "qTitle_cn": "周末哪一天提供更多的娱乐机会？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How do you feel when you have to do something for a long time?",
+          "qRewrite": "What is your emotional response to extended duration tasks?",
+          "qTitle_cn": "当需要长时间做某事时，您的情绪反应如何？",
+          "qId": "Basic_25Q2_q86"
         },
         {
-          "qTitle": "Do you aspire to increased leisure time availability?",
-          "qTitle_cn": "你希望有更多的休闲时间吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Does your job require you to be patient?",
+          "qRewrite": "To what extent does your professional role demand emotional restraint?",
+          "qTitle_cn": "您的工作在多大程度上需要保持耐心？",
+          "qId": "Basic_25Q2_q87"
+        },
+        {
+          "qTitle": "Are you more patient now than when you were a child?",
+          "qRewrite": "How has your capacity for patience evolved since your younger years?",
+          "qTitle_cn": "与童年相比，您的耐心有什么变化？",
+          "qId": "Basic_25Q2_q88"
         }
       ]
     },
     {
-      "topicName": "Gratitude Expressions",
-      "topicName_cn": "感恩表达",
+      "topicName_real": "Spare time",
+      "topicName_rewrite": "Leisure Activities",
+      "topicName_cn": "休闲活动",
       "topicId": "Basic_25Q2_t21",
       "questions": [
         {
-          "qTitle": "Have you previously expressed gratitude through written notes?",
-          "qTitle_cn": "你以前通过书面便条表达过感谢吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you have much spare time?",
+          "qRewrite": "How would you characterize the availability of leisure time in your schedule?",
+          "qTitle_cn": "您的日程安排中有多少空闲时间？",
+          "qId": "Basic_25Q2_q89"
         },
         {
-          "qTitle": "Is verbal gratitude frequently exchanged in your culture?",
-          "qTitle_cn": "在你们的文化中，口头感谢经常被交换吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you like to do in your spare time?",
+          "qRewrite": "Which activities do you prioritize during your leisure hours?",
+          "qTitle_cn": "在空闲时间，您最喜欢做什么活动？",
+          "qId": "Basic_25Q2_q90"
         },
         {
-          "qTitle": "During which situations do you typically express appreciation?",
-          "qTitle_cn": "你通常在哪些情况下表达感谢？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think it is important to have spare time?",
+          "qRewrite": "How do you view the significance of maintaining leisure time in one's life?",
+          "qTitle_cn": "您认为保持空闲时间的重要性如何？",
+          "qId": "Basic_25Q2_q91"
         },
         {
-          "qTitle": "What purpose does verbal gratitude serve in social interactions?",
-          "qTitle_cn": "口头感谢在社交互动中起什么作用？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you have more spare time than before?",
+          "qRewrite": "How has the allocation of your leisure time evolved over recent periods?",
+          "qTitle_cn": "与以前相比，您现在的空闲时间有什么变化？",
+          "qId": "Basic_25Q2_q92"
         }
       ]
     },
     {
-      "topicName": "Time Management",
-      "topicName_cn": "时间管理",
+      "topicName_real": "Saying thank you",
+      "topicName_rewrite": "Expressions of Gratitude",
+      "topicName_cn": "感恩表达",
       "topicId": "Basic_25Q2_t22",
       "questions": [
         {
-          "qTitle": "Does your current schedule exceed childhood busyness?",
-          "qTitle_cn": "你现在的日程比童年时更忙吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you often say thank you?",
+          "qRewrite": "How frequently do you express gratitude in your daily interactions?",
+          "qTitle_cn": "您在日常交往中经常表达感谢吗？",
+          "qId": "Basic_25Q2_q93"
         },
         {
-          "qTitle": "When did you last experience a particularly hectic period?",
-          "qTitle_cn": "你上次经历特别忙碌的时期是什么时候？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "When do you say thank you?",
+          "qRewrite": "In what situations do you typically express appreciation?",
+          "qTitle_cn": "您通常在什么情况下表达感谢？",
+          "qId": "Basic_25Q2_q94"
         },
         {
-          "qTitle": "What recent commitments have occupied your time?",
-          "qTitle_cn": "最近有哪些事务占用了你的时间？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think people should say thank you more?",
+          "qRewrite": "What are your views on the frequency of gratitude expression in society?",
+          "qTitle_cn": "您认为人们是否应该更多地表达感谢？",
+          "qId": "Basic_25Q2_q95"
         },
         {
-          "qTitle": "How do you allocate your recreational time?",
-          "qTitle_cn": "你如何分配你的娱乐时间？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you write thank you cards?",
+          "qRewrite": "How do you incorporate written expressions of gratitude into your communication?",
+          "qTitle_cn": "您会写感谢卡表达谢意吗？",
+          "qId": "Basic_25Q2_q96"
         }
       ]
     },
     {
-      "topicName": "Organizational Methods",
-      "topicName_cn": "组织方法",
+      "topicName_real": "Being busy",
+      "topicName_rewrite": "Time Management",
+      "topicName_cn": "时间管理",
       "topicId": "Basic_25Q2_t23",
       "questions": [
         {
-          "qTitle": "Do you prepare shopping inventories?",
-          "qTitle_cn": "你会准备购物清单吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Are you usually busy?",
+          "qRewrite": "How would you characterize your typical daily schedule in terms of activity level?",
+          "qTitle_cn": "您的日常时间安排通常有多忙碌？",
+          "qId": "Basic_25Q2_q97"
         },
         {
-          "qTitle": "Is list-making part of your professional workflow?",
-          "qTitle_cn": "列清单是你工作流程的一部分吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you do when you are busy?",
+          "qRewrite": "What activities typically occupy your time during busy periods?",
+          "qTitle_cn": "在忙碌时期，您主要做些什么？",
+          "qId": "Basic_25Q2_q98"
         },
         {
-          "qTitle": "Which medium do you favor for list creation: physical or digital?",
-          "qTitle_cn": "你更喜欢哪种列清单的方式：纸质还是数字？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like being busy?",
+          "qRewrite": "How do you feel about maintaining a high level of activity in your daily life?",
+          "qTitle_cn": "您喜欢保持忙碌的状态吗？",
+          "qId": "Basic_25Q2_q99"
         },
         {
-          "qTitle": "What reasons explain aversion to list-making?",
-          "qTitle_cn": "哪些原因可以解释对列清单的反感？",
-          "type": 0,
-          "from": "rewrite"
-        },
-        {
-          "qTitle": "How does planning contribute to productivity?",
-          "qTitle_cn": "计划如何提高生产力？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you do to relax when you are very busy?",
+          "qRewrite": "What strategies do you employ for stress relief during intense periods of activity?",
+          "qTitle_cn": "在非常忙碌时，您如何放松自己？",
+          "qId": "Basic_25Q2_q100"
         }
       ]
     },
     {
-      "topicName": "Photography Practices",
-      "topicName_cn": "摄影实践",
+      "topicName_real": "List",
+      "topicName_rewrite": "Organization Methods",
+      "topicName_cn": "组织方法",
       "topicId": "Basic_25Q2_t24",
       "questions": [
         {
-          "qTitle": "Do you enjoy photographic capture?",
-          "qTitle_cn": "你喜欢摄影吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you make lists?",
+          "qRewrite": "How do you incorporate list-making into your organizational strategy?",
+          "qTitle_cn": "您会制作清单来组织事务吗？",
+          "qId": "Basic_25Q2_q101"
         },
         {
-          "qTitle": "How frequently do you engage in photography?",
-          "qTitle_cn": "你从事摄影活动的频率如何？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What kind of lists do you make?",
+          "qRewrite": "What types of information do you typically organize through list-making?",
+          "qTitle_cn": "您通常制作哪些类型的清单？",
+          "qId": "Basic_25Q2_q102"
         },
         {
-          "qTitle": "Do you produce physical copies of your digital images?",
-          "qTitle_cn": "你会把数码照片冲印出来吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you make lists on your phone?",
+          "qRewrite": "How do you utilize digital tools for list management?",
+          "qTitle_cn": "您会使用手机制作清单吗？",
+          "qId": "Basic_25Q2_q103"
         },
         {
-          "qTitle": "Is photography a shared family interest?",
-          "qTitle_cn": "摄影是全家共同的兴趣吗？",
-          "type": 0,
-          "from": "rewrite"
-        },
-        {
-          "qTitle": "Are you considering professional photography?",
-          "qTitle_cn": "你考虑过从事专业摄影吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Why do some people like to make lists?",
+          "qRewrite": "What motivates individuals to engage in list-making practices?",
+          "qTitle_cn": "您认为人们为什么喜欢制作清单？",
+          "qId": "Basic_25Q2_q104"
         }
       ]
     },
     {
-      "topicName": "Culinary Activities",
-      "topicName_cn": "烹饪活动",
+      "topicName_real": "Photograph",
+      "topicName_rewrite": "Visual Documentation",
+      "topicName_cn": "视觉记录",
       "topicId": "Basic_25Q2_t25",
       "questions": [
         {
-          "qTitle": "What frequency do you prepare meals?",
-          "qTitle_cn": "你做饭的频率如何？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like taking photographs?",
+          "qRewrite": "What is your attitude towards photographic documentation?",
+          "qTitle_cn": "您喜欢拍摄照片吗？",
+          "qId": "Basic_25Q2_q105"
         },
         {
-          "qTitle": "Are you interested in culinary skill development?",
-          "qTitle_cn": "你对烹饪技能发展感兴趣吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like taking selfies?",
+          "qRewrite": "How do you view the practice of self-photography?",
+          "qTitle_cn": "您对自拍这种形式有什么看法？",
+          "qId": "Basic_25Q2_q106"
         },
         {
-          "qTitle": "What emotions accompany large-scale meal preparation?",
-          "qTitle_cn": "准备大规模餐食时伴随什么情绪？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you prefer to take photos of people or of scenery?",
+          "qRewrite": "What subjects do you prioritize in your photographic composition?",
+          "qTitle_cn": "在拍摄主题上，您更偏好人物还是风景？",
+          "qId": "Basic_25Q2_q107"
         },
         {
-          "qTitle": "How would prolonged restaurant work affect you physically?",
-          "qTitle_cn": "长时间在餐厅工作会对你的身体产生什么影响？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How do you keep your photos?",
+          "qRewrite": "What methods do you employ for photo preservation and organization?",
+          "qTitle_cn": "您如何保存和整理照片？",
+          "qId": "Basic_25Q2_q108"
         }
       ]
     },
     {
-      "topicName": "Positive Feedback",
-      "topicName_cn": "积极反馈",
+      "topicName_real": "Cooking",
+      "topicName_rewrite": "Culinary Activities",
+      "topicName_cn": "烹饪活动",
       "topicId": "Basic_25Q2_t26",
       "questions": [
         {
-          "qTitle": "Have you been complimented in the recent past?",
-          "qTitle_cn": "你最近受到过称赞吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you like cooking?",
+          "qRewrite": "What is your general attitude towards preparing meals?",
+          "qTitle_cn": "您喜欢烹饪吗？",
+          "qId": "Basic_25Q2_q109"
         },
         {
-          "qTitle": "What emotional response does receiving compliments elicit?",
-          "qTitle_cn": "收到称赞会引发什么情绪反应？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you cook often?",
+          "qRewrite": "How frequently do you engage in meal preparation?",
+          "qTitle_cn": "您经常下厨吗？",
+          "qId": "Basic_25Q2_q110"
         },
         {
-          "qTitle": "When did you last offer commendation to another?",
-          "qTitle_cn": "你上次称赞别人是什么时候？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How did you learn to cook?",
+          "qRewrite": "What was your journey in acquiring culinary skills?",
+          "qTitle_cn": "您是如何学习烹饪的？",
+          "qId": "Basic_25Q2_q111"
         },
         {
-          "qTitle": "Is parental praise beneficial for child development?",
-          "qTitle_cn": "父母的表扬对孩子的发展有益吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think cooking is important?",
+          "qRewrite": "How do you view the significance of culinary skills in daily life?",
+          "qTitle_cn": "您认为烹饪技能的重要性如何？",
+          "qId": "Basic_25Q2_q112"
         }
       ]
     },
     {
-      "topicName": "Mobile Device Usage",
-      "topicName_cn": "移动设备使用",
+      "topicName_real": "Praise",
+      "topicName_rewrite": "Recognition and Appreciation",
+      "topicName_cn": "表扬与赞赏",
       "topicId": "Basic_25Q2_t27",
       "questions": [
         {
-          "qTitle": "What primary functions does your smartphone serve?",
-          "qTitle_cn": "你的智能手机主要有哪些功能？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you often praise others?",
+          "qRewrite": "How frequently do you express appreciation for others' achievements?",
+          "qTitle_cn": "您经常表扬他人吗？",
+          "qId": "Basic_25Q2_q113"
         },
         {
-          "qTitle": "Have you experienced mobile device mishaps or losses?",
-          "qTitle_cn": "你有过移动设备事故或丢失的经历吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you feel when others praise you?",
+          "qRewrite": "How do you respond emotionally to receiving recognition?",
+          "qTitle_cn": "当收到他人的表扬时，您有什么感受？",
+          "qId": "Basic_25Q2_q114"
         },
         {
-          "qTitle": "Would complimentary smartphone acquisition please you?",
-          "qTitle_cn": "获赠智能手机会让你高兴吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Who praises you the most?",
+          "qRewrite": "From which individuals do you typically receive the most recognition?",
+          "qTitle_cn": "谁最经常表扬您？",
+          "qId": "Basic_25Q2_q115"
+        },
+        {
+          "qTitle": "Do you think praise is important?",
+          "qRewrite": "How do you view the significance of verbal recognition in personal development?",
+          "qTitle_cn": "您认为表扬的重要性如何？",
+          "qId": "Basic_25Q2_q116"
         }
       ]
     },
     {
-      "topicName": "Late Night Habits",
-      "topicName_cn": "熬夜习惯",
+      "topicName_real": "Phone",
+      "topicName_rewrite": "Mobile Device Usage",
+      "topicName_cn": "手机使用",
       "topicId": "Basic_25Q2_t28",
       "questions": [
         {
-          "qTitle": "Is nocturnal wakefulness common for you?",
-          "qTitle_cn": "夜间清醒对你来说常见吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "At what age did you get your first phone?",
+          "qRewrite": "When did you first acquire a mobile device?",
+          "qTitle_cn": "您在什么年龄获得第一部手机？",
+          "qId": "Basic_25Q2_q117"
         },
         {
-          "qTitle": "Were late bedtimes part of your childhood routine?",
-          "qTitle_cn": "晚睡是你童年作息的一部分吗？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "How long do you spend on your phone everyday?",
+          "qRewrite": "What is your daily duration of mobile device usage?",
+          "qTitle_cn": "您每天使用手机的时间有多长？",
+          "qId": "Basic_25Q2_q118"
         },
         {
-          "qTitle": "What are the consequences of sleep deprivation for you?",
-          "qTitle_cn": "睡眠不足对你有什么影响？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "What do you usually do on your phone?",
+          "qRewrite": "Which activities dominate your mobile device usage?",
+          "qTitle_cn": "您通常用手机做什么？",
+          "qId": "Basic_25Q2_q119"
         },
         {
-          "qTitle": "How do you typically spend extended evening hours?",
-          "qTitle_cn": "你通常如何度过延长的晚间时间？",
-          "type": 0,
-          "from": "rewrite"
+          "qTitle": "Do you think you spend too much time on your phone?",
+          "qRewrite": "How do you evaluate your mobile device usage patterns?",
+          "qTitle_cn": "您认为自己花在手机上的时间是否过多？",
+          "qId": "Basic_25Q2_q120"
+        }
+      ]
+    },
+    {
+      "topicName_real": "Staying up",
+      "topicName_rewrite": "Late Night Activities",
+      "topicName_cn": "熬夜活动",
+      "topicId": "Basic_25Q2_t29",
+      "questions": [
+        {
+          "qTitle": "Do you often stay up late?",
+          "qRewrite": "How frequently do you extend your activities into late night hours?",
+          "qTitle_cn": "您经常熬夜吗？",
+          "qId": "Basic_25Q2_q121"
+        },
+        {
+          "qTitle": "What do you do when you stay up late?",
+          "qRewrite": "What activities typically occupy your late night hours?",
+          "qTitle_cn": "熬夜时您通常做什么？",
+          "qId": "Basic_25Q2_q122"
+        },
+        {
+          "qTitle": "How do you feel when you stay up late?",
+          "qRewrite": "What physical and mental effects do you experience from late night activities?",
+          "qTitle_cn": "熬夜时您有什么感受？",
+          "qId": "Basic_25Q2_q123"
+        },
+        {
+          "qTitle": "Do you think staying up late is bad for health?",
+          "qRewrite": "How do you view the health implications of regular late night activities?",
+          "qTitle_cn": "您认为熬夜对健康有什么影响？",
+          "qId": "Basic_25Q2_q124"
+        }
+      ]
+    },
+    {
+      "topicName_real": "Spending time by yourself",
+      "topicName_rewrite": "Personal Solitude",
+      "topicName_cn": "独处时光",
+      "topicId": "Basic_25Q2_t30",
+      "questions": [
+        {
+          "qTitle": "Do you like spending time by yourself?",
+          "qRewrite": "How do you feel about periods of solitude?",
+          "qTitle_cn": "您喜欢独处的时光吗？",
+          "qId": "Basic_25Q2_q125"
+        },
+        {
+          "qTitle": "How do you usually spend time by yourself?",
+          "qRewrite": "What activities do you engage in during solitary moments?",
+          "qTitle_cn": "独处时您通常做什么？",
+          "qId": "Basic_25Q2_q126"
+        },
+        {
+          "qTitle": "Do you think it is important to spend time alone?",
+          "qRewrite": "How do you view the significance of solitary time in personal development?",
+          "qTitle_cn": "您认为独处时间的重要性如何？",
+          "qId": "Basic_25Q2_q127"
+        },
+        {
+          "qTitle": "Do you spend more time by yourself than you used to?",
+          "qRewrite": "How has your pattern of solitary time evolved over the years?",
+          "qTitle_cn": "与以前相比，您独处的时间是否增加了？",
+          "qId": "Basic_25Q2_q128"
+        }
+      ]
+    },
+    {
+      "topicName_real": "Text messages",
+      "topicName_rewrite": "Digital Communication",
+      "topicName_cn": "短信交流",
+      "topicId": "Basic_25Q2_t31",
+      "questions": [
+        {
+          "qTitle": "Do you often send text messages?",
+          "qRewrite": "How frequently do you engage in text-based communication?",
+          "qTitle_cn": "您经常发送短信吗？",
+          "qId": "Basic_25Q2_q129"
+        },
+        {
+          "qTitle": "When do you send text messages?",
+          "qRewrite": "In what situations do you typically resort to text messaging?",
+          "qTitle_cn": "您通常在什么情况下发送短信？",
+          "qId": "Basic_25Q2_q130"
+        },
+        {
+          "qTitle": "Do you prefer sending text messages or making phone calls?",
+          "qRewrite": "How do you prioritize between written and verbal communication methods?",
+          "qTitle_cn": "相比之下，您更喜欢发短信还是打电话？",
+          "qId": "Basic_25Q2_q131"
+        },
+        {
+          "qTitle": "Have you ever received a text message from a stranger?",
+          "qRewrite": "What has been your experience with unsolicited text communications?",
+          "qTitle_cn": "您是否收到过陌生人的短信？",
+          "qId": "Basic_25Q2_q132"
+        },
+        {
+          "qTitle": "Do you think people send too many text messages?",
+          "qRewrite": "What are your views on the current prevalence of text-based communication?",
+          "qTitle_cn": "您认为人们发送短信的频率是否过高？",
+          "qId": "Basic_25Q2_q133"
         }
       ]
     }
