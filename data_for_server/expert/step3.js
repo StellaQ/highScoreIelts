@@ -1,10 +1,10 @@
-const prompt_question_selector = `
+const prompt_topics_selector = `
 任务描述：
-你需要将给定的 mixed_questions（混合问题集）中的每个 topic（主题）智能分类到预定义的 categories（分类体系）中，确保分类精准且无遗漏。
+你需要将给定的 mixed_topics（混合问题集）中的每个 topic（主题）智能分类到预定义的 categories（分类体系）中，确保分类精准且无遗漏。
 
 输入数据：
 
-mixed_questions：包含多个 topic 的数组，每个 topic 包含：
+mixed_topics：包含多个 topic 的数组，每个 topic 包含：
 
 topicName（英文主题名）
 
@@ -74,7 +74,7 @@ json
 示例（伪代码逻辑）：
 
 python
-for topic in mixed_questions:
+for topic in mixed_topics:
     best_category = None
     max_score = 0
     
@@ -91,4 +91,4 @@ for topic in mixed_questions:
 请严格按照要求处理并输出 JSON 格式结果。
 `;
 
-module.exports = prompt_question_selector;
+module.exports = prompt_topics_selector;

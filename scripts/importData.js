@@ -10,6 +10,8 @@ const BasicCategories = require('../models/basicCategories');
 const BasicTopics = require('../models/basicTopics');
 const AdvancedCategories = require('../models/advancedCategories');
 const AdvancedTopics = require('../models/advancedTopics');
+const ExpertCategories = require('../models/expertCategories');
+const ExpertTopics = require('../models/expertTopics');
 
 // 数据文件路径
 const dataFiles = {
@@ -27,6 +29,14 @@ const dataFiles = {
     model: {
       topics: AdvancedTopics,
       categories: AdvancedCategories
+    }
+  },
+  3: {
+    topics: '../data_for_server/archive/expert/topics.json',
+    categories: '../data_for_server/archive/expert/categories.json',
+    model: {
+      topics: ExpertTopics,
+      categories: ExpertCategories
     }
   }
 };
@@ -107,6 +117,19 @@ async function importFile(file) {
           pointId: p.pointId,
           point_rewrite: p.point_rewrite,
           point_cn: p.point_cn
+        }))
+      }));
+    } else if (file.model.topics.modelName === 'ExpertTopics') {
+      // Expert 数据转换逻辑
+      formattedTopics = topicsData.mixed_topics.map(topic => ({
+        topicName: topic.topicName,
+        topicName_cn: topic.topicName_cn,
+        topicId: topic.topicId,
+        questions: topic.questions.map(q => ({
+          question_original: q.question_original,
+          question_rewrite: q.question_rewrite,
+          question_cn: q.question_cn,
+          questionId: q.questionId
         }))
       }));
     } else {

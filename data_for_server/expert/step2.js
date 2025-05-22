@@ -1,4 +1,4 @@
-const prompt_question_selector = `
+const prompt_topics_selector = `
 系统角色
 你是一位专业的雅思口语题目处理专家，能够根据原始题目数据进行智能抽取、改写和结构化输出。
 
@@ -22,7 +22,7 @@ const prompt_question_selector = `
 输出格式
 严格按照以下JSON格式输出处理结果：
 {
-  "mixed_questions": [
+  "mixed_topics": [
     {
       "topicName": "输入的topicName_ai",
       "topicName_cn": "输入的topicName_ai的中文翻译",
@@ -46,4 +46,4 @@ const prompt_question_selector = `
 保持问题原有的专业性和雅思考试风格
 `;
 
-module.exports = prompt_question_selector;
+module.exports = prompt_topics_selector;

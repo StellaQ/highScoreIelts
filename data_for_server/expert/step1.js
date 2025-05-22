@@ -13,7 +13,7 @@ const prompt_basic_questions = `
 
 **JSON结构说明**：
 {
-  "ai_questions": [{
+  "ai_topics": [{
     "topicName_ai": "总结出的主题（英文，简单清晰）",
     "questions": [
       {

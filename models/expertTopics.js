@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const expertQuestionsSchema = new mongoose.Schema({
+const expertTopicsSchema = new mongoose.Schema({
   topicId: {
     type: String,
     required: true,
@@ -15,23 +15,23 @@ const expertQuestionsSchema = new mongoose.Schema({
     required: true
   },
   questions: [{
-    qTitle: {
+    question_original: {
       type: String,
       required: true
     },
-    qTitle_cn: {
+    question_rewrite: {
       type: String,
       required: true
     },
-    type: {
-      type: Number,
+    question_cn: {
+      type: String,
       required: true
     },
-    from: {
+    questionId: {
       type: String,
       required: true
     }
   }]
 });
 
-module.exports = mongoose.model('ExpertQuestions', expertQuestionsSchema);
+module.exports = mongoose.model('ExpertTopics', expertTopicsSchema);
