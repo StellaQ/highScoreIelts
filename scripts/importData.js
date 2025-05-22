@@ -7,36 +7,16 @@ const fs = require('fs');
 
 // 导入所有模型
 const BasicCategories = require('../models/basicCategories');
-const BasicQuestions = require('../models/basicQuestions');
-const AdvancedCategories = require('../models/advancedCategories');
-const AdvancedQuestions = require('../models/advancedQuestions');
-const ExpertCategories = require('../models/expertCategories');
-const ExpertQuestions = require('../models/expertQuestions');
+const BasicTopics = require('../models/basicTopics');
 
 // 数据文件路径
 const dataFiles = {
   1: {
-    questions: '../data_for_server/archive/basic/questions.json',
+    topics: '../data_for_server/archive/basic/topics.json',
     categories: '../data_for_server/archive/basic/categories.json',
     model: {
-      questions: BasicQuestions,
+      topics: BasicTopics,
       categories: BasicCategories
-    }
-  },
-  2: {
-    questions: '../data_for_server/archive/advanced/questions.json',
-    categories: '../data_for_server/archive/advanced/categories.json',
-    model: {
-      questions: AdvancedQuestions,
-      categories: AdvancedCategories
-    }
-  },
-  3: {
-    questions: '../data_for_server/archive/expert/questions.json',
-    categories: '../data_for_server/archive/expert/categories.json',
-    model: {
-      questions: ExpertQuestions,
-      categories: ExpertCategories
     }
   }
 };
@@ -73,24 +53,58 @@ async function importData(fileNumber) {
 
 async function importFile(file) {
   try {
-    // 读取问题数据
-    const questionsData = JSON.parse(fs.readFileSync(path.join(__dirname, file.questions), 'utf8'));
+    // 读取主题数据
+    const topicsData = JSON.parse(fs.readFileSync(path.join(__dirname, file.topics), 'utf8'));
+    console.log('读取到的主题数据结构:', Object.keys(topicsData));
+    
     // 读取分类数据
     const categoriesData = JSON.parse(fs.readFileSync(path.join(__dirname, file.categories), 'utf8'));
 
     // 清空集合
-    await file.model.questions.deleteMany({});
+    await file.model.topics.deleteMany({});
     await file.model.categories.deleteMany({});
 
-    // 插入问题数据
-    const questionsResult = await file.model.questions.insertMany(questionsData.mixed_questions);
-    console.log(`导入 ${file.model.questions.modelName} 成功，共 ${questionsResult.length} 条记录`);
+    // 确保数据结构正确
+    if (!topicsData || !Array.isArray(topicsData.mixed_topics)) {
+      throw new Error('主题数据格式不正确，期望包含 mixed_topics 数组');
+    }
+
+    // 转换数据结构以匹配模型定义
+    const formattedTopics = topicsData.mixed_topics.map(topic => ({
+      topicName_real: topic.topicName_real,
+      topicName_rewrite: topic.topicName_rewrite,
+      topicName_cn: topic.topicName_cn,
+      topicId: topic.topicId,
+      questions: topic.questions.map(q => ({
+        qTitle: q.qTitle,
+        qRewrite: q.qRewrite,
+        qTitle_cn: q.qTitle_cn,
+        qId: q.qId
+      }))
+    }));
+
+    // 插入主题数据
+    const topicsResult = await file.model.topics.insertMany(formattedTopics);
+    console.log(`导入 ${file.model.topics.modelName} 成功，共 ${topicsResult.length} 条记录`);
 
     // 插入分类数据
     const categoriesResult = await file.model.categories.insertMany(categoriesData.mixed_categories);
     console.log(`导入 ${file.model.categories.modelName} 成功，共 ${categoriesResult.length} 条记录`);
   } catch (error) {
-    console.error(`导入 ${file.model.questions.modelName} 或 ${file.model.categories.modelName} 失败:`, error);
+    console.error(`导入 ${file.model.topics.modelName} 或 ${file.model.categories.modelName} 失败:`, error);
+    // 打印详细错误信息
+    if (error.errors) {
+      Object.keys(error.errors).forEach(key => {
+        console.error(`字段 ${key} 错误:`, error.errors[key].message);
+      });
+    }
+    // 如果是文件读取或解析错误，打印更多信息
+    if (error instanceof SyntaxError) {
+      console.error('JSON解析错误，请检查文件格式是否正确');
+    }
+    if (error.code === 'ENOENT') {
+      console.error('文件不存在，请检查文件路径:', path.join(__dirname, file.topics));
+    }
   }
 }
 
@@ -107,5 +121,3 @@ importData(fileNumber);
 // npm run import:prod   # 生产环境
 // 2. 导入指定文件
 // npm run import:dev 1  # 开发环境导入 basic 数据
-// npm run import:dev 2  # 开发环境导入 advanced 数据
-// npm run import:dev 3  # 开发环境导入 expert 数据

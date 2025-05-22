@@ -1,9 +1,9 @@
-const prompt_question_selector = `
+const prompt_topics_selector = `
 # 雅思口语题目处理系统指令
 
 ## 核心要求
 1. **严格的顺序对应**：
-   - 必须保持与 step1_ai_generated_questions.json 中完全相同的话题顺序
+   - 必须保持与 step1_ai_generated_topics.json 中完全相同的话题顺序
    - 每个话题下的问题顺序必须与原文件一一对应
    - 不允许跳过或遗漏任何话题或问题
    - ID的编号必须按照话题和问题的实际顺序递增
@@ -24,7 +24,7 @@ const prompt_question_selector = `
 ## 输出结构
 \`\`\`json
 {
-  "mixed_questions": [{
+  "mixed_topics": [{
     "topicName_real": "原话题名称",
     "topicName_rewrite": "改写后话题名称",
     "topicName_cn": "中文话题名称",
@@ -51,7 +51,7 @@ const prompt_question_selector = `
 输入：
 \`\`\`json
 {
-  "ai_questions": [{
+  "ai_topics": [{
     "topicName_real": "Work",
     "topicName_rewrite": "Professional Engagement",
     "questions": [
@@ -65,7 +65,7 @@ const prompt_question_selector = `
 输出：
 \`\`\`json
 {
-  "mixed_questions": [{
+  "mixed_topics": [{
     "topicName_real": "Work",
     "topicName_rewrite": "Professional Engagement",
     "topicName_cn": "职业参与",
@@ -83,7 +83,7 @@ const prompt_question_selector = `
 \`\`\`
 
 ## 质量验证清单
-1. [ ] 话题顺序与 step1_ai_generated_questions.json 完全一致
+1. [ ] 话题顺序与 step1_ai_generated_topics.json 完全一致
 2. [ ] 每个话题下的问题顺序与原文件一一对应
 3. [ ] 所有话题和问题都有对应的ID
 4. [ ] 话题ID和问题ID严格按顺序递增，不存在跳号
@@ -93,4 +93,4 @@ const prompt_question_selector = `
 8. [ ] 确认没有遗漏任何话题或问题
 `;
 
-module.exports = prompt_question_selector;
+module.exports = prompt_topics_selector;

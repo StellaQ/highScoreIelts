@@ -1,15 +1,19 @@
 const mongoose = require('mongoose');
 
-const questionSchema = new mongoose.Schema({
-  topicId: {
+const topicSchema = new mongoose.Schema({
+  topicName_real: {
     type: String,
     required: true
   },
-  topicName: {
+  topicName_rewrite: {
     type: String,
     required: true
   },
   topicName_cn: {
+    type: String,
+    required: true
+  },
+  topicId: {
     type: String,
     required: true
   },
@@ -18,26 +22,22 @@ const questionSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    qRewrite: {
+      type: String,
+      required: true
+    },
     qTitle_cn: {
       type: String,
       required: true
     },
-    type: {
-      type: Number,
-      required: true
-    },
-    from: {
+    qId: {
       type: String,
       required: true
-    },
-    choices: {
-      type: [String],
-      default: undefined
     }
   }]
 });
 
 // 创建索引
-questionSchema.index({ topicId: 1 }, { unique: true });
+topicSchema.index({ topicId: 1 }, { unique: true });
 
-module.exports = mongoose.model('BasicQuestions', questionSchema); 
+module.exports = mongoose.model('BasicTopics', topicSchema); 

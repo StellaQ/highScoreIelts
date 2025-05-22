@@ -1,4 +1,4 @@
-const prompt_basic_questions = `
+const prompt_basic_topics = `
 # 雅思口语AI题目生成系统指令
 
 ## 核心规范
@@ -10,7 +10,7 @@ const prompt_basic_questions = `
 2. **输出结构**：
    \`\`\`json
    {
-     "ai_questions": [{
+     "ai_topics": [{
        "topicName_real": "原话题名称",
        "topicName_rewrite": "改写后话题名称",
        "questions": [
@@ -93,7 +93,7 @@ const prompt_basic_questions = `
 输入：
 \`\`\`json
 {
-  "real_questions": [{
+  "real_topics": [{
     "topicName": "Music",
     "questions": [
       "Do you play any instruments?",
@@ -106,7 +106,7 @@ const prompt_basic_questions = `
 输出：
 \`\`\`json
 {
-  "ai_questions": [{
+  "ai_topics": [{
     "topicName_real": "Music",
     "topicName_rewrite": "Musical Engagement",
     "questions": [
@@ -120,4 +120,4 @@ const prompt_basic_questions = `
 \`\`\`
 `;
 
-module.exports = prompt_basic_questions;
+module.exports = prompt_basic_topics;

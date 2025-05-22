@@ -3,7 +3,7 @@ const prompt_question_selector = `
 将提供的IELTS口语话题(topics)根据语义相关性智能分配到预定义的分类(categories)中。
 
 # 输入数据
-1. mixed_questions数组：包含多个话题(topic)及其详细信息
+1. mixed_topics数组：包含多个话题(topic)及其详细信息
    - topicName_real: 原始话题名
    - topicName_rewrite: 改写后的话题名
    - topicName_cn: 话题中文名
