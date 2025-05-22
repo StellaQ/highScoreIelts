@@ -16,8 +16,8 @@
   <view class="question-section">
     <block wx:if="{{state === 0}}">
       <view wx:for="{{questions}}" wx:key="index" class="question-card">
-        <view class="question-title">{{item.qTitle}}</view>
-        <view class="question-title-cn">{{item.qTitle_cn}}</view>
+        <view class="question-title">{{item.point_rewrite}}</view>
+        <view class="question-title-cn">{{item.point_cn}}</view>
         <textarea class="answer-input" 
           placeholder=""
           value="{{ item.answerUser }}"
@@ -29,7 +29,7 @@
     <block wx:if="{{state === 1}}">
       <view class="question-points">
         <view class="question-point" wx:for="{{questions}}" wx:key="index">
-          * {{item.qTitle}}
+          * {{item.point_rewrite}}
         </view>
       </view>
       <view class="question-card {{isFlipped ? 'flipped' : ''}}">

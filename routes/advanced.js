@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const AdvancedCategories = require('../models/advancedCategories');
-const AdvancedQuestions = require('../models/advancedQuestions');
+const AdvancedTopics = require('../models/advancedTopics');
 const AdvancedRecord = require('../models/advancedRecord');
 const User = require('../models/UserModel');
 
@@ -172,7 +172,7 @@ router.get('/getAdvancedDetail', async (req, res) => {
   try {
     const { userId, topicId } = req.query;
 
-    const topic = await AdvancedQuestions.findOne({ topicId });
+    const topic = await AdvancedTopics.findOne({ topicId });
     if (!topic) {
       return res.status(404).json({
         message: '未找到对应的题目数据'

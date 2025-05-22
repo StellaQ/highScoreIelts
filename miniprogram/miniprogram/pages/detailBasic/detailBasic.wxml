@@ -16,7 +16,7 @@
   <view class="question-section">
     <block wx:if="{{state === 0}}">
       <view wx:for="{{questions}}" wx:key="index" class="question-card">
-        <view class="question-title">{{item.qTitle}}</view>
+        <view class="question-title">{{item.qRewrite}}</view>
         <view class="question-title-cn">{{item.qTitle_cn}}</view>
         <view 
         style="margin: 10px 0;"
@@ -45,7 +45,7 @@
         <view
           style="width: 100%; margin-bottom: 10px; display: flex; flex-direction: flex-end;">
           <button class="submit-btn"
-            data-qTitle="{{item.qTitle}}"
+            data-qTitle="{{item.qRewrite}}"
             data-index="{{index}}"
             data-choice="{{item.choice}}"
             bindtap="onSubmitAnswer">AI定制答案</button>
@@ -61,7 +61,7 @@
       <view  wx:for="{{questions}}" wx:key="index" class="card-all">
         <view class="card {{item.isFlipped ? 'flipped' : ''}}">
           <view class="card-front">
-            <view class="question-title">{{item.qTitle}}</view>
+            <view class="question-title">{{item.qRewrite}}</view>
             <view class="question-tip">smile & fluent & no repetition</view>
           </view>
           <view class="card-back">

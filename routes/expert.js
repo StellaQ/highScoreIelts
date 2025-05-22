@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const ExpertCategories = require('../models/expertCategories');
-const ExpertQuestions = require('../models/expertQuestions');
+const ExpertTopics = require('../models/expertTopics');
 const ExpertRecord = require('../models/expertRecord');
 const User = require('../models/UserModel');
 
@@ -171,7 +171,7 @@ router.get('/getExpertDetail', async (req, res) => {
   try {
     const { userId, topicId } = req.query;
 
-    const topic = await ExpertQuestions.findOne({ topicId });
+    const topic = await ExpertTopics.findOne({ topicId });
     if (!topic) {
       return res.status(404).json({
         message: '未找到对应的题目数据'

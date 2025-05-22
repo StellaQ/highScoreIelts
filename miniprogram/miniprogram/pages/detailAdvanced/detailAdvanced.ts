@@ -84,7 +84,7 @@ Page({
   async onSubmitAnswer() {
     const question = this.data.topicName;
     const points = this.data.questions.map(q => ({
-      point: q.qTitle,
+      point: q.point_rewrite,
       answer: q.answerUser || ''
     }));
     // console.log(question);

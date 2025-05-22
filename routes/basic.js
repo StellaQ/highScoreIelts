@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const BasicCategories = require('../models/basicCategories');
-const BasicQuestions = require('../models/basicQuestions');
+const BasicTopics = require('../models/basicTopics');
 const BasicRecord = require('../models/basicRecord');
 const User = require('../models/UserModel');  // 添加 User 模型引入
 
@@ -193,7 +193,7 @@ router.get('/getBasicDetail', async (req, res) => {
     // console.log(userId, topicId);
 
     // 从数据库查询题目
-    const topic = await BasicQuestions.findOne({ topicId });
+    const topic = await BasicTopics.findOne({ topicId });
     // console.log('topic', topic);
     if (!topic) {
       return res.status(404).json({
