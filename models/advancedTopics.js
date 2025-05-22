@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 
-const advancedQuestionsSchema = new mongoose.Schema({
+const advancedTopicsSchema = new mongoose.Schema({
   topicId: {
     type: String,
     required: true,
     unique: true
   },
-  topicName: {
+  topicName_real: {
+    type: String,
+    required: true
+  },
+  topicName_rewrite: {
     type: String,
     required: true
   },
@@ -15,23 +19,23 @@ const advancedQuestionsSchema = new mongoose.Schema({
     required: true
   },
   points: [{
-    qTitle: {
+    point_real: {
       type: String,
       required: true
     },
-    qTitle_cn: {
+    pointId: {
       type: String,
       required: true
     },
-    type: {
-      type: Number,
+    point_rewrite: {
+      type: String,
       required: true
     },
-    from: {
+    point_cn: {
       type: String,
       required: true
     }
   }]
 });
 
-module.exports = mongoose.model('AdvancedQuestions', advancedQuestionsSchema);
+module.exports = mongoose.model('AdvancedTopics', advancedTopicsSchema);

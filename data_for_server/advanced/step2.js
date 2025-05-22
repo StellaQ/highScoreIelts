@@ -1,4 +1,4 @@
-const prompt_question_selector = `
+const prompt_topics_selector = `
 # 雅思口语题库智能抽取系统
 
 ## 系统定位
@@ -14,7 +14,7 @@ const prompt_question_selector = `
 ## 数据输出规范
 \`\`\`json
 {
-  "mixed_questions": [
+  "mixed_topics": [
     {
       "topicName_real": "原始英文话题",
       "topicId": "Advanced_2025Q2_t"+数字,
@@ -122,4 +122,4 @@ const prompt_question_selector = `
 4. 确保所有必填字段都存在
 `;
 
-module.exports = prompt_question_selector;
+module.exports = prompt_topics_selector;

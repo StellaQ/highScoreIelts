@@ -8,6 +8,8 @@ const fs = require('fs');
 // 导入所有模型
 const BasicCategories = require('../models/basicCategories');
 const BasicTopics = require('../models/basicTopics');
+const AdvancedCategories = require('../models/advancedCategories');
+const AdvancedTopics = require('../models/advancedTopics');
 
 // 数据文件路径
 const dataFiles = {
@@ -17,6 +19,14 @@ const dataFiles = {
     model: {
       topics: BasicTopics,
       categories: BasicCategories
+    }
+  },
+  2: {
+    topics: '../data_for_server/archive/advanced/topics.json',
+    categories: '../data_for_server/archive/advanced/categories.json',
+    model: {
+      topics: AdvancedTopics,
+      categories: AdvancedCategories
     }
   }
 };
@@ -69,19 +79,39 @@ async function importFile(file) {
       throw new Error('主题数据格式不正确，期望包含 mixed_topics 数组');
     }
 
-    // 转换数据结构以匹配模型定义
-    const formattedTopics = topicsData.mixed_topics.map(topic => ({
-      topicName_real: topic.topicName_real,
-      topicName_rewrite: topic.topicName_rewrite,
-      topicName_cn: topic.topicName_cn,
-      topicId: topic.topicId,
-      questions: topic.questions.map(q => ({
-        qTitle: q.qTitle,
-        qRewrite: q.qRewrite,
-        qTitle_cn: q.qTitle_cn,
-        qId: q.qId
-      }))
-    }));
+    // 根据模型名称判断数据类型并进行相应的转换
+    let formattedTopics;
+    if (file.model.topics.modelName === 'BasicTopics') {
+      // Basic 数据转换逻辑
+      formattedTopics = topicsData.mixed_topics.map(topic => ({
+        topicName_real: topic.topicName_real,
+        topicName_rewrite: topic.topicName_rewrite,
+        topicName_cn: topic.topicName_cn,
+        topicId: topic.topicId,
+        questions: topic.questions.map(q => ({
+          qTitle: q.qTitle,
+          qRewrite: q.qRewrite,
+          qTitle_cn: q.qTitle_cn,
+          qId: q.qId
+        }))
+      }));
+    } else if (file.model.topics.modelName === 'AdvancedTopics') {
+      // Advanced 数据转换逻辑
+      formattedTopics = topicsData.mixed_topics.map(topic => ({
+        topicName_real: topic.topicName_real,
+        topicName_rewrite: topic.topicName_rewrite,
+        topicName_cn: topic.topicName_cn,
+        topicId: topic.topicId,
+        points: topic.points.map(p => ({
+          point_real: p.point_real,
+          pointId: p.pointId,
+          point_rewrite: p.point_rewrite,
+          point_cn: p.point_cn
+        }))
+      }));
+    } else {
+      throw new Error(`未知的数据类型: ${file.model.topics.modelName}`);
+    }
 
     // 插入主题数据
     const topicsResult = await file.model.topics.insertMany(formattedTopics);

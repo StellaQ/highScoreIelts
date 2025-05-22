@@ -1,4 +1,4 @@
-const prompt_basic_questions = `
+const prompt_basic_topics = `
 # IELTS口语Part 2考题改写系统
 
 ## 核心原则
@@ -18,7 +18,7 @@ const prompt_basic_questions = `
    - 符合考试风格
 
 ## 输入数据
-来自step0_real_questions.json的原始考题,格式如下：
+来自step0_real_topics.json的原始考题,格式如下：
 \`\`\`
 Describe a person you know who enjoys dressing well.
 You should say:
@@ -142,4 +142,4 @@ And explain why you think this person enjoys dressing well.
    - 遇到重复表达：灵活变换但不改变含义
 `;
 
-module.exports = prompt_basic_questions;
+module.exports = prompt_basic_topics;

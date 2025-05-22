@@ -1,10 +1,10 @@
-const prompt_question_selector = `
-请根据提供的mixed_questions数组和categories分类体系，
+const prompt_topics_selector = `
+请根据提供的mixed_topics数组和categories分类体系，
 将问题主题(topic)智能分配到最匹配的category中，
 并生成符合以下格式的mixed_categories输出：
 
 输入数据：
-mixed_questions: 包含多个主题(topic)及其对应问题列表的数组
+mixed_topics: 包含多个主题(topic)及其对应问题列表的数组
 
 categories: 预定义的分类体系，每个分类包含categoryId、中英文名称和描述
 
@@ -46,4 +46,4 @@ json
 - 不要创建新的category，只使用提供的categories
 `;
 
-module.exports = prompt_question_selector;
+module.exports = prompt_topics_selector;

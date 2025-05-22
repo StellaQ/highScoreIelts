@@ -1,0 +1,1604 @@
+{
+  "mixed_topics": [
+    {
+      "topicName_real": "a person you know who enjoys dressing well",
+      "topicId": "Advanced_2025Q2_t1",
+      "topicName_rewrite": "someone who takes pride in their appearance",
+      "topicName_cn": "描述一位注重衣着打扮的人",
+      "points": [
+        {
+          "point_real": "Who the person is",
+          "pointId": "Advanced_2025Q2_p1",
+          "point_rewrite": "Tell me about this individual",
+          "point_cn": "这个人是谁"
+        },
+        {
+          "point_real": "What job/studies the person does",
+          "pointId": "Advanced_2025Q2_p2",
+          "point_rewrite": "Their profession or area of study",
+          "point_cn": "这个人的职业或学习领域"
+        },
+        {
+          "point_real": "What sort of clothes the person wears",
+          "pointId": "Advanced_2025Q2_p3",
+          "point_rewrite": "The style of clothing they prefer",
+          "point_cn": "他们偏爱的服装风格"
+        },
+        {
+          "point_real": "And explain why you think this person enjoys dressing well",
+          "pointId": "Advanced_2025Q2_p4",
+          "point_rewrite": "Explain why you believe they value looking good",
+          "point_cn": "解释为什么你认为这个人注重外表"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you forgot an appointment",
+      "topicId": "Advanced_2025Q2_t2",
+      "topicName_rewrite": "an occasion when you missed a scheduled meeting",
+      "topicName_cn": "描述一次你忘记约会的经历",
+      "points": [
+        {
+          "point_real": "When and where the appointment was",
+          "pointId": "Advanced_2025Q2_p5",
+          "point_rewrite": "The time and location of the planned meeting",
+          "point_cn": "约会的时间和地点"
+        },
+        {
+          "point_real": "Why you forgot the appointment",
+          "pointId": "Advanced_2025Q2_p6",
+          "point_rewrite": "The reason you failed to remember it",
+          "point_cn": "你忘记约会的原因"
+        },
+        {
+          "point_real": "What happened after you forgot the appointment",
+          "pointId": "Advanced_2025Q2_p7",
+          "point_rewrite": "The consequences of missing it",
+          "point_cn": "忘记约会后的结果"
+        },
+        {
+          "point_real": "And explain how you felt about forgetting the appointment",
+          "pointId": "Advanced_2025Q2_p8",
+          "point_rewrite": "Describe your emotions about this oversight",
+          "point_cn": "描述你对这次疏忽的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you saw a lot of plastic waste in a natural environment",
+      "topicId": "Advanced_2025Q2_t3",
+      "topicName_rewrite": "an instance when you noticed significant plastic pollution outdoors",
+      "topicName_cn": "描述一次在自然环境中看到大量塑料垃圾的经历",
+      "points": [
+        {
+          "point_real": "When and where you saw this plastic waste",
+          "pointId": "Advanced_2025Q2_p9",
+          "point_rewrite": "The time and location of this observation",
+          "point_cn": "看到塑料垃圾的时间和地点"
+        },
+        {
+          "point_real": "How you think this plastic waste got there",
+          "pointId": "Advanced_2025Q2_p10",
+          "point_rewrite": "Your thoughts on how the pollution accumulated",
+          "point_cn": "你认为这些塑料垃圾是如何堆积的"
+        },
+        {
+          "point_real": "Why you noticed it",
+          "pointId": "Advanced_2025Q2_p11",
+          "point_rewrite": "What made it stand out to you",
+          "point_cn": "你为什么注意到这些垃圾"
+        },
+        {
+          "point_real": "And explain how you felt about seeing plastic waste in this natural environment",
+          "pointId": "Advanced_2025Q2_p12",
+          "point_rewrite": "Share your emotional response to this environmental issue",
+          "point_cn": "分享你对在自然环境中看到塑料垃圾的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a friend from childhood who you remember very well",
+      "topicId": "Advanced_2025Q2_t4",
+      "topicName_rewrite": "a childhood companion who left a lasting impression",
+      "topicName_cn": "描述一位你记忆深刻的童年朋友",
+      "points": [
+        {
+          "point_real": "Who the friend is",
+          "pointId": "Advanced_2025Q2_p13",
+          "point_rewrite": "Identify this person",
+          "point_cn": "这位朋友是谁"
+        },
+        {
+          "point_real": "How you met him/her",
+          "pointId": "Advanced_2025Q2_p14",
+          "point_rewrite": "Describe your first encounter",
+          "point_cn": "描述你们初次见面的情景"
+        },
+        {
+          "point_real": "What you used to do together",
+          "pointId": "Advanced_2025Q2_p15",
+          "point_rewrite": "Your shared activities",
+          "point_cn": "你们一起做过的事情"
+        },
+        {
+          "point_real": "And explain why you remember this childhood friend so well",
+          "pointId": "Advanced_2025Q2_p16",
+          "point_rewrite": "Explain why this friend remains memorable to you",
+          "point_cn": "解释为什么你对这位童年朋友记忆深刻"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an object that you think is very beautiful",
+      "topicId": "Advanced_2025Q2_t5",
+      "topicName_rewrite": "an item you consider exceptionally attractive",
+      "topicName_cn": "描述一件你认为非常美丽的物品",
+      "points": [
+        {
+          "point_real": "What the object is",
+          "pointId": "Advanced_2025Q2_p17",
+          "point_rewrite": "Describe the item",
+          "point_cn": "这件物品是什么"
+        },
+        {
+          "point_real": "Where you first saw the object",
+          "pointId": "Advanced_2025Q2_p18",
+          "point_rewrite": "Your initial encounter with it",
+          "point_cn": "你第一次见到这件物品的地方"
+        },
+        {
+          "point_real": "What it looks like",
+          "pointId": "Advanced_2025Q2_p19",
+          "point_rewrite": "Its physical appearance",
+          "point_cn": "这件物品的外观"
+        },
+        {
+          "point_real": "And explain how you feel about this beautiful object",
+          "pointId": "Advanced_2025Q2_p20",
+          "point_rewrite": "Share your emotional connection to this item",
+          "point_cn": "分享你对这件美丽物品的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "someone from another culture who you enjoy spending time with",
+      "topicId": "Advanced_2025Q2_t6",
+      "topicName_rewrite": "a person from a different cultural background you like being with",
+      "topicName_cn": "描述一位来自不同文化背景且你喜欢相处的人",
+      "points": [
+        {
+          "point_real": "Who this person is",
+          "pointId": "Advanced_2025Q2_p21",
+          "point_rewrite": "Tell me about this individual",
+          "point_cn": "这个人是谁"
+        },
+        {
+          "point_real": "What his/her cultural background is",
+          "pointId": "Advanced_2025Q2_p22",
+          "point_rewrite": "Their cultural heritage",
+          "point_cn": "他们的文化背景"
+        },
+        {
+          "point_real": "When and where you met this person",
+          "pointId": "Advanced_2025Q2_p23",
+          "point_rewrite": "The circumstances of your meeting",
+          "point_cn": "你们相识的时间和地点"
+        },
+        {
+          "point_real": "And explain why you enjoy spending time with this person from another culture",
+          "pointId": "Advanced_2025Q2_p24",
+          "point_rewrite": "Explain what makes your cross-cultural interactions enjoyable",
+          "point_cn": "解释你为什么喜欢与这位来自不同文化的人相处"
+        }
+      ]
+    },
+    {
+      "topicName_real": "the home of somebody who you know well",
+      "topicId": "Advanced_2025Q2_t7",
+      "topicName_rewrite": "a familiar person's residence that you're acquainted with",
+      "topicName_cn": "描述一个你熟悉的人的家",
+      "points": [
+        {
+          "point_real": "Whose home this is",
+          "pointId": "Advanced_2025Q2_p25",
+          "point_rewrite": "Identify the owner of this dwelling",
+          "point_cn": "这是谁的家"
+        },
+        {
+          "point_real": "How often you go there",
+          "pointId": "Advanced_2025Q2_p26",
+          "point_rewrite": "The frequency of your visits",
+          "point_cn": "你拜访的频率"
+        },
+        {
+          "point_real": "What this home looks like",
+          "pointId": "Advanced_2025Q2_p27",
+          "point_rewrite": "Describe the appearance of the residence",
+          "point_cn": "描述这个家的外观"
+        },
+        {
+          "point_real": "And explain how you feel about this person's home",
+          "pointId": "Advanced_2025Q2_p28",
+          "point_rewrite": "Share your personal impressions of their living space",
+          "point_cn": "分享你对这个家的个人印象"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a film/movie you enjoyed and would like to see again",
+      "topicId": "Advanced_2025Q2_t8",
+      "topicName_rewrite": "a cinematic production you appreciated and wish to rewatch",
+      "topicName_cn": "描述一部你喜欢并想再次观看的电影",
+      "points": [
+        {
+          "point_real": "What the film/movie was",
+          "pointId": "Advanced_2025Q2_p29",
+          "point_rewrite": "The title of this motion picture",
+          "point_cn": "这部电影的片名"
+        },
+        {
+          "point_real": "When and where you saw the film/movie",
+          "pointId": "Advanced_2025Q2_p30",
+          "point_rewrite": "The circumstances of your initial viewing",
+          "point_cn": "你初次观看这部电影的时间和地点"
+        },
+        {
+          "point_real": "What the film/movie was about",
+          "pointId": "Advanced_2025Q2_p31",
+          "point_rewrite": "The plot or subject matter of the production",
+          "point_cn": "这部电影的剧情或主题"
+        },
+        {
+          "point_real": "And explain why you would like to see this film/movie again",
+          "pointId": "Advanced_2025Q2_p32",
+          "point_rewrite": "Your reasons for desiring a repeat viewing",
+          "point_cn": "解释你为什么想再次观看这部电影"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a photo you took that you are proud of",
+      "topicId": "Advanced_2025Q2_t9",
+      "topicName_rewrite": "a photograph you captured that gives you satisfaction",
+      "topicName_cn": "描述一张你拍摄的引以为豪的照片",
+      "points": [
+        {
+          "point_real": "Who or what was in your photo",
+          "pointId": "Advanced_2025Q2_p33",
+          "point_rewrite": "The subject matter of your photograph",
+          "point_cn": "照片中的主体是什么/谁"
+        },
+        {
+          "point_real": "When you took the photo",
+          "pointId": "Advanced_2025Q2_p34",
+          "point_rewrite": "The time when you captured this image",
+          "point_cn": "你拍摄这张照片的时间"
+        },
+        {
+          "point_real": "Why you took it",
+          "pointId": "Advanced_2025Q2_p35",
+          "point_rewrite": "Your motivation for taking this picture",
+          "point_cn": "你拍摄这张照片的动机"
+        },
+        {
+          "point_real": "And explain why you are proud of this photo you took",
+          "pointId": "Advanced_2025Q2_p36",
+          "point_rewrite": "The reasons this photograph brings you pride",
+          "point_cn": "解释为什么你为这张照片感到自豪"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a novel or a story you have read that you thought was particularly interesting",
+      "topicId": "Advanced_2025Q2_t10",
+      "topicName_rewrite": "a literary work you found especially engaging",
+      "topicName_cn": "描述一本你觉得特别有趣的小说或故事",
+      "points": [
+        {
+          "point_real": "Why you read the novel story",
+          "pointId": "Advanced_2025Q2_p37",
+          "point_rewrite": "Your reasons for choosing this piece of literature",
+          "point_cn": "你阅读这本小说/故事的原因"
+        },
+        {
+          "point_real": "What the novel/story was about",
+          "pointId": "Advanced_2025Q2_p38",
+          "point_rewrite": "The narrative content of the work",
+          "point_cn": "这本小说/故事的内容"
+        },
+        {
+          "point_real": "How long it took you to read it",
+          "pointId": "Advanced_2025Q2_p39",
+          "point_rewrite": "The duration of your reading process",
+          "point_cn": "你阅读所花费的时间"
+        },
+        {
+          "point_real": "And explain why you thought this novel/story was so interesting",
+          "pointId": "Advanced_2025Q2_p40",
+          "point_rewrite": "What made this literary work particularly captivating for you",
+          "point_cn": "解释为什么你觉得这本小说/故事特别有趣"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you disagreed with somebody about something",
+      "topicId": "Advanced_2025Q2_t11",
+      "topicName_rewrite": "an occasion when you held differing views from another person",
+      "topicName_cn": "描述一次你与他人意见分歧的经历",
+      "points": [
+        {
+          "point_real": "Who you disagreed with",
+          "pointId": "Advanced_2025Q2_p41",
+          "point_rewrite": "The individual with whom you had this difference",
+          "point_cn": "与你意见分歧的人是谁"
+        },
+        {
+          "point_real": "What you disagreed about",
+          "pointId": "Advanced_2025Q2_p42",
+          "point_rewrite": "The subject matter of your disagreement",
+          "point_cn": "你们分歧的内容是什么"
+        },
+        {
+          "point_real": "What the result of this disagreement was",
+          "pointId": "Advanced_2025Q2_p43",
+          "point_rewrite": "The outcome of this difference in opinion",
+          "point_cn": "这次分歧的结果如何"
+        },
+        {
+          "point_real": "And explain how you felt about disagreeing with this person",
+          "pointId": "Advanced_2025Q2_p44",
+          "point_rewrite": "Your emotional response to this conflict of views",
+          "point_cn": "解释你对这次意见分歧的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you had to find some information",
+      "topicId": "Advanced_2025Q2_t12",
+      "topicName_rewrite": "an instance when you needed to locate specific details",
+      "topicName_cn": "描述一次你不得不查找信息的经历",
+      "points": [
+        {
+          "point_real": "What kind of information you had to find",
+          "pointId": "Advanced_2025Q2_p45",
+          "point_rewrite": "The nature of the information you sought",
+          "point_cn": "你需要查找的信息类型"
+        },
+        {
+          "point_real": "Where you looked for the information",
+          "pointId": "Advanced_2025Q2_p46",
+          "point_rewrite": "The sources you consulted in your search",
+          "point_cn": "你查找信息的渠道"
+        },
+        {
+          "point_real": "How much you enjoyed looking for the information",
+          "pointId": "Advanced_2025Q2_p47",
+          "point_rewrite": "Your level of satisfaction with the research process",
+          "point_cn": "你对查找信息过程的满意程度"
+        },
+        {
+          "point_real": "And explain why you needed the information",
+          "pointId": "Advanced_2025Q2_p48",
+          "point_rewrite": "The purpose behind your information search",
+          "point_cn": "解释你为什么需要这些信息"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an English lesson that you really enjoyed",
+      "topicId": "Advanced_2025Q2_t13",
+      "topicName_rewrite": "a particularly enjoyable English language class",
+      "topicName_cn": "描述一堂你非常喜欢的英语课",
+      "points": [
+        {
+          "point_real": "Where the lesson took place",
+          "pointId": "Advanced_2025Q2_p49",
+          "point_rewrite": "The location where this class occurred",
+          "point_cn": "这堂课的上课地点"
+        },
+        {
+          "point_real": "What the lesson was about",
+          "pointId": "Advanced_2025Q2_p50",
+          "point_rewrite": "The subject matter covered in this session",
+          "point_cn": "这堂课的教学内容"
+        },
+        {
+          "point_real": "What the teacher did",
+          "pointId": "Advanced_2025Q2_p51",
+          "point_rewrite": "The instructor's teaching methods and activities",
+          "point_cn": "老师的教学方法和活动"
+        },
+        {
+          "point_real": "And explain why you enjoyed this lesson so much",
+          "pointId": "Advanced_2025Q2_p52",
+          "point_rewrite": "Reasons this particular class was especially enjoyable for you",
+          "point_cn": "解释你为什么特别喜欢这堂课"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you succeeded in doing something that was difficult",
+      "topicId": "Advanced_2025Q2_t14",
+      "topicName_rewrite": "an occasion when you overcame a challenging task",
+      "topicName_cn": "描述一次你成功完成困难任务的经历",
+      "points": [
+        {
+          "point_real": "What you succeeded in doing",
+          "pointId": "Advanced_2025Q2_p53",
+          "point_rewrite": "The challenging accomplishment you achieved",
+          "point_cn": "你成功完成的挑战性任务"
+        },
+        {
+          "point_real": "Why it was difficult to do",
+          "pointId": "Advanced_2025Q2_p54",
+          "point_rewrite": "The factors that made this task challenging",
+          "point_cn": "这项任务困难的原因"
+        },
+        {
+          "point_real": "How much help you needed",
+          "pointId": "Advanced_2025Q2_p55",
+          "point_rewrite": "The level of assistance you required",
+          "point_cn": "你需要多少帮助"
+        },
+        {
+          "point_real": "And explain how you felt when you succeeded in doing this difficult thing",
+          "pointId": "Advanced_2025Q2_p56",
+          "point_rewrite": "Your emotional response to this achievement",
+          "point_cn": "解释你成功完成这项困难任务时的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when someone gave you some money as a gift",
+      "topicId": "Advanced_2025Q2_t15",
+      "topicName_rewrite": "an instance when you received monetary gifts",
+      "topicName_cn": "描述一次你收到钱作为礼物的经历",
+      "points": [
+        {
+          "point_real": "Who gave you the money",
+          "pointId": "Advanced_2025Q2_p57",
+          "point_rewrite": "The giver of this financial present",
+          "point_cn": "给你钱的人是谁"
+        },
+        {
+          "point_real": "Why they gave it to you",
+          "pointId": "Advanced_2025Q2_p58",
+          "point_rewrite": "The reason behind this monetary gift",
+          "point_cn": "他们给你钱的原因"
+        },
+        {
+          "point_real": "What you did with it",
+          "pointId": "Advanced_2025Q2_p59",
+          "point_rewrite": "How you utilized these funds",
+          "point_cn": "你用这些钱做了什么"
+        },
+        {
+          "point_real": "And explain how you felt about receiving this money",
+          "pointId": "Advanced_2025Q2_p60",
+          "point_rewrite": "Your feelings about getting this financial gift",
+          "point_cn": "解释你收到这笔钱时的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you had to share something with another person or other people",
+      "topicId": "Advanced_2025Q2_t16",
+      "topicName_rewrite": "an occasion requiring you to share resources with others",
+      "topicName_cn": "一次你需要与他人分享资源的经历",
+      "points": [
+        {
+          "point_real": "What you had to share",
+          "pointId": "Advanced_2025Q2_p61",
+          "point_rewrite": "The item or resource you shared",
+          "point_cn": "你分享了什么物品或资源"
+        },
+        {
+          "point_real": "Who you had to share with",
+          "pointId": "Advanced_2025Q2_p62",
+          "point_rewrite": "The recipient(s) of your sharing",
+          "point_cn": "你与谁分享了这些东西"
+        },
+        {
+          "point_real": "Why you had to share",
+          "pointId": "Advanced_2025Q2_p63",
+          "point_rewrite": "The circumstances necessitating sharing",
+          "point_cn": "你为什么需要分享这些资源"
+        },
+        {
+          "point_real": "And explain how you felt about sharing something with another person other people",
+          "pointId": "Advanced_2025Q2_p64",
+          "point_rewrite": "Your emotional response to this sharing experience",
+          "point_cn": "你在分享过程中的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a programme that you enjoyed very much",
+      "topicId": "Advanced_2025Q2_t17",
+      "topicName_rewrite": "a television or online show you particularly liked",
+      "topicName_cn": "一个你非常喜欢的电视或网络节目",
+      "points": [
+        {
+          "point_real": "What the programme was about",
+          "pointId": "Advanced_2025Q2_p65",
+          "point_rewrite": "The content and theme of this show",
+          "point_cn": "这个节目的内容和主题"
+        },
+        {
+          "point_real": "Where you watched this programme",
+          "pointId": "Advanced_2025Q2_p66",
+          "point_rewrite": "The platform or location of viewing",
+          "point_cn": "你是在哪个平台或地方观看的"
+        },
+        {
+          "point_real": "Who you watched it with",
+          "pointId": "Advanced_2025Q2_p67",
+          "point_rewrite": "Your viewing companions (if any)",
+          "point_cn": "你是和谁一起看的（如果有的话）"
+        },
+        {
+          "point_real": "And explain why you enjoyed this programme so much",
+          "pointId": "Advanced_2025Q2_p68",
+          "point_rewrite": "The aspects that made this show especially enjoyable",
+          "point_cn": "为什么你如此喜欢这个节目"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a part of your country that you would recommend to visitors",
+      "topicId": "Advanced_2025Q2_t18",
+      "topicName_rewrite": "a recommended destination within your nation for tourists",
+      "topicName_cn": "你会推荐游客参观的国内某个地方",
+      "points": [
+        {
+          "point_real": "Which part of your country you would recommend",
+          "pointId": "Advanced_2025Q2_p69",
+          "point_rewrite": "The specific region you suggest visiting",
+          "point_cn": "你推荐的具体地区"
+        },
+        {
+          "point_real": "How you know about this part of your country",
+          "pointId": "Advanced_2025Q2_p70",
+          "point_rewrite": "Your familiarity with this location",
+          "point_cn": "你是如何了解这个地方的"
+        },
+        {
+          "point_real": "Whether many visitors go there",
+          "pointId": "Advanced_2025Q2_p71",
+          "point_rewrite": "The popularity of this destination among tourists",
+          "point_cn": "这个地方是否受到游客欢迎"
+        },
+        {
+          "point_real": "And explain why you would recommend this part of your country to visitors",
+          "pointId": "Advanced_2025Q2_p72",
+          "point_rewrite": "The appealing qualities of this recommended place",
+          "point_cn": "你推荐这个地方的原因"
+        }
+      ]
+    },
+    {
+      "topicName_real": "something important that you learned, not in school or college",
+      "topicId": "Advanced_2025Q2_t19",
+      "topicName_rewrite": "a valuable skill or knowledge acquired outside formal education",
+      "topicName_cn": "你在学校或大学之外学到的一项重要技能或知识",
+      "points": [
+        {
+          "point_real": "What you learned",
+          "pointId": "Advanced_2025Q2_p73",
+          "point_rewrite": "The specific knowledge or skill acquired",
+          "point_cn": "你具体学到了什么知识或技能"
+        },
+        {
+          "point_real": "How you learned it",
+          "pointId": "Advanced_2025Q2_p74",
+          "point_rewrite": "The method of acquiring this knowledge",
+          "point_cn": "你是通过什么方式学到的"
+        },
+        {
+          "point_real": "How easy/difficult it was to learn",
+          "pointId": "Advanced_2025Q2_p75",
+          "point_rewrite": "The level of challenge in the learning process",
+          "point_cn": "学习过程有多难或多容易"
+        },
+        {
+          "point_real": "And explain why learning this was important to you",
+          "pointId": "Advanced_2025Q2_p76",
+          "point_rewrite": "The significance of this learning experience",
+          "point_cn": "为什么这次学习对你很重要"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person you know who enjoys growing plants",
+      "topicId": "Advanced_2025Q2_t20",
+      "topicName_rewrite": "someone who takes pleasure in cultivating plants",
+      "topicName_cn": "一个喜欢种植植物的人",
+      "points": [
+        {
+          "point_real": "How you know this person",
+          "pointId": "Advanced_2025Q2_p77",
+          "point_rewrite": "Your relationship with this individual",
+          "point_cn": "你是如何认识这个人的"
+        },
+        {
+          "point_real": "What plants this person enjoys growing",
+          "pointId": "Advanced_2025Q2_p78",
+          "point_rewrite": "The types of vegetation they cultivate",
+          "point_cn": "这个人喜欢种植哪些植物"
+        },
+        {
+          "point_real": "Where this person grows plants",
+          "pointId": "Advanced_2025Q2_p79",
+          "point_rewrite": "The location of their gardening activities",
+          "point_cn": "这个人通常在哪里种植物"
+        },
+        {
+          "point_real": "And explain why you think this person enjoys growing these plants",
+          "pointId": "Advanced_2025Q2_p80",
+          "point_rewrite": "Reasons for their passion in horticulture",
+          "point_cn": "你认为这个人为什么喜欢种植植物"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a popular place for playing sport",
+      "topicId": "Advanced_2025Q2_t21",
+      "topicName_rewrite": "a well-known sports facility or venue",
+      "topicName_cn": "一个著名的体育设施或场馆",
+      "points": [
+        {
+          "point_real": "Where this place for playing sport is",
+          "pointId": "Advanced_2025Q2_p81",
+          "point_rewrite": "The location of this sports venue",
+          "point_cn": "这个体育场馆位于哪里"
+        },
+        {
+          "point_real": "How you know about this place",
+          "pointId": "Advanced_2025Q2_p82",
+          "point_rewrite": "How you became aware of this facility",
+          "point_cn": "你是如何得知这个场馆的"
+        },
+        {
+          "point_real": "Whether you have visited this place",
+          "pointId": "Advanced_2025Q2_p83",
+          "point_rewrite": "Your personal experience with the venue",
+          "point_cn": "你是否去过这个场馆"
+        },
+        {
+          "point_real": "And explain why you think this place for playing sport is popular",
+          "pointId": "Advanced_2025Q2_p84",
+          "point_rewrite": "Factors contributing to its popularity",
+          "point_cn": "解释你认为这个场馆受欢迎的原因"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person who inspired you to do something interesting",
+      "topicId": "Advanced_2025Q2_t22",
+      "topicName_rewrite": "an individual who motivated you to undertake an engaging activity",
+      "topicName_cn": "一个激励你去做有趣事情的人",
+      "points": [
+        {
+          "point_real": "Who the person is",
+          "pointId": "Advanced_2025Q2_p85",
+          "point_rewrite": "The identity of this inspirational figure",
+          "point_cn": "这个激励你的人是谁"
+        },
+        {
+          "point_real": "What interesting thing you did",
+          "pointId": "Advanced_2025Q2_p86",
+          "point_rewrite": "The noteworthy activity you pursued",
+          "point_cn": "你做了什么有趣的事情"
+        },
+        {
+          "point_real": "How this person inspired you to do this thing",
+          "pointId": "Advanced_2025Q2_p87",
+          "point_rewrite": "Their method of motivating you",
+          "point_cn": "这个人是如何激励你的"
+        },
+        {
+          "point_real": "And explain how you felt after this person inspired you to do something interesting",
+          "pointId": "Advanced_2025Q2_p88",
+          "point_rewrite": "Your emotional response to this inspiration",
+          "point_cn": "被激励之后你的感受是怎样的"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you made a decision to wait for something",
+      "topicId": "Advanced_2025Q2_t23",
+      "topicName_rewrite": "an occasion when you chose to practice patience",
+      "topicName_cn": "你决定等待某件事的一个时刻",
+      "points": [
+        {
+          "point_real": "What you decided to wait for",
+          "pointId": "Advanced_2025Q2_p89",
+          "point_rewrite": "The object or event you awaited",
+          "point_cn": "你决定等待的是什么"
+        },
+        {
+          "point_real": "What you did while you were waiting",
+          "pointId": "Advanced_2025Q2_p90",
+          "point_rewrite": "Your activities during the waiting period",
+          "point_cn": "在等待期间你做了什么"
+        },
+        {
+          "point_real": "How you felt while you were waiting",
+          "pointId": "Advanced_2025Q2_p91",
+          "point_rewrite": "Your emotional state during this time",
+          "point_cn": "你在等待时的情绪状态"
+        },
+        {
+          "point_real": "And explain why deciding to wait was a good/bad decision",
+          "pointId": "Advanced_2025Q2_p92",
+          "point_rewrite": "The outcome and evaluation of your choice",
+          "point_cn": "解释为什么这是一个好的/坏的决定"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a place you went to do an outdoor activity",
+      "topicId": "Advanced_2025Q2_t24",
+      "topicName_rewrite": "a location you visited for open-air recreation",
+      "topicName_cn": "你去过进行户外活动的一个地方",
+      "points": [
+        {
+          "point_real": "Where you went and when",
+          "pointId": "Advanced_2025Q2_p93",
+          "point_rewrite": "The destination and timing of your visit",
+          "point_cn": "你去了哪里，什么时候去的"
+        },
+        {
+          "point_real": "What outdoor activity you did at this place",
+          "pointId": "Advanced_2025Q2_p94",
+          "point_rewrite": "The nature activity you engaged in",
+          "point_cn": "你在这个地方做了什么户外活动"
+        },
+        {
+          "point_real": "Why you did this outdoor activity",
+          "pointId": "Advanced_2025Q2_p95",
+          "point_rewrite": "Your reasons for choosing this pursuit",
+          "point_cn": "你为什么选择这项户外活动"
+        },
+        {
+          "point_real": "And explain how you felt about doing the outdoor activity at this place",
+          "pointId": "Advanced_2025Q2_p96",
+          "point_rewrite": "Your personal experience and satisfaction",
+          "point_cn": "你在这个地方进行户外活动的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a problem you had when you bought something",
+      "topicId": "Advanced_2025Q2_t25",
+      "topicName_rewrite": "an issue encountered during a purchase",
+      "topicName_cn": "你在购物时遇到的一个问题",
+      "points": [
+        {
+          "point_real": "What you bought",
+          "pointId": "Advanced_2025Q2_p97",
+          "point_rewrite": "The purchased item",
+          "point_cn": "你买了什么东西"
+        },
+        {
+          "point_real": "Where and when you bought it",
+          "pointId": "Advanced_2025Q2_p98",
+          "point_rewrite": "The purchase location and timing",
+          "point_cn": "你在哪里买的，是什么时候买的"
+        },
+        {
+          "point_real": "What problem you had with it",
+          "pointId": "Advanced_2025Q2_p99",
+          "point_rewrite": "The specific issue encountered",
+          "point_cn": "你遇到了什么具体问题"
+        },
+        {
+          "point_real": "And explain how you felt about having this problem",
+          "pointId": "Advanced_2025Q2_p100",
+          "point_rewrite": "Your emotional response to this situation",
+          "point_cn": "你对这个问题的感受是什么"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a skill that you think you can teach other people",
+      "topicId": "Advanced_2025Q2_t26",
+      "topicName_rewrite": "an ability you're capable of instructing others in",
+      "topicName_cn": "你能够教授他人的一项技能",
+      "points": [
+        {
+          "point_real": "What it is",
+          "pointId": "Advanced_2025Q2_p102",
+          "point_rewrite": "The specific skill you possess",
+          "point_cn": "你掌握的具体技能是什么"
+        },
+        {
+          "point_real": "When you learned it",
+          "pointId": "Advanced_2025Q2_p103",
+          "point_rewrite": "The time period of acquiring this skill",
+          "point_cn": "你是什么时候学会这项技能的"
+        },
+        {
+          "point_real": "How you can teach others",
+          "pointId": "Advanced_2025Q2_p104",
+          "point_rewrite": "Your methodology for instruction",
+          "point_cn": "你会如何教授他人这项技能"
+        },
+        {
+          "point_real": "And how you feel about this skill",
+          "pointId": "Advanced_2025Q2_p105",
+          "point_rewrite": "Your personal attitude toward this ability",
+          "point_cn": "你对这项技能的个人感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an intelligent person you know",
+      "topicId": "Advanced_2025Q2_t27",
+      "topicName_rewrite": "a particularly bright individual in your acquaintance",
+      "topicName_cn": "你认识的一位聪明人",
+      "points": [
+        {
+          "point_real": "Who this person is",
+          "pointId": "Advanced_2025Q2_p106",
+          "point_rewrite": "The identity of this intelligent individual",
+          "point_cn": "这位聪明人是谁"
+        },
+        {
+          "point_real": "How you knew this person",
+          "pointId": "Advanced_2025Q2_p107",
+          "point_rewrite": "The nature of your relationship",
+          "point_cn": "你是怎么认识这位人的"
+        },
+        {
+          "point_real": "What this person does",
+          "pointId": "Advanced_2025Q2_p108",
+          "point_rewrite": "Their occupation or main activities",
+          "point_cn": "他/她从事什么工作或活动"
+        },
+        {
+          "point_real": "And explain why you think this person is intelligent",
+          "pointId": "Advanced_2025Q2_p109",
+          "point_rewrite": "The evidence of their intellectual capacity",
+          "point_cn": "你为什么认为他/她很聪明"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person you disliked at first but ended up being friends with",
+      "topicId": "Advanced_2025Q2_t28",
+      "topicName_rewrite": "someone whose initial impression changed positively over time",
+      "topicName_cn": "一位你起初不喜欢但后来成为朋友的人",
+      "points": [
+        {
+          "point_real": "Who he/she is",
+          "pointId": "Advanced_2025Q2_p110",
+          "point_rewrite": "This individual's identity",
+          "point_cn": "这个人是谁"
+        },
+        {
+          "point_real": "How you knew him/her",
+          "pointId": "Advanced_2025Q2_p111",
+          "point_rewrite": "The circumstances of your meeting",
+          "point_cn": "你们是如何认识的"
+        },
+        {
+          "point_real": "Why you disliked him/her at first but changed your mind",
+          "pointId": "Advanced_2025Q2_p112",
+          "point_rewrite": "The transformation in your perception",
+          "point_cn": "你起初为什么不喜欢他/她，以及后来改变想法的原因"
+        },
+        {
+          "point_real": "And explain how you feel about the experience",
+          "pointId": "Advanced_2025Q2_p113",
+          "point_rewrite": "Your reflections on this relationship evolution",
+          "point_cn": "你对这段关系变化的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person who persuaded you to do something",
+      "topicId": "Advanced_2025Q2_t29",
+      "topicName_rewrite": "an individual who convinced you to take certain action",
+      "topicName_cn": "曾说服你做某事的人",
+      "points": [
+        {
+          "point_real": "When it happened",
+          "pointId": "Advanced_2025Q2_p114",
+          "point_rewrite": "The timeframe of this persuasion",
+          "point_cn": "这件事发生在什么时候"
+        },
+        {
+          "point_real": "What he/she persuaded you to do",
+          "pointId": "Advanced_2025Q2_p115",
+          "point_rewrite": "The action you were convinced to take",
+          "point_cn": "他/她说服你去做了什么"
+        },
+        {
+          "point_real": "Why he/she persuaded you to do it",
+          "pointId": "Advanced_2025Q2_p116",
+          "point_rewrite": "Their motivations for convincing you",
+          "point_cn": "他/她为什么要说服你"
+        },
+        {
+          "point_real": "And explain whether you did it at last",
+          "pointId": "Advanced_2025Q2_p117",
+          "point_rewrite": "The ultimate outcome of this persuasion",
+          "point_cn": "你最终有没有做这件事"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you made a plan to do an activity with a lot of people",
+      "topicId": "Advanced_2025Q2_t30",
+      "topicName_rewrite": "an occasion of organizing a group event",
+      "topicName_cn": "你组织很多人一起参与某项活动的经历",
+      "points": [
+        {
+          "point_real": "What it was",
+          "pointId": "Advanced_2025Q2_p118",
+          "point_rewrite": "The nature of this planned activity",
+          "point_cn": "这项计划活动的内容是什么"
+        },
+        {
+          "point_real": "When and where you made it",
+          "pointId": "Advanced_2025Q2_p119",
+          "point_rewrite": "The timing and location of planning",
+          "point_cn": "你在什么时间和地点制定的这个计划"
+        },
+        {
+          "point_real": "What the activity was",
+          "pointId": "Advanced_2025Q2_p120",
+          "point_rewrite": "Details about the group event",
+          "point_cn": "关于这个集体活动的具体信息"
+        },
+        {
+          "point_real": "And explain how you felt about the plan",
+          "pointId": "Advanced_2025Q2_p121",
+          "point_rewrite": "Your emotions regarding this organizational effort",
+          "point_cn": "你对这次组织活动的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a time when you saw children behave badly in public",
+      "topicId": "Advanced_2025Q2_t31",
+      "topicName_rewrite": "an instance of observing children's poor public conduct",
+      "topicName_cn": "你在公共场所看到小孩行为不当的一次经历",
+      "points": [
+        {
+          "point_real": "Where it was",
+          "pointId": "Advanced_2025Q2_p122",
+          "point_rewrite": "The location of this incident",
+          "point_cn": "事件发生的地点"
+        },
+        {
+          "point_real": "What the children were doing",
+          "pointId": "Advanced_2025Q2_p123",
+          "point_rewrite": "The specific misbehavior observed",
+          "point_cn": "观察到的具体不当行为"
+        },
+        {
+          "point_real": "How others reacted to it",
+          "pointId": "Advanced_2025Q2_p124",
+          "point_rewrite": "The response from people nearby",
+          "point_cn": "周围人的反应"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "pointId": "Advanced_2025Q2_p125",
+          "point_rewrite": "Your personal reaction to the situation",
+          "point_cn": "你对此事的个人感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a beautiful sky you enjoyed seeing",
+      "topicId": "Advanced_2025Q2_t32",
+      "topicName_rewrite": "a breathtaking sky view you appreciated",
+      "topicName_cn": "一次你欣赏美丽天空的经历",
+      "points": [
+        {
+          "point_real": "Where you saw it",
+          "pointId": "Advanced_2025Q2_p126",
+          "point_rewrite": "The location where you observed this sky",
+          "point_cn": "你看到这片天空的地点"
+        },
+        {
+          "point_real": "Who you saw it with",
+          "pointId": "Advanced_2025Q2_p127",
+          "point_rewrite": "Your companions during this experience",
+          "point_cn": "与你一起欣赏天空的人"
+        },
+        {
+          "point_real": "What you saw",
+          "pointId": "Advanced_2025Q2_p128",
+          "point_rewrite": "The specific features of the sky you noticed",
+          "point_cn": "你注意到的天空特点"
+        },
+        {
+          "point_real": "And how you felt about it",
+          "pointId": "Advanced_2025Q2_p129",
+          "point_rewrite": "Your emotional response to this natural spectacle",
+          "point_cn": "你对这一自然景象的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an advertisement you have seen",
+      "topicId": "Advanced_2025Q2_t33",
+      "topicName_rewrite": "a commercial or promotional content you viewed",
+      "topicName_cn": "你看过的一则广告",
+      "points": [
+        {
+          "point_real": "When and where you saw the advertisement",
+          "pointId": "Advanced_2025Q2_p130",
+          "point_rewrite": "The time and place of encountering this ad",
+          "point_cn": "你看到这则广告的时间和地点"
+        },
+        {
+          "point_real": "What the product was",
+          "pointId": "Advanced_2025Q2_p131",
+          "point_rewrite": "The item or service being promoted",
+          "point_cn": "被宣传的产品或服务"
+        },
+        {
+          "point_real": "How you liked the advertisement",
+          "pointId": "Advanced_2025Q2_p132",
+          "point_rewrite": "Your opinion about the ad's effectiveness",
+          "point_cn": "你对该广告效果的看法"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "pointId": "Advanced_2025Q2_p133",
+          "point_rewrite": "Your overall impression of this advertising",
+          "point_cn": "你对这则广告的整体印象"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a shop you often visit",
+      "topicId": "Advanced_2025Q2_t34",
+      "topicName_rewrite": "a retail establishment you frequent",
+      "topicName_cn": "你经常光顾的一家商店",
+      "points": [
+        {
+          "point_real": "What the shop's name is",
+          "pointId": "Advanced_2025Q2_p134",
+          "point_rewrite": "The name of this store",
+          "point_cn": "这家商店的名称"
+        },
+        {
+          "point_real": "Where it is",
+          "pointId": "Advanced_2025Q2_p135",
+          "point_rewrite": "Its physical location",
+          "point_cn": "它的具体位置"
+        },
+        {
+          "point_real": "How often you visit it",
+          "pointId": "Advanced_2025Q2_p136",
+          "point_rewrite": "The frequency of your visits",
+          "point_cn": "你去这家商店的频率"
+        },
+        {
+          "point_real": "And explain why you like to visit it",
+          "pointId": "Advanced_2025Q2_p137",
+          "point_rewrite": "The reasons for your preference",
+          "point_cn": "你喜欢光顾它的原因"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a film that makes you laugh",
+      "topicId": "Advanced_2025Q2_t35",
+      "topicName_rewrite": "a comedy movie you find hilarious",
+      "topicName_cn": "一部让你捧腹大笑的电影",
+      "points": [
+        {
+          "point_real": "What it is",
+          "pointId": "Advanced_2025Q2_p138",
+          "point_rewrite": "The title of this humorous film",
+          "point_cn": "这部搞笑电影的片名"
+        },
+        {
+          "point_real": "When you watch it",
+          "pointId": "Advanced_2025Q2_p139",
+          "point_rewrite": "The occasions when you view it",
+          "point_cn": "你在什么场合观看这部电影"
+        },
+        {
+          "point_real": "Who you watched it with",
+          "pointId": "Advanced_2025Q2_p140",
+          "point_rewrite": "Your viewing companions",
+          "point_cn": "你和谁一起看的"
+        },
+        {
+          "point_real": "And explain why it made you laugh",
+          "pointId": "Advanced_2025Q2_p141",
+          "point_rewrite": "The elements that trigger your laughter",
+          "point_cn": "这部电影让你发笑的原因"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a second-hand and recycle website",
+      "topicId": "Advanced_2025Q2_t36",
+      "topicName_rewrite": "an online platform for used goods and recycling",
+      "topicName_cn": "一个二手与回收的网站平台",
+      "points": [
+        {
+          "point_real": "What the website is called",
+          "pointId": "Advanced_2025Q2_p142",
+          "point_rewrite": "The name of this digital marketplace",
+          "point_cn": "这个数字市场叫什么名字"
+        },
+        {
+          "point_real": "What kinds of information it provide",
+          "pointId": "Advanced_2025Q2_p143",
+          "point_rewrite": "The content and services available",
+          "point_cn": "它提供哪些内容和服务"
+        },
+        {
+          "point_real": "What you bought",
+          "pointId": "Advanced_2025Q2_p144",
+          "point_rewrite": "Your purchases through this site",
+          "point_cn": "你在这个网站上买了什么"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "pointId": "Advanced_2025Q2_p145",
+          "point_rewrite": "Your satisfaction with this platform",
+          "point_cn": "你对这个平台的满意度如何"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a person who you think wears unusual clothes",
+      "topicId": "Advanced_2025Q2_t37",
+      "topicName_rewrite": "someone with distinctive fashion choices",
+      "topicName_cn": "一个穿着打扮特别的人",
+      "points": [
+        {
+          "point_real": "Who this person is",
+          "pointId": "Advanced_2025Q2_p146",
+          "point_rewrite": "The identity of this individual",
+          "point_cn": "这个人是谁"
+        },
+        {
+          "point_real": "How you know this person",
+          "pointId": "Advanced_2025Q2_p147",
+          "point_rewrite": "Your relationship with them",
+          "point_cn": "你是如何认识这个人的"
+        },
+        {
+          "point_real": "What this person's clothes are like",
+          "pointId": "Advanced_2025Q2_p148",
+          "point_rewrite": "Description of their unique attire",
+          "point_cn": "这个人的穿衣风格是怎样的"
+        },
+        {
+          "point_real": "And explain why you think his/her clothes are unusual",
+          "pointId": "Advanced_2025Q2_p149",
+          "point_rewrite": "The aspects that make their style stand out",
+          "point_cn": "你觉得他的穿着不寻常的原因是什么"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an interesting discussion that you had with friends",
+      "topicId": "Advanced_2025Q2_t38",
+      "topicName_rewrite": "a stimulating conversation with your peers",
+      "topicName_cn": "一次你和朋友进行的有趣讨论",
+      "points": [
+        {
+          "point_real": "What the discussion was about",
+          "pointId": "Advanced_2025Q2_p150",
+          "point_rewrite": "The topic of your conversation",
+          "point_cn": "讨论的主题是什么"
+        },
+        {
+          "point_real": "What opinions you and your friends expressed",
+          "pointId": "Advanced_2025Q2_p151",
+          "point_rewrite": "The different viewpoints shared",
+          "point_cn": "你和朋友表达了哪些不同观点"
+        },
+        {
+          "point_real": "What the result of the discussion was",
+          "pointId": "Advanced_2025Q2_p152",
+          "point_rewrite": "The outcome or conclusion reached",
+          "point_cn": "这次讨论的结果是什么"
+        },
+        {
+          "point_real": "And explain why you found this discussion was interesting",
+          "pointId": "Advanced_2025Q2_p153",
+          "point_rewrite": "What made this exchange particularly engaging",
+          "point_cn": "你觉得这次讨论有趣的原因是什么"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a quiet place you like to spend your time in",
+      "topicId": "Advanced_2025Q2_t39",
+      "topicName_rewrite": "A peaceful spot where you enjoy spending time",
+      "topicName_cn": "一个你喜欢待着的安静场所",
+      "points": [
+        {
+          "point_real": "Where it is",
+          "pointId": "Advanced_2025Q2_p154",
+          "point_rewrite": "The location of this tranquil spot",
+          "point_cn": "这个安静地方在哪里"
+        },
+        {
+          "point_real": "How you knew it",
+          "pointId": "Advanced_2025Q2_p155",
+          "point_rewrite": "How you discovered this place",
+          "point_cn": "你是如何发现这个地方的"
+        },
+        {
+          "point_real": "What do you there",
+          "pointId": "Advanced_2025Q2_p156",
+          "point_rewrite": "Your activities in this setting",
+          "point_cn": "你在这个地方通常做什么"
+        },
+        {
+          "point_real": "And explain why you like the place",
+          "pointId": "Advanced_2025Q2_p157",
+          "point_rewrite": "The appeal of this quiet location",
+          "point_cn": "你为什么喜欢这个地方"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a goal you set before",
+      "topicId": "Advanced_2025Q2_t40",
+      "topicName_rewrite": "an objective you previously established",
+      "topicName_cn": "你曾经设立的一个目标",
+      "points": [
+        {
+          "point_real": "What it was",
+          "pointId": "Advanced_2025Q2_p158",
+          "point_rewrite": "The nature of this goal",
+          "point_cn": "这个目标是什么"
+        },
+        {
+          "point_real": "When it was",
+          "pointId": "Advanced_2025Q2_p159",
+          "point_rewrite": "The timeframe of this goal",
+          "point_cn": "这个目标是在什么时候设立的"
+        },
+        {
+          "point_real": "How well you achieve it",
+          "pointId": "Advanced_2025Q2_p160",
+          "point_rewrite": "Your degree of success in accomplishing it",
+          "point_cn": "你实现这个目标的程度如何"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "pointId": "Advanced_2025Q2_p161",
+          "point_rewrite": "Your emotional response to this experience",
+          "point_cn": "你对此次经历的感受如何"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a city that you want to go back once again",
+      "topicId": "Advanced_2025Q2_t41",
+      "topicName_rewrite": "an urban destination you wish to revisit",
+      "topicName_cn": "一个你想再次造访的城市",
+      "points": [
+        {
+          "point_real": "What it is",
+          "pointId": "Advanced_2025Q2_p162",
+          "point_rewrite": "The name of this city",
+          "point_cn": "这座城市的名称"
+        },
+        {
+          "point_real": "When you have gone there before",
+          "pointId": "Advanced_2025Q2_p163",
+          "point_rewrite": "Your previous visit timeframe",
+          "point_cn": "你之前造访的时间"
+        },
+        {
+          "point_real": "What you did there",
+          "pointId": "Advanced_2025Q2_p164",
+          "point_rewrite": "Your activities during your stay",
+          "point_cn": "你在那里的活动"
+        },
+        {
+          "point_real": "And explain why you want to go back there once again",
+          "pointId": "Advanced_2025Q2_p165",
+          "point_rewrite": "Your reasons for desiring to return",
+          "point_cn": "你想再次回去的原因"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a place where people can see lots of animals",
+      "topicId": "Advanced_2025Q2_t42",
+      "topicName_rewrite": "a location abundant with wildlife observation opportunities",
+      "topicName_cn": "一个可以观赏许多野生动物的地方",
+      "points": [
+        {
+          "point_real": "Where it is",
+          "pointId": "Advanced_2025Q2_p166",
+          "point_rewrite": "The geographical location",
+          "point_cn": "它的地理位置"
+        },
+        {
+          "point_real": "What animals people can see",
+          "pointId": "Advanced_2025Q2_p167",
+          "point_rewrite": "The species available for viewing",
+          "point_cn": "可以看到的动物种类"
+        },
+        {
+          "point_real": "Why people like to go there",
+          "pointId": "Advanced_2025Q2_p168",
+          "point_rewrite": "The appeal of this animal habitat",
+          "point_cn": "这个动物栖息地吸引人的原因"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "pointId": "Advanced_2025Q2_p169",
+          "point_rewrite": "Your personal impressions of this place",
+          "point_cn": "你对这个地方的个人感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an important decision you made with the help of others",
+      "topicId": "Advanced_2025Q2_t43",
+      "topicName_rewrite": "a significant choice you made collaboratively",
+      "topicName_cn": "一个你在他人帮助下做出的重要决定",
+      "points": [
+        {
+          "point_real": "Who helped you make the decision",
+          "pointId": "Advanced_2025Q2_p170",
+          "point_rewrite": "The people who assisted in your decision-making",
+          "point_cn": "协助你做决定的人"
+        },
+        {
+          "point_real": "What it was",
+          "pointId": "Advanced_2025Q2_p171",
+          "point_rewrite": "The nature of this important choice",
+          "point_cn": "这个重要决定的内容"
+        },
+        {
+          "point_real": "Whether it was correct",
+          "pointId": "Advanced_2025Q2_p172",
+          "point_rewrite": "The accuracy or appropriateness of the decision",
+          "point_cn": "这个决定是否正确或合适"
+        },
+        {
+          "point_real": "And explain why it was an important decision",
+          "pointId": "Advanced_2025Q2_p173",
+          "point_rewrite": "The significance of this choice",
+          "point_cn": "这个决定为何重要"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an old person who you had an interesting discussion with",
+      "topicId": "Advanced_2025Q2_t44",
+      "topicName_rewrite": "an elderly individual you had a fascinating conversation with",
+      "topicName_cn": "一个你和他/她有过有趣谈话的老人",
+      "points": [
+        {
+          "point_real": "Who he/she is",
+          "pointId": "Advanced_2025Q2_p174",
+          "point_rewrite": "The identity of this senior person",
+          "point_cn": "这位老人的身份"
+        },
+        {
+          "point_real": "What does he/she do",
+          "pointId": "Advanced_2025Q2_p175",
+          "point_rewrite": "Their occupation or main activities",
+          "point_cn": "他/她的职业或主要活动"
+        },
+        {
+          "point_real": "When and where you met him/her",
+          "pointId": "Advanced_2025Q2_p176",
+          "point_rewrite": "The circumstances of your meeting",
+          "point_cn": "你们相遇的时间和地点"
+        },
+        {
+          "point_real": "And explain why you think he/she have an interesting life",
+          "pointId": "Advanced_2025Q2_p177",
+          "point_rewrite": "What makes their life experiences remarkable",
+          "point_cn": "他/她的生活经历为何令人印象深刻"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a piece of special clothes you have",
+      "topicId": "Advanced_2025Q2_t45",
+      "topicName_rewrite": "a particular garment that holds significance for you",
+      "topicName_cn": "一件对你有特殊意义的衣服",
+      "points": [
+        {
+          "point_real": "What it is like",
+          "pointId": "Advanced_2025Q2_p178",
+          "point_rewrite": "Description of this clothing item",
+          "point_cn": "这件衣服的样子"
+        },
+        {
+          "point_real": "How you got it",
+          "pointId": "Advanced_2025Q2_p179",
+          "point_rewrite": "The way you acquired it",
+          "point_cn": "你是如何得到它的"
+        },
+        {
+          "point_real": "When you had it",
+          "pointId": "Advanced_2025Q2_p180",
+          "point_rewrite": "The timeframe of ownership",
+          "point_cn": "你拥有它的时间"
+        },
+        {
+          "point_real": "And explain why you think it is special",
+          "pointId": "Advanced_2025Q2_p181",
+          "point_rewrite": "The sentimental or practical value it holds",
+          "point_cn": "它对你为何特别（感情或实用价值）"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a singer you like",
+      "topicId": "Advanced_2025Q2_t46",
+      "topicName_rewrite": "a musical artist you admire",
+      "topicName_cn": "你欣赏的一位音乐艺术家",
+      "points": [
+        {
+          "point_real": "Who is he/she",
+          "pointId": "Advanced_2025Q2_p182",
+          "point_rewrite": "The name of this performer",
+          "point_cn": "这位表演者的名字"
+        },
+        {
+          "point_real": "When and where you first listen to his/her music",
+          "pointId": "Advanced_2025Q2_p183",
+          "point_rewrite": "Your initial exposure to their work",
+          "point_cn": "你最初接触到他们音乐的时间和地点"
+        },
+        {
+          "point_real": "Why you like his/her music",
+          "pointId": "Advanced_2025Q2_p184",
+          "point_rewrite": "What appeals to you about their artistry",
+          "point_cn": "他们的音乐吸引你的地方"
+        },
+        {
+          "point_real": "And explain how you felt about him/her",
+          "pointId": "Advanced_2025Q2_p185",
+          "point_rewrite": "Your overall impression of this artist",
+          "point_cn": "你对这位艺术家的整体印象"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an outdoor sport you want to try for the first time",
+      "topicId": "Advanced_2025Q2_t47",
+      "topicName_rewrite": "an open-air athletic activity you wish to attempt",
+      "topicName_cn": "你想尝试的一项户外运动",
+      "points": [
+        {
+          "point_real": "What it was",
+          "pointId": "Advanced_2025Q2_p186",
+          "point_rewrite": "The specific sport you're interested in",
+          "point_cn": "你感兴趣的具体运动项目"
+        },
+        {
+          "point_real": "When you first played it",
+          "pointId": "Advanced_2025Q2_p187",
+          "point_rewrite": "Your initial experience with it",
+          "point_cn": "你最初尝试这项运动的经历"
+        },
+        {
+          "point_real": "Who you played it with",
+          "pointId": "Advanced_2025Q2_p188",
+          "point_rewrite": "Your companions in this activity",
+          "point_cn": "你在这项活动中的同伴"
+        },
+        {
+          "point_real": "And explain how you felt about it",
+          "pointId": "Advanced_2025Q2_p189",
+          "point_rewrite": "Your emotional response to this new experience",
+          "point_cn": "你对这次新体验的感受"
+        }
+      ]
+    },
+    {
+      "topicName_real": "a sport event you would like to be as a part of audience",
+      "topicId": "Advanced_2025Q2_t48",
+      "topicName_rewrite": "a sporting competition you wish to attend",
+      "topicName_cn": "你想作为观众参与的体育赛事",
+      "points": [
+        {
+          "point_real": "What it is",
+          "pointId": "Advanced_2025Q2_p190",
+          "point_rewrite": "The nature of this sports event",
+          "point_cn": "这项体育赛事的性质"
+        },
+        {
+          "point_real": "When and where it will hold",
+          "pointId": "Advanced_2025Q2_p191",
+          "point_rewrite": "The scheduled time and venue",
+          "point_cn": "计划举行的时间和地点"
+        },
+        {
+          "point_real": "Who do you like to watch with",
+          "pointId": "Advanced_2025Q2_p192",
+          "point_rewrite": "Your preferred viewing companions",
+          "point_cn": "你希望和谁一起观看"
+        },
+        {
+          "point_real": "And explain why you would like to watch",
+          "pointId": "Advanced_2025Q2_p193",
+          "point_rewrite": "Your reasons for wanting to attend",
+          "point_cn": "你想参加观看的原因"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an interesting article on health you read",
+      "topicId": "Advanced_2025Q2_t49",
+      "topicName_rewrite": "a compelling health-related publication you encountered",
+      "topicName_cn": "你读过的一篇有趣的健康类文章",
+      "points": [
+        {
+          "point_real": "What it was",
+          "pointId": "Advanced_2025Q2_p194",
+          "point_rewrite": "The subject matter of the article",
+          "point_cn": "文章的主题内容"
+        },
+        {
+          "point_real": "Where you read it",
+          "pointId": "Advanced_2025Q2_p195",
+          "point_rewrite": "The publication source or platform",
+          "point_cn": "你在哪里读到的这篇文章"
+        },
+        {
+          "point_real": "Why you read it",
+          "pointId": "Advanced_2025Q2_p196",
+          "point_rewrite": "Your motivation for reading it",
+          "point_cn": "你阅读这篇文章的动机"
+        },
+        {
+          "point_real": "And explain why you think it is interesting",
+          "pointId": "Advanced_2025Q2_p197",
+          "point_rewrite": "What made this health content engaging",
+          "point_cn": "为什么你觉得这篇健康类内容很有趣"
+        }
+      ]
+    },
+    {
+      "topicName_real": "an argument that two of your friends have",
+      "topicId": "Advanced_2025Q2_t50",
+      "topicName_rewrite": "a disagreement between two acquaintances",
+      "topicName_cn": "你朋友之间发生的一次争执",
+      "points": [
+        {
+          "point_real": "When it happened",
+          "pointId": "Advanced_2025Q2_p198",
+          "point_rewrite": "The timeframe of this conflict",
+          "point_cn": "这场争执发生的时间"
+        },
+        {
+          "point_real": "What it was about",
+          "pointId": "Advanced_2025Q2_p199",
+          "point_rewrite": "The subject of their dispute",
+          "point_cn": "他们争执的内容"
+        },
+        {
+          "point_real": "How it was solved",
+          "pointId": "Advanced_2025Q2_p200",
+          "point_rewrite": "The resolution process",
+          "point_cn": "解决争执的过程"
+        },
+        {
+          "point_real": "And how you felt about that",
+          "pointId": "Advanced_2025Q2_p201",
+          "point_rewrite": "Your emotional response to this situation",
+          "point_cn": "你对此事的情绪反应"
+        }
+      ]
+    }
+  ]
+}
