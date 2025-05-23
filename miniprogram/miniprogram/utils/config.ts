@@ -10,7 +10,7 @@ const ENV = {
   },
   // 测试环境
   TEST: {
-    BASE_URL: 'https://test-api.dds.com'
+    BASE_URL: 'https://test.xiaoshuspeaking.site'
   },
   // 生产环境
   PROD: {
