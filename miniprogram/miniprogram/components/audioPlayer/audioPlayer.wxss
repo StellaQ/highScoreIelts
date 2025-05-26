@@ -1,0 +1,11 @@
+.audio-player {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.audio-player:active {
+  opacity: 0.8;
+} 

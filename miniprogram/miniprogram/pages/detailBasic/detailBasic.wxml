@@ -18,42 +18,27 @@
       <view wx:for="{{questions}}" wx:key="index" class="question-card">
         <view class="question-title">{{item.qRewrite}}</view>
         <view class="question-title-cn">{{item.qTitle_cn}}</view>
-        <view 
-        style="margin: 10px 0;"
-        wx:if="{{item.type == 1}}">
-          <van-radio-group
-            data-index="{{index}}"
-            bind:change="onChangeChoice"
-            direction="horizontal">
-            <van-radio
-              style="margin-bottom: 5px;"
-              wx:for="{{item.choices}}"
-              wx:for-item="choice"
-              wx:key="index" 
-              name="{{choice}}"
-              shape="square"
-              >{{choice}}
-            </van-radio>
-          </van-radio-group>
-        </view>
         <textarea class="answer-input" 
           placeholder=""
           value="{{ item.answerUser }}"
           data-index="{{index}}"
           maxlength="300"
           bindinput="onInputTextarea" />
-        <view
-          style="width: 100%; margin-bottom: 10px; display: flex; flex-direction: flex-end;">
+        <view class="ai-feedback" wx:if="{{item.answerAI}}">
+          <text class="ai-feedback-content" user-select="true">
+            {{item.answerAI}}
+          </text>
+          <view class="audio-container">
+            <audio-player text="{{item.answerAI}}" />
+          </view>
+        </view>
+        <view 
+        style="width: 100%; margin-bottom: 10px; display: flex; flex-direction: flex-end;">
           <button class="submit-btn"
             data-qTitle="{{item.qRewrite}}"
             data-index="{{index}}"
             data-choice="{{item.choice}}"
             bindtap="onSubmitAnswer">AI定制答案</button>
-        </view>
-        <view class="ai-feedback" wx:if="{{item.answerAI}}">
-          <text class="ai-feedback-content" user-select="true">
-            {{item.answerAI}}
-          </text>
         </view>
       </view>
     </block>
@@ -68,6 +53,9 @@
             <text class="answer-content" user-select="true">
               {{item.answerAI || '暂无参考答案'}}
             </text>
+            <view class="audio-container">
+              <audio-player text="{{item.answerAI}}" />
+            </view>
           </view>
         </view>
         <view class="button-container">

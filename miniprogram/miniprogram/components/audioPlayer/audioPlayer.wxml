@@ -1,0 +1,3 @@
+<view class="audio-player" bindtap="onPlayTap">
+  <van-icon name="{{isPlaying ? 'pause-circle-o' : 'play-circle-o'}}" size="24px" color="{{isPlaying ? '#13C2C2' : '#86909C'}}" />
+</view> 

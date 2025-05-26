@@ -20,15 +20,17 @@ const ENV = {
 
 // 根据当前环境选择配置
 const getEnvConfig = () => {
-  let env = 'prod'
-  switch (env) {
+  const { envVersion } = wx.getAccountInfoSync().miniProgram;
+  console.log(envVersion);
+  // let env = 'release'
+  switch (envVersion) {
     case 'develop':
       return ENV.DEV;
-    case 'debug':
-      return ENV.DEBUG;
-    case 'test':
+    // case 'debug':
+      // return ENV.DEBUG;
+    case 'trial':
       return ENV.TEST;
-    case 'prod':
+    case 'release':
       return ENV.PROD;
     default:
       return ENV.DEV;
@@ -36,4 +38,9 @@ const getEnvConfig = () => {
 };
 
 export const config = getEnvConfig();
-export const BASE_URL = config.BASE_URL; 
+export const BASE_URL = config.BASE_URL;
+
+export const baiduConfig = {
+  apiKey: 'Spkt9kI8LlfdQBM0AqrLc4qg',
+  secretKey: '8DunxvxwTbvWD1h0JoXhVLfrdQS3aZV7'
+} 

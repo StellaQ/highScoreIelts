@@ -38,13 +38,13 @@
             <view class="question-tip">
               <text>“思考感”：模拟思考过程</text>
               <text>*</text>
-              <text>不要用背书的节奏讲出来。要：用正常对话的语调；有时加点停顿；重读关键词（比如“really memorable,” “absolutely amazing”）</text>
+              <text>不要用背书的节奏讲出来。要：用正常对话的语调；有时加点停顿；重读关键词（比如"really memorable," "absolutely amazing"）</text>
               <text>*</text>
-              <text>多练“情绪反应”：一边讲，一边演绎出当时的情绪</text>
+              <text>多练"情绪反应"：一边讲，一边演绎出当时的情绪</text>
               <text>*</text>
-              <text>把结构背熟，但在内容上，可以换换词，例如每次练习换掉一些形容词、连接词等，保证你有“灵活性”</text>
+              <text>把结构背熟，但在内容上，可以换换词，例如每次练习换掉一些形容词、连接词等，保证你有"灵活性"</text>
               <text>*</text>
-              <text>录音+复现：可以每天用手机录音，然后回听，看看有没有“背书感”</text>
+              <text>录音+复现：可以每天用手机录音，然后回听，看看有没有"背书感"</text>
             </view>
           </view>
           <view class="card-back">
@@ -57,6 +57,9 @@
             <text class="answer-content" user-select="true">
               {{answerAI.closing}}
             </text>
+            <view class="audio-container">
+              <audio-player texts="{{[answerAI.opening, answerAI.body, answerAI.closing]}}" />
+            </view>
           </view>
         </view>
       </view>
@@ -73,18 +76,18 @@
   <view wx:if="{{state === 0 && (answerAI.opening || answerAI.body || answerAI.closing)}}"
    class="ai-feedback">
    <view class="feedback-container">
-    <text class="ai-feedback-content" user-select="true"
-      wx:if="{{answerAI.opening}}">
+    <text class="answer-content" user-select="true" wx:if="{{answerAI.opening}}">
       {{answerAI.opening}}
     </text>
-    <text class="ai-feedback-content" user-select="true"
-      wx:if="{{answerAI.body}}">
+    <text class="answer-content" user-select="true" wx:if="{{answerAI.body}}">
       {{answerAI.body}}
     </text>
-    <text class="ai-feedback-content" user-select="true" 
-      wx:if="{{answerAI.closing}}">
+    <text class="answer-content" user-select="true" wx:if="{{answerAI.closing}}">
       {{answerAI.closing}}
     </text>
+    <view class="audio-container">
+      <audio-player texts="{{[answerAI.opening, answerAI.body, answerAI.closing]}}" />
+    </view>
    </view>
   </view>
   <!-- 复习时间选择 -->

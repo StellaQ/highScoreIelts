@@ -35,6 +35,9 @@
           <text class="ai-feedback-content" user-select="true">
             {{item.answerAI}}
           </text>
+          <view class="audio-container">
+            <audio-player text="{{item.answerAI}}" />
+          </view>
         </view>
       </view>
     </block>
@@ -50,6 +53,9 @@
             <text class="answer-content" user-select="true">
               {{item.answerAI || '暂无参考答案'}}
             </text>
+            <view class="audio-container">
+              <audio-player text="{{item.answerAI}}" />
+            </view>
           </view>
         </view>
         <view class="button-container">
