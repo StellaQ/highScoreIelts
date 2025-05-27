@@ -4,16 +4,25 @@ import { baiduConfig } from './config'
 const getAccessToken = () => {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=${baiduConfig.apiKey}&client_secret=${baiduConfig.secretKey}`,
+      url: 'https://aip.baidubce.com/oauth/2.0/token',
       method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: `grant_type=client_credentials&client_id=${baiduConfig.apiKey}&client_secret=${baiduConfig.secretKey}`,
       success: (res: any) => {
-        if (res.data.access_token) {
+        console.log('Token response:', res.data)
+        if (res.data && res.data.access_token) {
           resolve(res.data.access_token)
         } else {
-          reject(new Error('获取access_token失败'))
+          console.error('Token error response:', res)
+          reject(new Error(res.data.error_description || '获取access_token失败'))
         }
       },
-      fail: reject
+      fail: (error) => {
+        console.error('Token request failed:', error)
+        reject(error)
+      }
     })
   })
 }
@@ -26,49 +35,31 @@ export const textToSpeech = async (text: string): Promise<string> => {
 
   try {
     const token = await getAccessToken()
-    return new Promise((resolve, reject) => {
-      wx.request({
-        url: 'https://tsn.baidu.com/text2audio',
-        method: 'POST',
-        responseType: 'arraybuffer',
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          tex: text,
-          tok: token,
-          cuid: 'highscoreielts',
-          ctp: 1,
-          lan: 'en',
-          spd: 4,
-          pit: 5,
-          vol: 5,
-          per: 4,
-          aue: 6
-        },
-        success: (res: any) => {
-          // 检查是否返回了错误信息
-          if (res.data.err_no) {
-            reject(new Error(res.data.err_msg))
-            return
-          }
+    console.log('Got token:', token)
+    
+    // 构建请求参数
+    const params = {
+      tex: encodeURIComponent(text),
+      tok: token,
+      cuid: 'highscoreielts',
+      ctp: 1,
+      lan: 'en',
+      spd: 4,
+      pit: 5,
+      vol: 5,
+      per: 4,
+      aue: 3
+    }
 
-          // 检查返回的内容类型
-          const contentType = res.header['Content-Type'] || res.header['content-type']
-          if (contentType && contentType.includes('audio/')) {
-            // 转换音频数据为base64
-            const base64Audio = wx.arrayBufferToBase64(res.data)
-            resolve(`data:audio/mp3;base64,${base64Audio}`)
-          } else {
-            reject(new Error('返回的不是音频数据'))
-          }
-        },
-        fail: (error) => {
-          console.error('请求失败:', error)
-          reject(error)
-        }
-      })
-    })
+    // 构建查询字符串
+    const queryString = Object.entries(params)
+      .map(([key, value]) => `${key}=${value}`)
+      .join('&')
+
+    const audioUrl = `https://tsn.baidu.com/text2audio?${queryString}`
+    console.log('Audio URL:', audioUrl)
+    return audioUrl
+
   } catch (error) {
     console.error('TTS Error:', error)
     throw error
