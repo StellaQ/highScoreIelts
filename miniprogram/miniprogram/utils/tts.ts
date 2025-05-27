@@ -43,7 +43,7 @@ export const textToSpeech = async (text: string): Promise<string> => {
           spd: 4,
           pit: 5,
           vol: 5,
-          per: 3,
+          per: 4,
           aue: 6
         },
         success: (res: any) => {
